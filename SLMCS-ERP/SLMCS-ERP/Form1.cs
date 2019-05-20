@@ -16,5 +16,25 @@ namespace SLMCS_ERP
         {
             InitializeComponent();
         }
+
+        private void Label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label3_Click_2(object sender, EventArgs e)
+        {
+
+        }
     }
 }
