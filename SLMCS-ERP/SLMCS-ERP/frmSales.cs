@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace SLMCS_ERP
 {
-    public partial class frmHome : Form
+    public partial class frmSales : Form
     {
-        public frmHome()
+        public frmSales()
         {
             InitializeComponent();
-        }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

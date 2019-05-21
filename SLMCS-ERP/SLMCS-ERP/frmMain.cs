@@ -15,15 +15,54 @@ namespace SLMCS_ERP
         public frmMain()
         {
             InitializeComponent();
+            frmHome home = new frmHome();
+            navigation(home, panelContent);
         }
-
-        private void Button1_Click(object sender, EventArgs e)
+        private void navigation(Form form, Panel panel)
+        {
+            form.TopLevel = false;
+            panelContent.Controls.Clear();
+            panelContent.Controls.Add(form);
+            form.Show();
+        }
+        private void btnHome_Click(object sender, EventArgs e)
         {
             frmHome home = new frmHome();
-            home.TopLevel = false;
-            panelContent.Controls.Clear();
-            panelContent.Controls.Add(home);
-            home.Show();
+            navigation(home, panelContent);
+        }
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            frmSales sales = new frmSales();
+            navigation(sales, panelContent);
+        }
+        private void BtnProcurement_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void BtnInventory_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnFinance_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnReporting_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnDispatch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnUserManagement_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -16,5 +16,12 @@ namespace SLMCS_ERP
         {
             InitializeComponent();
         }
+
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+            frmMain main = new frmMain();
+            this.Hide();
+            main.Show();
+        }
     }
 }

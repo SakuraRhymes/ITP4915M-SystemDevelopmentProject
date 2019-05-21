@@ -29,82 +29,169 @@
         private void InitializeComponent()
         {
             this.penalTopNavigation = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.labelSystemName = new System.Windows.Forms.Label();
+            this.btnUserManagement = new System.Windows.Forms.Button();
+            this.btnDispatch = new System.Windows.Forms.Button();
+            this.btnReporting = new System.Windows.Forms.Button();
+            this.btnFinance = new System.Windows.Forms.Button();
+            this.btnInventory = new System.Windows.Forms.Button();
+            this.btnHome = new System.Windows.Forms.Button();
+            this.btnProcurement = new System.Windows.Forms.Button();
+            this.btnSales = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.penalTopNavigation.SuspendLayout();
             this.SuspendLayout();
             // 
             // penalTopNavigation
             // 
             this.penalTopNavigation.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.penalTopNavigation.Controls.Add(this.button4);
-            this.penalTopNavigation.Controls.Add(this.button3);
-            this.penalTopNavigation.Controls.Add(this.button2);
-            this.penalTopNavigation.Controls.Add(this.button1);
+            this.penalTopNavigation.Controls.Add(this.btnLogout);
+            this.penalTopNavigation.Controls.Add(this.labelSystemName);
+            this.penalTopNavigation.Controls.Add(this.btnUserManagement);
+            this.penalTopNavigation.Controls.Add(this.btnDispatch);
+            this.penalTopNavigation.Controls.Add(this.btnReporting);
+            this.penalTopNavigation.Controls.Add(this.btnFinance);
+            this.penalTopNavigation.Controls.Add(this.btnInventory);
+            this.penalTopNavigation.Controls.Add(this.btnHome);
+            this.penalTopNavigation.Controls.Add(this.btnProcurement);
+            this.penalTopNavigation.Controls.Add(this.btnSales);
             this.penalTopNavigation.Dock = System.Windows.Forms.DockStyle.Top;
             this.penalTopNavigation.Location = new System.Drawing.Point(0, 0);
+            this.penalTopNavigation.Margin = new System.Windows.Forms.Padding(2);
             this.penalTopNavigation.Name = "penalTopNavigation";
-            this.penalTopNavigation.Size = new System.Drawing.Size(1582, 145);
+            this.penalTopNavigation.Size = new System.Drawing.Size(1186, 116);
             this.penalTopNavigation.TabIndex = 0;
             // 
-            // button4
+            // btnLogout
             // 
-            this.button4.Location = new System.Drawing.Point(483, 61);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 36);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "button1";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnLogout.Location = new System.Drawing.Point(1082, 30);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(75, 23);
+            this.btnLogout.TabIndex = 2;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // labelSystemName
             // 
-            this.button3.Location = new System.Drawing.Point(314, 61);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 36);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "button1";
-            this.button3.UseVisualStyleBackColor = true;
+            this.labelSystemName.AutoSize = true;
+            this.labelSystemName.Font = new System.Drawing.Font("PMingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labelSystemName.Location = new System.Drawing.Point(43, 30);
+            this.labelSystemName.Name = "labelSystemName";
+            this.labelSystemName.Size = new System.Drawing.Size(179, 21);
+            this.labelSystemName.TabIndex = 1;
+            this.labelSystemName.Text = "SLMCS ERP System";
             // 
-            // button2
+            // btnUserManagement
             // 
-            this.button2.Location = new System.Drawing.Point(162, 61);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 36);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "button1";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnUserManagement.Location = new System.Drawing.Point(902, 82);
+            this.btnUserManagement.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUserManagement.Name = "btnUserManagement";
+            this.btnUserManagement.Size = new System.Drawing.Size(117, 29);
+            this.btnUserManagement.TabIndex = 0;
+            this.btnUserManagement.Text = "User Management";
+            this.btnUserManagement.UseVisualStyleBackColor = true;
+            this.btnUserManagement.Click += new System.EventHandler(this.BtnUserManagement_Click);
             // 
-            // button1
+            // btnDispatch
             // 
-            this.button1.Location = new System.Drawing.Point(1, 63);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 36);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.btnDispatch.Location = new System.Drawing.Point(780, 82);
+            this.btnDispatch.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDispatch.Name = "btnDispatch";
+            this.btnDispatch.Size = new System.Drawing.Size(90, 29);
+            this.btnDispatch.TabIndex = 0;
+            this.btnDispatch.Text = "Dispatch";
+            this.btnDispatch.UseVisualStyleBackColor = true;
+            this.btnDispatch.Click += new System.EventHandler(this.BtnDispatch_Click);
+            // 
+            // btnReporting
+            // 
+            this.btnReporting.Location = new System.Drawing.Point(657, 82);
+            this.btnReporting.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReporting.Name = "btnReporting";
+            this.btnReporting.Size = new System.Drawing.Size(90, 29);
+            this.btnReporting.TabIndex = 0;
+            this.btnReporting.Text = "Reporting";
+            this.btnReporting.UseVisualStyleBackColor = true;
+            this.btnReporting.Click += new System.EventHandler(this.BtnReporting_Click);
+            // 
+            // btnFinance
+            // 
+            this.btnFinance.Location = new System.Drawing.Point(531, 82);
+            this.btnFinance.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFinance.Name = "btnFinance";
+            this.btnFinance.Size = new System.Drawing.Size(90, 29);
+            this.btnFinance.TabIndex = 0;
+            this.btnFinance.Text = "Finance";
+            this.btnFinance.UseVisualStyleBackColor = true;
+            this.btnFinance.Click += new System.EventHandler(this.BtnFinance_Click);
+            // 
+            // btnInventory
+            // 
+            this.btnInventory.Location = new System.Drawing.Point(405, 82);
+            this.btnInventory.Margin = new System.Windows.Forms.Padding(2);
+            this.btnInventory.Name = "btnInventory";
+            this.btnInventory.Size = new System.Drawing.Size(90, 29);
+            this.btnInventory.TabIndex = 0;
+            this.btnInventory.Text = "Inventory";
+            this.btnInventory.UseVisualStyleBackColor = true;
+            this.btnInventory.Click += new System.EventHandler(this.BtnInventory_Click);
+            // 
+            // btnHome
+            // 
+            this.btnHome.Location = new System.Drawing.Point(43, 82);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(90, 29);
+            this.btnHome.TabIndex = 0;
+            this.btnHome.Text = "Home";
+            this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // btnProcurement
+            // 
+            this.btnProcurement.Location = new System.Drawing.Point(291, 82);
+            this.btnProcurement.Margin = new System.Windows.Forms.Padding(2);
+            this.btnProcurement.Name = "btnProcurement";
+            this.btnProcurement.Size = new System.Drawing.Size(90, 29);
+            this.btnProcurement.TabIndex = 0;
+            this.btnProcurement.Text = "Procurement";
+            this.btnProcurement.UseVisualStyleBackColor = true;
+            this.btnProcurement.Click += new System.EventHandler(this.BtnProcurement_Click);
+            // 
+            // btnSales
+            // 
+            this.btnSales.Location = new System.Drawing.Point(170, 83);
+            this.btnSales.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSales.Name = "btnSales";
+            this.btnSales.Size = new System.Drawing.Size(90, 29);
+            this.btnSales.TabIndex = 0;
+            this.btnSales.Text = "Sales";
+            this.btnSales.UseVisualStyleBackColor = true;
+            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
             // 
             // panelContent
             // 
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(0, 145);
+            this.panelContent.Location = new System.Drawing.Point(0, 116);
+            this.panelContent.Margin = new System.Windows.Forms.Padding(2);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1582, 708);
+            this.panelContent.Size = new System.Drawing.Size(1186, 566);
             this.panelContent.TabIndex = 1;
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1582, 853);
+            this.ClientSize = new System.Drawing.Size(1186, 682);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.penalTopNavigation);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMain";
             this.Text = "Home Page";
             this.penalTopNavigation.ResumeLayout(false);
+            this.penalTopNavigation.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -112,10 +199,17 @@
         #endregion
 
         private System.Windows.Forms.Panel penalTopNavigation;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnFinance;
+        private System.Windows.Forms.Button btnInventory;
+        private System.Windows.Forms.Button btnProcurement;
+        private System.Windows.Forms.Button btnSales;
         private System.Windows.Forms.Panel panelContent;
+        private System.Windows.Forms.Button btnHome;
+        private System.Windows.Forms.Button btnUserManagement;
+        private System.Windows.Forms.Button btnDispatch;
+        private System.Windows.Forms.Button btnReporting;
+        private System.Windows.Forms.Label labelSystemName;
+        private System.Windows.Forms.Button btnLogout;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
