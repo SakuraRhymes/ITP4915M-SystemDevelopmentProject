@@ -36,6 +36,17 @@ CREATE TABLE Department (
 
 
 -- -----------------------------------------------------
+-- Table StaffPosition
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS StaffPosition ;
+
+CREATE TABLE StaffPosition (
+  StaffPositionID VARCHAR(2) NOT NULL COMMENT 'Staff position ID',
+  PositionName VARCHAR(7) NOT NULL COMMENT 'Position Name',
+  PRIMARY KEY (StaffPositionID)
+);
+
+-- -----------------------------------------------------
 -- Table Staff
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS Staff ;
@@ -45,13 +56,16 @@ CREATE TABLE Staff (
   Password VARCHAR(30) NOT NULL COMMENT '5 digits with 1 upper case letter and 1 lower case letter',
   PasswordChangeDate DATETIME NOT NULL COMMENT 'for counting 30 days to change password',
   StaffName VARCHAR(50) NOT NULL COMMENT 'Staff full name',
-  StaffPhoneNo VARCHAR(20) NOT NULL COMMENT 'Staff phone number',
-  StaffPosition VARCHAR(20) NOT NULL COMMENT 'Staff position using for permission',
+  StaffPhoneNo VARCHAR(11) NOT NULL COMMENT 'Staff phone number',
+  StaffPositionID VARCHAR(2) NOT NULL COMMENT 'Staff position using for permission',
   DepartmentID VARCHAR(2) NOT NULL COMMENT 'Company department ID',
   PRIMARY KEY (StaffID),
-  CONSTRAINT Staff_StaffID_fk1
+  CONSTRAINT Staff_DepartmentID_fk1
     FOREIGN KEY (DepartmentID)
-    REFERENCES Department (DepartmentID)
+    REFERENCES Department (DepartmentID),
+  CONSTRAINT Staff_StaffPositionID_fk2
+    FOREIGN KEY (StaffPositionID)
+    REFERENCES StaffPosition (StaffPositionID)
 );
 
 
