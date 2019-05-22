@@ -5,6 +5,9 @@ USE SLMCS_DB;
 --
 DELETE FROM Department;
 
+--
+-- Inserting data into table 'Department'
+--
 INSERT INTO Department VALUES ('HR', 'Personnel');
 INSERT INTO Department VALUES ('SA', 'Sales');
 INSERT INTO Department VALUES ('WH', 'Warehouse');

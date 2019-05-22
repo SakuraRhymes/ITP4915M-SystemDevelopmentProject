@@ -115,12 +115,12 @@ DROP TABLE IF EXISTS Product ;
 CREATE TABLE Product (
   ProductID VARCHAR(6) NOT NULL COMMENT 'Product ID, Category letter + 5 digit',
   ProductName VARCHAR(50) NOT NULL COMMENT 'Product name',
-  ProductDescription VARCHAR(10) NOT NULL COMMENT 'Product description',
+  ProductDescription VARCHAR(100) NOT NULL COMMENT 'Product description',
   ProductUnit VARCHAR(10) NOT NULL COMMENT 'Product unit',
-  ProductPrice INT NOT NULL COMMENT 'Product price',
-  ProductProcurementPrice INT NOT NULL COMMENT 'Price of procurement in specific product',
+  ProductPrice INT(10) NOT NULL COMMENT 'Product price',
+  ProductProcurementPrice INT(10) NOT NULL COMMENT 'Price of procurement in specific product',
   VendorID VARCHAR(8) NOT NULL COMMENT 'Vendor ID',
-  ActualVolume VARCHAR(10) NOT NULL DEFAULT 0 COMMENT 'Stock quantity that stores in the inventory',
+  ActualVolume INT(10) NOT NULL DEFAULT 0 COMMENT 'Stock quantity that stores in the inventory',
   PRIMARY KEY (ProductID),
   CONSTRAINT Product_ProductID_fk1
     FOREIGN KEY (VendorID)
@@ -136,8 +136,8 @@ DROP TABLE IF EXISTS SalesOrderLine ;
 CREATE TABLE SalesOrderLine (
   SalesOrderID VARCHAR(14) NOT NULL COMMENT 'Sales order ID',
   ProductID VARCHAR(6) NOT NULL COMMENT 'Product ID',
-  Quantity INT NOT NULL COMMENT 'Product quantity in specific sales order',
-  ProductPrice INT NOT NULL COMMENT 'Prodcut price',
+  Quantity INT(10) NOT NULL COMMENT 'Product quantity in specific sales order',
+  ProductPrice INT(10) NOT NULL COMMENT 'Prodcut price',
   PRIMARY KEY (SalesOrderID, ProductID),
   CONSTRAINT SalesOrderLine_SalesOrderID_fk1
     FOREIGN KEY (SalesOrderID)
@@ -179,8 +179,8 @@ DROP TABLE IF EXISTS ProcurementOrderLine ;
 CREATE TABLE ProcurementOrderLine (
   ProcurementOrderID VARCHAR(14) NOT NULL COMMENT 'Procurement order ID',
   ProductID VARCHAR(6) NOT NULL COMMENT 'Product ID',
-  Quantity INT NOT NULL COMMENT 'Product quantity in specific procurement order',
-  ProductProcurementPrice INT NOT NULL COMMENT 'Price of procurement in specific product',
+  Quantity INT(10) NOT NULL COMMENT 'Product quantity in specific procurement order',
+  ProductProcurementPrice INT(10) NOT NULL COMMENT 'Price of procurement in specific product',
   PRIMARY KEY (ProcurementOrderID, ProductID),
   CONSTRAINT ProcurementOrderLine_ProcurementOrderID_fk1
     FOREIGN KEY (ProcurementOrderID)
