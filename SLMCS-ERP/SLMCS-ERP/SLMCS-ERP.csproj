@@ -47,16 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-=======
     <Compile Include="DBConnection.cs" />
->>>>>>> master
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,18 +74,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-=======
     <Compile Include="TestConnection.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TestConnection.Designer.cs">
       <DependentUpon>TestConnection.cs</DependentUpon>
     </Compile>
->>>>>>> master
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
