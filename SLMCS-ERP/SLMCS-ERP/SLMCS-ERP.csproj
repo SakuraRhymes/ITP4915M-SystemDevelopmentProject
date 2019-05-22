@@ -47,49 +47,64 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmMain.cs">
+    <Compile Include="UI\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
+    <Compile Include="UI\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="DBConnection.cs" />
-    <Compile Include="frmLogin.cs">
+    <Compile Include="UI\Login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
+    <Compile Include="UI\Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSales.cs">
+    <Compile Include="UI\Sales\frmNewSalesOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSales.Designer.cs">
-      <DependentUpon>frmSales.cs</DependentUpon>
+    <Compile Include="UI\Sales\frmNewSalesOrder.Designer.cs">
+      <DependentUpon>frmNewSalesOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHome.cs">
+    <Compile Include="UI\Sales\frmSalesMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHome.Designer.cs">
+    <Compile Include="UI\Sales\frmSalesMain.Designer.cs">
+      <DependentUpon>frmSalesMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Home\frmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Home\frmHome.Designer.cs">
       <DependentUpon>frmHome.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <Compile Include="TestConnection.cs">
+    <Compile Include="UI\Sales\frmSalesOrderRecords.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TestConnection.Designer.cs">
+    <Compile Include="UI\Sales\frmSalesOrderRecords.Designer.cs">
+      <DependentUpon>frmSalesOrderRecords.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Test\TestConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test\TestConnection.Designer.cs">
       <DependentUpon>TestConnection.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmLogin.resx">
+    <EmbeddedResource Include="UI\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSales.resx">
-      <DependentUpon>frmSales.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Sales\frmNewSalesOrder.resx">
+      <DependentUpon>frmNewSalesOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHome.resx">
+    <EmbeddedResource Include="UI\Sales\frmSalesMain.resx">
+      <DependentUpon>frmSalesMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Home\frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -101,8 +116,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TestConnection.resx">
+    <EmbeddedResource Include="Test\TestConnection.resx">
       <DependentUpon>TestConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Sales\frmSalesOrderRecords.resx">
+      <DependentUpon>frmSalesOrderRecords.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

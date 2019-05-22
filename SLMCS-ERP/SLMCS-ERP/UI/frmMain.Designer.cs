@@ -46,7 +46,8 @@
             // 
             // penalTopNavigation
             // 
-            this.penalTopNavigation.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.penalTopNavigation.BackColor = System.Drawing.SystemColors.Control;
+            this.penalTopNavigation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.penalTopNavigation.Controls.Add(this.btnLogout);
             this.penalTopNavigation.Controls.Add(this.labelSystemName);
             this.penalTopNavigation.Controls.Add(this.btnUserManagement);
@@ -66,7 +67,7 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(1082, 30);
+            this.btnLogout.Location = new System.Drawing.Point(1082, 24);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(75, 23);
             this.btnLogout.TabIndex = 2;
@@ -76,16 +77,16 @@
             // labelSystemName
             // 
             this.labelSystemName.AutoSize = true;
-            this.labelSystemName.Font = new System.Drawing.Font("PMingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.labelSystemName.Location = new System.Drawing.Point(43, 30);
+            this.labelSystemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labelSystemName.Location = new System.Drawing.Point(11, 24);
             this.labelSystemName.Name = "labelSystemName";
-            this.labelSystemName.Size = new System.Drawing.Size(179, 21);
+            this.labelSystemName.Size = new System.Drawing.Size(211, 25);
             this.labelSystemName.TabIndex = 1;
             this.labelSystemName.Text = "SLMCS ERP System";
             // 
             // btnUserManagement
             // 
-            this.btnUserManagement.Location = new System.Drawing.Point(902, 82);
+            this.btnUserManagement.Location = new System.Drawing.Point(870, 76);
             this.btnUserManagement.Margin = new System.Windows.Forms.Padding(2);
             this.btnUserManagement.Name = "btnUserManagement";
             this.btnUserManagement.Size = new System.Drawing.Size(117, 29);
@@ -96,7 +97,7 @@
             // 
             // btnDispatch
             // 
-            this.btnDispatch.Location = new System.Drawing.Point(780, 82);
+            this.btnDispatch.Location = new System.Drawing.Point(748, 76);
             this.btnDispatch.Margin = new System.Windows.Forms.Padding(2);
             this.btnDispatch.Name = "btnDispatch";
             this.btnDispatch.Size = new System.Drawing.Size(90, 29);
@@ -107,7 +108,7 @@
             // 
             // btnReporting
             // 
-            this.btnReporting.Location = new System.Drawing.Point(657, 82);
+            this.btnReporting.Location = new System.Drawing.Point(625, 76);
             this.btnReporting.Margin = new System.Windows.Forms.Padding(2);
             this.btnReporting.Name = "btnReporting";
             this.btnReporting.Size = new System.Drawing.Size(90, 29);
@@ -118,7 +119,7 @@
             // 
             // btnFinance
             // 
-            this.btnFinance.Location = new System.Drawing.Point(531, 82);
+            this.btnFinance.Location = new System.Drawing.Point(499, 76);
             this.btnFinance.Margin = new System.Windows.Forms.Padding(2);
             this.btnFinance.Name = "btnFinance";
             this.btnFinance.Size = new System.Drawing.Size(90, 29);
@@ -129,7 +130,7 @@
             // 
             // btnInventory
             // 
-            this.btnInventory.Location = new System.Drawing.Point(405, 82);
+            this.btnInventory.Location = new System.Drawing.Point(373, 76);
             this.btnInventory.Margin = new System.Windows.Forms.Padding(2);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Size = new System.Drawing.Size(90, 29);
@@ -140,7 +141,7 @@
             // 
             // btnHome
             // 
-            this.btnHome.Location = new System.Drawing.Point(43, 82);
+            this.btnHome.Location = new System.Drawing.Point(11, 76);
             this.btnHome.Margin = new System.Windows.Forms.Padding(2);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(90, 29);
@@ -151,7 +152,7 @@
             // 
             // btnProcurement
             // 
-            this.btnProcurement.Location = new System.Drawing.Point(291, 82);
+            this.btnProcurement.Location = new System.Drawing.Point(259, 76);
             this.btnProcurement.Margin = new System.Windows.Forms.Padding(2);
             this.btnProcurement.Name = "btnProcurement";
             this.btnProcurement.Size = new System.Drawing.Size(90, 29);
@@ -162,7 +163,7 @@
             // 
             // btnSales
             // 
-            this.btnSales.Location = new System.Drawing.Point(170, 83);
+            this.btnSales.Location = new System.Drawing.Point(138, 77);
             this.btnSales.Margin = new System.Windows.Forms.Padding(2);
             this.btnSales.Name = "btnSales";
             this.btnSales.Size = new System.Drawing.Size(90, 29);

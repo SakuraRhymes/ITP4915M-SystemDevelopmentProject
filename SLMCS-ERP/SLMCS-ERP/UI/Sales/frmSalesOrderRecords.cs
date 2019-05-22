@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SLMCS_ERP
+namespace SLMCS_ERP.UI.Sales
 {
-    public partial class frmSales : Form
+    public partial class frmSalesOrderRecords : Form
     {
-        public frmSales()
+        public frmSalesOrderRecords()
         {
             InitializeComponent();
         }
