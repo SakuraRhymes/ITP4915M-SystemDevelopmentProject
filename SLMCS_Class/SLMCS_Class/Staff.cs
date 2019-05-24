@@ -1,4 +1,5 @@
 using System;
+using SLMCS_ERP;
 
 namespace SLMCS_Class.Properties
 {
@@ -10,14 +11,17 @@ namespace SLMCS_Class.Properties
         private string staffName;
         private string staffPhoneNo;
         private Department _department;
+        private DBConnection dbConnection;
         
         public Staff(string staffID, string password)
         {
+            dbConnection = new DBConnection();
+            
             this.staffID = staffID;
             this.password = password;
+            
             if (verify(staffID, password))
             {
-                this.staffName = staffName;
                 Console.WriteLine("login successful");
                 
             }
@@ -29,6 +33,7 @@ namespace SLMCS_Class.Properties
         
         public bool verify(string staffID, string password)
         {
+            
             if (staffID == "s" && password == "p")
             {
                 return true;

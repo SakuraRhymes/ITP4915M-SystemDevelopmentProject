@@ -32,12 +32,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.16.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d">
+      <HintPath>..\..\MAC_Mysql_connector\mysql-connector-net-8.0.16-noinstall\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBconnection.cs" />
     <Compile Include="Dealer.cs" />
     <Compile Include="Department.cs" />
     <Compile Include="ProcurementOrder.cs" />
