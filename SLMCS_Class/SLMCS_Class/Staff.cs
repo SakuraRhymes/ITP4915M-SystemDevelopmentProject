@@ -10,8 +10,8 @@ namespace SLMCS_Class.Properties
         private string staffName;
         private string staffPhoneNo;
         private Department _department;
-
-        public Staff(string staffID, string password, string staffName)
+        
+        public Staff(string staffID, string password)
         {
             this.staffID = staffID;
             this.password = password;
@@ -26,7 +26,7 @@ namespace SLMCS_Class.Properties
                 Console.WriteLine("password or id invalid");
             }
         }
-
+        
         public bool verify(string staffID, string password)
         {
             if (staffID == "s" && password == "p")
@@ -35,17 +35,17 @@ namespace SLMCS_Class.Properties
             }
             return false;
         }
-
+        
         public void setDepartment(Department _department)
         {
             this._department = _department;
         }
-
+        
         public Department getDepartment()
         {
             return _department;
         }
-
+        
         public override string ToString()
         {
             return staffName;
