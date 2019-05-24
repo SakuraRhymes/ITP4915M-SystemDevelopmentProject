@@ -8,15 +8,10 @@ namespace SLMCS_Class
     {
         public static void Main(string[] args)
         {
-            DBConnection db = new DBConnection();
-            if (db.openConnection())
-            {
-                Console.WriteLine("OK");
-            }
-            else
-            {
-                Console.WriteLine("NO");
-            }
+            Department po = new Department("s","sd");
+            Staff s1 = new Staff("S19002708", "u1s5tw051");
+            
+            Console.WriteLine(s1);
         }
     }
 }

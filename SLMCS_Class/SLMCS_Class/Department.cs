@@ -8,7 +8,7 @@ namespace SLMCS_Class
         private string departmentID;
         private string departmentName;
         private List<Staff> _staff;
-
+        
         public Department(string departmentID, string departmentName)
         {
             this.departmentID = departmentID;
