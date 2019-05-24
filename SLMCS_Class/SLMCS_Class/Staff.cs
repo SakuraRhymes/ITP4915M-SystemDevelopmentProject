@@ -52,6 +52,21 @@ namespace SLMCS_Class.Properties
             }
             return false;
         }
+
+        public void changePassword(string newPassword)
+        {
+            if (verify(staffID, password))
+            {
+                dbConnection.update("Staff", "Password='" + newPassword + "'", "WHERE StaffID='" + staffID + "'");
+                setPassword(newPassword);
+            }
+        }
+
+        public string forgetPassword()
+        {
+            return "";
+        }
+
 //        all get set method below
         public void setStaffID(string newStaffID)
         {
@@ -62,6 +77,17 @@ namespace SLMCS_Class.Properties
         {
             return staffID;
         }
+        
+        public void setPassword(string newPassword)
+        {
+            password = newPassword;
+        }
+
+        public string getPassword()
+        {
+            return staffID;
+        }
+        
         public void setStaffName(string newStaffName)
         {
             staffName = newStaffName;
@@ -81,11 +107,11 @@ namespace SLMCS_Class.Properties
         {
             return _department;
         }
-     
         
         public override string ToString()
         {
-            return staffName + ", " + staffPhoneNo + ", " + staffPositionID + ", " + departmentID ;
+            string staffDetail = staffID + ", " + password + ", ";
+            return staffDetail + staffName + ", " + staffPhoneNo + ", " + staffPositionID + ", " + departmentID ;
         }
     }
 }

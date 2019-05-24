@@ -8,9 +8,11 @@ namespace SLMCS_Class
     {
         public static void Main(string[] args)
         {
-            Department po = new Department("s","sd");
-            Staff s1 = new Staff("S19002708", "u1s5tw051");
+            Staff s1 = new Staff("S19002708", "546456");
             
+            Console.WriteLine(s1);
+            
+            s1.changePassword("wqehge324");
             Console.WriteLine(s1);
         }
     }
