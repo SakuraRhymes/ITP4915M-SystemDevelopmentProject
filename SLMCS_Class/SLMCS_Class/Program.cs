@@ -8,11 +8,11 @@ namespace SLMCS_Class
     {
         public static void Main(string[] args)
         {
-            Staff s1 = new Staff("S19002708", "546456");
+            Staff s1 = new Staff("S19002708", "wqehge324");
             
             Console.WriteLine(s1);
             
-            s1.changePassword("wqehge324");
+            s1.changePassword("sss");
             Console.WriteLine(s1);
         }
     }
