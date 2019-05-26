@@ -31,6 +31,27 @@ namespace SLMCS_Class
             return _staff;
         }
         
+        //get set method
+        public void setDepartmentID(string departmentID)
+        {
+            this.departmentID = departmentID;
+        }
+        
+        public string getDepartmentID()
+        {
+            return departmentID;
+        }
+        
+        public void setDepartmentName(string departmentName)
+        {
+            this.departmentName = departmentName;
+        }
+        
+        public string getDepartmentName()
+        {
+            return departmentName;
+        }
+        
         public override string ToString()
         {
             return "Department ID: " + departmentID + " Department Name: " + departmentName;

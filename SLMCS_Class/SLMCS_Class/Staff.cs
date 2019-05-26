@@ -11,16 +11,24 @@ namespace SLMCS_Class.Properties
         private string passwordChangeDate;
         private string staffName;
         private string staffPhoneNo;
-        private string staffPositionID;
+        private string staffPositionID;//determine the system function
         private string departmentID;
-        private Department _department;
+
         private DBConnection dbConnection;
         private DataTable staffTable;
         
-        public Staff(string staffID, string password)
+        private Department _department; //may don't need
+        
+        public Staff()
         {
             dbConnection = new DBConnection();
-            if (verify(staffID, password))
+        }
+        //login the system via staffID and password
+        public bool login(string staffID, string password)
+        {
+            string query = "SELECT * FROM Staff WHERE StaffID='" + staffID +  "' AND Password='" + password + "'";
+            staffTable = dbConnection.getDataTable(query);
+            if (staffTable.Rows.Count == 1)
             {
                 this.staffID = staffID;
                 this.password = password;
@@ -31,42 +39,42 @@ namespace SLMCS_Class.Properties
                 staffPhoneNo = (string) rows[0]["StaffPhoneNo"];
                 staffPositionID = (string) rows[0]["StaffPositionID"];
                 departmentID = (string) rows[0]["DepartmentID"];
-                
-                //only for testing Console.WriteLine
-                Console.WriteLine(passwordChangeDate);
-                Console.WriteLine("login successful");
-            }
-            else
-            {
-                Console.WriteLine("password or id invalid");
-            }
-        }
-        
-        private bool verify(string staffID, string password)
-        {
-            string query = "SELECT * FROM Staff WHERE StaffID='" + staffID +  "' AND Password='" + password + "'";
-            staffTable = dbConnection.getDataTable(query);
-            if (staffTable.Rows.Count == 1)
-            {
+                Console.WriteLine("login successful"); // for testing
                 return true;
             }
+            Console.WriteLine("password or id invalid"); // for testing
             return false;
         }
-
-        public void changePassword(string newPassword)
+        //change staff login password
+        public bool changePassword(string newPassword)
         {
-            if (verify(staffID, password))
+            if (login(staffID, password))
             {
-                dbConnection.update("Staff", "Password='" + newPassword + "'", "WHERE StaffID='" + staffID + "'");
+                dbConnection.update("Staff", "Password='" + newPassword + "', PasswordChangeDate="+ "CURDATE()" + "", "WHERE StaffID='" + staffID + "'");
                 setPassword(newPassword);
+                setPasswordChangeDate((DateTime.Today).ToString("dd/MM/yyyy"));
+                Console.WriteLine("change successful"); // for testing
+                return true;
             }
+            Console.WriteLine("change fail"); // for testing
+            return false;
         }
-
-        public string forgetPassword()
+        //staffName and staffPhoneNo for checking the password
+        public string forgetPassword(string staffName, string staffPhoneNo)
         {
-            return "";
+            if (this.staffName.Equals(staffName) && this.staffPhoneNo.Equals(staffPhoneNo))
+            {
+                return password;
+            }  
+            return "input wrong, please try again!";
         }
-
+        
+        //CreateStaffAccount incomplete
+        public bool CreateStaffAccount(string staffName, string staffPhoneNo, string staffPositionID,string departmentID)
+        {
+            return false;
+        }
+        
 //        all get set method below
         public void setStaffID(string newStaffID)
         {
@@ -78,7 +86,7 @@ namespace SLMCS_Class.Properties
             return staffID;
         }
         
-        public void setPassword(string newPassword)
+        private void setPassword(string newPassword)
         {
             password = newPassword;
         }
@@ -98,6 +106,16 @@ namespace SLMCS_Class.Properties
             return staffName;
         }
         
+        public void setPasswordChangeDate(string passwordChangeDate)
+        {
+            this.passwordChangeDate = passwordChangeDate;
+        }
+
+        public string getPasswordChangeDate()
+        {
+            return passwordChangeDate;
+        }
+        
         public void setDepartment(Department _department)
         {
             this._department = _department;
@@ -107,7 +125,7 @@ namespace SLMCS_Class.Properties
         {
             return _department;
         }
-        
+
         public override string ToString()
         {
             string staffDetail = staffID + ", " + password + ", ";
