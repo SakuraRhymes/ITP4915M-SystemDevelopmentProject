@@ -1,3 +1,4 @@
+using System;
 using SLMCS_ERP;
 using System.Data;
 
@@ -19,15 +20,13 @@ namespace SLMCS_Class
 
         public Product()
         {
-            
+            dbConnection = new DBConnection();
         }
 
-        public void CreateProduct(string productName, string productDescription, string productUnit, int productPrice, int productProcurementPrice, string vendorID)
+        public void CreateProduct(string productType, string productName, string productDescription, string productUnit, int productPrice, int productProcurementPrice, string vendorID)
         {
-            dbConnection = new DBConnection();
-            
-
-            string query = "INSERT INTO Product VALUE ";
+            string productID = GetNextProductID(productType);
+            string query = "INSERT INTO Product VALUES (''" + productID + "','" + productName + "','" + productUnit + "," + productPrice + "," + productProcurementPrice + ",'" + vendorID + "',0)";
             
             ProductName = productName;
             ProductDescription = productDescription;
@@ -36,55 +35,32 @@ namespace SLMCS_Class
             ProductProcurementPrice = productProcurementPrice;
             VendorID = vendorID;
         }
-        
-        public string GetNextProductID()
+        //not testing
+        public string GetNextProductID(string productType)
         {
-            return "";
+            string query = "SELECT MAX(productID) FROM Product WHERE productID LIKE '" + productType +"%'";
+            productTable = dbConnection.getDataTable(query);
+            
+            DataRow[] rows = productTable.Select();
+            string productIDFull = (string)rows[0]["MAX(productID)"];
+            string productIDNum = productIDFull.Substring(1);
+            string nextProductID = productType + (Convert.ToInt32(productIDNum) + 1);
+            return nextProductID;
         }
-        
-        
-        
+
+        public DataTable GetProdcutTable()
+        {
+            string query = "SELECT * FROM Product LIMIT 10";
+            return dbConnection.getDataTable(query);
+        }
+
         //get set method
-        public string ProductName
-        {
-            get => productName;
-            set => productName = value;
-        }
-
-        public string ProductDescription
-        {
-            get => productDescription;
-            set => productDescription = value;
-        }
-
-        public string ProductUnit
-        {
-            get => productUnit;
-            set => productUnit = value;
-        }
-
-        public int ProductPrice
-        {
-            get => productPrice;
-            set => productPrice = value;
-        }
-
-        public int ProductProcurementPrice
-        {
-            get => productProcurementPrice;
-            set => productProcurementPrice = value;
-        }
-
-        public string VendorID
-        {
-            get => vendorID;
-            set => vendorID = value;
-        }
-
-        public int ActualVolume
-        {
-            get => actualVolume;
-            set => actualVolume = value;
-        }
+        public string ProductName { get; set; }
+        public string ProductDescription { get; set; }
+        public string ProductUnit { get; set; }
+        public int ProductPrice { get; set; }
+        public int ProductProcurementPrice { get; set; }
+        public string VendorID { get; set; }
+        public int ActualVolume { get; set; }
     }
 }

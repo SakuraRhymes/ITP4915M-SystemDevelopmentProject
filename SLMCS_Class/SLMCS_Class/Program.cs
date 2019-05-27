@@ -8,10 +8,10 @@ namespace SLMCS_Class
     {
         public static void Main(string[] args)
         {
-            Staff s1 = new Staff();
-            s1.Verify("S19002708", "aa");
-            Console.WriteLine(s1.Password);
-            Console.WriteLine(s1.PasswordChangeDate);
+            Product product = new Product();
+
+            Console.WriteLine(product.GetNextProductID("A"));
+            
         }
     }
 }

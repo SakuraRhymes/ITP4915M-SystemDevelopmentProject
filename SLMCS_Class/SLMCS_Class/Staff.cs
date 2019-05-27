@@ -85,55 +85,15 @@ namespace SLMCS_Class.Properties
         }
         
 //        all get set method below
-        public string StaffID
-        {
-            get => staffID;
-            set => staffID = value;
-        }
-
-        public string Password
-        {
-            get => password;
-            set => password = value;
-        }
-
-        public string PasswordChangeDate
-        {
-            get => passwordChangeDate;
-            set => passwordChangeDate = value;
-        }
-
-        public string StaffName
-        {
-            get => staffName;
-            set => staffName = value;
-        }
-
-        public string StaffPhoneNo
-        {
-            get => staffPhoneNo;
-            set => staffPhoneNo = value;
-        }
-
-        public string StaffPositionId
-        {
-            get => staffPositionID;
-            set => staffPositionID = value;
-        }
-
-        public string DepartmentId
-        {
-            get => departmentID;
-            set => departmentID = value;
-        }
-
-
+        public string StaffID { get; set; }
+        public string Password { get; set; }
+        public string PasswordChangeDate { get; set; }
+        public string StaffName { get; set; }
+        public string StaffPhoneNo { get; set; }
+        public string StaffPositionId { get; set; }
+        public string DepartmentId { get; set; }
         //may don't need
-        public Department Department
-        {
-            get => _department;
-            set => _department = value;
-        }
+        public Department Department { get; set; }
 
         public override string ToString()
         {
