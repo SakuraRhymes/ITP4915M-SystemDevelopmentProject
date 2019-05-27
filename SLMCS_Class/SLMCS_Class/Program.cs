@@ -9,8 +9,12 @@ namespace SLMCS_Class
         public static void Main(string[] args)
         {
             Staff s1 = new Staff();
-            s1.login("S19002708", "werwer");
-            Console.WriteLine(s1.forgetPassword("Tisdal","41300364487"));
+            s1.verify("S19002708", "werwer");
+            Console.WriteLine(s1.Password);
+            Console.WriteLine(s1.PasswordChangeDate);
+            Console.WriteLine(s1.forgetPassword("Tisdale", "41300364487"));
+            Console.WriteLine(s1.changePassword("neeeee"));
+            Console.WriteLine(s1);
         }
     }
 }

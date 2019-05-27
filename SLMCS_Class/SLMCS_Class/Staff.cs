@@ -16,15 +16,13 @@ namespace SLMCS_Class.Properties
 
         private DBConnection dbConnection;
         private DataTable staffTable;
-        
-        private Department _department; //may don't need
-        
+
         public Staff()
         {
             dbConnection = new DBConnection();
         }
         //login the system via staffID and password
-        public bool login(string staffID, string password)
+        public bool verify(string staffID, string password)
         {
             string query = "SELECT * FROM Staff WHERE StaffID='" + staffID +  "' AND Password='" + password + "'";
             staffTable = dbConnection.getDataTable(query);
@@ -48,11 +46,11 @@ namespace SLMCS_Class.Properties
         //change staff login password
         public bool changePassword(string newPassword)
         {
-            if (login(staffID, password))
+            if (verify(staffID, password))
             {
                 dbConnection.update("Staff", "Password='" + newPassword + "', PasswordChangeDate="+ "CURDATE()" + "", "WHERE StaffID='" + staffID + "'");
-                setPassword(newPassword);
-                setPasswordChangeDate((DateTime.Today).ToString("dd/MM/yyyy"));
+                Password = newPassword;
+                PasswordChangeDate = DateTime.Today.ToString("dd/MM/yyyy");
                 Console.WriteLine("change successful"); // for testing
                 return true;
             }
@@ -74,56 +72,53 @@ namespace SLMCS_Class.Properties
         {
             return false;
         }
+        //new Staff ID for creation
+        public string NextStaffID()
+        {
+            return "";
+        }
         
 //        all get set method below
-        public void setStaffID(string newStaffID)
+        public string StaffID
         {
-            staffID = newStaffID;
-        }
-
-        public string getStaffID()
-        {
-            return staffID;
+            get { return staffID;}
+            set { staffName = value; }
         }
         
-        private void setPassword(string newPassword)
+        public string Password
         {
-            password = newPassword;
-        }
-
-        public string getPassword()
-        {
-            return staffID;
+            get { return password;}
+            set { password = value; }
         }
         
-        public void setStaffName(string newStaffName)
+        public string PasswordChangeDate
         {
-            staffName = newStaffName;
-        }
-
-        public string getStaffName()
-        {
-            return staffName;
+            get { return passwordChangeDate;}
+            set { passwordChangeDate = value; }
         }
         
-        public void setPasswordChangeDate(string passwordChangeDate)
+        public string StaffName
         {
-            this.passwordChangeDate = passwordChangeDate;
-        }
-
-        public string getPasswordChangeDate()
-        {
-            return passwordChangeDate;
+            get { return staffName;}
+            set { staffName = value; }
         }
         
-        public void setDepartment(Department _department)
+        public string StaffPhoneNo
         {
-            this._department = _department;
+            get { return staffPhoneNo;}
+            set { staffPhoneNo = value; }
         }
         
-        public Department getDepartment()
+        public string StaffPositionID
         {
-            return _department;
+            get { return staffPositionID;}
+            set { staffPositionID = value; }
+        }
+        
+        public string DepartmentID
+        {
+            get { return departmentID;}
+            set { departmentID = value; }
         }
 
         public override string ToString()
