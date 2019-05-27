@@ -10,6 +10,11 @@ namespace SLMCS_Class
 
         public string ProductID { get; set; }
 
+        public int Quantity { get; set; }
+
+        public double ProductPrice { get; set; }
+
+
         public double getSubtotalPrice()
         {
             return productPrice * quantity;
