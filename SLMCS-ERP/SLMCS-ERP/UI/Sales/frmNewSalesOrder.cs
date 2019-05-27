@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SLMCS_Class;
+using System;
 using System.Windows.Forms;
 
 namespace SLMCS_ERP.UI.Sales
@@ -17,8 +11,13 @@ namespace SLMCS_ERP.UI.Sales
             InitializeComponent();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void BtnAddItem_Click(object sender, EventArgs e)
         {
+            string productID = txtSearchForProduct.Text;
+            Product product = new Product();
+
+            //dgvOrderItem.DataSource = product.SearchForProduct(productID);
+
 
         }
     }

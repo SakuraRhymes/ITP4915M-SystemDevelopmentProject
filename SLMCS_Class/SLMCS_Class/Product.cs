@@ -54,6 +54,12 @@ namespace SLMCS_Class
             return dbConnection.getDataTable(query);
         }
 
+        public DataTable SearchForProduct(string productID)
+        {
+            string query = "SELECT * FROM Product WHERE productID = '" + productID + "'";
+            return dbConnection.getDataTable(query);
+        }
+
         //get set method
         public string ProductName { get; set; }
         public string ProductDescription { get; set; }
