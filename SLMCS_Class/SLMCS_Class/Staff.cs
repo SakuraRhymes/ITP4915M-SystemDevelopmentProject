@@ -16,13 +16,15 @@ namespace SLMCS_Class.Properties
 
         private DBConnection dbConnection;
         private DataTable staffTable;
-
+        
+        private Department _department; //may don't need
+        
         public Staff()
         {
             dbConnection = new DBConnection();
         }
         //login the system via staffID and password
-        public bool verify(string staffID, string password)
+        public bool Verify(string staffID, string password)
         {
             string query = "SELECT * FROM Staff WHERE StaffID='" + staffID +  "' AND Password='" + password + "'";
             staffTable = dbConnection.getDataTable(query);
@@ -44,9 +46,9 @@ namespace SLMCS_Class.Properties
             return false;
         }
         //change staff login password
-        public bool changePassword(string newPassword)
+        public bool ChangePassword(string newPassword)
         {
-            if (verify(staffID, password))
+            if (Verify(staffID, password))
             {
                 dbConnection.update("Staff", "Password='" + newPassword + "', PasswordChangeDate="+ "CURDATE()" + "", "WHERE StaffID='" + staffID + "'");
                 Password = newPassword;
@@ -58,12 +60,16 @@ namespace SLMCS_Class.Properties
             return false;
         }
         //staffName and staffPhoneNo for checking the password
-        public string forgetPassword(string staffName, string staffPhoneNo)
+        public string ForgetPassword(string staffName, string staffPhoneNo)
         {
-            if (this.staffName.Equals(staffName) && this.staffPhoneNo.Equals(staffPhoneNo))
+            if (Verify(staffID, password))
             {
-                return password;
-            }  
+                if (this.staffName.Equals(staffName) && this.staffPhoneNo.Equals(staffPhoneNo))
+                {
+                    return password;
+                }
+            }
+
             return "input wrong, please try again!";
         }
         
@@ -73,7 +79,7 @@ namespace SLMCS_Class.Properties
             return false;
         }
         //new Staff ID for creation
-        public string NextStaffID()
+        public string GetNextStaffID()
         {
             return "";
         }
@@ -81,44 +87,52 @@ namespace SLMCS_Class.Properties
 //        all get set method below
         public string StaffID
         {
-            get { return staffID;}
-            set { staffName = value; }
+            get => staffID;
+            set => staffID = value;
         }
-        
+
         public string Password
         {
-            get { return password;}
-            set { password = value; }
+            get => password;
+            set => password = value;
         }
-        
+
         public string PasswordChangeDate
         {
-            get { return passwordChangeDate;}
-            set { passwordChangeDate = value; }
+            get => passwordChangeDate;
+            set => passwordChangeDate = value;
         }
-        
+
         public string StaffName
         {
-            get { return staffName;}
-            set { staffName = value; }
+            get => staffName;
+            set => staffName = value;
         }
-        
+
         public string StaffPhoneNo
         {
-            get { return staffPhoneNo;}
-            set { staffPhoneNo = value; }
+            get => staffPhoneNo;
+            set => staffPhoneNo = value;
         }
-        
-        public string StaffPositionID
+
+        public string StaffPositionId
         {
-            get { return staffPositionID;}
-            set { staffPositionID = value; }
+            get => staffPositionID;
+            set => staffPositionID = value;
         }
-        
-        public string DepartmentID
+
+        public string DepartmentId
         {
-            get { return departmentID;}
-            set { departmentID = value; }
+            get => departmentID;
+            set => departmentID = value;
+        }
+
+
+        //may don't need
+        public Department Department
+        {
+            get => _department;
+            set => _department = value;
         }
 
         public override string ToString()

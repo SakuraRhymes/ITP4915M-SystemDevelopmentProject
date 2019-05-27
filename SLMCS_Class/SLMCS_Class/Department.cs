@@ -7,41 +7,43 @@ namespace SLMCS_Class
     {
         private string departmentID;
         private string departmentName;
-        private List<Staff> _staff;
+        //private List<Staff> _staff; //may don't need
         
-        public Department(string departmentID, string departmentName)
-        {
-            this.departmentID = departmentID;
-            this.departmentName = departmentName;
-            _staff = new List<Staff>();
+        public Department()
+        { 
+            //_staff = new List<Staff>();
         }
 
-        public void addStaff(Staff staff)
-        {
-            _staff.Add(staff);
-        }
-
-        public void removeStaff(Staff staff)
-        {
-            _staff.Remove(staff);
-        }
-
-        public List<Staff> getStaff()
-        {
-            return _staff;
-        }
+        //may don't need
+//        public void addStaff(Staff staff)
+//        {
+//            _staff.Add(staff);
+//        }
+//
+//        public void removeStaff(Staff staff)
+//        {
+//            _staff.Remove(staff);
+//        }
+//
+//        public List<Staff> getStaff()
+//        {
+//            return _staff;
+//        }
         
         //get set method
-        public void setDepartmentID(string departmentID)
+        public string DepartmentID
         {
-            this.departmentID = departmentID;
+            get { return departmentID; }
+            set { departmentID = value; }
         }
         
-        public string getDepartmentID()
+        public string DepartmentName
         {
-            return departmentID;
+            get { return departmentName; }
+            set { departmentName = value; }
         }
-        
+
+        //may don't need
         public void setDepartmentName(string departmentName)
         {
             this.departmentName = departmentName;
