@@ -30,11 +30,14 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.btnStockRecord = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel1.Controls.Add(this.btnStockRecord);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -49,6 +52,15 @@
             this.panelContent.Size = new System.Drawing.Size(986, 566);
             this.panelContent.TabIndex = 1;
             // 
+            // btnStockRecord
+            // 
+            this.btnStockRecord.Location = new System.Drawing.Point(47, 28);
+            this.btnStockRecord.Name = "btnStockRecord";
+            this.btnStockRecord.Size = new System.Drawing.Size(97, 43);
+            this.btnStockRecord.TabIndex = 0;
+            this.btnStockRecord.Text = "Stock Record";
+            this.btnStockRecord.UseVisualStyleBackColor = true;
+            // 
             // frmInventoryMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -59,6 +71,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmInventoryMain";
             this.Text = "frmInventoryMain";
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -67,5 +80,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelContent;
+        private System.Windows.Forms.Button btnStockRecord;
     }
 }
