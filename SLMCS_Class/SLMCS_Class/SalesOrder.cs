@@ -14,5 +14,25 @@ namespace SLMCS_Class
         private string salesDispatchDate;
         private string salesDeliveryDate;
         private string salesOrderStatus;
+
+        public void updateStatus(string status)
+        {
+            salesOrderStatus = status;
+        }
+
+        public List<SalesOrder> _SalesOrderLine {
+            get;
+            set;
+        }
+
+        public double getTotalPrice()
+        {
+            double total = 0;
+            foreach (var salesOrderLine in _salesOrderLine)
+            {
+                total += salesOrderLine.getSubtotalPrice();
+            }
+            return total;
+        }
     }
 }
