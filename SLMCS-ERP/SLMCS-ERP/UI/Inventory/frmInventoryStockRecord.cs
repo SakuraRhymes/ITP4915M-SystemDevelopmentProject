@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using SLMCS_Class;
 
 namespace SLMCS_ERP
 {
@@ -15,6 +9,19 @@ namespace SLMCS_ERP
         public frmInventoryStockRecord()
         {
             InitializeComponent();
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            Product product = new Product();
+            dgvStockRecord.DataSource = product.GetProdcutTable();
+
+            DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
+              
+            chk.HeaderText = "";
+            chk.Name = "chk";
+            dgvStockRecord.Columns.Add(chk);
+            dgvStockRecord.Columns["chk"].DisplayIndex = 0;
         }
     }
 }

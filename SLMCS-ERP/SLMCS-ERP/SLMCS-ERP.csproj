@@ -60,6 +60,12 @@
     <Compile Include="UI\Inventory\frmInventoryMain.Designer.cs">
       <DependentUpon>frmInventoryMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Inventory\frmInventoryNewProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Inventory\frmInventoryNewProduct.Designer.cs">
+      <DependentUpon>frmInventoryNewProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Inventory\frmInventoryStockRecord.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     <EmbeddedResource Include="UI\Inventory\frmInventoryMain.resx">
       <DependentUpon>frmInventoryMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Inventory\frmInventoryNewProduct.resx">
+      <DependentUpon>frmInventoryNewProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Inventory\frmInventoryStockRecord.resx">
       <DependentUpon>frmInventoryStockRecord.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +161,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SLMCS_Class\SLMCS_Class\SLMCS_Class.csproj">
+      <Project>{aa21ef45-3b71-4831-afa6-770195f29a56}</Project>
+      <Name>SLMCS_Class</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

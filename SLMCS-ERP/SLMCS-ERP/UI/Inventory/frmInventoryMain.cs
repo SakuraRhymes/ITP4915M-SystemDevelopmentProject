@@ -15,6 +15,24 @@ namespace SLMCS_ERP
         public frmInventoryMain()
         {
             InitializeComponent();
+            frmInventoryStockRecord inventoryStockRecord = new frmInventoryStockRecord();
+            navigation(inventoryStockRecord, panelContent);
+        }
+
+        private void navigation(Form form, Panel panel)
+        {
+            form.TopLevel = false;
+            panelContent.Controls.Clear();
+            panelContent.Controls.Add(form);
+            form.Show();
+        }
+
+        private void BtnStockRecord_Click(object sender, EventArgs e)
+        {
+            frmInventoryStockRecord inventoryStockRecord = new frmInventoryStockRecord();
+            navigation(inventoryStockRecord, panelContent);
         }
     }
+
+    
 }

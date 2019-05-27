@@ -50,7 +50,7 @@ namespace SLMCS_Class
 
         public DataTable GetProdcutTable()
         {
-            string query = "SELECT * FROM Product LIMIT 10";
+            string query = "SELECT ProductID,ProductName,ProductUnit FROM Product LIMIT 20";
             return dbConnection.getDataTable(query);
         }
 

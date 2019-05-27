@@ -41,25 +41,26 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 566);
+            this.panel1.Size = new System.Drawing.Size(150, 566);
             this.panel1.TabIndex = 0;
             // 
             // panelContent
             // 
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(200, 0);
+            this.panelContent.Location = new System.Drawing.Point(150, 0);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(986, 566);
+            this.panelContent.Size = new System.Drawing.Size(1036, 566);
             this.panelContent.TabIndex = 1;
             // 
             // btnStockRecord
             // 
-            this.btnStockRecord.Location = new System.Drawing.Point(47, 28);
+            this.btnStockRecord.Location = new System.Drawing.Point(24, 27);
             this.btnStockRecord.Name = "btnStockRecord";
             this.btnStockRecord.Size = new System.Drawing.Size(97, 43);
             this.btnStockRecord.TabIndex = 0;
             this.btnStockRecord.Text = "Stock Record";
             this.btnStockRecord.UseVisualStyleBackColor = true;
+            this.btnStockRecord.Click += new System.EventHandler(this.BtnStockRecord_Click);
             // 
             // frmInventoryMain
             // 
