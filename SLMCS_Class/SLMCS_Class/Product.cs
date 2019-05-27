@@ -48,9 +48,13 @@ namespace SLMCS_Class
             return nextProductID;
         }
 
-        public DataTable GetProdcutTable()
+        public DataTable GetProdcutTable(string condition)
         {
-            string query = "SELECT ProductID,ProductName,ProductUnit FROM Product LIMIT 20";
+            string query = "SELECT ProductID,ProductType,ProductName,ProductUnit FROM Product ";
+            if (condition != "")
+            {
+                query += condition;
+            }
             return dbConnection.getDataTable(query);
         }
 

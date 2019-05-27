@@ -14,14 +14,26 @@ namespace SLMCS_ERP
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             Product product = new Product();
-            dgvStockRecord.DataSource = product.GetProdcutTable();
+            //if (txtProductID.Text != "")
+            //{
+            //    dgvStockRecord.DataSource = product.GetProdcutTable("WHERE ProductID LIKE '" + txtProductID.Text + "%'");
+            //}
+            if (cboProductType.Text !="")
+            {
+                dgvStockRecord.DataSource = product.GetProdcutTable("WHERE ProductType = '" + cboProductType.Text + "'");
+            }
+            else
+            {
+                dgvStockRecord.DataSource = product.GetProdcutTable("");
+            }
+            
 
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
               
-            chk.HeaderText = "";
-            chk.Name = "chk";
-            dgvStockRecord.Columns.Add(chk);
-            dgvStockRecord.Columns["chk"].DisplayIndex = 0;
+            //chk.HeaderText = "";
+            //chk.Name = "chk";
+            //dgvStockRecord.Columns.Add(chk);
+            //dgvStockRecord.Columns["chk"].DisplayIndex = 0;
         }
     }
 }

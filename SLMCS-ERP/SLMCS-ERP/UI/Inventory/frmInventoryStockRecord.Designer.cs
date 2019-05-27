@@ -39,7 +39,7 @@
             this.txtProductID = new System.Windows.Forms.TextBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboProductType = new System.Windows.Forms.ComboBox();
             this.lblProductPrice = new System.Windows.Forms.Label();
             this.lblProductName = new System.Windows.Forms.Label();
             this.btnNewProduct = new System.Windows.Forms.Button();
@@ -98,7 +98,7 @@
             this.groupBox1.Controls.Add(this.txtProductID);
             this.groupBox1.Controls.Add(this.comboBox3);
             this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cboProductType);
             this.groupBox1.Controls.Add(this.lblProductPrice);
             this.groupBox1.Controls.Add(this.lblProductName);
             this.groupBox1.Controls.Add(this.btnSearch);
@@ -156,13 +156,18 @@
             this.comboBox2.Size = new System.Drawing.Size(68, 20);
             this.comboBox2.TabIndex = 7;
             // 
-            // comboBox1
+            // cboProductType
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(100, 59);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(68, 20);
-            this.comboBox1.TabIndex = 6;
+            this.cboProductType.FormattingEnabled = true;
+            this.cboProductType.Items.AddRange(new object[] {
+            "Sheet Metal",
+            "Major Assemblies",
+            "Light Components",
+            "Accessories"});
+            this.cboProductType.Location = new System.Drawing.Point(100, 59);
+            this.cboProductType.Name = "cboProductType";
+            this.cboProductType.Size = new System.Drawing.Size(131, 20);
+            this.cboProductType.TabIndex = 6;
             // 
             // lblProductPrice
             // 
@@ -245,7 +250,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 470);
+            this.ClientSize = new System.Drawing.Size(793, 470);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
@@ -276,7 +281,7 @@
         private System.Windows.Forms.TextBox txtProductID;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboProductType;
         private System.Windows.Forms.Label lblProductPrice;
         private System.Windows.Forms.Label lblProductName;
         private System.Windows.Forms.Button btnNewProduct;
