@@ -23,10 +23,10 @@ namespace SLMCS_Class
             dbConnection = new DBConnection();
         }
 
-        public void CreateProduct(string productType, string productName, string productDescription, string productUnit, int productPrice, int productProcurementPrice, string vendorID)
+        public void CreateProduct(string productName, string productType, string productDescription, string productUnit, int productPrice, int productProcurementPrice, string vendorID)
         {
             string productID = GetNextProductID(productType);
-            string query = "INSERT INTO Product VALUES (''" + productID + "','" + productName + "','" + productUnit + "," + productPrice + "," + productProcurementPrice + ",'" + vendorID + "',0)";
+            string query = "INSERT INTO Product VALUES (''" + productID + "','" + productName + "','" + productUnit + "," + productPrice + "," + productProcurementPrice + ",'" + vendorID + "',0,0)";
             
             ProductName = productName;
             ProductDescription = productDescription;

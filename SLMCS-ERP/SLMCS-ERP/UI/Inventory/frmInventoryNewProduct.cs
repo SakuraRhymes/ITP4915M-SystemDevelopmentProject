@@ -1,20 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SLMCS_ERP.UI.Inventory
+namespace SLMCS_ERP
 {
     public partial class frmInventoryNewProduct : Form
     {
         public frmInventoryNewProduct()
         {
             InitializeComponent();
+        }
+
+        private void BtnSubmit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -37,8 +37,8 @@
             this.txtStockQuantity = new System.Windows.Forms.TextBox();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.txtProductID = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboProductPrice = new System.Windows.Forms.ComboBox();
+            this.cboStockQuantity = new System.Windows.Forms.ComboBox();
             this.cboProductType = new System.Windows.Forms.ComboBox();
             this.lblProductPrice = new System.Windows.Forms.Label();
             this.lblProductName = new System.Windows.Forms.Label();
@@ -96,8 +96,8 @@
             this.groupBox1.Controls.Add(this.txtStockQuantity);
             this.groupBox1.Controls.Add(this.txtProductName);
             this.groupBox1.Controls.Add(this.txtProductID);
-            this.groupBox1.Controls.Add(this.comboBox3);
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.cboProductPrice);
+            this.groupBox1.Controls.Add(this.cboStockQuantity);
             this.groupBox1.Controls.Add(this.cboProductType);
             this.groupBox1.Controls.Add(this.lblProductPrice);
             this.groupBox1.Controls.Add(this.lblProductName);
@@ -140,21 +140,21 @@
             this.txtProductID.Size = new System.Drawing.Size(131, 22);
             this.txtProductID.TabIndex = 9;
             // 
-            // comboBox3
+            // cboProductPrice
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(100, 119);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(68, 20);
-            this.comboBox3.TabIndex = 8;
+            this.cboProductPrice.FormattingEnabled = true;
+            this.cboProductPrice.Location = new System.Drawing.Point(100, 119);
+            this.cboProductPrice.Name = "cboProductPrice";
+            this.cboProductPrice.Size = new System.Drawing.Size(68, 20);
+            this.cboProductPrice.TabIndex = 8;
             // 
-            // comboBox2
+            // cboStockQuantity
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(100, 91);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(68, 20);
-            this.comboBox2.TabIndex = 7;
+            this.cboStockQuantity.FormattingEnabled = true;
+            this.cboStockQuantity.Location = new System.Drawing.Point(100, 91);
+            this.cboStockQuantity.Name = "cboStockQuantity";
+            this.cboStockQuantity.Size = new System.Drawing.Size(68, 20);
+            this.cboStockQuantity.TabIndex = 7;
             // 
             // cboProductType
             // 
@@ -195,6 +195,7 @@
             this.btnNewProduct.TabIndex = 5;
             this.btnNewProduct.Text = "New";
             this.btnNewProduct.UseVisualStyleBackColor = true;
+            this.btnNewProduct.Click += new System.EventHandler(this.BtnNewProduct_Click);
             // 
             // btnEditProduct
             // 
@@ -279,8 +280,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.TextBox txtProductID;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboProductPrice;
+        private System.Windows.Forms.ComboBox cboStockQuantity;
         private System.Windows.Forms.ComboBox cboProductType;
         private System.Windows.Forms.Label lblProductPrice;
         private System.Windows.Forms.Label lblProductName;

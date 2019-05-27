@@ -18,22 +18,31 @@ namespace SLMCS_ERP
             //{
             //    dgvStockRecord.DataSource = product.GetProdcutTable("WHERE ProductID LIKE '" + txtProductID.Text + "%'");
             //}
-            if (cboProductType.Text !="")
-            {
-                dgvStockRecord.DataSource = product.GetProdcutTable("WHERE ProductType = '" + cboProductType.Text + "'");
-            }
-            else
-            {
-                dgvStockRecord.DataSource = product.GetProdcutTable("");
-            }
+            //if (cboProductType.Text !="")
+            //{
+            //    dgvStockRecord.DataSource = product.GetProdcutTable("WHERE ProductType = '" + cboProductType.Text + "'");
+            //}
+            //if (txtProductName.Text != "")
+            //{
+            //    dgvStockRecord.DataSource = product.GetProdcutTable("WHERE ProductName LIKE '" + txtProductName.Text + "%'");
+            //}
+            
+            dgvStockRecord.DataSource = product.GetProdcutTable("");
+            
             
 
-            DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
+            //DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
               
             //chk.HeaderText = "";
             //chk.Name = "chk";
             //dgvStockRecord.Columns.Add(chk);
             //dgvStockRecord.Columns["chk"].DisplayIndex = 0;
+        }
+
+        private void BtnNewProduct_Click(object sender, EventArgs e)
+        {
+            frmInventoryNewProduct inventoryNewProduct = new frmInventoryNewProduct();
+            inventoryNewProduct.Show();
         }
     }
 }
