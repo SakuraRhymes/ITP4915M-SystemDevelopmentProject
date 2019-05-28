@@ -22,10 +22,18 @@ namespace SLMCS_Class
         private DBConnection dbConnection;
         private DataTable salesOrderTable;
 
+        public string SalesOrderID { get; set; }
+        public string StaffID { get; set; }
+        public string SalesOrderDate { get; set; }
+
+
         public SalesOrder()
         {
             _salesOrderLine = new List<SalesOrderLine>();
             dbConnection = new DBConnection();
+            salesOrderID = "SO999999999";
+            staffID = "jjjjj";
+            salesOrderDate = "11/22/33";
         }
 
         public string GetNextSalesOrderID()
