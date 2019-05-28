@@ -1,0 +1,38 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace SLMCS_ERP
+{
+    public partial class frmInventoryMain : Form
+    {
+        public frmInventoryMain()
+        {
+            InitializeComponent();
+            frmInventoryStockRecord inventoryStockRecord = new frmInventoryStockRecord();
+            navigation(inventoryStockRecord, panelContent);
+        }
+
+        private void navigation(Form form, Panel panel)
+        {
+            form.TopLevel = false;
+            panelContent.Controls.Clear();
+            panelContent.Controls.Add(form);
+            form.Show();
+        }
+
+        private void BtnStockRecord_Click(object sender, EventArgs e)
+        {
+            frmInventoryStockRecord inventoryStockRecord = new frmInventoryStockRecord();
+            navigation(inventoryStockRecord, panelContent);
+        }
+    }
+
+    
+}

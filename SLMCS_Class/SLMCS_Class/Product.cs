@@ -23,10 +23,10 @@ namespace SLMCS_Class
             dbConnection = new DBConnection();
         }
 
-        public void CreateProduct(string productType, string productName, string productDescription, string productUnit, int productPrice, int productProcurementPrice, string vendorID)
+        public void CreateProduct(string productName, string productType, string productDescription, string productUnit, int productPrice, int productProcurementPrice, string vendorID)
         {
             string productID = GetNextProductID(productType);
-            string query = "INSERT INTO Product VALUES (''" + productID + "','" + productName + "','" + productUnit + "," + productPrice + "," + productProcurementPrice + ",'" + vendorID + "',0)";
+            string query = "INSERT INTO Product VALUES (''" + productID + "','" + productName + "','" + productUnit + "," + productPrice + "," + productProcurementPrice + ",'" + vendorID + "',0,0)";
             
             ProductName = productName;
             ProductDescription = productDescription;
@@ -48,9 +48,13 @@ namespace SLMCS_Class
             return nextProductID;
         }
 
-        public DataTable GetProdcutTable()
+        public DataTable GetProdcutTable(string condition)
         {
-            string query = "SELECT * FROM Product LIMIT 10";
+            string query = "SELECT ProductID,ProductType,ProductName,ProductUnit FROM Product ";
+            if (condition != "")
+            {
+                query += condition;
+            }
             return dbConnection.getDataTable(query);
         }
 
