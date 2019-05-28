@@ -33,7 +33,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnAddItem = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,10 +53,10 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtOrderQunatity = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItem)).BeginInit();
@@ -69,6 +69,7 @@
             this.dgvOrderItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrderItem.Location = new System.Drawing.Point(20, 306);
             this.dgvOrderItem.Name = "dgvOrderItem";
+            this.dgvOrderItem.ReadOnly = true;
             this.dgvOrderItem.RowTemplate.Height = 23;
             this.dgvOrderItem.Size = new System.Drawing.Size(879, 179);
             this.dgvOrderItem.TabIndex = 18;
@@ -109,18 +110,18 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "Total Amount :";
             // 
-            // button6
+            // btnDelete
             // 
-            this.button6.Location = new System.Drawing.Point(333, 89);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(179, 23);
-            this.button6.TabIndex = 13;
-            this.button6.Text = "Delete Selected Item";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(556, 68);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(179, 23);
+            this.btnDelete.TabIndex = 13;
+            this.btnDelete.Text = "Delete Selected Item";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnAddItem
             // 
-            this.btnAddItem.Location = new System.Drawing.Point(333, 53);
+            this.btnAddItem.Location = new System.Drawing.Point(556, 29);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(179, 23);
             this.btnAddItem.TabIndex = 11;
@@ -266,7 +267,7 @@
             // txtSearchForProduct
             // 
             this.txtSearchForProduct.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtSearchForProduct.Location = new System.Drawing.Point(132, 20);
+            this.txtSearchForProduct.Location = new System.Drawing.Point(133, 30);
             this.txtSearchForProduct.Name = "txtSearchForProduct";
             this.txtSearchForProduct.Size = new System.Drawing.Size(129, 22);
             this.txtSearchForProduct.TabIndex = 19;
@@ -275,15 +276,15 @@
             // 
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.txtOrderQunatity);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.txtSearchForProduct);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.btnAddItem);
-            this.groupBox2.Controls.Add(this.button6);
+            this.groupBox2.Controls.Add(this.btnDelete);
             this.groupBox2.Location = new System.Drawing.Point(20, 162);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(879, 128);
@@ -293,7 +294,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(431, 24);
+            this.label15.Location = new System.Drawing.Point(432, 73);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(66, 12);
             this.label15.TabIndex = 26;
@@ -302,34 +303,16 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(331, 24);
+            this.label14.Location = new System.Drawing.Point(335, 73);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(65, 12);
             this.label14.TabIndex = 25;
             this.label14.Text = "Availability :";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(130, 94);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(66, 12);
-            this.label12.TabIndex = 24;
-            this.label12.Text = "Not available";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(20, 94);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(72, 12);
-            this.label13.TabIndex = 23;
-            this.label13.Text = "Product Desc :";
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(130, 58);
+            this.label10.Location = new System.Drawing.Point(432, 34);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(66, 12);
             this.label10.TabIndex = 22;
@@ -338,16 +321,33 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(20, 58);
+            this.label11.Location = new System.Drawing.Point(332, 34);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(77, 12);
             this.label11.TabIndex = 21;
             this.label11.Text = "Product Name :";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(21, 73);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(51, 12);
+            this.label16.TabIndex = 20;
+            this.label16.Text = "Quantity :";
+            // 
+            // txtOrderQunatity
+            // 
+            this.txtOrderQunatity.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtOrderQunatity.Location = new System.Drawing.Point(133, 69);
+            this.txtOrderQunatity.Name = "txtOrderQunatity";
+            this.txtOrderQunatity.Size = new System.Drawing.Size(129, 22);
+            this.txtOrderQunatity.TabIndex = 19;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(20, 24);
+            this.label7.Location = new System.Drawing.Point(21, 34);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 12);
             this.label7.TabIndex = 20;
@@ -387,13 +387,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvOrderItem;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAddItem;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtDealerID;
@@ -413,11 +411,12 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtOrderQunatity;
+        internal System.Windows.Forms.DataGridView dgvOrderItem;
     }
 }

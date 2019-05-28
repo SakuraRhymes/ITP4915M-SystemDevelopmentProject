@@ -56,9 +56,8 @@ namespace SLMCS_Class
             salesOrderStatus = status;
         }
 
-        public List<SalesOrder> _SalesOrderLine {
-            get;
-            set;
+        public List<SalesOrderLine> _SalesOrderLine {
+            get => _salesOrderLine;          
         }
 
         public double getTotalPrice()
@@ -69,6 +68,12 @@ namespace SLMCS_Class
                 total += salesOrderLine.getSubtotalPrice();
             }
             return total;
+        }
+
+        public void addProduct(Product product, int quantity)
+        {
+            SalesOrderLine salesOrderLine = new SalesOrderLine(this, product, quantity, product.ProductPrice);
+            _salesOrderLine.Add(salesOrderLine);
         }
     }
 }

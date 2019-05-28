@@ -24,5 +24,9 @@ namespace SLMCS_Class
         {
             return productPrice * quantity;
         }
+
+        public string ProductID {
+            get => product.ProductID;
+         }
     }
 }

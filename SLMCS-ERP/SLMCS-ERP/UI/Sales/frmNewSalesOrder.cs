@@ -13,20 +13,22 @@ namespace SLMCS_ERP.UI.Sales
         {
             InitializeComponent();
             salesOrder = new SalesOrder();
+            dgvOrderItem.DataSource = salesOrder._SalesOrderLine;
         }
 
         private void BtnAddItem_Click(object sender, EventArgs e)
         {
             string productID = txtSearchForProduct.Text;
+            int quantity = Convert.ToInt32(txtOrderQunatity.Text);
             Product product = new Product(productID);
 
-            MessageBox.Show(product.ProductName);
-            dgvOrderItem.DataSource = product;
-
+            salesOrder.addProduct(product, quantity);
+            
+            dgvOrderItem.DataSource = null;
+            dgvOrderItem.DataSource = salesOrder._SalesOrderLine;
 
             //salesOrder.GetNextSalesOrderID();
             //dgvOrderItem.DataSource = product.SearchForProduct(productID);
-
 
         }
     }
