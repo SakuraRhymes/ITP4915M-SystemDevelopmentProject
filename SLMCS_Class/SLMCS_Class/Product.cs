@@ -13,7 +13,8 @@ namespace SLMCS_Class
         private int productPrice;
         private int productProcurementPrice;
         private string vendorID;
-        private int actualVolume;
+        private int actualQuantity;
+        private int reserveQuantity;
         
         private DBConnection dbConnection;
         private DataTable productTable;
@@ -21,6 +22,22 @@ namespace SLMCS_Class
         public Product()
         {
             dbConnection = new DBConnection();
+        }
+        public Product(string productID)
+        {
+            string query = "SELECT * FROM Product WHERE ProductID ='" + productID + "'";
+            productTable = dbConnection.getDataTable(query);
+            DataRow[] rows = productTable.Select();
+
+            this.productID = (string)rows[0]["ProductID"];
+            this.productName = (string)rows[0]["ProductName"];
+            this.productDescription = (string)rows[0]["ProductDescription"];
+            this.productUnit = (string)rows[0]["ProductUnit"];
+            this.productPrice = (int)rows[0]["ProductPrice"];
+            this.productProcurementPrice = (int)rows[0]["ProductProcurementPrice"];
+            this.vendorID = (string)rows[0]["VendorID"];
+            this.actualQuantity = (int)rows[0]["ActualQuantity"];
+            this.reserveQuantity = (int)rows[0]["ReserveQuantity"];
         }
 
         public void CreateProduct(string productName, string productType, string productDescription, string productUnit, int productPrice, int productProcurementPrice, string vendorID)
