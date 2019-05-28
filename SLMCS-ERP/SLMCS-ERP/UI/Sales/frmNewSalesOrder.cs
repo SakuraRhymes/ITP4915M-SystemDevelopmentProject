@@ -18,9 +18,10 @@ namespace SLMCS_ERP.UI.Sales
         private void BtnAddItem_Click(object sender, EventArgs e)
         {
             string productID = txtSearchForProduct.Text;
-            Product product = new Product();
+            Product product = new Product(productID);
 
-            DataTable productTable = product.SearchForProduct(productID);
+            MessageBox.Show(product.ProductName);
+            dgvOrderItem.DataSource = product;
 
 
             //salesOrder.GetNextSalesOrderID();
