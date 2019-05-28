@@ -1,6 +1,7 @@
 using System;
 using SLMCS_ERP;
 using System.Data;
+using MySql.Data.MySqlClient;
 
 namespace SLMCS_Class
 {
@@ -28,7 +29,7 @@ namespace SLMCS_Class
         {
             dbConnection = new DBConnection();
             string query = "SELECT * FROM Product WHERE ProductID ='" + productID + "'";
-            productTable = dbConnection.getDataTable(query);
+            productTable = dbConnection.GetDataTable(query);
             DataRow[] rows = productTable.Select();
 
             ProductID = (string) rows[0]["ProductID"];
@@ -42,32 +43,55 @@ namespace SLMCS_Class
             ReserveQuantity = (int) rows[0]["ReserveQuantity"];
         }
 
-        public void CreateProduct(string productName, string productType, string productDescription, string productUnit,
-            int productPrice, int productProcurementPrice, string vendorID)
+        public void CreateNewProduct(string productName, string productType, string productDescription, string productUnit,
+            string productPrice, string vendorID)
         {
             string productID = GetNextProductID(productType);
-            string query = "INSERT INTO Product VALUES (''" + productID + "','" + productName + "','" + productUnit +
-                           "," + productPrice + "," + productProcurementPrice + ",'" + vendorID + "',0,0)";
-
-            ProductName = productName;
-            ProductDescription = productDescription;
-            ProductUnit = productUnit;
-            ProductPrice = productPrice;
-            ProductProcurementPrice = productProcurementPrice;
-            VendorID = vendorID;
+            string query = "INSERT INTO Product VALUES ('" + productID + "','" + productName + "','" + productType +"','" + productDescription 
+                            + "','" + productUnit + "'," + productPrice + "," + "NULL" + ",'" + vendorID + "',0,0,0)";
+            try
+            {
+                dbConnection.Insert(query);
+            }
+            catch (MySqlException ex)
+            {
+                throw ex;
+            }
         }
 
         //not testing
         public string GetNextProductID(string productType)
         {
-            string query = "SELECT MAX(productID) FROM Product WHERE productID LIKE '" + productType + "%'";
-            productTable = dbConnection.getDataTable(query);
+            string productTypeChar = "";
+            switch(productType)
+            {
+                case "Sheet Metal":
+                    productTypeChar = "A";
+                    break;
+                case "Major Assemblies":
+                    productTypeChar = "B";
+                    break;
+                case "Light Components":
+                    productTypeChar = "C";
+                    break;
+                case "Accessories":
+                    productTypeChar = "D";
+                    break;
+            }
+            string query = "SELECT MAX(productID) FROM Product WHERE productID LIKE '" + productTypeChar + "%'";
+            productTable = dbConnection.GetDataTable(query);
 
             DataRow[] rows = productTable.Select();
             string productIDFull = (string) rows[0]["MAX(productID)"];
+     
             string productIDNum = productIDFull.Substring(1);
-            string nextProductID = productType + (Convert.ToInt32(productIDNum) + 1);
-            return nextProductID;
+            string fillZore = "";
+            string nextProductID = (Convert.ToInt32(productIDNum) + 1).ToString();
+            for (int i=nextProductID.Length; i<5; i++)
+            {
+                fillZore += "0";
+            }
+            return productTypeChar + fillZore + nextProductID;
         }
 
         public DataTable GetProdcutTable(string condition)
@@ -78,7 +102,7 @@ namespace SLMCS_Class
                 query += condition;
             }
 
-            return dbConnection.getDataTable(query);
+            return dbConnection.GetDataTable(query);
         }
 
         //get set method

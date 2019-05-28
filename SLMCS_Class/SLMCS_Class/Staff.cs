@@ -27,7 +27,7 @@ namespace SLMCS_Class.Properties
         public bool Verify(string staffID, string password)
         {
             string query = "SELECT * FROM Staff WHERE StaffID='" + staffID +  "' AND Password='" + password + "'";
-            staffTable = dbConnection.getDataTable(query);
+            staffTable = dbConnection.GetDataTable(query);
             if (staffTable.Rows.Count == 1)
             {
                 this.staffID = staffID;
@@ -50,7 +50,7 @@ namespace SLMCS_Class.Properties
         {
             if (Verify(staffID, password))
             {
-                dbConnection.update("Staff", "Password='" + newPassword + "', PasswordChangeDate="+ "CURDATE()" + "", "WHERE StaffID='" + staffID + "'");
+                dbConnection.Update("Staff", "Password='" + newPassword + "', PasswordChangeDate="+ "CURDATE()" + "", "WHERE StaffID='" + staffID + "'");
                 Password = newPassword;
                 PasswordChangeDate = DateTime.Today.ToString("dd/MM/yyyy");
                 Console.WriteLine("change successful"); // for testing

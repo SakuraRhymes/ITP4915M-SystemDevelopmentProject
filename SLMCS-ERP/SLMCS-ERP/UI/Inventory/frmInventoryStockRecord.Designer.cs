@@ -49,6 +49,8 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
+            this.txtVendorID = new System.Windows.Forms.TextBox();
+            this.lblVendorID = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockRecord)).BeginInit();
             this.SuspendLayout();
@@ -92,6 +94,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtVendorID);
+            this.groupBox1.Controls.Add(this.lblVendorID);
             this.groupBox1.Controls.Add(this.txtProductPrice);
             this.groupBox1.Controls.Add(this.txtStockQuantity);
             this.groupBox1.Controls.Add(this.txtProductName);
@@ -128,7 +132,7 @@
             // 
             // txtProductName
             // 
-            this.txtProductName.Location = new System.Drawing.Point(368, 26);
+            this.txtProductName.Location = new System.Drawing.Point(368, 59);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(135, 22);
             this.txtProductName.TabIndex = 10;
@@ -181,7 +185,7 @@
             // lblProductName
             // 
             this.lblProductName.AutoSize = true;
-            this.lblProductName.Location = new System.Drawing.Point(285, 29);
+            this.lblProductName.Location = new System.Drawing.Point(285, 62);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(77, 12);
             this.lblProductName.TabIndex = 4;
@@ -247,6 +251,22 @@
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = true;
             // 
+            // txtVendorID
+            // 
+            this.txtVendorID.Location = new System.Drawing.Point(368, 26);
+            this.txtVendorID.Name = "txtVendorID";
+            this.txtVendorID.Size = new System.Drawing.Size(135, 22);
+            this.txtVendorID.TabIndex = 14;
+            // 
+            // lblVendorID
+            // 
+            this.lblVendorID.AutoSize = true;
+            this.lblVendorID.Location = new System.Drawing.Point(301, 29);
+            this.lblVendorID.Name = "lblVendorID";
+            this.lblVendorID.Size = new System.Drawing.Size(61, 12);
+            this.lblVendorID.TabIndex = 13;
+            this.lblVendorID.Text = "Vendor ID :";
+            // 
             // frmInventoryStockRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -294,5 +314,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox txtProductPrice;
         private System.Windows.Forms.TextBox txtStockQuantity;
+        private System.Windows.Forms.TextBox txtVendorID;
+        private System.Windows.Forms.Label lblVendorID;
     }
 }

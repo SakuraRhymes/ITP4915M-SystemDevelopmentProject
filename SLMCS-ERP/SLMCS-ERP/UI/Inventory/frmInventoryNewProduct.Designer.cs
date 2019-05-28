@@ -38,15 +38,16 @@
             this.txtProductPrice = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboProductUnit = new System.Windows.Forms.ComboBox();
             this.lblProductUnit = new System.Windows.Forms.Label();
             this.lblVendor = new System.Windows.Forms.Label();
+            this.txtVendorID = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblProductType
             // 
             this.lblProductType.AutoSize = true;
-            this.lblProductType.Location = new System.Drawing.Point(51, 42);
+            this.lblProductType.Location = new System.Drawing.Point(51, 48);
             this.lblProductType.Name = "lblProductType";
             this.lblProductType.Size = new System.Drawing.Size(74, 12);
             this.lblProductType.TabIndex = 0;
@@ -55,7 +56,7 @@
             // lblProductName
             // 
             this.lblProductName.AutoSize = true;
-            this.lblProductName.Location = new System.Drawing.Point(48, 78);
+            this.lblProductName.Location = new System.Drawing.Point(48, 84);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(77, 12);
             this.lblProductName.TabIndex = 1;
@@ -64,7 +65,7 @@
             // lblProductDescription
             // 
             this.lblProductDescription.AutoSize = true;
-            this.lblProductDescription.Location = new System.Drawing.Point(22, 146);
+            this.lblProductDescription.Location = new System.Drawing.Point(22, 152);
             this.lblProductDescription.Name = "lblProductDescription";
             this.lblProductDescription.Size = new System.Drawing.Size(103, 12);
             this.lblProductDescription.TabIndex = 2;
@@ -73,7 +74,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(52, 254);
+            this.label4.Location = new System.Drawing.Point(52, 253);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 12);
             this.label4.TabIndex = 3;
@@ -87,69 +88,70 @@
             "Major Assemblies",
             "Light Components",
             "Accessories"});
-            this.cboProductType.Location = new System.Drawing.Point(131, 39);
+            this.cboProductType.Location = new System.Drawing.Point(131, 45);
             this.cboProductType.Name = "cboProductType";
             this.cboProductType.Size = new System.Drawing.Size(146, 20);
-            this.cboProductType.TabIndex = 4;
+            this.cboProductType.TabIndex = 1;
             // 
             // txtProductName
             // 
-            this.txtProductName.Location = new System.Drawing.Point(131, 75);
+            this.txtProductName.Location = new System.Drawing.Point(131, 81);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(146, 22);
-            this.txtProductName.TabIndex = 5;
+            this.txtProductName.TabIndex = 2;
             // 
             // rtbProductDescription
             // 
-            this.rtbProductDescription.Location = new System.Drawing.Point(131, 146);
+            this.rtbProductDescription.Location = new System.Drawing.Point(131, 152);
             this.rtbProductDescription.Name = "rtbProductDescription";
             this.rtbProductDescription.Size = new System.Drawing.Size(229, 85);
-            this.rtbProductDescription.TabIndex = 6;
+            this.rtbProductDescription.TabIndex = 4;
             this.rtbProductDescription.Text = "";
             // 
             // txtProductPrice
             // 
-            this.txtProductPrice.Location = new System.Drawing.Point(131, 251);
+            this.txtProductPrice.Location = new System.Drawing.Point(131, 250);
             this.txtProductPrice.Name = "txtProductPrice";
             this.txtProductPrice.Size = new System.Drawing.Size(78, 22);
-            this.txtProductPrice.TabIndex = 7;
+            this.txtProductPrice.TabIndex = 5;
+            this.txtProductPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtProductPrice_KeyPress);
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(285, 296);
+            this.btnSubmit.Location = new System.Drawing.Point(285, 280);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmit.TabIndex = 8;
+            this.btnSubmit.TabIndex = 6;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(202, 296);
+            this.btnReset.Location = new System.Drawing.Point(202, 280);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(75, 23);
-            this.btnReset.TabIndex = 9;
+            this.btnReset.TabIndex = 7;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
-            // comboBox1
+            // cboProductUnit
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cboProductUnit.FormattingEnabled = true;
+            this.cboProductUnit.Items.AddRange(new object[] {
             "piece",
             "set",
             "item"});
-            this.comboBox1.Location = new System.Drawing.Point(131, 112);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(78, 20);
-            this.comboBox1.TabIndex = 10;
+            this.cboProductUnit.Location = new System.Drawing.Point(131, 118);
+            this.cboProductUnit.Name = "cboProductUnit";
+            this.cboProductUnit.Size = new System.Drawing.Size(78, 20);
+            this.cboProductUnit.TabIndex = 3;
             // 
             // lblProductUnit
             // 
             this.lblProductUnit.AutoSize = true;
-            this.lblProductUnit.Location = new System.Drawing.Point(55, 115);
+            this.lblProductUnit.Location = new System.Drawing.Point(55, 121);
             this.lblProductUnit.Name = "lblProductUnit";
             this.lblProductUnit.Size = new System.Drawing.Size(70, 12);
             this.lblProductUnit.TabIndex = 11;
@@ -158,20 +160,29 @@
             // lblVendor
             // 
             this.lblVendor.AutoSize = true;
-            this.lblVendor.Location = new System.Drawing.Point(79, 11);
+            this.lblVendor.Location = new System.Drawing.Point(64, 11);
             this.lblVendor.Name = "lblVendor";
-            this.lblVendor.Size = new System.Drawing.Size(46, 12);
+            this.lblVendor.Size = new System.Drawing.Size(61, 12);
             this.lblVendor.TabIndex = 12;
-            this.lblVendor.Text = "Vendor :";
+            this.lblVendor.Text = "Vendor ID :";
+            // 
+            // txtVendorID
+            // 
+            this.txtVendorID.Location = new System.Drawing.Point(131, 8);
+            this.txtVendorID.Name = "txtVendorID";
+            this.txtVendorID.Size = new System.Drawing.Size(100, 22);
+            this.txtVendorID.TabIndex = 0;
+            this.txtVendorID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtVendorID_KeyPress);
             // 
             // frmInventoryNewProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 377);
+            this.ClientSize = new System.Drawing.Size(372, 312);
+            this.Controls.Add(this.txtVendorID);
             this.Controls.Add(this.lblVendor);
             this.Controls.Add(this.lblProductUnit);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboProductUnit);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtProductPrice);
@@ -184,6 +195,7 @@
             this.Controls.Add(this.lblProductType);
             this.Name = "frmInventoryNewProduct";
             this.Text = "New Product";
+            this.Load += new System.EventHandler(this.FrmInventoryNewProduct_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,8 +213,9 @@
         private System.Windows.Forms.TextBox txtProductPrice;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboProductUnit;
         private System.Windows.Forms.Label lblProductUnit;
         private System.Windows.Forms.Label lblVendor;
+        private System.Windows.Forms.TextBox txtVendorID;
     }
 }

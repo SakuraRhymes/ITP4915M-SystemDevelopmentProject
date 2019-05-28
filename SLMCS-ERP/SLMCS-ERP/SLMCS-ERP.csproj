@@ -54,6 +54,12 @@
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="DBConnection.cs" />
+    <Compile Include="UI\Inventory\frmInventoryInwardGood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Inventory\frmInventoryInwardGood.Designer.cs">
+      <DependentUpon>frmInventoryInwardGood.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Inventory\frmInventoryMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,11 +72,23 @@
     <Compile Include="UI\Inventory\frmInventoryNewProduct.Designer.cs">
       <DependentUpon>frmInventoryNewProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Inventory\frmInventoryReorderProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Inventory\frmInventoryReorderProduct.Designer.cs">
+      <DependentUpon>frmInventoryReorderProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Inventory\frmInventoryStockRecord.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Inventory\frmInventoryStockRecord.Designer.cs">
       <DependentUpon>frmInventoryStockRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Inventory\frmInventoryVendorRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Inventory\frmInventoryVendorRecord.Designer.cs">
+      <DependentUpon>frmInventoryVendorRecord.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Login\frmLogin.cs">
       <SubType>Form</SubType>
