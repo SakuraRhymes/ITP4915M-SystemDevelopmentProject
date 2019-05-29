@@ -37,10 +37,11 @@
             // panelContent
             // 
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(0, 0);
+            this.panelContent.Location = new System.Drawing.Point(150, 0);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1036, 566);
+            this.panelContent.Size = new System.Drawing.Size(886, 566);
             this.panelContent.TabIndex = 0;
+            this.panelContent.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelContent_Paint);
             // 
             // panelLeftNavigate
             // 
@@ -48,6 +49,7 @@
             this.panelLeftNavigate.Controls.Add(this.DispatchingList);
             this.panelLeftNavigate.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeftNavigate.Location = new System.Drawing.Point(0, 0);
+            this.panelLeftNavigate.Margin = new System.Windows.Forms.Padding(2);
             this.panelLeftNavigate.Name = "panelLeftNavigate";
             this.panelLeftNavigate.Size = new System.Drawing.Size(150, 566);
             this.panelLeftNavigate.TabIndex = 1;
@@ -68,8 +70,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1036, 566);
-            this.Controls.Add(this.panelLeftNavigate);
             this.Controls.Add(this.panelContent);
+            this.Controls.Add(this.panelLeftNavigate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDispatch";
             this.Text = "frmDispatchMain";

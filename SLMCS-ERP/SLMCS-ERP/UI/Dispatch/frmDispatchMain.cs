@@ -18,5 +18,10 @@ namespace SLMCS_ERP
             panelContent.Controls.Add(form);
             form.Show();
         }
+
+        private void PanelContent_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
