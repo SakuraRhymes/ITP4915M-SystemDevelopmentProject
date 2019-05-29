@@ -7,9 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SLMCS_ERP;
 
-namespace SLMCS_ERP.UI.Dispatch
-{
+
+namespace SLMCS_ERP{
     public partial class frmDispatchingList : Form
     {
         public frmDispatchingList()

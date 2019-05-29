@@ -100,6 +100,7 @@
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(1036, 566);
             this.panelContent.TabIndex = 6;
+            this.panelContent.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelContent_Paint);
             // 
             // frmSales
             // 
