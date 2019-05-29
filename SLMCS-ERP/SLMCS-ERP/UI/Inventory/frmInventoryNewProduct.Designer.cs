@@ -42,6 +42,7 @@
             this.lblProductUnit = new System.Windows.Forms.Label();
             this.lblVendor = new System.Windows.Forms.Label();
             this.txtVendorID = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblProductType
@@ -90,14 +91,14 @@
             "Accessories"});
             this.cboProductType.Location = new System.Drawing.Point(131, 45);
             this.cboProductType.Name = "cboProductType";
-            this.cboProductType.Size = new System.Drawing.Size(146, 20);
+            this.cboProductType.Size = new System.Drawing.Size(156, 20);
             this.cboProductType.TabIndex = 1;
             // 
             // txtProductName
             // 
             this.txtProductName.Location = new System.Drawing.Point(131, 81);
             this.txtProductName.Name = "txtProductName";
-            this.txtProductName.Size = new System.Drawing.Size(146, 22);
+            this.txtProductName.Size = new System.Drawing.Size(156, 22);
             this.txtProductName.TabIndex = 2;
             // 
             // rtbProductDescription
@@ -174,11 +175,22 @@
             this.txtVendorID.TabIndex = 0;
             this.txtVendorID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtVendorID_KeyPress);
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(237, 8);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(50, 23);
+            this.btnSearch.TabIndex = 13;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            // 
             // frmInventoryNewProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(372, 312);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtVendorID);
             this.Controls.Add(this.lblVendor);
             this.Controls.Add(this.lblProductUnit);
@@ -217,5 +229,6 @@
         private System.Windows.Forms.Label lblProductUnit;
         private System.Windows.Forms.Label lblVendor;
         private System.Windows.Forms.TextBox txtVendorID;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SLMCS_ERP.UI.Inventory
+namespace SLMCS_ERP
 {
     public partial class frmInventoryInwardGood : Form
     {

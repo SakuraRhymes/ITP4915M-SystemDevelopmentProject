@@ -1,4 +1,4 @@
-﻿namespace SLMCS_ERP.UI.Inventory
+﻿namespace SLMCS_ERP
 {
     partial class frmInventoryReorderProduct
     {
