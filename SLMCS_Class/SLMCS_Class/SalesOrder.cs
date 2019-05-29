@@ -22,23 +22,27 @@ namespace SLMCS_Class
         private DBConnection dbConnection;
         private DataTable salesOrderTable;
 
-        public string SalesOrderID { get => "SO190529000005"; }
+        public string SalesOrderID { get => salesOrderID; }
         public string StaffID { get => "S19002708"; }
         public string SalesOrderDate { get => "190529"; }
         public string DealerName { get => "fuck YOU Tony"; }
         public string DealerAddress { get => "trash bin"; }
-        public string DealerID { get => "D0000001"; }
+        public string DealerID { get => dealerID;
+            set { dealerID = value; }
+        }
 
 
         public SalesOrder()
         {
             _salesOrderLine = new List<SalesOrderLine>();
             dbConnection = new DBConnection();
+
+            salesOrderID = getNextSalesOrderID();
         }
 
-        public string GetNextSalesOrderID()
+        public string getNextSalesOrderID()
         {
-            string query = "SELECT COUNT(SalesOrderID) FROM SalesOrder WHERE SalesOrderDate = " + DateTime.Now.ToString("yy/mm/dd");
+            string query = "SELECT COUNT(SalesOrderID) FROM SalesOrder WHERE SalesOrderDate = \"" + DateTime.Now.ToString("yyMMdd")+"\"";
             salesOrderTable = dbConnection.getDataTable(query);
 
             string count = "";
@@ -46,9 +50,9 @@ namespace SLMCS_Class
             {
                 count = row["COUNT(SalesOrderID)"].ToString();
             }
-
-            MessageBox.Show(count);
-            return "";
+            count = (Int32.Parse(count) + 1).ToString();
+            string nextOrderID = "SO" + DateTime.Now.ToString("yyMMdd") + count.PadLeft(6, '0');
+            return nextOrderID;
         }
 
         public void updateStatus(string status)

@@ -39,7 +39,7 @@ namespace SLMCS_ERP
 
         }
 
-        private void BtnNewSalesOrder_Click(object sender, EventArgs e)
+        public void BtnNewSalesOrder_Click(object sender, EventArgs e)
         {
             frmNewSalesOrder newSalesOrder = new frmNewSalesOrder();
             navigation(newSalesOrder, panelContent);

@@ -12,12 +12,22 @@ namespace SLMCS_ERP.UI.Sales
         public frmNewSalesOrder()
         {
             InitializeComponent();
+            startUp();
+        }
+
+        private void startUp()
+        {
             salesOrder = new SalesOrder();
 
             lblOrderID.Text = salesOrder.SalesOrderID;
             lblOrderDate.Text = salesOrder.SalesOrderDate;
             lblStaffID.Text = salesOrder.StaffID;
 
+            txtDealerID.Text = "";
+            txtOrderQunatity.Text = "";
+            txtSearchForProduct.Text = "";
+
+            dgvOrderItem.DataSource = null;
             dgvOrderItem.DataSource = salesOrder._SalesOrderLine;
         }
 
@@ -40,12 +50,14 @@ namespace SLMCS_ERP.UI.Sales
         private void BtnPlaceOrder_Click(object sender, EventArgs e)
         {
             salesOrder.placeOrder();
+            startUp();
         }
 
         private void TxtDealerID_TextChanged(object sender, EventArgs e)
         {
             if (txtDealerID.Text.Length == 8)
             {
+                salesOrder.DealerID = txtDealerID.Text;
                 lblDealerName.Text = salesOrder.DealerName;
                 lblDealerAddress.Text = salesOrder.DealerAddress;
             }
