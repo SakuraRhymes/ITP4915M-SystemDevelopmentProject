@@ -23,5 +23,11 @@ namespace SLMCS_ERP
         {
 
         }
+
+        private void DispatchingList_Click(object sender, EventArgs e)
+        {
+            frmDispatchingList dispatchList = new frmDispatchingList();
+            navigation(dispatchList, panelContent);
+        }
     }
 }
