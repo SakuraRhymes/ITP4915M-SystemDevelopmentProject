@@ -1,3 +1,6 @@
+using SLMCS_ERP;
+using System.Windows.Forms;
+
 namespace SLMCS_Class
 {
     public class SalesOrderLine
@@ -8,6 +11,7 @@ namespace SLMCS_Class
         private int quantity;
         private double productPrice;
 
+        private DBConnection dbConnection;
 
         public SalesOrderLine(SalesOrder saleOrder, Product product, int quantity, double productPrice)
         {
@@ -25,6 +29,17 @@ namespace SLMCS_Class
         public string ProductID {
             get => product.ProductID;
          }
+
+        public void placeSalesOrderLine()
+        {
+            dbConnection = new DBConnection();
+
+            string query = "INSERT INTO SalesOrderLine VALUES ('" + _salesOrder.SalesOrderID + "','" + product.ProductID + "','" + quantity +
+               "','" + productPrice + "')";
+
+            MessageBox.Show(query);
+            dbConnection.insert(query);
+        }
 
         public string ProductName { get => product.ProductName; }
 

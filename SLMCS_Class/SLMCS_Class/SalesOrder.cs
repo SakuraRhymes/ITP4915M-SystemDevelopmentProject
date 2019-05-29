@@ -22,7 +22,7 @@ namespace SLMCS_Class
         private DBConnection dbConnection;
         private DataTable salesOrderTable;
 
-        public string SalesOrderID { get => "SO190529000002"; }
+        public string SalesOrderID { get => "SO190529000005"; }
         public string StaffID { get => "S19002708"; }
         public string SalesOrderDate { get => "190529"; }
         public string DealerName { get => "fuck YOU Tony"; }
@@ -81,6 +81,11 @@ namespace SLMCS_Class
             string query = "INSERT INTO SalesOrder VALUES ('" + SalesOrderID + "','" + StaffID + "','" + DealerID +
                            "','" + SalesOrderDate + "','" + SalesOrderDate + "','" + SalesOrderDate + "','" + SalesOrderDate + "','TEST')";
             dbConnection.insert(query);
+
+            foreach(var salesOrderLine in _salesOrderLine)
+            {
+                salesOrderLine.placeSalesOrderLine();
+            }
         }
     }
 }
