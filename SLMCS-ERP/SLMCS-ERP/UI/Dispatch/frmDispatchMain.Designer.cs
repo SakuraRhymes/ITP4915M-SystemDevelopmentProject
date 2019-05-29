@@ -30,6 +30,8 @@
         {
             this.panelContent = new System.Windows.Forms.Panel();
             this.panelLeftNavigate = new System.Windows.Forms.Panel();
+            this.DispatchingList = new System.Windows.Forms.Button();
+            this.panelLeftNavigate.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelContent
@@ -43,11 +45,22 @@
             // panelLeftNavigate
             // 
             this.panelLeftNavigate.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panelLeftNavigate.Controls.Add(this.DispatchingList);
             this.panelLeftNavigate.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeftNavigate.Location = new System.Drawing.Point(0, 0);
             this.panelLeftNavigate.Name = "panelLeftNavigate";
-            this.panelLeftNavigate.Size = new System.Drawing.Size(200, 566);
+            this.panelLeftNavigate.Size = new System.Drawing.Size(150, 566);
             this.panelLeftNavigate.TabIndex = 1;
+            // 
+            // DispatchingList
+            // 
+            this.DispatchingList.Location = new System.Drawing.Point(27, 25);
+            this.DispatchingList.Margin = new System.Windows.Forms.Padding(2);
+            this.DispatchingList.Name = "DispatchingList";
+            this.DispatchingList.Size = new System.Drawing.Size(97, 43);
+            this.DispatchingList.TabIndex = 0;
+            this.DispatchingList.Text = "Dispatching List";
+            this.DispatchingList.UseVisualStyleBackColor = true;
             // 
             // frmDispatch
             // 
@@ -60,6 +73,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDispatch";
             this.Text = "frmDispatchMain";
+            this.panelLeftNavigate.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -68,5 +82,6 @@
 
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Panel panelLeftNavigate;
+        private System.Windows.Forms.Button DispatchingList;
     }
 }
