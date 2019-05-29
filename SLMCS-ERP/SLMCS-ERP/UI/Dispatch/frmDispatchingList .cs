@@ -17,5 +17,10 @@ namespace SLMCS_ERP{
         {
             InitializeComponent();
         }
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

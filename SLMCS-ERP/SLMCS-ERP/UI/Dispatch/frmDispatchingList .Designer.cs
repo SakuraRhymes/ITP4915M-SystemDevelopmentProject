@@ -48,7 +48,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(16, 493);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1172, 154);
@@ -94,6 +94,7 @@
             this.search.TabIndex = 5;
             this.search.Text = "Search";
             this.search.UseVisualStyleBackColor = true;
+            this.search.Click += new System.EventHandler(this.Search_Click);
             // 
             // label1
             // 
@@ -166,7 +167,7 @@
             this.Controls.Add(this.orderId);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDispatchingList";
             this.Text = "frmDispatchingList";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
