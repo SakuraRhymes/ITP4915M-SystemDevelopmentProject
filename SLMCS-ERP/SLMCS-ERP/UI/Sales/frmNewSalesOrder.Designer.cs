@@ -36,7 +36,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAddItem = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblStaffID = new System.Windows.Forms.Label();
             this.lblOrderDate = new System.Windows.Forms.Label();
             this.lblOrderID = new System.Windows.Forms.Label();
             this.txtDealerID = new System.Windows.Forms.TextBox();
@@ -51,9 +51,9 @@
             this.lbl1 = new System.Windows.Forms.Label();
             this.txtSearchForProduct = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.lblProductAvailability = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblProductName = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.txtOrderQunatity = new System.Windows.Forms.TextBox();
@@ -132,7 +132,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.lblStaffID);
             this.groupBox1.Controls.Add(this.lblOrderDate);
             this.groupBox1.Controls.Add(this.lblOrderID);
             this.groupBox1.Controls.Add(this.txtDealerID);
@@ -151,14 +151,14 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
-            // label3
+            // lblStaffID
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(429, 109);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 12);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Not available";
+            this.lblStaffID.AutoSize = true;
+            this.lblStaffID.Location = new System.Drawing.Point(429, 109);
+            this.lblStaffID.Name = "lblStaffID";
+            this.lblStaffID.Size = new System.Drawing.Size(66, 12);
+            this.lblStaffID.TabIndex = 4;
+            this.lblStaffID.Text = "Not available";
             // 
             // lblOrderDate
             // 
@@ -184,6 +184,7 @@
             this.txtDealerID.Name = "txtDealerID";
             this.txtDealerID.Size = new System.Drawing.Size(129, 22);
             this.txtDealerID.TabIndex = 3;
+            this.txtDealerID.TextChanged += new System.EventHandler(this.TxtDealerID_TextChanged);
             // 
             // lblDealerAddress
             // 
@@ -272,12 +273,13 @@
             this.txtSearchForProduct.Name = "txtSearchForProduct";
             this.txtSearchForProduct.Size = new System.Drawing.Size(129, 22);
             this.txtSearchForProduct.TabIndex = 19;
+            this.txtSearchForProduct.TextChanged += new System.EventHandler(this.TxtSearchForProduct_TextChanged);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.lblProductAvailability);
             this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.lblProductName);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.txtOrderQunatity);
@@ -292,14 +294,14 @@
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             // 
-            // label15
+            // lblProductAvailability
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(432, 73);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(66, 12);
-            this.label15.TabIndex = 26;
-            this.label15.Text = "Not available";
+            this.lblProductAvailability.AutoSize = true;
+            this.lblProductAvailability.Location = new System.Drawing.Point(432, 73);
+            this.lblProductAvailability.Name = "lblProductAvailability";
+            this.lblProductAvailability.Size = new System.Drawing.Size(66, 12);
+            this.lblProductAvailability.TabIndex = 26;
+            this.lblProductAvailability.Text = "Not available";
             // 
             // label14
             // 
@@ -310,14 +312,14 @@
             this.label14.TabIndex = 25;
             this.label14.Text = "Availability :";
             // 
-            // label10
+            // lblProductName
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(432, 34);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(66, 12);
-            this.label10.TabIndex = 22;
-            this.label10.Text = "Not available";
+            this.lblProductName.AutoSize = true;
+            this.lblProductName.Location = new System.Drawing.Point(432, 34);
+            this.lblProductName.Name = "lblProductName";
+            this.lblProductName.Size = new System.Drawing.Size(66, 12);
+            this.lblProductName.TabIndex = 22;
+            this.lblProductName.Text = "Not available";
             // 
             // label11
             // 
@@ -403,16 +405,16 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Label lblOrderID;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblStaffID;
         private System.Windows.Forms.Label lblOrderDate;
         private System.Windows.Forms.Label lbl11;
         private System.Windows.Forms.Label lblDealerAddress;
         private System.Windows.Forms.Label lblDealerName;
         private System.Windows.Forms.TextBox txtSearchForProduct;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblProductAvailability;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblProductName;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label17;

@@ -22,18 +22,18 @@ namespace SLMCS_Class
         private DBConnection dbConnection;
         private DataTable salesOrderTable;
 
-        public string SalesOrderID { get; set; }
-        public string StaffID { get; set; }
-        public string SalesOrderDate { get; set; }
+        public string SalesOrderID { get => "SO190529000002"; }
+        public string StaffID { get => "S19002708"; }
+        public string SalesOrderDate { get => "190529"; }
+        public string DealerName { get => "fuck YOU Tony"; }
+        public string DealerAddress { get => "trash bin"; }
+        public string DealerID { get => "D0000001"; }
 
 
         public SalesOrder()
         {
             _salesOrderLine = new List<SalesOrderLine>();
             dbConnection = new DBConnection();
-            salesOrderID = "SO999999999";
-            staffID = "jjjjj";
-            salesOrderDate = "11/22/33";
         }
 
         public string GetNextSalesOrderID()
@@ -74,6 +74,13 @@ namespace SLMCS_Class
         {
             SalesOrderLine salesOrderLine = new SalesOrderLine(this, product, quantity, product.ProductPrice);
             _salesOrderLine.Add(salesOrderLine);
+        }
+
+        public void placeOrder()
+        {
+            string query = "INSERT INTO SalesOrder VALUES ('" + SalesOrderID + "','" + StaffID + "','" + DealerID +
+                           "','" + SalesOrderDate + "','" + SalesOrderDate + "','" + SalesOrderDate + "','" + SalesOrderDate + "','TEST')";
+            dbConnection.insert(query);
         }
     }
 }

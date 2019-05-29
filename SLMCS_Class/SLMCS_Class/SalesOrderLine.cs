@@ -32,5 +32,7 @@ namespace SLMCS_Class
 
         public double ProductPrice { get => productPrice; }
 
+        public double Subtotal { get => getSubtotalPrice(); }
+
     }
 }
