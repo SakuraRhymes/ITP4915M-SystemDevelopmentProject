@@ -1,4 +1,4 @@
-﻿//using SLMCS_ERP.UI.Dispatch;
+﻿using SLMCS_ERP.UI.Dispatch;
 using System;
 using System.Windows.Forms;
 
@@ -9,12 +9,14 @@ namespace SLMCS_ERP
         public frmDispatch()
         {
             InitializeComponent();
+            frmDispatchingList newDispatchingList = new frmDispatchingList();
+            navigation(newDispatchingList, panelContent);
         }
         private void navigation(Form form, Panel panel)
         {
             form.TopLevel = false;
-            panelContent.Controls.Clear();
-            panelContent.Controls.Add(form);
+            panel.Controls.Clear();
+            panel.Controls.Add(form);
             form.Show();
         }
 
@@ -27,6 +29,7 @@ namespace SLMCS_ERP
         {
 
         }
+
     }
 
 }
