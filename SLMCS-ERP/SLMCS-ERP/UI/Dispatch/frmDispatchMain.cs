@@ -1,5 +1,4 @@
-﻿using SLMCS_ERP;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace SLMCS_ERP
