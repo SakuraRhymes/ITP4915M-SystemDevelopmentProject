@@ -1,0 +1,208 @@
+﻿namespace SLMCS_ERP
+{
+    partial class frmInventoryNewProduct
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.lblProductType = new System.Windows.Forms.Label();
+            this.lblProductName = new System.Windows.Forms.Label();
+            this.lblProductDescription = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cboProductType = new System.Windows.Forms.ComboBox();
+            this.txtProductName = new System.Windows.Forms.TextBox();
+            this.rtbProductDescription = new System.Windows.Forms.RichTextBox();
+            this.txtProductPrice = new System.Windows.Forms.TextBox();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lblProductUnit = new System.Windows.Forms.Label();
+            this.lblVendor = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // lblProductType
+            // 
+            this.lblProductType.AutoSize = true;
+            this.lblProductType.Location = new System.Drawing.Point(51, 42);
+            this.lblProductType.Name = "lblProductType";
+            this.lblProductType.Size = new System.Drawing.Size(74, 12);
+            this.lblProductType.TabIndex = 0;
+            this.lblProductType.Text = "Product Type :";
+            // 
+            // lblProductName
+            // 
+            this.lblProductName.AutoSize = true;
+            this.lblProductName.Location = new System.Drawing.Point(48, 78);
+            this.lblProductName.Name = "lblProductName";
+            this.lblProductName.Size = new System.Drawing.Size(77, 12);
+            this.lblProductName.TabIndex = 1;
+            this.lblProductName.Text = "Product Name :";
+            // 
+            // lblProductDescription
+            // 
+            this.lblProductDescription.AutoSize = true;
+            this.lblProductDescription.Location = new System.Drawing.Point(22, 146);
+            this.lblProductDescription.Name = "lblProductDescription";
+            this.lblProductDescription.Size = new System.Drawing.Size(103, 12);
+            this.lblProductDescription.TabIndex = 2;
+            this.lblProductDescription.Text = "Product Description :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(52, 254);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(73, 12);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Product Price :";
+            // 
+            // cboProductType
+            // 
+            this.cboProductType.FormattingEnabled = true;
+            this.cboProductType.Items.AddRange(new object[] {
+            "Sheet Metal",
+            "Major Assemblies",
+            "Light Components",
+            "Accessories"});
+            this.cboProductType.Location = new System.Drawing.Point(131, 39);
+            this.cboProductType.Name = "cboProductType";
+            this.cboProductType.Size = new System.Drawing.Size(146, 20);
+            this.cboProductType.TabIndex = 4;
+            // 
+            // txtProductName
+            // 
+            this.txtProductName.Location = new System.Drawing.Point(131, 75);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(146, 22);
+            this.txtProductName.TabIndex = 5;
+            // 
+            // rtbProductDescription
+            // 
+            this.rtbProductDescription.Location = new System.Drawing.Point(131, 146);
+            this.rtbProductDescription.Name = "rtbProductDescription";
+            this.rtbProductDescription.Size = new System.Drawing.Size(229, 85);
+            this.rtbProductDescription.TabIndex = 6;
+            this.rtbProductDescription.Text = "";
+            // 
+            // txtProductPrice
+            // 
+            this.txtProductPrice.Location = new System.Drawing.Point(131, 251);
+            this.txtProductPrice.Name = "txtProductPrice";
+            this.txtProductPrice.Size = new System.Drawing.Size(78, 22);
+            this.txtProductPrice.TabIndex = 7;
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Location = new System.Drawing.Point(285, 296);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.TabIndex = 8;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(202, 296);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 9;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.BtnCancel_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "piece",
+            "set",
+            "item"});
+            this.comboBox1.Location = new System.Drawing.Point(131, 112);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(78, 20);
+            this.comboBox1.TabIndex = 10;
+            // 
+            // lblProductUnit
+            // 
+            this.lblProductUnit.AutoSize = true;
+            this.lblProductUnit.Location = new System.Drawing.Point(55, 115);
+            this.lblProductUnit.Name = "lblProductUnit";
+            this.lblProductUnit.Size = new System.Drawing.Size(70, 12);
+            this.lblProductUnit.TabIndex = 11;
+            this.lblProductUnit.Text = "Product Unit :";
+            // 
+            // lblVendor
+            // 
+            this.lblVendor.AutoSize = true;
+            this.lblVendor.Location = new System.Drawing.Point(79, 11);
+            this.lblVendor.Name = "lblVendor";
+            this.lblVendor.Size = new System.Drawing.Size(46, 12);
+            this.lblVendor.TabIndex = 12;
+            this.lblVendor.Text = "Vendor :";
+            // 
+            // frmInventoryNewProduct
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(372, 377);
+            this.Controls.Add(this.lblVendor);
+            this.Controls.Add(this.lblProductUnit);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.btnSubmit);
+            this.Controls.Add(this.txtProductPrice);
+            this.Controls.Add(this.rtbProductDescription);
+            this.Controls.Add(this.txtProductName);
+            this.Controls.Add(this.cboProductType);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblProductDescription);
+            this.Controls.Add(this.lblProductName);
+            this.Controls.Add(this.lblProductType);
+            this.Name = "frmInventoryNewProduct";
+            this.Text = "New Product";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label lblProductType;
+        private System.Windows.Forms.Label lblProductName;
+        private System.Windows.Forms.Label lblProductDescription;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cboProductType;
+        private System.Windows.Forms.TextBox txtProductName;
+        private System.Windows.Forms.RichTextBox rtbProductDescription;
+        private System.Windows.Forms.TextBox txtProductPrice;
+        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lblProductUnit;
+        private System.Windows.Forms.Label lblVendor;
+    }
+}
