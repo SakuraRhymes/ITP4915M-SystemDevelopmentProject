@@ -44,5 +44,17 @@ namespace SLMCS_ERP
             frmInventoryNewProduct inventoryNewProduct = new frmInventoryNewProduct();
             inventoryNewProduct.Show();
         }
+
+        private void DgvStockRecord_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frmInventoryEditProduct form = new frmInventoryEditProduct();
+       
+        }
+
+        private void BtnEditProduct_Click(object sender, EventArgs e)
+        {
+            frmInventoryEditProduct inventoryEditProduct = new frmInventoryEditProduct();
+            inventoryEditProduct.Show();
+        }
     }
 }
