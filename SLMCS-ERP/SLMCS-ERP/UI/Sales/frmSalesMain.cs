@@ -15,8 +15,8 @@ namespace SLMCS_ERP
         private void navigation(Form form, Panel panel)
         {
             form.TopLevel = false;
-            panelContent.Controls.Clear();
-            panelContent.Controls.Add(form);
+            panel.Controls.Clear();
+            panel.Controls.Add(form);
             form.Show();
         }
         private void GroupBox1_Enter(object sender, EventArgs e)
