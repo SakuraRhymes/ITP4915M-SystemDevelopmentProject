@@ -31,5 +31,10 @@ namespace SLMCS_ERP.UI.Sales
             //dgvOrderItem.DataSource = product.SearchForProduct(productID);
 
         }
+
+        private void BtnPlaceOrder_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

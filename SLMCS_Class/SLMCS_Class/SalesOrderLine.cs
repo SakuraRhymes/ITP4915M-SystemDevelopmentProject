@@ -8,9 +8,6 @@ namespace SLMCS_Class
         private int quantity;
         private double productPrice;
 
-        public int Quantity { get; set; }
-
-        public double ProductPrice { get; set; }
 
         public SalesOrderLine(SalesOrder saleOrder, Product product, int quantity, double productPrice)
         {
@@ -28,5 +25,12 @@ namespace SLMCS_Class
         public string ProductID {
             get => product.ProductID;
          }
+
+        public string ProductName { get => product.ProductName; }
+
+        public int Quantity { get => quantity; }
+
+        public double ProductPrice { get => productPrice; }
+
     }
 }

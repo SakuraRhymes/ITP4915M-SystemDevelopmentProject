@@ -30,7 +30,7 @@
         {
             this.dgvOrderItem = new System.Windows.Forms.DataGridView();
             this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnPlaceOrder = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -83,14 +83,15 @@
             this.button8.Text = "Cancel";
             this.button8.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnPlaceOrder
             // 
-            this.button7.Location = new System.Drawing.Point(803, 505);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(96, 23);
-            this.button7.TabIndex = 16;
-            this.button7.Text = "Confirm";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnPlaceOrder.Location = new System.Drawing.Point(803, 505);
+            this.btnPlaceOrder.Name = "btnPlaceOrder";
+            this.btnPlaceOrder.Size = new System.Drawing.Size(96, 23);
+            this.btnPlaceOrder.TabIndex = 16;
+            this.btnPlaceOrder.Text = "Confirm";
+            this.btnPlaceOrder.UseVisualStyleBackColor = true;
+            this.btnPlaceOrder.Click += new System.EventHandler(this.BtnPlaceOrder_Click);
             // 
             // label2
             // 
@@ -368,7 +369,7 @@
             this.ClientSize = new System.Drawing.Size(1036, 566);
             this.Controls.Add(this.dgvOrderItem);
             this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.btnPlaceOrder);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
@@ -388,7 +389,7 @@
 
         #endregion
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnPlaceOrder;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDelete;
