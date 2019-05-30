@@ -2,6 +2,7 @@ using System;
 using SLMCS_ERP;
 using System.Data;
 using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace SLMCS_Class
 {
@@ -29,6 +30,7 @@ namespace SLMCS_Class
         {
             dbConnection = new DBConnection();
             string query = "SELECT * FROM Product WHERE ProductID ='" + productID + "'";
+
             productTable = dbConnection.GetDataTable(query);
             DataRow[] rows = productTable.Select();
 
@@ -59,7 +61,6 @@ namespace SLMCS_Class
             }
         }
 
-        //not testing
         public string GetNextProductID(string productType)
         {
             string productTypeChar = "";
@@ -103,6 +104,28 @@ namespace SLMCS_Class
             }
 
             return dbConnection.GetDataTable(query);
+        }
+
+        public DataTable SearchForProduct(string productID)
+        {
+            string query = "SELECT * FROM Product WHERE productID = '" + productID + "'";
+            return dbConnection.GetDataTable(query);
+        }
+
+        public void updateReserveQuantity(int reserveQuantity)
+        {
+            string query = "UPDATE Product SET ReserveQuantity = ReserveQuantity + " + reserveQuantity + " WHERE ProductID = " + productID;
+            dbConnection.Update(query);
+        }
+
+        public int getSaleableQuantity(string productID)
+        {
+            string query = "SELECT * FROM ProductSaleableQuantity WHERE productID = '" + productID + "'";
+            MessageBox.Show(query);
+            productTable = dbConnection.GetDataTable(query);
+            DataRow[] rows = productTable.Select();
+
+            return Convert.ToInt32(rows[0]["ProductSaleableQuantity"]);
         }
 
         //get set method

@@ -21,8 +21,8 @@ namespace SLMCS_ERP
         private void navigation(Form form, Panel panel)
         {
             form.TopLevel = false;
-            panelContent.Controls.Clear();
-            panelContent.Controls.Add(form);
+            panel.Controls.Clear();
+            panel.Controls.Add(form);
             form.Show();
         }
         private void btnHome_Click(object sender, EventArgs e)

@@ -31,13 +31,10 @@
             this.penalTopNavigation = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.labelSystemName = new System.Windows.Forms.Label();
-            this.btnUserManagement = new System.Windows.Forms.Button();
+            this.btnManagement = new System.Windows.Forms.Button();
             this.btnDispatch = new System.Windows.Forms.Button();
-            this.btnReporting = new System.Windows.Forms.Button();
-            this.btnFinance = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
-            this.btnProcurement = new System.Windows.Forms.Button();
             this.btnSales = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -50,13 +47,10 @@
             this.penalTopNavigation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.penalTopNavigation.Controls.Add(this.btnLogout);
             this.penalTopNavigation.Controls.Add(this.labelSystemName);
-            this.penalTopNavigation.Controls.Add(this.btnUserManagement);
+            this.penalTopNavigation.Controls.Add(this.btnManagement);
             this.penalTopNavigation.Controls.Add(this.btnDispatch);
-            this.penalTopNavigation.Controls.Add(this.btnReporting);
-            this.penalTopNavigation.Controls.Add(this.btnFinance);
             this.penalTopNavigation.Controls.Add(this.btnInventory);
             this.penalTopNavigation.Controls.Add(this.btnHome);
-            this.penalTopNavigation.Controls.Add(this.btnProcurement);
             this.penalTopNavigation.Controls.Add(this.btnSales);
             this.penalTopNavigation.Dock = System.Windows.Forms.DockStyle.Top;
             this.penalTopNavigation.Location = new System.Drawing.Point(0, 0);
@@ -84,20 +78,20 @@
             this.labelSystemName.TabIndex = 1;
             this.labelSystemName.Text = "SLMCS ERP System";
             // 
-            // btnUserManagement
+            // btnManagement
             // 
-            this.btnUserManagement.Location = new System.Drawing.Point(870, 76);
-            this.btnUserManagement.Margin = new System.Windows.Forms.Padding(2);
-            this.btnUserManagement.Name = "btnUserManagement";
-            this.btnUserManagement.Size = new System.Drawing.Size(117, 29);
-            this.btnUserManagement.TabIndex = 0;
-            this.btnUserManagement.Text = "User Management";
-            this.btnUserManagement.UseVisualStyleBackColor = true;
-            this.btnUserManagement.Click += new System.EventHandler(this.BtnUserManagement_Click);
+            this.btnManagement.Location = new System.Drawing.Point(538, 76);
+            this.btnManagement.Margin = new System.Windows.Forms.Padding(2);
+            this.btnManagement.Name = "btnManagement";
+            this.btnManagement.Size = new System.Drawing.Size(117, 29);
+            this.btnManagement.TabIndex = 0;
+            this.btnManagement.Text = "Management";
+            this.btnManagement.UseVisualStyleBackColor = true;
+            this.btnManagement.Click += new System.EventHandler(this.BtnUserManagement_Click);
             // 
             // btnDispatch
             // 
-            this.btnDispatch.Location = new System.Drawing.Point(748, 76);
+            this.btnDispatch.Location = new System.Drawing.Point(400, 77);
             this.btnDispatch.Margin = new System.Windows.Forms.Padding(2);
             this.btnDispatch.Name = "btnDispatch";
             this.btnDispatch.Size = new System.Drawing.Size(90, 29);
@@ -106,31 +100,9 @@
             this.btnDispatch.UseVisualStyleBackColor = true;
             this.btnDispatch.Click += new System.EventHandler(this.BtnDispatch_Click);
             // 
-            // btnReporting
-            // 
-            this.btnReporting.Location = new System.Drawing.Point(625, 76);
-            this.btnReporting.Margin = new System.Windows.Forms.Padding(2);
-            this.btnReporting.Name = "btnReporting";
-            this.btnReporting.Size = new System.Drawing.Size(90, 29);
-            this.btnReporting.TabIndex = 0;
-            this.btnReporting.Text = "Reporting";
-            this.btnReporting.UseVisualStyleBackColor = true;
-            this.btnReporting.Click += new System.EventHandler(this.BtnReporting_Click);
-            // 
-            // btnFinance
-            // 
-            this.btnFinance.Location = new System.Drawing.Point(499, 76);
-            this.btnFinance.Margin = new System.Windows.Forms.Padding(2);
-            this.btnFinance.Name = "btnFinance";
-            this.btnFinance.Size = new System.Drawing.Size(90, 29);
-            this.btnFinance.TabIndex = 0;
-            this.btnFinance.Text = "Finance";
-            this.btnFinance.UseVisualStyleBackColor = true;
-            this.btnFinance.Click += new System.EventHandler(this.BtnFinance_Click);
-            // 
             // btnInventory
             // 
-            this.btnInventory.Location = new System.Drawing.Point(373, 76);
+            this.btnInventory.Location = new System.Drawing.Point(269, 76);
             this.btnInventory.Margin = new System.Windows.Forms.Padding(2);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Size = new System.Drawing.Size(90, 29);
@@ -149,17 +121,6 @@
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
-            // btnProcurement
-            // 
-            this.btnProcurement.Location = new System.Drawing.Point(259, 76);
-            this.btnProcurement.Margin = new System.Windows.Forms.Padding(2);
-            this.btnProcurement.Name = "btnProcurement";
-            this.btnProcurement.Size = new System.Drawing.Size(90, 29);
-            this.btnProcurement.TabIndex = 0;
-            this.btnProcurement.Text = "Procurement";
-            this.btnProcurement.UseVisualStyleBackColor = true;
-            this.btnProcurement.Click += new System.EventHandler(this.BtnProcurement_Click);
             // 
             // btnSales
             // 
@@ -200,15 +161,12 @@
         #endregion
 
         private System.Windows.Forms.Panel penalTopNavigation;
-        private System.Windows.Forms.Button btnFinance;
         private System.Windows.Forms.Button btnInventory;
-        private System.Windows.Forms.Button btnProcurement;
         private System.Windows.Forms.Button btnSales;
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.Button btnUserManagement;
+        private System.Windows.Forms.Button btnManagement;
         private System.Windows.Forms.Button btnDispatch;
-        private System.Windows.Forms.Button btnReporting;
         private System.Windows.Forms.Label labelSystemName;
         private System.Windows.Forms.Button btnLogout;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
