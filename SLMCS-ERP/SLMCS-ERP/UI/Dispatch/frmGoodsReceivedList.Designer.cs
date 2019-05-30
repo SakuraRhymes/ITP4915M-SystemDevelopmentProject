@@ -34,12 +34,13 @@
             this.txtStaffID = new System.Windows.Forms.TextBox();
             this.date = new System.Windows.Forms.Label();
             this.txtProcumentDate = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvGoodsRecevieList = new System.Windows.Forms.DataGridView();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGoodsRecevieList)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,15 +92,16 @@
             this.txtProcumentDate.Size = new System.Drawing.Size(255, 25);
             this.txtProcumentDate.TabIndex = 5;
             // 
-            // dataGridView1
+            // dgvGoodsRecevieList
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 267);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(1172, 339);
-            this.dataGridView1.TabIndex = 6;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
+            this.dgvGoodsRecevieList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvGoodsRecevieList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGoodsRecevieList.Location = new System.Drawing.Point(27, 267);
+            this.dgvGoodsRecevieList.Name = "dgvGoodsRecevieList";
+            this.dgvGoodsRecevieList.RowTemplate.Height = 27;
+            this.dgvGoodsRecevieList.Size = new System.Drawing.Size(1172, 339);
+            this.dgvGoodsRecevieList.TabIndex = 6;
+            this.dgvGoodsRecevieList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
             // btnConfirm
             // 
@@ -112,7 +114,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(910, 188);
+            this.btnSearch.Location = new System.Drawing.Point(780, 188);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(122, 42);
             this.btnSearch.TabIndex = 8;
@@ -145,19 +147,29 @@
             this.label6.Size = new System.Drawing.Size(0, 15);
             this.label6.TabIndex = 2;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(927, 188);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(122, 42);
+            this.btnRefresh.TabIndex = 19;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            // 
             // frmGoodsReceivedList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1581, 708);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnConfirm);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvGoodsRecevieList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGoodsReceivedList";
             this.Text = "frmGoodsReceivedList";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGoodsRecevieList)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -172,10 +184,11 @@
         private System.Windows.Forms.TextBox txtStaffID;
         private System.Windows.Forms.Label date;
         private System.Windows.Forms.TextBox txtProcumentDate;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvGoodsRecevieList;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

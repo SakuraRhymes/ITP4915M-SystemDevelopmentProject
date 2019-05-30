@@ -94,6 +94,7 @@
             // 
             // dgvDispatchedList
             // 
+            this.dgvDispatchedList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDispatchedList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDispatchedList.Location = new System.Drawing.Point(27, 267);
             this.dgvDispatchedList.Name = "dgvDispatchedList";
