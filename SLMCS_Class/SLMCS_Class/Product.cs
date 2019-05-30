@@ -18,6 +18,8 @@ namespace SLMCS_Class
         private string vendorID;
         private int actualQuantity;
         private int reserveQuantity;
+        private int reorderLevel;
+        private int dangerLevel;
 
         private DBConnection dbConnection;
         private DataTable productTable;
@@ -37,6 +39,7 @@ namespace SLMCS_Class
 
             ProductID = (string) rows[0]["ProductID"];
             ProductName = (string) rows[0]["ProductName"];
+            ProductType = (string) rows[0]["ProductType"];
             ProductDescription = (string) rows[0]["ProductDescription"];
             ProductUnit = (string) rows[0]["ProductUnit"];
             ProductPrice = (int) rows[0]["ProductPrice"];
@@ -44,6 +47,8 @@ namespace SLMCS_Class
             VendorID = (string) rows[0]["VendorID"];
             ActualQuantity = (int) rows[0]["ActualQuantity"];
             ReserveQuantity = (int) rows[0]["ReserveQuantity"];
+            ReorderLevel = (int)rows[0]["ReorderLevel"];
+            DangerLevel = (int)rows[0]["DangerLevel"];
         }
 
         public void CreateNewProduct(string productName, string productType, string productDescription, string productUnit,
@@ -129,6 +134,15 @@ namespace SLMCS_Class
             return Convert.ToInt32(rows[0]["ProductSaleableQuantity"]);
         }
 
+        public void UpdateProductDetail(string productID, string productType, string productName, string productDesc, string productUnit, string productPrice, string actualQuantity, string reorderLevel, string dangerLevel)
+        {
+            string queryString = "UPDATE Product SET ProductType='{0}', ProductName='{1}', ProductDescription='{2}' ,ProductUnit='{3}', ProductPrice={4}, ActualQuantity={5}, ReorderLevel={6}, DangerLevel={7} WHERE ProductID='{8}'";
+
+            string query = string.Format(queryString, productType, productName, productDesc, productUnit, productPrice, actualQuantity, reorderLevel, dangerLevel, productID);
+            //MessageBox.Show(q);
+            dbConnection.Update(query);
+        }
+
         //get set method
         public string ProductID
         {
@@ -140,6 +154,12 @@ namespace SLMCS_Class
         {
             get => productName;
             set => productName = value;
+        }
+
+        public string ProductType
+        {
+            get => productType;
+            set => productType = value;
         }
 
         public string ProductDescription
@@ -182,6 +202,18 @@ namespace SLMCS_Class
         {
             get => reserveQuantity;
             set => reserveQuantity = value;
+        }
+
+        public int ReorderLevel
+        {
+            get => reorderLevel;
+            set => reorderLevel = value;
+        }
+
+        public int DangerLevel
+        {
+            get => dangerLevel;
+            set => dangerLevel = value;
         }
     }
 }
