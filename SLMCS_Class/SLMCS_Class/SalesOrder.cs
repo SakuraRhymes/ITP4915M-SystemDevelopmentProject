@@ -116,8 +116,7 @@ namespace SLMCS_Class
         {
             string query = "INSERT INTO SalesOrder VALUES ('" + SalesOrderID + "','" + StaffID + "','" + DealerID +
                            "','" + SalesOrderDate + "',null,null,null,'Dispatching')";
-            MessageBox.Show(query);
-
+            //MessageBox.Show(query);
             dbConnection.Insert(query);
 
             foreach(var salesOrderLine in _salesOrderLine)

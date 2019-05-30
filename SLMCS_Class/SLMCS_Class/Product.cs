@@ -115,18 +115,18 @@ namespace SLMCS_Class
 
         public void updateReserveQuantity(int reserveQuantity)
         {
-            string query = "UPDATE Product SET ReserveQuantity = ReserveQuantity + " + reserveQuantity + " WHERE ProductID = " + productID;
+            string query = "UPDATE Product SET ReserveQuantity = ReserveQuantity + " + reserveQuantity + " WHERE ProductID = '" + productID+"'";
             dbConnection.Update(query);
         }
 
         public int getSaleableQuantity(string productID)
         {
             string query = "SELECT * FROM ProductSaleableQuantity WHERE productID = '" + productID + "'";
-            MessageBox.Show(query);
+            //MessageBox.Show(query);
             productTable = dbConnection.GetDataTable(query);
             DataRow[] rows = productTable.Select();
 
-            return Convert.ToInt32(rows[0]["ProductSaleableQuantity"]);
+            return Convert.ToInt32(rows[0]["SaleableQuantity"]);
         }
 
         //get set method

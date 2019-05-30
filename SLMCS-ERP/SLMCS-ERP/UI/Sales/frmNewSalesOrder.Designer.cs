@@ -76,6 +76,7 @@
             this.dgvOrderItem.RowTemplate.Height = 23;
             this.dgvOrderItem.Size = new System.Drawing.Size(879, 179);
             this.dgvOrderItem.TabIndex = 18;
+            this.dgvOrderItem.TabStop = false;
             // 
             // btnCancelPlaceOrder
             // 
@@ -83,6 +84,7 @@
             this.btnCancelPlaceOrder.Name = "btnCancelPlaceOrder";
             this.btnCancelPlaceOrder.Size = new System.Drawing.Size(101, 23);
             this.btnCancelPlaceOrder.TabIndex = 17;
+            this.btnCancelPlaceOrder.TabStop = false;
             this.btnCancelPlaceOrder.Text = "Cancel";
             this.btnCancelPlaceOrder.UseVisualStyleBackColor = true;
             this.btnCancelPlaceOrder.Click += new System.EventHandler(this.BtnCancelPlaceOrder_Click);
