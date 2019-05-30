@@ -91,6 +91,7 @@ namespace SLMCS_ERP
             cboProductUnit.DropDownStyle = ComboBoxStyle.DropDownList;
 
             txtVendorID.Enabled = false;
+         
         }
 
         private void TxtProductPrice_KeyPress(object sender, KeyPressEventArgs e)
@@ -101,10 +102,15 @@ namespace SLMCS_ERP
             }
         }
 
-        private void BtnSearch_Click(object sender, EventArgs e)
+        private void BtnSearchVendor_Click(object sender, EventArgs e)
         {
-            frmInventoryVendorRecord inventoryVendorRecord = new frmInventoryVendorRecord();
+            frmInventoryVendorRecord inventoryVendorRecord = new frmInventoryVendorRecord(this);
             inventoryVendorRecord.Show();
+        }
+
+        public void SetTxtVendorID(string vendorID)
+        {
+            txtVendorID.Text = vendorID;
         }
     }
 }

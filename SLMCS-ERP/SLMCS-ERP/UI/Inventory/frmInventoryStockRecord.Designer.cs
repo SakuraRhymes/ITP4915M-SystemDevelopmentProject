@@ -242,6 +242,7 @@
             this.dgvStockRecord.Size = new System.Drawing.Size(769, 212);
             this.dgvStockRecord.TabIndex = 8;
             this.dgvStockRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvStockRecord_CellClick);
+            this.dgvStockRecord.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvStockRecord_CellDoubleClick);
             // 
             // frmInventoryStockRecord
             // 

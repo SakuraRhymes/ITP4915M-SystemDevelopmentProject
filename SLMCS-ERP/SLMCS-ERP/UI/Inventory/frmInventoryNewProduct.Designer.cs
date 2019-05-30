@@ -42,7 +42,7 @@
             this.lblProductUnit = new System.Windows.Forms.Label();
             this.lblVendor = new System.Windows.Forms.Label();
             this.txtVendorID = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnSearchVendor = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblProductType
@@ -174,22 +174,22 @@
             this.txtVendorID.Size = new System.Drawing.Size(100, 22);
             this.txtVendorID.TabIndex = 0;
             // 
-            // btnSearch
+            // btnSearchVendor
             // 
-            this.btnSearch.Location = new System.Drawing.Point(237, 8);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(50, 23);
-            this.btnSearch.TabIndex = 13;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            this.btnSearchVendor.Location = new System.Drawing.Point(237, 8);
+            this.btnSearchVendor.Name = "btnSearchVendor";
+            this.btnSearchVendor.Size = new System.Drawing.Size(50, 23);
+            this.btnSearchVendor.TabIndex = 13;
+            this.btnSearchVendor.Text = "Search";
+            this.btnSearchVendor.UseVisualStyleBackColor = true;
+            this.btnSearchVendor.Click += new System.EventHandler(this.BtnSearchVendor_Click);
             // 
             // frmInventoryNewProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(372, 312);
-            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.btnSearchVendor);
             this.Controls.Add(this.txtVendorID);
             this.Controls.Add(this.lblVendor);
             this.Controls.Add(this.lblProductUnit);
@@ -228,6 +228,6 @@
         private System.Windows.Forms.Label lblProductUnit;
         private System.Windows.Forms.Label lblVendor;
         private System.Windows.Forms.TextBox txtVendorID;
-        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnSearchVendor;
     }
 }

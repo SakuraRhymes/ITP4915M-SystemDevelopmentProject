@@ -59,14 +59,7 @@ namespace SLMCS_ERP
         {
             CheckInputNumberOnly(e);
         }
-        private void CheckInputNumberOnly(KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && !(e.KeyChar == (char)8))
-            {
-                e.Handled = true;
-            }
-        }
-
+        
         private void TxtActualQty_KeyPress(object sender, KeyPressEventArgs e)
         {
             CheckInputNumberOnly(e);
@@ -80,6 +73,14 @@ namespace SLMCS_ERP
         private void TxtDangerLevel_KeyPress(object sender, KeyPressEventArgs e)
         {
             CheckInputNumberOnly(e);
+        }
+
+        private void CheckInputNumberOnly(KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !(e.KeyChar == (char)8))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

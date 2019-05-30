@@ -42,6 +42,7 @@
             this.btnCancel.TabIndex = 0;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // btnSelect
             // 
@@ -51,6 +52,7 @@
             this.btnSelect.TabIndex = 1;
             this.btnSelect.Text = "Select";
             this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.BtnSelect_Click);
             // 
             // dgvVendorRecord
             // 
@@ -60,6 +62,8 @@
             this.dgvVendorRecord.RowTemplate.Height = 24;
             this.dgvVendorRecord.Size = new System.Drawing.Size(392, 334);
             this.dgvVendorRecord.TabIndex = 2;
+            this.dgvVendorRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvVendorRecord_CellClick);
+            this.dgvVendorRecord.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvVendorRecord_CellDoubleClick);
             // 
             // frmInventoryVendorRecord
             // 

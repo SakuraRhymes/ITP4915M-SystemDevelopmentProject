@@ -10,11 +10,13 @@ namespace SLMCS_ERP
         public frmInventoryStockRecord()
         {
             InitializeComponent();
+            dgvStockRecord.AllowUserToAddRows = false;
         }
 
         private void FrmInventoryStockRecord_Load(object sender, EventArgs e)
         {
             dgvStockRecord.ReadOnly = true;
+           
         }
         private void BtnSearch_Click(object sender, EventArgs e)
         {
@@ -43,6 +45,15 @@ namespace SLMCS_ERP
             //dgvStockRecord.Columns.Add(chk);
             //dgvStockRecord.Columns["chk"].DisplayIndex = 0;
             selectedProductID = dgvStockRecord.Rows[0].Cells["ProductID"].Value.ToString();
+
+            dgvStockRecord.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvStockRecord.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvStockRecord.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvStockRecord.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvStockRecord.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvStockRecord.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvStockRecord.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvStockRecord.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
         private void BtnNewProduct_Click(object sender, EventArgs e)
@@ -56,7 +67,7 @@ namespace SLMCS_ERP
         {
             if (selectedProductID == "")
             {
-                MessageBox.Show("Please select product");
+                MessageBox.Show("Please select a product");
             } else
             {
                 frmInventoryEditProduct inventoryEditProduct = new frmInventoryEditProduct(selectedProductID);
@@ -73,9 +84,10 @@ namespace SLMCS_ERP
             }
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void DgvStockRecord_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            frmInventoryEditProduct inventoryEditProduct = new frmInventoryEditProduct(selectedProductID);
+            inventoryEditProduct.Show();
         }
     }
 }

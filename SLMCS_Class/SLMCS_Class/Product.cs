@@ -55,8 +55,10 @@ namespace SLMCS_Class
             string productPrice, string vendorID)
         {
             string productID = GetNextProductID(productType);
-            string query = "INSERT INTO Product VALUES ('" + productID + "','" + productName + "','" + productType +"','" + productDescription 
-                            + "','" + productUnit + "'," + productPrice + "," + "NULL" + ",'" + vendorID + "',0,0,0)";
+            string queryString = "INSERT INTO Product VALUES ('{0}','{1}','{2}','{3}','{4}',{5},NULL,'{6}',0,0,0,0)";
+            string query = string.Format(queryString, productID, productName, productType, productDescription, productUnit, productPrice, vendorID);
+            //string query = "INSERT INTO Product VALUES ('" + productID + "','" + productName + "','" + productType +"','" + productDescription 
+            //                + "','" + productUnit + "'," + productPrice + "," + "NULL" + ",'" + vendorID + "',0,0,0,0)";
             try
             {
                 dbConnection.Insert(query);
