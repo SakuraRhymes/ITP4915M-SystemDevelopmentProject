@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.dgvOrderItem = new System.Windows.Forms.DataGridView();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnCancelPlaceOrder = new System.Windows.Forms.Button();
             this.btnPlaceOrder = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -66,6 +66,9 @@
             // 
             // dgvOrderItem
             // 
+            this.dgvOrderItem.AllowUserToAddRows = false;
+            this.dgvOrderItem.AllowUserToDeleteRows = false;
+            this.dgvOrderItem.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvOrderItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrderItem.Location = new System.Drawing.Point(20, 306);
             this.dgvOrderItem.Name = "dgvOrderItem";
@@ -74,21 +77,22 @@
             this.dgvOrderItem.Size = new System.Drawing.Size(879, 179);
             this.dgvOrderItem.TabIndex = 18;
             // 
-            // button8
+            // btnCancelPlaceOrder
             // 
-            this.button8.Location = new System.Drawing.Point(684, 505);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(101, 23);
-            this.button8.TabIndex = 17;
-            this.button8.Text = "Cancel";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnCancelPlaceOrder.Location = new System.Drawing.Point(684, 505);
+            this.btnCancelPlaceOrder.Name = "btnCancelPlaceOrder";
+            this.btnCancelPlaceOrder.Size = new System.Drawing.Size(101, 23);
+            this.btnCancelPlaceOrder.TabIndex = 17;
+            this.btnCancelPlaceOrder.Text = "Cancel";
+            this.btnCancelPlaceOrder.UseVisualStyleBackColor = true;
+            this.btnCancelPlaceOrder.Click += new System.EventHandler(this.BtnCancelPlaceOrder_Click);
             // 
             // btnPlaceOrder
             // 
             this.btnPlaceOrder.Location = new System.Drawing.Point(803, 505);
             this.btnPlaceOrder.Name = "btnPlaceOrder";
             this.btnPlaceOrder.Size = new System.Drawing.Size(96, 23);
-            this.btnPlaceOrder.TabIndex = 16;
+            this.btnPlaceOrder.TabIndex = 4;
             this.btnPlaceOrder.Text = "Confirm";
             this.btnPlaceOrder.UseVisualStyleBackColor = true;
             this.btnPlaceOrder.Click += new System.EventHandler(this.BtnPlaceOrder_Click);
@@ -113,7 +117,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(556, 68);
+            this.btnDelete.Location = new System.Drawing.Point(556, 58);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(179, 23);
             this.btnDelete.TabIndex = 13;
@@ -122,10 +126,10 @@
             // 
             // btnAddItem
             // 
-            this.btnAddItem.Location = new System.Drawing.Point(556, 29);
+            this.btnAddItem.Location = new System.Drawing.Point(556, 19);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(179, 23);
-            this.btnAddItem.TabIndex = 11;
+            this.btnAddItem.TabIndex = 3;
             this.btnAddItem.Text = "Add Item";
             this.btnAddItem.UseVisualStyleBackColor = true;
             this.btnAddItem.Click += new System.EventHandler(this.BtnAddItem_Click);
@@ -147,7 +151,7 @@
             this.groupBox1.Controls.Add(this.lbl1);
             this.groupBox1.Location = new System.Drawing.Point(20, 14);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(879, 142);
+            this.groupBox1.Size = new System.Drawing.Size(879, 158);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
@@ -181,15 +185,17 @@
             // txtDealerID
             // 
             this.txtDealerID.Location = new System.Drawing.Point(132, 26);
+            this.txtDealerID.MaxLength = 8;
             this.txtDealerID.Name = "txtDealerID";
             this.txtDealerID.Size = new System.Drawing.Size(129, 22);
-            this.txtDealerID.TabIndex = 3;
+            this.txtDealerID.TabIndex = 0;
             this.txtDealerID.TextChanged += new System.EventHandler(this.TxtDealerID_TextChanged);
             // 
             // lblDealerAddress
             // 
             this.lblDealerAddress.AutoSize = true;
-            this.lblDealerAddress.Location = new System.Drawing.Point(130, 109);
+            this.lblDealerAddress.Location = new System.Drawing.Point(130, 98);
+            this.lblDealerAddress.MaximumSize = new System.Drawing.Size(170, 0);
             this.lblDealerAddress.Name = "lblDealerAddress";
             this.lblDealerAddress.Size = new System.Drawing.Size(66, 12);
             this.lblDealerAddress.TabIndex = 2;
@@ -198,7 +204,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(21, 109);
+            this.label9.Location = new System.Drawing.Point(21, 98);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(81, 12);
             this.label9.TabIndex = 2;
@@ -269,10 +275,11 @@
             // txtSearchForProduct
             // 
             this.txtSearchForProduct.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtSearchForProduct.Location = new System.Drawing.Point(133, 30);
+            this.txtSearchForProduct.Location = new System.Drawing.Point(133, 20);
+            this.txtSearchForProduct.MaxLength = 6;
             this.txtSearchForProduct.Name = "txtSearchForProduct";
             this.txtSearchForProduct.Size = new System.Drawing.Size(129, 22);
-            this.txtSearchForProduct.TabIndex = 19;
+            this.txtSearchForProduct.TabIndex = 1;
             this.txtSearchForProduct.TextChanged += new System.EventHandler(this.TxtSearchForProduct_TextChanged);
             // 
             // groupBox2
@@ -288,16 +295,16 @@
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.btnAddItem);
             this.groupBox2.Controls.Add(this.btnDelete);
-            this.groupBox2.Location = new System.Drawing.Point(20, 162);
+            this.groupBox2.Location = new System.Drawing.Point(20, 178);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(879, 128);
+            this.groupBox2.Size = new System.Drawing.Size(879, 112);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             // 
             // lblProductAvailability
             // 
             this.lblProductAvailability.AutoSize = true;
-            this.lblProductAvailability.Location = new System.Drawing.Point(432, 73);
+            this.lblProductAvailability.Location = new System.Drawing.Point(432, 63);
             this.lblProductAvailability.Name = "lblProductAvailability";
             this.lblProductAvailability.Size = new System.Drawing.Size(66, 12);
             this.lblProductAvailability.TabIndex = 26;
@@ -306,7 +313,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(335, 73);
+            this.label14.Location = new System.Drawing.Point(335, 63);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(65, 12);
             this.label14.TabIndex = 25;
@@ -315,7 +322,7 @@
             // lblProductName
             // 
             this.lblProductName.AutoSize = true;
-            this.lblProductName.Location = new System.Drawing.Point(432, 34);
+            this.lblProductName.Location = new System.Drawing.Point(432, 24);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(66, 12);
             this.lblProductName.TabIndex = 22;
@@ -324,7 +331,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(332, 34);
+            this.label11.Location = new System.Drawing.Point(332, 24);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(77, 12);
             this.label11.TabIndex = 21;
@@ -333,7 +340,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(21, 73);
+            this.label16.Location = new System.Drawing.Point(21, 63);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(51, 12);
             this.label16.TabIndex = 20;
@@ -342,15 +349,15 @@
             // txtOrderQunatity
             // 
             this.txtOrderQunatity.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtOrderQunatity.Location = new System.Drawing.Point(133, 69);
+            this.txtOrderQunatity.Location = new System.Drawing.Point(133, 59);
             this.txtOrderQunatity.Name = "txtOrderQunatity";
             this.txtOrderQunatity.Size = new System.Drawing.Size(129, 22);
-            this.txtOrderQunatity.TabIndex = 19;
+            this.txtOrderQunatity.TabIndex = 2;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 34);
+            this.label7.Location = new System.Drawing.Point(21, 24);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 12);
             this.label7.TabIndex = 20;
@@ -370,7 +377,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1036, 566);
             this.Controls.Add(this.dgvOrderItem);
-            this.Controls.Add(this.button8);
+            this.Controls.Add(this.btnCancelPlaceOrder);
             this.Controls.Add(this.btnPlaceOrder);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -390,7 +397,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnCancelPlaceOrder;
         private System.Windows.Forms.Button btnPlaceOrder;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
