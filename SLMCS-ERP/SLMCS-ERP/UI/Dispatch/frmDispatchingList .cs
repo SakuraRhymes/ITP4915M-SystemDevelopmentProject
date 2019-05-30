@@ -17,6 +17,7 @@ namespace SLMCS_ERP{
         public frmDispatchingList()
         {
             salesOrder = new SalesOrder();
+            
             InitializeComponent();
             startUp();
         }
@@ -24,7 +25,7 @@ namespace SLMCS_ERP{
         private void startUp()
         {
             dgvSalesOrderList.DataSource = null;
-            dgvSalesOrderList.DataSource = salesOrder.GetSalesOrderTableBySalesOrderStatus("Dispatching");
+            dgvSalesOrderList.DataSource = salesOrder.getSalesOrderTableBySalesOrderStatus("Dispatching");
         }
 
         private void DataGridView2_Load(object sender, DataGridViewCellEventArgs e)
@@ -39,6 +40,25 @@ namespace SLMCS_ERP{
         private void FrmDispatchingList_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void DgvSalesOrderList_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            System.Windows.Forms.MessageBox.Show("My message here");
+        }
+
+        private void DgvSalesOrderList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvOrderDetail.DataSource = null;
+            dgvOrderDetail.DataSource =salesOrder.getSalesOrderLineBySalesOrderID(dgvSalesOrderList.SelectedCells[0].Value.ToString());
+
+        }
+
+        private void BtnRefresh_Click(object sender, EventArgs e)
+        {
+            dgvOrderDetail.DataSource = null;
+            dgvSalesOrderList.DataSource = null;
+            dgvSalesOrderList.DataSource = salesOrder.getSalesOrderTableBySalesOrderStatus("Dispatching");
         }
     }
 }
