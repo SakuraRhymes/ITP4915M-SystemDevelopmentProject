@@ -101,11 +101,6 @@ namespace SLMCS_ERP
             }
         }
 
-        private void TxtVendorID_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
-        }
-
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             frmInventoryVendorRecord inventoryVendorRecord = new frmInventoryVendorRecord();

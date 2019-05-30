@@ -48,7 +48,6 @@
             this.btnEditProduct = new System.Windows.Forms.Button();
             this.btnDeleteProduct = new System.Windows.Forms.Button();
             this.dgvStockRecord = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockRecord)).BeginInit();
             this.SuspendLayout();
@@ -107,7 +106,7 @@
             this.groupBox1.Controls.Add(this.lblStockQuantity);
             this.groupBox1.Controls.Add(this.lblProductID);
             this.groupBox1.Controls.Add(this.lblProdcutType);
-            this.groupBox1.Location = new System.Drawing.Point(12, 8);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(568, 182);
             this.groupBox1.TabIndex = 4;
@@ -207,7 +206,7 @@
             // 
             // btnNewProduct
             // 
-            this.btnNewProduct.Location = new System.Drawing.Point(12, 208);
+            this.btnNewProduct.Location = new System.Drawing.Point(12, 212);
             this.btnNewProduct.Name = "btnNewProduct";
             this.btnNewProduct.Size = new System.Drawing.Size(75, 23);
             this.btnNewProduct.TabIndex = 5;
@@ -217,7 +216,7 @@
             // 
             // btnEditProduct
             // 
-            this.btnEditProduct.Location = new System.Drawing.Point(130, 208);
+            this.btnEditProduct.Location = new System.Drawing.Point(147, 212);
             this.btnEditProduct.Name = "btnEditProduct";
             this.btnEditProduct.Size = new System.Drawing.Size(75, 23);
             this.btnEditProduct.TabIndex = 6;
@@ -227,7 +226,7 @@
             // 
             // btnDeleteProduct
             // 
-            this.btnDeleteProduct.Location = new System.Drawing.Point(245, 208);
+            this.btnDeleteProduct.Location = new System.Drawing.Point(287, 212);
             this.btnDeleteProduct.Name = "btnDeleteProduct";
             this.btnDeleteProduct.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteProduct.TabIndex = 7;
@@ -240,25 +239,15 @@
             this.dgvStockRecord.Location = new System.Drawing.Point(12, 246);
             this.dgvStockRecord.Name = "dgvStockRecord";
             this.dgvStockRecord.RowTemplate.Height = 24;
-            this.dgvStockRecord.Size = new System.Drawing.Size(568, 212);
+            this.dgvStockRecord.Size = new System.Drawing.Size(769, 212);
             this.dgvStockRecord.TabIndex = 8;
-            this.dgvStockRecord.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvStockRecord_CellContentDoubleClick);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(356, 208);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Reorder / Danger Level";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dgvStockRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvStockRecord_CellClick);
             // 
             // frmInventoryStockRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(793, 470);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvStockRecord);
             this.Controls.Add(this.btnDeleteProduct);
             this.Controls.Add(this.btnEditProduct);
@@ -267,6 +256,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmInventoryStockRecord";
             this.Text = "frmInventoryStockRecord";
+            this.Load += new System.EventHandler(this.FrmInventoryStockRecord_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockRecord)).EndInit();
@@ -296,6 +286,5 @@
         private System.Windows.Forms.TextBox txtStockQuantity;
         private System.Windows.Forms.TextBox txtVendorID;
         private System.Windows.Forms.Label lblVendorID;
-        private System.Windows.Forms.Button button1;
     }
 }

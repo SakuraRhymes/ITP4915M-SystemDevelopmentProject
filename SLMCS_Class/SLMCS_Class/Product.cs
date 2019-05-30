@@ -43,7 +43,7 @@ namespace SLMCS_Class
             ProductDescription = (string) rows[0]["ProductDescription"];
             ProductUnit = (string) rows[0]["ProductUnit"];
             ProductPrice = (int) rows[0]["ProductPrice"];
-            ProductProcurementPrice = (int) rows[0]["ProductProcurementPrice"];
+            //ProductProcurementPrice = (int) rows[0]["ProductProcurementPrice"];
             VendorID = (string) rows[0]["VendorID"];
             ActualQuantity = (int) rows[0]["ActualQuantity"];
             ReserveQuantity = (int) rows[0]["ReserveQuantity"];
@@ -103,7 +103,7 @@ namespace SLMCS_Class
 
         public DataTable GetProdcutTable(string condition)
         {
-            string query = "SELECT ProductID,ProductType,ProductName,ProductUnit FROM Product ";
+            string query = "SELECT ProductID,ProductType,ProductName,ProductUnit,ProductPrice,ActualQuantity,ReorderLevel,DangerLevel FROM Product ";
             if (condition != "")
             {
                 query += condition;

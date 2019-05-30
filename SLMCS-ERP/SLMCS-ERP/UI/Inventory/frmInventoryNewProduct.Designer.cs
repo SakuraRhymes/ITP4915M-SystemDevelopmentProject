@@ -173,7 +173,6 @@
             this.txtVendorID.Name = "txtVendorID";
             this.txtVendorID.Size = new System.Drawing.Size(100, 22);
             this.txtVendorID.TabIndex = 0;
-            this.txtVendorID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtVendorID_KeyPress);
             // 
             // btnSearch
             // 
