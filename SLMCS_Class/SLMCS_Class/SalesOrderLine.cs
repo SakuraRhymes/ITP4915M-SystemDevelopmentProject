@@ -37,8 +37,7 @@ namespace SLMCS_Class
             string query = "INSERT INTO SalesOrderLine VALUES ('" + _salesOrder.SalesOrderID + "','" + product.ProductID + "','" + quantity +
                "','" + productPrice + "')";
 
-            MessageBox.Show(query);
-            dbConnection.insert(query);
+            product.updateReserveQuantity(quantity);
         }
 
         public string ProductName { get => product.ProductName; }

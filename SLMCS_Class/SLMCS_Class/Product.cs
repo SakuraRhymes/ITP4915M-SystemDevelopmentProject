@@ -1,6 +1,7 @@
 using System;
 using SLMCS_ERP;
 using System.Data;
+using System.Windows.Forms;
 
 namespace SLMCS_Class
 {
@@ -17,7 +18,7 @@ namespace SLMCS_Class
         private int reserveQuantity;
 
         private DBConnection dbConnection;
-        private DataTable productTable;
+        private DataTable saleableQuantityTable;
 
         public Product()
         {
@@ -28,18 +29,18 @@ namespace SLMCS_Class
         {
             dbConnection = new DBConnection();
             string query = "SELECT * FROM Product WHERE ProductID ='" + productID + "'";
-            productTable = dbConnection.getDataTable(query);
-            DataRow[] rows = productTable.Select();
+            saleableQuantityTable = dbConnection.getDataTable(query);
+            DataRow[] rows = saleableQuantityTable.Select();
 
-            ProductID = (string) rows[0]["ProductID"];
-            ProductName = (string) rows[0]["ProductName"];
-            ProductDescription = (string) rows[0]["ProductDescription"];
-            ProductUnit = (string) rows[0]["ProductUnit"];
-            ProductPrice = (int) rows[0]["ProductPrice"];
-            ProductProcurementPrice = (int) rows[0]["ProductProcurementPrice"];
-            VendorID = (string) rows[0]["VendorID"];
-            ActualQuantity = (int) rows[0]["ActualQuantity"];
-            ReserveQuantity = (int) rows[0]["ReserveQuantity"];
+            ProductID = (string)rows[0]["ProductID"];
+            ProductName = (string)rows[0]["ProductName"];
+            ProductDescription = (string)rows[0]["ProductDescription"];
+            ProductUnit = (string)rows[0]["ProductUnit"];
+            ProductPrice = (int)rows[0]["ProductPrice"];
+            ProductProcurementPrice = (int)rows[0]["ProductProcurementPrice"];
+            VendorID = (string)rows[0]["VendorID"];
+            ActualQuantity = (int)rows[0]["ActualQuantity"];
+            ReserveQuantity = (int)rows[0]["ReserveQuantity"];
         }
 
         public void CreateProduct(string productName, string productType, string productDescription, string productUnit,
@@ -61,10 +62,10 @@ namespace SLMCS_Class
         public string GetNextProductID(string productType)
         {
             string query = "SELECT MAX(productID) FROM Product WHERE productID LIKE '" + productType + "%'";
-            productTable = dbConnection.getDataTable(query);
+            saleableQuantityTable = dbConnection.getDataTable(query);
 
-            DataRow[] rows = productTable.Select();
-            string productIDFull = (string) rows[0]["MAX(productID)"];
+            DataRow[] rows = saleableQuantityTable.Select();
+            string productIDFull = (string)rows[0]["MAX(productID)"];
             string productIDNum = productIDFull.Substring(1);
             string nextProductID = productType + (Convert.ToInt32(productIDNum) + 1);
             return nextProductID;
@@ -85,6 +86,22 @@ namespace SLMCS_Class
         {
             string query = "SELECT * FROM Product WHERE productID = '" + productID + "'";
             return dbConnection.getDataTable(query);
+        }
+
+        public void updateReserveQuantity(int reserveQuantity)
+        {
+            string query = "UPDATE Product SET ReserveQuantity = ReserveQuantity + " + reserveQuantity + " WHERE ProductID = " + productID;
+            dbConnection.update(query);
+        }
+
+        public int getSaleableQuantity(string productID)
+        {
+            string query = "SELECT * FROM ProductSaleableQuantity WHERE productID = '" + productID + "'";
+            MessageBox.Show(query);
+            saleableQuantityTable = dbConnection.getDataTable(query);
+            DataRow[] rows = saleableQuantityTable.Select();
+
+            return Convert.ToInt32(rows[0]["ProductSaleableQuantity"]);
         }
 
         //get set method

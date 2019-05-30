@@ -86,7 +86,7 @@ namespace SLMCS_Class
                 result = new string[2];
                 DataRow[] rows = dt.Select();
                 result[0] = (string)rows[0]["ProductName"];
-                result[1] = rows[0]["ActualQuantity"].ToString();
+                result[1] = product.getSaleableQuantity(productID).ToString();
             }
             return result;
         }

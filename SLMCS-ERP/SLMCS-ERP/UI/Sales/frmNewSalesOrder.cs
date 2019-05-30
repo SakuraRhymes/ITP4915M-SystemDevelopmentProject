@@ -38,17 +38,26 @@ namespace SLMCS_ERP.UI.Sales
 
         private void BtnAddItem_Click(object sender, EventArgs e)
         {
-            string productID = txtSearchForProduct.Text;
-            int quantity = Convert.ToInt32(txtOrderQunatity.Text);
-            Product product = new Product(productID);
+           
+            if(Convert.ToInt32(txtOrderQunatity.Text) <= Convert.ToInt32(lblProductAvailability.Text)) {
 
-            salesOrder.addProduct(product, quantity);
-            
-            dgvOrderItem.DataSource = null;
-            dgvOrderItem.DataSource = salesOrder._SalesOrderLine;
+                string productID = txtSearchForProduct.Text;
+                int quantity = Convert.ToInt32(txtOrderQunatity.Text);
+                Product product = new Product(productID);
 
-            txtSearchForProduct.Text = "";
-            txtOrderQunatity.Text = "";
+                salesOrder.addProduct(product, quantity);
+
+                dgvOrderItem.DataSource = null;
+                dgvOrderItem.DataSource = salesOrder._SalesOrderLine;
+
+                txtSearchForProduct.Text = "";
+                txtOrderQunatity.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("The Product Is Out Of Stock!");
+            }
+
         }
 
         private void BtnPlaceOrder_Click(object sender, EventArgs e)
