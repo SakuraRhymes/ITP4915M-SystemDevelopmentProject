@@ -55,6 +55,12 @@ namespace SLMCS_Class
             return nextOrderID;
         }
 
+        public DataTable GetSalesOrderTableBySalesOrderStatus(string SalesOrderStatus)
+        {
+            string query = "SELECT * FROM SalesOrder WHERE SalesOrderDate < \"" + DateTime.Now.ToString("yyMMdd") + "\" AND SalesOrderStatus = \""+SalesOrderStatus+"\"";
+            return dbConnection.getDataTable(query);
+        }
+
         public void updateStatus(string status)
         {
             salesOrderStatus = status;
