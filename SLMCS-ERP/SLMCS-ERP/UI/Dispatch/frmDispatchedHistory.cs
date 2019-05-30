@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace SLMCS_ERP.UI.Dispatch
 {
-    public partial class frmGoodsReceivedList : Form
+    public partial class frmDispatchedHistory : Form
     {
-        public frmGoodsReceivedList()
+        public frmDispatchedHistory()
         {
             InitializeComponent();
-        }
-
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

@@ -30,5 +30,15 @@ namespace SLMCS_ERP{
         private void DataGridView2_Load(object sender, DataGridViewCellEventArgs e)
         {
         }
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmDispatchingList_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

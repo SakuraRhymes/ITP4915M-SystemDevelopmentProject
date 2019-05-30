@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UI\Dispatch\frmDispatchedHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dispatch\frmDispatchedHistory.Designer.cs">
+      <DependentUpon>frmDispatchedHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Dispatch\frmDispatchingList .cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +64,12 @@
     </Compile>
     <Compile Include="UI\Dispatch\frmDispatchMain.Designer.cs">
       <DependentUpon>frmDispatchMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dispatch\frmGoodsReceivedList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dispatch\frmGoodsReceivedList.Designer.cs">
+      <DependentUpon>frmGoodsReceivedList.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\frmMain.cs">
       <SubType>Form</SubType>
@@ -116,11 +128,17 @@
     <Compile Include="UI\Sales\frmSalesOrderRecords.Designer.cs">
       <DependentUpon>frmSalesOrderRecords.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\Dispatch\frmDispatchedHistory.resx">
+      <DependentUpon>frmDispatchedHistory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Dispatch\frmDispatchingList .resx">
       <DependentUpon>frmDispatchingList .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Dispatch\frmDispatchMain.resx">
       <DependentUpon>frmDispatchMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dispatch\frmGoodsReceivedList.resx">
+      <DependentUpon>frmGoodsReceivedList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

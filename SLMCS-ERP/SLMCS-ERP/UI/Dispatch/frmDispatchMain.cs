@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using SLMCS_ERP.UI.Dispatch;
 
 namespace SLMCS_ERP
 {
@@ -28,6 +29,18 @@ namespace SLMCS_ERP
         {
             frmDispatchingList dispatchList = new frmDispatchingList();
             navigation(dispatchList, panelContent);
+        }
+
+        private void GoodsReceviedList_Click(object sender, EventArgs e)
+        {
+            frmGoodsReceivedList goodsReceivedList = new frmGoodsReceivedList();
+            navigation(goodsReceivedList, panelContent);
+        }
+
+        private void DispatchHistory_Click(object sender, EventArgs e)
+        {
+            frmDispatchedHistory dispatchedHistory = new frmDispatchedHistory();
+            navigation(dispatchedHistory, panelContent);
         }
     }
 }
