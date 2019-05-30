@@ -15,7 +15,7 @@ namespace SLMCS_Class
         public DataTable SearchForDealer(string dealerID)
         {
             string query = "SELECT * FROM Dealer WHERE DealerID = '" + dealerID + "'";
-            return dbConnection.getDataTable(query);
+            return dbConnection.GetDataTable(query);
         }
     }
 }

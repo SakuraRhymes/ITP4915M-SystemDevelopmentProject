@@ -10,6 +10,7 @@ namespace SLMCS_Class
     {
         private string productID;
         private string productName;
+        private string productType;
         private string productDescription;
         private string productUnit;
         private int productPrice;

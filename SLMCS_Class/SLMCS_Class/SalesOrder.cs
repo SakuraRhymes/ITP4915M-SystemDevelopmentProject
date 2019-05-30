@@ -46,7 +46,7 @@ namespace SLMCS_Class
         public string getNextSalesOrderID()
         {
             string query = "SELECT COUNT(SalesOrderID) FROM SalesOrder WHERE SalesOrderDate = \"" + DateTime.Now.ToString("yyMMdd")+"\"";
-            salesOrderTable = dbConnection.getDataTable(query);
+            salesOrderTable = dbConnection.GetDataTable(query);
 
             string count = "";
             foreach (DataRow row in salesOrderTable.Rows)
@@ -118,7 +118,7 @@ namespace SLMCS_Class
                            "','" + SalesOrderDate + "',null,null,null,'Dispatching')";
             MessageBox.Show(query);
 
-            dbConnection.insert(query);
+            dbConnection.Insert(query);
 
             foreach(var salesOrderLine in _salesOrderLine)
             {
