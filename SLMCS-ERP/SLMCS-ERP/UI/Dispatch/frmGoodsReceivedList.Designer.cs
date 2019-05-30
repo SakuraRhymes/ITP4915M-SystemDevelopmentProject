@@ -62,7 +62,7 @@
             // staffId
             // 
             this.staffId.AutoSize = true;
-            this.staffId.Location = new System.Drawing.Point(383, 46);
+            this.staffId.Location = new System.Drawing.Point(383, 56);
             this.staffId.Name = "staffId";
             this.staffId.Size = new System.Drawing.Size(58, 15);
             this.staffId.TabIndex = 2;
@@ -70,7 +70,7 @@
             // 
             // txtStaffID
             // 
-            this.txtStaffID.Location = new System.Drawing.Point(476, 46);
+            this.txtStaffID.Location = new System.Drawing.Point(473, 46);
             this.txtStaffID.Name = "txtStaffID";
             this.txtStaffID.Size = new System.Drawing.Size(255, 25);
             this.txtStaffID.TabIndex = 3;
@@ -78,7 +78,7 @@
             // date
             // 
             this.date.AutoSize = true;
-            this.date.Location = new System.Drawing.Point(779, 46);
+            this.date.Location = new System.Drawing.Point(773, 56);
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(102, 15);
             this.date.TabIndex = 4;
@@ -86,7 +86,7 @@
             // 
             // txtProcumentDate
             // 
-            this.txtProcumentDate.Location = new System.Drawing.Point(910, 46);
+            this.txtProcumentDate.Location = new System.Drawing.Point(900, 46);
             this.txtProcumentDate.Name = "txtProcumentDate";
             this.txtProcumentDate.Size = new System.Drawing.Size(255, 25);
             this.txtProcumentDate.TabIndex = 5;
