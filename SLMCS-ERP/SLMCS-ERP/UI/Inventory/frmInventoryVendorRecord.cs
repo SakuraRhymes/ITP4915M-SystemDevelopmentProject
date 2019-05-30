@@ -21,6 +21,7 @@ namespace SLMCS_ERP
             dgvVendorRecord.DataSource = vendor.GetVendorTable();
             dgvVendorRecord.ReadOnly = true;
             dgvVendorRecord.AllowUserToAddRows = false;
+            dgvVendorRecord.RowHeadersVisible = false;
             inventoryNewProduct = form;
             selectedVendorID = dgvVendorRecord.Rows[0].Cells["VendorID"].Value.ToString();
         }
@@ -29,6 +30,8 @@ namespace SLMCS_ERP
         {
             dgvVendorRecord.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvVendorRecord.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            
+
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)

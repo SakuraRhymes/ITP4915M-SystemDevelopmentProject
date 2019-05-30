@@ -16,7 +16,7 @@ namespace SLMCS_ERP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmInventoryStockRecord());
+            Application.Run(new frmInventoryMain());
         }
     }
 }

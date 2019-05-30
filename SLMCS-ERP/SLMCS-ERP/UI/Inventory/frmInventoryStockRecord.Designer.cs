@@ -239,7 +239,7 @@
             this.dgvStockRecord.Location = new System.Drawing.Point(12, 246);
             this.dgvStockRecord.Name = "dgvStockRecord";
             this.dgvStockRecord.RowTemplate.Height = 24;
-            this.dgvStockRecord.Size = new System.Drawing.Size(769, 212);
+            this.dgvStockRecord.Size = new System.Drawing.Size(752, 212);
             this.dgvStockRecord.TabIndex = 8;
             this.dgvStockRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvStockRecord_CellClick);
             this.dgvStockRecord.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvStockRecord_CellDoubleClick);
@@ -248,7 +248,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(793, 470);
+            this.ClientSize = new System.Drawing.Size(779, 470);
             this.Controls.Add(this.dgvStockRecord);
             this.Controls.Add(this.btnDeleteProduct);
             this.Controls.Add(this.btnEditProduct);

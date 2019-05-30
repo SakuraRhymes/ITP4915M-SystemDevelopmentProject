@@ -11,11 +11,12 @@ namespace SLMCS_ERP
         {
             InitializeComponent();
             dgvStockRecord.AllowUserToAddRows = false;
+            dgvStockRecord.RowHeadersVisible = false;
+            dgvStockRecord.ReadOnly = true;
         }
 
         private void FrmInventoryStockRecord_Load(object sender, EventArgs e)
         {
-            dgvStockRecord.ReadOnly = true;
            
         }
         private void BtnSearch_Click(object sender, EventArgs e)
@@ -33,8 +34,8 @@ namespace SLMCS_ERP
             //{
             //    dgvStockRecord.DataSource = product.GetProdcutTable("WHERE ProductName LIKE '" + txtProductName.Text + "%'");
             //}
-            
-            dgvStockRecord.DataSource = product.GetProdcutTable("");
+
+
 
 
 
@@ -44,6 +45,8 @@ namespace SLMCS_ERP
             //chk.Name = "chk";
             //dgvStockRecord.Columns.Add(chk);
             //dgvStockRecord.Columns["chk"].DisplayIndex = 0;
+            dgvStockRecord.DataSource = product.GetProdcutTable("");
+
             selectedProductID = dgvStockRecord.Rows[0].Cells["ProductID"].Value.ToString();
 
             dgvStockRecord.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -53,7 +56,7 @@ namespace SLMCS_ERP
             dgvStockRecord.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvStockRecord.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvStockRecord.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgvStockRecord.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvStockRecord.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void BtnNewProduct_Click(object sender, EventArgs e)
@@ -70,8 +73,7 @@ namespace SLMCS_ERP
                 MessageBox.Show("Please select a product");
             } else
             {
-                frmInventoryEditProduct inventoryEditProduct = new frmInventoryEditProduct(selectedProductID);
-                inventoryEditProduct.Show();
+                OpenEditProductForm(selectedProductID);
             }
             
         }
@@ -85,6 +87,11 @@ namespace SLMCS_ERP
         }
 
         private void DgvStockRecord_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            OpenEditProductForm(selectedProductID);
+        }
+
+        private void OpenEditProductForm(string selectedProductID)
         {
             frmInventoryEditProduct inventoryEditProduct = new frmInventoryEditProduct(selectedProductID);
             inventoryEditProduct.Show();
