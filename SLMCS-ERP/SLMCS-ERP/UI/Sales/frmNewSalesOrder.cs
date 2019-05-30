@@ -82,5 +82,10 @@ namespace SLMCS_ERP.UI.Sales
                 lblProductAvailability.Text = "Not available";
             }
         }
+
+        private void GroupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

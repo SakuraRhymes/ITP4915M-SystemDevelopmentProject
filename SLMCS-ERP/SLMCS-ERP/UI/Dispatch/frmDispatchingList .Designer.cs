@@ -30,8 +30,6 @@
         {
             this.dgvOrderDetail = new System.Windows.Forms.DataGridView();
             this.dgvSalesOrderList = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSalesOrderList)).BeginInit();
-
             this.txtOrderID = new System.Windows.Forms.TextBox();
             this.txtStaffID = new System.Windows.Forms.TextBox();
             this.btnSearchOrder = new System.Windows.Forms.Button();
@@ -40,102 +38,188 @@
             this.btnGenerateForDIC = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
+            this.lbOrderId = new System.Windows.Forms.Label();
+            this.lbStaffID = new System.Windows.Forms.Label();
+            this.lbOrderDate = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSalesOrderList)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // dgvOrderDetail
+            // 
             this.dgvOrderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrderDetail.Location = new System.Drawing.Point(16, 493);
-            this.dgvOrderDetail.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvOrderDetail.Location = new System.Drawing.Point(16, 442);
+            this.dgvOrderDetail.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.dgvOrderDetail.Name = "dgvOrderDetail";
             this.dgvOrderDetail.RowTemplate.Height = 24;
-            this.dgvOrderDetail.Size = new System.Drawing.Size(1172, 154);
+            this.dgvOrderDetail.Size = new System.Drawing.Size(1172, 192);
             this.dgvOrderDetail.TabIndex = 0;
-
-            this.txtOrderID.Location = new System.Drawing.Point(127, 55);
+            // 
+            // dgvSalesOrderList
+            // 
+            this.dgvSalesOrderList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSalesOrderList.Location = new System.Drawing.Point(16, 181);
+            this.dgvSalesOrderList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvSalesOrderList.Name = "dgvSalesOrderList";
+            this.dgvSalesOrderList.ReadOnly = true;
+            this.dgvSalesOrderList.RowTemplate.Height = 24;
+            this.dgvSalesOrderList.Size = new System.Drawing.Size(1172, 192);
+            this.dgvSalesOrderList.TabIndex = 10;
+            // 
+            // txtOrderID
+            // 
+            this.txtOrderID.Location = new System.Drawing.Point(88, 41);
+            this.txtOrderID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtOrderID.Name = "txtOrderID";
-            this.txtOrderID.Size = new System.Drawing.Size(246, 25);
+            this.txtOrderID.Size = new System.Drawing.Size(262, 25);
             this.txtOrderID.TabIndex = 2;
-
-            this.txtStaffID.Location = new System.Drawing.Point(493, 55);
+            // 
+            // txtStaffID
+            // 
+            this.txtStaffID.Location = new System.Drawing.Point(484, 41);
+            this.txtStaffID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtStaffID.Name = "txtStaffID";
-            this.txtStaffID.Size = new System.Drawing.Size(246, 25);
+            this.txtStaffID.Size = new System.Drawing.Size(262, 25);
             this.txtStaffID.TabIndex = 4;
-
-            this.btnSearchOrder.Location = new System.Drawing.Point(1066, 132);
+            // 
+            // btnSearchOrder
+            // 
+            this.btnSearchOrder.Location = new System.Drawing.Point(1025, 121);
+            this.btnSearchOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearchOrder.Name = "btnSearchOrder";
-            this.btnSearchOrder.Size = new System.Drawing.Size(122, 42);
+            this.btnSearchOrder.Size = new System.Drawing.Size(163, 52);
             this.btnSearchOrder.TabIndex = 5;
             this.btnSearchOrder.Text = "Search";
             this.btnSearchOrder.UseVisualStyleBackColor = true;
             this.btnSearchOrder.Click += new System.EventHandler(this.Search_Click);
-
-            this.txtOrderDate.Location = new System.Drawing.Point(863, 55);
+            // 
+            // txtOrderDate
+            // 
+            this.txtOrderDate.Location = new System.Drawing.Point(899, 41);
+            this.txtOrderDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtOrderDate.Name = "txtOrderDate";
-            this.txtOrderDate.Size = new System.Drawing.Size(246, 25);
+            this.txtOrderDate.Size = new System.Drawing.Size(262, 25);
             this.txtOrderDate.TabIndex = 7;
-
-            this.btnGenerateForDID.Location = new System.Drawing.Point(927, 654);
+            // 
+            // btnGenerateForDID
+            // 
+            this.btnGenerateForDID.Location = new System.Drawing.Point(1025, 643);
+            this.btnGenerateForDID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGenerateForDID.Name = "btnGenerateForDID";
-            this.btnGenerateForDID.Size = new System.Drawing.Size(122, 42);
+            this.btnGenerateForDID.Size = new System.Drawing.Size(163, 52);
             this.btnGenerateForDID.TabIndex = 8;
             this.btnGenerateForDID.Text = "Generate For DID";
             this.btnGenerateForDID.UseVisualStyleBackColor = true;
-
-            this.dgvSalesOrderList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSalesOrderList.Location = new System.Drawing.Point(12, 145);
-            this.dgvSalesOrderList.Name = "dgvSalesOrderList";
-            this.dgvSalesOrderList.ReadOnly = true;
-            this.dgvSalesOrderList.RowTemplate.Height = 24;
-            this.dgvSalesOrderList.Size = new System.Drawing.Size(879, 123);
-            this.dgvSalesOrderList.TabIndex = 10;
-            this.btnGenerateForDIC.Location = new System.Drawing.Point(1066, 654);
+            // 
+            // btnGenerateForDIC
+            // 
+            this.btnGenerateForDIC.Location = new System.Drawing.Point(854, 643);
+            this.btnGenerateForDIC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGenerateForDIC.Name = "btnGenerateForDIC";
-            this.btnGenerateForDIC.Size = new System.Drawing.Size(122, 42);
+            this.btnGenerateForDIC.Size = new System.Drawing.Size(163, 52);
             this.btnGenerateForDIC.TabIndex = 9;
             this.btnGenerateForDIC.Text = "Generate For DIC";
             this.btnGenerateForDIC.UseVisualStyleBackColor = true;
-
-            this.btnRefresh.Location = new System.Drawing.Point(918, 132);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(828, 121);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(122, 42);
+            this.btnRefresh.Size = new System.Drawing.Size(163, 52);
             this.btnRefresh.TabIndex = 12;
             this.btnRefresh.Text = "Refrsh";
             this.btnRefresh.UseVisualStyleBackColor = true;
-
-            this.btnConfirm.Location = new System.Drawing.Point(1066, 342);
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Location = new System.Drawing.Point(1025, 381);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(122, 42);
+            this.btnConfirm.Size = new System.Drawing.Size(163, 52);
             this.btnConfirm.TabIndex = 13;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
-
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            // 
+            // lbOrderId
+            // 
+            this.lbOrderId.AutoSize = true;
+            this.lbOrderId.Location = new System.Drawing.Point(7, 51);
+            this.lbOrderId.Name = "lbOrderId";
+            this.lbOrderId.Size = new System.Drawing.Size(63, 15);
+            this.lbOrderId.TabIndex = 14;
+            this.lbOrderId.Text = "Order ID:";
+            // 
+            // lbStaffID
+            // 
+            this.lbStaffID.AutoSize = true;
+            this.lbStaffID.Location = new System.Drawing.Point(391, 51);
+            this.lbStaffID.Name = "lbStaffID";
+            this.lbStaffID.Size = new System.Drawing.Size(58, 15);
+            this.lbStaffID.TabIndex = 15;
+            this.lbStaffID.Text = "Staff ID:";
+            // 
+            // lbOrderDate
+            // 
+            this.lbOrderDate.AutoSize = true;
+            this.lbOrderDate.Location = new System.Drawing.Point(798, 51);
+            this.lbOrderDate.Name = "lbOrderDate";
+            this.lbOrderDate.Size = new System.Drawing.Size(74, 15);
+            this.lbOrderDate.TabIndex = 16;
+            this.lbOrderDate.Text = "Order Date:";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.lbOrderDate);
+            this.groupBox1.Controls.Add(this.lbOrderId);
+            this.groupBox1.Controls.Add(this.lbStaffID);
+            this.groupBox1.Controls.Add(this.txtOrderID);
+            this.groupBox1.Controls.Add(this.txtStaffID);
+            this.groupBox1.Controls.Add(this.txtOrderDate);
+            this.groupBox1.Location = new System.Drawing.Point(16, 13);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(1172, 100);
+            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(40, 200);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(0, 15);
+            this.label6.TabIndex = 2;
+            // 
+            // frmDispatchingList
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
-            this.ClientSize = new System.Drawing.Size(1036, 566);
+            this.ClientSize = new System.Drawing.Size(1581, 708);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvSalesOrderList);
-
-            this.ClientSize = new System.Drawing.Size(1381, 708);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnGenerateForDIC);
             this.Controls.Add(this.btnGenerateForDID);
-            this.Controls.Add(this.txtOrderDate);
             this.Controls.Add(this.btnSearchOrder);
-            this.Controls.Add(this.txtStaffID);
-            this.Controls.Add(this.txtOrderID);
             this.Controls.Add(this.dgvOrderDetail);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmDispatchingList";
-            this.Text = "frmDispatchingList";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSalesOrderList)).EndInit();
-
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "frmDispatchingList";
             this.Text = "frmDispatchingList";
             this.Load += new System.EventHandler(this.FrmDispatchingList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSalesOrderList)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -153,5 +237,10 @@
         private System.Windows.Forms.Button btnGenerateForDIC;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.Label lbOrderId;
+        private System.Windows.Forms.Label lbStaffID;
+        private System.Windows.Forms.Label lbOrderDate;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label6;
     }
 }
