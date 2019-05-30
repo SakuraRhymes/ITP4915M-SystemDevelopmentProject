@@ -32,6 +32,7 @@
             this.panelLeftNavigate = new System.Windows.Forms.Panel();
             this.GoodsReceviedList = new System.Windows.Forms.Button();
             this.DispatchingList = new System.Windows.Forms.Button();
+            this.dispatchHistory = new System.Windows.Forms.Button();
             this.panelLeftNavigate.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +49,7 @@
             // panelLeftNavigate
             // 
             this.panelLeftNavigate.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panelLeftNavigate.Controls.Add(this.dispatchHistory);
             this.panelLeftNavigate.Controls.Add(this.GoodsReceviedList);
             this.panelLeftNavigate.Controls.Add(this.DispatchingList);
             this.panelLeftNavigate.Dock = System.Windows.Forms.DockStyle.Left;
@@ -59,7 +61,7 @@
             // 
             // GoodsReceviedList
             // 
-            this.GoodsReceviedList.Location = new System.Drawing.Point(36, 154);
+            this.GoodsReceviedList.Location = new System.Drawing.Point(36, 140);
             this.GoodsReceviedList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GoodsReceviedList.Name = "GoodsReceviedList";
             this.GoodsReceviedList.Size = new System.Drawing.Size(129, 54);
@@ -78,6 +80,17 @@
             this.DispatchingList.Text = "Dispatching List";
             this.DispatchingList.UseVisualStyleBackColor = true;
             this.DispatchingList.Click += new System.EventHandler(this.DispatchingList_Click);
+            // 
+            // dispatchHistory
+            // 
+            this.dispatchHistory.Location = new System.Drawing.Point(36, 259);
+            this.dispatchHistory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dispatchHistory.Name = "dispatchHistory";
+            this.dispatchHistory.Size = new System.Drawing.Size(129, 54);
+            this.dispatchHistory.TabIndex = 2;
+            this.dispatchHistory.Text = "Dispatched History";
+            this.dispatchHistory.UseVisualStyleBackColor = true;
+            this.dispatchHistory.Click += new System.EventHandler(this.DispatchHistory_Click);
             // 
             // frmDispatch
             // 
@@ -102,5 +115,6 @@
         private System.Windows.Forms.Panel panelLeftNavigate;
         private System.Windows.Forms.Button DispatchingList;
         private System.Windows.Forms.Button GoodsReceviedList;
+        private System.Windows.Forms.Button dispatchHistory;
     }
 }

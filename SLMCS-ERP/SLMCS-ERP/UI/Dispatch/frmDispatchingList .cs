@@ -22,5 +22,10 @@ namespace SLMCS_ERP{
         {
 
         }
+
+        private void FrmDispatchingList_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -36,5 +36,11 @@ namespace SLMCS_ERP
             frmGoodsReceivedList goodsReceivedList = new frmGoodsReceivedList();
             navigation(goodsReceivedList, panelContent);
         }
+
+        private void DispatchHistory_Click(object sender, EventArgs e)
+        {
+            frmDispatchedHistory dispatchedHistory = new frmDispatchedHistory();
+            navigation(dispatchedHistory, panelContent);
+        }
     }
 }
