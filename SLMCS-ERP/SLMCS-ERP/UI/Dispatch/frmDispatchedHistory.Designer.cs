@@ -57,13 +57,13 @@
             // 
             this.txtOrderID.Location = new System.Drawing.Point(88, 44);
             this.txtOrderID.Name = "txtOrderID";
-            this.txtOrderID.Size = new System.Drawing.Size(245, 25);
+            this.txtOrderID.Size = new System.Drawing.Size(255, 25);
             this.txtOrderID.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(414, 54);
+            this.label2.Location = new System.Drawing.Point(383, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 15);
             this.label2.TabIndex = 2;
@@ -71,15 +71,15 @@
             // 
             // txtStaffID
             // 
-            this.txtStaffID.Location = new System.Drawing.Point(498, 44);
+            this.txtStaffID.Location = new System.Drawing.Point(473, 46);
             this.txtStaffID.Name = "txtStaffID";
-            this.txtStaffID.Size = new System.Drawing.Size(245, 25);
+            this.txtStaffID.Size = new System.Drawing.Size(255, 25);
             this.txtStaffID.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(807, 54);
+            this.label3.Location = new System.Drawing.Point(773, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 15);
             this.label3.TabIndex = 4;
@@ -87,9 +87,9 @@
             // 
             // txtOrderDate
             // 
-            this.txtOrderDate.Location = new System.Drawing.Point(920, 44);
+            this.txtOrderDate.Location = new System.Drawing.Point(900, 46);
             this.txtOrderDate.Name = "txtOrderDate";
-            this.txtOrderDate.Size = new System.Drawing.Size(245, 25);
+            this.txtOrderDate.Size = new System.Drawing.Size(255, 25);
             this.txtOrderDate.TabIndex = 5;
             // 
             // dgvDispatchedList
