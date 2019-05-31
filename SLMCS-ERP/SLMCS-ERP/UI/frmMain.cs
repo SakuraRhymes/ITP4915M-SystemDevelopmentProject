@@ -42,7 +42,8 @@ namespace SLMCS_ERP
 
         private void BtnInventory_Click(object sender, EventArgs e)
         {
-
+            frmInventoryMain inventoryMain = new frmInventoryMain();
+            navigation(inventoryMain, panelContent);
         }
 
         private void BtnFinance_Click(object sender, EventArgs e)

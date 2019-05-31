@@ -3,6 +3,7 @@ using SLMCS_ERP;
 using System.Data;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace SLMCS_Class
 {
@@ -105,7 +106,7 @@ namespace SLMCS_Class
 
         public DataTable GetProdcutTable(string condition)
         {
-            string query = "SELECT ProductID,ProductType,ProductName,ProductUnit,ProductPrice,ActualQuantity,ReorderLevel,DangerLevel FROM Product ";
+            string query = "SELECT ProductID,ProductType,ProductName,ProductUnit,ProductPrice,VendorID,ActualQuantity,ReorderLevel,DangerLevel FROM Product ";
             if (condition != "")
             {
                 query += condition;
@@ -149,6 +150,20 @@ namespace SLMCS_Class
         {
             string query = string.Format("DELETE FROM Product WHERE ProductID = '{0}';", productID);
             dbConnection.Delete(query);
+        }
+
+        public string GetMultiChoiceQuery(string queryString)
+        {
+            var queryArray = queryString.Split('/'); // when have '/' in the string, split into array 
+            queryArray = queryArray.Take(queryArray.Count() - 1).ToArray(); //drop the last element of array
+            string restOfqueryArray = string.Join(" AND ", queryArray); //use 'AND' to recombine the array
+            string finalQuery = "WHERE " + restOfqueryArray;// add 'WHERE' to become a complete sql query condition
+            if (restOfqueryArray == "")
+            {
+                finalQuery = "";
+            }
+
+            return finalQuery;
         }
 
         //get set method
