@@ -95,6 +95,10 @@ namespace SLMCS_Class
             string query = "SELECT * FROM SalesOrderLine WHERE SalesOrderID = \"" + SalesOrderID + "\"";
             return dbConnection.GetDataTable(query);
         }
+        public void updataSalesOrderStatusInDB(string salesOrderID, string status)
+        {
+            string query = "UPDATA Sales";
+        }
 
         public String[] updataDealerInfo(String dealerID)
         {
