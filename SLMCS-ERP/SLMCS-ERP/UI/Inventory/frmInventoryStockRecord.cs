@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using SLMCS_Class;
+using System.Linq;
 
 namespace SLMCS_ERP
 {
@@ -23,18 +24,22 @@ namespace SLMCS_ERP
         }
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            //if (txtProductID.Text != "")
-            //{
-            //    dgvStockRecord.DataSource = product.GetProdcutTable("WHERE ProductID LIKE '" + txtProductID.Text + "%'");
-            //}
-            //if (cboProductType.Text !="")
-            //{
-            //    dgvStockRecord.DataSource = product.GetProdcutTable("WHERE ProductType = '" + cboProductType.Text + "'");
-            //}
-            //if (txtProductName.Text != "")
-            //{
-            //    dgvStockRecord.DataSource = product.GetProdcutTable("WHERE ProductName LIKE '" + txtProductName.Text + "%'");
-            //}
+            string queryString = "";
+            if (txtProductID.Text != "")
+            {
+//                dgvStockRecord.DataSource = product.GetProdcutTable("WHERE ProductID LIKE '" + txtProductID.Text + "%'");
+                queryString += "ProductID LIKE '" + txtProductID.Text + "%'" + "/";
+            }
+            if (cboProductType.Text !="")
+            {
+//                dgvStockRecord.DataSource = product.GetProdcutTable("WHERE ProductType = '" + cboProductType.Text + "'");
+                queryString += "ProductType = '" + cboProductType.Text + "' " + "/";
+            }
+            if (txtProductName.Text != "")
+            {
+//                dgvStockRecord.DataSource = product.GetProdcutTable("WHERE ProductName LIKE '" + txtProductName.Text + "%'");
+                queryString += "ProductName LIKE '" + txtProductName.Text + "%' " + "/";
+            }
 
             //DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
 
@@ -42,10 +47,20 @@ namespace SLMCS_ERP
             //chk.Name = "chk";
             //dgvStockRecord.Columns.Add(chk);
             //dgvStockRecord.Columns["chk"].DisplayIndex = 0;
-
-
-            dgvStockRecord.DataSource = product.GetProdcutTable("");
-
+            
+            //string theString = "Some Very Large String Here";
+            //string firstElem = array.First();
+            //MessageBox.Show(lastElem.ToString());
+            var queryArray = queryString.Split('/');
+            queryArray = queryArray.Take(queryArray.Count() - 1).ToArray();
+            string restOfqueryArray = string.Join(" AND ", queryArray);
+            string finalQuery = "WHERE " + restOfqueryArray;
+            //MessageBox.Show(finalQuery);
+            if (restOfqueryArray == "")
+            {
+                finalQuery = "";
+            }
+            dgvStockRecord.DataSource = product.GetProdcutTable(finalQuery);
             selectedProductID = dgvStockRecord.Rows[0].Cells["ProductID"].Value.ToString();
             DGVSearchFormatSetting();
         }
@@ -92,15 +107,21 @@ namespace SLMCS_ERP
 
         private void BtnDeleteProduct_Click(object sender, EventArgs e)
         {
-            Product currentProduct = new Product(selectedProductID);
-            if (MessageBox.Show("Delete?\n\tProduct ID :" + selectedProductID + "\n\tName :" + currentProduct.ProductName, "Confirm Message", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (selectedProductID == "")
             {
-                //delete product
-                
-                currentProduct.DeleteProduct(selectedProductID);
-                RefreshSearchResult(sender, e);
+                MessageBox.Show("Please select a product");
             }
-            
+            else
+            {
+                Product currentProduct = new Product(selectedProductID);
+                if (MessageBox.Show("Delete?\n\tProduct ID :" + selectedProductID + "\n\tName :" + currentProduct.ProductName, "Confirm Message", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    //delete product
+                
+                    currentProduct.DeleteProduct(selectedProductID);
+                    RefreshSearchResult(sender, e);
+                }
+            }
         }
 
         private void RefreshSearchResult(object sender, EventArgs e)
