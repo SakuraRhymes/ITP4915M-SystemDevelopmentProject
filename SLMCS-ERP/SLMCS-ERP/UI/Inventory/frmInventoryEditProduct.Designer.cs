@@ -42,12 +42,12 @@
             this.txtProductPrice = new System.Windows.Forms.TextBox();
             this.txtActualQty = new System.Windows.Forms.TextBox();
             this.txtReorderLevel = new System.Windows.Forms.TextBox();
-            this.cboProductType = new System.Windows.Forms.ComboBox();
             this.cboProductUnit = new System.Windows.Forms.ComboBox();
             this.rtbProductDesc = new System.Windows.Forms.RichTextBox();
             this.lblProductIDData = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDangerLevel = new System.Windows.Forms.TextBox();
             this.lblDangerLevel = new System.Windows.Forms.Label();
+            this.lblProductTypeData = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnUpdate
@@ -58,6 +58,7 @@
             this.btnUpdate.TabIndex = 0;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // btnReset
             // 
@@ -67,6 +68,7 @@
             this.btnReset.TabIndex = 1;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.BtnReset_Click);
             // 
             // lblProductID
             // 
@@ -153,6 +155,7 @@
             this.txtProductPrice.Name = "txtProductPrice";
             this.txtProductPrice.Size = new System.Drawing.Size(100, 22);
             this.txtProductPrice.TabIndex = 12;
+            this.txtProductPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtProductPrice_KeyPress);
             // 
             // txtActualQty
             // 
@@ -160,6 +163,7 @@
             this.txtActualQty.Name = "txtActualQty";
             this.txtActualQty.Size = new System.Drawing.Size(100, 22);
             this.txtActualQty.TabIndex = 13;
+            this.txtActualQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtActualQty_KeyPress);
             // 
             // txtReorderLevel
             // 
@@ -167,18 +171,15 @@
             this.txtReorderLevel.Name = "txtReorderLevel";
             this.txtReorderLevel.Size = new System.Drawing.Size(100, 22);
             this.txtReorderLevel.TabIndex = 14;
-            // 
-            // cboProductType
-            // 
-            this.cboProductType.FormattingEnabled = true;
-            this.cboProductType.Location = new System.Drawing.Point(121, 42);
-            this.cboProductType.Name = "cboProductType";
-            this.cboProductType.Size = new System.Drawing.Size(100, 20);
-            this.cboProductType.TabIndex = 15;
+            this.txtReorderLevel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtReorderLevel_KeyPress);
             // 
             // cboProductUnit
             // 
             this.cboProductUnit.FormattingEnabled = true;
+            this.cboProductUnit.Items.AddRange(new object[] {
+            "piece",
+            "item",
+            "set"});
             this.cboProductUnit.Location = new System.Drawing.Point(121, 168);
             this.cboProductUnit.Name = "cboProductUnit";
             this.cboProductUnit.Size = new System.Drawing.Size(100, 20);
@@ -201,12 +202,13 @@
             this.lblProductIDData.TabIndex = 18;
             this.lblProductIDData.Text = "XXXXX";
             // 
-            // textBox1
+            // txtDangerLevel
             // 
-            this.textBox1.Location = new System.Drawing.Point(121, 278);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 20;
+            this.txtDangerLevel.Location = new System.Drawing.Point(121, 278);
+            this.txtDangerLevel.Name = "txtDangerLevel";
+            this.txtDangerLevel.Size = new System.Drawing.Size(100, 22);
+            this.txtDangerLevel.TabIndex = 20;
+            this.txtDangerLevel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDangerLevel_KeyPress);
             // 
             // lblDangerLevel
             // 
@@ -217,17 +219,26 @@
             this.lblDangerLevel.TabIndex = 19;
             this.lblDangerLevel.Text = "Danger Level  :";
             // 
+            // lblProductTypeData
+            // 
+            this.lblProductTypeData.AutoSize = true;
+            this.lblProductTypeData.Location = new System.Drawing.Point(121, 45);
+            this.lblProductTypeData.Name = "lblProductTypeData";
+            this.lblProductTypeData.Size = new System.Drawing.Size(45, 12);
+            this.lblProductTypeData.TabIndex = 21;
+            this.lblProductTypeData.Text = "XXXXX";
+            // 
             // frmInventoryEditProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 344);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lblProductTypeData);
+            this.Controls.Add(this.txtDangerLevel);
             this.Controls.Add(this.lblDangerLevel);
             this.Controls.Add(this.lblProductIDData);
             this.Controls.Add(this.rtbProductDesc);
             this.Controls.Add(this.cboProductUnit);
-            this.Controls.Add(this.cboProductType);
             this.Controls.Add(this.txtReorderLevel);
             this.Controls.Add(this.txtActualQty);
             this.Controls.Add(this.txtProductPrice);
@@ -266,11 +277,11 @@
         private System.Windows.Forms.TextBox txtProductPrice;
         private System.Windows.Forms.TextBox txtActualQty;
         private System.Windows.Forms.TextBox txtReorderLevel;
-        private System.Windows.Forms.ComboBox cboProductType;
         private System.Windows.Forms.ComboBox cboProductUnit;
         private System.Windows.Forms.RichTextBox rtbProductDesc;
         private System.Windows.Forms.Label lblProductIDData;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDangerLevel;
         private System.Windows.Forms.Label lblDangerLevel;
+        private System.Windows.Forms.Label lblProductTypeData;
     }
 }
