@@ -33,6 +33,8 @@
             this.lblStockQuantity = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtVendorID = new System.Windows.Forms.TextBox();
+            this.lblVendorID = new System.Windows.Forms.Label();
             this.txtProductPrice = new System.Windows.Forms.TextBox();
             this.txtStockQuantity = new System.Windows.Forms.TextBox();
             this.txtProductName = new System.Windows.Forms.TextBox();
@@ -46,9 +48,6 @@
             this.btnEditProduct = new System.Windows.Forms.Button();
             this.btnDeleteProduct = new System.Windows.Forms.Button();
             this.dgvStockRecord = new System.Windows.Forms.DataGridView();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockRecord)).BeginInit();
             this.SuspendLayout();
@@ -92,6 +91,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtVendorID);
+            this.groupBox1.Controls.Add(this.lblVendorID);
             this.groupBox1.Controls.Add(this.txtProductPrice);
             this.groupBox1.Controls.Add(this.txtStockQuantity);
             this.groupBox1.Controls.Add(this.txtProductName);
@@ -105,12 +106,28 @@
             this.groupBox1.Controls.Add(this.lblStockQuantity);
             this.groupBox1.Controls.Add(this.lblProductID);
             this.groupBox1.Controls.Add(this.lblProdcutType);
-            this.groupBox1.Location = new System.Drawing.Point(12, 8);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(568, 182);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Condition";
+            // 
+            // txtVendorID
+            // 
+            this.txtVendorID.Location = new System.Drawing.Point(368, 26);
+            this.txtVendorID.Name = "txtVendorID";
+            this.txtVendorID.Size = new System.Drawing.Size(135, 22);
+            this.txtVendorID.TabIndex = 14;
+            // 
+            // lblVendorID
+            // 
+            this.lblVendorID.AutoSize = true;
+            this.lblVendorID.Location = new System.Drawing.Point(301, 29);
+            this.lblVendorID.Name = "lblVendorID";
+            this.lblVendorID.Size = new System.Drawing.Size(61, 12);
+            this.lblVendorID.TabIndex = 13;
+            this.lblVendorID.Text = "Vendor ID :";
             // 
             // txtProductPrice
             // 
@@ -128,7 +145,7 @@
             // 
             // txtProductName
             // 
-            this.txtProductName.Location = new System.Drawing.Point(368, 26);
+            this.txtProductName.Location = new System.Drawing.Point(368, 59);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(135, 22);
             this.txtProductName.TabIndex = 10;
@@ -181,7 +198,7 @@
             // lblProductName
             // 
             this.lblProductName.AutoSize = true;
-            this.lblProductName.Location = new System.Drawing.Point(285, 29);
+            this.lblProductName.Location = new System.Drawing.Point(285, 62);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(77, 12);
             this.lblProductName.TabIndex = 4;
@@ -189,7 +206,7 @@
             // 
             // btnNewProduct
             // 
-            this.btnNewProduct.Location = new System.Drawing.Point(12, 208);
+            this.btnNewProduct.Location = new System.Drawing.Point(12, 212);
             this.btnNewProduct.Name = "btnNewProduct";
             this.btnNewProduct.Size = new System.Drawing.Size(75, 23);
             this.btnNewProduct.TabIndex = 5;
@@ -199,16 +216,17 @@
             // 
             // btnEditProduct
             // 
-            this.btnEditProduct.Location = new System.Drawing.Point(130, 208);
+            this.btnEditProduct.Location = new System.Drawing.Point(147, 212);
             this.btnEditProduct.Name = "btnEditProduct";
             this.btnEditProduct.Size = new System.Drawing.Size(75, 23);
             this.btnEditProduct.TabIndex = 6;
             this.btnEditProduct.Text = "Edit";
             this.btnEditProduct.UseVisualStyleBackColor = true;
+            this.btnEditProduct.Click += new System.EventHandler(this.BtnEditProduct_Click);
             // 
             // btnDeleteProduct
             // 
-            this.btnDeleteProduct.Location = new System.Drawing.Point(245, 208);
+            this.btnDeleteProduct.Location = new System.Drawing.Point(287, 212);
             this.btnDeleteProduct.Name = "btnDeleteProduct";
             this.btnDeleteProduct.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteProduct.TabIndex = 7;
@@ -218,43 +236,19 @@
             // dgvStockRecord
             // 
             this.dgvStockRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStockRecord.Location = new System.Drawing.Point(12, 237);
+            this.dgvStockRecord.Location = new System.Drawing.Point(12, 246);
             this.dgvStockRecord.Name = "dgvStockRecord";
             this.dgvStockRecord.RowTemplate.Height = 24;
-            this.dgvStockRecord.Size = new System.Drawing.Size(568, 197);
+            this.dgvStockRecord.Size = new System.Drawing.Size(752, 212);
             this.dgvStockRecord.TabIndex = 8;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(34, 440);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(67, 22);
-            this.textBox3.TabIndex = 9;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(245, 440);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 10;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(394, 438);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 11;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.dgvStockRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvStockRecord_CellClick);
+            this.dgvStockRecord.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvStockRecord_CellDoubleClick);
             // 
             // frmInventoryStockRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(793, 470);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.ClientSize = new System.Drawing.Size(779, 470);
             this.Controls.Add(this.dgvStockRecord);
             this.Controls.Add(this.btnDeleteProduct);
             this.Controls.Add(this.btnEditProduct);
@@ -263,11 +257,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmInventoryStockRecord";
             this.Text = "frmInventoryStockRecord";
+            this.Load += new System.EventHandler(this.FrmInventoryStockRecord_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockRecord)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -289,10 +283,9 @@
         private System.Windows.Forms.Button btnEditProduct;
         private System.Windows.Forms.Button btnDeleteProduct;
         private System.Windows.Forms.DataGridView dgvStockRecord;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox txtProductPrice;
         private System.Windows.Forms.TextBox txtStockQuantity;
+        private System.Windows.Forms.TextBox txtVendorID;
+        private System.Windows.Forms.Label lblVendorID;
     }
 }

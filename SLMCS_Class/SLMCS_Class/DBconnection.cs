@@ -27,7 +27,7 @@ namespace SLMCS_ERP
             connection = new MySqlConnection(connString);
         }
         //open database connection
-        public bool openConnection()
+        public bool OpenConnection()
         {
             try
             {
@@ -40,7 +40,7 @@ namespace SLMCS_ERP
             }
         }
         //close database connection
-        public bool closeConnection()
+        public bool CloseConnection()
         {
             try
             {
@@ -53,32 +53,32 @@ namespace SLMCS_ERP
             }
         }
         //get data from table
-        public DataTable getDataTable(string selectQuery)
+        public DataTable GetDataTable(string selectQuery)
         {
             DataTable dataTable = new DataTable();
             //open connection
-            if (openConnection())
+            if (OpenConnection())
             {
                 MySqlDataAdapter da = new MySqlDataAdapter(selectQuery, connection);
                 DataSet ds = new DataSet();
                 ds.Clear();
                 da.Fill(ds);
                 dataTable = ds.Tables[0];
-                closeConnection();
+                CloseConnection();
                 return dataTable;
             }
             return dataTable;
         }
         //insert new data to database by short sql statement
-        public void insert(string table, string values)
+        public void Insert(string table, string values)
         {
             try
             {
-                openConnection();
+                OpenConnection();
                 string selectQuery = "INSERT INTO " + table + " VALUES (" + values + ")";
                 MySqlCommand cmd = new MySqlCommand(selectQuery, connection);
                 cmd.ExecuteNonQuery();
-                closeConnection();
+                CloseConnection();
             }
             catch (MySqlException e)
             {
@@ -86,14 +86,14 @@ namespace SLMCS_ERP
             }
         }
         //insert new data to database by full sql statement
-        public void insert(string insertQuery)
+        public void Insert(string insertQuery)
         {
             try
             {
-                openConnection();
+                OpenConnection();
                 MySqlCommand cmd = new MySqlCommand(insertQuery, connection);
                 cmd.ExecuteNonQuery();
-                closeConnection();
+                CloseConnection();
             }
             catch (MySqlException e)
             {
@@ -101,15 +101,15 @@ namespace SLMCS_ERP
             }
         }
         //update data from database by short sql statement
-        public void update(string table, string field, string condition)
+        public void Update(string table, string field, string condition)
         {
             try
             {
-                openConnection();
+                OpenConnection();
                 string updateQuery = "UPDATE " + table + " SET " + field + " " + condition;
                 MySqlCommand cmd = new MySqlCommand(updateQuery, connection);
                 cmd.ExecuteNonQuery();
-                closeConnection();
+                CloseConnection();
             }
             catch (MySqlException e)
             {
@@ -117,14 +117,14 @@ namespace SLMCS_ERP
             }
         }
         //update data from database by full sql statement
-        public void update(string updateQuery)
+        public void Update(string updateQuery)
         {
             try
             {
-                openConnection();
+                OpenConnection();
                 MySqlCommand cmd = new MySqlCommand(updateQuery, connection);
                 cmd.ExecuteNonQuery();
-                closeConnection();
+                CloseConnection();
             }
             catch (MySqlException e)
             {
@@ -132,15 +132,15 @@ namespace SLMCS_ERP
             }
         }
         //delete data from database by short sql statement
-        public void delete(string table, string condition)
+        public void Delete(string table, string condition)
         {
             try
             {
-                openConnection();
+                OpenConnection();
                 string deleteQuery = "DELETE FROM " + table + " " + condition;
                 MySqlCommand cmd = new MySqlCommand(deleteQuery, connection);
                 cmd.ExecuteNonQuery();
-                closeConnection();
+                CloseConnection();
             }
             catch (MySqlException e)
             {
@@ -148,14 +148,14 @@ namespace SLMCS_ERP
             }
         }
         //delete data from database by full sql statement
-        public void delete(string deleteQuery)
+        public void Delete(string deleteQuery)
         {
             try
             {
-                openConnection();
+                OpenConnection();
                 MySqlCommand cmd = new MySqlCommand(deleteQuery, connection);
                 cmd.ExecuteNonQuery();
-                closeConnection();
+                CloseConnection();
             }
             catch (MySqlException e)
             {

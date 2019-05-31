@@ -9,6 +9,8 @@ namespace SLMCS_ERP.UI.Sales
     {
         private SalesOrder salesOrder;
 
+        private string notAvailableMessage;
+
         public frmNewSalesOrder()
         {
             InitializeComponent();
@@ -18,6 +20,9 @@ namespace SLMCS_ERP.UI.Sales
         private void startUp()
         {
             salesOrder = new SalesOrder();
+            notAvailableMessage = "Not available";
+
+            txtDealerID.Focus();
 
             lblOrderID.Text = salesOrder.SalesOrderID;
             lblOrderDate.Text = salesOrder.SalesOrderDate;
@@ -33,17 +38,25 @@ namespace SLMCS_ERP.UI.Sales
 
         private void BtnAddItem_Click(object sender, EventArgs e)
         {
-            string productID = txtSearchForProduct.Text;
-            int quantity = Convert.ToInt32(txtOrderQunatity.Text);
-            Product product = new Product(productID);
+           
+            if(Convert.ToInt32(txtOrderQunatity.Text) <= Convert.ToInt32(lblProductAvailability.Text)) {
 
-            salesOrder.addProduct(product, quantity);
-            
-            dgvOrderItem.DataSource = null;
-            dgvOrderItem.DataSource = salesOrder._SalesOrderLine;
+                string productID = txtSearchForProduct.Text;
+                int quantity = Convert.ToInt32(txtOrderQunatity.Text);
+                Product product = new Product(productID);
 
-            //salesOrder.GetNextSalesOrderID();
-            //dgvOrderItem.DataSource = product.SearchForProduct(productID);
+                salesOrder.addProduct(product, quantity);
+
+                dgvOrderItem.DataSource = null;
+                dgvOrderItem.DataSource = salesOrder._SalesOrderLine;
+
+                txtSearchForProduct.Text = "";
+                txtOrderQunatity.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("The Product Is Out Of Stock!");
+            }
 
         }
 
@@ -57,14 +70,17 @@ namespace SLMCS_ERP.UI.Sales
         {
             if (txtDealerID.Text.Length == 8)
             {
-                salesOrder.DealerID = txtDealerID.Text;
-                lblDealerName.Text = salesOrder.DealerName;
-                lblDealerAddress.Text = salesOrder.DealerAddress;
+                String[] reslut = salesOrder.updataDealerInfo(txtDealerID.Text);
+                if(reslut != null)
+                {
+                    lblDealerName.Text = reslut[0];
+                    lblDealerAddress.Text = reslut[1];
+                }
+             
             }
             else
             {
-                lblDealerName.Text = "Not available";
-                lblDealerAddress.Text = "Not available";
+                lblDealerName.Text = lblDealerAddress.Text = notAvailableMessage;
             }
                 
         }
@@ -73,19 +89,23 @@ namespace SLMCS_ERP.UI.Sales
         {
             if (txtSearchForProduct.Text.Length == 6)
             {
-                lblProductName.Text = "Car Light 001";
-                lblProductAvailability.Text = "998";
+                String[] reslut = salesOrder.updataProductInfo(txtSearchForProduct.Text);
+                if (reslut != null)
+                {
+                    lblProductName.Text = reslut[0];
+                    lblProductAvailability.Text = reslut[1];
+                }
             }
             else
             {
-                lblProductName.Text = "Not available";
-                lblProductAvailability.Text = "Not available";
+                lblProductName.Text = lblProductAvailability.Text = notAvailableMessage;
             }
         }
 
-        private void GroupBox1_Enter(object sender, EventArgs e)
-        {
 
+        private void BtnCancelPlaceOrder_Click(object sender, EventArgs e)
+        {
+            startUp();
         }
     }
 }
