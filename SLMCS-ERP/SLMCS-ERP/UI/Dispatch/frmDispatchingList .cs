@@ -60,5 +60,20 @@ namespace SLMCS_ERP{
             dgvSalesOrderList.DataSource = null;
             dgvSalesOrderList.DataSource = salesOrder.getSalesOrderTableBySalesOrderStatus("Dispatching");
         }
+
+        private void DgvSalesOrderList_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void GroupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GroupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
