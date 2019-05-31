@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace SLMCS_Class
 {
+
     public class SalesOrder
     {
         private List<SalesOrderLine> _salesOrderLine;
@@ -60,7 +61,32 @@ namespace SLMCS_Class
 
         public DataTable getSalesOrderTableBySalesOrderStatus(string SalesOrderStatus)
         {
-            string query = "SELECT SalesOrderID, StaffID, DealerID, SalesOrderDate, SalesOrderStatus FROM SalesOrder WHERE SalesOrderDate < \"" + DateTime.Now.ToString("yyMMdd") + "\" AND SalesOrderStatus = \""+SalesOrderStatus+"\"";
+            string query = "SELECT SalesOrderID, StaffID, DealerID, SalesOrderDate, SalesOrderStatus FROM SalesOrder WHERE  SalesOrderStatus = \""+SalesOrderStatus+"\"";
+            return dbConnection.GetDataTable(query);
+        }
+
+
+        public DataTable Dispatching_getSalesOrderByOrderID(string OrderID)
+        {
+            string query = "SELECT SalesOrderID, StaffID, DealerID, SalesOrderDate, SalesOrderStatus FROM SalesOrder WHERE OrderID = \"" + OrderID + "\" AND SalesOrderStatus = \"Dispatching\"";
+            return dbConnection.GetDataTable(query);
+        }
+
+        public DataTable Dispatching_getSalesOrderByStaffID(string StaffID)
+        {
+            string query = "SELECT SalesOrderID, StaffID, DealerID, SalesOrderDate, SalesOrderStatus FROM SalesOrder WHERE StaffID = \"" + StaffID + "\" AND SalesOrderStatus = \"Dispatching\"";
+            return dbConnection.GetDataTable(query);
+        }
+
+        public DataTable Dispatching_getSalesOrderByDealerID(string DealerID)
+        {
+            string query = "SELECT SalesOrderID, StaffID, DealerID, SalesOrderDate, SalesOrderStatus FROM SalesOrder WHERE DealerID = \"" + DealerID + "\" AND SalesOrderStatus = \"Dispatching\"";
+            return dbConnection.GetDataTable(query);
+        }
+
+        public DataTable getSalesTableByWhereQuery(string condition)
+        {
+            string query = "SELECT SalesOrderID, StaffID, DealerID, SalesOrderDate, SalesOrderStatus FROM SalesOrder WHERE " + condition;
             return dbConnection.GetDataTable(query);
         }
         public DataTable getSalesOrderLineBySalesOrderID(string SalesOrderID)

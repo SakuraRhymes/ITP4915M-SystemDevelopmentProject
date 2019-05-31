@@ -13,6 +13,7 @@ using SLMCS_Class;
 namespace SLMCS_ERP{
     public partial class frmDispatchingList : Form
     {
+        private string selectedOrderID;
         private SalesOrder salesOrder;
         public frmDispatchingList()
         {
@@ -24,8 +25,8 @@ namespace SLMCS_ERP{
 
         private void startUp()
         {
-            dgvSalesOrderList.DataSource = null;
-            dgvSalesOrderList.DataSource = salesOrder.getSalesOrderTableBySalesOrderStatus("Dispatching");
+            dgvOrderDetail.DataSource = null;
+            changeDispatchingDvgContect(salesOrder.getSalesOrderTableBySalesOrderStatus("Dispatching"));
         }
 
         private void DataGridView2_Load(object sender, DataGridViewCellEventArgs e)
@@ -34,6 +35,46 @@ namespace SLMCS_ERP{
 
         private void Search_Click(object sender, EventArgs e)
         {
+            string condition = "";
+            int andCount = 0;
+            if (txtOrderID.Text != "")
+            {
+                condition += "SalesOrderID LIKE \"%"+ txtOrderID.Text+"%\"";
+                andCount++;
+            }
+            
+            if (txtStaffID.Text != "")
+            {
+                if (andCount > 0)
+                {
+                    condition += " AND ";
+                    andCount--;
+                }
+                condition += "StaffID LIKE \"%" + txtStaffID.Text + "%\"";
+                andCount++;
+            }
+            
+            if (txtDealerID.Text != "")
+            {
+                if (andCount > 0)
+                {
+                    condition += " AND ";
+                    andCount--;
+                }
+                condition += "DealerID LIKE \"%" + txtDealerID.Text + "%\"";
+                andCount++;
+            }
+
+            if (andCount > 0)
+            {
+                condition += " AND ";
+                andCount--;
+            }
+
+            condition += "SalesOrderStatus = \"Dispatching\"";
+
+            //System.Windows.Forms.MessageBox.Show(condition);
+            changeDispatchingDvgContect(salesOrder.getSalesTableByWhereQuery(condition));
 
         }
 
@@ -49,21 +90,25 @@ namespace SLMCS_ERP{
 
         private void DgvSalesOrderList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex != -1)
+            {
+                selectedOrderID = dgvSalesOrderList.Rows[e.RowIndex].Cells["SalesOrderID"].Value.ToString();
+            }
             dgvOrderDetail.DataSource = null;
-            dgvOrderDetail.DataSource =salesOrder.getSalesOrderLineBySalesOrderID(dgvSalesOrderList.SelectedCells[0].Value.ToString());
+            dgvOrderDetail.DataSource =salesOrder.getSalesOrderLineBySalesOrderID(dgvSalesOrderList.Rows[e.RowIndex].Cells["SalesOrderID"].Value.ToString());
 
         }
 
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
             dgvOrderDetail.DataSource = null;
-            dgvSalesOrderList.DataSource = null;
-            dgvSalesOrderList.DataSource = salesOrder.getSalesOrderTableBySalesOrderStatus("Dispatching");
+            changeDispatchingDvgContect(salesOrder.getSalesOrderTableBySalesOrderStatus("Dispatching"));
         }
 
-        private void DgvSalesOrderList_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void changeDispatchingDvgContect(DataTable table)
         {
-
+            dgvSalesOrderList.DataSource = null;
+            dgvSalesOrderList.DataSource = table;
         }
 
         private void GroupBox2_Enter(object sender, EventArgs e)
@@ -74,6 +119,11 @@ namespace SLMCS_ERP{
         private void GroupBox4_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnConfirm_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

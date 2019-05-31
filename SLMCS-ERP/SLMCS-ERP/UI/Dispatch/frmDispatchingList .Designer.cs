@@ -43,9 +43,9 @@
             this.txtStaffID = new System.Windows.Forms.TextBox();
             this.txtDealerID = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnGenerateForDIC = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnGenerateForDIC = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesOrderList)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -58,7 +58,7 @@
             this.dgvOrderDetail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOrderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrderDetail.Location = new System.Drawing.Point(14, 26);
-            this.dgvOrderDetail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvOrderDetail.Margin = new System.Windows.Forms.Padding(4);
             this.dgvOrderDetail.Name = "dgvOrderDetail";
             this.dgvOrderDetail.RowTemplate.Height = 24;
             this.dgvOrderDetail.Size = new System.Drawing.Size(847, 151);
@@ -75,7 +75,6 @@
             this.dgvSalesOrderList.Size = new System.Drawing.Size(847, 165);
             this.dgvSalesOrderList.TabIndex = 10;
             this.dgvSalesOrderList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSalesOrderList_CellContentClick);
-            this.dgvSalesOrderList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSalesOrderList_CellContentClick_1);
             // 
             // txtOrderID
             // 
@@ -123,6 +122,7 @@
             this.btnConfirm.TabIndex = 13;
             this.btnConfirm.Text = "Dispatch";
             this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.BtnConfirm_Click);
             // 
             // lbOrderId
             // 
@@ -208,6 +208,15 @@
             this.groupBox2.Text = "Dispatching Order";
             this.groupBox2.Enter += new System.EventHandler(this.GroupBox2_Enter);
             // 
+            // btnGenerateForDIC
+            // 
+            this.btnGenerateForDIC.Location = new System.Drawing.Point(537, 191);
+            this.btnGenerateForDIC.Name = "btnGenerateForDIC";
+            this.btnGenerateForDIC.Size = new System.Drawing.Size(102, 30);
+            this.btnGenerateForDIC.TabIndex = 14;
+            this.btnGenerateForDIC.Text = "Generate For DIC";
+            this.btnGenerateForDIC.UseVisualStyleBackColor = true;
+            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.dgvOrderDetail);
@@ -219,15 +228,6 @@
             this.groupBox4.Text = "OrderLine";
             this.groupBox4.Enter += new System.EventHandler(this.GroupBox4_Enter);
             // 
-            // btnGenerateForDIC
-            // 
-            this.btnGenerateForDIC.Location = new System.Drawing.Point(537, 191);
-            this.btnGenerateForDIC.Name = "btnGenerateForDIC";
-            this.btnGenerateForDIC.Size = new System.Drawing.Size(102, 30);
-            this.btnGenerateForDIC.TabIndex = 14;
-            this.btnGenerateForDIC.Text = "Generate For DIC";
-            this.btnGenerateForDIC.UseVisualStyleBackColor = true;
-            // 
             // frmDispatchingList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -238,7 +238,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDispatchingList";
             this.Text = "frmDispatchingList";
             this.Load += new System.EventHandler(this.FrmDispatchingList_Load);
