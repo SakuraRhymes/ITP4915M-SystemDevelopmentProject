@@ -40,8 +40,11 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDispatchedList)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -57,7 +60,7 @@
             // 
             this.txtOrderID.Location = new System.Drawing.Point(88, 44);
             this.txtOrderID.Name = "txtOrderID";
-            this.txtOrderID.Size = new System.Drawing.Size(255, 25);
+            this.txtOrderID.Size = new System.Drawing.Size(265, 25);
             this.txtOrderID.TabIndex = 1;
             // 
             // label2
@@ -73,7 +76,7 @@
             // 
             this.txtStaffID.Location = new System.Drawing.Point(473, 46);
             this.txtStaffID.Name = "txtStaffID";
-            this.txtStaffID.Size = new System.Drawing.Size(255, 25);
+            this.txtStaffID.Size = new System.Drawing.Size(265, 25);
             this.txtStaffID.TabIndex = 3;
             // 
             // label3
@@ -89,22 +92,22 @@
             // 
             this.txtOrderDate.Location = new System.Drawing.Point(900, 46);
             this.txtOrderDate.Name = "txtOrderDate";
-            this.txtOrderDate.Size = new System.Drawing.Size(255, 25);
+            this.txtOrderDate.Size = new System.Drawing.Size(265, 25);
             this.txtOrderDate.TabIndex = 5;
             // 
             // dgvDispatchedList
             // 
             this.dgvDispatchedList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDispatchedList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDispatchedList.Location = new System.Drawing.Point(27, 267);
+            this.dgvDispatchedList.Location = new System.Drawing.Point(10, 20);
             this.dgvDispatchedList.Name = "dgvDispatchedList";
             this.dgvDispatchedList.RowTemplate.Height = 27;
-            this.dgvDispatchedList.Size = new System.Drawing.Size(1172, 339);
-            this.dgvDispatchedList.TabIndex = 6;
+            this.dgvDispatchedList.Size = new System.Drawing.Size(1155, 264);
+            this.dgvDispatchedList.TabIndex = 10;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(1077, 188);
+            this.btnCancel.Location = new System.Drawing.Point(1043, 292);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(122, 40);
             this.btnCancel.TabIndex = 7;
@@ -113,7 +116,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(758, 188);
+            this.btnSearch.Location = new System.Drawing.Point(1043, 94);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(122, 40);
             this.btnSearch.TabIndex = 8;
@@ -122,7 +125,7 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(920, 188);
+            this.btnRefresh.Location = new System.Drawing.Point(900, 94);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(122, 40);
             this.btnRefresh.TabIndex = 9;
@@ -132,7 +135,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.btnRefresh);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.txtOrderID);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtStaffID);
@@ -142,9 +147,10 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1172, 100);
+            this.groupBox1.Size = new System.Drawing.Size(1172, 141);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Searching";
             // 
             // label6
             // 
@@ -155,22 +161,44 @@
             this.label6.Size = new System.Drawing.Size(0, 15);
             this.label6.TabIndex = 2;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.dgvDispatchedList);
+            this.groupBox2.Controls.Add(this.btnCancel);
+            this.groupBox2.Location = new System.Drawing.Point(27, 214);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(1172, 339);
+            this.groupBox2.TabIndex = 20;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Dispatched List";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(40, 200);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 15);
+            this.label4.TabIndex = 2;
+            // 
             // frmDispatchedHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1381, 708);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.dgvDispatchedList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDispatchedHistory";
             this.Text = "frmDispatchedHistory";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDispatchedList)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -189,5 +217,7 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label4;
     }
 }
