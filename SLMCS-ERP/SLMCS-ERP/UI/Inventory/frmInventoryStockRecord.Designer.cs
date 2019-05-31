@@ -232,6 +232,7 @@
             this.btnDeleteProduct.TabIndex = 7;
             this.btnDeleteProduct.Text = "Delete";
             this.btnDeleteProduct.UseVisualStyleBackColor = true;
+            this.btnDeleteProduct.Click += new System.EventHandler(this.BtnDeleteProduct_Click);
             // 
             // dgvStockRecord
             // 

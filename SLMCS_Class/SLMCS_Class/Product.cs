@@ -145,6 +145,12 @@ namespace SLMCS_Class
             dbConnection.Update(query);
         }
 
+        public void DeleteProduct(string productID)
+        {
+            string query = string.Format("DELETE FROM Product WHERE ProductID = '{0}';", productID);
+            dbConnection.Delete(query);
+        }
+
         //get set method
         public string ProductID
         {
