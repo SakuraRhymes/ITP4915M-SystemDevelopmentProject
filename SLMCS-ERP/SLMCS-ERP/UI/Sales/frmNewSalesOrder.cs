@@ -32,8 +32,7 @@ namespace SLMCS_ERP.UI.Sales
             txtOrderQunatity.Text = "";
             txtSearchForProduct.Text = "";
 
-            dgvOrderItem.DataSource = null;
-            dgvOrderItem.DataSource = salesOrder._SalesOrderLine;
+            updateDGV();
         }
 
         private void BtnAddItem_Click(object sender, EventArgs e)
@@ -47,8 +46,7 @@ namespace SLMCS_ERP.UI.Sales
 
                 salesOrder.addProduct(product, quantity);
 
-                dgvOrderItem.DataSource = null;
-                dgvOrderItem.DataSource = salesOrder._SalesOrderLine;
+                updateDGV();
 
                 txtSearchForProduct.Text = "";
                 txtOrderQunatity.Text = "";
@@ -105,6 +103,22 @@ namespace SLMCS_ERP.UI.Sales
         private void BtnCancelPlaceOrder_Click(object sender, EventArgs e)
         {
             startUp();
+        }
+
+        private void updateDGV()
+        {
+            dgvOrderItem.DataSource = null;
+            dgvOrderItem.DataSource = salesOrder._SalesOrderLine;
+
+            dgvOrderItem.AllowUserToAddRows = false;
+            dgvOrderItem.RowHeadersVisible = false;
+            dgvOrderItem.ReadOnly = true;
+
+            dgvOrderItem.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvOrderItem.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvOrderItem.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvOrderItem.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvOrderItem.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
     }
 }
