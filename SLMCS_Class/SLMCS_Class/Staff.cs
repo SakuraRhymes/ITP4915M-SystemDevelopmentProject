@@ -1,14 +1,15 @@
 using System;
+using System.Collections.Generic;
 using System.Data;
 using SLMCS_ERP;
 
-namespace SLMCS_Class.Properties
+namespace SLMCS_Class
 {
     public class Staff
     {
         private string staffID;
         private string password;
-        private string passwordChangeDate;
+        private DateTime passwordChangeDate;
         private string staffName;
         private string staffPhoneNo;
         private string staffPositionID;//determine the system function
@@ -18,10 +19,30 @@ namespace SLMCS_Class.Properties
         private DataTable staffTable;
         
         private Department _department; //may don't need
+        private List<ReorderOrder> _reorderOrder;
         
         public Staff()
         {
             dbConnection = new DBConnection();
+        }
+
+        public Staff(string staffID)
+        {
+            dbConnection = new DBConnection();
+            _reorderOrder = new List<ReorderOrder>();
+
+            string query = "SELECT * FROM Staff WHERE StaffID ='" + staffID + "'";
+
+            staffTable = dbConnection.GetDataTable(query);
+            DataRow[] rows = staffTable.Select();
+
+            StaffID = (string)rows[0]["StaffID"];
+            Password = (string)rows[0]["Password"];
+            PasswordChangeDate = (DateTime)rows[0]["PasswordChangeDate"];
+            StaffName = (string)rows[0]["StaffName"];
+            StaffPhoneNo = (string)rows[0]["StaffPhoneNo"];
+            StaffPositionID = (string)rows[0]["StaffPositionID"];
+            DepartmentID = (string)rows[0]["DepartmentID"];
         }
         //login the system via staffID and password
         public bool Verify(string staffID, string password)
@@ -34,7 +55,7 @@ namespace SLMCS_Class.Properties
                 this.password = password;
                 
                 DataRow[] rows = staffTable.Select();
-                passwordChangeDate = ((DateTime) rows[0]["PasswordChangeDate"]).ToString("dd/MM/yyyy");
+                //passwordChangeDate = ((DateTime) rows[0]["PasswordChangeDate"]).ToString("dd/MM/yyyy");
                 staffName = (string) rows[0]["StaffName"];
                 staffPhoneNo = (string) rows[0]["StaffPhoneNo"];
                 staffPositionID = (string) rows[0]["StaffPositionID"];
@@ -52,7 +73,7 @@ namespace SLMCS_Class.Properties
             {
                 dbConnection.Update("Staff", "Password='" + newPassword + "', PasswordChangeDate="+ "CURDATE()" + "", "WHERE StaffID='" + staffID + "'");
                 Password = newPassword;
-                PasswordChangeDate = DateTime.Today.ToString("dd/MM/yyyy");
+                //PasswordChangeDate = DateTime.Today.ToString("dd/MM/yyyy");
                 Console.WriteLine("change successful"); // for testing
                 return true;
             }
@@ -83,17 +104,71 @@ namespace SLMCS_Class.Properties
         {
             return "";
         }
+
+        public void AddReorderOrder(ReorderOrder reorderOrder)
+        {
+            _reorderOrder.Add(reorderOrder);
+        }
         
-//        all get set method below
-        public string StaffID { get; set; }
-        public string Password { get; set; }
-        public string PasswordChangeDate { get; set; }
-        public string StaffName { get; set; }
-        public string StaffPhoneNo { get; set; }
-        public string StaffPositionId { get; set; }
-        public string DepartmentId { get; set; }
+        public void RemoveReorderOrder(ReorderOrder reorderOrder)
+        {
+            _reorderOrder.Add(reorderOrder);
+        }
+        
+        public List<ReorderOrder> GetStaffReorderOrders()
+        {
+            return _reorderOrder;
+        }
+        
+        
+        //        all get set method below
+        public string StaffID
+        {
+            get => staffID;
+            set => staffID = value;
+        }
+        public string StaffName
+        {
+            get => staffName;
+            set => staffName = value;
+        }
+
+        public string Password
+        {
+            get => password;
+            set => password = value;
+        }
+
+        public DateTime PasswordChangeDate
+        {
+            get => passwordChangeDate;
+            set => passwordChangeDate = value;
+        }
+
+        public string StaffPhoneNo
+        {
+            get => staffPhoneNo;
+            set => staffPhoneNo = value;
+        }
+
+        public string StaffPositionID
+        {
+            get => staffPositionID;
+            set => staffPositionID = value;
+        }
+
+        public string DepartmentID
+        {
+            get => departmentID;
+            set => departmentID = value;
+        }
+
         //may don't need
-        public Department Department { get; set; }
+        public Department Department
+        {
+            get => _department;
+            set => _department = value;
+        }
 
         public override string ToString()
         {
