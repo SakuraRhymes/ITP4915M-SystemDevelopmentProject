@@ -1,0 +1,213 @@
+﻿namespace SLMCS_ERP
+{
+    partial class frmInventoryReorderProduct
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.dgvSearchRecord = new System.Windows.Forms.DataGridView();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnDangerLevel = new System.Windows.Forms.Button();
+            this.btnReorderLevel = new System.Windows.Forms.Button();
+            this.txtCondition = new System.Windows.Forms.TextBox();
+            this.cboCondition = new System.Windows.Forms.ComboBox();
+            this.lblStockQuantity = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.dgvReorderOrder = new System.Windows.Forms.DataGridView();
+            this.btnDown = new System.Windows.Forms.Button();
+            this.btnUp = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchRecord)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReorderOrder)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // dgvSearchRecord
+            // 
+            this.dgvSearchRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSearchRecord.Location = new System.Drawing.Point(12, 36);
+            this.dgvSearchRecord.Name = "dgvSearchRecord";
+            this.dgvSearchRecord.RowTemplate.Height = 24;
+            this.dgvSearchRecord.Size = new System.Drawing.Size(776, 207);
+            this.dgvSearchRecord.TabIndex = 0;
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Location = new System.Drawing.Point(713, 494);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirm.TabIndex = 2;
+            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(615, 494);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 3;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // btnDangerLevel
+            // 
+            this.btnDangerLevel.Location = new System.Drawing.Point(615, 7);
+            this.btnDangerLevel.Name = "btnDangerLevel";
+            this.btnDangerLevel.Size = new System.Drawing.Size(173, 23);
+            this.btnDangerLevel.TabIndex = 4;
+            this.btnDangerLevel.Text = "Show All Danger Level Product";
+            this.btnDangerLevel.UseVisualStyleBackColor = true;
+            this.btnDangerLevel.Click += new System.EventHandler(this.BtnDangerLevel_Click);
+            // 
+            // btnReorderLevel
+            // 
+            this.btnReorderLevel.Location = new System.Drawing.Point(430, 7);
+            this.btnReorderLevel.Name = "btnReorderLevel";
+            this.btnReorderLevel.Size = new System.Drawing.Size(179, 23);
+            this.btnReorderLevel.TabIndex = 5;
+            this.btnReorderLevel.Text = "Show All Reorder Level Product";
+            this.btnReorderLevel.UseVisualStyleBackColor = true;
+            this.btnReorderLevel.Click += new System.EventHandler(this.BtnReorderLevel_Click);
+            // 
+            // txtCondition
+            // 
+            this.txtCondition.Location = new System.Drawing.Point(151, 7);
+            this.txtCondition.Name = "txtCondition";
+            this.txtCondition.Size = new System.Drawing.Size(100, 22);
+            this.txtCondition.TabIndex = 14;
+            // 
+            // cboCondition
+            // 
+            this.cboCondition.FormattingEnabled = true;
+            this.cboCondition.Items.AddRange(new object[] {
+            "Product ID",
+            "Product Name",
+            "Product Type",
+            "Product Unit"});
+            this.cboCondition.Location = new System.Drawing.Point(77, 7);
+            this.cboCondition.Name = "cboCondition";
+            this.cboCondition.Size = new System.Drawing.Size(68, 20);
+            this.cboCondition.TabIndex = 13;
+            // 
+            // lblStockQuantity
+            // 
+            this.lblStockQuantity.AutoSize = true;
+            this.lblStockQuantity.Location = new System.Drawing.Point(10, 12);
+            this.lblStockQuantity.Name = "lblStockQuantity";
+            this.lblStockQuantity.Size = new System.Drawing.Size(61, 12);
+            this.lblStockQuantity.TabIndex = 12;
+            this.lblStockQuantity.Text = "Condition : ";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(257, 7);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 15;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // dgvReorderOrder
+            // 
+            this.dgvReorderOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReorderOrder.Location = new System.Drawing.Point(12, 291);
+            this.dgvReorderOrder.Name = "dgvReorderOrder";
+            this.dgvReorderOrder.RowTemplate.Height = 24;
+            this.dgvReorderOrder.Size = new System.Drawing.Size(776, 197);
+            this.dgvReorderOrder.TabIndex = 16;
+            // 
+            // btnDown
+            // 
+            this.btnDown.Location = new System.Drawing.Point(257, 262);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(75, 23);
+            this.btnDown.TabIndex = 17;
+            this.btnDown.Text = "Down";
+            this.btnDown.UseVisualStyleBackColor = true;
+            // 
+            // btnUp
+            // 
+            this.btnUp.Location = new System.Drawing.Point(472, 262);
+            this.btnUp.Name = "btnUp";
+            this.btnUp.Size = new System.Drawing.Size(75, 23);
+            this.btnUp.TabIndex = 18;
+            this.btnUp.Text = "Up";
+            this.btnUp.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 273);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 12);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Reorder Order :";
+            // 
+            // frmInventoryReorderProduct
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(836, 529);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnUp);
+            this.Controls.Add(this.btnDown);
+            this.Controls.Add(this.dgvReorderOrder);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtCondition);
+            this.Controls.Add(this.cboCondition);
+            this.Controls.Add(this.lblStockQuantity);
+            this.Controls.Add(this.btnReorderLevel);
+            this.Controls.Add(this.btnDangerLevel);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.dgvSearchRecord);
+            this.Controls.Add(this.btnConfirm);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "frmInventoryReorderProduct";
+            this.Text = "frmInventoryReorderProduct";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchRecord)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReorderOrder)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.DataGridView dgvSearchRecord;
+        private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnDangerLevel;
+        private System.Windows.Forms.Button btnReorderLevel;
+        private System.Windows.Forms.TextBox txtCondition;
+        private System.Windows.Forms.ComboBox cboCondition;
+        private System.Windows.Forms.Label lblStockQuantity;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DataGridView dgvReorderOrder;
+        private System.Windows.Forms.Button btnDown;
+        private System.Windows.Forms.Button btnUp;
+        private System.Windows.Forms.Label label1;
+    }
+}

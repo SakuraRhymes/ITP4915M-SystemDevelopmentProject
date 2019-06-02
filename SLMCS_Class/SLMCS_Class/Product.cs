@@ -115,6 +115,18 @@ namespace SLMCS_Class
             return dbConnection.GetDataTable(query);
         }
 
+        public DataTable GetProdcutReorderLevelTable()
+        {
+            string query = "SELECT ProductID,ProductName,ProductType,ProductUnit,VendorID,ActualQuantity,ReorderLevel FROM ReorderLevelProduct";
+            return dbConnection.GetDataTable(query);
+        }
+
+        public DataTable GetProdcutDangerLevelTable()
+        {
+            string query = "SELECT ProductID,ProductName,ProductType,ProductUnit,VendorID,ActualQuantity,DangerLevel FROM DangerLevelProduct";
+            return dbConnection.GetDataTable(query);
+        }
+
         public DataTable SearchForProduct(string productID)
         {
             string query = "SELECT * FROM Product WHERE productID = '" + productID + "'";

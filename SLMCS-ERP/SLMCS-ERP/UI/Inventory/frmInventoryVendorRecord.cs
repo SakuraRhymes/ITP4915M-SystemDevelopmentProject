@@ -49,6 +49,7 @@ namespace SLMCS_ERP
             if (e.RowIndex != -1)
             {
                 selectedVendorID = dgvVendorRecord.Rows[e.RowIndex].Cells["VendorID"].Value.ToString();
+                dgvVendorRecord.Rows[e.RowIndex].Selected = true;
             }
         }
 
