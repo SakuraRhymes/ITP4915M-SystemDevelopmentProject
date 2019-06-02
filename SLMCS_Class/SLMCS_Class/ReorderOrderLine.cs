@@ -27,7 +27,7 @@ namespace SLMCS_Class
         public void PlaceReorderOrderLine()
         {
             dbConnection = new DBConnection();
-            string query = "INSERT INTO SalesOrder VALUES ('" + ReorderOrder.ReorderOrderID + "','" + Product.ProductID + "'," + Quantity + ")";
+            string query = "INSERT INTO ReorderOrderLine VALUES ('" + ReorderOrder.ReorderOrderID + "','" + Product.ProductID + "'," + Quantity + ")";
             MessageBox.Show(query);
 //            dbConnection.Insert(query);
         }

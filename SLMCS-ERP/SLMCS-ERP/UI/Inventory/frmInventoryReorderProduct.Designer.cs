@@ -48,7 +48,7 @@
             // dgvSearchRecord
             // 
             this.dgvSearchRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSearchRecord.Location = new System.Drawing.Point(12, 36);
+            this.dgvSearchRecord.Location = new System.Drawing.Point(11, 36);
             this.dgvSearchRecord.Name = "dgvSearchRecord";
             this.dgvSearchRecord.RowTemplate.Height = 24;
             this.dgvSearchRecord.Size = new System.Drawing.Size(776, 207);
@@ -142,7 +142,7 @@
             // 
             // btnDown
             // 
-            this.btnDown.Location = new System.Drawing.Point(257, 262);
+            this.btnDown.Location = new System.Drawing.Point(534, 249);
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(75, 23);
             this.btnDown.TabIndex = 17;
@@ -151,7 +151,7 @@
             // 
             // btnUp
             // 
-            this.btnUp.Location = new System.Drawing.Point(472, 262);
+            this.btnUp.Location = new System.Drawing.Point(689, 249);
             this.btnUp.Name = "btnUp";
             this.btnUp.Size = new System.Drawing.Size(75, 23);
             this.btnUp.TabIndex = 18;
@@ -188,6 +188,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmInventoryReorderProduct";
             this.Text = "frmInventoryReorderProduct";
+            this.Load += new System.EventHandler(this.FrmInventoryReorderProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchRecord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReorderOrder)).EndInit();
             this.ResumeLayout(false);

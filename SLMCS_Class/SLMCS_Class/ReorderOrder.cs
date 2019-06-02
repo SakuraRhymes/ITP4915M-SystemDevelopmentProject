@@ -34,7 +34,7 @@ namespace SLMCS_Class
         public void PlaceReorderOrder(Staff staff, DateTime reorderOrderDate)
         {
             _staff = staff;
-            string query = "INSERT INTO SalesOrder VALUES ('" + ReorderOrderID + "','" + _staff.StaffID + 
+            string query = "INSERT INTO ReorderOrder VALUES ('" + ReorderOrderID + "','" + _staff.StaffID + 
                            "','" + reorderOrderDate + "',null,null,'Processing')";
             MessageBox.Show(query);
 
@@ -46,18 +46,18 @@ namespace SLMCS_Class
             }
         }
 
-        public void AddReorderOrderLine(Product product, int quantity)
+        public void AddReorderProductLine(Product product, int quantity)
         {
             ReorderOrderLine reorderOrderLine = new ReorderOrderLine(this, product, quantity);
             _reorderOrderLine.Add(reorderOrderLine);
         }
 
-        public void RemoveReorderOrderLine(ReorderOrderLine reorderOrderLine)
+        public void RemoveReorderProductLine(ReorderOrderLine reorderOrderLine)
         {
             _reorderOrderLine.Remove(reorderOrderLine);
         }
 
-        public List<ReorderOrderLine> GetReorderOrderDetail()
+        public List<ReorderOrderLine> GetReorderProductLine()
         {
             return _reorderOrderLine;
         }
@@ -66,7 +66,6 @@ namespace SLMCS_Class
         {
             string query = "SELECT COUNT(ReorderOrderID) FROM ReorderOrder WHERE ReorderOrderDate = \"" + DateTime.Now.ToString("yyMMdd") + "\"";
             reorderOrderTable = dbConnection.GetDataTable(query);
-            //!!!! when no any order need to set a default order id RO00000000000
             string count = "";
             foreach (DataRow row in reorderOrderTable.Rows)
             {
