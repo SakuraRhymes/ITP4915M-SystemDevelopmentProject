@@ -28,8 +28,8 @@ namespace SLMCS_Class
         {
             dbConnection = new DBConnection();
             string query = "INSERT INTO ReorderOrderLine VALUES ('" + ReorderOrder.ReorderOrderID + "','" + Product.ProductID + "'," + Quantity + ")";
-            MessageBox.Show(query);
-//            dbConnection.Insert(query);
+            //MessageBox.Show(query);
+            dbConnection.Insert(query);
         }
         
 

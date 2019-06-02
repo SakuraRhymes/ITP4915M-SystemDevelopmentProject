@@ -121,7 +121,7 @@ namespace SLMCS_Class
 
 
             DataTable dataTable = dbConnection.GetDataTable(query);
-            dataTable.Columns.Add("Selected", typeof(bool)).SetOrdinal(0);
+           // dataTable.Columns.Add("Selected", typeof(bool)).SetOrdinal(0);
 
             return dataTable;
         }
@@ -131,7 +131,7 @@ namespace SLMCS_Class
             string query = "SELECT ProductID,ProductName,ProductType,ProductUnit,VendorID,ActualQuantity,DangerLevel FROM DangerLevelProduct";
 
             DataTable dataTable = dbConnection.GetDataTable(query);
-            dataTable.Columns.Add("Selected", typeof(bool)).SetOrdinal(0);
+           // dataTable.Columns.Add("Selected", typeof(bool)).SetOrdinal(0);
 
             return dataTable;
 
@@ -260,6 +260,11 @@ namespace SLMCS_Class
         {
             get => dangerLevel;
             set => dangerLevel = value;
+        }
+
+        public override string ToString()
+        {
+            return ProductName;
         }
     }
 }

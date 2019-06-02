@@ -13,9 +13,9 @@ namespace SLMCS_Class
     {
         private string reorderOrderID;
         private string staffID;
-        private DateTime reorderOrderDate;
-        private DateTime reorderOrderEditDate;
-        private DateTime reorderOrderCompletedDate;
+        private string reorderOrderDate;
+        private string reorderOrderEditDate;
+        private string reorderOrderCompletedDate;
         private string reorderOrderStatus;
 
         private List<ReorderOrderLine> _reorderOrderLine; 
@@ -31,14 +31,14 @@ namespace SLMCS_Class
             ReorderOrderID = GetNextReorderOrderID();
         }
 
-        public void PlaceReorderOrder(Staff staff, DateTime reorderOrderDate)
+        public void PlaceReorderOrder(Staff staff, string reorderOrderDate)
         {
             _staff = staff;
             string query = "INSERT INTO ReorderOrder VALUES ('" + ReorderOrderID + "','" + _staff.StaffID + 
                            "','" + reorderOrderDate + "',null,null,'Processing')";
-            MessageBox.Show(query);
+            //MessageBox.Show(query);
 
-            //dbConnection.Insert(query);
+            dbConnection.Insert(query);
 
             foreach (var reorderOrderLine in _reorderOrderLine)
             {
@@ -80,6 +80,11 @@ namespace SLMCS_Class
         {
             get => reorderOrderID;
             set => reorderOrderID = value;
+        }
+
+        public override string ToString()
+        {
+            return ReorderOrderID;
         }
     }
 }

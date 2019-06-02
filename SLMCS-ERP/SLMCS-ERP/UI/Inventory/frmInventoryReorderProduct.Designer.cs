@@ -38,9 +38,9 @@
             this.lblStockQuantity = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dgvReorderOrder = new System.Windows.Forms.DataGridView();
-            this.btnDown = new System.Windows.Forms.Button();
-            this.btnUp = new System.Windows.Forms.Button();
+            this.btnAddProduct = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnDeleteProdcut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchRecord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReorderOrder)).BeginInit();
             this.SuspendLayout();
@@ -51,8 +51,9 @@
             this.dgvSearchRecord.Location = new System.Drawing.Point(11, 36);
             this.dgvSearchRecord.Name = "dgvSearchRecord";
             this.dgvSearchRecord.RowTemplate.Height = 24;
-            this.dgvSearchRecord.Size = new System.Drawing.Size(776, 207);
+            this.dgvSearchRecord.Size = new System.Drawing.Size(813, 207);
             this.dgvSearchRecord.TabIndex = 0;
+            this.dgvSearchRecord.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSearchRecord_CellDoubleClick);
             // 
             // btnConfirm
             // 
@@ -72,10 +73,11 @@
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // btnDangerLevel
             // 
-            this.btnDangerLevel.Location = new System.Drawing.Point(615, 7);
+            this.btnDangerLevel.Location = new System.Drawing.Point(651, 6);
             this.btnDangerLevel.Name = "btnDangerLevel";
             this.btnDangerLevel.Size = new System.Drawing.Size(173, 23);
             this.btnDangerLevel.TabIndex = 4;
@@ -85,7 +87,7 @@
             // 
             // btnReorderLevel
             // 
-            this.btnReorderLevel.Location = new System.Drawing.Point(430, 7);
+            this.btnReorderLevel.Location = new System.Drawing.Point(466, 7);
             this.btnReorderLevel.Name = "btnReorderLevel";
             this.btnReorderLevel.Size = new System.Drawing.Size(179, 23);
             this.btnReorderLevel.TabIndex = 5;
@@ -95,22 +97,22 @@
             // 
             // txtCondition
             // 
-            this.txtCondition.Location = new System.Drawing.Point(151, 7);
+            this.txtCondition.Location = new System.Drawing.Point(192, 7);
             this.txtCondition.Name = "txtCondition";
-            this.txtCondition.Size = new System.Drawing.Size(100, 22);
+            this.txtCondition.Size = new System.Drawing.Size(151, 22);
             this.txtCondition.TabIndex = 14;
             // 
             // cboCondition
             // 
             this.cboCondition.FormattingEnabled = true;
             this.cboCondition.Items.AddRange(new object[] {
-            "Product ID",
-            "Product Name",
-            "Product Type",
-            "Product Unit"});
+            "ProductID",
+            "ProductName",
+            "ProductType",
+            "ProductUnit"});
             this.cboCondition.Location = new System.Drawing.Point(77, 7);
             this.cboCondition.Name = "cboCondition";
-            this.cboCondition.Size = new System.Drawing.Size(68, 20);
+            this.cboCondition.Size = new System.Drawing.Size(109, 20);
             this.cboCondition.TabIndex = 13;
             // 
             // lblStockQuantity
@@ -124,12 +126,13 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(257, 7);
+            this.btnSearch.Location = new System.Drawing.Point(349, 6);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 15;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // dgvReorderOrder
             // 
@@ -137,26 +140,17 @@
             this.dgvReorderOrder.Location = new System.Drawing.Point(12, 291);
             this.dgvReorderOrder.Name = "dgvReorderOrder";
             this.dgvReorderOrder.RowTemplate.Height = 24;
-            this.dgvReorderOrder.Size = new System.Drawing.Size(776, 197);
+            this.dgvReorderOrder.Size = new System.Drawing.Size(812, 197);
             this.dgvReorderOrder.TabIndex = 16;
             // 
-            // btnDown
+            // btnAddProduct
             // 
-            this.btnDown.Location = new System.Drawing.Point(534, 249);
-            this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(75, 23);
-            this.btnDown.TabIndex = 17;
-            this.btnDown.Text = "Down";
-            this.btnDown.UseVisualStyleBackColor = true;
-            // 
-            // btnUp
-            // 
-            this.btnUp.Location = new System.Drawing.Point(689, 249);
-            this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(75, 23);
-            this.btnUp.TabIndex = 18;
-            this.btnUp.Text = "Up";
-            this.btnUp.UseVisualStyleBackColor = true;
+            this.btnAddProduct.Location = new System.Drawing.Point(713, 262);
+            this.btnAddProduct.Name = "btnAddProduct";
+            this.btnAddProduct.Size = new System.Drawing.Size(84, 23);
+            this.btnAddProduct.TabIndex = 17;
+            this.btnAddProduct.Text = "Add Product";
+            this.btnAddProduct.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -167,14 +161,23 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Reorder Order :";
             // 
+            // btnDeleteProdcut
+            // 
+            this.btnDeleteProdcut.Location = new System.Drawing.Point(597, 262);
+            this.btnDeleteProdcut.Name = "btnDeleteProdcut";
+            this.btnDeleteProdcut.Size = new System.Drawing.Size(93, 23);
+            this.btnDeleteProdcut.TabIndex = 20;
+            this.btnDeleteProdcut.Text = "Delete Product";
+            this.btnDeleteProdcut.UseVisualStyleBackColor = true;
+            // 
             // frmInventoryReorderProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 529);
+            this.Controls.Add(this.btnDeleteProdcut);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnUp);
-            this.Controls.Add(this.btnDown);
+            this.Controls.Add(this.btnAddProduct);
             this.Controls.Add(this.dgvReorderOrder);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtCondition);
@@ -208,8 +211,8 @@
         private System.Windows.Forms.Label lblStockQuantity;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView dgvReorderOrder;
-        private System.Windows.Forms.Button btnDown;
-        private System.Windows.Forms.Button btnUp;
+        private System.Windows.Forms.Button btnAddProduct;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnDeleteProdcut;
     }
 }
