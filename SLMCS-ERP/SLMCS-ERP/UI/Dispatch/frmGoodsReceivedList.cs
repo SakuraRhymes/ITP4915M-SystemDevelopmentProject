@@ -13,17 +13,17 @@ namespace SLMCS_ERP.UI.Dispatch
 {
     public partial class frmGoodsReceivedList : Form
     {
-        ProcurementOrder procurementOrder;
+        ReorderOrder reorderOrder;
         public frmGoodsReceivedList()
         {
             InitializeComponent();
-            procurementOrder = new ProcurementOrder();
+            reorderOrder = new ReorderOrder();
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             dgvGoodsRecevieList.DataSource = null;
-            changeGoodsReceviedDvgContent(procurementOrder.getProcurementOrderTableByProcurementOrderStatus("Prcossing"));
+            changeGoodsReceviedDvgContent(reorderOrder.getReorderOrderTableByReorderOrderStatus("Prcossing"));
         }
 
         private void changeGoodsReceviedDvgContent(DataTable table)
@@ -38,7 +38,7 @@ namespace SLMCS_ERP.UI.Dispatch
             int andCount = 0;
             if (txtOrderID.Text != "")
             {
-                condition += "ProcurementOrderID LIKE \"%" + txtOrderID.Text + "%\"";
+                condition += "ReorderOrderID LIKE \"%" + txtOrderID.Text + "%\"";
                 andCount++;
             }
 
@@ -53,26 +53,26 @@ namespace SLMCS_ERP.UI.Dispatch
                 andCount++;
             }
 
-            if (txtVendorID.Text != "")
-            {
-                if (andCount > 0)
-                {
-                    condition += " AND ";
-                    andCount--;
-                }
-                condition += "VendorID LIKE \"%" + txtVendorID.Text + "%\"";
-                andCount++;
-            }
-
             if (andCount > 0)
             {
                 condition += " AND ";
                 andCount--;
             }
 
-            condition += "ProcurementOrderStatus = \"Processing\"";
+            condition += "ReorderOrderStatus = \"Processing\"";
 
-            changeGoodsReceviedDvgContent(procurementOrder.getProcurementTableByWhereQuery(condition));
+            changeGoodsReceviedDvgContent(reorderOrder.GoodsReceived_getReorderTableByWhereQuery(condition));
+        }
+
+        private void BtnRefresh_Click(object sender, EventArgs e)
+        {
+            dgvGoodsRecevieList.DataSource = null;
+            changeGoodsReceviedDvgContent(reorderOrder.getReorderOrderTableByReorderOrderStatus("Processing"));
+        }
+
+        private void BtnConfirm_Click(object sender, EventArgs e)
+        {
+            changeGoodsReceviedDvgContent(reorderOrder.GoodsReceived_updataReorderOrderByRedoreOrderStatus("Completed"));
         }
     }
 }
