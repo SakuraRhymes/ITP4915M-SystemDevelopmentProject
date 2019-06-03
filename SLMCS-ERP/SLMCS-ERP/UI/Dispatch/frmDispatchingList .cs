@@ -85,7 +85,6 @@ namespace SLMCS_ERP{
 
         private void DgvSalesOrderList_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            System.Windows.Forms.MessageBox.Show("My message here");
         }
 
         private void DgvSalesOrderList_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -101,19 +100,26 @@ namespace SLMCS_ERP{
 
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
-            dgvOrderDetail.DataSource = null;
-            changeDispatchingDvgContect(salesOrder.getSalesOrderTableBySalesOrderStatus("Dispatching"));
+            refreshDvg();
         }
 
         private void changeDispatchingDvgContect(DataTable table)
         {
+            dgvOrderDetail.DataSource = null;
             dgvSalesOrderList.DataSource = null;
             dgvSalesOrderList.DataSource = table;
+        }
+
+        private void refreshDvg()
+        {
+            changeDispatchingDvgContect(salesOrder.getSalesOrderTableBySalesOrderStatus("Dispatching"));
+
         }
 
         private void GroupBox2_Enter(object sender, EventArgs e)
         {
 
+            changeDispatchingDvgContect(salesOrder.getSalesOrderTableBySalesOrderStatus("Dispatching"));
         }
 
         private void GroupBox4_Enter(object sender, EventArgs e)
@@ -123,6 +129,19 @@ namespace SLMCS_ERP{
 
         private void BtnConfirm_Click(object sender, EventArgs e)
         {
+            selectedOrderID = dgvSalesOrderList.Rows[dgvSalesOrderList.CurrentCell.RowIndex].Cells["SalesOrderID"].Value.ToString();
+            DialogResult result = MessageBox.Show("Do you want to dispatch "+selectedOrderID+"?", "Confirmation", MessageBoxButtons.YesNoCancel);
+            if (result == DialogResult.Yes)
+            {
+                if (dgvSalesOrderList.CurrentCell.RowIndex != -1)
+                {
+                    System.Windows.Forms.MessageBox.Show(selectedOrderID);
+                    salesOrder.updataSalesOrderStatusInDB(selectedOrderID, "Dispatched");
+                    string successfulMessage = "Sales Order :" + selectedOrderID + " has been Dispatch!";
+                    MessageBox.Show(successfulMessage);
+                    refreshDvg();
+                }
+            }
             
         }
     }

@@ -57,11 +57,11 @@
             // 
             this.dgvOrderDetail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOrderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrderDetail.Location = new System.Drawing.Point(14, 26);
+            this.dgvOrderDetail.Location = new System.Drawing.Point(14, 22);
             this.dgvOrderDetail.Margin = new System.Windows.Forms.Padding(4);
             this.dgvOrderDetail.Name = "dgvOrderDetail";
             this.dgvOrderDetail.RowTemplate.Height = 24;
-            this.dgvOrderDetail.Size = new System.Drawing.Size(847, 151);
+            this.dgvOrderDetail.Size = new System.Drawing.Size(847, 140);
             this.dgvOrderDetail.TabIndex = 0;
             // 
             // dgvSalesOrderList
@@ -96,7 +96,7 @@
             // 
             // btnGenerateForDID
             // 
-            this.btnGenerateForDID.Location = new System.Drawing.Point(645, 191);
+            this.btnGenerateForDID.Location = new System.Drawing.Point(756, 169);
             this.btnGenerateForDID.Name = "btnGenerateForDID";
             this.btnGenerateForDID.Size = new System.Drawing.Size(105, 30);
             this.btnGenerateForDID.TabIndex = 8;
@@ -199,7 +199,6 @@
             // 
             this.groupBox2.Controls.Add(this.btnGenerateForDIC);
             this.groupBox2.Controls.Add(this.btnConfirm);
-            this.groupBox2.Controls.Add(this.btnGenerateForDID);
             this.groupBox2.Location = new System.Drawing.Point(12, 116);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(879, 227);
@@ -210,7 +209,7 @@
             // 
             // btnGenerateForDIC
             // 
-            this.btnGenerateForDIC.Location = new System.Drawing.Point(537, 191);
+            this.btnGenerateForDIC.Location = new System.Drawing.Point(637, 191);
             this.btnGenerateForDIC.Name = "btnGenerateForDIC";
             this.btnGenerateForDIC.Size = new System.Drawing.Size(102, 30);
             this.btnGenerateForDIC.TabIndex = 14;
@@ -220,9 +219,10 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.dgvOrderDetail);
+            this.groupBox4.Controls.Add(this.btnGenerateForDID);
             this.groupBox4.Location = new System.Drawing.Point(12, 349);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(879, 184);
+            this.groupBox4.Size = new System.Drawing.Size(879, 205);
             this.groupBox4.TabIndex = 20;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "OrderLine";
