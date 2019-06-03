@@ -48,6 +48,8 @@
             this.btnEditProduct = new System.Windows.Forms.Button();
             this.btnDeleteProduct = new System.Windows.Forms.Button();
             this.dgvStockRecord = new System.Windows.Forms.DataGridView();
+            this.lblProductUnit = new System.Windows.Forms.Label();
+            this.cboProductUnit = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockRecord)).BeginInit();
             this.SuspendLayout();
@@ -91,6 +93,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cboProductUnit);
+            this.groupBox1.Controls.Add(this.lblProductUnit);
             this.groupBox1.Controls.Add(this.txtVendorID);
             this.groupBox1.Controls.Add(this.lblVendorID);
             this.groupBox1.Controls.Add(this.txtProductPrice);
@@ -115,7 +119,7 @@
             // 
             // txtVendorID
             // 
-            this.txtVendorID.Location = new System.Drawing.Point(368, 26);
+            this.txtVendorID.Location = new System.Drawing.Point(368, 91);
             this.txtVendorID.Name = "txtVendorID";
             this.txtVendorID.Size = new System.Drawing.Size(135, 22);
             this.txtVendorID.TabIndex = 14;
@@ -123,7 +127,7 @@
             // lblVendorID
             // 
             this.lblVendorID.AutoSize = true;
-            this.lblVendorID.Location = new System.Drawing.Point(301, 29);
+            this.lblVendorID.Location = new System.Drawing.Point(301, 94);
             this.lblVendorID.Name = "lblVendorID";
             this.lblVendorID.Size = new System.Drawing.Size(61, 12);
             this.lblVendorID.TabIndex = 13;
@@ -145,7 +149,7 @@
             // 
             // txtProductName
             // 
-            this.txtProductName.Location = new System.Drawing.Point(368, 59);
+            this.txtProductName.Location = new System.Drawing.Point(368, 26);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(135, 22);
             this.txtProductName.TabIndex = 10;
@@ -160,6 +164,12 @@
             // cboProductPrice
             // 
             this.cboProductPrice.FormattingEnabled = true;
+            this.cboProductPrice.Items.AddRange(new object[] {
+            ">",
+            ">=",
+            "<",
+            "<=",
+            "="});
             this.cboProductPrice.Location = new System.Drawing.Point(100, 119);
             this.cboProductPrice.Name = "cboProductPrice";
             this.cboProductPrice.Size = new System.Drawing.Size(68, 20);
@@ -168,6 +178,12 @@
             // cboStockQuantity
             // 
             this.cboStockQuantity.FormattingEnabled = true;
+            this.cboStockQuantity.Items.AddRange(new object[] {
+            ">",
+            ">=",
+            "<",
+            "<=",
+            "="});
             this.cboStockQuantity.Location = new System.Drawing.Point(100, 91);
             this.cboStockQuantity.Name = "cboStockQuantity";
             this.cboStockQuantity.Size = new System.Drawing.Size(68, 20);
@@ -198,7 +214,7 @@
             // lblProductName
             // 
             this.lblProductName.AutoSize = true;
-            this.lblProductName.Location = new System.Drawing.Point(285, 62);
+            this.lblProductName.Location = new System.Drawing.Point(285, 29);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(77, 12);
             this.lblProductName.TabIndex = 4;
@@ -232,6 +248,7 @@
             this.btnDeleteProduct.TabIndex = 7;
             this.btnDeleteProduct.Text = "Delete";
             this.btnDeleteProduct.UseVisualStyleBackColor = true;
+            this.btnDeleteProduct.Click += new System.EventHandler(this.BtnDeleteProduct_Click);
             // 
             // dgvStockRecord
             // 
@@ -239,16 +256,37 @@
             this.dgvStockRecord.Location = new System.Drawing.Point(12, 246);
             this.dgvStockRecord.Name = "dgvStockRecord";
             this.dgvStockRecord.RowTemplate.Height = 24;
-            this.dgvStockRecord.Size = new System.Drawing.Size(752, 212);
+            this.dgvStockRecord.Size = new System.Drawing.Size(842, 212);
             this.dgvStockRecord.TabIndex = 8;
             this.dgvStockRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvStockRecord_CellClick);
             this.dgvStockRecord.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvStockRecord_CellDoubleClick);
+            // 
+            // lblProductUnit
+            // 
+            this.lblProductUnit.AutoSize = true;
+            this.lblProductUnit.Location = new System.Drawing.Point(292, 62);
+            this.lblProductUnit.Name = "lblProductUnit";
+            this.lblProductUnit.Size = new System.Drawing.Size(70, 12);
+            this.lblProductUnit.TabIndex = 15;
+            this.lblProductUnit.Text = "Product Unit :";
+            // 
+            // cboProductUnit
+            // 
+            this.cboProductUnit.FormattingEnabled = true;
+            this.cboProductUnit.Items.AddRange(new object[] {
+            "piece",
+            "item",
+            "set"});
+            this.cboProductUnit.Location = new System.Drawing.Point(368, 59);
+            this.cboProductUnit.Name = "cboProductUnit";
+            this.cboProductUnit.Size = new System.Drawing.Size(135, 20);
+            this.cboProductUnit.TabIndex = 16;
             // 
             // frmInventoryStockRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 470);
+            this.ClientSize = new System.Drawing.Size(865, 470);
             this.Controls.Add(this.dgvStockRecord);
             this.Controls.Add(this.btnDeleteProduct);
             this.Controls.Add(this.btnEditProduct);
@@ -287,5 +325,7 @@
         private System.Windows.Forms.TextBox txtStockQuantity;
         private System.Windows.Forms.TextBox txtVendorID;
         private System.Windows.Forms.Label lblVendorID;
+        private System.Windows.Forms.ComboBox cboProductUnit;
+        private System.Windows.Forms.Label lblProductUnit;
     }
 }

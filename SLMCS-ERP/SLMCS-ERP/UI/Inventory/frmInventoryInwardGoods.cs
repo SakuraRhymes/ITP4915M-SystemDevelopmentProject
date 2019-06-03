@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SLMCS_ERP
 {
-    public partial class frmInventoryInwardGood : Form
+    public partial class frmInventoryInwardGoods : Form
     {
-        public frmInventoryInwardGood()
+        public frmInventoryInwardGoods()
         {
             InitializeComponent();
         }
