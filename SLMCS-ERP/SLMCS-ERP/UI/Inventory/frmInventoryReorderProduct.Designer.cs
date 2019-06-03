@@ -39,7 +39,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.dgvReorderOrder = new System.Windows.Forms.DataGridView();
             this.btnAddProduct = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblReorderOrderID = new System.Windows.Forms.Label();
             this.btnDeleteProdcut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchRecord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReorderOrder)).BeginInit();
@@ -53,6 +53,7 @@
             this.dgvSearchRecord.RowTemplate.Height = 24;
             this.dgvSearchRecord.Size = new System.Drawing.Size(813, 207);
             this.dgvSearchRecord.TabIndex = 0;
+            this.dgvSearchRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSearchRecord_CellClick);
             this.dgvSearchRecord.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSearchRecord_CellDoubleClick);
             // 
             // btnConfirm
@@ -145,38 +146,40 @@
             // 
             // btnAddProduct
             // 
-            this.btnAddProduct.Location = new System.Drawing.Point(713, 262);
+            this.btnAddProduct.Location = new System.Drawing.Point(520, 262);
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(84, 23);
             this.btnAddProduct.TabIndex = 17;
             this.btnAddProduct.Text = "Add Product";
             this.btnAddProduct.UseVisualStyleBackColor = true;
+            this.btnAddProduct.Click += new System.EventHandler(this.BtnAddProduct_Click);
             // 
-            // label1
+            // lblReorderOrderID
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 273);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 12);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Reorder Order :";
+            this.lblReorderOrderID.AutoSize = true;
+            this.lblReorderOrderID.Location = new System.Drawing.Point(12, 273);
+            this.lblReorderOrderID.Name = "lblReorderOrderID";
+            this.lblReorderOrderID.Size = new System.Drawing.Size(79, 12);
+            this.lblReorderOrderID.TabIndex = 19;
+            this.lblReorderOrderID.Text = "Reorder Order :";
             // 
             // btnDeleteProdcut
             // 
-            this.btnDeleteProdcut.Location = new System.Drawing.Point(597, 262);
+            this.btnDeleteProdcut.Location = new System.Drawing.Point(288, 262);
             this.btnDeleteProdcut.Name = "btnDeleteProdcut";
             this.btnDeleteProdcut.Size = new System.Drawing.Size(93, 23);
             this.btnDeleteProdcut.TabIndex = 20;
             this.btnDeleteProdcut.Text = "Delete Product";
             this.btnDeleteProdcut.UseVisualStyleBackColor = true;
+            this.btnDeleteProdcut.Click += new System.EventHandler(this.BtnDeleteProdcut_Click);
             // 
             // frmInventoryReorderProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(836, 529);
+            this.ClientSize = new System.Drawing.Size(856, 534);
             this.Controls.Add(this.btnDeleteProdcut);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblReorderOrderID);
             this.Controls.Add(this.btnAddProduct);
             this.Controls.Add(this.dgvReorderOrder);
             this.Controls.Add(this.btnSearch);
@@ -212,7 +215,7 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView dgvReorderOrder;
         private System.Windows.Forms.Button btnAddProduct;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblReorderOrderID;
         private System.Windows.Forms.Button btnDeleteProdcut;
     }
 }
