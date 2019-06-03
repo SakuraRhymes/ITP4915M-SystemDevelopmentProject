@@ -45,8 +45,6 @@
     <Compile Include="DBconnection.cs" />
     <Compile Include="Dealer.cs" />
     <Compile Include="Department.cs" />
-    <Compile Include="ProcurementOrder.cs" />
-    <Compile Include="ProcurementOrderLine.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

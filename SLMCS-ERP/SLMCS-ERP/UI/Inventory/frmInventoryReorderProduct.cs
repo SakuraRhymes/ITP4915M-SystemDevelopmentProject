@@ -138,11 +138,10 @@ namespace SLMCS_ERP
             selectedProductID = dgvSearchRecord.Rows[e.RowIndex].Cells["ProductID"].Value.ToString();
         }
 
-        private void BtnDeleteProdcut_Click(object sender, EventArgs e)
+        private void DgvReorderOrder_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            addedProductID = dgvReorderOrder.Rows[e.RowIndex].Cells["ProductID"].Value.ToString();
+            // testing
         }
-
-
     }
 }

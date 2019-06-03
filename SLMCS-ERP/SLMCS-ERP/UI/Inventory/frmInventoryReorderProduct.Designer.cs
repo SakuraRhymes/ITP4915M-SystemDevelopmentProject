@@ -40,7 +40,6 @@
             this.dgvReorderOrder = new System.Windows.Forms.DataGridView();
             this.btnAddProduct = new System.Windows.Forms.Button();
             this.lblReorderOrderID = new System.Windows.Forms.Label();
-            this.btnDeleteProdcut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchRecord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReorderOrder)).BeginInit();
             this.SuspendLayout();
@@ -143,10 +142,11 @@
             this.dgvReorderOrder.RowTemplate.Height = 24;
             this.dgvReorderOrder.Size = new System.Drawing.Size(812, 197);
             this.dgvReorderOrder.TabIndex = 16;
+            this.dgvReorderOrder.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvReorderOrder_CellClick);
             // 
             // btnAddProduct
             // 
-            this.btnAddProduct.Location = new System.Drawing.Point(520, 262);
+            this.btnAddProduct.Location = new System.Drawing.Point(705, 255);
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(84, 23);
             this.btnAddProduct.TabIndex = 17;
@@ -163,22 +163,11 @@
             this.lblReorderOrderID.TabIndex = 19;
             this.lblReorderOrderID.Text = "Reorder Order :";
             // 
-            // btnDeleteProdcut
-            // 
-            this.btnDeleteProdcut.Location = new System.Drawing.Point(288, 262);
-            this.btnDeleteProdcut.Name = "btnDeleteProdcut";
-            this.btnDeleteProdcut.Size = new System.Drawing.Size(93, 23);
-            this.btnDeleteProdcut.TabIndex = 20;
-            this.btnDeleteProdcut.Text = "Delete Product";
-            this.btnDeleteProdcut.UseVisualStyleBackColor = true;
-            this.btnDeleteProdcut.Click += new System.EventHandler(this.BtnDeleteProdcut_Click);
-            // 
             // frmInventoryReorderProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 534);
-            this.Controls.Add(this.btnDeleteProdcut);
             this.Controls.Add(this.lblReorderOrderID);
             this.Controls.Add(this.btnAddProduct);
             this.Controls.Add(this.dgvReorderOrder);
@@ -216,6 +205,5 @@
         private System.Windows.Forms.DataGridView dgvReorderOrder;
         private System.Windows.Forms.Button btnAddProduct;
         private System.Windows.Forms.Label lblReorderOrderID;
-        private System.Windows.Forms.Button btnDeleteProdcut;
     }
 }
