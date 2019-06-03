@@ -81,7 +81,7 @@ namespace SLMCS_Class
         public DataTable Dispatching_getSalesOrderByDealerID(string DealerID)
         {
             string query = "SELECT SalesOrderID, StaffID, DealerID, SalesOrderDate, SalesOrderStatus FROM SalesOrder WHERE DealerID = \"" + DealerID + "\" AND SalesOrderStatus = \"Dispatching\"";
-            //return dbConnection.GetDataTable(query);
+            return dbConnection.GetDataTable(query);
         }
 
         public DataTable getSalesTableByWhereQuery(string condition)

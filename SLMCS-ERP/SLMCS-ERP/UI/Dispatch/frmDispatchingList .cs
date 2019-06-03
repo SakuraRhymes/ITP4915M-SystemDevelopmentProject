@@ -135,7 +135,6 @@ namespace SLMCS_ERP{
             {
                 if (dgvSalesOrderList.CurrentCell.RowIndex != -1)
                 {
-                    System.Windows.Forms.MessageBox.Show(selectedOrderID);
                     salesOrder.updataSalesOrderStatusInDB(selectedOrderID, "Dispatched");
                     string successfulMessage = "Sales Order :" + selectedOrderID + " has been Dispatched!";
                     MessageBox.Show(successfulMessage);
