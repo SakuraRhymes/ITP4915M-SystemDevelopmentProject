@@ -130,7 +130,7 @@ namespace SLMCS_ERP{
         private void BtnConfirm_Click(object sender, EventArgs e)
         {
             selectedOrderID = dgvSalesOrderList.Rows[dgvSalesOrderList.CurrentCell.RowIndex].Cells["SalesOrderID"].Value.ToString();
-            DialogResult result = MessageBox.Show("Do you want to dispatch "+selectedOrderID+"?", "Confirmation", MessageBoxButtons.YesNoCancel);
+            DialogResult result = MessageBox.Show("Do you want to dispatch "+selectedOrderID+"?", "Confirmation", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 if (dgvSalesOrderList.CurrentCell.RowIndex != -1)
