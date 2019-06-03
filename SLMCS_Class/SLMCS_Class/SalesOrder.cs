@@ -124,5 +124,23 @@ namespace SLMCS_Class
                 salesOrderLine.placeSalesOrderLine();
             }
         }
+
+        public DataTable searchSalesOrder(string condition)
+        {
+            string query;
+            if (condition == null)
+            {
+                 query = "SELECT * FROM SalesOrder";
+            }
+            else
+            {
+                string queryString;
+                query = "";
+                //query = string.Format(queryString, productType);
+
+            }
+            //MessageBox.Show(query);
+            return dbConnection.GetDataTable(query);
+        }
     }
 }
