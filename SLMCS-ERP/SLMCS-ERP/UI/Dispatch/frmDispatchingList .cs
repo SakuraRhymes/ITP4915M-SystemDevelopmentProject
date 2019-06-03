@@ -85,7 +85,6 @@ namespace SLMCS_ERP{
 
         private void DgvSalesOrderList_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            System.Windows.Forms.MessageBox.Show("My message here");
         }
 
         private void DgvSalesOrderList_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -123,7 +122,12 @@ namespace SLMCS_ERP{
 
         private void BtnConfirm_Click(object sender, EventArgs e)
         {
-            
+            if (dgvSalesOrderList.CurrentCell.RowIndex != -1)
+            {
+                selectedOrderID = dgvSalesOrderList.Rows[dgvSalesOrderList.CurrentCell.RowIndex].Cells["SalesOrderID"].Value.ToString();
+                System.Windows.Forms.MessageBox.Show(selectedOrderID);
+                salesOrder.updataSalesOrderStatusInDB(selectedOrderID,"Dispatched");
+            }
         }
     }
 }

@@ -89,18 +89,20 @@ namespace SLMCS_Class
             string query = "SELECT SalesOrderID, StaffID, DealerID, SalesOrderDate, SalesOrderStatus FROM SalesOrder WHERE " + condition;
             return dbConnection.GetDataTable(query);
         }
-        public DataTable getSalesOrderLineBySalesOrderID(string SalesOrderID)
+        public DataTable getSalesOrderLineBySalesOrderID(string salesOrderID)
         {
             dbConnection = new DBConnection();
-            string query = "SELECT * FROM SalesOrderLine WHERE SalesOrderID = \"" + SalesOrderID + "\"";
+            string query = "SELECT * FROM SalesOrderLine WHERE SalesOrderID = \"" + salesOrderID + "\"";
             return dbConnection.GetDataTable(query);
         }
         public void updataSalesOrderStatusInDB(string salesOrderID, string status)
         {
-            string query = "UPDATA Sales";
+            string query = "UPDATE SalesOrder SET SalesOrderStatus = \"" + status + "\" , SalesDispatchDate = \""+ DateTime.Now.ToString("yy-MM-dd") +"\" WHERE SalesOrder.SalesOrderID = \"" + salesOrderID + "\"";
+            System.Windows.Forms.MessageBox.Show(query);
+            dbConnection.Update(query);
         }
 
-        public String[] updataDealerInfo(String dealerID)
+       // public String[] updataDealerInfo(String dealerID)
         {
             String[] result = null;
             Dealer dealer = new Dealer();
