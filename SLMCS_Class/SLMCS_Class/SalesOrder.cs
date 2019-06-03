@@ -102,7 +102,7 @@ namespace SLMCS_Class
             dbConnection.Update(query);
         }
 
-       // public String[] updataDealerInfo(String dealerID)
+        public String[] updataDealerInfo(String dealerID)
         {
             String[] result = null;
             Dealer dealer = new Dealer();
