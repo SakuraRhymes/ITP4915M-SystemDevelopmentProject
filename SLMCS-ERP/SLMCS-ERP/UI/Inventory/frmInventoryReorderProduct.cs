@@ -36,34 +36,27 @@ namespace SLMCS_ERP
 
         private void BtnConfirm_Click(object sender, EventArgs e)
         {
-//            Product product1 = new Product("A00000");
-//            Product product2 = new Product("A00002");
-//            Product product3 = new Product("A00009");
-              
-//            
-//            ReorderOrder reorderOrder = new ReorderOrder();
-//            
-//            reorderOrder.AddReorderOrderLine(product1,2);
-//            reorderOrder.AddReorderOrderLine(product2,5);
-//            reorderOrder.AddReorderOrderLine(product3,7);
-//            
-//            
-              
-            //staff.AddReorderOrder(reorderOrder);
             
-
 
             if (selectedProductID == "")
             {
-                MessageBox.Show("Please select a product");
+                MessageBox.Show("Please select product first");
             }
             else
             {
-                if (MessageBox.Show("Confirm Order?", "Confirm Message", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (dgvReorderOrder.Rows.Count != 0)
                 {
-                    Staff staff = new Staff("S19002708");
-                    reorderOrder.PlaceReorderOrder(staff, DateTime.Today.ToString("yyyy-MM-dd"));
-                    FrmInventoryReorderProduct_Load(sender, e);
+                    if (MessageBox.Show("Confirm Order?", "Confirm Message", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    {
+                        Staff staff = new Staff("S19002708");
+                        reorderOrder.PlaceReorderOrder(staff, DateTime.Today.ToString("yyyy-MM-dd"));
+                        FrmInventoryReorderProduct_Load(sender, e);
+                        MessageBox.Show("Order has been complete");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No product at the order");
                 }
             }
         }
@@ -121,8 +114,16 @@ namespace SLMCS_ERP
 
         private void BtnAddProduct_Click(object sender, EventArgs e)
         {
-            frmInventoryAddReorderProduct inventoryAddReorderProduct = new frmInventoryAddReorderProduct(this, selectedProductID);
-            inventoryAddReorderProduct.Show();
+            if (selectedProductID == "")
+            {
+                MessageBox.Show("Please select product first");
+            }
+            else
+            {
+                frmInventoryAddReorderProduct inventoryAddReorderProduct = new frmInventoryAddReorderProduct(this, selectedProductID);
+                inventoryAddReorderProduct.Show();
+            }
+            
         }
 
         public void SetDGVreorderOrder(Product product, int quantity)
@@ -141,5 +142,7 @@ namespace SLMCS_ERP
         {
 
         }
+
+
     }
 }

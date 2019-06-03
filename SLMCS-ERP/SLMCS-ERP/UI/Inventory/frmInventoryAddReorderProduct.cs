@@ -50,14 +50,42 @@ namespace SLMCS_ERP
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            int quantity = Convert.ToInt32(txtReorderQuantity.Text);
-            inventoryReorderProduct.SetDGVreorderOrder(product, quantity);
-            Close();
+            if (txtReorderQuantity.Text != "")
+            {
+                if (Convert.ToInt32(txtReorderQuantity.Text) > 0)
+                {
+                    int quantity = Convert.ToInt32(txtReorderQuantity.Text);
+                    inventoryReorderProduct.SetDGVreorderOrder(product, quantity);
+                    Close(); 
+                }
+                else
+                {
+                    MessageBox.Show("Reorder quantity should be more than 0");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please input reorder quantity");
+            }
+            
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void TxtReorderQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CheckInputNumberOnly(e);
+        }
+
+        private void CheckInputNumberOnly(KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !(e.KeyChar == (char)8))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
