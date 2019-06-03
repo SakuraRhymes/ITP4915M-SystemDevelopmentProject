@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using SLMCS_Class.Properties;
+using SLMCS_Class;
 
 namespace SLMCS_Class
 {

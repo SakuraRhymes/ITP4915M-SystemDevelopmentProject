@@ -86,5 +86,43 @@ namespace SLMCS_Class
         {
             return ReorderOrderID;
         }
+
+        public DataTable getReorderOrderTableByReorderOrderStatus(string ReorderOrderStatus)
+        {
+            string query = "SELECT ReorderOrderID, StaffID," +
+                "ReorderOrderDate,ReorderOrderEditDate, ReorderOrderCompletedDate, ReorderOrderStatus " +
+                "FROM ReorderOrder WHERE  ReorderOrderStatus = \"" + ReorderOrderStatus + "\"";
+            return dbConnection.GetDataTable(query);
+        }
+
+        public DataTable GoodsReceived_getReorderOrderByOrderID(string OrderID)
+        {
+            string query = "SELECT ReorderOrderID, StaffID," +
+                "ReorderOrderDate,ReorderOrderEditDate, ReorderOrderCompletedDate, ReorderOrderStatus " +
+                "FROM ReorderOrder WHERE ReorderOrderID = \"" + OrderID + "\" AND ReorderOrderStatus = \"Processing\"";
+            return dbConnection.GetDataTable(query);
+        }
+
+        public DataTable GoodsReceived_getReorderOrderByStaffID(string StaffID)
+        {
+            string query = "SELECT ReorderOrderID, StaffID," +
+                "ReorderOrderDate,ReorderOrderEditDate, ReorderOrderCompletedDate, ReorderOrderStatus " +
+                "FROM ReorderOrder WHERE StaffID = \"" + StaffID + "\" AND ReorderOrderStatus = \"Processing\"";
+            return dbConnection.GetDataTable(query);
+        }
+
+        public DataTable GoodsReceived_getReorderTableByWhereQuery(string condition)
+        {
+            string query = "SELECT ReorderOrderID, StaffID," +
+                "ReorderOrderDate,ReorderOrderEditDate, ReorderOrderCompletedDate, ReorderOrderStatus " +
+                "FROM ReorderOrder WHERE " + condition;
+            return dbConnection.GetDataTable(query);
+        }
+
+        public void GoodsReceived_updataReorderOrderByRedoreOrderStatus(string RedoreOrderStatus)
+        {
+            string query = "UPDATE ReorderOrder SET ReorderOrderStatus = \"" + RedoreOrderStatus + "\"";
+            dbConnection.Update(query);
+        }
     }
 }
