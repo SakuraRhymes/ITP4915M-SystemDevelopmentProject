@@ -81,7 +81,7 @@ namespace SLMCS_Class
         public DataTable Dispatching_getSalesOrderByDealerID(string DealerID)
         {
             string query = "SELECT SalesOrderID, StaffID, DealerID, SalesOrderDate, SalesOrderStatus FROM SalesOrder WHERE DealerID = \"" + DealerID + "\" AND SalesOrderStatus = \"Dispatching\"";
-            return dbConnection.GetDataTable(query);
+            //return dbConnection.GetDataTable(query);
         }
 
         public DataTable getSalesTableByWhereQuery(string condition)
@@ -98,7 +98,6 @@ namespace SLMCS_Class
         public void updataSalesOrderStatusInDB(string salesOrderID, string status)
         {
             string query = "UPDATE SalesOrder SET SalesOrderStatus = \"" + status + "\" , SalesDispatchDate = \""+ DateTime.Now.ToString("yy-MM-dd") +"\" WHERE SalesOrder.SalesOrderID = \"" + salesOrderID + "\"";
-            System.Windows.Forms.MessageBox.Show(query);
             dbConnection.Update(query);
         }
 

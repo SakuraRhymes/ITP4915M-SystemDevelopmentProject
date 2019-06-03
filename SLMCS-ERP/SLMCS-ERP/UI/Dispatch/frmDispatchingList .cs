@@ -137,7 +137,7 @@ namespace SLMCS_ERP{
                 {
                     System.Windows.Forms.MessageBox.Show(selectedOrderID);
                     salesOrder.updataSalesOrderStatusInDB(selectedOrderID, "Dispatched");
-                    string successfulMessage = "Sales Order :" + selectedOrderID + " has been Dispatch!";
+                    string successfulMessage = "Sales Order :" + selectedOrderID + " has been Dispatched!";
                     MessageBox.Show(successfulMessage);
                     refreshDvg();
                 }
