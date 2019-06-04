@@ -121,8 +121,8 @@ namespace SLMCS_Class
 
         public void GoodsReceived_updataReorderOrderByRedoreOrderStatus(string reorderOrderID, string RedoreOrderStatus)
         {
-            string query = "UPDATE ReorderOrder SET ReorderOrderStatus = \"" + RedoreOrderStatus + "\" ReorderOrderEditDate = \"" + DateTime.Now.ToString("yy-MM-dd") + "\" ReorderOrderReceivedDate = \"" + DateTime.Now.ToString("yy-MM-dd") 
-                + "\" WHERE SalesOrder.SalesOrderID = \"" + reorderOrderID + "\"";
+            string query = "UPDATE ReorderOrder SET ReorderOrderStatus = \"" + RedoreOrderStatus + "\", ReorderOrderReceivedDate = \"" + DateTime.Now.ToString("yy-MM-dd") 
+                + "\" WHERE ReorderOrder.ReorderOrderID = \"" + reorderOrderID + "\"";
             dbConnection.Update(query);
         }
 

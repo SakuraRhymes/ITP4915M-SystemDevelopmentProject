@@ -101,10 +101,10 @@
             this.dgvGoodsRecevieList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGoodsRecevieList.Location = new System.Drawing.Point(10, 20);
             this.dgvGoodsRecevieList.Name = "dgvGoodsRecevieList";
+            this.dgvGoodsRecevieList.ReadOnly = true;
             this.dgvGoodsRecevieList.RowTemplate.Height = 27;
             this.dgvGoodsRecevieList.Size = new System.Drawing.Size(1155, 264);
             this.dgvGoodsRecevieList.TabIndex = 10;
-            this.dgvGoodsRecevieList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
             // btnConfirm
             // 
