@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SLMCS_ERP
 {
-    public partial class frmInventoryInwardGoodsRecord : Form
+    public partial class frmInventoryDangerLevelSetting : Form
     {
-        public frmInventoryInwardGoodsRecord()
+        public frmInventoryDangerLevelSetting()
         {
             InitializeComponent();
         }

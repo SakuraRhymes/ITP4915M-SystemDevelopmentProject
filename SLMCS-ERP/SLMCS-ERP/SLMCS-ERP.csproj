@@ -60,6 +60,12 @@
     <Compile Include="UI\Inventory\frmInventoryAddReorderProduct.Designer.cs">
       <DependentUpon>frmInventoryAddReorderProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Inventory\frmInventoryDangerLevelSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Inventory\frmInventoryDangerLevelSetting.Designer.cs">
+      <DependentUpon>frmInventoryDangerLevelSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Inventory\frmInventoryEditProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,12 @@
     </Compile>
     <Compile Include="UI\Inventory\frmInventoryNewProduct.Designer.cs">
       <DependentUpon>frmInventoryNewProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Inventory\frmInventoryReorderLevelSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Inventory\frmInventoryReorderLevelSetting.Designer.cs">
+      <DependentUpon>frmInventoryReorderLevelSetting.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Inventory\frmInventoryReorderProduct.cs">
       <SubType>Form</SubType>
