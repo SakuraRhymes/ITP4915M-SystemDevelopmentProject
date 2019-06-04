@@ -31,7 +31,7 @@
             this.dgvOrderItem = new System.Windows.Forms.DataGridView();
             this.btnCancelPlaceOrder = new System.Windows.Forms.Button();
             this.btnPlaceOrder = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblTotalAmount = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAddItem = new System.Windows.Forms.Button();
@@ -59,6 +59,7 @@
             this.txtOrderQunatity = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.btnReserveOrder = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItem)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -99,14 +100,14 @@
             this.btnPlaceOrder.UseVisualStyleBackColor = true;
             this.btnPlaceOrder.Click += new System.EventHandler(this.BtnPlaceOrder_Click);
             // 
-            // label2
+            // lblTotalAmount
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(636, 510);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(11, 12);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "0";
+            this.lblTotalAmount.AutoSize = true;
+            this.lblTotalAmount.Location = new System.Drawing.Point(630, 510);
+            this.lblTotalAmount.Name = "lblTotalAmount";
+            this.lblTotalAmount.Size = new System.Drawing.Size(11, 12);
+            this.lblTotalAmount.TabIndex = 15;
+            this.lblTotalAmount.Text = "0";
             // 
             // label1
             // 
@@ -373,6 +374,16 @@
             this.label17.Size = new System.Drawing.Size(0, 12);
             this.label17.TabIndex = 2;
             // 
+            // btnReserveOrder
+            // 
+            this.btnReserveOrder.Location = new System.Drawing.Point(20, 510);
+            this.btnReserveOrder.Name = "btnReserveOrder";
+            this.btnReserveOrder.Size = new System.Drawing.Size(96, 23);
+            this.btnReserveOrder.TabIndex = 4;
+            this.btnReserveOrder.Text = "Reserve Order";
+            this.btnReserveOrder.UseVisualStyleBackColor = true;
+            this.btnReserveOrder.Click += new System.EventHandler(this.BtnReserveOrder_Click);
+            // 
             // frmNewSalesOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -380,8 +391,9 @@
             this.ClientSize = new System.Drawing.Size(1036, 566);
             this.Controls.Add(this.dgvOrderItem);
             this.Controls.Add(this.btnCancelPlaceOrder);
+            this.Controls.Add(this.btnReserveOrder);
             this.Controls.Add(this.btnPlaceOrder);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblTotalAmount);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
@@ -401,7 +413,7 @@
         #endregion
         private System.Windows.Forms.Button btnCancelPlaceOrder;
         private System.Windows.Forms.Button btnPlaceOrder;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblTotalAmount;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAddItem;
@@ -430,5 +442,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtOrderQunatity;
         internal System.Windows.Forms.DataGridView dgvOrderItem;
+        private System.Windows.Forms.Button btnReserveOrder;
     }
 }
