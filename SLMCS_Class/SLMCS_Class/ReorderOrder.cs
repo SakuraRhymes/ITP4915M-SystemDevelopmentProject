@@ -121,7 +121,7 @@ namespace SLMCS_Class
 
         public void GoodsReceived_updataReorderOrderByRedoreOrderStatus(string RedoreOrderStatus)
         {
-            string query = "UPDATE ReorderOrder SET ReorderOrderStatus = \"" + RedoreOrderStatus + "\"";
+            string query = "UPDATE ReorderOrder SET ReorderOrderStatus = \"" + RedoreOrderStatus + "\" SalesDispatchDate = \"" + DateTime.Now.ToString("yy-MM-dd");
             dbConnection.Update(query);
         }
     }

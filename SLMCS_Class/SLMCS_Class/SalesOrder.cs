@@ -92,7 +92,7 @@ namespace SLMCS_Class
         public DataTable getSalesOrderLineBySalesOrderID(string salesOrderID)
         {
             dbConnection = new DBConnection();
-            string query = "SELECT * FROM SalesOrderLine WHERE SalesOrderID = \"" + salesOrderID + "\"";
+            string query = "SELECT SalesOrderID, ProductID, Quantity FROM SalesOrderLine WHERE SalesOrderID = \"" + salesOrderID + "\"";
             return dbConnection.GetDataTable(query);
         }
         public void updataSalesOrderStatusInDB(string salesOrderID, string status)

@@ -72,7 +72,7 @@ namespace SLMCS_ERP.UI.Dispatch
 
         private void BtnConfirm_Click(object sender, EventArgs e)
         {
-            changeGoodsReceviedDvgContent(reorderOrder.GoodsReceived_updataReorderOrderByRedoreOrderStatus("Completed"));
+            
         }
     }
 }
