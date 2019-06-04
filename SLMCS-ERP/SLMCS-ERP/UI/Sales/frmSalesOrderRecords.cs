@@ -21,7 +21,7 @@ namespace SLMCS_ERP.UI.Sales
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            SalesOrder salesOrder = new SalesOrder();
+            SalesOrder salesOrder = new SalesOrder(frmMain.CurrentStaff.StaffID);
             DataTable dt;
             if (txtSearchCondition.Text == "")
             {

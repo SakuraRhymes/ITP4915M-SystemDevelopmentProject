@@ -23,7 +23,7 @@ namespace SLMCS_Class
         private DataTable salesOrderTable;
 
         public string SalesOrderID { get => salesOrderID; }
-        public string StaffID { get => "S19002708"; }
+        public string StaffID { get => staffID; }
         public string SalesOrderDate { get => salesOrderDate; }
         public string DealerID {
             get => dealerID;
@@ -34,11 +34,11 @@ namespace SLMCS_Class
             get => _salesOrderLine;
         }
 
-        public SalesOrder()
+        public SalesOrder(String staffID)
         {
             _salesOrderLine = new List<SalesOrderLine>();
             dbConnection = new DBConnection();
-
+            this.staffID = staffID;
             salesOrderID = getNextSalesOrderID();
             salesOrderDate = DateTime.Now.ToString("yy-MM-dd");
         }

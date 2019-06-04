@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SLMCS_Class;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,9 +20,34 @@ namespace SLMCS_ERP
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            frmMain main = new frmMain();
-            this.Hide();
-            main.Show();
+            string staffID = txtStaffID.Text;
+            string password = txtPassword.Text;
+
+            try
+            {
+                Staff staff = new Staff(staffID);
+                if(staff.Verify(password)){
+                    frmMain main = new frmMain(this);
+
+                    frmMain.CurrentStaff = staff;
+
+                    txtStaffID.Text = "";
+                    txtPassword.Text = "";
+
+                    this.Hide();
+                    main.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Password invaild! Please Try again.");
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Staff ID invaild! Please Try again.");
+            }
+
+
         }
     }
 }
