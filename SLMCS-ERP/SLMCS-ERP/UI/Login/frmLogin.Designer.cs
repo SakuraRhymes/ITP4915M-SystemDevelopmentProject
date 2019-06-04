@@ -53,6 +53,7 @@
             this.txtStaffID.Name = "txtStaffID";
             this.txtStaffID.Size = new System.Drawing.Size(100, 22);
             this.txtStaffID.TabIndex = 1;
+            this.txtStaffID.Text = "S19935161";
             // 
             // txtPassword
             // 
@@ -61,6 +62,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(100, 22);
             this.txtPassword.TabIndex = 2;
+            this.txtPassword.Text = "0SKnu0Uuj";
             // 
             // labelWelcome
             // 
