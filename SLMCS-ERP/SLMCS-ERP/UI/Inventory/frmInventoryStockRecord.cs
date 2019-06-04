@@ -23,16 +23,6 @@ namespace SLMCS_ERP
             //cboProductType.DropDownStyle = ComboBoxStyle.DropDownList;
             //cboProductPrice.DropDownStyle = ComboBoxStyle.DropDownList;
             //cboStockQuantity.DropDownStyle = ComboBoxStyle.DropDownList;
-            txtDProductName.ReadOnly = true;
-            rtbDProductDesc.ReadOnly = true;
-            cboDProductUnit.DropDownStyle = ComboBoxStyle.DropDownList;
-            txtDProductPrice.ReadOnly = true;
-            txtDActualQty.ReadOnly = true;
-            txtDReorderLevel.ReadOnly = true;
-            txtDDangerLevel.ReadOnly = true;
-
-            lblDProductIDData.Text = "";
-            lblDProductTypeData.Text = "";
         }
         private void BtnSearch_Click(object sender, EventArgs e)
         {
@@ -49,16 +39,16 @@ namespace SLMCS_ERP
         }
 
 
-        //private void BtnEditProduct_Click(object sender, EventArgs e)
-        //{
-        //    if (selectedProductID == "")
-        //    {
-        //        MessageBox.Show("Please select a product");
-        //    } else
-        //    {
-        //        OpenEditProductForm(selectedProductID);
-        //    }
-        //}
+        private void BtnEditProduct_Click(object sender, EventArgs e)
+        {
+            if (selectedProductID == "")
+            {
+                MessageBox.Show("Please select a product");
+            } else
+            {
+                OpenEditProductForm(selectedProductID);
+            }
+        }
 
         private void DgvStockRecord_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -66,21 +56,20 @@ namespace SLMCS_ERP
             {
                 selectedProductID = dgvStockRecord.Rows[e.RowIndex].Cells["ProductID"].Value.ToString();
                 dgvStockRecord.Rows[e.RowIndex].Selected = true;
-                ShowProductDetail(selectedProductID);
             }
         }
 
-        //private void DgvStockRecord_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    OpenEditProductForm(selectedProductID);
-        //    dgvStockRecord.Rows[e.RowIndex].Selected = true;
-        //}
+        private void DgvStockRecord_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            OpenEditProductForm(selectedProductID);
+            dgvStockRecord.Rows[e.RowIndex].Selected = true;
+        }
 
-        //private void OpenEditProductForm(string selectedProductID)
-        //{
-        //    frmInventoryEditProduct inventoryEditProduct = new frmInventoryEditProduct(selectedProductID);
-        //    inventoryEditProduct.Show();
-        //}
+        private void OpenEditProductForm(string selectedProductID)
+        {
+            frmInventoryEditProduct inventoryEditProduct = new frmInventoryEditProduct(selectedProductID);
+            inventoryEditProduct.Show();
+        }
 
         private void BtnDeleteProduct_Click(object sender, EventArgs e)
         {
@@ -186,21 +175,6 @@ namespace SLMCS_ERP
             dgvStockRecord.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvStockRecord.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvStockRecord.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-        }
-
-        private void ShowProductDetail(string productID)
-        {
-            product = new Product(productID);
-
-            lblDProductIDData.Text = product.ProductID;
-            lblDProductTypeData.Text = product.ProductType;
-            txtDProductName.Text = product.ProductName;
-            rtbDProductDesc.Text = product.ProductDescription;
-            cboDProductUnit.Text = product.ProductUnit;
-            txtDProductPrice.Text = product.ProductPrice.ToString();
-            txtDActualQty.Text = product.ActualQuantity.ToString();
-            txtDReorderLevel.Text = product.ReorderLevel.ToString();
-            txtDDangerLevel.Text = product.DangerLevel.ToString();
         }
     }
 }
