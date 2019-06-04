@@ -114,6 +114,36 @@
     <Compile Include="UI\Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Management\frmDealerManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Management\frmDealerManagement.Designer.cs">
+      <DependentUpon>frmDealerManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Management\frmManagementMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Management\frmManagementMain.Designer.cs">
+      <DependentUpon>frmManagementMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Management\frmProductManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Management\frmProductManagement.Designer.cs">
+      <DependentUpon>frmProductManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Management\frmStaffManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Management\frmStaffManagement.Designer.cs">
+      <DependentUpon>frmStaffManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Management\frmVendorManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Management\frmVendorManagement.Designer.cs">
+      <DependentUpon>frmVendorManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Sales\frmNewSalesOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +209,9 @@
     <EmbeddedResource Include="UI\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Management\frmManagementMain.resx">
+      <DependentUpon>frmManagementMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Sales\frmNewSalesOrder.resx">
       <DependentUpon>frmNewSalesOrder.cs</DependentUpon>
     </EmbeddedResource>
@@ -222,5 +255,6 @@
       <Name>SLMCS_Class</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
