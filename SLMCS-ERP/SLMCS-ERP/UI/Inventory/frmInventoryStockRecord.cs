@@ -23,6 +23,15 @@ namespace SLMCS_ERP
             //cboProductType.DropDownStyle = ComboBoxStyle.DropDownList;
             //cboProductPrice.DropDownStyle = ComboBoxStyle.DropDownList;
             //cboStockQuantity.DropDownStyle = ComboBoxStyle.DropDownList;
+            lblDProductIDData.Text = "";
+            lblDProductTypeData.Text = "";
+            lblDProductNameData.Text = "";
+            lblDProductDescData.Text = "";
+            lblDProductUnitData.Text = "";
+            lblDProductPriceData.Text = "";
+            lblDActualQtyData.Text = "";
+            lblDReorderLevelData.Text = "";
+            lblDDangerLevelData.Text = "";
         }
         private void BtnSearch_Click(object sender, EventArgs e)
         {
@@ -56,6 +65,17 @@ namespace SLMCS_ERP
             {
                 selectedProductID = dgvStockRecord.Rows[e.RowIndex].Cells["ProductID"].Value.ToString();
                 dgvStockRecord.Rows[e.RowIndex].Selected = true;
+                product = new Product(selectedProductID);
+
+                lblDProductIDData.Text = product.ProductID;
+                lblDProductTypeData.Text = product.ProductType;
+                lblDProductNameData.Text = product.ProductName;
+                lblDProductDescData.Text = product.ProductDescription;
+                lblDProductUnitData.Text = product.ProductUnit;
+                lblDProductPriceData.Text = product.ProductPrice.ToString();
+                lblDActualQtyData.Text = product.ActualQuantity.ToString();
+                lblDReorderLevelData.Text = product.ReorderLevel.ToString();
+                lblDDangerLevelData.Text = product.DangerLevel.ToString();
             }
         }
 
