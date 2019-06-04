@@ -1,5 +1,5 @@
 ﻿using System;
-using SLMCS_Class.Properties;
+using SLMCS_Class;
 using SLMCS_ERP;
 
 namespace SLMCS_Class

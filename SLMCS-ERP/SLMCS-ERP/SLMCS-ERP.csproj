@@ -54,17 +54,29 @@
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="DBConnection.cs" />
+    <Compile Include="UI\Inventory\frmInventoryAddReorderProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Inventory\frmInventoryAddReorderProduct.Designer.cs">
+      <DependentUpon>frmInventoryAddReorderProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Inventory\frmInventoryEditProduct.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Inventory\frmInventoryEditProduct.Designer.cs">
       <DependentUpon>frmInventoryEditProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Inventory\frmInventoryInwardGood.cs">
+    <Compile Include="UI\Inventory\frmInventoryInwardGoods.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Inventory\frmInventoryInwardGood.Designer.cs">
-      <DependentUpon>frmInventoryInwardGood.cs</DependentUpon>
+    <Compile Include="UI\Inventory\frmInventoryInwardGoods.Designer.cs">
+      <DependentUpon>frmInventoryInwardGoods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Inventory\frmInventoryInwardGoodsRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Inventory\frmInventoryInwardGoodsRecord.Designer.cs">
+      <DependentUpon>frmInventoryInwardGoodsRecord.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Inventory\frmInventoryMain.cs">
       <SubType>Form</SubType>
@@ -77,6 +89,12 @@
     </Compile>
     <Compile Include="UI\Inventory\frmInventoryNewProduct.Designer.cs">
       <DependentUpon>frmInventoryNewProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Inventory\frmInventoryReorderProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Inventory\frmInventoryReorderProduct.Designer.cs">
+      <DependentUpon>frmInventoryReorderProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Inventory\frmInventoryStockRecord.cs">
       <SubType>Form</SubType>
@@ -131,14 +149,26 @@
     <Compile Include="Test\TestConnection.Designer.cs">
       <DependentUpon>TestConnection.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\Inventory\frmInventoryAddReorderProduct.resx">
+      <DependentUpon>frmInventoryAddReorderProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Inventory\frmInventoryEditProduct.resx">
       <DependentUpon>frmInventoryEditProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Inventory\frmInventoryInwardGoods.resx">
+      <DependentUpon>frmInventoryInwardGoods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Inventory\frmInventoryInwardGoodsRecord.resx">
+      <DependentUpon>frmInventoryInwardGoodsRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Inventory\frmInventoryMain.resx">
       <DependentUpon>frmInventoryMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Inventory\frmInventoryNewProduct.resx">
       <DependentUpon>frmInventoryNewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Inventory\frmInventoryReorderProduct.resx">
+      <DependentUpon>frmInventoryReorderProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Inventory\frmInventoryStockRecord.resx">
       <DependentUpon>frmInventoryStockRecord.cs</DependentUpon>

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SLMCS_ERP
+namespace SLMCS_ERP.UI.Inventory
 {
-    public partial class frmInventoryInwardGood : Form
+    public partial class frmInventoryInwardGoodsRecord : Form
     {
-        public frmInventoryInwardGood()
+        public frmInventoryInwardGoodsRecord()
         {
             InitializeComponent();
         }
