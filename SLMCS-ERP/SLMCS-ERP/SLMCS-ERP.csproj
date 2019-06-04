@@ -72,6 +72,12 @@
     <Compile Include="UI\Inventory\frmInventoryInwardGoods.Designer.cs">
       <DependentUpon>frmInventoryInwardGoods.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Inventory\frmInventoryInwardGoodsRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Inventory\frmInventoryInwardGoodsRecord.Designer.cs">
+      <DependentUpon>frmInventoryInwardGoodsRecord.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Inventory\frmInventoryMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Inventory\frmInventoryInwardGoods.resx">
       <DependentUpon>frmInventoryInwardGoods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Inventory\frmInventoryInwardGoodsRecord.resx">
+      <DependentUpon>frmInventoryInwardGoodsRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Inventory\frmInventoryMain.resx">
       <DependentUpon>frmInventoryMain.cs</DependentUpon>
