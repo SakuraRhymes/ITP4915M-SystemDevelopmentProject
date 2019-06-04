@@ -60,6 +60,12 @@
     <Compile Include="UI\Inventory\frmInventoryAddReorderProduct.Designer.cs">
       <DependentUpon>frmInventoryAddReorderProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Inventory\frmInventoryDangerLevelSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Inventory\frmInventoryDangerLevelSetting.Designer.cs">
+      <DependentUpon>frmInventoryDangerLevelSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Inventory\frmInventoryEditProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,12 @@
     </Compile>
     <Compile Include="UI\Inventory\frmInventoryNewProduct.Designer.cs">
       <DependentUpon>frmInventoryNewProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Inventory\frmInventoryReorderLevelSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Inventory\frmInventoryReorderLevelSetting.Designer.cs">
+      <DependentUpon>frmInventoryReorderLevelSetting.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Inventory\frmInventoryReorderProduct.cs">
       <SubType>Form</SubType>
@@ -182,6 +194,9 @@
     <EmbeddedResource Include="UI\Inventory\frmInventoryAddReorderProduct.resx">
       <DependentUpon>frmInventoryAddReorderProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Inventory\frmInventoryDangerLevelSetting.resx">
+      <DependentUpon>frmInventoryDangerLevelSetting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Inventory\frmInventoryEditProduct.resx">
       <DependentUpon>frmInventoryEditProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Inventory\frmInventoryNewProduct.resx">
       <DependentUpon>frmInventoryNewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Inventory\frmInventoryReorderLevelSetting.resx">
+      <DependentUpon>frmInventoryReorderLevelSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Inventory\frmInventoryReorderProduct.resx">
       <DependentUpon>frmInventoryReorderProduct.cs</DependentUpon>
