@@ -15,10 +15,13 @@ namespace SLMCS_ERP
     {
         public static Staff CurrentStaff { get; set; }
         frmLogin loginPage;
-        public frmMain(frmLogin loginPage)
+        public frmMain(frmLogin loginPage, Staff staff)
         {
             InitializeComponent();
             this.loginPage = loginPage;
+            CurrentStaff = staff;
+            lblStaffID.Text = frmMain.CurrentStaff.StaffID;
+            lblStaffName.Text = frmMain.CurrentStaff.StaffName;
             frmHome home = new frmHome();
             navigation(home, panelContent);
         }

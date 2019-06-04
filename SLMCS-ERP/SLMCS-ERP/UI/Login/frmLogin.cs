@@ -27,9 +27,7 @@ namespace SLMCS_ERP
             {
                 Staff staff = new Staff(staffID);
                 if(staff.Verify(password)){
-                    frmMain main = new frmMain(this);
-
-                    frmMain.CurrentStaff = staff;
+                    frmMain main = new frmMain(this, staff);
 
                     txtStaffID.Text = "";
                     txtPassword.Text = "";
@@ -44,7 +42,8 @@ namespace SLMCS_ERP
             }
             catch (Exception exception)
             {
-                MessageBox.Show("Staff ID invaild! Please Try again.");
+                //MessageBox.Show("Staff ID invaild! Please Try again.");
+                MessageBox.Show(exception.Message);
             }
 
 
