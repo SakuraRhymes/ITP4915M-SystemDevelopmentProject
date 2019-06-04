@@ -14,6 +14,7 @@ namespace SLMCS_ERP.UI.Dispatch
     public partial class frmGoodsReceivedList : Form
     {
         ReorderOrder reorderOrder;
+        private string selectedOrderID;
         public frmGoodsReceivedList()
         {
             InitializeComponent();
@@ -66,13 +67,31 @@ namespace SLMCS_ERP.UI.Dispatch
 
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
-            dgvGoodsRecevieList.DataSource = null;
+            refresh();
+
+        }
+
+        private void refresh()
+        {
             changeGoodsReceviedDvgContent(reorderOrder.getReorderOrderTableByReorderOrderStatus("Processing"));
+
         }
 
         private void BtnConfirm_Click(object sender, EventArgs e)
         {
-            
+            selectedOrderID = dgvGoodsRecevieList.Rows[dgvGoodsRecevieList.CurrentCell.RowIndex].Cells["ReorderOrderID"].Value.ToString();
+            DialogResult result = MessageBox.Show("Receive " + selectedOrderID + "?", "Confirmation", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                if (dgvGoodsRecevieList.CurrentCell.RowIndex != -1)
+                {
+                    System.Windows.Forms.MessageBox.Show(selectedOrderID);
+                    reorderOrder.GoodsReceived_updataReorderOrderByRedoreOrderStatus(selectedOrderID, "Received");
+                    string successfulMessage = "Reorder Order :" + selectedOrderID + " received!";
+                    MessageBox.Show(successfulMessage);
+                    refresh();
+                }
+            }
         }
     }
 }

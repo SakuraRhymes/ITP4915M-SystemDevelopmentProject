@@ -119,10 +119,16 @@ namespace SLMCS_Class
             return dbConnection.GetDataTable(query);
         }
 
-        public void GoodsReceived_updataReorderOrderByRedoreOrderStatus(string RedoreOrderStatus)
+        public void GoodsReceived_updataReorderOrderByRedoreOrderStatus(string reorderOrderID, string RedoreOrderStatus)
         {
-            string query = "UPDATE ReorderOrder SET ReorderOrderStatus = \"" + RedoreOrderStatus + "\" SalesDispatchDate = \"" + DateTime.Now.ToString("yy-MM-dd");
+            string query = "UPDATE ReorderOrder SET ReorderOrderStatus = \"" + RedoreOrderStatus + "\" ReorderOrderEditDate = \"" + DateTime.Now.ToString("yy-MM-dd") + "\" ReorderOrderReceivedDate = \"" + DateTime.Now.ToString("yy-MM-dd") 
+                + "\" WHERE SalesOrder.SalesOrderID = \"" + reorderOrderID + "\"";
             dbConnection.Update(query);
+        }
+
+        public void GoodsReceived_updataReorderOrderByQuery(string condition)
+        {
+            dbConnection.Update(condition);
         }
     }
 }
