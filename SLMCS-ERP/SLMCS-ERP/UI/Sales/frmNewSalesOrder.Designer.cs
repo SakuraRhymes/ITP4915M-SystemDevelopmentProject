@@ -33,7 +33,6 @@
             this.btnPlaceOrder = new System.Windows.Forms.Button();
             this.lblTotalAmount = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnAddItem = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblStaffID = new System.Windows.Forms.Label();
@@ -92,6 +91,7 @@
             // 
             // btnPlaceOrder
             // 
+            this.btnPlaceOrder.Enabled = false;
             this.btnPlaceOrder.Location = new System.Drawing.Point(803, 505);
             this.btnPlaceOrder.Name = "btnPlaceOrder";
             this.btnPlaceOrder.Size = new System.Drawing.Size(96, 23);
@@ -117,15 +117,6 @@
             this.label1.Size = new System.Drawing.Size(76, 12);
             this.label1.TabIndex = 14;
             this.label1.Text = "Total Amount :";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(556, 58);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(179, 23);
-            this.btnDelete.TabIndex = 13;
-            this.btnDelete.Text = "Delete Selected Item";
-            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnAddItem
             // 
@@ -297,7 +288,6 @@
             this.groupBox2.Controls.Add(this.txtSearchForProduct);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.btnAddItem);
-            this.groupBox2.Controls.Add(this.btnDelete);
             this.groupBox2.Location = new System.Drawing.Point(20, 178);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(879, 112);
@@ -376,6 +366,7 @@
             // 
             // btnReserveOrder
             // 
+            this.btnReserveOrder.Enabled = false;
             this.btnReserveOrder.Location = new System.Drawing.Point(20, 510);
             this.btnReserveOrder.Name = "btnReserveOrder";
             this.btnReserveOrder.Size = new System.Drawing.Size(96, 23);
@@ -415,7 +406,6 @@
         private System.Windows.Forms.Button btnPlaceOrder;
         private System.Windows.Forms.Label lblTotalAmount;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAddItem;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtDealerID;

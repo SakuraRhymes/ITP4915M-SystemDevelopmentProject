@@ -34,9 +34,9 @@
             this.cboSearchType = new System.Windows.Forms.ComboBox();
             this.txtSearchCondition = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnCancelOrder = new System.Windows.Forms.Button();
+            this.btnConfirmOrder = new System.Windows.Forms.Button();
+            this.btnCompleteOrder = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -47,7 +47,7 @@
             this.dgvSearchResult.Location = new System.Drawing.Point(12, 113);
             this.dgvSearchResult.Name = "dgvSearchResult";
             this.dgvSearchResult.RowTemplate.Height = 23;
-            this.dgvSearchResult.Size = new System.Drawing.Size(879, 226);
+            this.dgvSearchResult.Size = new System.Drawing.Size(879, 244);
             this.dgvSearchResult.TabIndex = 27;
             // 
             // groupBox1
@@ -96,41 +96,44 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
-            // button1
+            // btnCancelOrder
             // 
-            this.button1.Location = new System.Drawing.Point(679, 386);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCancelOrder.Enabled = false;
+            this.btnCancelOrder.Location = new System.Drawing.Point(641, 374);
+            this.btnCancelOrder.Name = "btnCancelOrder";
+            this.btnCancelOrder.Size = new System.Drawing.Size(110, 23);
+            this.btnCancelOrder.TabIndex = 28;
+            this.btnCancelOrder.Text = "Cancel Order";
+            this.btnCancelOrder.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnConfirmOrder
             // 
-            this.button2.Location = new System.Drawing.Point(12, 374);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 28;
-            this.button2.Text = "button1";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnConfirmOrder.Enabled = false;
+            this.btnConfirmOrder.Location = new System.Drawing.Point(12, 374);
+            this.btnConfirmOrder.Name = "btnConfirmOrder";
+            this.btnConfirmOrder.Size = new System.Drawing.Size(110, 23);
+            this.btnConfirmOrder.TabIndex = 28;
+            this.btnConfirmOrder.Text = "Confirm Order";
+            this.btnConfirmOrder.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnCompleteOrder
             // 
-            this.button3.Location = new System.Drawing.Point(816, 386);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 28;
-            this.button3.Text = "button1";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnCompleteOrder.Enabled = false;
+            this.btnCompleteOrder.Location = new System.Drawing.Point(781, 374);
+            this.btnCompleteOrder.Name = "btnCompleteOrder";
+            this.btnCompleteOrder.Size = new System.Drawing.Size(110, 23);
+            this.btnCompleteOrder.TabIndex = 28;
+            this.btnCompleteOrder.Text = "Complete Order";
+            this.btnCompleteOrder.UseVisualStyleBackColor = true;
             // 
             // frmSalesOrderRecords
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1036, 566);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnConfirmOrder);
+            this.Controls.Add(this.btnCompleteOrder);
+            this.Controls.Add(this.btnCancelOrder);
             this.Controls.Add(this.dgvSearchResult);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -151,8 +154,8 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.ComboBox cboSearchType;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnCancelOrder;
+        private System.Windows.Forms.Button btnConfirmOrder;
+        private System.Windows.Forms.Button btnCompleteOrder;
     }
 }

@@ -51,6 +51,9 @@ namespace SLMCS_ERP.UI.Sales
                 txtSearchForProduct.Text = "";
                 txtOrderQunatity.Text = "";
                 lblTotalAmount.Text = salesOrder.getTotalPrice().ToString();
+
+                btnPlaceOrder.Enabled = true;
+                btnReserveOrder.Enabled = true;
             }
             else
             {
