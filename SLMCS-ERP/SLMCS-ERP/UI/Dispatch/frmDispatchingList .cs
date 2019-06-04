@@ -17,7 +17,7 @@ namespace SLMCS_ERP{
         private SalesOrder salesOrder;
         public frmDispatchingList()
         {
-            salesOrder = new SalesOrder();
+            salesOrder = new SalesOrder(frmMain.CurrentStaff.StaffID);
             
             InitializeComponent();
             startUp();
