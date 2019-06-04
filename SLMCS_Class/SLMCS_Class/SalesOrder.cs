@@ -160,14 +160,31 @@ namespace SLMCS_Class
         {
             string query = "INSERT INTO SalesOrder VALUES ('" + SalesOrderID + "','" + StaffID + "','" + DealerID +
                            "','" + SalesOrderDate + "',null,null,null,'Dispatching')";
-            MessageBox.Show(query);
-
+            //MessageBox.Show(query);
             dbConnection.Insert(query);
 
             foreach(var salesOrderLine in _salesOrderLine)
             {
                 salesOrderLine.placeSalesOrderLine();
             }
+        }
+
+        public DataTable searchSalesOrder(string condition)
+        {
+            string query;
+            if (condition == null)
+            {
+                 query = "SELECT * FROM SalesOrder";
+            }
+            else
+            {
+                string queryString;
+                query = "";
+                //query = string.Format(queryString, productType);
+
+            }
+            //MessageBox.Show(query);
+            return dbConnection.GetDataTable(query);
         }
     }
 }
