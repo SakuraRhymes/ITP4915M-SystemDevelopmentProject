@@ -76,6 +76,25 @@ namespace SLMCS_Class
             return nextReorderOrderID;
         }
 
+        public DataTable GetReorderOrderTable(string condition)
+        {
+            string query = "SELECT ReorderOrderID,StaffID,ReorderOrderDate,ReorderOrderReceivedDate,ReorderOrderStatus FROM ReorderOrder ";
+            if (condition != "")
+            {
+                
+                query += condition;
+            }
+            reorderOrderTable = dbConnection.GetDataTable(query);
+            return reorderOrderTable;
+        }
+
+        public DataTable GetReorderOrderLineTable(string reorderOrderID)
+        {
+            string query = "SELECT * FROM ReorderOrderLine WHERE ReorderOrderID = '" + reorderOrderID + "'";
+            reorderOrderTable = dbConnection.GetDataTable(query);
+            return reorderOrderTable;
+        }
+
         public string ReorderOrderID
         {
             get => reorderOrderID;

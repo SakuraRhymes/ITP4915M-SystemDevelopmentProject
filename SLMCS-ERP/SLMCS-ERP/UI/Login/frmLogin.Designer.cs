@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.btnLogin = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtStaffID = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.labelWelcome = new System.Windows.Forms.Label();
             this.labelStaffID = new System.Windows.Forms.Label();
             this.labelPassword = new System.Windows.Forms.Label();
@@ -47,19 +47,22 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
-            // textBox1
+            // txtStaffID
             // 
-            this.textBox1.Location = new System.Drawing.Point(479, 283);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 1;
+            this.txtStaffID.Location = new System.Drawing.Point(479, 283);
+            this.txtStaffID.Name = "txtStaffID";
+            this.txtStaffID.Size = new System.Drawing.Size(100, 22);
+            this.txtStaffID.TabIndex = 1;
+            this.txtStaffID.Text = "S19935161";
             // 
-            // textBox2
+            // txtPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(479, 360);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 2;
+            this.txtPassword.Location = new System.Drawing.Point(479, 360);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(100, 22);
+            this.txtPassword.TabIndex = 2;
+            this.txtPassword.Text = "0SKnu0Uuj";
             // 
             // labelWelcome
             // 
@@ -107,8 +110,8 @@
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.labelStaffID);
             this.Controls.Add(this.labelWelcome);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtStaffID);
             this.Controls.Add(this.btnLogin);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmLogin";
@@ -121,8 +124,8 @@
         #endregion
 
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtStaffID;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label labelWelcome;
         private System.Windows.Forms.Label labelStaffID;
         private System.Windows.Forms.Label labelPassword;

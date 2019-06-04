@@ -31,19 +31,17 @@ namespace SLMCS_Class
             //MessageBox.Show(query);
             dbConnection.Insert(query);
         }
-        
-
-//        public void CreateReorderOrderLine(ReorderOrder reorderOrder, Product product, int quantity)
-//        {
-//            ReorderOrderLine orderDetail = new ReorderOrderLine(reorderOrder, product, quantity);
-//
-//        }
 
         public ReorderOrder ReorderOrder
         {
             get => reorderOrder;
             set => reorderOrder = value;
         }
+
+        public string ProductID
+        {
+            get => product.ProductID;
+        } 
 
         public Product Product
         {

@@ -8,10 +8,7 @@ namespace SLMCS_Class
     {
         public static void Main(string[] args)
         {
-            Product product = new Product();
 
-            Console.WriteLine(product.GetNextProductID("A"));
-            
         }
     }
 }

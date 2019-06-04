@@ -45,31 +45,14 @@ namespace SLMCS_Class
             DepartmentID = (string)rows[0]["DepartmentID"];
         }
         //login the system via staffID and password
-        public bool Verify(string staffID, string password)
+        public bool Verify(string password)
         {
-            string query = "SELECT * FROM Staff WHERE StaffID='" + staffID +  "' AND Password='" + password + "'";
-            staffTable = dbConnection.GetDataTable(query);
-            if (staffTable.Rows.Count == 1)
-            {
-                this.staffID = staffID;
-                this.password = password;
-                
-                DataRow[] rows = staffTable.Select();
-                //passwordChangeDate = ((DateTime) rows[0]["PasswordChangeDate"]).ToString("dd/MM/yyyy");
-                staffName = (string) rows[0]["StaffName"];
-                staffPhoneNo = (string) rows[0]["StaffPhoneNo"];
-                staffPositionID = (string) rows[0]["StaffPositionID"];
-                departmentID = (string) rows[0]["DepartmentID"];
-                Console.WriteLine("login successful"); // for testing
-                return true;
-            }
-            Console.WriteLine("password or id invalid"); // for testing
-            return false;
+            return password == Password;
         }
         //change staff login password
         public bool ChangePassword(string newPassword)
         {
-            if (Verify(staffID, password))
+            if (Verify(password))
             {
                 dbConnection.Update("Staff", "Password='" + newPassword + "', PasswordChangeDate="+ "CURDATE()" + "", "WHERE StaffID='" + staffID + "'");
                 Password = newPassword;
@@ -83,7 +66,7 @@ namespace SLMCS_Class
         //staffName and staffPhoneNo for checking the password
         public string ForgetPassword(string staffName, string staffPhoneNo)
         {
-            if (Verify(staffID, password))
+            if (Verify(password))
             {
                 if (this.staffName.Equals(staffName) && this.staffPhoneNo.Equals(staffPhoneNo))
                 {

@@ -10,6 +10,7 @@ namespace SLMCS_ERP
     {
         private Product product;
         private string selectedProductID;
+        private string addedProductID;
         private ReorderOrder reorderOrder;
         private ReorderOrderLine reorderOrderLine;
         public frmInventoryReorderProduct()
@@ -35,20 +36,29 @@ namespace SLMCS_ERP
 
         private void BtnConfirm_Click(object sender, EventArgs e)
         {
-//            Product product1 = new Product("A00000");
-//            Product product2 = new Product("A00002");
-//            Product product3 = new Product("A00009");
-              Staff staff = new Staff("S19002708");
-//            
-//            ReorderOrder reorderOrder = new ReorderOrder();
-//            
-//            reorderOrder.AddReorderOrderLine(product1,2);
-//            reorderOrder.AddReorderOrderLine(product2,5);
-//            reorderOrder.AddReorderOrderLine(product3,7);
-//            
-//            
-              reorderOrder.PlaceReorderOrder(staff,DateTime.Today.ToString("yyyy-MM-dd"));
-              //staff.AddReorderOrder(reorderOrder);
+            
+
+            if (selectedProductID == "")
+            {
+                MessageBox.Show("Please select product first");
+            }
+            else
+            {
+                if (dgvReorderOrder.Rows.Count != 0)
+                {
+                    if (MessageBox.Show("Confirm Order?", "Confirm Message", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    {
+                        Staff staff = new Staff("S19002708");
+                        reorderOrder.PlaceReorderOrder(staff, DateTime.Today.ToString("yyyy-MM-dd"));
+                        FrmInventoryReorderProduct_Load(sender, e);
+                        MessageBox.Show("Order has been complete");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No product at the order");
+                }
+            }
         }
 
         private void FrmInventoryReorderProduct_Load(object sender, EventArgs e)
@@ -60,6 +70,11 @@ namespace SLMCS_ERP
             dgvSearchRecord.AllowUserToAddRows = false;
             dgvSearchRecord.RowHeadersVisible = false;
             dgvSearchRecord.ReadOnly = true;
+
+            lblReorderOrderID.Text = "Reorder Order ID : " + reorderOrder.GetNextReorderOrderID();
+
+            dgvSearchRecord.DataSource = null;
+            dgvReorderOrder.DataSource = null;
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)
@@ -77,22 +92,56 @@ namespace SLMCS_ERP
 
         private void DgvSearchRecord_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            selectedProductID = dgvSearchRecord.Rows[e.RowIndex].Cells["ProductID"].Value.ToString();
-            MessageBox.Show(selectedProductID);
+            
 
-            int quantity = 10;
-            Product product = new Product(selectedProductID);
-            reorderOrder.AddReorderProductLine(product, quantity);
+            frmInventoryAddReorderProduct inventoryAddReorderProduct = new frmInventoryAddReorderProduct(this, selectedProductID);
+            inventoryAddReorderProduct.Show();
+
+            //int quantity = 10;
+            //Product product = new Product(selectedProductID);
+            //reorderOrder.AddReorderProductLine(product, quantity);
     
 
-            dgvReorderOrder.DataSource = null;
-            dgvReorderOrder.DataSource = reorderOrder.GetReorderProductLine();
+            //dgvReorderOrder.DataSource = null;
+            //dgvReorderOrder.DataSource = reorderOrder.GetReorderProductLine();
             
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void BtnAddProduct_Click(object sender, EventArgs e)
+        {
+            if (selectedProductID == "")
+            {
+                MessageBox.Show("Please select product first");
+            }
+            else
+            {
+                frmInventoryAddReorderProduct inventoryAddReorderProduct = new frmInventoryAddReorderProduct(this, selectedProductID);
+                inventoryAddReorderProduct.Show();
+            }
+            
+        }
+
+        public void SetDGVreorderOrder(Product product, int quantity)
+        {
+            reorderOrder.AddReorderProductLine(product, quantity);
+            dgvReorderOrder.DataSource = null;
+            dgvReorderOrder.DataSource = reorderOrder.GetReorderProductLine();
+        }
+
+        private void DgvSearchRecord_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selectedProductID = dgvSearchRecord.Rows[e.RowIndex].Cells["ProductID"].Value.ToString();
+        }
+
+        private void DgvReorderOrder_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            addedProductID = dgvReorderOrder.Rows[e.RowIndex].Cells["ProductID"].Value.ToString();
+            // testing
         }
     }
 }
