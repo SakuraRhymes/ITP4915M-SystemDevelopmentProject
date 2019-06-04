@@ -13,7 +13,7 @@ namespace SLMCS_ERP
         private string dbName;//database name
         private MySqlConnection connection;//mysql object
 
-        public DBConnection() : this("billjjjj.myds.me", "3307", "test", "2121", "SLMCS_DB") { }
+        public DBConnection() : this("billjjjj.myds.me", "3307", "test", "2121", "DB05062019") { }
   
         public DBConnection(string dbHost, string dbPort, string dbUser, string dbPassword, string dbName)
         {

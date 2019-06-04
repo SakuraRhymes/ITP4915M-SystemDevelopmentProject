@@ -50,6 +50,10 @@ namespace SLMCS_ERP.UI.Sales
 
                 txtSearchForProduct.Text = "";
                 txtOrderQunatity.Text = "";
+                lblTotalAmount.Text = salesOrder.getTotalPrice().ToString();
+
+                btnPlaceOrder.Enabled = true;
+                btnReserveOrder.Enabled = true;
             }
             else
             {
@@ -60,7 +64,13 @@ namespace SLMCS_ERP.UI.Sales
 
         private void BtnPlaceOrder_Click(object sender, EventArgs e)
         {
-            salesOrder.placeOrder();
+            salesOrder.placeOrder("Processing");
+            startUp();
+        }
+
+        private void BtnReserveOrder_Click(object sender, EventArgs e)
+        {
+            salesOrder.placeOrder("Reserved");
             startUp();
         }
 
