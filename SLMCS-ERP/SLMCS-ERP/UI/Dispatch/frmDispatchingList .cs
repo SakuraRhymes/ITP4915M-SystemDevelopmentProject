@@ -94,7 +94,7 @@ namespace SLMCS_ERP{
                 selectedOrderID = dgvSalesOrderList.Rows[e.RowIndex].Cells["SalesOrderID"].Value.ToString();
             }
             dgvOrderDetail.DataSource = null;
-            //dgvOrderDetail.DataSource =salesOrder.getSalesOrderLineBySalesOrderID(dgvSalesOrderList.Rows[e.RowIndex].Cells["SalesOrderID"].Value.ToString());
+            dgvOrderDetail.DataSource =salesOrder.getSalesOrderLineBySalesOrderID(dgvSalesOrderList.Rows[e.RowIndex].Cells["SalesOrderID"].Value.ToString());
 
         }
 
