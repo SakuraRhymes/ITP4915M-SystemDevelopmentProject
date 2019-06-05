@@ -146,6 +146,25 @@ namespace SLMCS_Class
             reorderOrderTable = dbConnection.GetDataTable(query);
             return reorderOrderTable;
         }
+
+        public void ConfirmReorderOrder()
+        {
+            string productID;
+            int quantity;
+            string query = "SELECT * FROM ReorderOrderLine WHERE ReorderOrderID = '" + ReorderOrderID + "'";
+            DataTable dt = dbConnection.GetDataTable(query);
+            DataRow[] rows = dt.Select();
+
+            foreach (DataRow row in rows)
+            {
+                productID = row["ProductID"].ToString();
+                quantity = (int)row["Quantity"];
+
+                Product product = new Product(productID);
+                product.updateActualQuantity(quantity);
+            }
+        }
+
         public string ReorderOrderID
         {
             get => reorderOrderID;

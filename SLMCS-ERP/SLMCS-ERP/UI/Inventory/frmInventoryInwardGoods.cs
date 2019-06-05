@@ -57,10 +57,12 @@ namespace SLMCS_ERP
             dgvReceivedOrderRecord.ReadOnly = true;
             dgvReceivedOrderRecord.AllowUserToAddRows = false;
             dgvReceivedOrderRecord.RowHeadersVisible = false;
+            dgvReceivedOrderRecord.DataSource = null;
 
             dgvOrderDetail.ReadOnly = true;
             dgvOrderDetail.AllowUserToAddRows = false;
             dgvOrderDetail.RowHeadersVisible = false;
+            dgvOrderDetail.DataSource = null;
 
             lblDReorderOrderIDData.Text = "---";
             lblDStaffIDData.Text = "---";
@@ -71,6 +73,7 @@ namespace SLMCS_ERP
             lblDCompletedDateData.Text = "---";
 
             btnConfirm.Enabled = false;
+            BtnRefresh_Click(sender, e);
         }
 
         private void DGVReceivedOrderRecordFormatSetting()
@@ -90,7 +93,14 @@ namespace SLMCS_ERP
 
         private void BtnConfirm_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("Confirm Inward Product Order?", "Confirm Message", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                reorderOrder.ConfirmReorderOrder();
+                FrmInventoryInwardGoods_Load(sender, e);
+                MessageBox.Show("Order has been complete");
+            }
+            
+            
         }
     }
 }

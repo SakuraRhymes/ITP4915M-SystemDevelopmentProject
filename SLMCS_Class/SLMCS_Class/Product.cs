@@ -155,6 +155,13 @@ namespace SLMCS_Class
             dbConnection.Update(query);
         }
 
+        public void updateActualQuantity(int actualQuantity)
+        {
+            string query = "UPDATE Product SET ActualQuantity = ActualQuantity + " + actualQuantity + " WHERE ProductID = '" + productID + "'";
+            MessageBox.Show(query);
+            dbConnection.Update(query);
+        }
+
         public void UpdateReorderLevelQuantity(string reorderLevelQty)
         {
             string query = "UPDATE Product SET ReorderLevel = " + reorderLevelQty + " WHERE ProductID = '" + productID +"'";
