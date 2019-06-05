@@ -70,18 +70,16 @@
             this.dgvOrderItem.AllowUserToDeleteRows = false;
             this.dgvOrderItem.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvOrderItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrderItem.Location = new System.Drawing.Point(27, 382);
-            this.dgvOrderItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvOrderItem.Location = new System.Drawing.Point(20, 306);
             this.dgvOrderItem.Name = "dgvOrderItem";
             this.dgvOrderItem.ReadOnly = true;
             this.dgvOrderItem.RowTemplate.Height = 23;
-            this.dgvOrderItem.Size = new System.Drawing.Size(1172, 224);
+            this.dgvOrderItem.Size = new System.Drawing.Size(879, 179);
             this.dgvOrderItem.TabIndex = 18;
             this.dgvOrderItem.TabStop = false;
             // 
             // btnCancelPlaceOrder
             // 
-
             this.btnCancelPlaceOrder.Location = new System.Drawing.Point(684, 505);
             this.btnCancelPlaceOrder.Name = "btnCancelPlaceOrder";
             this.btnCancelPlaceOrder.Size = new System.Drawing.Size(101, 23);
@@ -90,20 +88,17 @@
             this.btnCancelPlaceOrder.Text = "Cancel";
             this.btnCancelPlaceOrder.UseVisualStyleBackColor = true;
             this.btnCancelPlaceOrder.Click += new System.EventHandler(this.BtnCancelPlaceOrder_Click);
-
             // 
             // btnPlaceOrder
             // 
             this.btnPlaceOrder.Enabled = false;
             this.btnPlaceOrder.Location = new System.Drawing.Point(803, 505);
             this.btnPlaceOrder.Name = "btnPlaceOrder";
-
             this.btnPlaceOrder.Size = new System.Drawing.Size(96, 23);
             this.btnPlaceOrder.TabIndex = 4;
             this.btnPlaceOrder.Text = "Confirm";
             this.btnPlaceOrder.UseVisualStyleBackColor = true;
             this.btnPlaceOrder.Click += new System.EventHandler(this.BtnPlaceOrder_Click);
-
             // 
             // lblTotalAmount
             // 
@@ -117,26 +112,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(721, 638);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(541, 510);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 15);
+            this.label1.Size = new System.Drawing.Size(76, 12);
             this.label1.TabIndex = 14;
             this.label1.Text = "Total Amount :";
-
             // 
             // btnAddItem
             // 
             this.btnAddItem.Location = new System.Drawing.Point(556, 24);
-
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(179, 23);
             this.btnAddItem.TabIndex = 3;
-
             this.btnAddItem.Text = "Add Item";
             this.btnAddItem.UseVisualStyleBackColor = true;
             this.btnAddItem.Click += new System.EventHandler(this.BtnAddItem_Click);
-
+            // 
+            // groupBox1
+            // 
             this.groupBox1.Controls.Add(this.lblStaffID);
             this.groupBox1.Controls.Add(this.lblOrderDate);
             this.groupBox1.Controls.Add(this.lblOrderID);
@@ -150,10 +143,8 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.lbl1);
-            this.groupBox1.Location = new System.Drawing.Point(27, 18);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(20, 14);
             this.groupBox1.Name = "groupBox1";
-
             this.groupBox1.Size = new System.Drawing.Size(879, 158);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
@@ -161,36 +152,32 @@
             // lblStaffID
             // 
             this.lblStaffID.AutoSize = true;
-            this.lblStaffID.Location = new System.Drawing.Point(572, 136);
-            this.lblStaffID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStaffID.Location = new System.Drawing.Point(429, 109);
             this.lblStaffID.Name = "lblStaffID";
-            this.lblStaffID.Size = new System.Drawing.Size(82, 15);
+            this.lblStaffID.Size = new System.Drawing.Size(66, 12);
             this.lblStaffID.TabIndex = 4;
             this.lblStaffID.Text = "Not available";
             // 
             // lblOrderDate
             // 
             this.lblOrderDate.AutoSize = true;
-            this.lblOrderDate.Location = new System.Drawing.Point(572, 86);
-            this.lblOrderDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblOrderDate.Location = new System.Drawing.Point(429, 69);
             this.lblOrderDate.Name = "lblOrderDate";
-            this.lblOrderDate.Size = new System.Drawing.Size(82, 15);
+            this.lblOrderDate.Size = new System.Drawing.Size(66, 12);
             this.lblOrderDate.TabIndex = 4;
             this.lblOrderDate.Text = "Not available";
             // 
             // lblOrderID
             // 
             this.lblOrderID.AutoSize = true;
-            this.lblOrderID.Location = new System.Drawing.Point(575, 36);
-            this.lblOrderID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblOrderID.Location = new System.Drawing.Point(431, 29);
             this.lblOrderID.Name = "lblOrderID";
-            this.lblOrderID.Size = new System.Drawing.Size(82, 15);
+            this.lblOrderID.Size = new System.Drawing.Size(66, 12);
             this.lblOrderID.TabIndex = 4;
             this.lblOrderID.Text = "Not available";
             // 
             // txtDealerID
             // 
-
             this.txtDealerID.Location = new System.Drawing.Point(132, 26);
             this.txtDealerID.MaxLength = 8;
             this.txtDealerID.Name = "txtDealerID";
@@ -201,11 +188,10 @@
             // lblDealerAddress
             // 
             this.lblDealerAddress.AutoSize = true;
-
             this.lblDealerAddress.Location = new System.Drawing.Point(130, 109);
             this.lblDealerAddress.MaximumSize = new System.Drawing.Size(170, 0);
             this.lblDealerAddress.Name = "lblDealerAddress";
-            this.lblDealerAddress.Size = new System.Drawing.Size(82, 15);
+            this.lblDealerAddress.Size = new System.Drawing.Size(66, 12);
             this.lblDealerAddress.TabIndex = 2;
             this.lblDealerAddress.Text = "Not available";
             // 
@@ -213,20 +199,17 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(21, 109);
-
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(101, 15);
+            this.label9.Size = new System.Drawing.Size(81, 12);
             this.label9.TabIndex = 2;
             this.label9.Text = "Dealer Address :";
             // 
             // lblDealerName
             // 
             this.lblDealerName.AutoSize = true;
-
             this.lblDealerName.Location = new System.Drawing.Point(130, 69);
-
             this.lblDealerName.Name = "lblDealerName";
-            this.lblDealerName.Size = new System.Drawing.Size(82, 15);
+            this.lblDealerName.Size = new System.Drawing.Size(66, 12);
             this.lblDealerName.TabIndex = 2;
             this.lblDealerName.Text = "Not available";
             // 
@@ -235,63 +218,57 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(21, 69);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(89, 15);
+            this.label8.Size = new System.Drawing.Size(71, 12);
             this.label8.TabIndex = 2;
             this.label8.Text = "Dealer Name :";
             // 
             // lbl11
             // 
             this.lbl11.AutoSize = true;
-            this.lbl11.Location = new System.Drawing.Point(28, 41);
-            this.lbl11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl11.Location = new System.Drawing.Point(21, 33);
             this.lbl11.Name = "lbl11";
-            this.lbl11.Size = new System.Drawing.Size(71, 15);
+            this.lbl11.Size = new System.Drawing.Size(56, 12);
             this.lbl11.TabIndex = 2;
             this.lbl11.Text = "Dealer ID :";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(40, 200);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(30, 160);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 15);
+            this.label6.Size = new System.Drawing.Size(0, 12);
             this.label6.TabIndex = 2;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(445, 135);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(334, 108);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 15);
+            this.label5.Size = new System.Drawing.Size(48, 12);
             this.label5.TabIndex = 2;
             this.label5.Text = "Staff ID :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(443, 85);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(332, 68);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 15);
+            this.label4.Size = new System.Drawing.Size(62, 12);
             this.label4.TabIndex = 1;
             this.label4.Text = "Order Date :";
             // 
             // lbl1
             // 
             this.lbl1.AutoSize = true;
-            this.lbl1.Location = new System.Drawing.Point(445, 36);
-            this.lbl1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl1.Location = new System.Drawing.Point(334, 29);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(67, 15);
+            this.lbl1.Size = new System.Drawing.Size(53, 12);
             this.lbl1.TabIndex = 0;
             this.lbl1.Text = "Order ID :";
             // 
             // txtSearchForProduct
             // 
             this.txtSearchForProduct.ForeColor = System.Drawing.SystemColors.WindowFrame;
-
             this.txtSearchForProduct.Location = new System.Drawing.Point(133, 25);
             this.txtSearchForProduct.MaxLength = 6;
             this.txtSearchForProduct.Name = "txtSearchForProduct";
@@ -311,62 +288,54 @@
             this.groupBox2.Controls.Add(this.txtSearchForProduct);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.btnAddItem);
-
             this.groupBox2.Location = new System.Drawing.Point(20, 178);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(879, 112);
-
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             // 
             // lblProductAvailability
             // 
             this.lblProductAvailability.AutoSize = true;
-
             this.lblProductAvailability.Location = new System.Drawing.Point(432, 68);
             this.lblProductAvailability.Name = "lblProductAvailability";
-            this.lblProductAvailability.Size = new System.Drawing.Size(82, 15);
+            this.lblProductAvailability.Size = new System.Drawing.Size(66, 12);
             this.lblProductAvailability.TabIndex = 26;
             this.lblProductAvailability.Text = "Not available";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-
             this.label14.Location = new System.Drawing.Point(335, 68);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(82, 15);
+            this.label14.Size = new System.Drawing.Size(65, 12);
             this.label14.TabIndex = 25;
             this.label14.Text = "Availability :";
             // 
             // lblProductName
             // 
             this.lblProductName.AutoSize = true;
-
             this.lblProductName.Location = new System.Drawing.Point(432, 29);
-
             this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Size = new System.Drawing.Size(82, 15);
+            this.lblProductName.Size = new System.Drawing.Size(66, 12);
             this.lblProductName.TabIndex = 22;
             this.lblProductName.Text = "Not available";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-
             this.label11.Location = new System.Drawing.Point(332, 29);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(96, 15);
+            this.label11.Size = new System.Drawing.Size(77, 12);
             this.label11.TabIndex = 21;
             this.label11.Text = "Product Name :";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-
             this.label16.Location = new System.Drawing.Point(21, 68);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(64, 15);
+            this.label16.Size = new System.Drawing.Size(51, 12);
             this.label16.TabIndex = 20;
             this.label16.Text = "Quantity :";
             // 
@@ -381,20 +350,18 @@
             // label7
             // 
             this.label7.AutoSize = true;
-
             this.label7.Location = new System.Drawing.Point(21, 29);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 15);
+            this.label7.Size = new System.Drawing.Size(62, 12);
             this.label7.TabIndex = 20;
             this.label7.Text = "Product ID :";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(40, 200);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Location = new System.Drawing.Point(30, 160);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(0, 15);
+            this.label17.Size = new System.Drawing.Size(0, 12);
             this.label17.TabIndex = 2;
             // 
             // btnReserveOrder
@@ -410,9 +377,9 @@
             // 
             // frmNewSalesOrder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1381, 708);
+            this.ClientSize = new System.Drawing.Size(1036, 566);
             this.Controls.Add(this.dgvOrderItem);
             this.Controls.Add(this.btnCancelPlaceOrder);
             this.Controls.Add(this.btnReserveOrder);
@@ -422,7 +389,6 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmNewSalesOrder";
             this.Text = "frmNewSalesOrder";
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItem)).EndInit();
