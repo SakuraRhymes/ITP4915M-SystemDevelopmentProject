@@ -266,6 +266,9 @@
     <EmbeddedResource Include="UI\Management\frmManagementMain.resx">
       <DependentUpon>frmManagementMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Management\frmProductManagement.resx">
+      <DependentUpon>frmProductManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Sales\frmNewSalesOrder.resx">
       <DependentUpon>frmNewSalesOrder.cs</DependentUpon>
     </EmbeddedResource>
