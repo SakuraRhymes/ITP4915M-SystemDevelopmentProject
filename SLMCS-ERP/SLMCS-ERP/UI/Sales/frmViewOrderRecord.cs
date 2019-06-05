@@ -63,7 +63,7 @@ namespace SLMCS_ERP.UI.Sales
             {
                 btnCancelOrder.Enabled = true;
             }
-            if(salesOrder.SalesOrderStatus != "Completed" && salesOrder.SalesOrderStatus != "Canceled")
+            if(salesOrder.SalesOrderStatus != "Completed" && salesOrder.SalesOrderStatus != "Canceled" && salesOrder.SalesOrderStatus != "Reserved")
             {
                 btnCompleteOrder.Enabled = true;
             }
@@ -95,6 +95,8 @@ namespace SLMCS_ERP.UI.Sales
             salesOrder.updateStatus("Canceled");
             lblOrderStatus.Text = salesOrder.SalesOrderStatus;
             btnCancelOrder.Enabled = false;
+            btnCompleteOrder.Enabled = false;
+            salesOrder.cancelOrder();
             MessageBox.Show("Successfully Canceled Sales Order");
         }
 

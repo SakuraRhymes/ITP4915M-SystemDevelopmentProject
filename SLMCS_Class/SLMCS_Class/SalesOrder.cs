@@ -187,7 +187,21 @@ namespace SLMCS_Class
 
         public void cancelOrder()
         {
+            string productID;
+            int quantity;
+            string query = "SELECT * FROM SalesOrderLine WHERE SalesOrderID = '" + SalesOrderID + "'";
+            DataTable dt = dbConnection.GetDataTable(query);
+            DataRow[] rows = dt.Select();
 
+            foreach (DataRow row in rows)
+            {
+                productID = row["ProductID"].ToString();
+                quantity = (int)row["Quantity"];
+                //MessageBox.Show(productID +" "+ quantity);
+
+                Product product = new Product(productID);
+                product.updateReserveQuantity(-quantity);
+            }
         }
     }
 }
