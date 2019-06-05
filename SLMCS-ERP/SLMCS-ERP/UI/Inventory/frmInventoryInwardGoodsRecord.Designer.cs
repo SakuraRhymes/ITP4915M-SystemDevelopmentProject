@@ -45,7 +45,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtStaffID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvReorderOrderLine = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -62,7 +62,7 @@
             this.lblDCompletedDateData = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInwardGoodsRecord)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReorderOrderLine)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,6 +74,7 @@
             this.dgvInwardGoodsRecord.RowTemplate.Height = 24;
             this.dgvInwardGoodsRecord.Size = new System.Drawing.Size(417, 293);
             this.dgvInwardGoodsRecord.TabIndex = 0;
+            this.dgvInwardGoodsRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvInwardGoodsRecord_CellClick);
             // 
             // groupBox1
             // 
@@ -224,14 +225,14 @@
             this.label4.TabIndex = 22;
             this.label4.Text = "Staff ID :";
             // 
-            // dataGridView1
+            // dgvReorderOrderLine
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 142);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(427, 333);
-            this.dataGridView1.TabIndex = 8;
+            this.dgvReorderOrderLine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReorderOrderLine.Location = new System.Drawing.Point(6, 142);
+            this.dgvReorderOrderLine.Name = "dgvReorderOrderLine";
+            this.dgvReorderOrderLine.RowTemplate.Height = 24;
+            this.dgvReorderOrderLine.Size = new System.Drawing.Size(427, 333);
+            this.dgvReorderOrderLine.TabIndex = 8;
             // 
             // groupBox2
             // 
@@ -248,7 +249,7 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dgvReorderOrderLine);
             this.groupBox2.Location = new System.Drawing.Point(463, 8);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(439, 481);
@@ -386,10 +387,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmInventoryInwardGoodsRecord";
             this.Text = "frmInventoryInwardGoodsRecord";
+            this.Load += new System.EventHandler(this.FrmInventoryInwardGoodsRecord_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInwardGoodsRecord)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReorderOrderLine)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -415,7 +417,7 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox txtStaffID;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvReorderOrderLine;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;

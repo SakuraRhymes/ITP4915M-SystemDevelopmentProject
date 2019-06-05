@@ -35,7 +35,7 @@ namespace SLMCS_Class
         public ReorderOrder(string reorderOrderID)
         {
             _reorderOrderLine = new List<ReorderOrderLine>();
-            ReorderOrderID = GetNextReorderOrderID();
+            //ReorderOrderID = GetNextReorderOrderID();
 
             dbConnection = new DBConnection();
             string query = "SELECT * FROM ReorderOrder WHERE ReorderOrderID ='" + reorderOrderID + "'";
@@ -45,10 +45,10 @@ namespace SLMCS_Class
 
             ReorderOrderID = (string)rows[0]["ReorderOrderID"];
             StaffID = (string)rows[0]["StaffID"];
-            ReorderOrderDate = (string)rows[0]["ReorderOrderDate"];
-            ReorderOrderEditDate = (string)rows[0]["ReorderOrderEditDate"];
-            ReorderOrderReceivedDate = (string)rows[0]["ReorderOrderReceivedDate"];
-            ReorderOrderCompletedDate = (string)rows[0]["ReorderOrderCompletedDate"];
+            ReorderOrderDate = ((DateTime)rows[0]["ReorderOrderDate"]).ToString("dd/MM/yyyy");
+            ReorderOrderEditDate = ((DateTime)rows[0]["ReorderOrderEditDate"]).ToString("dd/MM/yyyy");
+            ReorderOrderReceivedDate = ((DateTime)rows[0]["ReorderOrderReceivedDate"]).ToString("dd/MM/yyyy");
+            ReorderOrderCompletedDate = ((DateTime)rows[0]["ReorderOrderCompletedDate"]).ToString("dd/MM/yyyy");
             ReorderOrderStatus = (string)rows[0]["ReorderOrderStatus"];
         }
 
