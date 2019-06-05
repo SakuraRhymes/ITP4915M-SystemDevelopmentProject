@@ -96,6 +96,8 @@ namespace SLMCS_ERP
             if (MessageBox.Show("Confirm Inward Product Order?", "Confirm Message", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 reorderOrder.ConfirmReorderOrder();
+                reorderOrder.UpdateStatus("Completed");
+                reorderOrder.UpdateCompletedDate(DateTime.Today.ToString("yyyy-MM-dd"));
                 FrmInventoryInwardGoods_Load(sender, e);
                 MessageBox.Show("Order has been complete");
             }

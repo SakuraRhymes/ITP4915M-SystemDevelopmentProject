@@ -158,7 +158,7 @@ namespace SLMCS_Class
         public void updateActualQuantity(int actualQuantity)
         {
             string query = "UPDATE Product SET ActualQuantity = ActualQuantity + " + actualQuantity + " WHERE ProductID = '" + productID + "'";
-            MessageBox.Show(query);
+            //MessageBox.Show(query);
             dbConnection.Update(query);
         }
 

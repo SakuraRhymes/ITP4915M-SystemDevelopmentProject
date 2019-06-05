@@ -165,6 +165,20 @@ namespace SLMCS_Class
             }
         }
 
+        public void UpdateStatus(string status)
+        {
+            ReorderOrderStatus = status;
+            string query = "UPDATE ReorderOrder SET ReorderOrderStatus = '" + status + "' WHERE ReorderOrderID = '" + ReorderOrderID + "'";
+            dbConnection.Update(query);
+        }
+
+        public void UpdateCompletedDate(string date)
+        {
+            reorderOrderCompletedDate = date;
+            string query = "UPDATE ReorderOrder SET ReorderOrderCompletedDate = '" + date + "' WHERE ReorderOrderID = '" + ReorderOrderID + "'";
+            dbConnection.Update(query);
+        }
+
         public string ReorderOrderID
         {
             get => reorderOrderID;
