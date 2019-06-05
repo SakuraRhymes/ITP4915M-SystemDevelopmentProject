@@ -16,17 +16,18 @@ namespace SLMCS_Class
         private string dealerID;
         private string salesOrderDate;
         private string salesOrderEditDate;
+        private string salesOrderCompletedDate;
         private string salesDispatchDate;
-        private string salesDeliveryDate;
         private string salesOrderStatus;
 
         private DBConnection dbConnection;
         private DataTable salesOrderTable;
 
         public string SalesOrderID { get => salesOrderID; }
-        public string StaffID { get => "S19002708"; }
+        public string StaffID { get => staffID; }
         public string SalesOrderDate { get => salesOrderDate; }
-        public string DealerID {
+        public string DealerID
+        {
             get => dealerID;
             set { dealerID = value; }
         }
@@ -35,18 +36,18 @@ namespace SLMCS_Class
             get => _salesOrderLine;
         }
 
-        public SalesOrder()
+        public SalesOrder(String staffID)
         {
             _salesOrderLine = new List<SalesOrderLine>();
             dbConnection = new DBConnection();
-
+            this.staffID = staffID;
             salesOrderID = getNextSalesOrderID();
             salesOrderDate = DateTime.Now.ToString("yy-MM-dd");
         }
 
         public string getNextSalesOrderID()
         {
-            string query = "SELECT COUNT(SalesOrderID) FROM SalesOrder WHERE SalesOrderDate = \"" + DateTime.Now.ToString("yyMMdd")+"\"";
+            string query = "SELECT COUNT(SalesOrderID) FROM SalesOrder WHERE SalesOrderDate = \"" + DateTime.Now.ToString("yyMMdd") + "\"";
             salesOrderTable = dbConnection.GetDataTable(query);
 
             string count = "";
@@ -106,7 +107,7 @@ namespace SLMCS_Class
         {
             String[] result = null;
             Dealer dealer = new Dealer();
-               DataTable dt = dealer.SearchForDealer(dealerID);
+            DataTable dt = dealer.SearchForDealer(dealerID);
 
             if (dt.Rows.Count == 1)
             {
@@ -156,18 +157,36 @@ namespace SLMCS_Class
             _salesOrderLine.Add(salesOrderLine);
         }
 
-        public void placeOrder()
+        public void placeOrder(String status)
         {
+            salesOrderEditDate = DateTime.Now.ToString("yy-MM-dd");
             string query = "INSERT INTO SalesOrder VALUES ('" + SalesOrderID + "','" + StaffID + "','" + DealerID +
-                           "','" + SalesOrderDate + "',null,null,null,'Dispatching')";
+                           "','" + SalesOrderDate + "','" + salesOrderEditDate + "',null,null,'" + status + "')";
             MessageBox.Show(query);
-
             dbConnection.Insert(query);
 
-            foreach(var salesOrderLine in _salesOrderLine)
+            foreach (var salesOrderLine in _salesOrderLine)
             {
                 salesOrderLine.placeSalesOrderLine();
             }
+        }
+
+        public DataTable searchSalesOrder(string condition)
+        {
+            string query;
+            if (condition == null)
+            {
+                query = "SELECT * FROM SalesOrder";
+            }
+            else
+            {
+                string queryString;
+                query = "";
+                //query = string.Format(queryString, productType);
+
+            }
+            //MessageBox.Show(query);
+            return dbConnection.GetDataTable(query);
         }
     }
 }

@@ -38,6 +38,10 @@
             this.btnSales = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.lblStaffID = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblStaffName = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.penalTopNavigation.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,6 +49,10 @@
             // 
             this.penalTopNavigation.BackColor = System.Drawing.SystemColors.Control;
             this.penalTopNavigation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.penalTopNavigation.Controls.Add(this.label4);
+            this.penalTopNavigation.Controls.Add(this.label2);
+            this.penalTopNavigation.Controls.Add(this.lblStaffName);
+            this.penalTopNavigation.Controls.Add(this.lblStaffID);
             this.penalTopNavigation.Controls.Add(this.btnLogout);
             this.penalTopNavigation.Controls.Add(this.labelSystemName);
             this.penalTopNavigation.Controls.Add(this.btnManagement);
@@ -61,12 +69,13 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(1082, 24);
+            this.btnLogout.Location = new System.Drawing.Point(1098, 80);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(75, 23);
             this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
             // 
             // labelSystemName
             // 
@@ -85,7 +94,7 @@
             this.btnManagement.Name = "btnManagement";
             this.btnManagement.Size = new System.Drawing.Size(117, 29);
             this.btnManagement.TabIndex = 0;
-            this.btnManagement.Text = "Management";
+            this.btnManagement.Text = "Data Management";
             this.btnManagement.UseVisualStyleBackColor = true;
             this.btnManagement.Click += new System.EventHandler(this.BtnUserManagement_Click);
             // 
@@ -142,6 +151,42 @@
             this.panelContent.Size = new System.Drawing.Size(1186, 566);
             this.panelContent.TabIndex = 1;
             // 
+            // lblStaffID
+            // 
+            this.lblStaffID.AutoSize = true;
+            this.lblStaffID.Location = new System.Drawing.Point(1106, 25);
+            this.lblStaffID.Name = "lblStaffID";
+            this.lblStaffID.Size = new System.Drawing.Size(33, 12);
+            this.lblStaffID.TabIndex = 3;
+            this.lblStaffID.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1040, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 12);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Staff ID:";
+            // 
+            // lblStaffName
+            // 
+            this.lblStaffName.AutoSize = true;
+            this.lblStaffName.Location = new System.Drawing.Point(1106, 54);
+            this.lblStaffName.Name = "lblStaffName";
+            this.lblStaffName.Size = new System.Drawing.Size(33, 12);
+            this.lblStaffName.TabIndex = 3;
+            this.lblStaffName.Text = "label1";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(1040, 54);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 12);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Staff Name:";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -170,5 +215,9 @@
         private System.Windows.Forms.Label labelSystemName;
         private System.Windows.Forms.Button btnLogout;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblStaffID;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblStaffName;
     }
 }

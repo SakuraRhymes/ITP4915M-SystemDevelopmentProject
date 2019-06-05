@@ -60,15 +60,8 @@ namespace SLMCS_ERP
 
         private void SelectVendorToSendValueBack()
         {
-            //if (selectedVendorID == "")
-            //{
-            //    MessageBox.Show("Please select a vendor");
-            //}
-            //else
-            //{
                 inventoryNewProduct.SetTxtVendorID(selectedVendorID);
                 Close();
-           // }
         }
     }
 }

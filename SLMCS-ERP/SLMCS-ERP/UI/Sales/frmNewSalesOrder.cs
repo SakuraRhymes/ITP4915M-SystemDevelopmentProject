@@ -19,7 +19,7 @@ namespace SLMCS_ERP.UI.Sales
 
         private void startUp()
         {
-            salesOrder = new SalesOrder();
+            salesOrder = new SalesOrder(frmMain.CurrentStaff.StaffID);
             notAvailableMessage = "Not available";
 
             txtDealerID.Focus();
@@ -32,8 +32,7 @@ namespace SLMCS_ERP.UI.Sales
             txtOrderQunatity.Text = "";
             txtSearchForProduct.Text = "";
 
-            dgvOrderItem.DataSource = null;
-            dgvOrderItem.DataSource = salesOrder._SalesOrderLine;
+            updateDGV();
         }
 
         private void BtnAddItem_Click(object sender, EventArgs e)
@@ -47,11 +46,14 @@ namespace SLMCS_ERP.UI.Sales
 
                 salesOrder.addProduct(product, quantity);
 
-                dgvOrderItem.DataSource = null;
-                dgvOrderItem.DataSource = salesOrder._SalesOrderLine;
+                updateDGV();
 
                 txtSearchForProduct.Text = "";
                 txtOrderQunatity.Text = "";
+                lblTotalAmount.Text = salesOrder.getTotalPrice().ToString();
+
+                btnPlaceOrder.Enabled = true;
+                btnReserveOrder.Enabled = true;
             }
             else
             {
@@ -62,7 +64,13 @@ namespace SLMCS_ERP.UI.Sales
 
         private void BtnPlaceOrder_Click(object sender, EventArgs e)
         {
-            salesOrder.placeOrder();
+            salesOrder.placeOrder("Processing");
+            startUp();
+        }
+
+        private void BtnReserveOrder_Click(object sender, EventArgs e)
+        {
+            salesOrder.placeOrder("Reserved");
             startUp();
         }
 
@@ -106,6 +114,22 @@ namespace SLMCS_ERP.UI.Sales
         private void BtnCancelPlaceOrder_Click(object sender, EventArgs e)
         {
             startUp();
+        }
+
+        private void updateDGV()
+        {
+            dgvOrderItem.DataSource = null;
+            dgvOrderItem.DataSource = salesOrder._SalesOrderLine;
+
+            dgvOrderItem.AllowUserToAddRows = false;
+            dgvOrderItem.RowHeadersVisible = false;
+            dgvOrderItem.ReadOnly = true;
+
+            dgvOrderItem.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvOrderItem.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvOrderItem.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvOrderItem.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvOrderItem.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
     }
 }

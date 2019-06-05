@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SLMCS_Class;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,15 @@ namespace SLMCS_ERP
 {
     public partial class frmMain : Form
     {
-        public frmMain()
+        public static Staff CurrentStaff { get; set; }
+        frmLogin loginPage;
+        public frmMain(frmLogin loginPage, Staff staff)
         {
             InitializeComponent();
+            this.loginPage = loginPage;
+            CurrentStaff = staff;
+            lblStaffID.Text = frmMain.CurrentStaff.StaffID;
+            lblStaffName.Text = frmMain.CurrentStaff.StaffName;
             frmHome home = new frmHome();
             navigation(home, panelContent);
         }
@@ -65,6 +72,12 @@ namespace SLMCS_ERP
         private void BtnUserManagement_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnLogout_Click(object sender, EventArgs e)
+        {
+            loginPage.Show();
+            this.Hide();
         }
     }
 }
