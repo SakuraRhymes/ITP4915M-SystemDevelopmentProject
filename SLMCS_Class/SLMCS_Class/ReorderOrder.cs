@@ -43,13 +43,13 @@ namespace SLMCS_Class
             reorderOrderTable = dbConnection.GetDataTable(query);
             DataRow[] rows = reorderOrderTable.Select();
 
-            this.reorderOrderID = (string)rows[0]["ReorderOrderID"];
-            this.staffID = (string)rows[0]["StaffID"];
-            this.reorderOrderDate = (string)rows[0]["ReorderOrderDate"];
-            this.reorderOrderEditDate = (string)rows[0]["ReorderOrderEditDate"];
-            this.reorderOrderReceivedDate = (string)rows[0]["ReorderOrderReceivedDate"];
-            this.reorderOrderCompletedDate = (string)rows[0]["ReorderOrderCompletedDate"];
-            this.reorderOrderStatus = (string)rows[0]["ReorderOrderStatus"];
+            ReorderOrderID = (string)rows[0]["ReorderOrderID"];
+            StaffID = (string)rows[0]["StaffID"];
+            ReorderOrderDate = (string)rows[0]["ReorderOrderDate"];
+            ReorderOrderEditDate = (string)rows[0]["ReorderOrderEditDate"];
+            ReorderOrderReceivedDate = (string)rows[0]["ReorderOrderReceivedDate"];
+            ReorderOrderCompletedDate = (string)rows[0]["ReorderOrderCompletedDate"];
+            ReorderOrderStatus = (string)rows[0]["ReorderOrderStatus"];
         }
 
         public void PlaceReorderOrder(Staff staff, string reorderOrderDate)
@@ -145,6 +145,42 @@ namespace SLMCS_Class
         {
             get => reorderOrderID;
             set => reorderOrderID = value;
+        }
+
+        public string StaffID
+        {
+            get => staffID;
+            set => staffID = value;
+        }
+
+        public string ReorderOrderDate
+        {
+            get => reorderOrderDate;
+            set => reorderOrderDate = value;
+        }
+
+        public string ReorderOrderEditDate
+        {
+            get => reorderOrderEditDate;
+            set => reorderOrderEditDate = value;
+        }
+
+        public string ReorderOrderReceivedDate
+        {
+            get => reorderOrderReceivedDate;
+            set => reorderOrderReceivedDate = value;
+        }
+
+        public string ReorderOrderCompletedDate
+        {
+            get => reorderOrderCompletedDate;
+            set => reorderOrderCompletedDate = value;
+        }
+
+        public string ReorderOrderStatus
+        {
+            get => reorderOrderStatus;
+            set => reorderOrderStatus = value;
         }
 
         public override string ToString()
