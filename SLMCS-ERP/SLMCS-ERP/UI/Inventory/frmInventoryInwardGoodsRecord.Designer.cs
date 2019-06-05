@@ -30,6 +30,9 @@
         {
             this.dgvInwardGoodsRecord = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtStaffID = new System.Windows.Forms.TextBox();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpCompletedDateTo = new System.Windows.Forms.DateTimePicker();
@@ -41,24 +44,21 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.lblReorderOrderID = new System.Windows.Forms.Label();
             this.lblOrderDate = new System.Windows.Forms.Label();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.txtStaffID = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.dgvReorderOrderLine = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblDCompletedDateData = new System.Windows.Forms.Label();
+            this.lblDStaffIDData = new System.Windows.Forms.Label();
+            this.lblDEditDateData = new System.Windows.Forms.Label();
+            this.lblDOrderDateData = new System.Windows.Forms.Label();
+            this.lblDReceivedDateData = new System.Windows.Forms.Label();
+            this.lblDReorderOrderIDData = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.lblDReorderOrderIDData = new System.Windows.Forms.Label();
-            this.lblDOrderDateData = new System.Windows.Forms.Label();
-            this.lblDReceivedDateData = new System.Windows.Forms.Label();
-            this.lblDStaffIDData = new System.Windows.Forms.Label();
-            this.lblDEditDateData = new System.Windows.Forms.Label();
-            this.lblDCompletedDateData = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInwardGoodsRecord)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReorderOrderLine)).BeginInit();
@@ -97,6 +97,32 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Condition";
+            // 
+            // txtStaffID
+            // 
+            this.txtStaffID.Location = new System.Drawing.Point(111, 60);
+            this.txtStaffID.Name = "txtStaffID";
+            this.txtStaffID.Size = new System.Drawing.Size(131, 22);
+            this.txtStaffID.TabIndex = 23;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(272, 153);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(135, 23);
+            this.btnClear.TabIndex = 7;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(57, 63);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(48, 12);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Staff ID :";
             // 
             // label2
             // 
@@ -190,32 +216,6 @@
             this.lblOrderDate.TabIndex = 1;
             this.lblOrderDate.Text = "Order Date :";
             // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(272, 153);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(135, 23);
-            this.btnClear.TabIndex = 7;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
-            // 
-            // txtStaffID
-            // 
-            this.txtStaffID.Location = new System.Drawing.Point(111, 60);
-            this.txtStaffID.Name = "txtStaffID";
-            this.txtStaffID.Size = new System.Drawing.Size(131, 22);
-            this.txtStaffID.TabIndex = 23;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(57, 63);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 12);
-            this.label4.TabIndex = 22;
-            this.label4.Text = "Staff ID :";
-            // 
             // dgvReorderOrderLine
             // 
             this.dgvReorderOrderLine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -248,14 +248,77 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Inward Goods Record Detail";
             // 
-            // label5
+            // lblDCompletedDateData
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 127);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 12);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Order Line";
+            this.lblDCompletedDateData.AutoSize = true;
+            this.lblDCompletedDateData.Location = new System.Drawing.Point(309, 88);
+            this.lblDCompletedDateData.Name = "lblDCompletedDateData";
+            this.lblDCompletedDateData.Size = new System.Drawing.Size(69, 12);
+            this.lblDCompletedDateData.TabIndex = 34;
+            this.lblDCompletedDateData.Text = "complete date";
+            // 
+            // lblDStaffIDData
+            // 
+            this.lblDStaffIDData.AutoSize = true;
+            this.lblDStaffIDData.Location = new System.Drawing.Point(309, 32);
+            this.lblDStaffIDData.Name = "lblDStaffIDData";
+            this.lblDStaffIDData.Size = new System.Drawing.Size(37, 12);
+            this.lblDStaffIDData.TabIndex = 33;
+            this.lblDStaffIDData.Text = "staff id";
+            // 
+            // lblDEditDateData
+            // 
+            this.lblDEditDateData.AutoSize = true;
+            this.lblDEditDateData.Location = new System.Drawing.Point(309, 60);
+            this.lblDEditDateData.Name = "lblDEditDateData";
+            this.lblDEditDateData.Size = new System.Drawing.Size(46, 12);
+            this.lblDEditDateData.TabIndex = 32;
+            this.lblDEditDateData.Text = "Edit date";
+            // 
+            // lblDOrderDateData
+            // 
+            this.lblDOrderDateData.AutoSize = true;
+            this.lblDOrderDateData.Location = new System.Drawing.Point(117, 60);
+            this.lblDOrderDateData.Name = "lblDOrderDateData";
+            this.lblDOrderDateData.Size = new System.Drawing.Size(62, 12);
+            this.lblDOrderDateData.TabIndex = 31;
+            this.lblDOrderDateData.Text = "Order Date :";
+            // 
+            // lblDReceivedDateData
+            // 
+            this.lblDReceivedDateData.AutoSize = true;
+            this.lblDReceivedDateData.Location = new System.Drawing.Point(117, 89);
+            this.lblDReceivedDateData.Name = "lblDReceivedDateData";
+            this.lblDReceivedDateData.Size = new System.Drawing.Size(75, 12);
+            this.lblDReceivedDateData.TabIndex = 30;
+            this.lblDReceivedDateData.Text = "Received Date ";
+            // 
+            // lblDReorderOrderIDData
+            // 
+            this.lblDReorderOrderIDData.AutoSize = true;
+            this.lblDReorderOrderIDData.Location = new System.Drawing.Point(117, 32);
+            this.lblDReorderOrderIDData.Name = "lblDReorderOrderIDData";
+            this.lblDReorderOrderIDData.Size = new System.Drawing.Size(91, 12);
+            this.lblDReorderOrderIDData.TabIndex = 29;
+            this.lblDReorderOrderIDData.Text = "Reorder Order ID ";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(253, 60);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(54, 12);
+            this.label10.TabIndex = 28;
+            this.label10.Text = "Edit Date :";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(49, 60);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(62, 12);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "Order Date :";
             // 
             // label6
             // 
@@ -293,77 +356,14 @@
             this.label9.TabIndex = 24;
             this.label9.Text = "Received Date :";
             // 
-            // label10
+            // label5
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(253, 60);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 12);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "Edit Date :";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(49, 60);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(62, 12);
-            this.label11.TabIndex = 27;
-            this.label11.Text = "Order Date :";
-            // 
-            // lblDReorderOrderIDData
-            // 
-            this.lblDReorderOrderIDData.AutoSize = true;
-            this.lblDReorderOrderIDData.Location = new System.Drawing.Point(117, 32);
-            this.lblDReorderOrderIDData.Name = "lblDReorderOrderIDData";
-            this.lblDReorderOrderIDData.Size = new System.Drawing.Size(91, 12);
-            this.lblDReorderOrderIDData.TabIndex = 29;
-            this.lblDReorderOrderIDData.Text = "Reorder Order ID ";
-            // 
-            // lblDOrderDateData
-            // 
-            this.lblDOrderDateData.AutoSize = true;
-            this.lblDOrderDateData.Location = new System.Drawing.Point(117, 60);
-            this.lblDOrderDateData.Name = "lblDOrderDateData";
-            this.lblDOrderDateData.Size = new System.Drawing.Size(62, 12);
-            this.lblDOrderDateData.TabIndex = 31;
-            this.lblDOrderDateData.Text = "Order Date :";
-            // 
-            // lblDReceivedDateData
-            // 
-            this.lblDReceivedDateData.AutoSize = true;
-            this.lblDReceivedDateData.Location = new System.Drawing.Point(117, 89);
-            this.lblDReceivedDateData.Name = "lblDReceivedDateData";
-            this.lblDReceivedDateData.Size = new System.Drawing.Size(75, 12);
-            this.lblDReceivedDateData.TabIndex = 30;
-            this.lblDReceivedDateData.Text = "Received Date ";
-            // 
-            // lblDStaffIDData
-            // 
-            this.lblDStaffIDData.AutoSize = true;
-            this.lblDStaffIDData.Location = new System.Drawing.Point(306, 32);
-            this.lblDStaffIDData.Name = "lblDStaffIDData";
-            this.lblDStaffIDData.Size = new System.Drawing.Size(37, 12);
-            this.lblDStaffIDData.TabIndex = 33;
-            this.lblDStaffIDData.Text = "staff id";
-            // 
-            // lblDEditDateData
-            // 
-            this.lblDEditDateData.AutoSize = true;
-            this.lblDEditDateData.Location = new System.Drawing.Point(306, 60);
-            this.lblDEditDateData.Name = "lblDEditDateData";
-            this.lblDEditDateData.Size = new System.Drawing.Size(46, 12);
-            this.lblDEditDateData.TabIndex = 32;
-            this.lblDEditDateData.Text = "Edit date";
-            // 
-            // lblDCompletedDateData
-            // 
-            this.lblDCompletedDateData.AutoSize = true;
-            this.lblDCompletedDateData.Location = new System.Drawing.Point(306, 88);
-            this.lblDCompletedDateData.Name = "lblDCompletedDateData";
-            this.lblDCompletedDateData.Size = new System.Drawing.Size(69, 12);
-            this.lblDCompletedDateData.TabIndex = 34;
-            this.lblDCompletedDateData.Text = "complete date";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 127);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 12);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Order Line";
             // 
             // frmInventoryInwardGoodsRecord
             // 

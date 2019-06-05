@@ -23,7 +23,8 @@ namespace SLMCS_ERP
 
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
-            //dgvReceivedOrderRecord.DataSource = reorderOrder.GetReorderOrderTable("WHERE ReorderOrderStatus = 'Received'");
+            dgvReceivedOrderRecord.DataSource = reorderOrder.GetReceivedReorderOrderTable();
+            DGVReceivedOrderRecordFormatSetting();
         }
 
         private void DgvReceivedOrderRecord_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -32,9 +33,26 @@ namespace SLMCS_ERP
             if (e.RowIndex != -1)
             {
                 selectedReorderOrderID = dgvReceivedOrderRecord.Rows[e.RowIndex].Cells["ReorderOrderID"].Value.ToString();
+                dgvReceivedOrderRecord.Rows[e.RowIndex].Selected = true;
+                reorderOrder = new ReorderOrder(selectedReorderOrderID);
+
+                lblDReorderOrderIDData.Text = reorderOrder.ReorderOrderID;
+                lblDStaffIDData.Text = reorderOrder.StaffID;
+                lblDOrderDateData.Text = reorderOrder.ReorderOrderDate;
+                lblDReceivedDateData.Text = reorderOrder.ReorderOrderDate;
+                lblDEditDateData.Text = reorderOrder.ReorderOrderEditDate;
+                lblDReceivedDateData.Text = reorderOrder.ReorderOrderReceivedDate;
+                lblDCompletedDateData.Text = reorderOrder.ReorderOrderCompletedDate;
                 dgvOrderDetail.DataSource = reorderOrder.GetReorderOrderLineTable(selectedReorderOrderID);
                 //dgvOrderDetail.Rows[e.RowIndex].Selected = true;
+                DGVOrderDetailFormatSetting();
+
+                btnConfirm.Enabled = true;
+
             }
+
+
+            
         }
 
         private void FrmInventoryInwardGoods_Load(object sender, EventArgs e)
@@ -46,6 +64,36 @@ namespace SLMCS_ERP
             dgvOrderDetail.ReadOnly = true;
             dgvOrderDetail.AllowUserToAddRows = false;
             dgvOrderDetail.RowHeadersVisible = false;
+
+            lblDReorderOrderIDData.Text = "---";
+            lblDStaffIDData.Text = "---";
+            lblDOrderDateData.Text = "---";
+            lblDReceivedDateData.Text = "---";
+            lblDEditDateData.Text = "---";
+            lblDReceivedDateData.Text = "---";
+            lblDCompletedDateData.Text = "---";
+
+            btnConfirm.Enabled = false;
+        }
+
+        private void DGVReceivedOrderRecordFormatSetting()
+        {
+            dgvReceivedOrderRecord.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvReceivedOrderRecord.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvReceivedOrderRecord.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvReceivedOrderRecord.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+
+        private void DGVOrderDetailFormatSetting()
+        {
+            dgvOrderDetail.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvOrderDetail.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvOrderDetail.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+
+        private void BtnConfirm_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
