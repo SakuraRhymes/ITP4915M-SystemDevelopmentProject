@@ -23,7 +23,7 @@ namespace SLMCS_ERP
 
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
-            dgvReceivedOrderRecord.DataSource = reorderOrder.GetReorderOrderTable("WHERE ReorderOrderStatus = 'Received'");
+            //dgvReceivedOrderRecord.DataSource = reorderOrder.GetReorderOrderTable("WHERE ReorderOrderStatus = 'Received'");
         }
 
         private void DgvReceivedOrderRecord_CellClick(object sender, DataGridViewCellEventArgs e)

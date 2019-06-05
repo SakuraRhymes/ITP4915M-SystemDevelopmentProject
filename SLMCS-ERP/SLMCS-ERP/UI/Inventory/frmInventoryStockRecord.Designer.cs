@@ -46,13 +46,8 @@
             this.cboProductType = new System.Windows.Forms.ComboBox();
             this.lblProductPrice = new System.Windows.Forms.Label();
             this.lblProductName = new System.Windows.Forms.Label();
-            this.btnNewProduct = new System.Windows.Forms.Button();
-            this.btnEditProduct = new System.Windows.Forms.Button();
-            this.btnDeleteProduct = new System.Windows.Forms.Button();
             this.dgvStockRecord = new System.Windows.Forms.DataGridView();
             this.gpbProductDetail = new System.Windows.Forms.GroupBox();
-            this.btnReorderLevelSetting = new System.Windows.Forms.Button();
-            this.btnDangerLevelSetting = new System.Windows.Forms.Button();
             this.lblDDangerLevelData = new System.Windows.Forms.Label();
             this.lblDReorderLevelData = new System.Windows.Forms.Label();
             this.lblDActualQtyData = new System.Windows.Forms.Label();
@@ -71,6 +66,14 @@
             this.lblDProductType = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnReorderLevel = new System.Windows.Forms.Button();
+            this.btnDangerLevel = new System.Windows.Forms.Button();
+            this.lblDProductStatus = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblDVendorIDData = new System.Windows.Forms.Label();
+            this.vedorid = new System.Windows.Forms.Label();
+            this.cboProductStatus = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.gpbCondition.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockRecord)).BeginInit();
             this.gpbProductDetail.SuspendLayout();
@@ -115,6 +118,8 @@
             // 
             // gpbCondition
             // 
+            this.gpbCondition.Controls.Add(this.cboProductStatus);
+            this.gpbCondition.Controls.Add(this.label5);
             this.gpbCondition.Controls.Add(this.cboProductUnit);
             this.gpbCondition.Controls.Add(this.lblProductUnit);
             this.gpbCondition.Controls.Add(this.txtVendorID);
@@ -146,7 +151,7 @@
             "piece",
             "item",
             "set"});
-            this.cboProductUnit.Location = new System.Drawing.Point(368, 59);
+            this.cboProductUnit.Location = new System.Drawing.Point(375, 59);
             this.cboProductUnit.Name = "cboProductUnit";
             this.cboProductUnit.Size = new System.Drawing.Size(135, 20);
             this.cboProductUnit.TabIndex = 16;
@@ -154,7 +159,7 @@
             // lblProductUnit
             // 
             this.lblProductUnit.AutoSize = true;
-            this.lblProductUnit.Location = new System.Drawing.Point(292, 62);
+            this.lblProductUnit.Location = new System.Drawing.Point(299, 62);
             this.lblProductUnit.Name = "lblProductUnit";
             this.lblProductUnit.Size = new System.Drawing.Size(70, 12);
             this.lblProductUnit.TabIndex = 15;
@@ -162,7 +167,7 @@
             // 
             // txtVendorID
             // 
-            this.txtVendorID.Location = new System.Drawing.Point(368, 91);
+            this.txtVendorID.Location = new System.Drawing.Point(375, 91);
             this.txtVendorID.Name = "txtVendorID";
             this.txtVendorID.Size = new System.Drawing.Size(135, 22);
             this.txtVendorID.TabIndex = 14;
@@ -170,7 +175,7 @@
             // lblVendorID
             // 
             this.lblVendorID.AutoSize = true;
-            this.lblVendorID.Location = new System.Drawing.Point(301, 94);
+            this.lblVendorID.Location = new System.Drawing.Point(308, 94);
             this.lblVendorID.Name = "lblVendorID";
             this.lblVendorID.Size = new System.Drawing.Size(61, 12);
             this.lblVendorID.TabIndex = 13;
@@ -192,7 +197,7 @@
             // 
             // txtProductName
             // 
-            this.txtProductName.Location = new System.Drawing.Point(368, 26);
+            this.txtProductName.Location = new System.Drawing.Point(375, 26);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(135, 22);
             this.txtProductName.TabIndex = 10;
@@ -257,41 +262,11 @@
             // lblProductName
             // 
             this.lblProductName.AutoSize = true;
-            this.lblProductName.Location = new System.Drawing.Point(285, 29);
+            this.lblProductName.Location = new System.Drawing.Point(292, 29);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(77, 12);
             this.lblProductName.TabIndex = 4;
             this.lblProductName.Text = "Product Name :";
-            // 
-            // btnNewProduct
-            // 
-            this.btnNewProduct.Location = new System.Drawing.Point(636, 451);
-            this.btnNewProduct.Name = "btnNewProduct";
-            this.btnNewProduct.Size = new System.Drawing.Size(81, 23);
-            this.btnNewProduct.TabIndex = 5;
-            this.btnNewProduct.Text = "New Product";
-            this.btnNewProduct.UseVisualStyleBackColor = true;
-            this.btnNewProduct.Click += new System.EventHandler(this.BtnNewProduct_Click);
-            // 
-            // btnEditProduct
-            // 
-            this.btnEditProduct.Location = new System.Drawing.Point(745, 451);
-            this.btnEditProduct.Name = "btnEditProduct";
-            this.btnEditProduct.Size = new System.Drawing.Size(80, 23);
-            this.btnEditProduct.TabIndex = 6;
-            this.btnEditProduct.Text = "Edit Product";
-            this.btnEditProduct.UseVisualStyleBackColor = true;
-            this.btnEditProduct.Click += new System.EventHandler(this.BtnEditProduct_Click);
-            // 
-            // btnDeleteProduct
-            // 
-            this.btnDeleteProduct.Location = new System.Drawing.Point(846, 451);
-            this.btnDeleteProduct.Name = "btnDeleteProduct";
-            this.btnDeleteProduct.Size = new System.Drawing.Size(87, 23);
-            this.btnDeleteProduct.TabIndex = 7;
-            this.btnDeleteProduct.Text = "Delete Product";
-            this.btnDeleteProduct.UseVisualStyleBackColor = true;
-            this.btnDeleteProduct.Click += new System.EventHandler(this.BtnDeleteProduct_Click);
             // 
             // dgvStockRecord
             // 
@@ -302,12 +277,15 @@
             this.dgvStockRecord.Size = new System.Drawing.Size(568, 245);
             this.dgvStockRecord.TabIndex = 8;
             this.dgvStockRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvStockRecord_CellClick);
-            this.dgvStockRecord.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvStockRecord_CellDoubleClick);
             // 
             // gpbProductDetail
             // 
-            this.gpbProductDetail.Controls.Add(this.btnReorderLevelSetting);
-            this.gpbProductDetail.Controls.Add(this.btnDangerLevelSetting);
+            this.gpbProductDetail.Controls.Add(this.lblDVendorIDData);
+            this.gpbProductDetail.Controls.Add(this.vedorid);
+            this.gpbProductDetail.Controls.Add(this.lblDProductStatus);
+            this.gpbProductDetail.Controls.Add(this.label6);
+            this.gpbProductDetail.Controls.Add(this.btnDangerLevel);
+            this.gpbProductDetail.Controls.Add(this.btnReorderLevel);
             this.gpbProductDetail.Controls.Add(this.lblDDangerLevelData);
             this.gpbProductDetail.Controls.Add(this.lblDReorderLevelData);
             this.gpbProductDetail.Controls.Add(this.lblDActualQtyData);
@@ -333,28 +311,6 @@
             this.gpbProductDetail.TabStop = false;
             this.gpbProductDetail.Text = "Product Detail";
             // 
-            // btnReorderLevelSetting
-            // 
-            this.btnReorderLevelSetting.Location = new System.Drawing.Point(56, 392);
-            this.btnReorderLevelSetting.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.btnReorderLevelSetting.Name = "btnReorderLevelSetting";
-            this.btnReorderLevelSetting.Size = new System.Drawing.Size(102, 30);
-            this.btnReorderLevelSetting.TabIndex = 50;
-            this.btnReorderLevelSetting.Text = "Reorder Level Setting";
-            this.btnReorderLevelSetting.UseVisualStyleBackColor = true;
-            this.btnReorderLevelSetting.Click += new System.EventHandler(this.BtnReorderLevelSetting_Click);
-            // 
-            // btnDangerLevelSetting
-            // 
-            this.btnDangerLevelSetting.Location = new System.Drawing.Point(229, 392);
-            this.btnDangerLevelSetting.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.btnDangerLevelSetting.Name = "btnDangerLevelSetting";
-            this.btnDangerLevelSetting.Size = new System.Drawing.Size(102, 30);
-            this.btnDangerLevelSetting.TabIndex = 49;
-            this.btnDangerLevelSetting.Text = "Danger Level Setting";
-            this.btnDangerLevelSetting.UseVisualStyleBackColor = true;
-            this.btnDangerLevelSetting.Click += new System.EventHandler(this.BtnDangerLevelSetting_Click);
-            // 
             // lblDDangerLevelData
             // 
             this.lblDDangerLevelData.AutoSize = true;
@@ -367,7 +323,7 @@
             // lblDReorderLevelData
             // 
             this.lblDReorderLevelData.AutoSize = true;
-            this.lblDReorderLevelData.Location = new System.Drawing.Point(138, 301);
+            this.lblDReorderLevelData.Location = new System.Drawing.Point(138, 309);
             this.lblDReorderLevelData.Name = "lblDReorderLevelData";
             this.lblDReorderLevelData.Size = new System.Drawing.Size(39, 12);
             this.lblDReorderLevelData.TabIndex = 47;
@@ -376,7 +332,7 @@
             // lblDActualQtyData
             // 
             this.lblDActualQtyData.AutoSize = true;
-            this.lblDActualQtyData.Location = new System.Drawing.Point(138, 265);
+            this.lblDActualQtyData.Location = new System.Drawing.Point(138, 273);
             this.lblDActualQtyData.Name = "lblDActualQtyData";
             this.lblDActualQtyData.Size = new System.Drawing.Size(33, 12);
             this.lblDActualQtyData.TabIndex = 46;
@@ -385,7 +341,7 @@
             // lblDProductPriceData
             // 
             this.lblDProductPriceData.AutoSize = true;
-            this.lblDProductPriceData.Location = new System.Drawing.Point(138, 230);
+            this.lblDProductPriceData.Location = new System.Drawing.Point(138, 238);
             this.lblDProductPriceData.Name = "lblDProductPriceData";
             this.lblDProductPriceData.Size = new System.Drawing.Size(33, 12);
             this.lblDProductPriceData.TabIndex = 45;
@@ -394,7 +350,7 @@
             // lblDProductUnitData
             // 
             this.lblDProductUnitData.AutoSize = true;
-            this.lblDProductUnitData.Location = new System.Drawing.Point(138, 195);
+            this.lblDProductUnitData.Location = new System.Drawing.Point(138, 203);
             this.lblDProductUnitData.Name = "lblDProductUnitData";
             this.lblDProductUnitData.Size = new System.Drawing.Size(33, 12);
             this.lblDProductUnitData.TabIndex = 44;
@@ -411,7 +367,7 @@
             // 
             // lblDProductDescData
             // 
-            this.lblDProductDescData.Location = new System.Drawing.Point(141, 130);
+            this.lblDProductDescData.Location = new System.Drawing.Point(139, 130);
             this.lblDProductDescData.Name = "lblDProductDescData";
             this.lblDProductDescData.Size = new System.Drawing.Size(212, 60);
             this.lblDProductDescData.TabIndex = 42;
@@ -447,7 +403,7 @@
             // lvlReorderLevel
             // 
             this.lvlReorderLevel.AutoSize = true;
-            this.lvlReorderLevel.Location = new System.Drawing.Point(54, 301);
+            this.lvlReorderLevel.Location = new System.Drawing.Point(54, 309);
             this.lvlReorderLevel.Name = "lvlReorderLevel";
             this.lvlReorderLevel.Size = new System.Drawing.Size(78, 12);
             this.lvlReorderLevel.TabIndex = 31;
@@ -456,7 +412,7 @@
             // lblActualQty
             // 
             this.lblActualQty.AutoSize = true;
-            this.lblActualQty.Location = new System.Drawing.Point(48, 265);
+            this.lblActualQty.Location = new System.Drawing.Point(48, 273);
             this.lblActualQty.Name = "lblActualQty";
             this.lblActualQty.Size = new System.Drawing.Size(84, 12);
             this.lblActualQty.TabIndex = 30;
@@ -465,7 +421,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(59, 230);
+            this.label1.Location = new System.Drawing.Point(59, 238);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 12);
             this.label1.TabIndex = 29;
@@ -474,7 +430,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(62, 195);
+            this.label2.Location = new System.Drawing.Point(62, 203);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 12);
             this.label2.TabIndex = 28;
@@ -516,6 +472,82 @@
             this.label4.TabIndex = 24;
             this.label4.Text = "Product ID :";
             // 
+            // btnReorderLevel
+            // 
+            this.btnReorderLevel.Location = new System.Drawing.Point(56, 404);
+            this.btnReorderLevel.Name = "btnReorderLevel";
+            this.btnReorderLevel.Size = new System.Drawing.Size(102, 23);
+            this.btnReorderLevel.TabIndex = 17;
+            this.btnReorderLevel.Text = "Reorder Level";
+            this.btnReorderLevel.UseVisualStyleBackColor = true;
+            this.btnReorderLevel.Click += new System.EventHandler(this.BtnReorderLevel_Click);
+            // 
+            // btnDangerLevel
+            // 
+            this.btnDangerLevel.Location = new System.Drawing.Point(234, 404);
+            this.btnDangerLevel.Name = "btnDangerLevel";
+            this.btnDangerLevel.Size = new System.Drawing.Size(102, 23);
+            this.btnDangerLevel.TabIndex = 51;
+            this.btnDangerLevel.Text = "Danger Level";
+            this.btnDangerLevel.UseVisualStyleBackColor = true;
+            this.btnDangerLevel.Click += new System.EventHandler(this.BtnDangerLevel_Click);
+            // 
+            // lblDProductStatus
+            // 
+            this.lblDProductStatus.AutoSize = true;
+            this.lblDProductStatus.Location = new System.Drawing.Point(138, 366);
+            this.lblDProductStatus.Name = "lblDProductStatus";
+            this.lblDProductStatus.Size = new System.Drawing.Size(39, 12);
+            this.lblDProductStatus.TabIndex = 53;
+            this.lblDProductStatus.Text = "label11";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(54, 366);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(77, 12);
+            this.label6.TabIndex = 52;
+            this.label6.Text = "Product Status :";
+            // 
+            // lblDVendorIDData
+            // 
+            this.lblDVendorIDData.AutoSize = true;
+            this.lblDVendorIDData.Location = new System.Drawing.Point(309, 36);
+            this.lblDVendorIDData.Name = "lblDVendorIDData";
+            this.lblDVendorIDData.Size = new System.Drawing.Size(45, 12);
+            this.lblDVendorIDData.TabIndex = 55;
+            this.lblDVendorIDData.Text = "XXXXX";
+            // 
+            // vedorid
+            // 
+            this.vedorid.AutoSize = true;
+            this.vedorid.Location = new System.Drawing.Point(242, 36);
+            this.vedorid.Name = "vedorid";
+            this.vedorid.Size = new System.Drawing.Size(61, 12);
+            this.vedorid.TabIndex = 54;
+            this.vedorid.Text = "Vendor ID :";
+            // 
+            // cboProductStatus
+            // 
+            this.cboProductStatus.FormattingEnabled = true;
+            this.cboProductStatus.Items.AddRange(new object[] {
+            "Available",
+            "Unavailable"});
+            this.cboProductStatus.Location = new System.Drawing.Point(375, 122);
+            this.cboProductStatus.Name = "cboProductStatus";
+            this.cboProductStatus.Size = new System.Drawing.Size(135, 20);
+            this.cboProductStatus.TabIndex = 18;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(292, 125);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 12);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Product Status :";
+            // 
             // frmInventoryStockRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -523,9 +555,6 @@
             this.ClientSize = new System.Drawing.Size(1041, 500);
             this.Controls.Add(this.gpbProductDetail);
             this.Controls.Add(this.dgvStockRecord);
-            this.Controls.Add(this.btnDeleteProduct);
-            this.Controls.Add(this.btnEditProduct);
-            this.Controls.Add(this.btnNewProduct);
             this.Controls.Add(this.gpbCondition);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmInventoryStockRecord";
@@ -554,9 +583,6 @@
         private System.Windows.Forms.ComboBox cboProductType;
         private System.Windows.Forms.Label lblProductPrice;
         private System.Windows.Forms.Label lblProductName;
-        private System.Windows.Forms.Button btnNewProduct;
-        private System.Windows.Forms.Button btnEditProduct;
-        private System.Windows.Forms.Button btnDeleteProduct;
         private System.Windows.Forms.DataGridView dgvStockRecord;
         private System.Windows.Forms.TextBox txtProductPrice;
         private System.Windows.Forms.TextBox txtStockQuantity;
@@ -583,7 +609,13 @@
         private System.Windows.Forms.Label lblDProductUnitData;
         private System.Windows.Forms.Label lblDProductNameData;
         private System.Windows.Forms.Label lblDProductDescData;
-        private System.Windows.Forms.Button btnReorderLevelSetting;
-        private System.Windows.Forms.Button btnDangerLevelSetting;
+        private System.Windows.Forms.Button btnDangerLevel;
+        private System.Windows.Forms.Button btnReorderLevel;
+        private System.Windows.Forms.Label lblDProductStatus;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblDVendorIDData;
+        private System.Windows.Forms.Label vedorid;
+        private System.Windows.Forms.ComboBox cboProductStatus;
+        private System.Windows.Forms.Label label5;
     }
 }

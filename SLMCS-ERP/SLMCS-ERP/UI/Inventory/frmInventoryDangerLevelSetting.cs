@@ -25,7 +25,7 @@ namespace SLMCS_ERP
             product = new Product(productID);
             lblProdcutIDData.Text = product.ProductID;
             lblProductNameData.Text = product.ProductName;
-            txtDangerLevel.Text = product.ReorderLevel.ToString();
+            txtDangerLevel.Text = product.DangerLevel.ToString();
         }
 
         private void BtnSubmit_Click(object sender, EventArgs e)
