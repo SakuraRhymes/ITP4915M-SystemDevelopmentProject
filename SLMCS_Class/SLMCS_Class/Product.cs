@@ -151,6 +151,7 @@ namespace SLMCS_Class
         public void updateReserveQuantity(int reserveQuantity)
         {
             string query = "UPDATE Product SET ReserveQuantity = ReserveQuantity + " + reserveQuantity + " WHERE ProductID = '" + productID+"'";
+            //MessageBox.Show(query);
             dbConnection.Update(query);
         }
 
