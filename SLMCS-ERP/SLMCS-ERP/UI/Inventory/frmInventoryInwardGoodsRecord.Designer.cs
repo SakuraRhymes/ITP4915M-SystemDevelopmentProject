@@ -32,17 +32,16 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.dtpCompletedDateTo = new System.Windows.Forms.DateTimePicker();
+            this.dtpCompletedDateFrom = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpOrderDateTo = new System.Windows.Forms.DateTimePicker();
+            this.dtpOrderDateFrom = new System.Windows.Forms.DateTimePicker();
             this.txtReorderOrderID = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.lblReorderOrderID = new System.Windows.Forms.Label();
             this.lblOrderDate = new System.Windows.Forms.Label();
-            this.btnSelect = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.txtStaffID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvReorderOrderLine = new System.Windows.Forms.DataGridView();
@@ -79,14 +78,15 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtStaffID);
+            this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.dateTimePicker3);
-            this.groupBox1.Controls.Add(this.dateTimePicker4);
+            this.groupBox1.Controls.Add(this.dtpCompletedDateTo);
+            this.groupBox1.Controls.Add(this.dtpCompletedDateFrom);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dtpOrderDateTo);
+            this.groupBox1.Controls.Add(this.dtpOrderDateFrom);
             this.groupBox1.Controls.Add(this.txtReorderOrderID);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.lblReorderOrderID);
@@ -118,19 +118,19 @@
             this.label3.TabIndex = 20;
             this.label3.Text = "-";
             // 
-            // dateTimePicker3
+            // dtpCompletedDateTo
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(272, 117);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(135, 22);
-            this.dateTimePicker3.TabIndex = 18;
+            this.dtpCompletedDateTo.Location = new System.Drawing.Point(272, 117);
+            this.dtpCompletedDateTo.Name = "dtpCompletedDateTo";
+            this.dtpCompletedDateTo.Size = new System.Drawing.Size(135, 22);
+            this.dtpCompletedDateTo.TabIndex = 18;
             // 
-            // dateTimePicker4
+            // dtpCompletedDateFrom
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(111, 116);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(131, 22);
-            this.dateTimePicker4.TabIndex = 17;
+            this.dtpCompletedDateFrom.Location = new System.Drawing.Point(111, 116);
+            this.dtpCompletedDateFrom.Name = "dtpCompletedDateFrom";
+            this.dtpCompletedDateFrom.Size = new System.Drawing.Size(131, 22);
+            this.dtpCompletedDateFrom.TabIndex = 17;
             // 
             // label1
             // 
@@ -141,19 +141,19 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Completed Date :";
             // 
-            // dateTimePicker2
+            // dtpOrderDateTo
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(272, 88);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(135, 22);
-            this.dateTimePicker2.TabIndex = 15;
+            this.dtpOrderDateTo.Location = new System.Drawing.Point(272, 88);
+            this.dtpOrderDateTo.Name = "dtpOrderDateTo";
+            this.dtpOrderDateTo.Size = new System.Drawing.Size(135, 22);
+            this.dtpOrderDateTo.TabIndex = 15;
             // 
-            // dateTimePicker1
+            // dtpOrderDateFrom
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(111, 88);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(131, 22);
-            this.dateTimePicker1.TabIndex = 8;
+            this.dtpOrderDateFrom.Location = new System.Drawing.Point(111, 88);
+            this.dtpOrderDateFrom.Name = "dtpOrderDateFrom";
+            this.dtpOrderDateFrom.Size = new System.Drawing.Size(131, 22);
+            this.dtpOrderDateFrom.TabIndex = 8;
             // 
             // txtReorderOrderID
             // 
@@ -166,7 +166,7 @@
             // 
             this.btnSearch.Location = new System.Drawing.Point(6, 153);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(401, 23);
+            this.btnSearch.Size = new System.Drawing.Size(260, 23);
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -190,24 +190,15 @@
             this.lblOrderDate.TabIndex = 1;
             this.lblOrderDate.Text = "Order Date :";
             // 
-            // btnSelect
+            // btnClear
             // 
-            this.btnSelect.Location = new System.Drawing.Point(279, 495);
-            this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(75, 23);
-            this.btnSelect.TabIndex = 6;
-            this.btnSelect.Text = "Select";
-            this.btnSelect.UseVisualStyleBackColor = true;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(100, 495);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 7;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
+            this.btnClear.Location = new System.Drawing.Point(272, 153);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(135, 23);
+            this.btnClear.TabIndex = 7;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
             // txtStaffID
             // 
@@ -378,10 +369,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 527);
+            this.ClientSize = new System.Drawing.Size(914, 502);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvInwardGoodsRecord);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -407,14 +396,13 @@
         private System.Windows.Forms.Label lblReorderOrderID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
+        private System.Windows.Forms.DateTimePicker dtpCompletedDateTo;
+        private System.Windows.Forms.DateTimePicker dtpCompletedDateFrom;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpOrderDateTo;
+        private System.Windows.Forms.DateTimePicker dtpOrderDateFrom;
         private System.Windows.Forms.Label lblOrderDate;
-        private System.Windows.Forms.Button btnSelect;
-        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.TextBox txtStaffID;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgvReorderOrderLine;

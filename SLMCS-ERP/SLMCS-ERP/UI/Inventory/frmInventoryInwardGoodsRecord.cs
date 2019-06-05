@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using SLMCS_Class;
 
@@ -23,13 +16,9 @@ namespace SLMCS_ERP
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            
-            //selectedProductID = dgvStockRecord.Rows[0].Cells["ProductID"].Value.ToString();
-            //DGVSearchFormatSetting();
-            FrmInventoryInwardGoodsRecord_Load(sender, e);
-            
-            string queryString = ProductMultiSearchString();
-            dgvInwardGoodsRecord.DataSource = reorderOrder.GetInwardGoodsRecordTable(reorderOrder.GetMultiChoiceQuery(queryString));
+            string queryString = OrderMultiSearchString();
+            dgvInwardGoodsRecord.DataSource = reorderOrder.GetInwardGoodsRecordTable(queryString);
+            //MessageBox.Show(dtpOrderDateFrom.Value.ToString("dd/MM/yyyy"));
             DGVInwardGoodsRecordFormatSetting();
         }
 
@@ -38,18 +27,23 @@ namespace SLMCS_ERP
             FrmInventoryInwardGoodsRecord_Load(sender, e);
         }
 
-        private string ProductMultiSearchString()
+        private string OrderMultiSearchString()
         {
             string queryString = "";
             if (txtReorderOrderID.Text != "")
             {
-                queryString += "ReorderOrderID LIKE '%" + txtReorderOrderID.Text + "%'" + "/";
+                queryString += "ReorderOrderID LIKE '%" + txtReorderOrderID.Text + "%'" + " AND ";
             }
             if (txtStaffID.Text != "")
             {
-                queryString += "StaffID LIKE '%" + txtStaffID.Text + "%'" + "/";
+                queryString += "StaffID LIKE '%" + txtStaffID.Text + "%'" + " AND ";
             }
-
+            
+            if (queryString != "")
+            {
+                queryString = queryString.Remove(queryString.Length - 5);
+            }
+     
             return queryString;
         }
 
@@ -84,17 +78,16 @@ namespace SLMCS_ERP
             dgvReorderOrderLine.RowHeadersVisible = false;
             dgvReorderOrderLine.ReadOnly = true;
 
-            lblDReorderOrderIDData.Text = "";
-            lblDStaffIDData.Text = "";
-            lblDOrderDateData.Text = "";
-            lblDReceivedDateData.Text = "";
-            lblDEditDateData.Text = "";
-            lblDReceivedDateData.Text = "";
-            lblDCompletedDateData.Text = "";
+            lblDReorderOrderIDData.Text = "---";
+            lblDStaffIDData.Text = "---";
+            lblDOrderDateData.Text = "---";
+            lblDReceivedDateData.Text = "---";
+            lblDEditDateData.Text = "---";
+            lblDReceivedDateData.Text = "---";
+            lblDCompletedDateData.Text = "---";
 
             txtReorderOrderID.Text = "";
             txtStaffID.Text = "";
-
 
             dgvInwardGoodsRecord.DataSource = null;
             dgvReorderOrderLine.DataSource = null;
@@ -115,6 +108,11 @@ namespace SLMCS_ERP
             dgvReorderOrderLine.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvReorderOrderLine.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvReorderOrderLine.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+
+        private void BtnClear_Click(object sender, EventArgs e)
+        {
+            FrmInventoryInwardGoodsRecord_Load(sender, e);
         }
     }
 }

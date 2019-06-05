@@ -45,10 +45,21 @@ namespace SLMCS_Class
 
             ReorderOrderID = (string)rows[0]["ReorderOrderID"];
             StaffID = (string)rows[0]["StaffID"];
-            ReorderOrderDate = ((DateTime)rows[0]["ReorderOrderDate"]).ToString("dd/MM/yyyy");
-            ReorderOrderEditDate = ((DateTime)rows[0]["ReorderOrderEditDate"]).ToString("dd/MM/yyyy");
-            ReorderOrderReceivedDate = ((DateTime)rows[0]["ReorderOrderReceivedDate"]).ToString("dd/MM/yyyy");
-            ReorderOrderCompletedDate = ((DateTime)rows[0]["ReorderOrderCompletedDate"]).ToString("dd/MM/yyyy");
+            if (rows[0]["ReorderOrderDate"].ToString() != "") {
+                ReorderOrderDate = ((DateTime)rows[0]["ReorderOrderDate"]).ToString("dd/MM/yyyy");
+            }
+            if (rows[0]["ReorderOrderEditDate"].ToString() != "")
+            {
+                ReorderOrderEditDate = ((DateTime)rows[0]["ReorderOrderEditDate"]).ToString("dd/MM/yyyy");
+            }
+            if (rows[0]["ReorderOrderReceivedDate"].ToString() != "")
+            {
+                ReorderOrderReceivedDate = ((DateTime)rows[0]["ReorderOrderReceivedDate"]).ToString("dd/MM/yyyy");
+            }
+            if (rows[0]["ReorderOrderCompletedDate"].ToString() != "")
+            {
+                ReorderOrderCompletedDate = ((DateTime)rows[0]["ReorderOrderCompletedDate"]).ToString("dd/MM/yyyy");
+            }   
             ReorderOrderStatus = (string)rows[0]["ReorderOrderStatus"];
         }
 
@@ -114,9 +125,9 @@ namespace SLMCS_Class
             string query = "SELECT ReorderOrderID,StaffID,ReorderOrderDate,ReorderOrderCompletedDate FROM ReorderOrder WHERE ReorderOrderStatus = 'Completed' ";
             if (condition != "")
             {
-                query += condition;
+                query += " AND " + condition;
             }
-            MessageBox.Show(query);
+            //MessageBox.Show(query);
             reorderOrderTable = dbConnection.GetDataTable(query);
             return reorderOrderTable;
         }
@@ -127,19 +138,19 @@ namespace SLMCS_Class
             return reorderOrderTable;
         }
 
-        public string GetMultiChoiceQuery(string queryString)
-        {
-            var queryArray = queryString.Split('/'); // when have '/' in the string, split into array 
-            queryArray = queryArray.Take(queryArray.Count() - 1).ToArray(); //drop the last element of array
-            string restOfqueryArray = string.Join(" AND ", queryArray); //use 'AND' to recombine the array
-            string finalQuery = " AND " + restOfqueryArray;// add 'WHERE' to become a complete sql query condition
-            if (restOfqueryArray == "")
-            {
-                finalQuery = "";
-            }
+        //public string GetMultiChoiceQuery(string queryString)
+        //{
+        //    var queryArray = queryString.Split('/'); // when have '/' in the string, split into array 
+        //    queryArray = queryArray.Take(queryArray.Count() - 1).ToArray(); //drop the last element of array
+        //    string restOfqueryArray = string.Join(" AND ", queryArray); //use 'AND' to recombine the array
+        //    string finalQuery = " AND " + restOfqueryArray;// add 'WHERE' to become a complete sql query condition
+        //    if (restOfqueryArray == "")
+        //    {
+        //        finalQuery = "";
+        //    }
 
-            return finalQuery;
-        }
+        //    return finalQuery;
+        //}
 
         public string ReorderOrderID
         {
