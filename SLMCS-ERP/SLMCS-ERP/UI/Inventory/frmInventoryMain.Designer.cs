@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnDangerLevelSetting = new System.Windows.Forms.Button();
-            this.btnReorderLevelSetting = new System.Windows.Forms.Button();
             this.btnInwardGoodsRecord = new System.Windows.Forms.Button();
             this.btnReorderProduct = new System.Windows.Forms.Button();
             this.btnInwardGoods = new System.Windows.Forms.Button();
@@ -42,8 +40,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel1.Controls.Add(this.btnDangerLevelSetting);
-            this.panel1.Controls.Add(this.btnReorderLevelSetting);
             this.panel1.Controls.Add(this.btnInwardGoodsRecord);
             this.panel1.Controls.Add(this.btnReorderProduct);
             this.panel1.Controls.Add(this.btnInwardGoods);
@@ -54,29 +50,9 @@
             this.panel1.Size = new System.Drawing.Size(150, 566);
             this.panel1.TabIndex = 0;
             // 
-            // btnDangerLevelSetting
-            // 
-            this.btnDangerLevelSetting.Location = new System.Drawing.Point(12, 143);
-            this.btnDangerLevelSetting.Name = "btnDangerLevelSetting";
-            this.btnDangerLevelSetting.Size = new System.Drawing.Size(120, 43);
-            this.btnDangerLevelSetting.TabIndex = 5;
-            this.btnDangerLevelSetting.Text = "Danger Level Setting";
-            this.btnDangerLevelSetting.UseVisualStyleBackColor = true;
-            this.btnDangerLevelSetting.Click += new System.EventHandler(this.BtnDangerLevelSetting_Click);
-            // 
-            // btnReorderLevelSetting
-            // 
-            this.btnReorderLevelSetting.Location = new System.Drawing.Point(12, 85);
-            this.btnReorderLevelSetting.Name = "btnReorderLevelSetting";
-            this.btnReorderLevelSetting.Size = new System.Drawing.Size(120, 43);
-            this.btnReorderLevelSetting.TabIndex = 4;
-            this.btnReorderLevelSetting.Text = "Reorder Level Setting";
-            this.btnReorderLevelSetting.UseVisualStyleBackColor = true;
-            this.btnReorderLevelSetting.Click += new System.EventHandler(this.BtnReorderLevelSetting_Click);
-            // 
             // btnInwardGoodsRecord
             // 
-            this.btnInwardGoodsRecord.Location = new System.Drawing.Point(12, 331);
+            this.btnInwardGoodsRecord.Location = new System.Drawing.Point(12, 233);
             this.btnInwardGoodsRecord.Name = "btnInwardGoodsRecord";
             this.btnInwardGoodsRecord.Size = new System.Drawing.Size(120, 43);
             this.btnInwardGoodsRecord.TabIndex = 3;
@@ -86,7 +62,7 @@
             // 
             // btnReorderProduct
             // 
-            this.btnReorderProduct.Location = new System.Drawing.Point(12, 209);
+            this.btnReorderProduct.Location = new System.Drawing.Point(12, 95);
             this.btnReorderProduct.Name = "btnReorderProduct";
             this.btnReorderProduct.Size = new System.Drawing.Size(120, 43);
             this.btnReorderProduct.TabIndex = 2;
@@ -96,7 +72,7 @@
             // 
             // btnInwardGoods
             // 
-            this.btnInwardGoods.Location = new System.Drawing.Point(12, 270);
+            this.btnInwardGoods.Location = new System.Drawing.Point(12, 160);
             this.btnInwardGoods.Name = "btnInwardGoods";
             this.btnInwardGoods.Size = new System.Drawing.Size(120, 43);
             this.btnInwardGoods.TabIndex = 1;
@@ -144,8 +120,6 @@
         private System.Windows.Forms.Button btnStockRecord;
         private System.Windows.Forms.Button btnInwardGoods;
         private System.Windows.Forms.Button btnReorderProduct;
-        private System.Windows.Forms.Button btnDangerLevelSetting;
-        private System.Windows.Forms.Button btnReorderLevelSetting;
         private System.Windows.Forms.Button btnInwardGoodsRecord;
     }
 }
