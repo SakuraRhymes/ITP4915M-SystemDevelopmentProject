@@ -47,14 +47,12 @@ namespace SLMCS_ERP
 
         private void BtnReorderLevelSetting_Click(object sender, EventArgs e)
         {
-            frmInventoryReorderLevelSetting inventoryReorderLevelSetting = new frmInventoryReorderLevelSetting();
-            navigation(inventoryReorderLevelSetting, panelContent);
+            
         }
 
         private void BtnDangerLevelSetting_Click(object sender, EventArgs e)
         {
-            frmInventoryDangerLevelSetting inventoryDangerLevelSetting = new frmInventoryDangerLevelSetting();
-            navigation(inventoryDangerLevelSetting, panelContent);
+            
         }
 
         private void BtnInwardGoodsRecord_Click(object sender, EventArgs e)

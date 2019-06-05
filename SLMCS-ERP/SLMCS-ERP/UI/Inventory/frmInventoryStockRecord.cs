@@ -196,5 +196,31 @@ namespace SLMCS_ERP
             dgvStockRecord.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvStockRecord.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
+
+        private void BtnReorderLevelSetting_Click(object sender, EventArgs e)
+        {
+            if (selectedProductID == "")
+            {
+                MessageBox.Show("Please select a product");
+            }
+            else
+            {
+                frmInventoryReorderLevelSetting inventoryReorderLevelSetting = new frmInventoryReorderLevelSetting(selectedProductID);
+                inventoryReorderLevelSetting.Show();
+            }
+        }
+
+        private void BtnDangerLevelSetting_Click(object sender, EventArgs e)
+        {
+            if (selectedProductID == "")
+            {
+                MessageBox.Show("Please select a product");
+            }
+            else
+            {
+                frmInventoryDangerLevelSetting inventoryDangerLevelSetting = new frmInventoryDangerLevelSetting(selectedProductID);
+                inventoryDangerLevelSetting.Show();
+            }
+        }
     }
 }

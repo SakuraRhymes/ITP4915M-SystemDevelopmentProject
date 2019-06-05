@@ -194,6 +194,9 @@
     <EmbeddedResource Include="UI\Inventory\frmInventoryAddReorderProduct.resx">
       <DependentUpon>frmInventoryAddReorderProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Inventory\frmInventoryDangerLevelSetting.resx">
+      <DependentUpon>frmInventoryDangerLevelSetting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Inventory\frmInventoryEditProduct.resx">
       <DependentUpon>frmInventoryEditProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Inventory\frmInventoryNewProduct.resx">
       <DependentUpon>frmInventoryNewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Inventory\frmInventoryReorderLevelSetting.resx">
+      <DependentUpon>frmInventoryReorderLevelSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Inventory\frmInventoryReorderProduct.resx">
       <DependentUpon>frmInventoryReorderProduct.cs</DependentUpon>

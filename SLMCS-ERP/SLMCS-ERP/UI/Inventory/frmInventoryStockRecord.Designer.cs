@@ -51,6 +51,15 @@
             this.btnDeleteProduct = new System.Windows.Forms.Button();
             this.dgvStockRecord = new System.Windows.Forms.DataGridView();
             this.gpbProductDetail = new System.Windows.Forms.GroupBox();
+            this.btnReorderLevelSetting = new System.Windows.Forms.Button();
+            this.btnDangerLevelSetting = new System.Windows.Forms.Button();
+            this.lblDDangerLevelData = new System.Windows.Forms.Label();
+            this.lblDReorderLevelData = new System.Windows.Forms.Label();
+            this.lblDActualQtyData = new System.Windows.Forms.Label();
+            this.lblDProductPriceData = new System.Windows.Forms.Label();
+            this.lblDProductUnitData = new System.Windows.Forms.Label();
+            this.lblDProductNameData = new System.Windows.Forms.Label();
+            this.lblDProductDescData = new System.Windows.Forms.Label();
             this.lblDProductTypeData = new System.Windows.Forms.Label();
             this.lblDangerLevel = new System.Windows.Forms.Label();
             this.lblDProductIDData = new System.Windows.Forms.Label();
@@ -62,13 +71,6 @@
             this.lblDProductType = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.lblDProductDescData = new System.Windows.Forms.Label();
-            this.lblDProductNameData = new System.Windows.Forms.Label();
-            this.lblDProductUnitData = new System.Windows.Forms.Label();
-            this.lblDProductPriceData = new System.Windows.Forms.Label();
-            this.lblDActualQtyData = new System.Windows.Forms.Label();
-            this.lblDReorderLevelData = new System.Windows.Forms.Label();
-            this.lblDDangerLevelData = new System.Windows.Forms.Label();
             this.gpbCondition.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockRecord)).BeginInit();
             this.gpbProductDetail.SuspendLayout();
@@ -304,6 +306,8 @@
             // 
             // gpbProductDetail
             // 
+            this.gpbProductDetail.Controls.Add(this.btnReorderLevelSetting);
+            this.gpbProductDetail.Controls.Add(this.btnDangerLevelSetting);
             this.gpbProductDetail.Controls.Add(this.lblDDangerLevelData);
             this.gpbProductDetail.Controls.Add(this.lblDReorderLevelData);
             this.gpbProductDetail.Controls.Add(this.lblDActualQtyData);
@@ -329,6 +333,90 @@
             this.gpbProductDetail.TabStop = false;
             this.gpbProductDetail.Text = "Product Detail";
             // 
+            // btnReorderLevelSetting
+            // 
+            this.btnReorderLevelSetting.Location = new System.Drawing.Point(56, 392);
+            this.btnReorderLevelSetting.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.btnReorderLevelSetting.Name = "btnReorderLevelSetting";
+            this.btnReorderLevelSetting.Size = new System.Drawing.Size(102, 30);
+            this.btnReorderLevelSetting.TabIndex = 50;
+            this.btnReorderLevelSetting.Text = "Reorder Level Setting";
+            this.btnReorderLevelSetting.UseVisualStyleBackColor = true;
+            this.btnReorderLevelSetting.Click += new System.EventHandler(this.BtnReorderLevelSetting_Click);
+            // 
+            // btnDangerLevelSetting
+            // 
+            this.btnDangerLevelSetting.Location = new System.Drawing.Point(229, 392);
+            this.btnDangerLevelSetting.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.btnDangerLevelSetting.Name = "btnDangerLevelSetting";
+            this.btnDangerLevelSetting.Size = new System.Drawing.Size(102, 30);
+            this.btnDangerLevelSetting.TabIndex = 49;
+            this.btnDangerLevelSetting.Text = "Danger Level Setting";
+            this.btnDangerLevelSetting.UseVisualStyleBackColor = true;
+            this.btnDangerLevelSetting.Click += new System.EventHandler(this.BtnDangerLevelSetting_Click);
+            // 
+            // lblDDangerLevelData
+            // 
+            this.lblDDangerLevelData.AutoSize = true;
+            this.lblDDangerLevelData.Location = new System.Drawing.Point(138, 336);
+            this.lblDDangerLevelData.Name = "lblDDangerLevelData";
+            this.lblDDangerLevelData.Size = new System.Drawing.Size(39, 12);
+            this.lblDDangerLevelData.TabIndex = 48;
+            this.lblDDangerLevelData.Text = "label11";
+            // 
+            // lblDReorderLevelData
+            // 
+            this.lblDReorderLevelData.AutoSize = true;
+            this.lblDReorderLevelData.Location = new System.Drawing.Point(138, 301);
+            this.lblDReorderLevelData.Name = "lblDReorderLevelData";
+            this.lblDReorderLevelData.Size = new System.Drawing.Size(39, 12);
+            this.lblDReorderLevelData.TabIndex = 47;
+            this.lblDReorderLevelData.Text = "label10";
+            // 
+            // lblDActualQtyData
+            // 
+            this.lblDActualQtyData.AutoSize = true;
+            this.lblDActualQtyData.Location = new System.Drawing.Point(138, 265);
+            this.lblDActualQtyData.Name = "lblDActualQtyData";
+            this.lblDActualQtyData.Size = new System.Drawing.Size(33, 12);
+            this.lblDActualQtyData.TabIndex = 46;
+            this.lblDActualQtyData.Text = "label9";
+            // 
+            // lblDProductPriceData
+            // 
+            this.lblDProductPriceData.AutoSize = true;
+            this.lblDProductPriceData.Location = new System.Drawing.Point(138, 230);
+            this.lblDProductPriceData.Name = "lblDProductPriceData";
+            this.lblDProductPriceData.Size = new System.Drawing.Size(33, 12);
+            this.lblDProductPriceData.TabIndex = 45;
+            this.lblDProductPriceData.Text = "label8";
+            // 
+            // lblDProductUnitData
+            // 
+            this.lblDProductUnitData.AutoSize = true;
+            this.lblDProductUnitData.Location = new System.Drawing.Point(138, 195);
+            this.lblDProductUnitData.Name = "lblDProductUnitData";
+            this.lblDProductUnitData.Size = new System.Drawing.Size(33, 12);
+            this.lblDProductUnitData.TabIndex = 44;
+            this.lblDProductUnitData.Text = "label7";
+            // 
+            // lblDProductNameData
+            // 
+            this.lblDProductNameData.AutoSize = true;
+            this.lblDProductNameData.Location = new System.Drawing.Point(139, 97);
+            this.lblDProductNameData.Name = "lblDProductNameData";
+            this.lblDProductNameData.Size = new System.Drawing.Size(33, 12);
+            this.lblDProductNameData.TabIndex = 43;
+            this.lblDProductNameData.Text = "label6";
+            // 
+            // lblDProductDescData
+            // 
+            this.lblDProductDescData.Location = new System.Drawing.Point(141, 130);
+            this.lblDProductDescData.Name = "lblDProductDescData";
+            this.lblDProductDescData.Size = new System.Drawing.Size(212, 60);
+            this.lblDProductDescData.TabIndex = 42;
+            this.lblDProductDescData.Text = "label5";
+            // 
             // lblDProductTypeData
             // 
             this.lblDProductTypeData.AutoSize = true;
@@ -341,7 +429,7 @@
             // lblDangerLevel
             // 
             this.lblDangerLevel.AutoSize = true;
-            this.lblDangerLevel.Location = new System.Drawing.Point(55, 357);
+            this.lblDangerLevel.Location = new System.Drawing.Point(54, 336);
             this.lblDangerLevel.Name = "lblDangerLevel";
             this.lblDangerLevel.Size = new System.Drawing.Size(77, 12);
             this.lblDangerLevel.TabIndex = 39;
@@ -359,7 +447,7 @@
             // lvlReorderLevel
             // 
             this.lvlReorderLevel.AutoSize = true;
-            this.lvlReorderLevel.Location = new System.Drawing.Point(55, 322);
+            this.lvlReorderLevel.Location = new System.Drawing.Point(54, 301);
             this.lvlReorderLevel.Name = "lvlReorderLevel";
             this.lvlReorderLevel.Size = new System.Drawing.Size(78, 12);
             this.lvlReorderLevel.TabIndex = 31;
@@ -368,7 +456,7 @@
             // lblActualQty
             // 
             this.lblActualQty.AutoSize = true;
-            this.lblActualQty.Location = new System.Drawing.Point(49, 286);
+            this.lblActualQty.Location = new System.Drawing.Point(48, 265);
             this.lblActualQty.Name = "lblActualQty";
             this.lblActualQty.Size = new System.Drawing.Size(84, 12);
             this.lblActualQty.TabIndex = 30;
@@ -377,7 +465,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(60, 251);
+            this.label1.Location = new System.Drawing.Point(59, 230);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 12);
             this.label1.TabIndex = 29;
@@ -386,7 +474,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(63, 216);
+            this.label2.Location = new System.Drawing.Point(62, 195);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 12);
             this.label2.TabIndex = 28;
@@ -428,73 +516,11 @@
             this.label4.TabIndex = 24;
             this.label4.Text = "Product ID :";
             // 
-            // lblDProductDescData
-            // 
-            this.lblDProductDescData.Location = new System.Drawing.Point(141, 130);
-            this.lblDProductDescData.Name = "lblDProductDescData";
-            this.lblDProductDescData.Size = new System.Drawing.Size(221, 80);
-            this.lblDProductDescData.TabIndex = 42;
-            this.lblDProductDescData.Text = "label5";
-            // 
-            // lblDProductNameData
-            // 
-            this.lblDProductNameData.AutoSize = true;
-            this.lblDProductNameData.Location = new System.Drawing.Point(139, 97);
-            this.lblDProductNameData.Name = "lblDProductNameData";
-            this.lblDProductNameData.Size = new System.Drawing.Size(33, 12);
-            this.lblDProductNameData.TabIndex = 43;
-            this.lblDProductNameData.Text = "label6";
-            // 
-            // lblDProductUnitData
-            // 
-            this.lblDProductUnitData.AutoSize = true;
-            this.lblDProductUnitData.Location = new System.Drawing.Point(139, 216);
-            this.lblDProductUnitData.Name = "lblDProductUnitData";
-            this.lblDProductUnitData.Size = new System.Drawing.Size(33, 12);
-            this.lblDProductUnitData.TabIndex = 44;
-            this.lblDProductUnitData.Text = "label7";
-            // 
-            // lblDProductPriceData
-            // 
-            this.lblDProductPriceData.AutoSize = true;
-            this.lblDProductPriceData.Location = new System.Drawing.Point(139, 251);
-            this.lblDProductPriceData.Name = "lblDProductPriceData";
-            this.lblDProductPriceData.Size = new System.Drawing.Size(33, 12);
-            this.lblDProductPriceData.TabIndex = 45;
-            this.lblDProductPriceData.Text = "label8";
-            // 
-            // lblDActualQtyData
-            // 
-            this.lblDActualQtyData.AutoSize = true;
-            this.lblDActualQtyData.Location = new System.Drawing.Point(139, 286);
-            this.lblDActualQtyData.Name = "lblDActualQtyData";
-            this.lblDActualQtyData.Size = new System.Drawing.Size(33, 12);
-            this.lblDActualQtyData.TabIndex = 46;
-            this.lblDActualQtyData.Text = "label9";
-            // 
-            // lblDReorderLevelData
-            // 
-            this.lblDReorderLevelData.AutoSize = true;
-            this.lblDReorderLevelData.Location = new System.Drawing.Point(139, 322);
-            this.lblDReorderLevelData.Name = "lblDReorderLevelData";
-            this.lblDReorderLevelData.Size = new System.Drawing.Size(39, 12);
-            this.lblDReorderLevelData.TabIndex = 47;
-            this.lblDReorderLevelData.Text = "label10";
-            // 
-            // lblDDangerLevelData
-            // 
-            this.lblDDangerLevelData.AutoSize = true;
-            this.lblDDangerLevelData.Location = new System.Drawing.Point(139, 357);
-            this.lblDDangerLevelData.Name = "lblDDangerLevelData";
-            this.lblDDangerLevelData.Size = new System.Drawing.Size(39, 12);
-            this.lblDDangerLevelData.TabIndex = 48;
-            this.lblDDangerLevelData.Text = "label11";
-            // 
             // frmInventoryStockRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 487);
+            this.ClientSize = new System.Drawing.Size(1041, 500);
             this.Controls.Add(this.gpbProductDetail);
             this.Controls.Add(this.dgvStockRecord);
             this.Controls.Add(this.btnDeleteProduct);
@@ -557,5 +583,7 @@
         private System.Windows.Forms.Label lblDProductUnitData;
         private System.Windows.Forms.Label lblDProductNameData;
         private System.Windows.Forms.Label lblDProductDescData;
+        private System.Windows.Forms.Button btnReorderLevelSetting;
+        private System.Windows.Forms.Button btnDangerLevelSetting;
     }
 }
