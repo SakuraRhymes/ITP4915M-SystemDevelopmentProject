@@ -23,25 +23,55 @@ namespace SLMCS_Class
         private DataTable salesOrderTable;
 
         public string SalesOrderID { get => salesOrderID; }
-        public string StaffID { get => staffID; }
-        public string SalesOrderDate { get => salesOrderDate; }
+        public string StaffID { get => staffID; set { staffID = value; } }
         public string DealerID
         {
             get => dealerID;
             set { dealerID = value; }
         }
+        public string SalesOrderDate { get => salesOrderDate; }
+        public string SalesOrderEditDate { get => salesOrderEditDate; }
+        public string SalesDispatchDate { get => salesDispatchDate; }
+        public string SalesOrderCompletedDate { get => salesOrderCompletedDate; }
+        public string SalesOrderStatus { get => salesOrderStatus; }
         public List<SalesOrderLine> _SalesOrderLine
         {
             get => _salesOrderLine;
         }
 
-        public SalesOrder(String staffID)
+        public SalesOrder()
         {
             _salesOrderLine = new List<SalesOrderLine>();
             dbConnection = new DBConnection();
-            this.staffID = staffID;
             salesOrderID = getNextSalesOrderID();
             salesOrderDate = DateTime.Now.ToString("yy-MM-dd");
+        }
+
+        public SalesOrder(string orderID)
+        {
+            _salesOrderLine = new List<SalesOrderLine>();
+            dbConnection = new DBConnection();
+
+            string query = "WHERE SalesOrderID = '" + orderID + "'";
+            DataTable dt = searchSalesOrder(query);
+            //MessageBox.Show(query);
+            DataRow[] rows = dt.Select();
+
+            salesOrderID = (string)rows[0]["SalesOrderID"];
+            staffID = (string)rows[0]["StaffID"];
+            dealerID = (string)rows[0]["DealerID"];
+            salesOrderDate = ((DateTime)rows[0]["SalesOrderDate"]).ToString("yy-MM-dd");
+            salesOrderEditDate = ((DateTime)rows[0]["SalesOrderEditDate"]).ToString("yy-MM-dd");
+            //MessageBox.Show(rows[0]["SalesDispatchDate"].ToString());
+            if (rows[0]["SalesDispatchDate"].ToString() != "")
+            {
+                salesDispatchDate = ((DateTime)rows[0]["SalesDispatchDate"]).ToString("yy-MM-dd");
+            }
+            if (rows[0]["SalesOrderCompletedDate"].ToString() != "")
+            {
+                salesDispatchDate = ((DateTime)rows[0]["SalesOrderCompletedDate"]).ToString("yy-MM-dd");
+            }
+            salesOrderStatus = (string)rows[0]["SalesOrderStatus"];
         }
 
         public string getNextSalesOrderID()
@@ -95,6 +125,9 @@ namespace SLMCS_Class
         public void updateStatus(string status)
         {
             salesOrderStatus = status;
+
+            string query = "UPDATE SalesOrder SET SalesOrderStatus = '" + status + "' WHERE SalesOrderID = '" + SalesOrderID + "'";
+            dbConnection.Update(query);
         }
 
         public double getTotalPrice()
@@ -105,6 +138,14 @@ namespace SLMCS_Class
                 total += salesOrderLine.getSubtotalPrice();
             }
             return total;
+        }
+
+        public string getTotalPriceFromDB()
+        {
+            string query = "SELECT * FROM SalesOrderTotalAmount WHERE SalesOrderID = '" + SalesOrderID + "'";
+            DataTable dt = dbConnection.GetDataTable(query);
+            DataRow[] rows = dt.Select();
+            return rows[0]["SUM(Quantity * ProductPrice)"].ToString();
         }
 
         public void addProduct(Product product, int quantity)
@@ -118,7 +159,7 @@ namespace SLMCS_Class
             salesOrderEditDate = DateTime.Now.ToString("yy-MM-dd");
             string query = "INSERT INTO SalesOrder VALUES ('" + SalesOrderID + "','" + StaffID + "','" + DealerID +
                            "','" + SalesOrderDate + "','" + salesOrderEditDate + "',null,null,'" + status + "')";
-            MessageBox.Show(query);
+            //MessageBox.Show(query);
             dbConnection.Insert(query);
 
             foreach (var salesOrderLine in _salesOrderLine)
@@ -129,20 +170,24 @@ namespace SLMCS_Class
 
         public DataTable searchSalesOrder(string condition)
         {
-            string query;
-            if (condition == null)
+            string query = "SELECT * FROM SalesOrder ";
+            if (condition != "")
             {
-                query = "SELECT * FROM SalesOrder";
-            }
-            else
-            {
-                string queryString;
-                query = "";
-                //query = string.Format(queryString, productType);
-
+                query += condition;
             }
             //MessageBox.Show(query);
             return dbConnection.GetDataTable(query);
+        }
+
+        public DataTable searchOrderLine()
+        {
+            string query = "SELECT SalesOrderLine.ProductID, Product.ProductName, Product.ProductType, Product.ProductUnit, SalesOrderLine.Quantity, SalesOrderLine.ProductPrice, SalesOrderLine.Quantity * SalesOrderLine.ProductPrice AS Subtotal FROM SalesOrderLine, Product WHERE SalesOrderLine.ProductID = Product.ProductID AND SalesOrderID = '" + SalesOrderID + "'";
+            return dbConnection.GetDataTable(query);
+        }
+
+        public void cancelOrder()
+        {
+
         }
     }
 }
