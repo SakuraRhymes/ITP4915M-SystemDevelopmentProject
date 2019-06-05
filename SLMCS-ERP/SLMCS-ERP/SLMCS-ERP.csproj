@@ -65,10 +65,10 @@
     <Compile Include="UI\Inventory\frmInventoryDangerLevelSetting.Designer.cs">
       <DependentUpon>frmInventoryDangerLevelSetting.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Inventory\frmInventoryEditProduct.cs">
+    <Compile Include="UI\Inventory\old\frmInventoryEditProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Inventory\frmInventoryEditProduct.Designer.cs">
+    <Compile Include="UI\Inventory\old\frmInventoryEditProduct.Designer.cs">
       <DependentUpon>frmInventoryEditProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Inventory\frmInventoryInwardGoods.cs">
@@ -89,10 +89,10 @@
     <Compile Include="UI\Inventory\frmInventoryMain.Designer.cs">
       <DependentUpon>frmInventoryMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Inventory\frmInventoryNewProduct.cs">
+    <Compile Include="UI\Inventory\old\frmInventoryNewProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Inventory\frmInventoryNewProduct.Designer.cs">
+    <Compile Include="UI\Inventory\old\frmInventoryNewProduct.Designer.cs">
       <DependentUpon>frmInventoryNewProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Inventory\frmInventoryReorderLevelSetting.cs">
@@ -113,10 +113,10 @@
     <Compile Include="UI\Inventory\frmInventoryStockRecord.Designer.cs">
       <DependentUpon>frmInventoryStockRecord.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Inventory\frmInventoryVendorRecord.cs">
+    <Compile Include="UI\Inventory\old\frmInventoryVendorRecord.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Inventory\frmInventoryVendorRecord.Designer.cs">
+    <Compile Include="UI\Inventory\old\frmInventoryVendorRecord.Designer.cs">
       <DependentUpon>frmInventoryVendorRecord.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Login\frmLogin.cs">
@@ -196,7 +196,7 @@
     <EmbeddedResource Include="UI\Inventory\frmInventoryDangerLevelSetting.resx">
       <DependentUpon>frmInventoryDangerLevelSetting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Inventory\frmInventoryEditProduct.resx">
+    <EmbeddedResource Include="UI\Inventory\old\frmInventoryEditProduct.resx">
       <DependentUpon>frmInventoryEditProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Inventory\frmInventoryInwardGoods.resx">
@@ -208,7 +208,7 @@
     <EmbeddedResource Include="UI\Inventory\frmInventoryMain.resx">
       <DependentUpon>frmInventoryMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Inventory\frmInventoryNewProduct.resx">
+    <EmbeddedResource Include="UI\Inventory\old\frmInventoryNewProduct.resx">
       <DependentUpon>frmInventoryNewProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Inventory\frmInventoryReorderLevelSetting.resx">
@@ -220,7 +220,7 @@
     <EmbeddedResource Include="UI\Inventory\frmInventoryStockRecord.resx">
       <DependentUpon>frmInventoryStockRecord.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Inventory\frmInventoryVendorRecord.resx">
+    <EmbeddedResource Include="UI\Inventory\old\frmInventoryVendorRecord.resx">
       <DependentUpon>frmInventoryVendorRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Login\frmLogin.resx">

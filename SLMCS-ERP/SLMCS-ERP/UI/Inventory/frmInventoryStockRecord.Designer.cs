@@ -33,6 +33,8 @@
             this.lblStockQuantity = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.gpbCondition = new System.Windows.Forms.GroupBox();
+            this.cboProductStatus = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.cboProductUnit = new System.Windows.Forms.ComboBox();
             this.lblProductUnit = new System.Windows.Forms.Label();
             this.txtVendorID = new System.Windows.Forms.TextBox();
@@ -48,6 +50,12 @@
             this.lblProductName = new System.Windows.Forms.Label();
             this.dgvStockRecord = new System.Windows.Forms.DataGridView();
             this.gpbProductDetail = new System.Windows.Forms.GroupBox();
+            this.lblDVendorIDData = new System.Windows.Forms.Label();
+            this.vedorid = new System.Windows.Forms.Label();
+            this.lblDProductStatus = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnDangerLevel = new System.Windows.Forms.Button();
+            this.btnReorderLevel = new System.Windows.Forms.Button();
             this.lblDDangerLevelData = new System.Windows.Forms.Label();
             this.lblDReorderLevelData = new System.Windows.Forms.Label();
             this.lblDActualQtyData = new System.Windows.Forms.Label();
@@ -66,14 +74,6 @@
             this.lblDProductType = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnReorderLevel = new System.Windows.Forms.Button();
-            this.btnDangerLevel = new System.Windows.Forms.Button();
-            this.lblDProductStatus = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblDVendorIDData = new System.Windows.Forms.Label();
-            this.vedorid = new System.Windows.Forms.Label();
-            this.cboProductStatus = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.gpbCondition.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockRecord)).BeginInit();
             this.gpbProductDetail.SuspendLayout();
@@ -144,6 +144,27 @@
             this.gpbCondition.TabStop = false;
             this.gpbCondition.Text = "Condition";
             // 
+            // cboProductStatus
+            // 
+            this.cboProductStatus.FormattingEnabled = true;
+            this.cboProductStatus.Items.AddRange(new object[] {
+            "Available",
+            "Unavailable"});
+            this.cboProductStatus.Location = new System.Drawing.Point(375, 122);
+            this.cboProductStatus.Name = "cboProductStatus";
+            this.cboProductStatus.Size = new System.Drawing.Size(135, 20);
+            this.cboProductStatus.TabIndex = 18;
+            this.cboProductStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CboProductStatus_KeyPress);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(292, 125);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 12);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Product Status :";
+            // 
             // cboProductUnit
             // 
             this.cboProductUnit.FormattingEnabled = true;
@@ -187,6 +208,7 @@
             this.txtProductPrice.Name = "txtProductPrice";
             this.txtProductPrice.Size = new System.Drawing.Size(100, 22);
             this.txtProductPrice.TabIndex = 12;
+            this.txtProductPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtProductPrice_KeyPress);
             // 
             // txtStockQuantity
             // 
@@ -194,6 +216,7 @@
             this.txtStockQuantity.Name = "txtStockQuantity";
             this.txtStockQuantity.Size = new System.Drawing.Size(100, 22);
             this.txtStockQuantity.TabIndex = 11;
+            this.txtStockQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtStockQuantity_KeyPress);
             // 
             // txtProductName
             // 
@@ -310,6 +333,62 @@
             this.gpbProductDetail.TabIndex = 9;
             this.gpbProductDetail.TabStop = false;
             this.gpbProductDetail.Text = "Product Detail";
+            // 
+            // lblDVendorIDData
+            // 
+            this.lblDVendorIDData.AutoSize = true;
+            this.lblDVendorIDData.Location = new System.Drawing.Point(309, 36);
+            this.lblDVendorIDData.Name = "lblDVendorIDData";
+            this.lblDVendorIDData.Size = new System.Drawing.Size(45, 12);
+            this.lblDVendorIDData.TabIndex = 55;
+            this.lblDVendorIDData.Text = "XXXXX";
+            // 
+            // vedorid
+            // 
+            this.vedorid.AutoSize = true;
+            this.vedorid.Location = new System.Drawing.Point(242, 36);
+            this.vedorid.Name = "vedorid";
+            this.vedorid.Size = new System.Drawing.Size(61, 12);
+            this.vedorid.TabIndex = 54;
+            this.vedorid.Text = "Vendor ID :";
+            // 
+            // lblDProductStatus
+            // 
+            this.lblDProductStatus.AutoSize = true;
+            this.lblDProductStatus.Location = new System.Drawing.Point(138, 366);
+            this.lblDProductStatus.Name = "lblDProductStatus";
+            this.lblDProductStatus.Size = new System.Drawing.Size(39, 12);
+            this.lblDProductStatus.TabIndex = 53;
+            this.lblDProductStatus.Text = "label11";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(54, 366);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(77, 12);
+            this.label6.TabIndex = 52;
+            this.label6.Text = "Product Status :";
+            // 
+            // btnDangerLevel
+            // 
+            this.btnDangerLevel.Location = new System.Drawing.Point(234, 404);
+            this.btnDangerLevel.Name = "btnDangerLevel";
+            this.btnDangerLevel.Size = new System.Drawing.Size(102, 23);
+            this.btnDangerLevel.TabIndex = 51;
+            this.btnDangerLevel.Text = "Danger Level";
+            this.btnDangerLevel.UseVisualStyleBackColor = true;
+            this.btnDangerLevel.Click += new System.EventHandler(this.BtnDangerLevel_Click);
+            // 
+            // btnReorderLevel
+            // 
+            this.btnReorderLevel.Location = new System.Drawing.Point(56, 404);
+            this.btnReorderLevel.Name = "btnReorderLevel";
+            this.btnReorderLevel.Size = new System.Drawing.Size(102, 23);
+            this.btnReorderLevel.TabIndex = 17;
+            this.btnReorderLevel.Text = "Reorder Level";
+            this.btnReorderLevel.UseVisualStyleBackColor = true;
+            this.btnReorderLevel.Click += new System.EventHandler(this.BtnReorderLevel_Click);
             // 
             // lblDDangerLevelData
             // 
@@ -471,82 +550,6 @@
             this.label4.Size = new System.Drawing.Size(62, 12);
             this.label4.TabIndex = 24;
             this.label4.Text = "Product ID :";
-            // 
-            // btnReorderLevel
-            // 
-            this.btnReorderLevel.Location = new System.Drawing.Point(56, 404);
-            this.btnReorderLevel.Name = "btnReorderLevel";
-            this.btnReorderLevel.Size = new System.Drawing.Size(102, 23);
-            this.btnReorderLevel.TabIndex = 17;
-            this.btnReorderLevel.Text = "Reorder Level";
-            this.btnReorderLevel.UseVisualStyleBackColor = true;
-            this.btnReorderLevel.Click += new System.EventHandler(this.BtnReorderLevel_Click);
-            // 
-            // btnDangerLevel
-            // 
-            this.btnDangerLevel.Location = new System.Drawing.Point(234, 404);
-            this.btnDangerLevel.Name = "btnDangerLevel";
-            this.btnDangerLevel.Size = new System.Drawing.Size(102, 23);
-            this.btnDangerLevel.TabIndex = 51;
-            this.btnDangerLevel.Text = "Danger Level";
-            this.btnDangerLevel.UseVisualStyleBackColor = true;
-            this.btnDangerLevel.Click += new System.EventHandler(this.BtnDangerLevel_Click);
-            // 
-            // lblDProductStatus
-            // 
-            this.lblDProductStatus.AutoSize = true;
-            this.lblDProductStatus.Location = new System.Drawing.Point(138, 366);
-            this.lblDProductStatus.Name = "lblDProductStatus";
-            this.lblDProductStatus.Size = new System.Drawing.Size(39, 12);
-            this.lblDProductStatus.TabIndex = 53;
-            this.lblDProductStatus.Text = "label11";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(54, 366);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 12);
-            this.label6.TabIndex = 52;
-            this.label6.Text = "Product Status :";
-            // 
-            // lblDVendorIDData
-            // 
-            this.lblDVendorIDData.AutoSize = true;
-            this.lblDVendorIDData.Location = new System.Drawing.Point(309, 36);
-            this.lblDVendorIDData.Name = "lblDVendorIDData";
-            this.lblDVendorIDData.Size = new System.Drawing.Size(45, 12);
-            this.lblDVendorIDData.TabIndex = 55;
-            this.lblDVendorIDData.Text = "XXXXX";
-            // 
-            // vedorid
-            // 
-            this.vedorid.AutoSize = true;
-            this.vedorid.Location = new System.Drawing.Point(242, 36);
-            this.vedorid.Name = "vedorid";
-            this.vedorid.Size = new System.Drawing.Size(61, 12);
-            this.vedorid.TabIndex = 54;
-            this.vedorid.Text = "Vendor ID :";
-            // 
-            // cboProductStatus
-            // 
-            this.cboProductStatus.FormattingEnabled = true;
-            this.cboProductStatus.Items.AddRange(new object[] {
-            "Available",
-            "Unavailable"});
-            this.cboProductStatus.Location = new System.Drawing.Point(375, 122);
-            this.cboProductStatus.Name = "cboProductStatus";
-            this.cboProductStatus.Size = new System.Drawing.Size(135, 20);
-            this.cboProductStatus.TabIndex = 18;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(292, 125);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 12);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Product Status :";
             // 
             // frmInventoryStockRecord
             // 
