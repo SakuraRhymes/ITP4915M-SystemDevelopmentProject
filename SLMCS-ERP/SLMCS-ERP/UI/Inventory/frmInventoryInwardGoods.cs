@@ -49,10 +49,7 @@ namespace SLMCS_ERP
 
                 btnConfirm.Enabled = true;
 
-            }
-
-
-            
+            }     
         }
 
         private void FrmInventoryInwardGoods_Load(object sender, EventArgs e)
