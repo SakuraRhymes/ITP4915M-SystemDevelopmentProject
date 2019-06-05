@@ -137,21 +137,6 @@ namespace SLMCS_Class
             reorderOrderTable = dbConnection.GetDataTable(query);
             return reorderOrderTable;
         }
-
-        //public string GetMultiChoiceQuery(string queryString)
-        //{
-        //    var queryArray = queryString.Split('/'); // when have '/' in the string, split into array 
-        //    queryArray = queryArray.Take(queryArray.Count() - 1).ToArray(); //drop the last element of array
-        //    string restOfqueryArray = string.Join(" AND ", queryArray); //use 'AND' to recombine the array
-        //    string finalQuery = " AND " + restOfqueryArray;// add 'WHERE' to become a complete sql query condition
-        //    if (restOfqueryArray == "")
-        //    {
-        //        finalQuery = "";
-        //    }
-
-        //    return finalQuery;
-        //}
-
         public string ReorderOrderID
         {
             get => reorderOrderID;

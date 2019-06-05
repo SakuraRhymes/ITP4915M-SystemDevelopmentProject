@@ -21,6 +21,7 @@ namespace SLMCS_Class
         private int reserveQuantity;
         private int reorderLevel;
         private int dangerLevel;
+        private string productStatus;
 
         private DBConnection dbConnection;
         private DataTable productTable;
@@ -50,6 +51,7 @@ namespace SLMCS_Class
             ReserveQuantity = (int) rows[0]["ReserveQuantity"];
             ReorderLevel = (int)rows[0]["ReorderLevel"];
             DangerLevel = (int)rows[0]["DangerLevel"];
+            ProductStatus = (string)rows[0]["ProductStatus"];
         }
 
         public void CreateNewProduct(string productName, string productType, string productDescription, string productUnit,
@@ -106,7 +108,7 @@ namespace SLMCS_Class
 
         public DataTable GetProdcutTable(string condition)
         {
-            string query = "SELECT ProductID,ProductType,ProductName,ProductUnit,ProductPrice,VendorID,ActualQuantity,ReorderLevel,DangerLevel FROM Product ";
+            string query = "SELECT * FROM Product";
             if (condition != "")
             {
                 query += condition;
@@ -115,27 +117,29 @@ namespace SLMCS_Class
             return dbConnection.GetDataTable(query);
         }
 
+        public DataTable GetProdcutRecordTable(string condition)
+        {
+            string query = "SELECT ProductID,ProductName,ProductType,ProductUnit,ActualQuantity,VendorID FROM Product";
+            if (condition != "")
+            {
+                query += " WHERE " + condition;
+            }
+
+            return dbConnection.GetDataTable(query);
+        }
+
         public DataTable GetProdcutReorderLevelTable()
         {
-            string query = "SELECT ProductID,ProductName,ProductType,ProductUnit,VendorID,ActualQuantity,ReorderLevel FROM ReorderLevelProduct";
-
-
+            string query = "SELECT ProductID,ProductName,ProductType,ProductUnit,VendorID,ActualQuantity FROM ReorderLevelProduct";
             DataTable dataTable = dbConnection.GetDataTable(query);
-           // dataTable.Columns.Add("Selected", typeof(bool)).SetOrdinal(0);
-
             return dataTable;
         }
 
         public DataTable GetProdcutDangerLevelTable()
         {
             string query = "SELECT ProductID,ProductName,ProductType,ProductUnit,VendorID,ActualQuantity,DangerLevel FROM DangerLevelProduct";
-
             DataTable dataTable = dbConnection.GetDataTable(query);
-           // dataTable.Columns.Add("Selected", typeof(bool)).SetOrdinal(0);
-
             return dataTable;
-
-            //return dbConnection.GetDataTable(query);
         }
 
         public DataTable SearchForProduct(string productID)
@@ -187,19 +191,19 @@ namespace SLMCS_Class
             dbConnection.Delete(query);
         }
 
-        public string GetMultiChoiceQuery(string queryString)
-        {
-            var queryArray = queryString.Split('/'); // when have '/' in the string, split into array 
-            queryArray = queryArray.Take(queryArray.Count() - 1).ToArray(); //drop the last element of array
-            string restOfqueryArray = string.Join(" AND ", queryArray); //use 'AND' to recombine the array
-            string finalQuery = "WHERE " + restOfqueryArray;// add 'WHERE' to become a complete sql query condition
-            if (restOfqueryArray == "")
-            {
-                finalQuery = "";
-            }
+        //public string GetMultiChoiceQuery(string queryString)
+        //{
+        //    var queryArray = queryString.Split('/'); // when have '/' in the string, split into array 
+        //    queryArray = queryArray.Take(queryArray.Count() - 1).ToArray(); //drop the last element of array
+        //    string restOfqueryArray = string.Join(" AND ", queryArray); //use 'AND' to recombine the array
+        //    string finalQuery = "WHERE " + restOfqueryArray;// add 'WHERE' to become a complete sql query condition
+        //    if (restOfqueryArray == "")
+        //    {
+        //        finalQuery = "";
+        //    }
 
-            return finalQuery;
-        }
+        //    return finalQuery;
+        //}
 
         //get set method
         public string ProductID
@@ -272,6 +276,12 @@ namespace SLMCS_Class
         {
             get => dangerLevel;
             set => dangerLevel = value;
+        }
+
+        public string ProductStatus
+        {
+            get => productStatus;
+            set => productStatus = value;
         }
 
         public override string ToString()
