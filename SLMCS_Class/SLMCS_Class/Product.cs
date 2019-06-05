@@ -150,6 +150,18 @@ namespace SLMCS_Class
             dbConnection.Update(query);
         }
 
+        public void UpdateReorderLevelQuantity(string reorderLevelQty)
+        {
+            string query = "UPDATE Product SET ReorderLevel = " + reorderLevelQty + " WHERE ProductID = '" + productID +"'";
+            dbConnection.Update(query);
+        }
+
+        public void UpdateDangerLevelQuantity(string dangerLevelQty)
+        {
+            string query = "UPDATE Product SET DangerLevel = " + dangerLevelQty + " WHERE ProductID = '" + productID + "'";
+            dbConnection.Update(query);
+        }
+
         public int getSaleableQuantity(string productID)
         {
             string query = "SELECT * FROM ProductSaleableQuantity WHERE productID = '" + productID + "'";
