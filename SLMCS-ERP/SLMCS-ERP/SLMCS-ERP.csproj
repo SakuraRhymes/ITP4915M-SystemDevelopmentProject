@@ -162,11 +162,29 @@
     <Compile Include="UI\Management\frmManagementMain.Designer.cs">
       <DependentUpon>frmManagementMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Management\frmProductManagement_NewProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Management\frmProductManagement_NewProduct.Designer.cs">
+      <DependentUpon>frmProductManagement_NewProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Management\frmProductManagement.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Management\frmProductManagement.Designer.cs">
       <DependentUpon>frmProductManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Management\frmProductManagement_EditProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Management\frmProductManagement_EditProduct.Designer.cs">
+      <DependentUpon>frmProductManagement_EditProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Management\frmProductManagement_VendorRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Management\frmProductManagement_VendorRecord.Designer.cs">
+      <DependentUpon>frmProductManagement_VendorRecord.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Management\frmStaffManagement.cs">
       <SubType>Form</SubType>
@@ -266,8 +284,17 @@
     <EmbeddedResource Include="UI\Management\frmManagementMain.resx">
       <DependentUpon>frmManagementMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Management\frmProductManagement_NewProduct.resx">
+      <DependentUpon>frmProductManagement_NewProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Management\frmProductManagement.resx">
       <DependentUpon>frmProductManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Management\frmProductManagement_EditProduct.resx">
+      <DependentUpon>frmProductManagement_EditProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Management\frmProductManagement_VendorRecord.resx">
+      <DependentUpon>frmProductManagement_VendorRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Sales\frmNewSalesOrder.resx">
       <DependentUpon>frmNewSalesOrder.cs</DependentUpon>
