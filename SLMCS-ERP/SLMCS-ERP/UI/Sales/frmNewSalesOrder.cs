@@ -19,7 +19,8 @@ namespace SLMCS_ERP.UI.Sales
 
         private void startUp()
         {
-            salesOrder = new SalesOrder(frmMain.CurrentStaff.StaffID);
+            salesOrder = new SalesOrder();
+            salesOrder.StaffID = frmMain.CurrentStaff.StaffID;
             notAvailableMessage = "Not available";
 
             txtDealerID.Focus();

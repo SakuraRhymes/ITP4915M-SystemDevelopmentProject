@@ -53,7 +53,6 @@
     <Compile Include="UI\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="DBConnection.cs" />
     <Compile Include="UI\Inventory\frmInventoryAddReorderProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,15 +139,15 @@
     <Compile Include="UI\Sales\frmSalesOrderRecords.Designer.cs">
       <DependentUpon>frmSalesOrderRecords.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Sales\frmViewOrderRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Sales\frmViewOrderRecord.Designer.cs">
+      <DependentUpon>frmViewOrderRecord.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="UI\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Test\TestConnection.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Test\TestConnection.Designer.cs">
-      <DependentUpon>TestConnection.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="UI\Inventory\frmInventoryAddReorderProduct.resx">
       <DependentUpon>frmInventoryAddReorderProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,11 +196,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Test\TestConnection.resx">
-      <DependentUpon>TestConnection.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\Sales\frmSalesOrderRecords.resx">
       <DependentUpon>frmSalesOrderRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Sales\frmViewOrderRecord.resx">
+      <DependentUpon>frmViewOrderRecord.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
