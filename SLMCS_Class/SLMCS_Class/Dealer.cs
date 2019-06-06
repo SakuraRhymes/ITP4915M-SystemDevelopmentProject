@@ -56,18 +56,16 @@ namespace SLMCS_Class
             string queryString = "UPDATE Dealer SET DealerName='{0}', DealerInvoiceAddress='{1}', DealerShippingAddress='{2}' ,DealerPhoneNo='{3}', DealerStatus='{4}' WHERE DealerID='{5}'";
             
             string query = string.Format(queryString, dealerName, dealerInvoiceAddress, dealerShippingAddress, dealerPhoneNo, dealerStatus, dealerID);
-            MessageBox.Show(query);
             dbConnection.Update(query);
         }
 
         public DataTable GetDealerTable(string condition)
         {
-            string query = "SELECT DealerID, DealerName, DealerPhoneNo, DealerStatus FROM Dealer ";
+            string query = "SELECT DealerID, DealerName, DealerPhoneNo, DealerStatus FROM Dealer WHERE ";
             if (condition != "")
             {
                 query += condition;
             }
-
             return dbConnection.GetDataTable(query);
         }
 

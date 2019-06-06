@@ -209,6 +209,18 @@
     <Compile Include="UI\Management\frmStaffManagement.Designer.cs">
       <DependentUpon>frmStaffManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Management\frmStaffManagement_EditStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Management\frmStaffManagement_EditStaff.Designer.cs">
+      <DependentUpon>frmStaffManagement_EditStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Management\frmStaffManagement_NewStaff .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Management\frmStaffManagement_NewStaff .Designer.cs">
+      <DependentUpon>frmStaffManagement_NewStaff .cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Management\frmVendorManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -327,6 +339,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Management\frmStaffManagement.resx">
       <DependentUpon>frmStaffManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Management\frmStaffManagement_EditStaff.resx">
+      <DependentUpon>frmStaffManagement_EditStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Management\frmStaffManagement_NewStaff .resx">
+      <DependentUpon>frmStaffManagement_NewStaff .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Sales\frmNewSalesOrder.resx">
       <DependentUpon>frmNewSalesOrder.cs</DependentUpon>

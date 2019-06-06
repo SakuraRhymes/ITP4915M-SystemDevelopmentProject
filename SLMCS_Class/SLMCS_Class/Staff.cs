@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using MySql.Data.MySqlClient;
 using SLMCS_ERP;
 
 namespace SLMCS_Class
@@ -14,12 +15,14 @@ namespace SLMCS_Class
         private string staffPhoneNo;
         private string staffPositionID;//determine the system function
         private string departmentID;
+        private string staffStatus;
 
         private DBConnection dbConnection;
         private DataTable staffTable;
 
         private Department _department; //may don't need
         private List<ReorderOrder> _reorderOrder;
+
 
         public Staff()
         {
@@ -36,18 +39,19 @@ namespace SLMCS_Class
             staffTable = dbConnection.GetDataTable(query);
             DataRow[] rows = staffTable.Select();
 
-            StaffID = (string)rows[0]["StaffID"];
-            Password = (string)rows[0]["Password"];
-            PasswordChangeDate = (DateTime)rows[0]["PasswordChangeDate"];
-            StaffName = (string)rows[0]["StaffName"];
-            StaffPhoneNo = (string)rows[0]["StaffPhoneNo"];
+            this.staffID = (string)rows[0]["StaffID"];
+            password = (string)rows[0]["Password"];
+            passwordChangeDate = (DateTime)rows[0]["PasswordChangeDate"];
+            staffName = (string)rows[0]["StaffName"];
+            staffPhoneNo = (string)rows[0]["StaffPhoneNo"];
             //StaffPositionID = (string)rows[0]["StaffPositionID"];
-            DepartmentID = (string)rows[0]["DepartmentID"];
+            departmentID = (string)rows[0]["DepartmentID"];
+            staffStatus = (string)rows[0]["StaffStatus"];
         }
         //login the system via staffID and password
         public bool Verify(string password)
         {
-            return password == Password;
+            return password == this.password;
         }
         //change staff login password
         public bool ChangePassword(string newPassword)
@@ -55,7 +59,7 @@ namespace SLMCS_Class
             if (Verify(password))
             {
                 dbConnection.Update("Staff", "Password='" + newPassword + "', PasswordChangeDate=" + "CURDATE()" + "", "WHERE StaffID='" + staffID + "'");
-                Password = newPassword;
+                password = newPassword;
                 //PasswordChangeDate = DateTime.Today.ToString("dd/MM/yyyy");
                 Console.WriteLine("change successful"); // for testing
                 return true;
@@ -64,6 +68,8 @@ namespace SLMCS_Class
             return false;
         }
         //staffPhoneNo for checking the password
+
+
         public string ForgetPassword(string _staffPhoneNo)
         {
             if (_staffPhoneNo == staffPhoneNo)
@@ -76,15 +82,100 @@ namespace SLMCS_Class
             }
         }
 
-        //CreateStaffAccount incomplete
-        public bool CreateStaffAccount(string staffName, string staffPhoneNo, string staffPositionID, string departmentID)
+        public string RandomPassword()
         {
-            return false;
+            var uperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            var lowerChars = "abcdefghijklmnopqrstuvwxyz";
+            var numbers = "0123456789";
+            var stringChars = new char[7];
+            var random = new Random();
+
+            for (int i = 0; i < 1; i++)
+            {
+                stringChars[i] = uperChars[random.Next(uperChars.Length)];
+            }
+            for (int i = 1; i < 6; i++)
+            {
+                stringChars[i] = numbers[random.Next(numbers.Length)];
+            }
+            for (int i = 6; i < 7; i++)
+            {
+                stringChars[i] = lowerChars[random.Next(lowerChars.Length)];
+            }
+
+            var finalString = new String(stringChars);
+            return finalString;
         }
+
+        //CreateStaffAccount incomplete
+        public void CreateStaffAccount(string password, string staffName, string staffPhoneNo, string departmentID, string staffStatus)
+        {
+                string staffID = GetNextStaffID();
+                string queryString = "INSERT INTO Dealer VALUES ('{0}','{1}','{2}','{3}','{4}',{5},{6},(7))";
+                string query = string.Format(queryString, staffID, password, DateTime.Now.ToString("yyMMdd"), staffName, staffPhoneNo, departmentID, staffStatus);
+
+                try
+                {
+                    dbConnection.Insert(query);
+                }
+                catch (MySqlException ex)
+                {
+                    throw ex;
+                }
+            }
+        public void EditStaffAccount(string staffID, string password, string staffName, string staffPhoneNo, string departmentID, string staffStatus)
+        {
+            string queryString = "UPDATE Staff SET StaffName='{0}', StaffPhoneNo='{1}' ,DepartmentID='{2}', StaffStatus='{3}', Password = {4}, PasswordChangeDate = {5} WHERE StaffID='{6}'";
+            string query = string.Format(queryString, staffName, staffPhoneNo, departmentID, staffStatus, password, DateTime.Now.ToString("yyMMdd") ,staffID);
+
+            try
+            {
+                dbConnection.Update(query);
+            }
+            catch (MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+        public void EditStaffAccountPasswordUnchanged(string staffID, string staffName, string staffPhoneNo, string departmentID, string staffStatus)
+        {
+            string queryString = "UPDATE Staff SET StaffName='{0}', StaffPhoneNo='{1}' ,DepartmentID='{2}', StaffStatus='{3}' WHERE StaffID='{4}'";
+            string query = string.Format(queryString, staffName, staffPhoneNo, departmentID, staffStatus, staffID);
+
+            try
+            {
+                dbConnection.Update(query);
+            }
+            catch (MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+
         //new Staff ID for creation
         public string GetNextStaffID()
         {
-            return "";
+                string query = "SELECT COUNT(StaffID) FROM Staff WHERE StaffID = 'S" + DateTime.Now.ToString("yy") + "%'";
+                staffTable = dbConnection.GetDataTable(query);
+
+                string count = "";
+                foreach (DataRow row in staffTable.Rows)
+                {
+                    count = row["COUNT(StaffID)"].ToString();
+                }
+                count = (Int32.Parse(count) + 1).ToString();
+                string nextOrderID = "SO" + DateTime.Now.ToString("yy") + count.PadLeft(6, '0');
+                return nextOrderID;
+        }
+
+        public DataTable GetStaffTable(string condition)
+        {
+            string query = "SELECT StaffID, StaffName, PasswordChangeDate, DepartmentID, StaffStatus FROM Staff WHERE ";
+            if (condition != "")
+            {
+                query += condition;
+            }
+            return dbConnection.GetDataTable(query);
         }
 
         public void AddReorderOrder(ReorderOrder reorderOrder)
@@ -151,6 +242,7 @@ namespace SLMCS_Class
             get => _department;
             set => _department = value;
         }
+        public string StaffStatus { get => staffStatus; set => staffStatus = value; }
 
         public override string ToString()
         {
