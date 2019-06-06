@@ -253,7 +253,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.Name = "frmInventoryAddReorderProduct";
-            this.Text = "frmInventoryAddReorderProduct";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Add Reorder Product";
             this.Load += new System.EventHandler(this.FrmInventoryAddReorderProduct_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
