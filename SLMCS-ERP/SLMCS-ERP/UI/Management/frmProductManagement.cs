@@ -25,9 +25,9 @@ namespace SLMCS_ERP.UI.Management
             dgvStockRecord.AllowUserToAddRows = false;
             dgvStockRecord.RowHeadersVisible = false;
             dgvStockRecord.ReadOnly = true;
-            cboProductType.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboProductPrice.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboStockQuantity.DropDownStyle = ComboBoxStyle.DropDownList;
+            //cboProductType.DropDownStyle = ComboBoxStyle.DropDownList;
+            //cboProductPrice.DropDownStyle = ComboBoxStyle.DropDownList;
+            //cboStockQuantity.DropDownStyle = ComboBoxStyle.DropDownList;
             lblDProductIDData.Text = "";
             lblDProductTypeData.Text = "";
             lblDProductNameData.Text = "";

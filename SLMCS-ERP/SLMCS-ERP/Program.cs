@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SLMCS_ERP.UI.Management;
 
 namespace SLMCS_ERP
 {
