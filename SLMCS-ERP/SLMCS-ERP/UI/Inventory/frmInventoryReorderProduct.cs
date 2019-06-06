@@ -23,14 +23,12 @@ namespace SLMCS_ERP
         private void BtnReorderLevel_Click(object sender, EventArgs e)
         {
             dgvSearchRecord.DataSource = product.GetProdcutReorderLevelTable();
-            //dgvSearchRecord.Rows[0].Selected = true;
             DGVSearchRecordDangerReorderFormatSetting();
         }
 
         private void BtnDangerLevel_Click(object sender, EventArgs e)
         {
             dgvSearchRecord.DataSource = product.GetProdcutDangerLevelTable();
-            //dgvSearchRecord.Rows[0].Selected = true;
             DGVSearchRecordDangerReorderFormatSetting();
         }
 
@@ -70,10 +68,14 @@ namespace SLMCS_ERP
             dgvReorderOrder.AllowUserToAddRows = false;
             dgvReorderOrder.RowHeadersVisible = false;
             dgvReorderOrder.ReadOnly = true;
-            
+            dgvReorderOrder.AllowUserToResizeRows = false;
+            dgvReorderOrder.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
             dgvSearchRecord.AllowUserToAddRows = false;
             dgvSearchRecord.RowHeadersVisible = false;
             dgvSearchRecord.ReadOnly = true;
+            dgvSearchRecord.AllowUserToResizeRows = false;
+            dgvSearchRecord.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             lblReorderOrderID.Text = "Reorder Order ID : " + reorderOrder.GetNextReorderOrderID();
             cboCondition.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -102,19 +104,8 @@ namespace SLMCS_ERP
 
         private void DgvSearchRecord_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-
             frmInventoryAddReorderProduct inventoryAddReorderProduct = new frmInventoryAddReorderProduct(this, selectedProductID);
-            inventoryAddReorderProduct.Show();
-
-            //int quantity = 10;
-            //Product product = new Product(selectedProductID);
-            //reorderOrder.AddReorderProductLine(product, quantity);
-    
-
-            //dgvReorderOrder.DataSource = null;
-            //dgvReorderOrder.DataSource = reorderOrder.GetReorderProductLine();
-            
+            inventoryAddReorderProduct.Show();     
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)

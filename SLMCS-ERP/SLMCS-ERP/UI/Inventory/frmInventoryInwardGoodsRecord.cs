@@ -52,7 +52,6 @@ namespace SLMCS_ERP
             if (e.RowIndex != -1)
             {
                 selectReorderOrderID = dgvInwardGoodsRecord.Rows[e.RowIndex].Cells["Order ID"].Value.ToString();
-                dgvInwardGoodsRecord.Rows[e.RowIndex].Selected = true;
                 reorderOrder = new ReorderOrder(selectReorderOrderID);
 
                 lblDReorderOrderIDData.Text = reorderOrder.ReorderOrderID;
@@ -73,10 +72,14 @@ namespace SLMCS_ERP
             dgvInwardGoodsRecord.AllowUserToAddRows = false;
             dgvInwardGoodsRecord.RowHeadersVisible = false;
             dgvInwardGoodsRecord.ReadOnly = true;
+            dgvInwardGoodsRecord.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvInwardGoodsRecord.AllowUserToResizeRows = false;
 
             dgvReorderOrderLine.AllowUserToAddRows = false;
             dgvReorderOrderLine.RowHeadersVisible = false;
             dgvReorderOrderLine.ReadOnly = true;
+            dgvReorderOrderLine.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvReorderOrderLine.AllowUserToResizeRows = false;
 
             lblDReorderOrderIDData.Text = "---";
             lblDStaffIDData.Text = "---";
