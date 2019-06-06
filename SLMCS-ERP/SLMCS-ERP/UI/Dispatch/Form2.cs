@@ -7,14 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SLMCS_Class;
 
 namespace SLMCS_ERP.UI.Dispatch
 {
-    public partial class frmGenerateDID : Form
+    public partial class Form2 : Form
     {
-        private SalesOrderLine salesOrderLine;
-        public frmGenerateDID(string selectedSalesOrderLineOrderID, string selectedSalesOrderLineProductID, string selectedSalesOrderLineQuantity)
+        public Form2()
         {
             InitializeComponent();
         }

@@ -8,17 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SLMCS_Class;
+using SLMCS_ERP.UI.Dispatch;
+using SLMCS_ERP.UI.Sales;
 
 
 namespace SLMCS_ERP{
     public partial class frmDispatchingList : Form
     {
         private string selectedOrderID;
+        private String selectedOrderDetail;
         private SalesOrder salesOrder;
+
         public frmDispatchingList()
         {
+
             salesOrder = new SalesOrder();
-            
+
             InitializeComponent();
             startUp();
         }
@@ -26,7 +31,7 @@ namespace SLMCS_ERP{
         private void startUp()
         {
             dgvOrderDetail.DataSource = null;
-            changeDispatchingDvgContect(salesOrder.getSalesOrderTableBySalesOrderStatus("Dispatching"));
+            changeDispatchingDvgContect(salesOrder.getSalesOrderTableBySalesOrderStatus("Processing"));
         }
 
         private void DataGridView2_Load(object sender, DataGridViewCellEventArgs e)
@@ -71,7 +76,7 @@ namespace SLMCS_ERP{
                 andCount--;
             }
 
-            condition += "SalesOrderStatus = \"Dispatching\"";
+            condition += "SalesOrderStatus = \"Processing\"";
 
             //System.Windows.Forms.MessageBox.Show(condition);
             changeDispatchingDvgContect(salesOrder.getSalesTableByWhereQuery(condition));
@@ -112,14 +117,14 @@ namespace SLMCS_ERP{
 
         private void refreshDvg()
         {
-            changeDispatchingDvgContect(salesOrder.getSalesOrderTableBySalesOrderStatus("Dispatching"));
+            changeDispatchingDvgContect(salesOrder.getSalesOrderTableBySalesOrderStatus("Processing"));
 
         }
 
         private void GroupBox2_Enter(object sender, EventArgs e)
         {
 
-            changeDispatchingDvgContect(salesOrder.getSalesOrderTableBySalesOrderStatus("Dispatching"));
+            changeDispatchingDvgContect(salesOrder.getSalesOrderTableBySalesOrderStatus("Processing"));
         }
 
         private void GroupBox4_Enter(object sender, EventArgs e)
@@ -143,6 +148,28 @@ namespace SLMCS_ERP{
                 }
             }
             
+        }
+
+        private void BtnGenerateForDID_Click(object sender, EventArgs e)
+        {
+            //OpenGenerateDIDForm(selectedOrderID);
+        }
+
+        private void OpenGenerateDIDForm(string selectedOrderID)
+        {
+            //frmGenerateDID generateDID = new frmGenerateDID(selectedOrderID);
+            //generateDID.Show();
+        }
+
+        private void BtnGenerateForDIC_Click(object sender, EventArgs e)
+        {
+            OpenGenerateDICForm(selectedOrderID);
+        }
+
+        private void OpenGenerateDICForm(string selectedOrderID)
+        {
+            frmGenerateDIC generateDIC = new frmGenerateDIC(selectedOrderID);
+            generateDIC.Show();
         }
     }
 }
