@@ -40,6 +40,9 @@
             this.btnSearchDealer = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblDealerStatus = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.lblDealerInvoiceAddress = new System.Windows.Forms.Label();
             this.lblDealerShippingAddress = new System.Windows.Forms.Label();
             this.lblDealerPhoneNo = new System.Windows.Forms.Label();
@@ -57,7 +60,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnNewDealer = new System.Windows.Forms.Button();
-            this.butDisable = new System.Windows.Forms.Button();
             this.btnEditDealer = new System.Windows.Forms.Button();
             this.dgvDealerList = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
@@ -179,6 +181,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblDealerStatus);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.lblDealerInvoiceAddress);
             this.groupBox2.Controls.Add(this.lblDealerShippingAddress);
             this.groupBox2.Controls.Add(this.lblDealerPhoneNo);
@@ -196,26 +201,51 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Location = new System.Drawing.Point(676, 23);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(337, 446);
+            this.groupBox2.Size = new System.Drawing.Size(337, 474);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dealer Detail";
             // 
+            // lblDealerStatus
+            // 
+            this.lblDealerStatus.AutoSize = true;
+            this.lblDealerStatus.Location = new System.Drawing.Point(136, 388);
+            this.lblDealerStatus.Name = "lblDealerStatus";
+            this.lblDealerStatus.Size = new System.Drawing.Size(17, 12);
+            this.lblDealerStatus.TabIndex = 22;
+            this.lblDealerStatus.Text = "---";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(110, 388);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(8, 12);
+            this.label13.TabIndex = 21;
+            this.label13.Text = ":";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(24, 388);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(65, 12);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "Dealer Status";
+            // 
             // lblDealerInvoiceAddress
             // 
-            this.lblDealerInvoiceAddress.AutoSize = true;
             this.lblDealerInvoiceAddress.Location = new System.Drawing.Point(136, 213);
             this.lblDealerInvoiceAddress.Name = "lblDealerInvoiceAddress";
-            this.lblDealerInvoiceAddress.Size = new System.Drawing.Size(17, 12);
+            this.lblDealerInvoiceAddress.Size = new System.Drawing.Size(136, 59);
             this.lblDealerInvoiceAddress.TabIndex = 19;
             this.lblDealerInvoiceAddress.Text = "---";
             // 
             // lblDealerShippingAddress
             // 
-            this.lblDealerShippingAddress.AutoSize = true;
             this.lblDealerShippingAddress.Location = new System.Drawing.Point(136, 311);
             this.lblDealerShippingAddress.Name = "lblDealerShippingAddress";
-            this.lblDealerShippingAddress.Size = new System.Drawing.Size(17, 12);
+            this.lblDealerShippingAddress.Size = new System.Drawing.Size(136, 55);
             this.lblDealerShippingAddress.TabIndex = 18;
             this.lblDealerShippingAddress.Text = "---";
             // 
@@ -339,57 +369,56 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnNewDealer);
-            this.groupBox3.Controls.Add(this.butDisable);
             this.groupBox3.Controls.Add(this.btnEditDealer);
             this.groupBox3.Controls.Add(this.dgvDealerList);
             this.groupBox3.Location = new System.Drawing.Point(18, 172);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(646, 297);
+            this.groupBox3.Size = new System.Drawing.Size(646, 325);
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dealer List";
             // 
             // btnNewDealer
             // 
-            this.btnNewDealer.Location = new System.Drawing.Point(389, 268);
+            this.btnNewDealer.Location = new System.Drawing.Point(472, 295);
             this.btnNewDealer.Name = "btnNewDealer";
             this.btnNewDealer.Size = new System.Drawing.Size(75, 23);
             this.btnNewDealer.TabIndex = 3;
             this.btnNewDealer.Text = "New Dealer";
             this.btnNewDealer.UseVisualStyleBackColor = true;
-            // 
-            // butDisable
-            // 
-            this.butDisable.Location = new System.Drawing.Point(571, 268);
-            this.butDisable.Name = "butDisable";
-            this.butDisable.Size = new System.Drawing.Size(75, 23);
-            this.butDisable.TabIndex = 2;
-            this.butDisable.Text = "Disable";
-            this.butDisable.UseVisualStyleBackColor = true;
+            this.btnNewDealer.Click += new System.EventHandler(this.BtnNewDealer_Click);
             // 
             // btnEditDealer
             // 
-            this.btnEditDealer.Location = new System.Drawing.Point(480, 268);
+            this.btnEditDealer.Location = new System.Drawing.Point(565, 295);
             this.btnEditDealer.Name = "btnEditDealer";
             this.btnEditDealer.Size = new System.Drawing.Size(75, 23);
             this.btnEditDealer.TabIndex = 1;
             this.btnEditDealer.Text = "Edit Dealer";
             this.btnEditDealer.UseVisualStyleBackColor = true;
+            this.btnEditDealer.Click += new System.EventHandler(this.BtnEditDealer_Click);
             // 
             // dgvDealerList
             // 
-            this.dgvDealerList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDealerList.AllowUserToAddRows = false;
+            this.dgvDealerList.AllowUserToResizeColumns = false;
+            this.dgvDealerList.AllowUserToResizeRows = false;
+            this.dgvDealerList.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvDealerList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvDealerList.Location = new System.Drawing.Point(0, 21);
             this.dgvDealerList.Name = "dgvDealerList";
+            this.dgvDealerList.ReadOnly = true;
             this.dgvDealerList.RowTemplate.Height = 24;
-            this.dgvDealerList.Size = new System.Drawing.Size(646, 241);
+            this.dgvDealerList.Size = new System.Drawing.Size(646, 261);
             this.dgvDealerList.TabIndex = 0;
+            this.dgvDealerList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDealerList_CellClick);
+            this.dgvDealerList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDealerList_CellDoubleClick);
             // 
             // frmDealerManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 481);
+            this.ClientSize = new System.Drawing.Size(1025, 515);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -422,7 +451,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnNewDealer;
-        private System.Windows.Forms.Button butDisable;
         private System.Windows.Forms.Button btnEditDealer;
         private System.Windows.Forms.DataGridView dgvDealerList;
         private System.Windows.Forms.Label label11;
@@ -440,5 +468,8 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblDealerStatus;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
     }
 }

@@ -161,6 +161,18 @@
     <Compile Include="UI\Management\frmDealerManagement.Designer.cs">
       <DependentUpon>frmDealerManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Management\frmDealerManagement_EditDealer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Management\frmDealerManagement_EditDealer.Designer.cs">
+      <DependentUpon>frmDealerManagement_EditDealer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Management\frmDealerManagement_NewDealer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Management\frmDealerManagement_NewDealer.Designer.cs">
+      <DependentUpon>frmDealerManagement_NewDealer.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Management\frmManagementMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -291,6 +303,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Management\frmDealerManagement.resx">
       <DependentUpon>frmDealerManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Management\frmDealerManagement_EditDealer.resx">
+      <DependentUpon>frmDealerManagement_EditDealer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Management\frmDealerManagement_NewDealer.resx">
+      <DependentUpon>frmDealerManagement_NewDealer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Management\frmManagementMain.resx">
       <DependentUpon>frmManagementMain.cs</DependentUpon>

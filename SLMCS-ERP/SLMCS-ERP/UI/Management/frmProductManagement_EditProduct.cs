@@ -23,9 +23,12 @@ namespace SLMCS_ERP.UI.Management
         {
             InitializeComponent();
             product = new Product(productID);
+            frmProductManagement_EditProduct_Load();
+
+
         }
 
-        private void frmProductManagement_EditProduct_Load(object sender, EventArgs e)
+        private void frmProductManagement_EditProduct_Load()
         {
             lblProductIDData.Text = product.ProductID;
             lblProductTypeData.Text = product.ProductType;
@@ -36,7 +39,7 @@ namespace SLMCS_ERP.UI.Management
             txtActualQty.Text = product.ActualQuantity.ToString();
             txtReorderLevel.Text = product.ReorderLevel.ToString();
             txtDangerLevel.Text = product.DangerLevel.ToString();
-
+            ckbProductStatus.Checked = (product.ProductStatus == "Available");
             //cboProductType.DropDownStyle = ComboBoxStyle.DropDownList;
             cboProductUnit.DropDownStyle = ComboBoxStyle.DropDownList;
 
@@ -44,7 +47,7 @@ namespace SLMCS_ERP.UI.Management
 
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
-            product.UpdateProductDetail(lblProductIDData.Text, lblProductTypeData.Text, txtProductName.Text, rtbProductDesc.Text, cboProductUnit.Text, txtProductPrice.Text, txtActualQty.Text, txtReorderLevel.Text, txtDangerLevel.Text);
+            product.UpdateProductDetail(lblProductIDData.Text, lblProductTypeData.Text, txtProductName.Text, rtbProductDesc.Text, cboProductUnit.Text, txtProductPrice.Text, txtActualQty.Text, txtReorderLevel.Text, txtDangerLevel.Text, (ckbProductStatus.Checked? "Available": "UnAvailable"));
             string successfulMessage = "Product ID:" + lblProductIDData.Text + " has been updated";
             MessageBox.Show(successfulMessage);
             this.Close();
@@ -52,7 +55,7 @@ namespace SLMCS_ERP.UI.Management
 
         private void BtnReset_Click(object sender, EventArgs e)
         {
-            frmProductManagement_EditProduct_Load(sender, e);
+            frmProductManagement_EditProduct_Load();
         }
 
         private void TxtProductPrice_KeyPress(object sender, KeyPressEventArgs e)

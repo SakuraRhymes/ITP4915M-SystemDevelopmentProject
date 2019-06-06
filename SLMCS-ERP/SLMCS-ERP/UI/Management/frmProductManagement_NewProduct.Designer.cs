@@ -53,11 +53,13 @@
             this.btnSearchVendor.TabIndex = 28;
             this.btnSearchVendor.Text = "Search";
             this.btnSearchVendor.UseVisualStyleBackColor = true;
+            this.btnSearchVendor.Click += new System.EventHandler(this.BtnSearchVendor_Click);
             // 
             // txtVendorID
             // 
             this.txtVendorID.Location = new System.Drawing.Point(126, 9);
             this.txtVendorID.Name = "txtVendorID";
+            this.txtVendorID.ReadOnly = true;
             this.txtVendorID.Size = new System.Drawing.Size(100, 22);
             this.txtVendorID.TabIndex = 14;
             // 
@@ -99,6 +101,7 @@
             this.btnReset.TabIndex = 25;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // btnSubmit
             // 
@@ -108,6 +111,7 @@
             this.btnSubmit.TabIndex = 24;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
             // 
             // txtProductPrice
             // 
@@ -180,7 +184,7 @@
             this.lblProductType.TabIndex = 15;
             this.lblProductType.Text = "Product Type :";
             // 
-            // frmManagementNewProduct
+            // frmProductManagement_NewProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -200,7 +204,7 @@
             this.Controls.Add(this.lblProductDescription);
             this.Controls.Add(this.lblProductName);
             this.Controls.Add(this.lblProductType);
-            this.Name = "frmManagementNewProduct";
+            this.Name = "frmProductManagement_NewProduct";
             this.Text = "frmManagementNewProduct";
             this.ResumeLayout(false);
             this.PerformLayout();

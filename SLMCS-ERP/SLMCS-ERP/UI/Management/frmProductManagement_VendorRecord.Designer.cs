@@ -36,12 +36,20 @@
             // 
             // dgvVendorRecord
             // 
-            this.dgvVendorRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVendorRecord.AllowUserToAddRows = false;
+            this.dgvVendorRecord.AllowUserToDeleteRows = false;
+            this.dgvVendorRecord.AllowUserToResizeColumns = false;
+            this.dgvVendorRecord.AllowUserToResizeRows = false;
+            this.dgvVendorRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvVendorRecord.Location = new System.Drawing.Point(11, 12);
+            this.dgvVendorRecord.MultiSelect = false;
             this.dgvVendorRecord.Name = "dgvVendorRecord";
+            this.dgvVendorRecord.ReadOnly = true;
             this.dgvVendorRecord.RowTemplate.Height = 24;
+            this.dgvVendorRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVendorRecord.Size = new System.Drawing.Size(392, 334);
             this.dgvVendorRecord.TabIndex = 5;
+            this.dgvVendorRecord.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvVendorRecord_CellDoubleClick);
             // 
             // btnSelect
             // 
@@ -51,6 +59,7 @@
             this.btnSelect.TabIndex = 4;
             this.btnSelect.Text = "Select";
             this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.BtnSelect_Click);
             // 
             // btnCancel
             // 
@@ -60,6 +69,7 @@
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // frmProductManagement_VendorRecord
             // 

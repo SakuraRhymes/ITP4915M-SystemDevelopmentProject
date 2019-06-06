@@ -48,7 +48,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvStockRecord = new System.Windows.Forms.DataGridView();
-            this.btnDeleteProduct = new System.Windows.Forms.Button();
             this.btnEditProduct = new System.Windows.Forms.Button();
             this.btnNewProduct = new System.Windows.Forms.Button();
             this.gpbCondition = new System.Windows.Forms.GroupBox();
@@ -70,6 +69,8 @@
             this.lblProductID = new System.Windows.Forms.Label();
             this.lblProductType = new System.Windows.Forms.Label();
             this.gboxStockRecord = new System.Windows.Forms.GroupBox();
+            this.lblProductStatus = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.gpbProductDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockRecord)).BeginInit();
             this.gpbCondition.SuspendLayout();
@@ -78,6 +79,8 @@
             // 
             // gpbProductDetail
             // 
+            this.gpbProductDetail.Controls.Add(this.lblProductStatus);
+            this.gpbProductDetail.Controls.Add(this.label6);
             this.gpbProductDetail.Controls.Add(this.lblDDangerLevelData);
             this.gpbProductDetail.Controls.Add(this.lblDReorderLevelData);
             this.gpbProductDetail.Controls.Add(this.lblDActualQtyData);
@@ -266,26 +269,26 @@
             // 
             // dgvStockRecord
             // 
-            this.dgvStockRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStockRecord.AllowUserToAddRows = false;
+            this.dgvStockRecord.AllowUserToResizeColumns = false;
+            this.dgvStockRecord.AllowUserToResizeRows = false;
+            this.dgvStockRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvStockRecord.Location = new System.Drawing.Point(18, 236);
+            this.dgvStockRecord.MultiSelect = false;
             this.dgvStockRecord.Name = "dgvStockRecord";
+            this.dgvStockRecord.ReadOnly = true;
+            this.dgvStockRecord.RowHeadersVisible = false;
+            this.dgvStockRecord.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvStockRecord.RowTemplate.Height = 24;
+            this.dgvStockRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStockRecord.Size = new System.Drawing.Size(629, 222);
             this.dgvStockRecord.TabIndex = 14;
-            // 
-            // btnDeleteProduct
-            // 
-            this.btnDeleteProduct.Location = new System.Drawing.Point(526, 253);
-            this.btnDeleteProduct.Name = "btnDeleteProduct";
-            this.btnDeleteProduct.Size = new System.Drawing.Size(103, 29);
-            this.btnDeleteProduct.TabIndex = 13;
-            this.btnDeleteProduct.Text = "Stop supply";
-            this.btnDeleteProduct.UseVisualStyleBackColor = true;
-            this.btnDeleteProduct.Click += new System.EventHandler(this.BtnDeleteProduct_Click);
+            this.dgvStockRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvStockRecord_CellClick);
+            this.dgvStockRecord.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvStockRecord_CellDoubleClick);
             // 
             // btnEditProduct
             // 
-            this.btnEditProduct.Location = new System.Drawing.Point(422, 253);
+            this.btnEditProduct.Location = new System.Drawing.Point(529, 252);
             this.btnEditProduct.Name = "btnEditProduct";
             this.btnEditProduct.Size = new System.Drawing.Size(96, 29);
             this.btnEditProduct.TabIndex = 12;
@@ -295,7 +298,7 @@
             // 
             // btnNewProduct
             // 
-            this.btnNewProduct.Location = new System.Drawing.Point(317, 253);
+            this.btnNewProduct.Location = new System.Drawing.Point(424, 252);
             this.btnNewProduct.Name = "btnNewProduct";
             this.btnNewProduct.Size = new System.Drawing.Size(97, 29);
             this.btnNewProduct.TabIndex = 11;
@@ -462,6 +465,7 @@
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.RefreshSearchResult);
+            this.btnSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BtnSearch_KeyDown);
             // 
             // lblStockQuantity
             // 
@@ -492,7 +496,6 @@
             // 
             // gboxStockRecord
             // 
-            this.gboxStockRecord.Controls.Add(this.btnDeleteProduct);
             this.gboxStockRecord.Controls.Add(this.btnEditProduct);
             this.gboxStockRecord.Controls.Add(this.btnNewProduct);
             this.gboxStockRecord.Location = new System.Drawing.Point(18, 212);
@@ -501,6 +504,24 @@
             this.gboxStockRecord.TabIndex = 16;
             this.gboxStockRecord.TabStop = false;
             this.gboxStockRecord.Text = "Stock Record List";
+            // 
+            // lblProductStatus
+            // 
+            this.lblProductStatus.AutoSize = true;
+            this.lblProductStatus.Location = new System.Drawing.Point(128, 370);
+            this.lblProductStatus.Name = "lblProductStatus";
+            this.lblProductStatus.Size = new System.Drawing.Size(17, 12);
+            this.lblProductStatus.TabIndex = 50;
+            this.lblProductStatus.Text = "---";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(44, 370);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(77, 12);
+            this.label6.TabIndex = 49;
+            this.label6.Text = "Product Status :";
             // 
             // frmProductManagement
             // 
@@ -546,7 +567,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgvStockRecord;
-        private System.Windows.Forms.Button btnDeleteProduct;
         private System.Windows.Forms.Button btnEditProduct;
         private System.Windows.Forms.Button btnNewProduct;
         private System.Windows.Forms.GroupBox gpbCondition;
@@ -568,5 +588,7 @@
         private System.Windows.Forms.Label lblProductID;
         private System.Windows.Forms.Label lblProductType;
         private System.Windows.Forms.GroupBox gboxStockRecord;
+        private System.Windows.Forms.Label lblProductStatus;
+        private System.Windows.Forms.Label label6;
     }
 }

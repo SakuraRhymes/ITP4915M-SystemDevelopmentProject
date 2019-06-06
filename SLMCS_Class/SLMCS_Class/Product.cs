@@ -195,11 +195,11 @@ namespace SLMCS_Class
             return Convert.ToInt32(rows[0]["SaleableQuantity"]);
         }
 
-        public void UpdateProductDetail(string productID, string productType, string productName, string productDesc, string productUnit, string productPrice, string actualQuantity, string reorderLevel, string dangerLevel)
+        public void UpdateProductDetail(string productID, string productType, string productName, string productDesc, string productUnit, string productPrice, string actualQuantity, string reorderLevel, string dangerLevel, string productStatus)
         {
-            string queryString = "UPDATE Product SET ProductType='{0}', ProductName='{1}', ProductDescription='{2}' ,ProductUnit='{3}', ProductPrice={4}, ActualQuantity={5}, ReorderLevel={6}, DangerLevel={7} WHERE ProductID='{8}'";
+            string queryString = "UPDATE Product SET ProductType='{0}', ProductName='{1}', ProductDescription='{2}' ,ProductUnit='{3}', ProductPrice={4}, ActualQuantity={5}, ReorderLevel={6}, DangerLevel={7}, ProductStatus={8} WHERE ProductID='{9}'";
 
-            string query = string.Format(queryString, productType, productName, productDesc, productUnit, productPrice, actualQuantity, reorderLevel, dangerLevel, productID);
+            string query = string.Format(queryString, productType, productName, productDesc, productUnit, productPrice, actualQuantity, reorderLevel, dangerLevel, productStatus, productID);
             //MessageBox.Show(q);
             dbConnection.Update(query);
         }

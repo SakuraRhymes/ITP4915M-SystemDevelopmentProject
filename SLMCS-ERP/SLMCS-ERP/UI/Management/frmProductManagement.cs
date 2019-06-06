@@ -54,7 +54,7 @@ namespace SLMCS_ERP.UI.Management
 
         private void BtnEditProduct_Click(object sender, EventArgs e)
         {
-
+            OpenEditProductForm();
         }
 
         private void DgvStockRecord_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -74,19 +74,30 @@ namespace SLMCS_ERP.UI.Management
                 lblDActualQtyData.Text = product.ActualQuantity.ToString();
                 lblDReorderLevelData.Text = product.ReorderLevel.ToString();
                 lblDDangerLevelData.Text = product.DangerLevel.ToString();
+                lblProductStatus.Text = product.ProductStatus.ToString();
             }
         }
 
         private void DgvStockRecord_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            OpenEditProductForm(selectedProductID);
-            dgvStockRecord.Rows[e.RowIndex].Selected = true;
+            if (selectedProductID != "")
+            {
+                OpenEditProductForm();
+                dgvStockRecord.Rows[e.RowIndex].Selected = true;
+            }
         }
 
-        private void OpenEditProductForm(string selectedProductID)
+        private void OpenEditProductForm()
         {
-            frmProductManagement_EditProduct productManagement_EditProduct = new frmProductManagement_EditProduct(selectedProductID);
-            productManagement_EditProduct.Show();
+            if (selectedProductID != "")
+            {
+                frmProductManagement_EditProduct productManagement_EditProduct = new frmProductManagement_EditProduct(selectedProductID);
+                productManagement_EditProduct.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please select a product");
+            }
         }
 
         private void BtnDeleteProduct_Click(object sender, EventArgs e)
@@ -109,7 +120,8 @@ namespace SLMCS_ERP.UI.Management
 
         private void RefreshSearchResult(object sender, EventArgs e)
         {
-            BtnSearch_Click(sender, e);
+            dgvStockRecord.DataSource = product.GetProdcutTable("");
+
         }
 
         private string ProductMultiSearchString()
@@ -182,17 +194,19 @@ namespace SLMCS_ERP.UI.Management
 
         private void DGVSearchFormatSetting()
         {
-            //dgvStockRecord.Rows[0].Selected = true;
+            dgvStockRecord.Rows[0].Selected = true;
 
-            //dgvStockRecord.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //dgvStockRecord.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //dgvStockRecord.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //dgvStockRecord.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //dgvStockRecord.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //dgvStockRecord.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //dgvStockRecord.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //dgvStockRecord.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //dgvStockRecord.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-        }  
+            dgvStockRecord.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvStockRecord.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvStockRecord.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvStockRecord.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvStockRecord.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvStockRecord.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+
+        private void BtnSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            BtnSearch_Click(sender, e);
+        }
     }
 }

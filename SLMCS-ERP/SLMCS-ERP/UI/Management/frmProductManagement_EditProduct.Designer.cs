@@ -48,12 +48,14 @@
             this.lblProductID = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ckbProductStatus = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // lblProductTypeData
             // 
             this.lblProductTypeData.AutoSize = true;
-            this.lblProductTypeData.Location = new System.Drawing.Point(127, 42);
+            this.lblProductTypeData.Location = new System.Drawing.Point(127, 53);
             this.lblProductTypeData.Name = "lblProductTypeData";
             this.lblProductTypeData.Size = new System.Drawing.Size(45, 12);
             this.lblProductTypeData.TabIndex = 41;
@@ -61,7 +63,7 @@
             // 
             // txtDangerLevel
             // 
-            this.txtDangerLevel.Location = new System.Drawing.Point(127, 275);
+            this.txtDangerLevel.Location = new System.Drawing.Point(127, 286);
             this.txtDangerLevel.Name = "txtDangerLevel";
             this.txtDangerLevel.Size = new System.Drawing.Size(100, 22);
             this.txtDangerLevel.TabIndex = 40;
@@ -69,7 +71,7 @@
             // lblDangerLevel
             // 
             this.lblDangerLevel.AutoSize = true;
-            this.lblDangerLevel.Location = new System.Drawing.Point(43, 278);
+            this.lblDangerLevel.Location = new System.Drawing.Point(43, 289);
             this.lblDangerLevel.Name = "lblDangerLevel";
             this.lblDangerLevel.Size = new System.Drawing.Size(77, 12);
             this.lblDangerLevel.TabIndex = 39;
@@ -78,7 +80,7 @@
             // lblProductIDData
             // 
             this.lblProductIDData.AutoSize = true;
-            this.lblProductIDData.Location = new System.Drawing.Point(127, 16);
+            this.lblProductIDData.Location = new System.Drawing.Point(127, 27);
             this.lblProductIDData.Name = "lblProductIDData";
             this.lblProductIDData.Size = new System.Drawing.Size(45, 12);
             this.lblProductIDData.TabIndex = 38;
@@ -86,7 +88,7 @@
             // 
             // rtbProductDesc
             // 
-            this.rtbProductDesc.Location = new System.Drawing.Point(127, 90);
+            this.rtbProductDesc.Location = new System.Drawing.Point(127, 101);
             this.rtbProductDesc.Name = "rtbProductDesc";
             this.rtbProductDesc.Size = new System.Drawing.Size(219, 65);
             this.rtbProductDesc.TabIndex = 37;
@@ -99,35 +101,35 @@
             "piece",
             "item",
             "set"});
-            this.cboProductUnit.Location = new System.Drawing.Point(127, 165);
+            this.cboProductUnit.Location = new System.Drawing.Point(127, 176);
             this.cboProductUnit.Name = "cboProductUnit";
             this.cboProductUnit.Size = new System.Drawing.Size(100, 20);
             this.cboProductUnit.TabIndex = 36;
             // 
             // txtReorderLevel
             // 
-            this.txtReorderLevel.Location = new System.Drawing.Point(127, 247);
+            this.txtReorderLevel.Location = new System.Drawing.Point(127, 258);
             this.txtReorderLevel.Name = "txtReorderLevel";
             this.txtReorderLevel.Size = new System.Drawing.Size(100, 22);
             this.txtReorderLevel.TabIndex = 35;
             // 
             // txtActualQty
             // 
-            this.txtActualQty.Location = new System.Drawing.Point(127, 219);
+            this.txtActualQty.Location = new System.Drawing.Point(127, 230);
             this.txtActualQty.Name = "txtActualQty";
             this.txtActualQty.Size = new System.Drawing.Size(100, 22);
             this.txtActualQty.TabIndex = 34;
             // 
             // txtProductPrice
             // 
-            this.txtProductPrice.Location = new System.Drawing.Point(127, 193);
+            this.txtProductPrice.Location = new System.Drawing.Point(127, 204);
             this.txtProductPrice.Name = "txtProductPrice";
             this.txtProductPrice.Size = new System.Drawing.Size(100, 22);
             this.txtProductPrice.TabIndex = 33;
             // 
             // txtProductName
             // 
-            this.txtProductName.Location = new System.Drawing.Point(127, 62);
+            this.txtProductName.Location = new System.Drawing.Point(127, 73);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(219, 22);
             this.txtProductName.TabIndex = 32;
@@ -135,7 +137,7 @@
             // lvlReorderLevel
             // 
             this.lvlReorderLevel.AutoSize = true;
-            this.lvlReorderLevel.Location = new System.Drawing.Point(43, 250);
+            this.lvlReorderLevel.Location = new System.Drawing.Point(43, 261);
             this.lvlReorderLevel.Name = "lvlReorderLevel";
             this.lvlReorderLevel.Size = new System.Drawing.Size(78, 12);
             this.lvlReorderLevel.TabIndex = 31;
@@ -144,7 +146,7 @@
             // lblActualQty
             // 
             this.lblActualQty.AutoSize = true;
-            this.lblActualQty.Location = new System.Drawing.Point(37, 222);
+            this.lblActualQty.Location = new System.Drawing.Point(37, 233);
             this.lblActualQty.Name = "lblActualQty";
             this.lblActualQty.Size = new System.Drawing.Size(84, 12);
             this.lblActualQty.TabIndex = 30;
@@ -153,7 +155,7 @@
             // lblProductPrice
             // 
             this.lblProductPrice.AutoSize = true;
-            this.lblProductPrice.Location = new System.Drawing.Point(48, 196);
+            this.lblProductPrice.Location = new System.Drawing.Point(48, 207);
             this.lblProductPrice.Name = "lblProductPrice";
             this.lblProductPrice.Size = new System.Drawing.Size(73, 12);
             this.lblProductPrice.TabIndex = 29;
@@ -162,7 +164,7 @@
             // lblProductUnit
             // 
             this.lblProductUnit.AutoSize = true;
-            this.lblProductUnit.Location = new System.Drawing.Point(51, 168);
+            this.lblProductUnit.Location = new System.Drawing.Point(51, 179);
             this.lblProductUnit.Name = "lblProductUnit";
             this.lblProductUnit.Size = new System.Drawing.Size(70, 12);
             this.lblProductUnit.TabIndex = 28;
@@ -171,7 +173,7 @@
             // lblProductDesc
             // 
             this.lblProductDesc.AutoSize = true;
-            this.lblProductDesc.Location = new System.Drawing.Point(18, 90);
+            this.lblProductDesc.Location = new System.Drawing.Point(18, 101);
             this.lblProductDesc.Name = "lblProductDesc";
             this.lblProductDesc.Size = new System.Drawing.Size(103, 12);
             this.lblProductDesc.TabIndex = 27;
@@ -180,7 +182,7 @@
             // lblProductType
             // 
             this.lblProductType.AutoSize = true;
-            this.lblProductType.Location = new System.Drawing.Point(47, 42);
+            this.lblProductType.Location = new System.Drawing.Point(47, 53);
             this.lblProductType.Name = "lblProductType";
             this.lblProductType.Size = new System.Drawing.Size(74, 12);
             this.lblProductType.TabIndex = 26;
@@ -189,7 +191,7 @@
             // lblProductName
             // 
             this.lblProductName.AutoSize = true;
-            this.lblProductName.Location = new System.Drawing.Point(44, 65);
+            this.lblProductName.Location = new System.Drawing.Point(44, 76);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(77, 12);
             this.lblProductName.TabIndex = 25;
@@ -198,7 +200,7 @@
             // lblProductID
             // 
             this.lblProductID.AutoSize = true;
-            this.lblProductID.Location = new System.Drawing.Point(59, 16);
+            this.lblProductID.Location = new System.Drawing.Point(59, 27);
             this.lblProductID.Name = "lblProductID";
             this.lblProductID.Size = new System.Drawing.Size(62, 12);
             this.lblProductID.TabIndex = 24;
@@ -206,7 +208,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(190, 306);
+            this.btnReset.Location = new System.Drawing.Point(190, 335);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(75, 23);
             this.btnReset.TabIndex = 23;
@@ -216,7 +218,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(271, 306);
+            this.btnUpdate.Location = new System.Drawing.Point(271, 335);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 22;
@@ -224,11 +226,31 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(44, 317);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 12);
+            this.label1.TabIndex = 43;
+            this.label1.Text = "Product Status :";
+            // 
+            // ckbProductStatus
+            // 
+            this.ckbProductStatus.AutoSize = true;
+            this.ckbProductStatus.Location = new System.Drawing.Point(127, 317);
+            this.ckbProductStatus.Name = "ckbProductStatus";
+            this.ckbProductStatus.Size = new System.Drawing.Size(15, 14);
+            this.ckbProductStatus.TabIndex = 42;
+            this.ckbProductStatus.UseVisualStyleBackColor = true;
+            // 
             // frmProductManagement_EditProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(364, 344);
+            this.ClientSize = new System.Drawing.Size(364, 370);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ckbProductStatus);
             this.Controls.Add(this.lblProductTypeData);
             this.Controls.Add(this.txtDangerLevel);
             this.Controls.Add(this.lblDangerLevel);
@@ -278,5 +300,7 @@
         private System.Windows.Forms.Label lblProductID;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox ckbProductStatus;
     }
 }

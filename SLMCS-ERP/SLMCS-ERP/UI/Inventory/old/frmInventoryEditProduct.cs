@@ -44,7 +44,7 @@ namespace SLMCS_ERP
 
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
-            product.UpdateProductDetail(lblProductIDData.Text, lblProductTypeData.Text, txtProductName.Text, rtbProductDesc.Text, cboProductUnit.Text, txtProductPrice.Text, txtActualQty.Text, txtReorderLevel.Text, txtDangerLevel.Text);
+            product.UpdateProductDetail(lblProductIDData.Text, lblProductTypeData.Text, txtProductName.Text, rtbProductDesc.Text, cboProductUnit.Text, txtProductPrice.Text, txtActualQty.Text, txtReorderLevel.Text, txtDangerLevel.Text, "A");
             string successfulMessage = "Product ID:" + lblProductIDData.Text + " has been updated";
             MessageBox.Show(successfulMessage);
             this.Close();
