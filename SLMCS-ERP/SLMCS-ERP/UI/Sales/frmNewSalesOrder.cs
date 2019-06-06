@@ -79,9 +79,6 @@ namespace SLMCS_ERP.UI.Sales
                     MessageBox.Show("Please Input Quantity");
                 }
             }
-           
-            
-
         }
 
         private void BtnPlaceOrder_Click(object sender, EventArgs e)
@@ -116,15 +113,17 @@ namespace SLMCS_ERP.UI.Sales
                     lblDealerAddress.Text = reslut[1];
                     btnAddItem.Enabled = true;
                 }
-             
+                if (dgvOrderItem.Rows.Count > 0)
+                {
+                    btnPlaceOrder.Enabled = true;
+                }
             }
             else
             {
                 lblDealerName.Text = lblDealerAddress.Text = notAvailableMessage;
                 btnAddItem.Enabled = false;
                 btnPlaceOrder.Enabled = false;
-            }
-                
+            }   
         }
 
         private void TxtSearchForProduct_TextChanged(object sender, EventArgs e)
