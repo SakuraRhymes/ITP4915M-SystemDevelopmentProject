@@ -41,8 +41,7 @@ namespace SLMCS_ERP.UI.Management
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             string queryString = ProductMultiSearchString();
-            dgvStockRecord.DataSource = product.GetProdcutTable(product.GetMultiChoiceQuery(queryString));
-            //selectedProductID = dgvStockRecord.Rows[0].Cells["ProductID"].Value.ToString();
+            dgvStockRecord.DataSource = product.GetProdcutRecordTable(queryString);
             DGVSearchFormatSetting();
         }
 
@@ -185,15 +184,15 @@ namespace SLMCS_ERP.UI.Management
         {
             //dgvStockRecord.Rows[0].Selected = true;
 
-            dgvStockRecord.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgvStockRecord.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgvStockRecord.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgvStockRecord.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgvStockRecord.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgvStockRecord.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgvStockRecord.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgvStockRecord.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgvStockRecord.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //dgvStockRecord.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            //dgvStockRecord.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            //dgvStockRecord.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            //dgvStockRecord.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            //dgvStockRecord.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            //dgvStockRecord.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            //dgvStockRecord.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            //dgvStockRecord.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            //dgvStockRecord.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }  
     }
 }

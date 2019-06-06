@@ -230,7 +230,8 @@
       <DependentUpon>frmSalesOrderRecords.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Sales\frmViewOrderRecord.cs">
-	 </Compile>
+      <SubType>Form</SubType>
+    </Compile>
     <EmbeddedResource Include="UI\Dispatch\frmDispatchedHistory.resx">
       <DependentUpon>frmDispatchedHistory.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,15 +247,9 @@
     <EmbeddedResource Include="UI\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Test\TestConnection.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="UI\Sales\frmViewOrderRecord.Designer.cs">
       <DependentUpon>frmViewOrderRecord.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UI\frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\Inventory\frmInventoryAddReorderProduct.resx">
       <DependentUpon>frmInventoryAddReorderProduct.cs</DependentUpon>
     </EmbeddedResource>
