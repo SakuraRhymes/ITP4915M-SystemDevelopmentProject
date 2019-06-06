@@ -9,6 +9,8 @@ namespace SLMCS_Class
 {
     public class SalesOrderLine
     {
+        private string productName;
+        private string productUnit;
         private string productID;
         private string salesOrderID;
         private SalesOrder _salesOrder;
@@ -35,13 +37,16 @@ namespace SLMCS_Class
         public SalesOrderLine(string orderID)
         {
             dbConnection = new DBConnection();
-            string query = "SELECT SalesOrderID, ProductID, Quantity FROM SalesOrderLine WHERE SalesOrderID ='" + orderID + "'";
+            string query = "SELECT SalesOrderID, SalesOrderLine.ProductID, Quantity, ProductName, ProductUnit FROM SalesOrderLine, Product WHERE SalesOrderID ='" + orderID + "'";
             salesOrderLineTable = dbConnection.GetDataTable(query);
             DataRow[] rows = salesOrderLineTable.Select();
 
             salesOrderID = (string)rows[0]["SalesOrderID"];
             productID = (string)rows[0]["ProductID"];
             Quantity = (int)rows[0]["Quantity"];
+            ProductName = (string)rows[0]["ProductName"];
+            ProductUnit = (string)rows[0]["ProductUnit"];
+
         }
 
         public double getSubtotalPrice()
@@ -59,6 +64,18 @@ namespace SLMCS_Class
             get => salesOrderID;
             set => salesOrderID = value;
         }
+
+        public string ProductName
+        {
+            get => productName;
+            set => productName = value;
+        }
+
+        public string ProductUnit
+        {
+            get => productUnit;
+            set => productUnit = value;
+        }
        
 
         public void placeSalesOrderLine()
@@ -71,8 +88,6 @@ namespace SLMCS_Class
             dbConnection.Insert(query);
             product.updateReserveQuantity(quantity);
         }
-
-        public string ProductName { get => product.ProductName; }
 
         public int Quantity {
             get => quantity;
