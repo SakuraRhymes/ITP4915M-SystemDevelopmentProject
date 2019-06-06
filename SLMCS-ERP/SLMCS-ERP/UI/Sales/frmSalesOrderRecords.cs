@@ -52,6 +52,7 @@ namespace SLMCS_ERP.UI.Sales
             };
 
             cboSearchType.DataSource = items;
+            dgvSearchResult.AllowUserToResizeRows = false;
         }
 
         private void updateDGV(DataTable dt)
@@ -74,13 +75,21 @@ namespace SLMCS_ERP.UI.Sales
 
         private void DgvSearchResult_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            selectedSalesOrderID = dgvSearchResult.Rows[e.RowIndex].Cells["SalesOrderID"].Value.ToString();
+            if (e.RowIndex != -1)
+            {
+                selectedSalesOrderID = dgvSearchResult.Rows[e.RowIndex].Cells["SalesOrderID"].Value.ToString();
+            }
+            
         }
 
         private void DgvSearchResult_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            frmViewOrderRecord viewOrderRecord = new frmViewOrderRecord(selectedSalesOrderID);
-            viewOrderRecord.Show();
+            if (e.RowIndex != -1)
+            {
+                frmViewOrderRecord viewOrderRecord = new frmViewOrderRecord(selectedSalesOrderID);
+                viewOrderRecord.Show();
+            }
+            
         }
     }
 }

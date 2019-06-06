@@ -44,6 +44,8 @@ namespace SLMCS_ERP.UI.Sales
             lblOrderDispatchDate.Text = salesOrder.SalesDispatchDate;
             lblOrderCompletedDate.Text = salesOrder.SalesOrderCompletedDate;
 
+            dgvOrderItem.AllowUserToResizeRows = false;
+
             if (lblOrderDispatchDate.Text == "")
             {
                 lblOrderDispatchDate.Text = "Not available";
