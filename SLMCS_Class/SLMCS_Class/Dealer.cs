@@ -18,6 +18,13 @@ namespace SLMCS_Class
         private string dealerPhoneNo;
         private string dealerStatus;
 
+        public string DealerID { get => dealerID; set => dealerID = value; }
+        public string DealerName { get => dealerName; set => dealerName = value; }
+        public string DealerInvoiceAddress { get => dealerInvoiceAddress; set => dealerInvoiceAddress = value; }
+        public string DealerShippingAddress { get => dealerShippingAddress; set => dealerShippingAddress = value; }
+        public string DealerPhoneNo { get => dealerPhoneNo; set => dealerPhoneNo = value; }
+        public string DealerStatus { get => dealerStatus; set => dealerStatus = value; }
+
         public Dealer()
         {
             dbConnection = new DBConnection();

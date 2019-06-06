@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SLMCS_ERP.UI.Management;
 
 namespace SLMCS_ERP
 {
@@ -16,7 +17,7 @@ namespace SLMCS_ERP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmInventoryMain());
+            Application.Run(new frmManagementMain());
         }
     }
 }

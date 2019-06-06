@@ -25,9 +25,9 @@ namespace SLMCS_ERP.UI.Management
             dgvStockRecord.AllowUserToAddRows = false;
             dgvStockRecord.RowHeadersVisible = false;
             dgvStockRecord.ReadOnly = true;
-            cboProductType.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboProductPrice.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboStockQuantity.DropDownStyle = ComboBoxStyle.DropDownList;
+            //cboProductType.DropDownStyle = ComboBoxStyle.DropDownList;
+            //cboProductPrice.DropDownStyle = ComboBoxStyle.DropDownList;
+            //cboStockQuantity.DropDownStyle = ComboBoxStyle.DropDownList;
             lblDProductIDData.Text = "";
             lblDProductTypeData.Text = "";
             lblDProductNameData.Text = "";
@@ -41,8 +41,7 @@ namespace SLMCS_ERP.UI.Management
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             string queryString = ProductMultiSearchString();
-            dgvStockRecord.DataSource = product.GetProdcutTable(product.GetMultiChoiceQuery(queryString));
-            //selectedProductID = dgvStockRecord.Rows[0].Cells["ProductID"].Value.ToString();
+            dgvStockRecord.DataSource = product.GetProdcutRecordTable(queryString);
             DGVSearchFormatSetting();
         }
 

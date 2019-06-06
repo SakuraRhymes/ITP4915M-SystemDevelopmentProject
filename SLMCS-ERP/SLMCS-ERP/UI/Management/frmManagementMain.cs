@@ -40,7 +40,8 @@ namespace SLMCS_ERP.UI.Management
 
         private void BtnDealerManagement_Click(object sender, EventArgs e)
         {
-
+            frmDealerManagement dealerManagement = new frmDealerManagement();
+            navigation(dealerManagement, panelContent);
         }
 
         private void BtnVendorManagement_Click(object sender, EventArgs e)

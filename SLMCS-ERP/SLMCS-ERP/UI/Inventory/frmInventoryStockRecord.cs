@@ -80,13 +80,13 @@ namespace SLMCS_ERP
             string queryString = "";
             if (txtProductID.Text != "")
             {
-                queryString += "ProductID LIKE '%" + txtProductID.Text + "%'" + " AND "; 
+                queryString += "ProductID LIKE '%" + txtProductID.Text + "%'" + " AND ";
             }
             if (cboProductType.Text != "")
             {
                 queryString += "ProductType LIKE '%" + cboProductType.Text + "%' " + " AND ";
             }
-            if(cboProductUnit.Text != "")
+            if (cboProductUnit.Text != "")
             {
                 queryString += "ProductUnit LIKE '%" + cboProductUnit.Text + "%' " + " AND ";
             }
@@ -96,7 +96,7 @@ namespace SLMCS_ERP
             }
             if (txtVendorID.Text != "")
             {
-                queryString += "VendorID LIKE '%" + txtVendorID.Text + "%'" + " AND "; 
+                queryString += "VendorID LIKE '%" + txtVendorID.Text + "%'" + " AND ";
             }
             if (cboStockQuantity.Text != "" && txtStockQuantity.Text != "")
             {
@@ -162,7 +162,7 @@ namespace SLMCS_ERP
             dgvStockRecord.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvStockRecord.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvStockRecord.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-         
+
         }
 
         private void BtnReorderLevel_Click(object sender, EventArgs e)
