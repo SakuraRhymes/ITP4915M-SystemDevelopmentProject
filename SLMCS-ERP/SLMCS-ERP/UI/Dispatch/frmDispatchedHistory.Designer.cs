@@ -35,7 +35,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtOrderDate = new System.Windows.Forms.TextBox();
             this.dgvDispatchedList = new System.Windows.Forms.DataGridView();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -102,17 +101,8 @@
             this.dgvDispatchedList.Location = new System.Drawing.Point(10, 20);
             this.dgvDispatchedList.Name = "dgvDispatchedList";
             this.dgvDispatchedList.RowTemplate.Height = 27;
-            this.dgvDispatchedList.Size = new System.Drawing.Size(1155, 264);
+            this.dgvDispatchedList.Size = new System.Drawing.Size(1155, 312);
             this.dgvDispatchedList.TabIndex = 10;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(1043, 292);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(122, 40);
-            this.btnCancel.TabIndex = 7;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // btnSearch
             // 
@@ -122,6 +112,7 @@
             this.btnSearch.TabIndex = 8;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // btnRefresh
             // 
@@ -131,6 +122,7 @@
             this.btnRefresh.TabIndex = 9;
             this.btnRefresh.Text = "Refrsh";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
             // groupBox1
             // 
@@ -165,7 +157,6 @@
             // 
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.dgvDispatchedList);
-            this.groupBox2.Controls.Add(this.btnCancel);
             this.groupBox2.Location = new System.Drawing.Point(27, 214);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
@@ -212,7 +203,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtOrderDate;
         private System.Windows.Forms.DataGridView dgvDispatchedList;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.GroupBox groupBox1;
