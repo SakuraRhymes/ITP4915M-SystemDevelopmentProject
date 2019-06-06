@@ -32,34 +32,55 @@ namespace SLMCS_ERP.UI.Sales
             txtDealerID.Text = "";
             txtOrderQunatity.Text = "";
             txtSearchForProduct.Text = "";
+            btnAddItem.Enabled = false;
 
             updateDGV();
         }
 
         private void BtnAddItem_Click(object sender, EventArgs e)
         {
-           
-            if(Convert.ToInt32(txtOrderQunatity.Text) <= Convert.ToInt32(lblProductAvailability.Text)) {
-
-                string productID = txtSearchForProduct.Text;
-                int quantity = Convert.ToInt32(txtOrderQunatity.Text);
-                Product product = new Product(productID);
-
-                salesOrder.addProduct(product, quantity);
-
-                updateDGV();
-
-                txtSearchForProduct.Text = "";
-                txtOrderQunatity.Text = "";
-                lblTotalAmount.Text = salesOrder.getTotalPrice().ToString();
-
-                btnPlaceOrder.Enabled = true;
-                btnReserveOrder.Enabled = true;
-            }
-            else
+            if (txtSearchForProduct.Text != "" && txtOrderQunatity.Text != "" && Convert.ToInt32(txtOrderQunatity.Text) > 0)
             {
-                MessageBox.Show("The Product Do Not Have Enough Stock!");
+                if (Convert.ToInt32(txtOrderQunatity.Text) <= Convert.ToInt32(lblProductAvailability.Text))
+                {
+
+                    string productID = txtSearchForProduct.Text;
+                    int quantity = Convert.ToInt32(txtOrderQunatity.Text);
+                    Product product = new Product(productID);
+
+                    salesOrder.addProduct(product, quantity);
+
+                    updateDGV();
+
+                    txtSearchForProduct.Text = "";
+                    txtOrderQunatity.Text = "";
+                    lblTotalAmount.Text = salesOrder.getTotalPrice().ToString();
+
+                    btnPlaceOrder.Enabled = true;
+                    btnReserveOrder.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("The Product Do Not Have Enough Stock!");
+                }
+            } else
+            {
+                if (lblProductAvailability.Text == "Not available")
+                {
+                    MessageBox.Show("Please Input Product ID");
+                }
+                else if (txtOrderQunatity.Text != "")
+                {
+                    //if (Convert.ToInt32(txtOrderQunatity.Text) <= 0)
+                        MessageBox.Show("Quantity Should Be More Than 0");
+                }
+                else
+                {
+                    MessageBox.Show("Please Input Quantity");
+                }
             }
+           
+            
 
         }
 
@@ -93,12 +114,15 @@ namespace SLMCS_ERP.UI.Sales
                 {
                     lblDealerName.Text = reslut[0];
                     lblDealerAddress.Text = reslut[1];
+                    btnAddItem.Enabled = true;
                 }
              
             }
             else
             {
                 lblDealerName.Text = lblDealerAddress.Text = notAvailableMessage;
+                btnAddItem.Enabled = false;
+                btnPlaceOrder.Enabled = false;
             }
                 
         }
