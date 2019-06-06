@@ -122,14 +122,15 @@ namespace SLMCS_Class
         }
         public DataTable getSalesOrderLineBySalesOrderID(string salesOrderID)
         {
-            dbConnection = new DBConnection();
-            string query = "SELECT SalesOrderID, ProductID, Quantity FROM SalesOrderLine WHERE SalesOrderID = \"" + salesOrderID + "\"";
+            string query = "SELECT SalesOrderLine.ProductID, Product.ProductName, Product.ProductType, Product.ProductUnit, " +
+                "SalesOrderLine.Quantity FROM SalesOrderLine, Product WHERE SalesOrderLine.ProductID = Product.ProductID AND SalesOrderID = '" +
+                 salesOrderID + "'";
             return dbConnection.GetDataTable(query);
         }
         public void updataSalesOrderStatusInDB(string salesOrderID, string status)
         {
             string query = "UPDATE SalesOrder SET SalesOrderStatus = \"" + status + "\" , SalesDispatchDate = \""+ DateTime.Now.ToString("yy-MM-dd") +"\" WHERE SalesOrder.SalesOrderID = \"" + salesOrderID + "\"";
-            System.Windows.Forms.MessageBox.Show(query);
+            //System.Windows.Forms.MessageBox.Show(query);
             dbConnection.Update(query);
         }
 
@@ -225,7 +226,10 @@ namespace SLMCS_Class
 
         public DataTable searchOrderLine()
         {
-            string query = "SELECT SalesOrderLine.ProductID, Product.ProductName, Product.ProductType, Product.ProductUnit, SalesOrderLine.Quantity, SalesOrderLine.ProductPrice, SalesOrderLine.Quantity * SalesOrderLine.ProductPrice AS Subtotal FROM SalesOrderLine, Product WHERE SalesOrderLine.ProductID = Product.ProductID AND SalesOrderID = '" + SalesOrderID + "'";
+            string query = "SELECT SalesOrderLine.ProductID, Product.ProductName, Product.ProductType, Product.ProductUnit, " +
+                "SalesOrderLine.Quantity, SalesOrderLine.ProductPrice, SalesOrderLine.Quantity * SalesOrderLine.ProductPrice " +
+                "AS Subtotal FROM SalesOrderLine, Product WHERE SalesOrderLine.ProductID = Product.ProductID AND SalesOrderID = '" +
+                 SalesOrderID + "'";
             return dbConnection.GetDataTable(query);
         }
         public void cancelOrder()

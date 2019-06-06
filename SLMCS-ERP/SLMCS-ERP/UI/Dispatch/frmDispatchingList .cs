@@ -23,9 +23,7 @@ namespace SLMCS_ERP{
 
         public frmDispatchingList()
         {
-
             salesOrder = new SalesOrder();
-
             InitializeComponent();
             startUp();
         }
@@ -34,10 +32,7 @@ namespace SLMCS_ERP{
         {
             dgvOrderDetail.DataSource = null;
             changeDispatchingDvgContect(salesOrder.getSalesOrderTableBySalesOrderStatus("Processing"));
-        }
-
-        private void DataGridView2_Load(object sender, DataGridViewCellEventArgs e)
-        {
+            selectedOrderID = "";
         }
 
         private void Search_Click(object sender, EventArgs e)
@@ -46,10 +41,9 @@ namespace SLMCS_ERP{
             int andCount = 0;
             if (txtOrderID.Text != "")
             {
-                condition += "SalesOrderID LIKE \"%"+ txtOrderID.Text+"%\"";
+                condition += "SalesOrderID LIKE '%"+ txtOrderID.Text+"%'";
                 andCount++;
             }
-            
             if (txtStaffID.Text != "")
             {
                 if (andCount > 0)
@@ -57,10 +51,9 @@ namespace SLMCS_ERP{
                     condition += " AND ";
                     andCount--;
                 }
-                condition += "StaffID LIKE \"%" + txtStaffID.Text + "%\"";
+                condition += "StaffID LIKE '%" + txtStaffID.Text + "%'";
                 andCount++;
-            }
-            
+            }     
             if (txtDealerID.Text != "")
             {
                 if (andCount > 0)
@@ -68,41 +61,31 @@ namespace SLMCS_ERP{
                     condition += " AND ";
                     andCount--;
                 }
-                condition += "DealerID LIKE \"%" + txtDealerID.Text + "%\"";
+                condition += "DealerID LIKE '%" + txtDealerID.Text + "%'";
                 andCount++;
             }
-
             if (andCount > 0)
             {
                 condition += " AND ";
                 andCount--;
             }
-
-            condition += "SalesOrderStatus = \"Processing\"";
-
-            //System.Windows.Forms.MessageBox.Show(condition);
+            condition += "SalesOrderStatus = 'Processing'";
             changeDispatchingDvgContect(salesOrder.getSalesTableByWhereQuery(condition));
-
         }
 
         private void FrmDispatchingList_Load(object sender, EventArgs e)
         {
+            dgvSalesOrderList.AllowUserToAddRows = false;
+            dgvSalesOrderList.RowHeadersVisible = false;
+            dgvSalesOrderList.ReadOnly = true;
+            dgvSalesOrderList.AllowUserToResizeRows = false;
+            dgvSalesOrderList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-        }
-
-        private void DgvSalesOrderList_CellEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
-        private void DgvSalesOrderList_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex != -1)
-            {
-                selectedOrderID = dgvSalesOrderList.Rows[e.RowIndex].Cells["SalesOrderID"].Value.ToString();
-            }
-            dgvOrderDetail.DataSource = null;
-            dgvOrderDetail.DataSource =salesOrder.getSalesOrderLineBySalesOrderID(dgvSalesOrderList.Rows[e.RowIndex].Cells["SalesOrderID"].Value.ToString());
+            dgvOrderDetail.AllowUserToAddRows = false;
+            dgvOrderDetail.RowHeadersVisible = false;
+            dgvOrderDetail.ReadOnly = true;
+            dgvOrderDetail.AllowUserToResizeRows = false;
+            dgvOrderDetail.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         private void BtnRefresh_Click(object sender, EventArgs e)
@@ -125,31 +108,25 @@ namespace SLMCS_ERP{
 
         private void GroupBox2_Enter(object sender, EventArgs e)
         {
-
             changeDispatchingDvgContect(salesOrder.getSalesOrderTableBySalesOrderStatus("Processing"));
-        }
-
-        private void GroupBox4_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void BtnConfirm_Click(object sender, EventArgs e)
         {
-            selectedOrderID = dgvSalesOrderList.Rows[dgvSalesOrderList.CurrentCell.RowIndex].Cells["SalesOrderID"].Value.ToString();
-            DialogResult result = MessageBox.Show("Do you want to dispatch "+selectedOrderID+"?", "Confirmation", MessageBoxButtons.YesNoCancel);
-            if (result == DialogResult.Yes)
+            if (dgvSalesOrderList.Rows.Count > 0 && selectedOrderID != "")
             {
-                if (dgvSalesOrderList.CurrentCell.RowIndex != -1)
+                if (MessageBox.Show("Confirm Dispatch ID: " + selectedOrderID + " Order?", "Confirm Message", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
-                    System.Windows.Forms.MessageBox.Show(selectedOrderID);
                     salesOrder.updataSalesOrderStatusInDB(selectedOrderID, "Dispatched");
                     string successfulMessage = "Sales Order :" + selectedOrderID + " has been Dispatch!";
                     MessageBox.Show(successfulMessage);
                     refreshDvg();
                 }
             }
-            
+            else
+            {
+                MessageBox.Show("Please Select An Order");
+            }
         }
 
         private void BtnGenerateForDID_Click(object sender, EventArgs e)
@@ -174,11 +151,13 @@ namespace SLMCS_ERP{
             generateDIC.Show();
         }
 
-        private void DgvOrderDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DgvSalesOrderList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
             {
-                generateForDID = dgvOrderDetail.Rows[e.RowIndex].Cells["SalesOrderID"].Value.ToString();
+                selectedOrderID = dgvSalesOrderList.Rows[e.RowIndex].Cells["SalesOrderID"].Value.ToString();
+                dgvOrderDetail.DataSource = null;
+                dgvOrderDetail.DataSource = salesOrder.getSalesOrderLineBySalesOrderID(selectedOrderID);
             }
         }
     }
