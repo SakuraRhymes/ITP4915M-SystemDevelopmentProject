@@ -120,7 +120,7 @@ namespace SLMCS_ERP.UI.Management
 
         private void RefreshSearchResult(object sender, EventArgs e)
         {
-            dgvStockRecord.DataSource = product.GetProdcutTable("");
+            dgvStockRecord.DataSource = product.GetProdcutRecordTable("");
 
         }
 
