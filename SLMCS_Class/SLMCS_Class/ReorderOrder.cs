@@ -231,7 +231,7 @@ namespace SLMCS_Class
         public DataTable getReorderOrderTableByReorderOrderStatus(string ReorderOrderStatus)
         {
             string query = "SELECT ReorderOrderID, StaffID," +
-                "ReorderOrderDate,ReorderOrderEditDate, ReorderOrderCompletedDate, ReorderOrderStatus " +
+                "ReorderOrderDate,ReorderOrderEditDate, ReorderOrderStatus " +
                 "FROM ReorderOrder WHERE  ReorderOrderStatus = \"" + ReorderOrderStatus + "\"";
             return dbConnection.GetDataTable(query);
         }
@@ -255,7 +255,7 @@ namespace SLMCS_Class
         public DataTable GoodsReceived_getReorderTableByWhereQuery(string condition)
         {
             string query = "SELECT ReorderOrderID, StaffID," +
-                "ReorderOrderDate,ReorderOrderEditDate, ReorderOrderCompletedDate, ReorderOrderStatus " +
+                "ReorderOrderDate,ReorderOrderEditDate,ReorderOrderStatus " +
                 "FROM ReorderOrder WHERE " + condition;
             return dbConnection.GetDataTable(query);
         }
