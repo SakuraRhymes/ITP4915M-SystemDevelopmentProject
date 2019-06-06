@@ -95,7 +95,7 @@
             "item"});
             this.cboProductUnit.Location = new System.Drawing.Point(156, 129);
             this.cboProductUnit.Name = "cboProductUnit";
-            this.cboProductUnit.Size = new System.Drawing.Size(97, 24);
+            this.cboProductUnit.Size = new System.Drawing.Size(116, 24);
             this.cboProductUnit.TabIndex = 20;
             // 
             // btnReset
@@ -125,7 +125,7 @@
             this.txtProductPrice.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProductPrice.Location = new System.Drawing.Point(156, 278);
             this.txtProductPrice.Name = "txtProductPrice";
-            this.txtProductPrice.Size = new System.Drawing.Size(97, 23);
+            this.txtProductPrice.Size = new System.Drawing.Size(116, 23);
             this.txtProductPrice.TabIndex = 23;
             // 
             // rtbProductDescription
