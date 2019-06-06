@@ -13,10 +13,11 @@ namespace SLMCS_ERP
         private string addedProductID;
         private ReorderOrder reorderOrder;
         private ReorderOrderLine reorderOrderLine;
+        private string staffID;
         public frmInventoryReorderProduct()
         {
             InitializeComponent();
-          
+            staffID = frmMain.CurrentStaff.StaffID;
         }
 
         private void BtnReorderLevel_Click(object sender, EventArgs e)
@@ -47,7 +48,7 @@ namespace SLMCS_ERP
                 {
                     if (MessageBox.Show("Confirm Order?", "Confirm Message", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
-                        Staff staff = new Staff("S19002708");
+                        Staff staff = new Staff(staffID);
                         reorderOrder.PlaceReorderOrder(staff, DateTime.Today.ToString("yyyy-MM-dd"));
                         FrmInventoryReorderProduct_Load(sender, e);
                         MessageBox.Show("Order has been complete");

@@ -106,16 +106,16 @@ namespace SLMCS_Class
             return productTypeChar + fillZore + nextProductID;
         }
 
-        public DataTable GetProdcutTable(string condition)
-        {
-            string query = "SELECT * FROM Product";
-            if (condition != "")
-            {
-                query += condition;
-            }
+        //public DataTable GetProdcutTable(string condition)
+        //{
+        //    string query = "SELECT * FROM Product";
+        //    if (condition != "")
+        //    {
+        //        query += condition;
+        //    }
 
-            return dbConnection.GetDataTable(query);
-        }
+        //    return dbConnection.GetDataTable(query);
+        //}
 
         public DataTable GetProdcutRecordTable(string condition)
         {

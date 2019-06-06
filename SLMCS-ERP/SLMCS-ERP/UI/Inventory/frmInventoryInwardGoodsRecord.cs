@@ -51,7 +51,7 @@ namespace SLMCS_ERP
         {
             if (e.RowIndex != -1)
             {
-                selectReorderOrderID = dgvInwardGoodsRecord.Rows[e.RowIndex].Cells["ReOrder ID"].Value.ToString();
+                selectReorderOrderID = dgvInwardGoodsRecord.Rows[e.RowIndex].Cells["Order ID"].Value.ToString();
                 dgvInwardGoodsRecord.Rows[e.RowIndex].Selected = true;
                 reorderOrder = new ReorderOrder(selectReorderOrderID);
 
@@ -107,7 +107,9 @@ namespace SLMCS_ERP
         {
             dgvReorderOrderLine.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvReorderOrderLine.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgvReorderOrderLine.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvReorderOrderLine.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvReorderOrderLine.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvReorderOrderLine.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
