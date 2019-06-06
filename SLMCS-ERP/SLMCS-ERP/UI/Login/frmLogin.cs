@@ -1,4 +1,5 @@
 ﻿using SLMCS_Class;
+using SLMCS_ERP.UI.Login;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,6 +48,12 @@ namespace SLMCS_ERP
             }
 
 
+        }
+
+        private void BtnForgetPassword_Click(object sender, EventArgs e)
+        {
+            frmForgetPassword forgetPasswordPage = new frmForgetPassword();
+            forgetPasswordPage.Show();
         }
     }
 }

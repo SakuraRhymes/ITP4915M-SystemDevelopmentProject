@@ -35,13 +35,14 @@
             this.labelStaffID = new System.Windows.Forms.Label();
             this.labelPassword = new System.Windows.Forms.Label();
             this.labelInstruction = new System.Windows.Forms.Label();
+            this.btnForgetPassword = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(451, 442);
+            this.btnLogin.Location = new System.Drawing.Point(504, 414);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.Size = new System.Drawing.Size(111, 23);
             this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -49,18 +50,18 @@
             // 
             // txtStaffID
             // 
-            this.txtStaffID.Location = new System.Drawing.Point(479, 283);
+            this.txtStaffID.Location = new System.Drawing.Point(474, 283);
             this.txtStaffID.Name = "txtStaffID";
-            this.txtStaffID.Size = new System.Drawing.Size(100, 22);
+            this.txtStaffID.Size = new System.Drawing.Size(136, 22);
             this.txtStaffID.TabIndex = 1;
             this.txtStaffID.Text = "S19935161";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(479, 360);
+            this.txtPassword.Location = new System.Drawing.Point(474, 360);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(100, 22);
+            this.txtPassword.Size = new System.Drawing.Size(136, 22);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.Text = "0SKnu0Uuj";
             // 
@@ -77,20 +78,20 @@
             // labelStaffID
             // 
             this.labelStaffID.AutoSize = true;
-            this.labelStaffID.Location = new System.Drawing.Point(386, 286);
+            this.labelStaffID.Location = new System.Drawing.Point(381, 286);
             this.labelStaffID.Name = "labelStaffID";
-            this.labelStaffID.Size = new System.Drawing.Size(42, 12);
+            this.labelStaffID.Size = new System.Drawing.Size(48, 12);
             this.labelStaffID.TabIndex = 4;
-            this.labelStaffID.Text = "Staff ID";
+            this.labelStaffID.Text = "Staff ID :";
             // 
             // labelPassword
             // 
             this.labelPassword.AutoSize = true;
-            this.labelPassword.Location = new System.Drawing.Point(386, 363);
+            this.labelPassword.Location = new System.Drawing.Point(381, 363);
             this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(48, 12);
+            this.labelPassword.Size = new System.Drawing.Size(54, 12);
             this.labelPassword.TabIndex = 5;
-            this.labelPassword.Text = "Password";
+            this.labelPassword.Text = "Password :";
             // 
             // labelInstruction
             // 
@@ -100,6 +101,16 @@
             this.labelInstruction.Size = new System.Drawing.Size(241, 12);
             this.labelInstruction.TabIndex = 6;
             this.labelInstruction.Text = "Please Enter Your Staff ID and Password To Login";
+            // 
+            // btnForgetPassword
+            // 
+            this.btnForgetPassword.Location = new System.Drawing.Point(367, 414);
+            this.btnForgetPassword.Name = "btnForgetPassword";
+            this.btnForgetPassword.Size = new System.Drawing.Size(111, 23);
+            this.btnForgetPassword.TabIndex = 0;
+            this.btnForgetPassword.Text = "Forget Password";
+            this.btnForgetPassword.UseVisualStyleBackColor = true;
+            this.btnForgetPassword.Click += new System.EventHandler(this.BtnForgetPassword_Click);
             // 
             // frmLogin
             // 
@@ -112,6 +123,7 @@
             this.Controls.Add(this.labelWelcome);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtStaffID);
+            this.Controls.Add(this.btnForgetPassword);
             this.Controls.Add(this.btnLogin);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmLogin";
@@ -130,6 +142,7 @@
         private System.Windows.Forms.Label labelStaffID;
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.Label labelInstruction;
+        private System.Windows.Forms.Button btnForgetPassword;
     }
 }
 

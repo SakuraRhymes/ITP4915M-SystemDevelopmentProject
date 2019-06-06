@@ -184,7 +184,6 @@ namespace SLMCS_Class
             string query = "SELECT SalesOrderLine.ProductID, Product.ProductName, Product.ProductType, Product.ProductUnit, SalesOrderLine.Quantity, SalesOrderLine.ProductPrice, SalesOrderLine.Quantity * SalesOrderLine.ProductPrice AS Subtotal FROM SalesOrderLine, Product WHERE SalesOrderLine.ProductID = Product.ProductID AND SalesOrderID = '" + SalesOrderID + "'";
             return dbConnection.GetDataTable(query);
         }
-
         public void cancelOrder()
         {
             string productID;

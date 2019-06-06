@@ -119,6 +119,12 @@
     <Compile Include="UI\Inventory\old\frmInventoryVendorRecord.Designer.cs">
       <DependentUpon>frmInventoryVendorRecord.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Login\frmForgetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Login\frmForgetPassword.Designer.cs">
+      <DependentUpon>frmForgetPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Inventory\old\frmInventoryVendorRecord.resx">
       <DependentUpon>frmInventoryVendorRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Login\frmForgetPassword.resx">
+      <DependentUpon>frmForgetPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
