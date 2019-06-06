@@ -96,17 +96,23 @@ namespace SLMCS_ERP.UI.Sales
             }
             else
             {
-                salesOrder.placeOrder("Processing");
-                startUp();
-                MessageBox.Show("Place Order Successfully");
+                if (MessageBox.Show("Confirm Order?", "Confirm Message", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    salesOrder.placeOrder("Processing");
+                    startUp();
+                    MessageBox.Show("Place Order Successfully");
+                }
             }
         }
 
         private void BtnReserveOrder_Click(object sender, EventArgs e)
         {
-            salesOrder.placeOrder("Reserved");
-            startUp();
-            MessageBox.Show("Place Reserve Order Successfully");
+            if (MessageBox.Show("Confirm Reserve Order?", "Confirm Message", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                salesOrder.placeOrder("Reserved");
+                startUp();
+                MessageBox.Show("Place Reserve Order Successfully");
+            } 
         }
 
         private void TxtDealerID_TextChanged(object sender, EventArgs e)
