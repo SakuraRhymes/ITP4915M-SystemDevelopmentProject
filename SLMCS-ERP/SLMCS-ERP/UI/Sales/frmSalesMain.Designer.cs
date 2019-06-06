@@ -38,6 +38,8 @@
             // panelLeftNavigate
             // 
             this.panelLeftNavigate.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panelLeftNavigate.BackgroundImage = global::SLMCS_ERP.Properties.Resources.bg_color;
+            this.panelLeftNavigate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelLeftNavigate.Controls.Add(this.btnSalesOrderRecords);
             this.panelLeftNavigate.Controls.Add(this.btnNewSalesOrder);
             this.panelLeftNavigate.Dock = System.Windows.Forms.DockStyle.Left;
@@ -49,24 +51,28 @@
             // 
             // btnSalesOrderRecords
             // 
-            this.btnSalesOrderRecords.Location = new System.Drawing.Point(27, 90);
+            this.btnSalesOrderRecords.BackColor = System.Drawing.Color.White;
+            this.btnSalesOrderRecords.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnSalesOrderRecords.Location = new System.Drawing.Point(14, 84);
             this.btnSalesOrderRecords.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalesOrderRecords.Name = "btnSalesOrderRecords";
-            this.btnSalesOrderRecords.Size = new System.Drawing.Size(97, 43);
-            this.btnSalesOrderRecords.TabIndex = 0;
+            this.btnSalesOrderRecords.Size = new System.Drawing.Size(120, 45);
+            this.btnSalesOrderRecords.TabIndex = 1;
             this.btnSalesOrderRecords.Text = "Sales Order Records";
-            this.btnSalesOrderRecords.UseVisualStyleBackColor = true;
+            this.btnSalesOrderRecords.UseVisualStyleBackColor = false;
             this.btnSalesOrderRecords.Click += new System.EventHandler(this.BtnSalesOrderRecords_Click);
             // 
             // btnNewSalesOrder
             // 
-            this.btnNewSalesOrder.Location = new System.Drawing.Point(27, 25);
+            this.btnNewSalesOrder.BackColor = System.Drawing.Color.White;
+            this.btnNewSalesOrder.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnNewSalesOrder.Location = new System.Drawing.Point(14, 19);
             this.btnNewSalesOrder.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewSalesOrder.Name = "btnNewSalesOrder";
-            this.btnNewSalesOrder.Size = new System.Drawing.Size(97, 43);
+            this.btnNewSalesOrder.Size = new System.Drawing.Size(120, 45);
             this.btnNewSalesOrder.TabIndex = 0;
             this.btnNewSalesOrder.Text = "New Sales Order";
-            this.btnNewSalesOrder.UseVisualStyleBackColor = true;
+            this.btnNewSalesOrder.UseVisualStyleBackColor = false;
             this.btnNewSalesOrder.Click += new System.EventHandler(this.BtnNewSalesOrder_Click);
             // 
             // panelContent

@@ -141,5 +141,21 @@ namespace SLMCS_ERP.UI.Sales
             dgvOrderItem.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvOrderItem.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
+
+        private void TxtSearchForProduct_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BtnAddItem_Click(this, new EventArgs());
+            }
+        }
+
+        private void TxtOrderQunatity_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BtnAddItem_Click(this, new EventArgs());
+            }
+        }
     }
 }
