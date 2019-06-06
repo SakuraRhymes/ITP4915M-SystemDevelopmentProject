@@ -29,77 +29,81 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnStockRecord = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnVendorManagement = new System.Windows.Forms.Button();
+            this.btnDealerManagement = new System.Windows.Forms.Button();
+            this.btnStaffManagement = new System.Windows.Forms.Button();
+            this.btnProductManagement = new System.Windows.Forms.Button();
+            this.panelContent = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.btnStockRecord);
+            this.panel1.Controls.Add(this.btnVendorManagement);
+            this.panel1.Controls.Add(this.btnDealerManagement);
+            this.panel1.Controls.Add(this.btnStaffManagement);
+            this.panel1.Controls.Add(this.btnProductManagement);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(150, 566);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // btnVendorManagement
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(150, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1036, 566);
-            this.panel2.TabIndex = 1;
+            this.btnVendorManagement.Location = new System.Drawing.Point(12, 280);
+            this.btnVendorManagement.Name = "btnVendorManagement";
+            this.btnVendorManagement.Size = new System.Drawing.Size(120, 43);
+            this.btnVendorManagement.TabIndex = 4;
+            this.btnVendorManagement.Text = "Vendor Management";
+            this.btnVendorManagement.UseVisualStyleBackColor = true;
+            this.btnVendorManagement.Click += new System.EventHandler(this.BtnVendorManagement_Click);
             // 
-            // btnStockRecord
+            // btnDealerManagement
             // 
-            this.btnStockRecord.Location = new System.Drawing.Point(12, 12);
-            this.btnStockRecord.Name = "btnStockRecord";
-            this.btnStockRecord.Size = new System.Drawing.Size(120, 43);
-            this.btnStockRecord.TabIndex = 1;
-            this.btnStockRecord.Text = "Product Management";
-            this.btnStockRecord.UseVisualStyleBackColor = true;
+            this.btnDealerManagement.Location = new System.Drawing.Point(12, 194);
+            this.btnDealerManagement.Name = "btnDealerManagement";
+            this.btnDealerManagement.Size = new System.Drawing.Size(120, 43);
+            this.btnDealerManagement.TabIndex = 3;
+            this.btnDealerManagement.Text = "Dealer Management";
+            this.btnDealerManagement.UseVisualStyleBackColor = true;
+            this.btnDealerManagement.Click += new System.EventHandler(this.BtnDealerManagement_Click);
             // 
-            // button1
+            // btnStaffManagement
             // 
-            this.button1.Location = new System.Drawing.Point(12, 105);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 43);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Staff Management";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnStaffManagement.Location = new System.Drawing.Point(12, 105);
+            this.btnStaffManagement.Name = "btnStaffManagement";
+            this.btnStaffManagement.Size = new System.Drawing.Size(120, 43);
+            this.btnStaffManagement.TabIndex = 2;
+            this.btnStaffManagement.Text = "Staff Management";
+            this.btnStaffManagement.UseVisualStyleBackColor = true;
+            this.btnStaffManagement.Click += new System.EventHandler(this.BtnStaffManagement_Click);
             // 
-            // button2
+            // btnProductManagement
             // 
-            this.button2.Location = new System.Drawing.Point(12, 194);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 43);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Dealer Management";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnProductManagement.Location = new System.Drawing.Point(12, 12);
+            this.btnProductManagement.Name = "btnProductManagement";
+            this.btnProductManagement.Size = new System.Drawing.Size(120, 43);
+            this.btnProductManagement.TabIndex = 1;
+            this.btnProductManagement.Text = "Product Management";
+            this.btnProductManagement.UseVisualStyleBackColor = true;
+            this.btnProductManagement.Click += new System.EventHandler(this.BtnProductManagement_Click);
             // 
-            // button3
+            // panelContent
             // 
-            this.button3.Location = new System.Drawing.Point(12, 280);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 43);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Vendor Management";
-            this.button3.UseVisualStyleBackColor = true;
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContent.Location = new System.Drawing.Point(150, 0);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(1036, 566);
+            this.panelContent.TabIndex = 1;
             // 
             // frmManagementMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1186, 566);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmManagementMain";
@@ -112,10 +116,10 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnStockRecord;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panelContent;
+        private System.Windows.Forms.Button btnProductManagement;
+        private System.Windows.Forms.Button btnVendorManagement;
+        private System.Windows.Forms.Button btnDealerManagement;
+        private System.Windows.Forms.Button btnStaffManagement;
     }
 }

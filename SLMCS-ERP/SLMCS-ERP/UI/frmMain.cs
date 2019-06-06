@@ -1,4 +1,5 @@
 ﻿using SLMCS_Class;
+using SLMCS_ERP.UI.Management;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -65,12 +66,14 @@ namespace SLMCS_ERP
 
         private void BtnDispatch_Click(object sender, EventArgs e)
         {
-
+            frmDispatch dispatch = new frmDispatch();
+            navigation(dispatch, panelContent);
         }
 
         private void BtnUserManagement_Click(object sender, EventArgs e)
         {
-
+            frmManagementMain management = new frmManagementMain();
+            navigation(management, panelContent);
         }
 
         private void BtnLogout_Click(object sender, EventArgs e)

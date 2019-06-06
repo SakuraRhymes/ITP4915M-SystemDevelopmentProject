@@ -47,6 +47,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UI\Dispatch\frmDispatchedHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dispatch\frmDispatchedHistory.Designer.cs">
+      <DependentUpon>frmDispatchedHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dispatch\frmDispatchingList .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dispatch\frmDispatchingList .Designer.cs">
+      <DependentUpon>frmDispatchingList .cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dispatch\frmDispatchMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dispatch\frmDispatchMain.Designer.cs">
+      <DependentUpon>frmDispatchMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dispatch\frmGoodsReceivedList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dispatch\frmGoodsReceivedList.Designer.cs">
+      <DependentUpon>frmGoodsReceivedList.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,11 +167,29 @@
     <Compile Include="UI\Management\frmManagementMain.Designer.cs">
       <DependentUpon>frmManagementMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Management\frmProductManagement_NewProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Management\frmProductManagement_NewProduct.Designer.cs">
+      <DependentUpon>frmProductManagement_NewProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Management\frmProductManagement.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Management\frmProductManagement.Designer.cs">
       <DependentUpon>frmProductManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Management\frmProductManagement_EditProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Management\frmProductManagement_EditProduct.Designer.cs">
+      <DependentUpon>frmProductManagement_EditProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Management\frmProductManagement_VendorRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Management\frmProductManagement_VendorRecord.Designer.cs">
+      <DependentUpon>frmProductManagement_VendorRecord.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Management\frmStaffManagement.cs">
       <SubType>Form</SubType>
@@ -190,12 +232,24 @@
     <Compile Include="UI\Sales\frmViewOrderRecord.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Sales\frmViewOrderRecord.Designer.cs">
-      <DependentUpon>frmViewOrderRecord.cs</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="UI\Dispatch\frmDispatchedHistory.resx">
+      <DependentUpon>frmDispatchedHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dispatch\frmDispatchingList .resx">
+      <DependentUpon>frmDispatchingList .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dispatch\frmDispatchMain.resx">
+      <DependentUpon>frmDispatchMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dispatch\frmGoodsReceivedList.resx">
+      <DependentUpon>frmGoodsReceivedList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="UI\Sales\frmViewOrderRecord.Designer.cs">
+      <DependentUpon>frmViewOrderRecord.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="UI\Inventory\frmInventoryAddReorderProduct.resx">
       <DependentUpon>frmInventoryAddReorderProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,8 +289,23 @@
     <EmbeddedResource Include="UI\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Management\frmDealerManagement.resx">
+      <DependentUpon>frmDealerManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Management\frmManagementMain.resx">
       <DependentUpon>frmManagementMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Management\frmProductManagement_NewProduct.resx">
+      <DependentUpon>frmProductManagement_NewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Management\frmProductManagement.resx">
+      <DependentUpon>frmProductManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Management\frmProductManagement_EditProduct.resx">
+      <DependentUpon>frmProductManagement_EditProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Management\frmProductManagement_VendorRecord.resx">
+      <DependentUpon>frmProductManagement_VendorRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Sales\frmNewSalesOrder.resx">
       <DependentUpon>frmNewSalesOrder.cs</DependentUpon>

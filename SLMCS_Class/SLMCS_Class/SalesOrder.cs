@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace SLMCS_Class
 {
+
     public class SalesOrder
     {
         private List<SalesOrderLine> _salesOrderLine;
@@ -87,6 +88,49 @@ namespace SLMCS_Class
             count = (Int32.Parse(count) + 1).ToString();
             string nextOrderID = "SO" + DateTime.Now.ToString("yyMMdd") + count.PadLeft(6, '0');
             return nextOrderID;
+        }
+
+        public DataTable getSalesOrderTableBySalesOrderStatus(string SalesOrderStatus)
+        {
+            string query = "SELECT SalesOrderID, StaffID, DealerID, SalesOrderDate, SalesOrderStatus FROM SalesOrder WHERE  SalesOrderStatus = \""+SalesOrderStatus+"\"";
+            return dbConnection.GetDataTable(query);
+        }
+
+
+        public DataTable Dispatching_getSalesOrderByOrderID(string OrderID)
+        {
+            string query = "SELECT SalesOrderID, StaffID, DealerID, SalesOrderDate, SalesOrderStatus FROM SalesOrder WHERE OrderID = \"" + OrderID + "\" AND SalesOrderStatus = \"Dispatching\"";
+            return dbConnection.GetDataTable(query);
+        }
+
+        public DataTable Dispatching_getSalesOrderByStaffID(string StaffID)
+        {
+            string query = "SELECT SalesOrderID, StaffID, DealerID, SalesOrderDate, SalesOrderStatus FROM SalesOrder WHERE StaffID = \"" + StaffID + "\" AND SalesOrderStatus = \"Dispatching\"";
+            return dbConnection.GetDataTable(query);
+        }
+
+        public DataTable Dispatching_getSalesOrderByDealerID(string DealerID)
+        {
+            string query = "SELECT SalesOrderID, StaffID, DealerID, SalesOrderDate, SalesOrderStatus FROM SalesOrder WHERE DealerID = \"" + DealerID + "\" AND SalesOrderStatus = \"Dispatching\"";
+            return dbConnection.GetDataTable(query);
+        }
+
+        public DataTable getSalesTableByWhereQuery(string condition)
+        {
+            string query = "SELECT SalesOrderID, StaffID, DealerID, SalesOrderDate, SalesOrderStatus FROM SalesOrder WHERE " + condition;
+            return dbConnection.GetDataTable(query);
+        }
+        public DataTable getSalesOrderLineBySalesOrderID(string salesOrderID)
+        {
+            dbConnection = new DBConnection();
+            string query = "SELECT SalesOrderID, ProductID, Quantity FROM SalesOrderLine WHERE SalesOrderID = \"" + salesOrderID + "\"";
+            return dbConnection.GetDataTable(query);
+        }
+        public void updataSalesOrderStatusInDB(string salesOrderID, string status)
+        {
+            string query = "UPDATE SalesOrder SET SalesOrderStatus = \"" + status + "\" , SalesDispatchDate = \""+ DateTime.Now.ToString("yy-MM-dd") +"\" WHERE SalesOrder.SalesOrderID = \"" + salesOrderID + "\"";
+            System.Windows.Forms.MessageBox.Show(query);
+            dbConnection.Update(query);
         }
 
         public String[] updataDealerInfo(String dealerID)

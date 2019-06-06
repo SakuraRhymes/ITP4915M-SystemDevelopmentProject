@@ -100,6 +100,7 @@
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(1036, 566);
             this.panelContent.TabIndex = 6;
+            this.panelContent.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelContent_Paint);
             // 
             // frmSales
             // 
@@ -118,12 +119,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelLeftNavigate;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnSalesOrderRecords;
         private System.Windows.Forms.Button btnNewSalesOrder;
         private System.Windows.Forms.Panel panelContent;
+        private System.Windows.Forms.Panel panelLeftNavigate;
     }
 }
