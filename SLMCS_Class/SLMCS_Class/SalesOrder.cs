@@ -250,5 +250,25 @@ namespace SLMCS_Class
                 product.updateReserveQuantity(-quantity);
             }
         }
+
+        public void dispatchOrder(string orderIDForDispatch)
+        {
+            string productID;
+            int quantity;
+            string query = "SELECT * FROM SalesOrderLine WHERE SalesOrderID = '" + orderIDForDispatch + "'";
+            DataTable dt = dbConnection.GetDataTable(query);
+            DataRow[] rows = dt.Select();
+
+            foreach (DataRow row in rows)
+            {
+                productID = row["ProductID"].ToString();
+                quantity = (int)row["Quantity"];
+                //MessageBox.Show(productID +" "+ quantity);
+
+                Product product = new Product(productID);
+                product.updateReserveQuantity(-quantity);
+                product.updateActualQuantity(-quantity);
+            }
+        }
     }
 }
