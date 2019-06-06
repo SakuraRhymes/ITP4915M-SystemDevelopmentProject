@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.gpbProductDetail = new System.Windows.Forms.GroupBox();
+            this.lblProductStatus = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.lblDDangerLevelData = new System.Windows.Forms.Label();
             this.lblDReorderLevelData = new System.Windows.Forms.Label();
             this.lblDActualQtyData = new System.Windows.Forms.Label();
@@ -69,8 +71,6 @@
             this.lblProductID = new System.Windows.Forms.Label();
             this.lblProductType = new System.Windows.Forms.Label();
             this.gboxStockRecord = new System.Windows.Forms.GroupBox();
-            this.lblProductStatus = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.gpbProductDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockRecord)).BeginInit();
             this.gpbCondition.SuspendLayout();
@@ -105,6 +105,24 @@
             this.gpbProductDetail.TabIndex = 15;
             this.gpbProductDetail.TabStop = false;
             this.gpbProductDetail.Text = "Product Detail";
+            // 
+            // lblProductStatus
+            // 
+            this.lblProductStatus.AutoSize = true;
+            this.lblProductStatus.Location = new System.Drawing.Point(128, 370);
+            this.lblProductStatus.Name = "lblProductStatus";
+            this.lblProductStatus.Size = new System.Drawing.Size(17, 12);
+            this.lblProductStatus.TabIndex = 50;
+            this.lblProductStatus.Text = "---";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(44, 370);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(77, 12);
+            this.label6.TabIndex = 49;
+            this.label6.Text = "Product Status :";
             // 
             // lblDDangerLevelData
             // 
@@ -270,8 +288,12 @@
             // dgvStockRecord
             // 
             this.dgvStockRecord.AllowUserToAddRows = false;
+            this.dgvStockRecord.AllowUserToDeleteRows = false;
+            this.dgvStockRecord.AllowUserToOrderColumns = true;
             this.dgvStockRecord.AllowUserToResizeColumns = false;
             this.dgvStockRecord.AllowUserToResizeRows = false;
+            this.dgvStockRecord.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvStockRecord.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvStockRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvStockRecord.Location = new System.Drawing.Point(18, 236);
             this.dgvStockRecord.MultiSelect = false;
@@ -504,24 +526,6 @@
             this.gboxStockRecord.TabIndex = 16;
             this.gboxStockRecord.TabStop = false;
             this.gboxStockRecord.Text = "Stock Record List";
-            // 
-            // lblProductStatus
-            // 
-            this.lblProductStatus.AutoSize = true;
-            this.lblProductStatus.Location = new System.Drawing.Point(128, 370);
-            this.lblProductStatus.Name = "lblProductStatus";
-            this.lblProductStatus.Size = new System.Drawing.Size(17, 12);
-            this.lblProductStatus.TabIndex = 50;
-            this.lblProductStatus.Text = "---";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(44, 370);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 12);
-            this.label6.TabIndex = 49;
-            this.label6.Text = "Product Status :";
             // 
             // frmProductManagement
             // 
