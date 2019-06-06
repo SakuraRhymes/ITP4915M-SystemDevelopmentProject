@@ -40,6 +40,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel1.BackgroundImage = global::SLMCS_ERP.Properties.Resources.bg_color;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.btnInwardGoodsRecord);
             this.panel1.Controls.Add(this.btnReorderProduct);
             this.panel1.Controls.Add(this.btnInwardGoods);
@@ -52,46 +54,55 @@
             // 
             // btnInwardGoodsRecord
             // 
-            this.btnInwardGoodsRecord.Location = new System.Drawing.Point(12, 233);
+            this.btnInwardGoodsRecord.BackColor = System.Drawing.Color.White;
+            this.btnInwardGoodsRecord.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnInwardGoodsRecord.Location = new System.Drawing.Point(14, 222);
             this.btnInwardGoodsRecord.Name = "btnInwardGoodsRecord";
-            this.btnInwardGoodsRecord.Size = new System.Drawing.Size(120, 43);
+            this.btnInwardGoodsRecord.Size = new System.Drawing.Size(120, 45);
             this.btnInwardGoodsRecord.TabIndex = 3;
             this.btnInwardGoodsRecord.Text = "Inward Goods Record";
-            this.btnInwardGoodsRecord.UseVisualStyleBackColor = true;
+            this.btnInwardGoodsRecord.UseVisualStyleBackColor = false;
             this.btnInwardGoodsRecord.Click += new System.EventHandler(this.BtnInwardGoodsRecord_Click);
             // 
             // btnReorderProduct
             // 
-            this.btnReorderProduct.Location = new System.Drawing.Point(12, 95);
+            this.btnReorderProduct.BackColor = System.Drawing.Color.White;
+            this.btnReorderProduct.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnReorderProduct.Location = new System.Drawing.Point(14, 89);
             this.btnReorderProduct.Name = "btnReorderProduct";
-            this.btnReorderProduct.Size = new System.Drawing.Size(120, 43);
+            this.btnReorderProduct.Size = new System.Drawing.Size(120, 45);
             this.btnReorderProduct.TabIndex = 2;
             this.btnReorderProduct.Text = "Reorder Product";
-            this.btnReorderProduct.UseVisualStyleBackColor = true;
+            this.btnReorderProduct.UseVisualStyleBackColor = false;
             this.btnReorderProduct.Click += new System.EventHandler(this.BtnReorderProduct_Click);
             // 
             // btnInwardGoods
             // 
-            this.btnInwardGoods.Location = new System.Drawing.Point(12, 160);
+            this.btnInwardGoods.BackColor = System.Drawing.Color.White;
+            this.btnInwardGoods.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnInwardGoods.Location = new System.Drawing.Point(14, 154);
             this.btnInwardGoods.Name = "btnInwardGoods";
-            this.btnInwardGoods.Size = new System.Drawing.Size(120, 43);
+            this.btnInwardGoods.Size = new System.Drawing.Size(120, 45);
             this.btnInwardGoods.TabIndex = 1;
             this.btnInwardGoods.Text = "Inward Goods";
-            this.btnInwardGoods.UseVisualStyleBackColor = true;
+            this.btnInwardGoods.UseVisualStyleBackColor = false;
             this.btnInwardGoods.Click += new System.EventHandler(this.BtnInwardGoods_Click);
             // 
             // btnStockRecord
             // 
-            this.btnStockRecord.Location = new System.Drawing.Point(12, 27);
+            this.btnStockRecord.BackColor = System.Drawing.Color.White;
+            this.btnStockRecord.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnStockRecord.Location = new System.Drawing.Point(14, 21);
             this.btnStockRecord.Name = "btnStockRecord";
-            this.btnStockRecord.Size = new System.Drawing.Size(120, 43);
+            this.btnStockRecord.Size = new System.Drawing.Size(120, 45);
             this.btnStockRecord.TabIndex = 0;
             this.btnStockRecord.Text = "Stock Record";
-            this.btnStockRecord.UseVisualStyleBackColor = true;
+            this.btnStockRecord.UseVisualStyleBackColor = false;
             this.btnStockRecord.Click += new System.EventHandler(this.BtnStockRecord_Click);
             // 
             // panelContent
             // 
+            this.panelContent.BackColor = System.Drawing.Color.White;
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(150, 0);
             this.panelContent.Name = "panelContent";

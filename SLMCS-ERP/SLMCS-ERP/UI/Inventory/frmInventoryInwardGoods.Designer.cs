@@ -31,9 +31,7 @@
             this.dgvReceivedOrderRecord = new System.Windows.Forms.DataGridView();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.dgvOrderDetail = new System.Windows.Forms.DataGridView();
-            this.lblOrderDetail = new System.Windows.Forms.Label();
             this.btnConfirm = new System.Windows.Forms.Button();
-            this.lblInwardGoodsOrder = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblDCompletedDateData = new System.Windows.Forms.Label();
             this.lblDStaffIDData = new System.Windows.Forms.Label();
@@ -54,60 +52,46 @@
             // 
             // dgvReceivedOrderRecord
             // 
+            this.dgvReceivedOrderRecord.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvReceivedOrderRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReceivedOrderRecord.Location = new System.Drawing.Point(12, 63);
             this.dgvReceivedOrderRecord.Name = "dgvReceivedOrderRecord";
             this.dgvReceivedOrderRecord.RowTemplate.Height = 24;
-            this.dgvReceivedOrderRecord.Size = new System.Drawing.Size(457, 421);
-            this.dgvReceivedOrderRecord.TabIndex = 0;
+            this.dgvReceivedOrderRecord.Size = new System.Drawing.Size(457, 460);
+            this.dgvReceivedOrderRecord.TabIndex = 77;
             this.dgvReceivedOrderRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvReceivedOrderRecord_CellClick);
             // 
             // btnRefresh
             // 
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnRefresh.Location = new System.Drawing.Point(12, 12);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(457, 23);
-            this.btnRefresh.TabIndex = 1;
-            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.Size = new System.Drawing.Size(457, 36);
+            this.btnRefresh.TabIndex = 0;
+            this.btnRefresh.Text = "Refresh Received Order Record";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
             // dgvOrderDetail
             // 
+            this.dgvOrderDetail.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvOrderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrderDetail.Location = new System.Drawing.Point(6, 160);
+            this.dgvOrderDetail.Location = new System.Drawing.Point(6, 154);
             this.dgvOrderDetail.Name = "dgvOrderDetail";
             this.dgvOrderDetail.RowTemplate.Height = 24;
-            this.dgvOrderDetail.Size = new System.Drawing.Size(516, 277);
+            this.dgvOrderDetail.Size = new System.Drawing.Size(516, 307);
             this.dgvOrderDetail.TabIndex = 2;
-            // 
-            // lblOrderDetail
-            // 
-            this.lblOrderDetail.AutoSize = true;
-            this.lblOrderDetail.Location = new System.Drawing.Point(6, 145);
-            this.lblOrderDetail.Name = "lblOrderDetail";
-            this.lblOrderDetail.Size = new System.Drawing.Size(62, 12);
-            this.lblOrderDetail.TabIndex = 3;
-            this.lblOrderDetail.Text = "Order Line :";
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(447, 443);
+            this.btnConfirm.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnConfirm.Location = new System.Drawing.Point(335, 469);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirm.Size = new System.Drawing.Size(186, 30);
             this.btnConfirm.TabIndex = 4;
-            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.Text = "Confirm Received Order";
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.BtnConfirm_Click);
-            // 
-            // lblInwardGoodsOrder
-            // 
-            this.lblInwardGoodsOrder.AutoSize = true;
-            this.lblInwardGoodsOrder.Location = new System.Drawing.Point(12, 48);
-            this.lblInwardGoodsOrder.Name = "lblInwardGoodsOrder";
-            this.lblInwardGoodsOrder.Size = new System.Drawing.Size(121, 12);
-            this.lblInwardGoodsOrder.TabIndex = 6;
-            this.lblInwardGoodsOrder.Text = "Received Order Record :";
             // 
             // groupBox1
             // 
@@ -123,12 +107,12 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.lblOrderDetail);
             this.groupBox1.Controls.Add(this.dgvOrderDetail);
             this.groupBox1.Controls.Add(this.btnConfirm);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.groupBox1.Location = new System.Drawing.Point(484, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(528, 472);
+            this.groupBox1.Size = new System.Drawing.Size(528, 511);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Received Order Detail";
@@ -136,108 +120,120 @@
             // lblDCompletedDateData
             // 
             this.lblDCompletedDateData.AutoSize = true;
-            this.lblDCompletedDateData.Location = new System.Drawing.Point(334, 107);
+            this.lblDCompletedDateData.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblDCompletedDateData.Location = new System.Drawing.Point(393, 113);
             this.lblDCompletedDateData.Name = "lblDCompletedDateData";
-            this.lblDCompletedDateData.Size = new System.Drawing.Size(69, 12);
+            this.lblDCompletedDateData.Size = new System.Drawing.Size(91, 16);
             this.lblDCompletedDateData.TabIndex = 46;
             this.lblDCompletedDateData.Text = "complete date";
             // 
             // lblDStaffIDData
             // 
             this.lblDStaffIDData.AutoSize = true;
-            this.lblDStaffIDData.Location = new System.Drawing.Point(334, 51);
+            this.lblDStaffIDData.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblDStaffIDData.Location = new System.Drawing.Point(393, 46);
             this.lblDStaffIDData.Name = "lblDStaffIDData";
-            this.lblDStaffIDData.Size = new System.Drawing.Size(37, 12);
+            this.lblDStaffIDData.Size = new System.Drawing.Size(46, 16);
             this.lblDStaffIDData.TabIndex = 45;
             this.lblDStaffIDData.Text = "staff id";
             // 
             // lblDEditDateData
             // 
             this.lblDEditDateData.AutoSize = true;
-            this.lblDEditDateData.Location = new System.Drawing.Point(334, 79);
+            this.lblDEditDateData.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblDEditDateData.Location = new System.Drawing.Point(393, 79);
             this.lblDEditDateData.Name = "lblDEditDateData";
-            this.lblDEditDateData.Size = new System.Drawing.Size(46, 12);
+            this.lblDEditDateData.Size = new System.Drawing.Size(59, 16);
             this.lblDEditDateData.TabIndex = 44;
             this.lblDEditDateData.Text = "Edit date";
             // 
             // lblDOrderDateData
             // 
             this.lblDOrderDateData.AutoSize = true;
-            this.lblDOrderDateData.Location = new System.Drawing.Point(142, 79);
+            this.lblDOrderDateData.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblDOrderDateData.Location = new System.Drawing.Point(146, 79);
             this.lblDOrderDateData.Name = "lblDOrderDateData";
-            this.lblDOrderDateData.Size = new System.Drawing.Size(62, 12);
+            this.lblDOrderDateData.Size = new System.Drawing.Size(77, 16);
             this.lblDOrderDateData.TabIndex = 43;
             this.lblDOrderDateData.Text = "Order Date :";
             // 
             // lblDReceivedDateData
             // 
             this.lblDReceivedDateData.AutoSize = true;
-            this.lblDReceivedDateData.Location = new System.Drawing.Point(142, 108);
+            this.lblDReceivedDateData.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblDReceivedDateData.Location = new System.Drawing.Point(146, 114);
             this.lblDReceivedDateData.Name = "lblDReceivedDateData";
-            this.lblDReceivedDateData.Size = new System.Drawing.Size(75, 12);
+            this.lblDReceivedDateData.Size = new System.Drawing.Size(93, 16);
             this.lblDReceivedDateData.TabIndex = 42;
             this.lblDReceivedDateData.Text = "Received Date ";
             // 
             // lblDReorderOrderIDData
             // 
             this.lblDReorderOrderIDData.AutoSize = true;
-            this.lblDReorderOrderIDData.Location = new System.Drawing.Point(142, 51);
+            this.lblDReorderOrderIDData.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblDReorderOrderIDData.Location = new System.Drawing.Point(146, 46);
             this.lblDReorderOrderIDData.Name = "lblDReorderOrderIDData";
-            this.lblDReorderOrderIDData.Size = new System.Drawing.Size(91, 12);
+            this.lblDReorderOrderIDData.Size = new System.Drawing.Size(108, 16);
             this.lblDReorderOrderIDData.TabIndex = 41;
             this.lblDReorderOrderIDData.Text = "Reorder Order ID ";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(278, 79);
+            this.label10.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label10.Location = new System.Drawing.Point(321, 79);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 12);
+            this.label10.Size = new System.Drawing.Size(66, 16);
             this.label10.TabIndex = 40;
             this.label10.Text = "Edit Date :";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(74, 79);
+            this.label11.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label11.Location = new System.Drawing.Point(69, 79);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(62, 12);
+            this.label11.Size = new System.Drawing.Size(77, 16);
             this.label11.TabIndex = 39;
             this.label11.Text = "Order Date :";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(284, 51);
+            this.label6.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label6.Location = new System.Drawing.Point(332, 46);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 12);
+            this.label6.Size = new System.Drawing.Size(55, 16);
             this.label6.TabIndex = 38;
             this.label6.Text = "Staff ID :";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(246, 107);
+            this.label7.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label7.Location = new System.Drawing.Point(279, 113);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 12);
+            this.label7.Size = new System.Drawing.Size(108, 16);
             this.label7.TabIndex = 37;
             this.label7.Text = "Completed Date :";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(42, 51);
+            this.label8.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label8.Location = new System.Drawing.Point(35, 46);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(94, 12);
+            this.label8.Size = new System.Drawing.Size(111, 16);
             this.label8.TabIndex = 35;
             this.label8.Text = "Reorder Order ID :";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(58, 108);
+            this.label9.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label9.Location = new System.Drawing.Point(51, 114);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(78, 12);
+            this.label9.Size = new System.Drawing.Size(96, 16);
             this.label9.TabIndex = 36;
             this.label9.Text = "Received Date :";
             // 
@@ -245,9 +241,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1038, 496);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1036, 566);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.lblInwardGoodsOrder);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dgvReceivedOrderRecord);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -259,7 +255,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -268,9 +263,7 @@
         private System.Windows.Forms.DataGridView dgvReceivedOrderRecord;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.DataGridView dgvOrderDetail;
-        private System.Windows.Forms.Label lblOrderDetail;
         private System.Windows.Forms.Button btnConfirm;
-        private System.Windows.Forms.Label lblInwardGoodsOrder;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblDCompletedDateData;
         private System.Windows.Forms.Label lblDStaffIDData;
