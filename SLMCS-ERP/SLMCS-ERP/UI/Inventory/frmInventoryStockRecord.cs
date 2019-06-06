@@ -221,5 +221,21 @@ namespace SLMCS_ERP
         {
             CheckInputAlphabetOnly(e);
         }
+
+        private void TxtProductID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BtnSearch_Click(this, new EventArgs());
+            }
+        }
+
+        private void TxtProductName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BtnSearch_Click(this, new EventArgs());
+            }
+        }
     }
 }

@@ -40,5 +40,13 @@ namespace SLMCS_ERP
         {
             Close();
         }
+
+        private void TxtReorderLevel_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BtnSubmit_Click(this, new EventArgs());
+            }
+        }
     }
 }
