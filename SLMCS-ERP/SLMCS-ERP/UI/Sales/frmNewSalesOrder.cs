@@ -32,6 +32,7 @@ namespace SLMCS_ERP.UI.Sales
             txtDealerID.Text = "";
             txtOrderQunatity.Text = "";
             txtSearchForProduct.Text = "";
+            lblTotalAmount.Text = "0";
             btnAddItem.Enabled = false;
             dgvOrderItem.Enabled = false;
 

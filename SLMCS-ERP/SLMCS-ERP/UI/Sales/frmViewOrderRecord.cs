@@ -90,6 +90,7 @@ namespace SLMCS_ERP.UI.Sales
             salesOrder.updateStatus("Processing");
             lblOrderStatus.Text = salesOrder.SalesOrderStatus; 
             btnConfirmPlaceOrder.Enabled = false;
+            btnCompleteOrder.Enabled = true;
             MessageBox.Show("Successfully Placed Sales Order");
         }
 

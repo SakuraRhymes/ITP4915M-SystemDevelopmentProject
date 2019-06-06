@@ -71,7 +71,7 @@
             this.dgvOrderItem.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvOrderItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrderItem.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvOrderItem.Location = new System.Drawing.Point(20, 306);
+            this.dgvOrderItem.Location = new System.Drawing.Point(20, 319);
             this.dgvOrderItem.MultiSelect = false;
             this.dgvOrderItem.Name = "dgvOrderItem";
             this.dgvOrderItem.ReadOnly = true;
@@ -84,7 +84,7 @@
             // 
             this.btnCancelPlaceOrder.BackColor = System.Drawing.SystemColors.Control;
             this.btnCancelPlaceOrder.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnCancelPlaceOrder.Location = new System.Drawing.Point(20, 503);
+            this.btnCancelPlaceOrder.Location = new System.Drawing.Point(20, 516);
             this.btnCancelPlaceOrder.Name = "btnCancelPlaceOrder";
             this.btnCancelPlaceOrder.Size = new System.Drawing.Size(110, 30);
             this.btnCancelPlaceOrder.TabIndex = 6;
@@ -99,7 +99,7 @@
             this.btnPlaceOrder.Enabled = false;
             this.btnPlaceOrder.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnPlaceOrder.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnPlaceOrder.Location = new System.Drawing.Point(789, 503);
+            this.btnPlaceOrder.Location = new System.Drawing.Point(789, 516);
             this.btnPlaceOrder.Name = "btnPlaceOrder";
             this.btnPlaceOrder.Size = new System.Drawing.Size(110, 30);
             this.btnPlaceOrder.TabIndex = 4;
@@ -112,7 +112,7 @@
             this.lblTotalAmount.AutoSize = true;
             this.lblTotalAmount.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblTotalAmount.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblTotalAmount.Location = new System.Drawing.Point(559, 511);
+            this.lblTotalAmount.Location = new System.Drawing.Point(559, 524);
             this.lblTotalAmount.Name = "lblTotalAmount";
             this.lblTotalAmount.Size = new System.Drawing.Size(16, 17);
             this.lblTotalAmount.TabIndex = 15;
@@ -122,7 +122,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(463, 510);
+            this.label1.Location = new System.Drawing.Point(463, 523);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 17);
             this.label1.TabIndex = 14;
@@ -160,7 +160,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.groupBox1.Location = new System.Drawing.Point(20, 14);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(879, 158);
+            this.groupBox1.Size = new System.Drawing.Size(879, 178);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
@@ -305,7 +305,7 @@
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.btnAddItem);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox2.Location = new System.Drawing.Point(20, 178);
+            this.groupBox2.Location = new System.Drawing.Point(20, 198);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(879, 112);
             this.groupBox2.TabIndex = 20;
@@ -363,8 +363,8 @@
             this.txtOrderQunatity.Name = "txtOrderQunatity";
             this.txtOrderQunatity.Size = new System.Drawing.Size(129, 23);
             this.txtOrderQunatity.TabIndex = 2;
-            this.txtOrderQunatity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtOrderQunatity_KeyPress);
             this.txtOrderQunatity.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtOrderQunatity_KeyDown);
+            this.txtOrderQunatity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtOrderQunatity_KeyPress);
             // 
             // label7
             // 
@@ -388,7 +388,7 @@
             this.btnReserveOrder.BackColor = System.Drawing.SystemColors.Control;
             this.btnReserveOrder.Enabled = false;
             this.btnReserveOrder.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnReserveOrder.Location = new System.Drawing.Point(666, 503);
+            this.btnReserveOrder.Location = new System.Drawing.Point(666, 516);
             this.btnReserveOrder.Name = "btnReserveOrder";
             this.btnReserveOrder.Size = new System.Drawing.Size(110, 30);
             this.btnReserveOrder.TabIndex = 5;
