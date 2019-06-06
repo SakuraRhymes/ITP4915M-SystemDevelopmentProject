@@ -33,6 +33,13 @@ namespace SLMCS_ERP.UI.Sales
             txtOrderQunatity.Text = "";
             txtSearchForProduct.Text = "";
             btnAddItem.Enabled = false;
+            dgvOrderItem.Enabled = false;
+
+            dgvOrderItem.AllowUserToAddRows = false;
+            dgvOrderItem.RowHeadersVisible = false;
+            dgvOrderItem.ReadOnly = true;
+            dgvOrderItem.AllowUserToResizeRows = false;
+            dgvOrderItem.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             updateDGV();
         }
@@ -106,7 +113,7 @@ namespace SLMCS_ERP.UI.Sales
         {
             if (txtDealerID.Text.Length == 8)
             {
-                String[] reslut = salesOrder.updataDealerInfo(txtDealerID.Text);
+                String[] reslut = salesOrder.updataDealerInfo((txtDealerID.Text).ToUpper());
                 if(reslut != null)
                 {
                     lblDealerName.Text = reslut[0];
@@ -153,10 +160,6 @@ namespace SLMCS_ERP.UI.Sales
         {
             dgvOrderItem.DataSource = null;
             dgvOrderItem.DataSource = salesOrder._SalesOrderLine;
-
-            dgvOrderItem.AllowUserToAddRows = false;
-            dgvOrderItem.RowHeadersVisible = false;
-            dgvOrderItem.ReadOnly = true;
 
             dgvOrderItem.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvOrderItem.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;

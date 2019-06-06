@@ -52,17 +52,19 @@ namespace SLMCS_ERP.UI.Sales
             };
 
             cboSearchType.DataSource = items;
+
+            dgvSearchResult.AllowUserToAddRows = false;
+            dgvSearchResult.RowHeadersVisible = false;
+            dgvSearchResult.ReadOnly = true;
             dgvSearchResult.AllowUserToResizeRows = false;
+            dgvSearchResult.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
         }
 
         private void updateDGV(DataTable dt)
         {
             dgvSearchResult.DataSource = null;
             dgvSearchResult.DataSource = dt;
-
-            dgvSearchResult.AllowUserToAddRows = false;
-            dgvSearchResult.RowHeadersVisible = false;
-            dgvSearchResult.ReadOnly = true;
 
             dgvSearchResult.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvSearchResult.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
