@@ -44,9 +44,10 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(194, 361);
+            this.btnReset.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnReset.Location = new System.Drawing.Point(138, 360);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.Size = new System.Drawing.Size(100, 30);
             this.btnReset.TabIndex = 25;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
@@ -54,9 +55,10 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(277, 361);
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnSubmit.Location = new System.Drawing.Point(254, 360);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.Size = new System.Drawing.Size(100, 30);
             this.btnSubmit.TabIndex = 24;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -65,91 +67,102 @@
             // lblDealerInvoiceAddress
             // 
             this.lblDealerInvoiceAddress.AutoSize = true;
-            this.lblDealerInvoiceAddress.Location = new System.Drawing.Point(20, 171);
+            this.lblDealerInvoiceAddress.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblDealerInvoiceAddress.Location = new System.Drawing.Point(37, 171);
             this.lblDealerInvoiceAddress.Name = "lblDealerInvoiceAddress";
-            this.lblDealerInvoiceAddress.Size = new System.Drawing.Size(116, 12);
+            this.lblDealerInvoiceAddress.Size = new System.Drawing.Size(142, 16);
             this.lblDealerInvoiceAddress.TabIndex = 17;
-            this.lblDealerInvoiceAddress.Text = "Dealer Invoice Address:";
+            this.lblDealerInvoiceAddress.Text = "Dealer Invoice Address :";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(151, 122);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.textBox1.Location = new System.Drawing.Point(186, 122);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(106, 22);
+            this.textBox1.Size = new System.Drawing.Size(168, 23);
             this.textBox1.TabIndex = 27;
             // 
             // txtDealerPhoneNo
             // 
             this.txtDealerPhoneNo.AutoSize = true;
-            this.txtDealerPhoneNo.Location = new System.Drawing.Point(46, 125);
+            this.txtDealerPhoneNo.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtDealerPhoneNo.Location = new System.Drawing.Point(68, 125);
             this.txtDealerPhoneNo.Name = "txtDealerPhoneNo";
-            this.txtDealerPhoneNo.Size = new System.Drawing.Size(90, 12);
+            this.txtDealerPhoneNo.Size = new System.Drawing.Size(111, 16);
             this.txtDealerPhoneNo.TabIndex = 26;
-            this.txtDealerPhoneNo.Text = "Dealer Phone No.:";
+            this.txtDealerPhoneNo.Text = "Dealer Phone No :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(68, 76);
+            this.label2.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label2.Location = new System.Drawing.Point(90, 76);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 12);
+            this.label2.Size = new System.Drawing.Size(89, 16);
             this.label2.TabIndex = 28;
-            this.label2.Text = "Dealer Name:";
+            this.label2.Text = "Dealer Name :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 271);
+            this.label3.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label3.Location = new System.Drawing.Point(26, 271);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(123, 12);
+            this.label3.Size = new System.Drawing.Size(153, 16);
             this.label3.TabIndex = 30;
-            this.label3.Text = "Dealer Shipping Address:";
+            this.label3.Text = "Dealer Shipping Address :";
             // 
             // txtDealerShippingAddress
             // 
-            this.txtDealerShippingAddress.Location = new System.Drawing.Point(151, 268);
+            this.txtDealerShippingAddress.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtDealerShippingAddress.Location = new System.Drawing.Point(186, 268);
             this.txtDealerShippingAddress.Name = "txtDealerShippingAddress";
-            this.txtDealerShippingAddress.Size = new System.Drawing.Size(133, 70);
+            this.txtDealerShippingAddress.Size = new System.Drawing.Size(168, 70);
             this.txtDealerShippingAddress.TabIndex = 32;
             this.txtDealerShippingAddress.Text = "";
             // 
             // txtDealerInvoiceAddress
             // 
-            this.txtDealerInvoiceAddress.Location = new System.Drawing.Point(151, 171);
+            this.txtDealerInvoiceAddress.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtDealerInvoiceAddress.Location = new System.Drawing.Point(186, 171);
             this.txtDealerInvoiceAddress.Name = "txtDealerInvoiceAddress";
-            this.txtDealerInvoiceAddress.Size = new System.Drawing.Size(133, 70);
+            this.txtDealerInvoiceAddress.Size = new System.Drawing.Size(168, 70);
             this.txtDealerInvoiceAddress.TabIndex = 33;
             this.txtDealerInvoiceAddress.Text = "";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(83, 35);
+            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Location = new System.Drawing.Point(113, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.Size = new System.Drawing.Size(66, 16);
             this.label1.TabIndex = 34;
-            this.label1.Text = "Dealer ID:";
+            this.label1.Text = "Dealer ID :";
             // 
             // txtDealerName
             // 
-            this.txtDealerName.Location = new System.Drawing.Point(151, 73);
+            this.txtDealerName.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtDealerName.Location = new System.Drawing.Point(186, 73);
             this.txtDealerName.Name = "txtDealerName";
-            this.txtDealerName.Size = new System.Drawing.Size(106, 22);
+            this.txtDealerName.Size = new System.Drawing.Size(168, 23);
             this.txtDealerName.TabIndex = 29;
             // 
             // txtDealerID
             // 
-            this.txtDealerID.Location = new System.Drawing.Point(151, 32);
+            this.txtDealerID.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtDealerID.Location = new System.Drawing.Point(186, 32);
             this.txtDealerID.Name = "txtDealerID";
             this.txtDealerID.ReadOnly = true;
-            this.txtDealerID.Size = new System.Drawing.Size(106, 22);
+            this.txtDealerID.Size = new System.Drawing.Size(168, 23);
             this.txtDealerID.TabIndex = 35;
             // 
             // frmDealerManagement_NewDealer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(364, 415);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(404, 415);
             this.Controls.Add(this.txtDealerID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDealerInvoiceAddress);
@@ -162,7 +175,9 @@
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.lblDealerInvoiceAddress);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmDealerManagement_NewDealer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New Dealer";
             this.ResumeLayout(false);
             this.PerformLayout();
