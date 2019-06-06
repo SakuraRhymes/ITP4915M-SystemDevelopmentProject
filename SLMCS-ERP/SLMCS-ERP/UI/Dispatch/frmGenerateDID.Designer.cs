@@ -48,7 +48,7 @@
             // 
             this.lblCompanyName.AutoSize = true;
             this.lblCompanyName.Font = new System.Drawing.Font("PMingLiU", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblCompanyName.Location = new System.Drawing.Point(20, 9);
+            this.lblCompanyName.Location = new System.Drawing.Point(16, 9);
             this.lblCompanyName.Name = "lblCompanyName";
             this.lblCompanyName.Size = new System.Drawing.Size(453, 30);
             this.lblCompanyName.TabIndex = 0;
@@ -98,7 +98,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("PMingLiU", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
-            this.label4.Location = new System.Drawing.Point(229, 458);
+            this.label4.Location = new System.Drawing.Point(229, 479);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(24, 32);
             this.label4.TabIndex = 5;
@@ -180,7 +180,7 @@
             // 
             this.lblProductUnitData.AutoSize = true;
             this.lblProductUnitData.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
-            this.lblProductUnitData.Location = new System.Drawing.Point(280, 393);
+            this.lblProductUnitData.Location = new System.Drawing.Point(259, 393);
             this.lblProductUnitData.Name = "lblProductUnitData";
             this.lblProductUnitData.Size = new System.Drawing.Size(48, 28);
             this.lblProductUnitData.TabIndex = 13;
@@ -191,7 +191,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(502, 494);
+            this.ClientSize = new System.Drawing.Size(509, 520);
             this.Controls.Add(this.lblProductUnitData);
             this.Controls.Add(this.lblProductNameData);
             this.Controls.Add(this.lblProductName);

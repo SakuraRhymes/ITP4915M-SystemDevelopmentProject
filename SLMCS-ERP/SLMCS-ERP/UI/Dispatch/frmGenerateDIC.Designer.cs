@@ -45,7 +45,7 @@
             // 
             this.lblCompanyName.AutoSize = true;
             this.lblCompanyName.Font = new System.Drawing.Font("PMingLiU", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblCompanyName.Location = new System.Drawing.Point(20, 9);
+            this.lblCompanyName.Location = new System.Drawing.Point(16, 9);
             this.lblCompanyName.Name = "lblCompanyName";
             this.lblCompanyName.Size = new System.Drawing.Size(453, 30);
             this.lblCompanyName.TabIndex = 0;
@@ -85,7 +85,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
-            this.label5.Location = new System.Drawing.Point(68, 323);
+            this.label5.Location = new System.Drawing.Point(89, 323);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 28);
             this.label5.TabIndex = 4;
@@ -95,7 +95,7 @@
             // 
             this.lblPageNum.AutoSize = true;
             this.lblPageNum.Font = new System.Drawing.Font("PMingLiU", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
-            this.lblPageNum.Location = new System.Drawing.Point(232, 397);
+            this.lblPageNum.Location = new System.Drawing.Point(233, 420);
             this.lblPageNum.Name = "lblPageNum";
             this.lblPageNum.Size = new System.Drawing.Size(24, 32);
             this.lblPageNum.TabIndex = 5;
@@ -157,7 +157,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(502, 433);
+            this.ClientSize = new System.Drawing.Size(506, 461);
             this.Controls.Add(this.lblDateData);
             this.Controls.Add(this.lblDealerIDData);
             this.Controls.Add(this.lblSalesOrderDateData);
