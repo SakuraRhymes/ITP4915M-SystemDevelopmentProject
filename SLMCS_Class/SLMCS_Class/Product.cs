@@ -130,7 +130,7 @@ namespace SLMCS_Class
 
         public DataTable GetProdcutReorderLevelTable()
         {
-            string query = "SELECT ProductID,ProductName,ProductType,ProductUnit,VendorID,ActualQuantity FROM ReorderLevelProduct";
+            string query = "SELECT ProductID,ProductName,ProductType,ProductUnit,VendorID,ActualQuantity,ReorderLevel FROM ReorderLevelProduct";
             DataTable dataTable = dbConnection.GetDataTable(query);
             return dataTable;
         }
@@ -140,6 +140,17 @@ namespace SLMCS_Class
             string query = "SELECT ProductID,ProductName,ProductType,ProductUnit,VendorID,ActualQuantity,DangerLevel FROM DangerLevelProduct";
             DataTable dataTable = dbConnection.GetDataTable(query);
             return dataTable;
+        }
+
+        public DataTable GetReorderProductTable(string condition)
+        {
+            string query = "SELECT ProductID,ProductName,ProductType,ProductPrice,VendorID,ActualQuantity,ReorderLevel,DangerLevel FROM Product ";
+            if (condition != "")
+            {
+                query += condition;
+            }
+            productTable = dbConnection.GetDataTable(query);
+            return productTable;
         }
 
         public DataTable SearchForProduct(string productID)

@@ -108,17 +108,19 @@ namespace SLMCS_Class
             return nextReorderOrderID;
         }
 
-        public DataTable GetReorderOrderTable(string condition)
-        {
-            string query = "SELECT ReorderOrderID,StaffID,ReorderOrderDate,ReorderOrderEditDate,ReorderOrderReceivedDate,ReorderOrderCompletedDate,ReorderOrderStatus FROM ReorderOrder ";
-            if (condition != "")
-            {
+        //public DataTable GetReorderOrderTable(string condition)
+        //{
+        //    string query = "SELECT ReorderOrderID,StaffID,ReorderOrderDate,ReorderOrderEditDate,ReorderOrderReceivedDate,ReorderOrderCompletedDate,ReorderOrderStatus FROM ReorderOrder ";
+        //    if (condition != "")
+        //    {
                 
-                query += condition;
-            }
-            reorderOrderTable = dbConnection.GetDataTable(query);
-            return reorderOrderTable;
-        }
+        //        query += condition;
+        //    }
+        //    reorderOrderTable = dbConnection.GetDataTable(query);
+        //    return reorderOrderTable;
+        //}
+
+        
 
         public DataTable GetInwardGoodsRecordTable(string condition)
         {
