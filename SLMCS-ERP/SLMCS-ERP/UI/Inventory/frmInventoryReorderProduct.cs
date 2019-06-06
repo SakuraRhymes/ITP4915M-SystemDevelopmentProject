@@ -16,9 +16,7 @@ namespace SLMCS_ERP
         public frmInventoryReorderProduct()
         {
             InitializeComponent();
-            product = new Product();
-            reorderOrder = new ReorderOrder();
-            selectedProductID = "";
+          
         }
 
         private void BtnReorderLevel_Click(object sender, EventArgs e)
@@ -63,6 +61,10 @@ namespace SLMCS_ERP
 
         private void FrmInventoryReorderProduct_Load(object sender, EventArgs e)
         {
+            product = new Product();
+            reorderOrder = new ReorderOrder();
+            selectedProductID = "";
+
             dgvReorderOrder.AllowUserToAddRows = false;
             dgvReorderOrder.RowHeadersVisible = false;
             dgvReorderOrder.ReadOnly = true;
@@ -72,22 +74,27 @@ namespace SLMCS_ERP
             dgvSearchRecord.ReadOnly = true;
 
             lblReorderOrderID.Text = "Reorder Order ID : " + reorderOrder.GetNextReorderOrderID();
+            cboCondition.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboCondition.Text = "ProductID";
 
             dgvSearchRecord.DataSource = null;
             dgvReorderOrder.DataSource = null;
+
+
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            if (cboCondition.Text != "" && txtCondition.Text != "")
+            string condition = "";
+            if (txtCondition.Text != "")
             {
-                string condition = "WHERE " + cboCondition.Text + " LIKE '%" + txtCondition.Text + "%'";
+                condition = " WHERE " + cboCondition.Text + " LIKE '%" + txtCondition.Text + "%'";
                 //MessageBox.Show(condition);
-                dgvSearchRecord.DataSource = product.GetProdcutTable(condition);
-            } else
-            {
-                MessageBox.Show("Please input and select condition");
-            }
+                
+            } 
+                //MessageBox.Show("Please input and select condition");
+            
+            dgvSearchRecord.DataSource = product.GetReorderProductTable(condition);
         }
 
         private void DgvSearchRecord_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -109,7 +116,7 @@ namespace SLMCS_ERP
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
-            Close();
+            FrmInventoryReorderProduct_Load(sender, e);
         }
 
         private void BtnAddProduct_Click(object sender, EventArgs e)
@@ -135,13 +142,19 @@ namespace SLMCS_ERP
 
         private void DgvSearchRecord_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            selectedProductID = dgvSearchRecord.Rows[e.RowIndex].Cells["ProductID"].Value.ToString();
+            if (e.RowIndex != -1)
+            {
+                selectedProductID = dgvSearchRecord.Rows[e.RowIndex].Cells["ProductID"].Value.ToString();
+            }
         }
 
         private void DgvReorderOrder_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            addedProductID = dgvReorderOrder.Rows[e.RowIndex].Cells["ProductID"].Value.ToString();
-            // testing
+            if (e.RowIndex != -1)
+            {
+                addedProductID = dgvReorderOrder.Rows[e.RowIndex].Cells["ProductID"].Value.ToString();
+                // testing
+            }
         }
     }
 }

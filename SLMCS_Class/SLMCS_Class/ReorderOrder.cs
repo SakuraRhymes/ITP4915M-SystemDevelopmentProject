@@ -108,17 +108,19 @@ namespace SLMCS_Class
             return nextReorderOrderID;
         }
 
-        public DataTable GetReorderOrderTable(string condition)
-        {
-            string query = "SELECT ReorderOrderID,StaffID,ReorderOrderDate,ReorderOrderEditDate,ReorderOrderReceivedDate,ReorderOrderCompletedDate,ReorderOrderStatus FROM ReorderOrder ";
-            if (condition != "")
-            {
+        //public DataTable GetReorderOrderTable(string condition)
+        //{
+        //    string query = "SELECT ReorderOrderID,StaffID,ReorderOrderDate,ReorderOrderEditDate,ReorderOrderReceivedDate,ReorderOrderCompletedDate,ReorderOrderStatus FROM ReorderOrder ";
+        //    if (condition != "")
+        //    {
                 
-                query += condition;
-            }
-            reorderOrderTable = dbConnection.GetDataTable(query);
-            return reorderOrderTable;
-        }
+        //        query += condition;
+        //    }
+        //    reorderOrderTable = dbConnection.GetDataTable(query);
+        //    return reorderOrderTable;
+        //}
+
+        
 
         public DataTable GetInwardGoodsRecordTable(string condition)
         {
@@ -131,12 +133,54 @@ namespace SLMCS_Class
             reorderOrderTable = dbConnection.GetDataTable(query);
             return reorderOrderTable;
         }
+
+        public DataTable GetReceivedReorderOrderTable()
+        {
+            string query = "SELECT ReorderOrderID,StaffID,ReorderOrderDate,ReorderOrderReceivedDate FROM ReorderOrder WHERE ReorderOrderStatus = 'Received' ";
+           
+            reorderOrderTable = dbConnection.GetDataTable(query);
+            return reorderOrderTable;
+        }
+
         public DataTable GetReorderOrderLineTable(string reorderOrderID)
         {
             string query = "SELECT * FROM ReorderOrderLine WHERE ReorderOrderID = '" + reorderOrderID + "'";
             reorderOrderTable = dbConnection.GetDataTable(query);
             return reorderOrderTable;
         }
+
+        public void ConfirmReorderOrder()
+        {
+            string productID;
+            int quantity;
+            string query = "SELECT * FROM ReorderOrderLine WHERE ReorderOrderID = '" + ReorderOrderID + "'";
+            DataTable dt = dbConnection.GetDataTable(query);
+            DataRow[] rows = dt.Select();
+
+            foreach (DataRow row in rows)
+            {
+                productID = row["ProductID"].ToString();
+                quantity = (int)row["Quantity"];
+
+                Product product = new Product(productID);
+                product.updateActualQuantity(quantity);
+            }
+        }
+
+        public void UpdateStatus(string status)
+        {
+            ReorderOrderStatus = status;
+            string query = "UPDATE ReorderOrder SET ReorderOrderStatus = '" + status + "' WHERE ReorderOrderID = '" + ReorderOrderID + "'";
+            dbConnection.Update(query);
+        }
+
+        public void UpdateCompletedDate(string date)
+        {
+            reorderOrderCompletedDate = date;
+            string query = "UPDATE ReorderOrder SET ReorderOrderCompletedDate = '" + date + "' WHERE ReorderOrderID = '" + ReorderOrderID + "'";
+            dbConnection.Update(query);
+        }
+
         public string ReorderOrderID
         {
             get => reorderOrderID;

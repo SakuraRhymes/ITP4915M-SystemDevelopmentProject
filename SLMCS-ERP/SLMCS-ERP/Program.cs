@@ -17,7 +17,7 @@ namespace SLMCS_ERP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmManagementMain());
+            Application.Run(new frmLogin());
         }
     }
 }

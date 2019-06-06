@@ -70,7 +70,9 @@
             this.dgvOrderItem.AllowUserToDeleteRows = false;
             this.dgvOrderItem.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvOrderItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrderItem.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvOrderItem.Location = new System.Drawing.Point(20, 306);
+            this.dgvOrderItem.MultiSelect = false;
             this.dgvOrderItem.Name = "dgvOrderItem";
             this.dgvOrderItem.ReadOnly = true;
             this.dgvOrderItem.RowTemplate.Height = 23;

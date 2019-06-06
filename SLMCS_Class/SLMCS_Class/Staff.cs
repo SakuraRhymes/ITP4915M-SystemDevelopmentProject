@@ -17,10 +17,10 @@ namespace SLMCS_Class
 
         private DBConnection dbConnection;
         private DataTable staffTable;
-        
+
         private Department _department; //may don't need
         private List<ReorderOrder> _reorderOrder;
-        
+
         public Staff()
         {
             dbConnection = new DBConnection();
@@ -54,7 +54,7 @@ namespace SLMCS_Class
         {
             if (Verify(password))
             {
-                dbConnection.Update("Staff", "Password='" + newPassword + "', PasswordChangeDate="+ "CURDATE()" + "", "WHERE StaffID='" + staffID + "'");
+                dbConnection.Update("Staff", "Password='" + newPassword + "', PasswordChangeDate=" + "CURDATE()" + "", "WHERE StaffID='" + staffID + "'");
                 Password = newPassword;
                 //PasswordChangeDate = DateTime.Today.ToString("dd/MM/yyyy");
                 Console.WriteLine("change successful"); // for testing
@@ -63,22 +63,21 @@ namespace SLMCS_Class
             Console.WriteLine("change fail"); // for testing
             return false;
         }
-        //staffName and staffPhoneNo for checking the password
-        public string ForgetPassword(string staffName, string staffPhoneNo)
+        //staffPhoneNo for checking the password
+        public string ForgetPassword(string _staffPhoneNo)
         {
-            if (Verify(password))
+            if (_staffPhoneNo == staffPhoneNo)
             {
-                if (this.staffName.Equals(staffName) && this.staffPhoneNo.Equals(staffPhoneNo))
-                {
-                    return password;
-                }
+                return password;
             }
-
-            return "input wrong, please try again!";
+            else
+            {
+                return null;
+            }
         }
-        
+
         //CreateStaffAccount incomplete
-        public bool CreateStaffAccount(string staffName, string staffPhoneNo, string staffPositionID,string departmentID)
+        public bool CreateStaffAccount(string staffName, string staffPhoneNo, string staffPositionID, string departmentID)
         {
             return false;
         }
@@ -92,18 +91,18 @@ namespace SLMCS_Class
         {
             _reorderOrder.Add(reorderOrder);
         }
-        
+
         public void RemoveReorderOrder(ReorderOrder reorderOrder)
         {
             _reorderOrder.Add(reorderOrder);
         }
-        
+
         public List<ReorderOrder> GetStaffReorderOrders()
         {
             return _reorderOrder;
         }
-        
-        
+
+
         //        all get set method below
         public string StaffID
         {
@@ -156,7 +155,7 @@ namespace SLMCS_Class
         public override string ToString()
         {
             string staffDetail = staffID + ", " + password + ", ";
-            return staffDetail + staffName + ", " + staffPhoneNo + ", " + staffPositionID + ", " + departmentID ;
+            return staffDetail + staffName + ", " + staffPhoneNo + ", " + staffPositionID + ", " + departmentID;
         }
     }
 }

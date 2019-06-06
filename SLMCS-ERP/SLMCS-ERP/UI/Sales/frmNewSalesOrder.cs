@@ -19,7 +19,8 @@ namespace SLMCS_ERP.UI.Sales
 
         private void startUp()
         {
-            salesOrder = new SalesOrder(frmMain.CurrentStaff.StaffID);
+            salesOrder = new SalesOrder();
+            salesOrder.StaffID = frmMain.CurrentStaff.StaffID;
             notAvailableMessage = "Not available";
 
             txtDealerID.Focus();
@@ -57,21 +58,30 @@ namespace SLMCS_ERP.UI.Sales
             }
             else
             {
-                MessageBox.Show("The Product Is Out Of Stock!");
+                MessageBox.Show("The Product Do Not Have Enough Stock!");
             }
 
         }
 
         private void BtnPlaceOrder_Click(object sender, EventArgs e)
         {
-            salesOrder.placeOrder("Processing");
-            startUp();
+            if(txtDealerID.Text == "")
+            {
+                MessageBox.Show("Please Enter Dealer ID!");
+            }
+            else
+            {
+                salesOrder.placeOrder("Processing");
+                startUp();
+                MessageBox.Show("Place Order Successfully");
+            }
         }
 
         private void BtnReserveOrder_Click(object sender, EventArgs e)
         {
             salesOrder.placeOrder("Reserved");
             startUp();
+            MessageBox.Show("Place Reserve Order Successfully");
         }
 
         private void TxtDealerID_TextChanged(object sender, EventArgs e)

@@ -109,7 +109,8 @@
             "ProductID",
             "ProductName",
             "ProductType",
-            "ProductUnit"});
+            "ProductUnit",
+            "VendorID"});
             this.cboCondition.Location = new System.Drawing.Point(77, 7);
             this.cboCondition.Name = "cboCondition";
             this.cboCondition.Size = new System.Drawing.Size(109, 20);

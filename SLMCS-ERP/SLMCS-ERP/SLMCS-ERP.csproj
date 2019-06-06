@@ -77,7 +77,6 @@
     <Compile Include="UI\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="DBConnection.cs" />
     <Compile Include="UI\Inventory\frmInventoryAddReorderProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,10 +89,10 @@
     <Compile Include="UI\Inventory\frmInventoryDangerLevelSetting.Designer.cs">
       <DependentUpon>frmInventoryDangerLevelSetting.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Inventory\frmInventoryEditProduct.cs">
+    <Compile Include="UI\Inventory\old\frmInventoryEditProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Inventory\frmInventoryEditProduct.Designer.cs">
+    <Compile Include="UI\Inventory\old\frmInventoryEditProduct.Designer.cs">
       <DependentUpon>frmInventoryEditProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Inventory\frmInventoryInwardGoods.cs">
@@ -114,10 +113,10 @@
     <Compile Include="UI\Inventory\frmInventoryMain.Designer.cs">
       <DependentUpon>frmInventoryMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Inventory\frmInventoryNewProduct.cs">
+    <Compile Include="UI\Inventory\old\frmInventoryNewProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Inventory\frmInventoryNewProduct.Designer.cs">
+    <Compile Include="UI\Inventory\old\frmInventoryNewProduct.Designer.cs">
       <DependentUpon>frmInventoryNewProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Inventory\frmInventoryReorderLevelSetting.cs">
@@ -138,11 +137,17 @@
     <Compile Include="UI\Inventory\frmInventoryStockRecord.Designer.cs">
       <DependentUpon>frmInventoryStockRecord.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Inventory\frmInventoryVendorRecord.cs">
+    <Compile Include="UI\Inventory\old\frmInventoryVendorRecord.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Inventory\frmInventoryVendorRecord.Designer.cs">
+    <Compile Include="UI\Inventory\old\frmInventoryVendorRecord.Designer.cs">
       <DependentUpon>frmInventoryVendorRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Login\frmForgetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Login\frmForgetPassword.Designer.cs">
+      <DependentUpon>frmForgetPassword.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Login\frmLogin.cs">
       <SubType>Form</SubType>
@@ -224,6 +229,9 @@
     <Compile Include="UI\Sales\frmSalesOrderRecords.Designer.cs">
       <DependentUpon>frmSalesOrderRecords.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Sales\frmViewOrderRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <EmbeddedResource Include="UI\Dispatch\frmDispatchedHistory.resx">
       <DependentUpon>frmDispatchedHistory.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,11 +247,8 @@
     <EmbeddedResource Include="UI\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Test\TestConnection.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Test\TestConnection.Designer.cs">
-      <DependentUpon>TestConnection.cs</DependentUpon>
+    <Compile Include="UI\Sales\frmViewOrderRecord.Designer.cs">
+      <DependentUpon>frmViewOrderRecord.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="UI\Inventory\frmInventoryAddReorderProduct.resx">
       <DependentUpon>frmInventoryAddReorderProduct.cs</DependentUpon>
@@ -251,7 +256,7 @@
     <EmbeddedResource Include="UI\Inventory\frmInventoryDangerLevelSetting.resx">
       <DependentUpon>frmInventoryDangerLevelSetting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Inventory\frmInventoryEditProduct.resx">
+    <EmbeddedResource Include="UI\Inventory\old\frmInventoryEditProduct.resx">
       <DependentUpon>frmInventoryEditProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Inventory\frmInventoryInwardGoods.resx">
@@ -263,7 +268,7 @@
     <EmbeddedResource Include="UI\Inventory\frmInventoryMain.resx">
       <DependentUpon>frmInventoryMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Inventory\frmInventoryNewProduct.resx">
+    <EmbeddedResource Include="UI\Inventory\old\frmInventoryNewProduct.resx">
       <DependentUpon>frmInventoryNewProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Inventory\frmInventoryReorderLevelSetting.resx">
@@ -275,8 +280,11 @@
     <EmbeddedResource Include="UI\Inventory\frmInventoryStockRecord.resx">
       <DependentUpon>frmInventoryStockRecord.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Inventory\frmInventoryVendorRecord.resx">
+    <EmbeddedResource Include="UI\Inventory\old\frmInventoryVendorRecord.resx">
       <DependentUpon>frmInventoryVendorRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Login\frmForgetPassword.resx">
+      <DependentUpon>frmForgetPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -317,11 +325,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Test\TestConnection.resx">
-      <DependentUpon>TestConnection.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\Sales\frmSalesOrderRecords.resx">
       <DependentUpon>frmSalesOrderRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Sales\frmViewOrderRecord.resx">
+      <DependentUpon>frmViewOrderRecord.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

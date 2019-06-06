@@ -21,8 +21,8 @@ namespace SLMCS_ERP
             dgvStockRecord.RowHeadersVisible = false;
             dgvStockRecord.ReadOnly = true;
             //cboProductType.DropDownStyle = ComboBoxStyle.DropDownList;
-            //cboProductPrice.DropDownStyle = ComboBoxStyle.DropDownList;
-            //cboStockQuantity.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboProductPrice.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboStockQuantity.DropDownStyle = ComboBoxStyle.DropDownList;
             lblDProductIDData.Text = "---";
             lblDProductTypeData.Text = "---";
             lblDProductNameData.Text = "---";
@@ -189,6 +189,37 @@ namespace SLMCS_ERP
                 frmInventoryDangerLevelSetting inventoryDangerLevelSetting = new frmInventoryDangerLevelSetting(selectedProductID);
                 inventoryDangerLevelSetting.Show();
             }
+        }
+
+        private void CheckInputNumberOnly(KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !(e.KeyChar == (char)8))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void CheckInputAlphabetOnly(KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !(e.KeyChar == (char)8))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtStockQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CheckInputNumberOnly(e);
+        }
+
+        private void TxtProductPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CheckInputNumberOnly(e);
+        }
+
+        private void CboProductStatus_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CheckInputAlphabetOnly(e);
         }
     }
 }
