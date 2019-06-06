@@ -40,26 +40,26 @@
             this.btnSearchDealer = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgvDealerList = new System.Windows.Forms.DataGridView();
-            this.btnEditDealer = new System.Windows.Forms.Button();
-            this.butDisable = new System.Windows.Forms.Button();
-            this.btnNewDealer = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.lblDealerID = new System.Windows.Forms.Label();
-            this.lblDealerName = new System.Windows.Forms.Label();
-            this.lblDealerPhoneNo = new System.Windows.Forms.Label();
-            this.lblDealerShippingAddress = new System.Windows.Forms.Label();
             this.lblDealerInvoiceAddress = new System.Windows.Forms.Label();
+            this.lblDealerShippingAddress = new System.Windows.Forms.Label();
+            this.lblDealerPhoneNo = new System.Windows.Forms.Label();
+            this.lblDealerName = new System.Windows.Forms.Label();
+            this.lblDealerID = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnNewDealer = new System.Windows.Forms.Button();
+            this.butDisable = new System.Windows.Forms.Button();
+            this.btnEditDealer = new System.Windows.Forms.Button();
+            this.dgvDealerList = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -156,6 +156,7 @@
             this.btnSearchDealer.TabIndex = 9;
             this.btnSearchDealer.Text = "Search";
             this.btnSearchDealer.UseVisualStyleBackColor = true;
+            this.btnSearchDealer.Click += new System.EventHandler(this.BtnSearchDealer_Click);
             // 
             // groupBox1
             // 
@@ -200,6 +201,141 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dealer Detail";
             // 
+            // lblDealerInvoiceAddress
+            // 
+            this.lblDealerInvoiceAddress.AutoSize = true;
+            this.lblDealerInvoiceAddress.Location = new System.Drawing.Point(136, 213);
+            this.lblDealerInvoiceAddress.Name = "lblDealerInvoiceAddress";
+            this.lblDealerInvoiceAddress.Size = new System.Drawing.Size(17, 12);
+            this.lblDealerInvoiceAddress.TabIndex = 19;
+            this.lblDealerInvoiceAddress.Text = "---";
+            // 
+            // lblDealerShippingAddress
+            // 
+            this.lblDealerShippingAddress.AutoSize = true;
+            this.lblDealerShippingAddress.Location = new System.Drawing.Point(136, 311);
+            this.lblDealerShippingAddress.Name = "lblDealerShippingAddress";
+            this.lblDealerShippingAddress.Size = new System.Drawing.Size(17, 12);
+            this.lblDealerShippingAddress.TabIndex = 18;
+            this.lblDealerShippingAddress.Text = "---";
+            // 
+            // lblDealerPhoneNo
+            // 
+            this.lblDealerPhoneNo.AutoSize = true;
+            this.lblDealerPhoneNo.Location = new System.Drawing.Point(136, 157);
+            this.lblDealerPhoneNo.Name = "lblDealerPhoneNo";
+            this.lblDealerPhoneNo.Size = new System.Drawing.Size(17, 12);
+            this.lblDealerPhoneNo.TabIndex = 17;
+            this.lblDealerPhoneNo.Text = "---";
+            // 
+            // lblDealerName
+            // 
+            this.lblDealerName.AutoSize = true;
+            this.lblDealerName.Location = new System.Drawing.Point(136, 102);
+            this.lblDealerName.Name = "lblDealerName";
+            this.lblDealerName.Size = new System.Drawing.Size(17, 12);
+            this.lblDealerName.TabIndex = 16;
+            this.lblDealerName.Text = "---";
+            // 
+            // lblDealerID
+            // 
+            this.lblDealerID.AutoSize = true;
+            this.lblDealerID.Location = new System.Drawing.Point(136, 45);
+            this.lblDealerID.Name = "lblDealerID";
+            this.lblDealerID.Size = new System.Drawing.Size(17, 12);
+            this.lblDealerID.TabIndex = 15;
+            this.lblDealerID.Text = "---";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(110, 213);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(8, 12);
+            this.label14.TabIndex = 14;
+            this.label14.Text = ":";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(110, 102);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(8, 12);
+            this.label19.TabIndex = 12;
+            this.label19.Text = ":";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(110, 45);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(8, 12);
+            this.label18.TabIndex = 11;
+            this.label18.Text = ":";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(110, 157);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(8, 12);
+            this.label17.TabIndex = 10;
+            this.label17.Text = ":";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(110, 311);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(8, 12);
+            this.label16.TabIndex = 9;
+            this.label16.Text = ":";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(24, 157);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(51, 12);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "Phone No";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(24, 311);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(87, 12);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Shipping Address";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(24, 213);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(80, 12);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Invoice Address";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(24, 101);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(32, 12);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Name";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(24, 45);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(17, 12);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "ID";
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnNewDealer);
@@ -213,23 +349,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dealer List";
             // 
-            // dgvDealerList
+            // btnNewDealer
             // 
-            this.dgvDealerList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDealerList.Location = new System.Drawing.Point(0, 21);
-            this.dgvDealerList.Name = "dgvDealerList";
-            this.dgvDealerList.RowTemplate.Height = 24;
-            this.dgvDealerList.Size = new System.Drawing.Size(646, 241);
-            this.dgvDealerList.TabIndex = 0;
-            // 
-            // btnEditDealer
-            // 
-            this.btnEditDealer.Location = new System.Drawing.Point(480, 268);
-            this.btnEditDealer.Name = "btnEditDealer";
-            this.btnEditDealer.Size = new System.Drawing.Size(75, 23);
-            this.btnEditDealer.TabIndex = 1;
-            this.btnEditDealer.Text = "Edit Dealer";
-            this.btnEditDealer.UseVisualStyleBackColor = true;
+            this.btnNewDealer.Location = new System.Drawing.Point(389, 268);
+            this.btnNewDealer.Name = "btnNewDealer";
+            this.btnNewDealer.Size = new System.Drawing.Size(75, 23);
+            this.btnNewDealer.TabIndex = 3;
+            this.btnNewDealer.Text = "New Dealer";
+            this.btnNewDealer.UseVisualStyleBackColor = true;
             // 
             // butDisable
             // 
@@ -240,149 +367,23 @@
             this.butDisable.Text = "Disable";
             this.butDisable.UseVisualStyleBackColor = true;
             // 
-            // btnNewDealer
+            // btnEditDealer
             // 
-            this.btnNewDealer.Location = new System.Drawing.Point(389, 268);
-            this.btnNewDealer.Name = "btnNewDealer";
-            this.btnNewDealer.Size = new System.Drawing.Size(75, 23);
-            this.btnNewDealer.TabIndex = 3;
-            this.btnNewDealer.Text = "New Dealer";
-            this.btnNewDealer.UseVisualStyleBackColor = true;
+            this.btnEditDealer.Location = new System.Drawing.Point(480, 268);
+            this.btnEditDealer.Name = "btnEditDealer";
+            this.btnEditDealer.Size = new System.Drawing.Size(75, 23);
+            this.btnEditDealer.TabIndex = 1;
+            this.btnEditDealer.Text = "Edit Dealer";
+            this.btnEditDealer.UseVisualStyleBackColor = true;
             // 
-            // label7
+            // dgvDealerList
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(24, 45);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(17, 12);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "ID";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(24, 101);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(32, 12);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Name";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(24, 213);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 12);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Invoice Address";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(24, 311);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(87, 12);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "Shipping Address";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(24, 157);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(51, 12);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "Phone No";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(110, 311);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(8, 12);
-            this.label16.TabIndex = 9;
-            this.label16.Text = ":";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(110, 157);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(8, 12);
-            this.label17.TabIndex = 10;
-            this.label17.Text = ":";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(110, 45);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(8, 12);
-            this.label18.TabIndex = 11;
-            this.label18.Text = ":";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(110, 102);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(8, 12);
-            this.label19.TabIndex = 12;
-            this.label19.Text = ":";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(110, 213);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(8, 12);
-            this.label14.TabIndex = 14;
-            this.label14.Text = ":";
-            // 
-            // lblDealerID
-            // 
-            this.lblDealerID.AutoSize = true;
-            this.lblDealerID.Location = new System.Drawing.Point(136, 45);
-            this.lblDealerID.Name = "lblDealerID";
-            this.lblDealerID.Size = new System.Drawing.Size(17, 12);
-            this.lblDealerID.TabIndex = 15;
-            this.lblDealerID.Text = "---";
-            // 
-            // lblDealerName
-            // 
-            this.lblDealerName.AutoSize = true;
-            this.lblDealerName.Location = new System.Drawing.Point(136, 102);
-            this.lblDealerName.Name = "lblDealerName";
-            this.lblDealerName.Size = new System.Drawing.Size(17, 12);
-            this.lblDealerName.TabIndex = 16;
-            this.lblDealerName.Text = "---";
-            // 
-            // lblDealerPhoneNo
-            // 
-            this.lblDealerPhoneNo.AutoSize = true;
-            this.lblDealerPhoneNo.Location = new System.Drawing.Point(136, 157);
-            this.lblDealerPhoneNo.Name = "lblDealerPhoneNo";
-            this.lblDealerPhoneNo.Size = new System.Drawing.Size(17, 12);
-            this.lblDealerPhoneNo.TabIndex = 17;
-            this.lblDealerPhoneNo.Text = "---";
-            // 
-            // lblDealerShippingAddress
-            // 
-            this.lblDealerShippingAddress.AutoSize = true;
-            this.lblDealerShippingAddress.Location = new System.Drawing.Point(136, 311);
-            this.lblDealerShippingAddress.Name = "lblDealerShippingAddress";
-            this.lblDealerShippingAddress.Size = new System.Drawing.Size(17, 12);
-            this.lblDealerShippingAddress.TabIndex = 18;
-            this.lblDealerShippingAddress.Text = "---";
-            // 
-            // lblDealerInvoiceAddress
-            // 
-            this.lblDealerInvoiceAddress.AutoSize = true;
-            this.lblDealerInvoiceAddress.Location = new System.Drawing.Point(136, 213);
-            this.lblDealerInvoiceAddress.Name = "lblDealerInvoiceAddress";
-            this.lblDealerInvoiceAddress.Size = new System.Drawing.Size(17, 12);
-            this.lblDealerInvoiceAddress.TabIndex = 19;
-            this.lblDealerInvoiceAddress.Text = "---";
+            this.dgvDealerList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDealerList.Location = new System.Drawing.Point(0, 21);
+            this.dgvDealerList.Name = "dgvDealerList";
+            this.dgvDealerList.RowTemplate.Height = 24;
+            this.dgvDealerList.Size = new System.Drawing.Size(646, 241);
+            this.dgvDealerList.TabIndex = 0;
             // 
             // frmDealerManagement
             // 

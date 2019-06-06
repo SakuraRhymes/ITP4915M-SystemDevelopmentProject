@@ -34,5 +34,10 @@ namespace SLMCS_ERP.UI.Management
             dgvDealerList.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvDealerList.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
+
+        private void BtnSearchDealer_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
