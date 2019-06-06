@@ -41,7 +41,7 @@ namespace SLMCS_Class
             PasswordChangeDate = (DateTime)rows[0]["PasswordChangeDate"];
             StaffName = (string)rows[0]["StaffName"];
             StaffPhoneNo = (string)rows[0]["StaffPhoneNo"];
-            StaffPositionID = (string)rows[0]["StaffPositionID"];
+            //StaffPositionID = (string)rows[0]["StaffPositionID"];
             DepartmentID = (string)rows[0]["DepartmentID"];
         }
         //login the system via staffID and password
