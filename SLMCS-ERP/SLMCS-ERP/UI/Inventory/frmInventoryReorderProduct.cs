@@ -23,13 +23,14 @@ namespace SLMCS_ERP
         {
             dgvSearchRecord.DataSource = product.GetProdcutReorderLevelTable();
             //dgvSearchRecord.Rows[0].Selected = true;
+            DGVSearchRecordDangerReorderFormatSetting();
         }
 
         private void BtnDangerLevel_Click(object sender, EventArgs e)
         {
             dgvSearchRecord.DataSource = product.GetProdcutDangerLevelTable();
             //dgvSearchRecord.Rows[0].Selected = true;
-
+            DGVSearchRecordDangerReorderFormatSetting();
         }
 
         private void BtnConfirm_Click(object sender, EventArgs e)
@@ -91,10 +92,11 @@ namespace SLMCS_ERP
                 condition = " WHERE " + cboCondition.Text + " LIKE '%" + txtCondition.Text + "%'";
                 //MessageBox.Show(condition);
                 
-            } 
-                //MessageBox.Show("Please input and select condition");
-            
+            }
+            //MessageBox.Show("Please input and select condition");
+            //MessageBox.Show(condition);
             dgvSearchRecord.DataSource = product.GetReorderProductTable(condition);
+            DGVSearchRecordFormatSetting();
         }
 
         private void DgvSearchRecord_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -155,6 +157,29 @@ namespace SLMCS_ERP
                 addedProductID = dgvReorderOrder.Rows[e.RowIndex].Cells["ProductID"].Value.ToString();
                 // testing
             }
+        }
+
+        private void DGVSearchRecordFormatSetting()
+        {
+            dgvSearchRecord.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvSearchRecord.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvSearchRecord.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvSearchRecord.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvSearchRecord.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvSearchRecord.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvSearchRecord.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvSearchRecord.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+
+        private void DGVSearchRecordDangerReorderFormatSetting()
+        {
+            dgvSearchRecord.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvSearchRecord.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvSearchRecord.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvSearchRecord.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvSearchRecord.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvSearchRecord.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvSearchRecord.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
     }
 }

@@ -51,7 +51,7 @@ namespace SLMCS_ERP
         {
             if (e.RowIndex != -1)
             {
-                selectReorderOrderID = dgvInwardGoodsRecord.Rows[e.RowIndex].Cells["ReorderOrderID"].Value.ToString();
+                selectReorderOrderID = dgvInwardGoodsRecord.Rows[e.RowIndex].Cells["ReOrder ID"].Value.ToString();
                 dgvInwardGoodsRecord.Rows[e.RowIndex].Selected = true;
                 reorderOrder = new ReorderOrder(selectReorderOrderID);
 

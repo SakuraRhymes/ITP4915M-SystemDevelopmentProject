@@ -124,7 +124,8 @@ namespace SLMCS_Class
 
         public DataTable GetInwardGoodsRecordTable(string condition)
         {
-            string query = "SELECT ReorderOrderID,StaffID,ReorderOrderDate,ReorderOrderCompletedDate FROM ReorderOrder WHERE ReorderOrderStatus = 'Completed' ";
+            //string query = "SELECT ReorderOrderID,StaffID,ReorderOrderDate,ReorderOrderCompletedDate FROM ReorderOrder WHERE ReorderOrderStatus = 'Completed' ";
+            string query = "SELECT ReorderOrderID AS 'ReOrder ID',StaffID AS 'Staff ID',ReorderOrderDate AS 'Order Date',ReorderOrderCompletedDate AS 'Completed Date' FROM ReorderOrder WHERE ReorderOrderStatus = 'Completed'";
             if (condition != "")
             {
                 query += " AND " + condition;

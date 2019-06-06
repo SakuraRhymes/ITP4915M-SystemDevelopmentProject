@@ -144,7 +144,7 @@ namespace SLMCS_Class
 
         public DataTable GetReorderProductTable(string condition)
         {
-            string query = "SELECT ProductID,ProductName,ProductType,ProductPrice,VendorID,ActualQuantity,ReorderLevel,DangerLevel FROM Product ";
+            string query = "SELECT ProductID,ProductName,ProductType,ProductUnit,VendorID,ActualQuantity,ReorderLevel,DangerLevel FROM Product ";
             if (condition != "")
             {
                 query += condition;
