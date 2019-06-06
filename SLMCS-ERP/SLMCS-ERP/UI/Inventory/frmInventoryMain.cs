@@ -44,6 +44,12 @@ namespace SLMCS_ERP
             frmInventoryReorderProduct inventoryReorderProduct = new frmInventoryReorderProduct();
             navigation(inventoryReorderProduct, panelContent);
         }
+
+        private void BtnInwardGoodsRecord_Click(object sender, EventArgs e)
+        {
+            frmInventoryInwardGoodsRecord inventoryInwardGoodsRecord = new frmInventoryInwardGoodsRecord();
+            navigation(inventoryInwardGoodsRecord, panelContent);
+        }
     }
 
     

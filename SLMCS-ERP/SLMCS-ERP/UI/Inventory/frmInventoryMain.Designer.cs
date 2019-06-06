@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnInwardGoodsRecord = new System.Windows.Forms.Button();
             this.btnReorderProduct = new System.Windows.Forms.Button();
             this.btnInwardGoods = new System.Windows.Forms.Button();
             this.btnStockRecord = new System.Windows.Forms.Button();
@@ -39,6 +40,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel1.Controls.Add(this.btnInwardGoodsRecord);
             this.panel1.Controls.Add(this.btnReorderProduct);
             this.panel1.Controls.Add(this.btnInwardGoods);
             this.panel1.Controls.Add(this.btnStockRecord);
@@ -48,11 +50,21 @@
             this.panel1.Size = new System.Drawing.Size(150, 566);
             this.panel1.TabIndex = 0;
             // 
+            // btnInwardGoodsRecord
+            // 
+            this.btnInwardGoodsRecord.Location = new System.Drawing.Point(12, 233);
+            this.btnInwardGoodsRecord.Name = "btnInwardGoodsRecord";
+            this.btnInwardGoodsRecord.Size = new System.Drawing.Size(120, 43);
+            this.btnInwardGoodsRecord.TabIndex = 3;
+            this.btnInwardGoodsRecord.Text = "Inward Goods Record";
+            this.btnInwardGoodsRecord.UseVisualStyleBackColor = true;
+            this.btnInwardGoodsRecord.Click += new System.EventHandler(this.BtnInwardGoodsRecord_Click);
+            // 
             // btnReorderProduct
             // 
-            this.btnReorderProduct.Location = new System.Drawing.Point(24, 94);
+            this.btnReorderProduct.Location = new System.Drawing.Point(12, 95);
             this.btnReorderProduct.Name = "btnReorderProduct";
-            this.btnReorderProduct.Size = new System.Drawing.Size(97, 43);
+            this.btnReorderProduct.Size = new System.Drawing.Size(120, 43);
             this.btnReorderProduct.TabIndex = 2;
             this.btnReorderProduct.Text = "Reorder Product";
             this.btnReorderProduct.UseVisualStyleBackColor = true;
@@ -60,9 +72,9 @@
             // 
             // btnInwardGoods
             // 
-            this.btnInwardGoods.Location = new System.Drawing.Point(24, 163);
+            this.btnInwardGoods.Location = new System.Drawing.Point(12, 160);
             this.btnInwardGoods.Name = "btnInwardGoods";
-            this.btnInwardGoods.Size = new System.Drawing.Size(97, 43);
+            this.btnInwardGoods.Size = new System.Drawing.Size(120, 43);
             this.btnInwardGoods.TabIndex = 1;
             this.btnInwardGoods.Text = "Inward Goods";
             this.btnInwardGoods.UseVisualStyleBackColor = true;
@@ -70,9 +82,9 @@
             // 
             // btnStockRecord
             // 
-            this.btnStockRecord.Location = new System.Drawing.Point(24, 27);
+            this.btnStockRecord.Location = new System.Drawing.Point(12, 27);
             this.btnStockRecord.Name = "btnStockRecord";
-            this.btnStockRecord.Size = new System.Drawing.Size(97, 43);
+            this.btnStockRecord.Size = new System.Drawing.Size(120, 43);
             this.btnStockRecord.TabIndex = 0;
             this.btnStockRecord.Text = "Stock Record";
             this.btnStockRecord.UseVisualStyleBackColor = true;
@@ -108,5 +120,6 @@
         private System.Windows.Forms.Button btnStockRecord;
         private System.Windows.Forms.Button btnInwardGoods;
         private System.Windows.Forms.Button btnReorderProduct;
+        private System.Windows.Forms.Button btnInwardGoodsRecord;
     }
 }

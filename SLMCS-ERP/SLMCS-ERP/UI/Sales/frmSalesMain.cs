@@ -50,5 +50,10 @@ namespace SLMCS_ERP
             frmSalesOrderRecords salesOrderRecords = new frmSalesOrderRecords();
             navigation(salesOrderRecords, panelContent);
         }
+
+        private void PanelContent_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

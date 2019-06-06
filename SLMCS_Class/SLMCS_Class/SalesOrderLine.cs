@@ -1,4 +1,7 @@
 using SLMCS_ERP;
+using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 
 namespace SLMCS_Class

@@ -47,6 +47,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UI\Dispatch\frmDispatchedHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dispatch\frmDispatchedHistory.Designer.cs">
+      <DependentUpon>frmDispatchedHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dispatch\frmDispatchingList .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dispatch\frmDispatchingList .Designer.cs">
+      <DependentUpon>frmDispatchingList .cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dispatch\frmDispatchMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dispatch\frmDispatchMain.Designer.cs">
+      <DependentUpon>frmDispatchMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dispatch\frmGoodsReceivedList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dispatch\frmGoodsReceivedList.Designer.cs">
+      <DependentUpon>frmGoodsReceivedList.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +82,12 @@
     </Compile>
     <Compile Include="UI\Inventory\frmInventoryAddReorderProduct.Designer.cs">
       <DependentUpon>frmInventoryAddReorderProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Inventory\frmInventoryDangerLevelSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Inventory\frmInventoryDangerLevelSetting.Designer.cs">
+      <DependentUpon>frmInventoryDangerLevelSetting.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Inventory\frmInventoryEditProduct.cs">
       <SubType>Form</SubType>
@@ -89,6 +119,12 @@
     <Compile Include="UI\Inventory\frmInventoryNewProduct.Designer.cs">
       <DependentUpon>frmInventoryNewProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Inventory\frmInventoryReorderLevelSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Inventory\frmInventoryReorderLevelSetting.Designer.cs">
+      <DependentUpon>frmInventoryReorderLevelSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Inventory\frmInventoryReorderProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +155,54 @@
     <Compile Include="UI\Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Management\frmDealerManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Management\frmDealerManagement.Designer.cs">
+      <DependentUpon>frmDealerManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Management\frmManagementMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Management\frmManagementMain.Designer.cs">
+      <DependentUpon>frmManagementMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Management\frmProductManagement_NewProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Management\frmProductManagement_NewProduct.Designer.cs">
+      <DependentUpon>frmProductManagement_NewProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Management\frmProductManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Management\frmProductManagement.Designer.cs">
+      <DependentUpon>frmProductManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Management\frmProductManagement_EditProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Management\frmProductManagement_EditProduct.Designer.cs">
+      <DependentUpon>frmProductManagement_EditProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Management\frmProductManagement_VendorRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Management\frmProductManagement_VendorRecord.Designer.cs">
+      <DependentUpon>frmProductManagement_VendorRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Management\frmStaffManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Management\frmStaffManagement.Designer.cs">
+      <DependentUpon>frmStaffManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Management\frmVendorManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Management\frmVendorManagement.Designer.cs">
+      <DependentUpon>frmVendorManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Sales\frmNewSalesOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +230,23 @@
       <DependentUpon>frmSalesOrderRecords.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Sales\frmViewOrderRecord.cs">
+	 </Compile>
+    <EmbeddedResource Include="UI\Dispatch\frmDispatchedHistory.resx">
+      <DependentUpon>frmDispatchedHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dispatch\frmDispatchingList .resx">
+      <DependentUpon>frmDispatchingList .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dispatch\frmDispatchMain.resx">
+      <DependentUpon>frmDispatchMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dispatch\frmGoodsReceivedList.resx">
+      <DependentUpon>frmGoodsReceivedList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Test\TestConnection.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Sales\frmViewOrderRecord.Designer.cs">
@@ -156,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Inventory\frmInventoryAddReorderProduct.resx">
       <DependentUpon>frmInventoryAddReorderProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Inventory\frmInventoryDangerLevelSetting.resx">
+      <DependentUpon>frmInventoryDangerLevelSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Inventory\frmInventoryEditProduct.resx">
       <DependentUpon>frmInventoryEditProduct.cs</DependentUpon>
@@ -172,6 +276,9 @@
     <EmbeddedResource Include="UI\Inventory\frmInventoryNewProduct.resx">
       <DependentUpon>frmInventoryNewProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Inventory\frmInventoryReorderLevelSetting.resx">
+      <DependentUpon>frmInventoryReorderLevelSetting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Inventory\frmInventoryReorderProduct.resx">
       <DependentUpon>frmInventoryReorderProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +293,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Management\frmDealerManagement.resx">
+      <DependentUpon>frmDealerManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Management\frmManagementMain.resx">
+      <DependentUpon>frmManagementMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Management\frmProductManagement_NewProduct.resx">
+      <DependentUpon>frmProductManagement_NewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Management\frmProductManagement.resx">
+      <DependentUpon>frmProductManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Management\frmProductManagement_EditProduct.resx">
+      <DependentUpon>frmProductManagement_EditProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Management\frmProductManagement_VendorRecord.resx">
+      <DependentUpon>frmProductManagement_VendorRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Sales\frmNewSalesOrder.resx">
       <DependentUpon>frmNewSalesOrder.cs</DependentUpon>
@@ -230,5 +355,6 @@
       <Name>SLMCS_Class</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

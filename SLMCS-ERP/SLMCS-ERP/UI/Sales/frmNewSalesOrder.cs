@@ -120,6 +120,7 @@ namespace SLMCS_ERP.UI.Sales
             }
         }
 
+
         private void BtnCancelPlaceOrder_Click(object sender, EventArgs e)
         {
             startUp();

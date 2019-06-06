@@ -15,6 +15,7 @@ namespace SLMCS_Class
         private string staffID;
         private string reorderOrderDate;
         private string reorderOrderEditDate;
+        private string reorderOrderReceivedDate;
         private string reorderOrderCompletedDate;
         private string reorderOrderStatus;
 
@@ -31,11 +32,42 @@ namespace SLMCS_Class
             ReorderOrderID = GetNextReorderOrderID();
         }
 
+        public ReorderOrder(string reorderOrderID)
+        {
+            _reorderOrderLine = new List<ReorderOrderLine>();
+            //ReorderOrderID = GetNextReorderOrderID();
+
+            dbConnection = new DBConnection();
+            string query = "SELECT * FROM ReorderOrder WHERE ReorderOrderID ='" + reorderOrderID + "'";
+
+            reorderOrderTable = dbConnection.GetDataTable(query);
+            DataRow[] rows = reorderOrderTable.Select();
+
+            ReorderOrderID = (string)rows[0]["ReorderOrderID"];
+            StaffID = (string)rows[0]["StaffID"];
+            if (rows[0]["ReorderOrderDate"].ToString() != "") {
+                ReorderOrderDate = ((DateTime)rows[0]["ReorderOrderDate"]).ToString("dd/MM/yyyy");
+            }
+            if (rows[0]["ReorderOrderEditDate"].ToString() != "")
+            {
+                ReorderOrderEditDate = ((DateTime)rows[0]["ReorderOrderEditDate"]).ToString("dd/MM/yyyy");
+            }
+            if (rows[0]["ReorderOrderReceivedDate"].ToString() != "")
+            {
+                ReorderOrderReceivedDate = ((DateTime)rows[0]["ReorderOrderReceivedDate"]).ToString("dd/MM/yyyy");
+            }
+            if (rows[0]["ReorderOrderCompletedDate"].ToString() != "")
+            {
+                ReorderOrderCompletedDate = ((DateTime)rows[0]["ReorderOrderCompletedDate"]).ToString("dd/MM/yyyy");
+            }   
+            ReorderOrderStatus = (string)rows[0]["ReorderOrderStatus"];
+        }
+
         public void PlaceReorderOrder(Staff staff, string reorderOrderDate)
         {
             _staff = staff;
             string query = "INSERT INTO ReorderOrder VALUES ('" + ReorderOrderID + "','" + _staff.StaffID + 
-                           "','" + reorderOrderDate + "',null,null,'Processing')";
+                           "','" + reorderOrderDate + "','" + reorderOrderDate + "',null,null,'Processing')";
             //MessageBox.Show(query);
 
             dbConnection.Insert(query);
@@ -78,7 +110,7 @@ namespace SLMCS_Class
 
         public DataTable GetReorderOrderTable(string condition)
         {
-            string query = "SELECT ReorderOrderID,StaffID,ReorderOrderDate,ReorderOrderReceivedDate,ReorderOrderStatus FROM ReorderOrder ";
+            string query = "SELECT ReorderOrderID,StaffID,ReorderOrderDate,ReorderOrderEditDate,ReorderOrderReceivedDate,ReorderOrderCompletedDate,ReorderOrderStatus FROM ReorderOrder ";
             if (condition != "")
             {
                 
@@ -88,22 +120,112 @@ namespace SLMCS_Class
             return reorderOrderTable;
         }
 
+        public DataTable GetInwardGoodsRecordTable(string condition)
+        {
+            string query = "SELECT ReorderOrderID,StaffID,ReorderOrderDate,ReorderOrderCompletedDate FROM ReorderOrder WHERE ReorderOrderStatus = 'Completed' ";
+            if (condition != "")
+            {
+                query += " AND " + condition;
+            }
+            //MessageBox.Show(query);
+            reorderOrderTable = dbConnection.GetDataTable(query);
+            return reorderOrderTable;
+        }
         public DataTable GetReorderOrderLineTable(string reorderOrderID)
         {
             string query = "SELECT * FROM ReorderOrderLine WHERE ReorderOrderID = '" + reorderOrderID + "'";
             reorderOrderTable = dbConnection.GetDataTable(query);
             return reorderOrderTable;
         }
-
         public string ReorderOrderID
         {
             get => reorderOrderID;
             set => reorderOrderID = value;
         }
 
+        public string StaffID
+        {
+            get => staffID;
+            set => staffID = value;
+        }
+
+        public string ReorderOrderDate
+        {
+            get => reorderOrderDate;
+            set => reorderOrderDate = value;
+        }
+
+        public string ReorderOrderEditDate
+        {
+            get => reorderOrderEditDate;
+            set => reorderOrderEditDate = value;
+        }
+
+        public string ReorderOrderReceivedDate
+        {
+            get => reorderOrderReceivedDate;
+            set => reorderOrderReceivedDate = value;
+        }
+
+        public string ReorderOrderCompletedDate
+        {
+            get => reorderOrderCompletedDate;
+            set => reorderOrderCompletedDate = value;
+        }
+
+        public string ReorderOrderStatus
+        {
+            get => reorderOrderStatus;
+            set => reorderOrderStatus = value;
+        }
+
         public override string ToString()
         {
             return ReorderOrderID;
+        }
+
+        public DataTable getReorderOrderTableByReorderOrderStatus(string ReorderOrderStatus)
+        {
+            string query = "SELECT ReorderOrderID, StaffID," +
+                "ReorderOrderDate,ReorderOrderEditDate, ReorderOrderCompletedDate, ReorderOrderStatus " +
+                "FROM ReorderOrder WHERE  ReorderOrderStatus = \"" + ReorderOrderStatus + "\"";
+            return dbConnection.GetDataTable(query);
+        }
+
+        public DataTable GoodsReceived_getReorderOrderByOrderID(string OrderID)
+        {
+            string query = "SELECT ReorderOrderID, StaffID," +
+                "ReorderOrderDate,ReorderOrderEditDate, ReorderOrderCompletedDate, ReorderOrderStatus " +
+                "FROM ReorderOrder WHERE ReorderOrderID = \"" + OrderID + "\" AND ReorderOrderStatus = \"Processing\"";
+            return dbConnection.GetDataTable(query);
+        }
+
+        public DataTable GoodsReceived_getReorderOrderByStaffID(string StaffID)
+        {
+            string query = "SELECT ReorderOrderID, StaffID," +
+                "ReorderOrderDate,ReorderOrderEditDate, ReorderOrderCompletedDate, ReorderOrderStatus " +
+                "FROM ReorderOrder WHERE StaffID = \"" + StaffID + "\" AND ReorderOrderStatus = \"Processing\"";
+            return dbConnection.GetDataTable(query);
+        }
+
+        public DataTable GoodsReceived_getReorderTableByWhereQuery(string condition)
+        {
+            string query = "SELECT ReorderOrderID, StaffID," +
+                "ReorderOrderDate,ReorderOrderEditDate, ReorderOrderCompletedDate, ReorderOrderStatus " +
+                "FROM ReorderOrder WHERE " + condition;
+            return dbConnection.GetDataTable(query);
+        }
+
+        public void GoodsReceived_updataReorderOrderByRedoreOrderStatus(string reorderOrderID, string RedoreOrderStatus)
+        {
+            string query = "UPDATE ReorderOrder SET ReorderOrderStatus = \"" + RedoreOrderStatus + "\", ReorderOrderReceivedDate = \"" + DateTime.Now.ToString("yy-MM-dd") 
+                + "\" WHERE ReorderOrder.ReorderOrderID = \"" + reorderOrderID + "\"";
+            dbConnection.Update(query);
+        }
+
+        public void GoodsReceived_updataReorderOrderByQuery(string condition)
+        {
+            dbConnection.Update(condition);
         }
     }
 }
