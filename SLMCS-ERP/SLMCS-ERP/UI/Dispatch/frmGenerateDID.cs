@@ -27,5 +27,15 @@ namespace SLMCS_ERP.UI.Dispatch
             lblQuantityData.Text = salesOrderLine.Quantity.ToString();
             lblDateData.Text = DateTime.Now.ToString("yy-MM-dd");
         }
+
+        private void LblSalesOrderIDData_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblProductIDData_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

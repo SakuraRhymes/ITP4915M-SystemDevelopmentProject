@@ -83,6 +83,8 @@
             // 
             // btnDispatchOrder
             // 
+            this.btnDispatchOrder.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnDispatchOrder.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnDispatchOrder.Location = new System.Drawing.Point(36, 31);
             this.btnDispatchOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDispatchOrder.Name = "btnDispatchOrder";
