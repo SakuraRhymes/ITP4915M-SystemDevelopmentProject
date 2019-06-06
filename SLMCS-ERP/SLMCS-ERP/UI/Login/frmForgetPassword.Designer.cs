@@ -46,7 +46,7 @@
             this.btnRetrievePassword.Location = new System.Drawing.Point(209, 185);
             this.btnRetrievePassword.Name = "btnRetrievePassword";
             this.btnRetrievePassword.Size = new System.Drawing.Size(146, 32);
-            this.btnRetrievePassword.TabIndex = 0;
+            this.btnRetrievePassword.TabIndex = 2;
             this.btnRetrievePassword.Text = "Retrieve Password";
             this.btnRetrievePassword.UseVisualStyleBackColor = false;
             this.btnRetrievePassword.Click += new System.EventHandler(this.BtnRetrievePassword_Click);
@@ -58,7 +58,7 @@
             this.btnCancel.Location = new System.Drawing.Point(63, 185);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(128, 32);
-            this.btnCancel.TabIndex = 0;
+            this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
@@ -91,7 +91,8 @@
             this.txtStaffID.Location = new System.Drawing.Point(189, 80);
             this.txtStaffID.Name = "txtStaffID";
             this.txtStaffID.Size = new System.Drawing.Size(153, 23);
-            this.txtStaffID.TabIndex = 2;
+            this.txtStaffID.TabIndex = 0;
+            this.txtStaffID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtStaffID_KeyDown);
             // 
             // txtPhoneNumber
             // 
@@ -99,7 +100,8 @@
             this.txtPhoneNumber.Location = new System.Drawing.Point(189, 129);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(153, 23);
-            this.txtPhoneNumber.TabIndex = 2;
+            this.txtPhoneNumber.TabIndex = 1;
+            this.txtPhoneNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtPhoneNumber_KeyDown);
             // 
             // label3
             // 
@@ -139,7 +141,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmForgetPassword";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Forget Password";
             this.ResumeLayout(false);
             this.PerformLayout();

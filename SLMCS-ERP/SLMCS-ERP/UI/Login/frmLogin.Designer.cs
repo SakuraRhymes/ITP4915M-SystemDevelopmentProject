@@ -46,10 +46,10 @@
             this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft JhengHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(355, 396);
+            this.btnLogin.Location = new System.Drawing.Point(362, 398);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(125, 38);
-            this.btnLogin.TabIndex = 0;
+            this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
@@ -60,8 +60,9 @@
             this.txtStaffID.Location = new System.Drawing.Point(479, 252);
             this.txtStaffID.Name = "txtStaffID";
             this.txtStaffID.Size = new System.Drawing.Size(147, 25);
-            this.txtStaffID.TabIndex = 1;
+            this.txtStaffID.TabIndex = 0;
             this.txtStaffID.Text = "S19935161";
+            this.txtStaffID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtStaffID_KeyDown);
             // 
             // txtPassword
             // 
@@ -70,8 +71,9 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(147, 25);
-            this.txtPassword.TabIndex = 2;
+            this.txtPassword.TabIndex = 1;
             this.txtPassword.Text = "0SKnu0Uuj";
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtPassword_KeyDown);
             // 
             // labelWelcome
             // 
@@ -113,7 +115,7 @@
             this.labelInstruction.BackColor = System.Drawing.Color.Transparent;
             this.labelInstruction.Font = new System.Drawing.Font("Microsoft JhengHei", 15F);
             this.labelInstruction.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.labelInstruction.Location = new System.Drawing.Point(336, 141);
+            this.labelInstruction.Location = new System.Drawing.Point(328, 140);
             this.labelInstruction.Name = "labelInstruction";
             this.labelInstruction.Size = new System.Drawing.Size(266, 50);
             this.labelInstruction.TabIndex = 6;
@@ -126,10 +128,10 @@
             this.btnForgetPassword.FlatAppearance.BorderSize = 0;
             this.btnForgetPassword.Font = new System.Drawing.Font("Microsoft JhengHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnForgetPassword.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnForgetPassword.Location = new System.Drawing.Point(506, 397);
+            this.btnForgetPassword.Location = new System.Drawing.Point(499, 398);
             this.btnForgetPassword.Name = "btnForgetPassword";
-            this.btnForgetPassword.Size = new System.Drawing.Size(151, 38);
-            this.btnForgetPassword.TabIndex = 0;
+            this.btnForgetPassword.Size = new System.Drawing.Size(139, 38);
+            this.btnForgetPassword.TabIndex = 3;
             this.btnForgetPassword.Text = "Forget Password";
             this.btnForgetPassword.UseVisualStyleBackColor = false;
             this.btnForgetPassword.Click += new System.EventHandler(this.BtnForgetPassword_Click);

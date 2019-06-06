@@ -55,5 +55,21 @@ namespace SLMCS_ERP
             frmForgetPassword forgetPasswordPage = new frmForgetPassword();
             forgetPasswordPage.Show();
         }
+
+        private void TxtStaffID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BtnLogin_Click(this, new EventArgs());
+            }
+        }
+
+        private void TxtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BtnLogin_Click(this, new EventArgs());
+            }
+        }
     }
 }
