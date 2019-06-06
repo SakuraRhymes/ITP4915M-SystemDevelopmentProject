@@ -174,6 +174,7 @@ namespace SLMCS_ERP.UI.Sales
             dgvOrderItem.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
+
         private void TxtOrderQunatity_KeyPress(object sender, KeyPressEventArgs e)
         {
             CheckInputNumberOnly(e);
@@ -184,6 +185,20 @@ namespace SLMCS_ERP.UI.Sales
             if (!char.IsDigit(e.KeyChar) && !(e.KeyChar == (char)8))
             {
                 e.Handled = true;
+
+        private void TxtSearchForProduct_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BtnAddItem_Click(this, new EventArgs());
+            }
+        }
+
+        private void TxtOrderQunatity_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BtnAddItem_Click(this, new EventArgs());
             }
         }
     }

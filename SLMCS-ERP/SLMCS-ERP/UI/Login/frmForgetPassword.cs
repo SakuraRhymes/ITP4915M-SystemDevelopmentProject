@@ -47,5 +47,21 @@ namespace SLMCS_ERP.UI.Login
             }
 
         }
+
+        private void TxtStaffID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BtnRetrievePassword_Click(this, new EventArgs());
+            }
+        }
+
+        private void TxtPhoneNumber_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BtnRetrievePassword_Click(this, new EventArgs());
+            }
+        }
     }
 }
