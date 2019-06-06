@@ -60,9 +60,11 @@
             this.dgvOrderDetail.Location = new System.Drawing.Point(19, 28);
             this.dgvOrderDetail.Margin = new System.Windows.Forms.Padding(5);
             this.dgvOrderDetail.Name = "dgvOrderDetail";
+            this.dgvOrderDetail.ReadOnly = true;
             this.dgvOrderDetail.RowTemplate.Height = 24;
             this.dgvOrderDetail.Size = new System.Drawing.Size(1129, 175);
             this.dgvOrderDetail.TabIndex = 0;
+            this.dgvOrderDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvOrderDetail_CellContentClick);
             // 
             // dgvSalesOrderList
             // 

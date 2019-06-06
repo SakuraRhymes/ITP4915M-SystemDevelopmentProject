@@ -44,7 +44,7 @@
             // lblCompanyName
             // 
             this.lblCompanyName.AutoSize = true;
-            this.lblCompanyName.Font = new System.Drawing.Font("PMingLiU", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblCompanyName.Font = new System.Drawing.Font("PMingLiU", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblCompanyName.Location = new System.Drawing.Point(20, 9);
             this.lblCompanyName.Name = "lblCompanyName";
             this.lblCompanyName.Size = new System.Drawing.Size(453, 30);
@@ -57,9 +57,9 @@
             this.lblHeader.Font = new System.Drawing.Font("PMingLiU", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblHeader.Location = new System.Drawing.Point(116, 66);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(245, 24);
+            this.lblHeader.Size = new System.Drawing.Size(256, 24);
             this.lblHeader.TabIndex = 1;
-            this.lblHeader.Text = "Despatch Instruction Note";
+            this.lblHeader.Text = "Despatch Instruction Detail";
             // 
             // lblSalesOrderID
             // 
@@ -155,7 +155,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(489, 433);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(502, 433);
             this.Controls.Add(this.lblDateData);
             this.Controls.Add(this.lblQuantityData);
             this.Controls.Add(this.lblProductIDData);
@@ -167,8 +168,10 @@
             this.Controls.Add(this.lblSalesOrderID);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.lblCompanyName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmGenerateDID";
             this.Text = "frmGenerateDID";
+            this.Load += new System.EventHandler(this.FrmGenerateDID_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

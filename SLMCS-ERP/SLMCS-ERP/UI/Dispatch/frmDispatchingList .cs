@@ -16,7 +16,9 @@ namespace SLMCS_ERP{
     public partial class frmDispatchingList : Form
     {
         private string selectedOrderID;
-        private String selectedOrderDetail;
+        private string generateForDID;
+        private string orderIDForGenerate;
+        private string selectedOrderDetail;
         private SalesOrder salesOrder;
 
         public frmDispatchingList()
@@ -90,6 +92,7 @@ namespace SLMCS_ERP{
 
         private void DgvSalesOrderList_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
+            
         }
 
         private void DgvSalesOrderList_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -100,7 +103,6 @@ namespace SLMCS_ERP{
             }
             dgvOrderDetail.DataSource = null;
             dgvOrderDetail.DataSource =salesOrder.getSalesOrderLineBySalesOrderID(dgvSalesOrderList.Rows[e.RowIndex].Cells["SalesOrderID"].Value.ToString());
-
         }
 
         private void BtnRefresh_Click(object sender, EventArgs e)
@@ -152,13 +154,13 @@ namespace SLMCS_ERP{
 
         private void BtnGenerateForDID_Click(object sender, EventArgs e)
         {
-            //OpenGenerateDIDForm(selectedOrderID);
+            OpenGenerateDIDForm(selectedOrderID);
         }
 
         private void OpenGenerateDIDForm(string selectedOrderID)
         {
-            //frmGenerateDID generateDID = new frmGenerateDID(selectedOrderID);
-            //generateDID.Show();
+            frmGenerateDID generateDID = new frmGenerateDID(selectedOrderID);
+            generateDID.Show();
         }
 
         private void BtnGenerateForDIC_Click(object sender, EventArgs e)
@@ -170,6 +172,14 @@ namespace SLMCS_ERP{
         {
             frmGenerateDIC generateDIC = new frmGenerateDIC(selectedOrderID);
             generateDIC.Show();
+        }
+
+        private void DgvOrderDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                generateForDID = dgvOrderDetail.Rows[e.RowIndex].Cells["SalesOrderID"].Value.ToString();
+            }
         }
     }
 }

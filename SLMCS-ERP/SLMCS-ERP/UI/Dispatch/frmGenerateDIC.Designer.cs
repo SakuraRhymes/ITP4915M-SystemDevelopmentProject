@@ -28,28 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblTopic = new System.Windows.Forms.Label();
+            this.lblCompanyName = new System.Windows.Forms.Label();
             this.lblHeader = new System.Windows.Forms.Label();
-            this.lblSalesOrderID = new System.Windows.Forms.Label();
-            this.lblSalesOrderDate = new System.Windows.Forms.Label();
-            this.lblDealerID = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.lblPageNum = new System.Windows.Forms.Label();
-            this.lblPrintDate = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
             this.lblSalesOrderIDData = new System.Windows.Forms.Label();
             this.lblSalesOrderDateData = new System.Windows.Forms.Label();
             this.lblDealerIDData = new System.Windows.Forms.Label();
-            this.lblPrintDateData = new System.Windows.Forms.Label();
+            this.lblDateData = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // lblTopic
+            // lblCompanyName
             // 
-            this.lblTopic.AutoSize = true;
-            this.lblTopic.Font = new System.Drawing.Font("PMingLiU", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblTopic.Location = new System.Drawing.Point(20, 9);
-            this.lblTopic.Name = "lblTopic";
-            this.lblTopic.Size = new System.Drawing.Size(453, 30);
-            this.lblTopic.TabIndex = 0;
-            this.lblTopic.Text = "Smart And Luxury Motor Company";
+            this.lblCompanyName.AutoSize = true;
+            this.lblCompanyName.Font = new System.Drawing.Font("PMingLiU", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblCompanyName.Location = new System.Drawing.Point(20, 9);
+            this.lblCompanyName.Name = "lblCompanyName";
+            this.lblCompanyName.Size = new System.Drawing.Size(453, 30);
+            this.lblCompanyName.TabIndex = 0;
+            this.lblCompanyName.Text = "Smart And Luxury Motor Company";
             // 
             // lblHeader
             // 
@@ -57,60 +57,58 @@
             this.lblHeader.Font = new System.Drawing.Font("PMingLiU", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblHeader.Location = new System.Drawing.Point(116, 66);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(245, 24);
+            this.lblHeader.Size = new System.Drawing.Size(257, 24);
             this.lblHeader.TabIndex = 1;
-            this.lblHeader.Text = "Despatch Instruction Note";
-            this.lblHeader.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblHeader.Text = "Despatch Instruction Cover";
             // 
-            // lblSalesOrderID
+            // label3
             // 
-            this.lblSalesOrderID.AutoSize = true;
-            this.lblSalesOrderID.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblSalesOrderID.Location = new System.Drawing.Point(21, 177);
-            this.lblSalesOrderID.Name = "lblSalesOrderID";
-            this.lblSalesOrderID.Size = new System.Drawing.Size(147, 20);
-            this.lblSalesOrderID.TabIndex = 2;
-            this.lblSalesOrderID.Text = "Sales Order Serial:";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label3.Location = new System.Drawing.Point(21, 177);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(147, 20);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Sales Order Serial:";
             // 
-            // lblSalesOrderDate
+            // label4
             // 
-            this.lblSalesOrderDate.AutoSize = true;
-            this.lblSalesOrderDate.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblSalesOrderDate.Location = new System.Drawing.Point(28, 251);
-            this.lblSalesOrderDate.Name = "lblSalesOrderDate";
-            this.lblSalesOrderDate.Size = new System.Drawing.Size(140, 20);
-            this.lblSalesOrderDate.TabIndex = 3;
-            this.lblSalesOrderDate.Text = "Sales Order Date:";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label4.Location = new System.Drawing.Point(28, 247);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(140, 20);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Sales Order Date:";
             // 
-            // lblDealerID
+            // label5
             // 
-            this.lblDealerID.AutoSize = true;
-            this.lblDealerID.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblDealerID.Location = new System.Drawing.Point(80, 322);
-            this.lblDealerID.Name = "lblDealerID";
-            this.lblDealerID.Size = new System.Drawing.Size(88, 20);
-            this.lblDealerID.TabIndex = 4;
-            this.lblDealerID.Text = "Dealer ID:";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label5.Location = new System.Drawing.Point(68, 323);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(88, 20);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Dealer ID:";
             // 
             // lblPageNum
             // 
             this.lblPageNum.AutoSize = true;
-            this.lblPageNum.Font = new System.Drawing.Font("PMingLiU", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblPageNum.Location = new System.Drawing.Point(232, 397);
             this.lblPageNum.Name = "lblPageNum";
-            this.lblPageNum.Size = new System.Drawing.Size(21, 24);
+            this.lblPageNum.Size = new System.Drawing.Size(14, 15);
             this.lblPageNum.TabIndex = 5;
             this.lblPageNum.Text = "1";
             // 
-            // lblPrintDate
+            // lblDate
             // 
-            this.lblPrintDate.AutoSize = true;
-            this.lblPrintDate.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblPrintDate.Location = new System.Drawing.Point(312, 124);
-            this.lblPrintDate.Name = "lblPrintDate";
-            this.lblPrintDate.Size = new System.Drawing.Size(49, 20);
-            this.lblPrintDate.TabIndex = 6;
-            this.lblPrintDate.Text = "Date:";
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblDate.Location = new System.Drawing.Point(312, 124);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(49, 20);
+            this.lblDate.TabIndex = 6;
+            this.lblDate.Text = "Date:";
             // 
             // lblSalesOrderIDData
             // 
@@ -142,32 +140,32 @@
             this.lblDealerIDData.TabIndex = 9;
             this.lblDealerIDData.Text = "XXX";
             // 
-            // lblPrintDateData
+            // lblDateData
             // 
-            this.lblPrintDateData.AutoSize = true;
-            this.lblPrintDateData.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblPrintDateData.Location = new System.Drawing.Point(367, 124);
-            this.lblPrintDateData.Name = "lblPrintDateData";
-            this.lblPrintDateData.Size = new System.Drawing.Size(51, 20);
-            this.lblPrintDateData.TabIndex = 10;
-            this.lblPrintDateData.Text = "XXX";
+            this.lblDateData.AutoSize = true;
+            this.lblDateData.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblDateData.Location = new System.Drawing.Point(367, 124);
+            this.lblDateData.Name = "lblDateData";
+            this.lblDateData.Size = new System.Drawing.Size(51, 20);
+            this.lblDateData.TabIndex = 10;
+            this.lblDateData.Text = "XXX";
             // 
             // frmGenerateDIC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(489, 433);
-            this.Controls.Add(this.lblPrintDateData);
+            this.ClientSize = new System.Drawing.Size(502, 433);
+            this.Controls.Add(this.lblDateData);
             this.Controls.Add(this.lblDealerIDData);
             this.Controls.Add(this.lblSalesOrderDateData);
             this.Controls.Add(this.lblSalesOrderIDData);
-            this.Controls.Add(this.lblPrintDate);
+            this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lblPageNum);
-            this.Controls.Add(this.lblDealerID);
-            this.Controls.Add(this.lblSalesOrderDate);
-            this.Controls.Add(this.lblSalesOrderID);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.lblHeader);
-            this.Controls.Add(this.lblTopic);
+            this.Controls.Add(this.lblCompanyName);
             this.Name = "frmGenerateDIC";
             this.Text = "frmGenerateDIC";
             this.Load += new System.EventHandler(this.FrmGenerateDIC_Load);
@@ -178,16 +176,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblTopic;
+        private System.Windows.Forms.Label lblCompanyName;
         private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.Label lblSalesOrderID;
-        private System.Windows.Forms.Label lblSalesOrderDate;
-        private System.Windows.Forms.Label lblDealerID;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblPageNum;
-        private System.Windows.Forms.Label lblPrintDate;
+        private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblSalesOrderIDData;
         private System.Windows.Forms.Label lblSalesOrderDateData;
         private System.Windows.Forms.Label lblDealerIDData;
-        private System.Windows.Forms.Label lblPrintDateData;
+        private System.Windows.Forms.Label lblDateData;
     }
 }
