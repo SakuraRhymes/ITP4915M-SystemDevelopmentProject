@@ -118,7 +118,10 @@ namespace SLMCS_ERP{
                 if (MessageBox.Show("Confirm Order ID: " + selectedOrderID + " Order?", "Confirm Message", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     salesOrder.updataSalesOrderStatusInDB(selectedOrderID, "Dispatched");
-                    string successfulMessage = "Sales Order :" + selectedOrderID + " has been Dispatch!";
+
+                    salesOrder.dispatchOrder(selectedOrderID);
+
+                    string successfulMessage = "Sales Order :" + selectedOrderID + " has been Dispatched!";
                     MessageBox.Show(successfulMessage);
                     refreshDvg();
                 }
