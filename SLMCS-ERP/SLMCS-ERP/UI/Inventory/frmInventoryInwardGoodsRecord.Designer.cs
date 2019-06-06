@@ -75,7 +75,7 @@
             this.groupBox1.Controls.Add(this.txtReorderOrderID);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.lblReorderOrderID);
-            this.groupBox1.Controls.Add(this.lblOrderDate);
+            //this.groupBox1.Controls.Add(this.lblOrderDate);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.groupBox1.Location = new System.Drawing.Point(27, 8);
             this.groupBox1.Name = "groupBox1";
@@ -113,60 +113,60 @@
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("PMingLiU", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(282, 102);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(18, 21);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "-";
+            //this.label2.AutoSize = true;
+            //this.label2.Font = new System.Drawing.Font("PMingLiU", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            //this.label2.Location = new System.Drawing.Point(282, 102);
+            //this.label2.Name = "label2";
+            //this.label2.Size = new System.Drawing.Size(18, 21);
+            //this.label2.TabIndex = 21;
+            //this.label2.Text = "-";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("PMingLiU", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label3.Location = new System.Drawing.Point(282, 137);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(18, 21);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "-";
+            //this.label3.AutoSize = true;
+            //this.label3.Font = new System.Drawing.Font("PMingLiU", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            //this.label3.Location = new System.Drawing.Point(282, 137);
+            //this.label3.Name = "label3";
+            //this.label3.Size = new System.Drawing.Size(18, 21);
+            //this.label3.TabIndex = 20;
+            //this.label3.Text = "-";
             // 
             // dtpCompletedDateTo
             // 
-            this.dtpCompletedDateTo.Location = new System.Drawing.Point(306, 137);
-            this.dtpCompletedDateTo.Name = "dtpCompletedDateTo";
-            this.dtpCompletedDateTo.Size = new System.Drawing.Size(140, 23);
-            this.dtpCompletedDateTo.TabIndex = 18;
+            //this.dtpCompletedDateTo.Location = new System.Drawing.Point(306, 137);
+            //this.dtpCompletedDateTo.Name = "dtpCompletedDateTo";
+            //this.dtpCompletedDateTo.Size = new System.Drawing.Size(140, 23);
+            //this.dtpCompletedDateTo.TabIndex = 18;
             // 
             // dtpCompletedDateFrom
             // 
-            this.dtpCompletedDateFrom.Location = new System.Drawing.Point(136, 136);
-            this.dtpCompletedDateFrom.Name = "dtpCompletedDateFrom";
-            this.dtpCompletedDateFrom.Size = new System.Drawing.Size(140, 23);
-            this.dtpCompletedDateFrom.TabIndex = 17;
+            //this.dtpCompletedDateFrom.Location = new System.Drawing.Point(136, 136);
+            //this.dtpCompletedDateFrom.Name = "dtpCompletedDateFrom";
+            //this.dtpCompletedDateFrom.Size = new System.Drawing.Size(140, 23);
+            //this.dtpCompletedDateFrom.TabIndex = 17;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 142);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 16);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Completed Date :";
+            //this.label1.AutoSize = true;
+            //this.label1.Location = new System.Drawing.Point(19, 142);
+            //this.label1.Name = "label1";
+            //this.label1.Size = new System.Drawing.Size(108, 16);
+            //this.label1.TabIndex = 16;
+            //this.label1.Text = "Completed Date :";
             // 
             // dtpOrderDateTo
             // 
-            this.dtpOrderDateTo.Location = new System.Drawing.Point(306, 101);
-            this.dtpOrderDateTo.Name = "dtpOrderDateTo";
-            this.dtpOrderDateTo.Size = new System.Drawing.Size(140, 23);
-            this.dtpOrderDateTo.TabIndex = 15;
+            //this.dtpOrderDateTo.Location = new System.Drawing.Point(306, 101);
+            //this.dtpOrderDateTo.Name = "dtpOrderDateTo";
+            //this.dtpOrderDateTo.Size = new System.Drawing.Size(140, 23);
+            //this.dtpOrderDateTo.TabIndex = 15;
             // 
             // dtpOrderDateFrom
             // 
-            this.dtpOrderDateFrom.Location = new System.Drawing.Point(136, 101);
-            this.dtpOrderDateFrom.Name = "dtpOrderDateFrom";
-            this.dtpOrderDateFrom.Size = new System.Drawing.Size(140, 23);
-            this.dtpOrderDateFrom.TabIndex = 8;
+            //this.dtpOrderDateFrom.Location = new System.Drawing.Point(136, 101);
+            //this.dtpOrderDateFrom.Name = "dtpOrderDateFrom";
+            //this.dtpOrderDateFrom.Size = new System.Drawing.Size(140, 23);
+            //this.dtpOrderDateFrom.TabIndex = 8;
             // 
             // txtReorderOrderID
             // 
@@ -197,12 +197,12 @@
             // 
             // lblOrderDate
             // 
-            this.lblOrderDate.AutoSize = true;
-            this.lblOrderDate.Location = new System.Drawing.Point(50, 107);
-            this.lblOrderDate.Name = "lblOrderDate";
-            this.lblOrderDate.Size = new System.Drawing.Size(77, 16);
-            this.lblOrderDate.TabIndex = 1;
-            this.lblOrderDate.Text = "Order Date :";
+            //this.lblOrderDate.AutoSize = true;
+            //this.lblOrderDate.Location = new System.Drawing.Point(50, 107);
+            //this.lblOrderDate.Name = "lblOrderDate";
+            //this.lblOrderDate.Size = new System.Drawing.Size(77, 16);
+            //this.lblOrderDate.TabIndex = 1;
+            //this.lblOrderDate.Text = "Order Date :";
             // 
             // dgvReorderOrderLine
             // 
