@@ -20,6 +20,8 @@ namespace SLMCS_ERP
             dgvInwardGoodsRecord.DataSource = reorderOrder.GetInwardGoodsRecordTable(queryString);
             //MessageBox.Show(dtpOrderDateFrom.Value.ToString("dd/MM/yyyy"));
             DGVInwardGoodsRecordFormatSetting();
+
+            MessageBox.Show(dtpOrderDateFrom.Value.ToString("yyyy-MM-dd"));
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
@@ -38,12 +40,16 @@ namespace SLMCS_ERP
             {
                 queryString += "StaffID LIKE '%" + txtStaffID.Text + "%'" + " AND ";
             }
+            //if (dtpOrderDateFrom.Value.ToString("yyyy-MM-dd") != " " && dtpOrderDateTo.Value.ToString("yyyy-MM-dd") != " ")
+            //{
+            //    queryString += "ReorderOrderDate BETWEEN '" + dtpOrderDateFrom.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpOrderDateTo.Value.ToString("yyyy-MM-dd") + "' AND ";
+            //}
             
             if (queryString != "")
             {
                 queryString = queryString.Remove(queryString.Length - 5);
             }
-     
+            MessageBox.Show(queryString);
             return queryString;
         }
 
@@ -94,6 +100,21 @@ namespace SLMCS_ERP
 
             dgvInwardGoodsRecord.DataSource = null;
             dgvReorderOrderLine.DataSource = null;
+
+            dtpOrderDateFrom.Text = "";
+            dtpOrderDateFrom.Format = DateTimePickerFormat.Custom;
+            dtpOrderDateFrom.CustomFormat = " ";
+            dtpOrderDateTo.Text = "";
+            dtpOrderDateTo.Format = DateTimePickerFormat.Custom;
+            dtpOrderDateTo.CustomFormat = " ";
+
+            dtpCompletedDateFrom.Text = "";
+            dtpCompletedDateFrom.Format = DateTimePickerFormat.Custom;
+            dtpCompletedDateFrom.CustomFormat = " ";
+            dtpCompletedDateTo.Text = "";
+            dtpCompletedDateTo.Format = DateTimePickerFormat.Custom;
+            dtpCompletedDateTo.CustomFormat = " ";
+
         }
 
         private void DGVInwardGoodsRecordFormatSetting()
@@ -118,6 +139,26 @@ namespace SLMCS_ERP
         private void BtnClear_Click(object sender, EventArgs e)
         {
             FrmInventoryInwardGoodsRecord_Load(sender, e);
+        }
+
+        private void DtpOrderDateFrom_ValueChanged(object sender, EventArgs e)
+        {
+            dtpOrderDateFrom.CustomFormat = "yyyy-MM-dd";
+        }
+
+        private void DtpOrderDateTo_ValueChanged(object sender, EventArgs e)
+        {
+            dtpOrderDateTo.CustomFormat = "yyyy-MM-dd";
+        }
+
+        private void DtpCompletedDateFrom_ValueChanged(object sender, EventArgs e)
+        {
+            dtpCompletedDateFrom.CustomFormat = "yyyy-MM-dd";
+        }
+
+        private void DtpCompletedDateTo_ValueChanged(object sender, EventArgs e)
+        {
+            dtpCompletedDateTo.CustomFormat = "yyyy-MM-dd";
         }
     }
 }
