@@ -23,8 +23,8 @@ namespace SLMCS_ERP
             CurrentStaff = staff;
             lblStaffID.Text = frmMain.CurrentStaff.StaffID;
             lblStaffName.Text = frmMain.CurrentStaff.StaffName;
-            frmHome home = new frmHome();
-            navigation(home, panelContent);
+            frmSales sales = new frmSales();
+            navigation(sales, panelContent);
         }
         private void navigation(Form form, Panel panel)
         {

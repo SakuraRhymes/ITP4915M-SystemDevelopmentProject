@@ -44,6 +44,12 @@ namespace SLMCS_ERP.UI.Sales
             lblOrderDispatchDate.Text = salesOrder.SalesDispatchDate;
             lblOrderCompletedDate.Text = salesOrder.SalesOrderCompletedDate;
 
+            dgvOrderItem.AllowUserToAddRows = false;
+            dgvOrderItem.RowHeadersVisible = false;
+            dgvOrderItem.ReadOnly = true;
+            dgvOrderItem.AllowUserToResizeRows = false;
+            dgvOrderItem.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
             if (lblOrderDispatchDate.Text == "")
             {
                 lblOrderDispatchDate.Text = "Not available";
@@ -73,9 +79,6 @@ namespace SLMCS_ERP.UI.Sales
         {          
             dgvOrderItem.DataSource = null;
             dgvOrderItem.DataSource = salesOrder.searchOrderLine();
-            dgvOrderItem.AllowUserToAddRows = false;
-            dgvOrderItem.RowHeadersVisible = false;
-            dgvOrderItem.ReadOnly = true;
 
             dgvOrderItem.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvOrderItem.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;

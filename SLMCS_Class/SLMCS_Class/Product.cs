@@ -106,16 +106,16 @@ namespace SLMCS_Class
             return productTypeChar + fillZore + nextProductID;
         }
 
-        public DataTable GetProdcutTable(string condition)
-        {
-            string query = "SELECT * FROM Product";
-            if (condition != "")
-            {
-                query += condition;
-            }
+        //public DataTable GetProdcutTable(string condition)
+        //{
+        //    string query = "SELECT * FROM Product";
+        //    if (condition != "")
+        //    {
+        //        query += condition;
+        //    }
 
-            return dbConnection.GetDataTable(query);
-        }
+        //    return dbConnection.GetDataTable(query);
+        //}
 
         public DataTable GetProdcutRecordTable(string condition)
         {
@@ -144,7 +144,7 @@ namespace SLMCS_Class
 
         public DataTable GetReorderProductTable(string condition)
         {
-            string query = "SELECT ProductID,ProductName,ProductType,ProductPrice,VendorID,ActualQuantity,ReorderLevel,DangerLevel FROM Product ";
+            string query = "SELECT ProductID,ProductName,ProductType,ProductUnit,VendorID,ActualQuantity,ReorderLevel,DangerLevel FROM Product ";
             if (condition != "")
             {
                 query += condition;

@@ -124,7 +124,8 @@ namespace SLMCS_Class
 
         public DataTable GetInwardGoodsRecordTable(string condition)
         {
-            string query = "SELECT ReorderOrderID,StaffID,ReorderOrderDate,ReorderOrderCompletedDate FROM ReorderOrder WHERE ReorderOrderStatus = 'Completed' ";
+            //string query = "SELECT ReorderOrderID,StaffID,ReorderOrderDate,ReorderOrderCompletedDate FROM ReorderOrder WHERE ReorderOrderStatus = 'Completed' ";
+            string query = "SELECT ReorderOrderID AS 'Order ID',StaffID,ReorderOrderDate AS 'OrderDate',ReorderOrderCompletedDate AS 'CompletedDate' FROM ReorderOrder WHERE ReorderOrderStatus = 'Completed'";
             if (condition != "")
             {
                 query += " AND " + condition;
@@ -144,7 +145,8 @@ namespace SLMCS_Class
 
         public DataTable GetReorderOrderLineTable(string reorderOrderID)
         {
-            string query = "SELECT * FROM ReorderOrderLine WHERE ReorderOrderID = '" + reorderOrderID + "'";
+            //string query = "SELECT * FROM ReorderOrderLine WHERE ReorderOrderID = '" + reorderOrderID + "'";
+            string query = "SELECT Product.ProductID,Product.ProductName,Product.ProductType,Product.ProductUnit,ReorderOrderLine.Quantity FROM Product,ReorderOrderLine WHERE Product.ProductID = ReorderOrderLine.ProductID AND ReorderOrderID = '" + reorderOrderID + "'";
             reorderOrderTable = dbConnection.GetDataTable(query);
             return reorderOrderTable;
         }
