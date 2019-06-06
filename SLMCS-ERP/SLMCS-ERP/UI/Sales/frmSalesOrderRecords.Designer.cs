@@ -65,10 +65,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft JhengHei", 10F);
-            this.label2.Location = new System.Drawing.Point(17, 29);
+            this.label2.Font = new System.Drawing.Font("Microsoft JhengHei", 9F);
+            this.label2.Location = new System.Drawing.Point(23, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 18);
+            this.label2.Size = new System.Drawing.Size(111, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Search Condition :";
             // 
@@ -76,7 +76,7 @@
             // 
             this.cboSearchType.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cboSearchType.FormattingEnabled = true;
-            this.cboSearchType.Location = new System.Drawing.Point(153, 26);
+            this.cboSearchType.Location = new System.Drawing.Point(146, 26);
             this.cboSearchType.Name = "cboSearchType";
             this.cboSearchType.Size = new System.Drawing.Size(170, 24);
             this.cboSearchType.TabIndex = 3;
@@ -84,7 +84,7 @@
             // txtSearchCondition
             // 
             this.txtSearchCondition.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtSearchCondition.Location = new System.Drawing.Point(340, 27);
+            this.txtSearchCondition.Location = new System.Drawing.Point(333, 27);
             this.txtSearchCondition.Name = "txtSearchCondition";
             this.txtSearchCondition.Size = new System.Drawing.Size(170, 23);
             this.txtSearchCondition.TabIndex = 2;
@@ -94,7 +94,7 @@
             this.btnSearch.BackColor = System.Drawing.SystemColors.Control;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnSearch.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSearch.Location = new System.Drawing.Point(530, 26);
+            this.btnSearch.Location = new System.Drawing.Point(523, 26);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(162, 23);
             this.btnSearch.TabIndex = 0;

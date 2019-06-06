@@ -30,9 +30,9 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblProdcutID = new System.Windows.Forms.Label();
-            this.btnSubmit = new System.Windows.Forms.Button();
+            this.BtnSubmit = new System.Windows.Forms.Button();
             this.lblProdcutIDData = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.BtnCancel = new System.Windows.Forms.Button();
             this.lblProductName = new System.Windows.Forms.Label();
             this.txtDangerLevel = new System.Windows.Forms.TextBox();
             this.lblProductNameData = new System.Windows.Forms.Label();
@@ -43,9 +43,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lblProdcutID);
-            this.groupBox1.Controls.Add(this.btnSubmit);
+            this.groupBox1.Controls.Add(this.BtnSubmit);
             this.groupBox1.Controls.Add(this.lblProdcutIDData);
-            this.groupBox1.Controls.Add(this.btnCancel);
+            this.groupBox1.Controls.Add(this.BtnCancel);
             this.groupBox1.Controls.Add(this.lblProductName);
             this.groupBox1.Controls.Add(this.txtDangerLevel);
             this.groupBox1.Controls.Add(this.lblProductNameData);
@@ -71,16 +71,17 @@
             this.lblProdcutID.TabIndex = 5;
             this.lblProdcutID.Text = "Product ID :";
             // 
-            // btnSubmit
+            // BtnSubmit
             // 
-            this.btnSubmit.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnSubmit.Location = new System.Drawing.Point(139, 161);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(80, 25);
-            this.btnSubmit.TabIndex = 7;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.BtnSubmit.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.BtnSubmit.Location = new System.Drawing.Point(139, 161);
+            this.BtnSubmit.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.BtnSubmit.Name = "BtnSubmit";
+            this.BtnSubmit.Size = new System.Drawing.Size(80, 25);
+            this.BtnSubmit.TabIndex = 7;
+            this.BtnSubmit.Text = "Submit";
+            this.BtnSubmit.UseVisualStyleBackColor = true;
+            this.BtnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
             // 
             // lblProdcutIDData
             // 
@@ -93,16 +94,17 @@
             this.lblProdcutIDData.TabIndex = 8;
             this.lblProdcutIDData.Text = "label2";
             // 
-            // btnCancel
+            // BtnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnCancel.Location = new System.Drawing.Point(26, 161);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(80, 25);
-            this.btnCancel.TabIndex = 9;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.BtnCancel.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.BtnCancel.Location = new System.Drawing.Point(26, 161);
+            this.BtnCancel.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.BtnCancel.Name = "BtnCancel";
+            this.BtnCancel.Size = new System.Drawing.Size(80, 25);
+            this.BtnCancel.TabIndex = 9;
+            this.BtnCancel.Text = "Cancel";
+            this.BtnCancel.UseVisualStyleBackColor = true;
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // lblProductName
             // 
@@ -168,9 +170,9 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblProdcutID;
-        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Button BtnSubmit;
         private System.Windows.Forms.Label lblProdcutIDData;
-        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button BtnCancel;
         private System.Windows.Forms.Label lblProductName;
         private System.Windows.Forms.TextBox txtDangerLevel;
         private System.Windows.Forms.Label lblProductNameData;

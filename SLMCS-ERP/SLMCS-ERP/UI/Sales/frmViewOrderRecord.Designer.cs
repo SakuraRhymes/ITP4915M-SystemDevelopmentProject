@@ -67,7 +67,7 @@
             this.dgvOrderItem.AllowUserToDeleteRows = false;
             this.dgvOrderItem.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvOrderItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrderItem.Location = new System.Drawing.Point(20, 227);
+            this.dgvOrderItem.Location = new System.Drawing.Point(21, 227);
             this.dgvOrderItem.Name = "dgvOrderItem";
             this.dgvOrderItem.ReadOnly = true;
             this.dgvOrderItem.RowTemplate.Height = 23;
@@ -81,7 +81,7 @@
             this.btnCancelOrder.Enabled = false;
             this.btnCancelOrder.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnCancelOrder.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnCancelOrder.Location = new System.Drawing.Point(508, 486);
+            this.btnCancelOrder.Location = new System.Drawing.Point(509, 486);
             this.btnCancelOrder.Name = "btnCancelOrder";
             this.btnCancelOrder.Size = new System.Drawing.Size(115, 30);
             this.btnCancelOrder.TabIndex = 26;
@@ -95,7 +95,7 @@
             this.btnConfirmPlaceOrder.BackColor = System.Drawing.SystemColors.Control;
             this.btnConfirmPlaceOrder.Enabled = false;
             this.btnConfirmPlaceOrder.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnConfirmPlaceOrder.Location = new System.Drawing.Point(629, 486);
+            this.btnConfirmPlaceOrder.Location = new System.Drawing.Point(630, 486);
             this.btnConfirmPlaceOrder.Name = "btnConfirmPlaceOrder";
             this.btnConfirmPlaceOrder.Size = new System.Drawing.Size(149, 30);
             this.btnConfirmPlaceOrder.TabIndex = 21;
@@ -107,7 +107,7 @@
             // 
             this.btnClose.BackColor = System.Drawing.SystemColors.Control;
             this.btnClose.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnClose.Location = new System.Drawing.Point(20, 486);
+            this.btnClose.Location = new System.Drawing.Point(21, 486);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(115, 30);
             this.btnClose.TabIndex = 22;
@@ -159,7 +159,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.lbl1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox1.Location = new System.Drawing.Point(20, 14);
+            this.groupBox1.Location = new System.Drawing.Point(21, 14);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(879, 189);
             this.groupBox1.TabIndex = 23;
@@ -360,7 +360,7 @@
             this.btnCompleteOrder.Enabled = false;
             this.btnCompleteOrder.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnCompleteOrder.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCompleteOrder.Location = new System.Drawing.Point(784, 486);
+            this.btnCompleteOrder.Location = new System.Drawing.Point(785, 486);
             this.btnCompleteOrder.Name = "btnCompleteOrder";
             this.btnCompleteOrder.Size = new System.Drawing.Size(115, 30);
             this.btnCompleteOrder.TabIndex = 29;
@@ -373,7 +373,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1036, 566);
+            this.ClientSize = new System.Drawing.Size(927, 539);
             this.Controls.Add(this.btnCompleteOrder);
             this.Controls.Add(this.dgvOrderItem);
             this.Controls.Add(this.btnCancelOrder);
@@ -382,7 +382,8 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmViewOrderRecord";
-            this.Text = "frmViewOrderRecord";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "View Order Record";
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItem)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
