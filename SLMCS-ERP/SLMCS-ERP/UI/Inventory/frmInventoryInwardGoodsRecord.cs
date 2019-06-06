@@ -51,8 +51,7 @@ namespace SLMCS_ERP
         {
             if (e.RowIndex != -1)
             {
-                selectReorderOrderID = dgvInwardGoodsRecord.Rows[e.RowIndex].Cells["ReorderOrderID"].Value.ToString();
-                dgvInwardGoodsRecord.Rows[e.RowIndex].Selected = true;
+                selectReorderOrderID = dgvInwardGoodsRecord.Rows[e.RowIndex].Cells["Order ID"].Value.ToString();
                 reorderOrder = new ReorderOrder(selectReorderOrderID);
 
                 lblDReorderOrderIDData.Text = reorderOrder.ReorderOrderID;
@@ -73,10 +72,14 @@ namespace SLMCS_ERP
             dgvInwardGoodsRecord.AllowUserToAddRows = false;
             dgvInwardGoodsRecord.RowHeadersVisible = false;
             dgvInwardGoodsRecord.ReadOnly = true;
+            dgvInwardGoodsRecord.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvInwardGoodsRecord.AllowUserToResizeRows = false;
 
             dgvReorderOrderLine.AllowUserToAddRows = false;
             dgvReorderOrderLine.RowHeadersVisible = false;
             dgvReorderOrderLine.ReadOnly = true;
+            dgvReorderOrderLine.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvReorderOrderLine.AllowUserToResizeRows = false;
 
             lblDReorderOrderIDData.Text = "---";
             lblDStaffIDData.Text = "---";
@@ -107,7 +110,9 @@ namespace SLMCS_ERP
         {
             dgvReorderOrderLine.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvReorderOrderLine.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgvReorderOrderLine.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvReorderOrderLine.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvReorderOrderLine.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvReorderOrderLine.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void BtnClear_Click(object sender, EventArgs e)

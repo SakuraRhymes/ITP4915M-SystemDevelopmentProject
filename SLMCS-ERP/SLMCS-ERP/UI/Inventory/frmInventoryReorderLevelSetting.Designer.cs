@@ -43,77 +43,95 @@
             // lblProdcutID
             // 
             this.lblProdcutID.AutoSize = true;
-            this.lblProdcutID.Location = new System.Drawing.Point(138, 75);
+            this.lblProdcutID.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblProdcutID.Location = new System.Drawing.Point(47, 38);
+            this.lblProdcutID.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblProdcutID.Name = "lblProdcutID";
-            this.lblProdcutID.Size = new System.Drawing.Size(122, 24);
+            this.lblProdcutID.Size = new System.Drawing.Size(73, 16);
             this.lblProdcutID.TabIndex = 0;
             this.lblProdcutID.Text = "Product ID :";
             // 
             // lblProdcutIDData
             // 
             this.lblProdcutIDData.AutoSize = true;
-            this.lblProdcutIDData.Location = new System.Drawing.Point(286, 78);
+            this.lblProdcutIDData.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblProdcutIDData.Location = new System.Drawing.Point(132, 39);
+            this.lblProdcutIDData.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblProdcutIDData.Name = "lblProdcutIDData";
-            this.lblProdcutIDData.Size = new System.Drawing.Size(64, 24);
+            this.lblProdcutIDData.Size = new System.Drawing.Size(43, 16);
             this.lblProdcutIDData.TabIndex = 1;
             this.lblProdcutIDData.Text = "label2";
             // 
             // lblProductName
             // 
             this.lblProductName.AutoSize = true;
-            this.lblProductName.Location = new System.Drawing.Point(108, 140);
+            this.lblProductName.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblProductName.Location = new System.Drawing.Point(25, 73);
+            this.lblProductName.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Size = new System.Drawing.Size(152, 24);
+            this.lblProductName.Size = new System.Drawing.Size(96, 16);
             this.lblProductName.TabIndex = 2;
             this.lblProductName.Text = "Product Name :";
             // 
             // lblProductNameData
             // 
             this.lblProductNameData.AutoSize = true;
-            this.lblProductNameData.Location = new System.Drawing.Point(286, 143);
+            this.lblProductNameData.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblProductNameData.Location = new System.Drawing.Point(132, 75);
+            this.lblProductNameData.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblProductNameData.Name = "lblProductNameData";
-            this.lblProductNameData.Size = new System.Drawing.Size(64, 24);
+            this.lblProductNameData.Size = new System.Drawing.Size(43, 16);
             this.lblProductNameData.TabIndex = 3;
             this.lblProductNameData.Text = "label4";
             // 
             // lblReorderLevel
             // 
             this.lblReorderLevel.AutoSize = true;
-            this.lblReorderLevel.Location = new System.Drawing.Point(108, 201);
+            this.lblReorderLevel.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblReorderLevel.Location = new System.Drawing.Point(29, 108);
+            this.lblReorderLevel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblReorderLevel.Name = "lblReorderLevel";
-            this.lblReorderLevel.Size = new System.Drawing.Size(152, 24);
+            this.lblReorderLevel.Size = new System.Drawing.Size(92, 16);
             this.lblReorderLevel.TabIndex = 4;
             this.lblReorderLevel.Text = "Reorder Level :";
             // 
             // txtReorderLevel
             // 
-            this.txtReorderLevel.Location = new System.Drawing.Point(290, 201);
+            this.txtReorderLevel.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtReorderLevel.Location = new System.Drawing.Point(134, 105);
+            this.txtReorderLevel.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.txtReorderLevel.Name = "txtReorderLevel";
-            this.txtReorderLevel.Size = new System.Drawing.Size(100, 36);
-            this.txtReorderLevel.TabIndex = 5;
+            this.txtReorderLevel.Size = new System.Drawing.Size(58, 23);
+            this.txtReorderLevel.TabIndex = 0;
+            this.txtReorderLevel.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtReorderLevel_KeyDown);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(112, 284);
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnCancel.Location = new System.Drawing.Point(24, 162);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(129, 53);
-            this.btnCancel.TabIndex = 6;
+            this.btnCancel.Size = new System.Drawing.Size(80, 25);
+            this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(290, 284);
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnSubmit.Location = new System.Drawing.Point(137, 162);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(126, 53);
-            this.btnSubmit.TabIndex = 7;
+            this.btnSubmit.Size = new System.Drawing.Size(80, 25);
+            this.btnSubmit.TabIndex = 1;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.lblProdcutID);
             this.groupBox1.Controls.Add(this.btnSubmit);
             this.groupBox1.Controls.Add(this.lblProdcutIDData);
@@ -122,21 +140,28 @@
             this.groupBox1.Controls.Add(this.txtReorderLevel);
             this.groupBox1.Controls.Add(this.lblProductNameData);
             this.groupBox1.Controls.Add(this.lblReorderLevel);
-            this.groupBox1.Location = new System.Drawing.Point(12, 26);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.groupBox1.Location = new System.Drawing.Point(6, 13);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(528, 414);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.groupBox1.Size = new System.Drawing.Size(244, 207);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Reorder Level Setting";
             // 
             // frmInventoryReorderLevelSetting
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 459);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(254, 231);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.Name = "frmInventoryReorderLevelSetting";
-            this.Text = "frmInventoryReorderLevelSetting";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Setting";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

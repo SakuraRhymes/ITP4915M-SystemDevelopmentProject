@@ -52,16 +52,19 @@ namespace SLMCS_ERP.UI.Sales
             };
 
             cboSearchType.DataSource = items;
+
+            dgvSearchResult.AllowUserToAddRows = false;
+            dgvSearchResult.RowHeadersVisible = false;
+            dgvSearchResult.ReadOnly = true;
+            dgvSearchResult.AllowUserToResizeRows = false;
+            dgvSearchResult.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
         }
 
         private void updateDGV(DataTable dt)
         {
             dgvSearchResult.DataSource = null;
             dgvSearchResult.DataSource = dt;
-
-            dgvSearchResult.AllowUserToAddRows = false;
-            dgvSearchResult.RowHeadersVisible = false;
-            dgvSearchResult.ReadOnly = true;
 
             dgvSearchResult.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvSearchResult.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -74,13 +77,21 @@ namespace SLMCS_ERP.UI.Sales
 
         private void DgvSearchResult_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            selectedSalesOrderID = dgvSearchResult.Rows[e.RowIndex].Cells["SalesOrderID"].Value.ToString();
+            if (e.RowIndex != -1)
+            {
+                selectedSalesOrderID = dgvSearchResult.Rows[e.RowIndex].Cells["SalesOrderID"].Value.ToString();
+            }
+            
         }
 
         private void DgvSearchResult_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            frmViewOrderRecord viewOrderRecord = new frmViewOrderRecord(selectedSalesOrderID);
-            viewOrderRecord.Show();
+            if (e.RowIndex != -1)
+            {
+                frmViewOrderRecord viewOrderRecord = new frmViewOrderRecord(selectedSalesOrderID);
+                viewOrderRecord.Show();
+            }
+            
         }
     }
 }

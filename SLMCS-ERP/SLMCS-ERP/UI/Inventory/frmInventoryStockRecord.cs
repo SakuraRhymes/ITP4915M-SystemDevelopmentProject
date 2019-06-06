@@ -20,6 +20,9 @@ namespace SLMCS_ERP
             dgvStockRecord.AllowUserToAddRows = false;
             dgvStockRecord.RowHeadersVisible = false;
             dgvStockRecord.ReadOnly = true;
+            dgvStockRecord.AllowUserToResizeRows = false;
+            dgvStockRecord.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
             //cboProductType.DropDownStyle = ComboBoxStyle.DropDownList;
             cboProductPrice.DropDownStyle = ComboBoxStyle.DropDownList;
             cboStockQuantity.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -50,7 +53,6 @@ namespace SLMCS_ERP
             if (e.RowIndex != -1)
             {
                 selectedProductID = dgvStockRecord.Rows[e.RowIndex].Cells["ProductID"].Value.ToString();
-                dgvStockRecord.Rows[e.RowIndex].Selected = true;
                 product = new Product(selectedProductID);
 
                 lblDProductIDData.Text = product.ProductID;
@@ -220,6 +222,22 @@ namespace SLMCS_ERP
         private void CboProductStatus_KeyPress(object sender, KeyPressEventArgs e)
         {
             CheckInputAlphabetOnly(e);
+        }
+
+        private void TxtProductID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BtnSearch_Click(this, new EventArgs());
+            }
+        }
+
+        private void TxtProductName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BtnSearch_Click(this, new EventArgs());
+            }
         }
     }
 }

@@ -18,6 +18,42 @@ namespace SLMCS_ERP.UI.Management
             InitializeComponent();
         }
 
+        private void BtnSubmit_Click(object sender, EventArgs e)
+        {
+            string vendorID = txtVendorID.Text;
+            string productType = cboProductType.Text;
+            string productName = txtProductName.Text;
+            string productUnit = cboProductUnit.Text;
+            string productDescription = rtbProductDescription.Text;
+            string productPrice = txtProductPrice.Text;
+
+
+            Product product = new Product();
+            try
+            {
+                if (CheckInputFieldIsValid())
+                {
+                    product.CreateNewProduct(productName, productType, productDescription, productUnit, productPrice, vendorID);
+                    BtnCancel_Click(sender, e);
+                    MessageBox.Show("Product has been added");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+            txtVendorID.Text = "";
+            cboProductType.Text = "";
+            txtProductName.Text = "";
+            cboProductUnit.Text = "";
+            rtbProductDescription.Text = "";
+            txtProductPrice.Text = "";
+        }
+
         private bool CheckInputFieldIsValid()
         {
 
@@ -66,10 +102,18 @@ namespace SLMCS_ERP.UI.Management
 
         }
 
+        private void TxtProductPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !(e.KeyChar == (char)8))
+            {
+                e.Handled = true;
+            }
+        }
+
         private void BtnSearchVendor_Click(object sender, EventArgs e)
         {
-            frmProductManagement_VendorRecord productManagement_VendorRecord = new frmProductManagement_VendorRecord(this);
-            productManagement_VendorRecord.Show();
+            frmProductManagement_VendorRecord managementVendorRecord = new frmProductManagement_VendorRecord(this);
+            managementVendorRecord.Show();
         }
 
         public void SetTxtVendorID(string vendorID)

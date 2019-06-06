@@ -33,7 +33,6 @@ namespace SLMCS_ERP
             if (e.RowIndex != -1)
             {
                 selectedReorderOrderID = dgvReceivedOrderRecord.Rows[e.RowIndex].Cells["ReorderOrderID"].Value.ToString();
-                dgvReceivedOrderRecord.Rows[e.RowIndex].Selected = true;
                 reorderOrder = new ReorderOrder(selectedReorderOrderID);
 
                 lblDReorderOrderIDData.Text = reorderOrder.ReorderOrderID;
@@ -45,7 +44,7 @@ namespace SLMCS_ERP
                 lblDCompletedDateData.Text = reorderOrder.ReorderOrderCompletedDate;
                 dgvOrderDetail.DataSource = reorderOrder.GetReorderOrderLineTable(selectedReorderOrderID);
                 //dgvOrderDetail.Rows[e.RowIndex].Selected = true;
-                DGVOrderDetailFormatSetting();
+                DGVReceivedOrderLineFormatSetting();
 
                 btnConfirm.Enabled = true;
 
@@ -58,11 +57,15 @@ namespace SLMCS_ERP
             dgvReceivedOrderRecord.AllowUserToAddRows = false;
             dgvReceivedOrderRecord.RowHeadersVisible = false;
             dgvReceivedOrderRecord.DataSource = null;
+            dgvReceivedOrderRecord.AllowUserToResizeRows = false;
+            dgvReceivedOrderRecord.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             dgvOrderDetail.ReadOnly = true;
             dgvOrderDetail.AllowUserToAddRows = false;
             dgvOrderDetail.RowHeadersVisible = false;
             dgvOrderDetail.DataSource = null;
+            dgvOrderDetail.AllowUserToResizeRows = false;
+            dgvOrderDetail.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             lblDReorderOrderIDData.Text = "---";
             lblDStaffIDData.Text = "---";
@@ -84,11 +87,13 @@ namespace SLMCS_ERP
             dgvReceivedOrderRecord.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
-        private void DGVOrderDetailFormatSetting()
+        private void DGVReceivedOrderLineFormatSetting()
         {
             dgvOrderDetail.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvOrderDetail.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgvOrderDetail.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvOrderDetail.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvOrderDetail.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvOrderDetail.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void BtnConfirm_Click(object sender, EventArgs e)

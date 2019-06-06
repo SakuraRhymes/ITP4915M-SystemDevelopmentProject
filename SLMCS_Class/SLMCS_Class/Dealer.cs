@@ -51,13 +51,18 @@ namespace SLMCS_Class
             return dbConnection.GetDataTable(query);
         }
 
-        public DataTable SearchDealerByQuery(string query)
+        public void UpdateDealerDetail(string dealerID, string dealerName, string dealerInvoiceAddress, string dealerShippingAddress, string dealerPhoneNo, string dealerStatus)
         {
-            return dbConnection.GetDataTable(query);
+            string queryString = "UPDATE Dealer SET DealerName='{0}', DealerInvoiceAddress='{1}', DealerShippingAddress='{2}' ,DealerPhoneNo='{3}', DealerStatus='{4}' WHERE DealerID='{5}'";
+            
+            string query = string.Format(queryString, dealerName, dealerInvoiceAddress, dealerShippingAddress, dealerPhoneNo, dealerStatus, dealerID);
+            MessageBox.Show(query);
+            dbConnection.Update(query);
         }
-        public DataTable GetProdcutTable(string condition)
+
+        public DataTable GetDealerTable(string condition)
         {
-            string query = "SELECT DealerID, DealerName, DealerInvoiceAddress, DealerShippingAddress, DealerPhoneNo, DealerStatus FROM Dealer ";
+            string query = "SELECT DealerID, DealerName, DealerPhoneNo, DealerStatus FROM Dealer ";
             if (condition != "")
             {
                 query += condition;
@@ -66,12 +71,26 @@ namespace SLMCS_Class
             return dbConnection.GetDataTable(query);
         }
 
-        public void CreateNewdealer(string dealerName, string dealerInvoiceAddress, string dealerShippingAddres, string dealerPhoneNo, string dealerStatus)
+
+        public void CreateNewDealer(string dealerName, string dealerInvoiceAddress, string dealerShippingAddres, string dealerPhoneNo, string dealerStatus)
         {
             string dealerID = GetNextDealerID();
-            string queryString = "INSERT INTO dealer VALUES ('{0}','{1}','{2}','{3}','{4}',{5})";
+            string queryString = "INSERT INTO Dealer VALUES ('{0}','{1}','{2}','{3}','{4}',{5})";
             string query = string.Format(queryString, dealerID, dealerName, dealerInvoiceAddress, dealerShippingAddres, dealerPhoneNo, dealerStatus);
 
+            try
+            {
+                dbConnection.Insert(query);
+            }
+            catch (MySqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void updataDealerStatus(string dealerID, string dealerStatus)
+        {
+            string query = "UPDATE Dealer SET DealerStatus = \'"+ dealerStatus +"\' WHERE DealerID = \'"+dealerID+"\'";
             try
             {
                 dbConnection.Insert(query);

@@ -31,9 +31,10 @@ namespace SLMCS_ERP.UI.Management
             dgvVendorRecord.RowHeadersVisible = false;
             productManagement_NewProduct = form;
             selectedVendorID = dgvVendorRecord.Rows[0].Cells["VendorID"].Value.ToString();
+            FrmProductManagement_NewProduct_Load();
         }
 
-        private void FrmProductManagement_NewProduct_Load(object sender, EventArgs e)
+        private void FrmProductManagement_NewProduct_Load()
         {
             dgvVendorRecord.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvVendorRecord.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -49,15 +50,6 @@ namespace SLMCS_ERP.UI.Management
         private void BtnSelect_Click(object sender, EventArgs e)
         {
             SelectVendorToSendValueBack();
-        }
-
-        private void DgvVendorRecord_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex != -1)
-            {
-                selectedVendorID = dgvVendorRecord.Rows[e.RowIndex].Cells["VendorID"].Value.ToString();
-                dgvVendorRecord.Rows[e.RowIndex].Selected = true;
-            }
         }
 
         private void DgvVendorRecord_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
