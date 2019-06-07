@@ -58,8 +58,9 @@ namespace SLMCS_Class
             string productPrice, string vendorID)
         {
             string productID = GetNextProductID(productType);
-            string queryString = "INSERT INTO Product VALUES ('{0}','{1}','{2}','{3}','{4}',{5},NULL,'{6}',0,0,0,0)";
+            string queryString = "INSERT INTO Product VALUES ('{0}','{1}','{2}','{3}','{4}','{5}' ,'{6}',0,0,0,0,'Available')";
             string query = string.Format(queryString, productID, productName, productType, productDescription, productUnit, productPrice, vendorID);
+            MessageBox.Show(query);
             //string query = "INSERT INTO Product VALUES ('" + productID + "','" + productName + "','" + productType +"','" + productDescription 
             //                + "','" + productUnit + "'," + productPrice + "," + "NULL" + ",'" + vendorID + "',0,0,0,0)";
             try
@@ -197,10 +198,10 @@ namespace SLMCS_Class
 
         public void UpdateProductDetail(string productID, string productType, string productName, string productDesc, string productUnit, string productPrice, string actualQuantity, string reorderLevel, string dangerLevel, string productStatus)
         {
-            string queryString = "UPDATE Product SET ProductType='{0}', ProductName='{1}', ProductDescription='{2}' ,ProductUnit='{3}', ProductPrice={4}, ActualQuantity={5}, ReorderLevel={6}, DangerLevel={7}, ProductStatus={8} WHERE ProductID='{9}'";
+            string queryString = "UPDATE Product SET ProductType='{0}', ProductName='{1}', ProductDescription='{2}' ,ProductUnit='{3}', ProductPrice='{4}', ActualQuantity='{5}', ReorderLevel='{6}', DangerLevel='{7}', ProductStatus='{8}' WHERE ProductID='{9}'";
 
             string query = string.Format(queryString, productType, productName, productDesc, productUnit, productPrice, actualQuantity, reorderLevel, dangerLevel, productStatus, productID);
-            //MessageBox.Show(q);
+            MessageBox.Show(query);
             dbConnection.Update(query);
         }
 

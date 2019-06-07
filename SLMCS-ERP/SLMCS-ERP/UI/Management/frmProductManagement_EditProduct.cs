@@ -52,14 +52,16 @@ namespace SLMCS_ERP.UI.Management
                 if (CheckInputFieldIsValid())
                 {
                     product.UpdateProductDetail(lblProductIDData.Text, lblProductTypeData.Text, txtProductName.Text, rtbProductDesc.Text, cboProductUnit.Text, txtProductPrice.Text, txtActualQty.Text, txtReorderLevel.Text, txtDangerLevel.Text, (ckbProductStatus.Checked? "Available": "UnAvailable"));
+                    MessageBox.Show("Product ID:" + lblProductIDData.Text + " has been updated");
+                    this.Close();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+
             }
-            MessageBox.Show("Product ID:" + lblProductIDData.Text + " has been updated");
-            this.Close();
+            
         }
 
         private void BtnReset_Click(object sender, EventArgs e)

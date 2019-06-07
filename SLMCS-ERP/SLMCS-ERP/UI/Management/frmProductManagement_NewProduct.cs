@@ -33,9 +33,10 @@ namespace SLMCS_ERP.UI.Management
             {
                 if (CheckInputFieldIsValid())
                 {
+                    MessageBox.Show(productName+productType+productDescription+productUnit+productPrice+vendorID);
                     product.CreateNewProduct(productName, productType, productDescription, productUnit, productPrice, vendorID);
-                    BtnCancel_Click(sender, e);
                     MessageBox.Show("Product has been added");
+                    BtnCancel_Click(sender, e);
                 }
             }
             catch (Exception ex)

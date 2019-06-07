@@ -54,6 +54,7 @@ namespace SLMCS_ERP.UI.Management
 
         private void DgvVendorRecord_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            selectedVendorID = dgvVendorRecord.Rows[e.RowIndex].Cells["VendorID"].Value.ToString();
             SelectVendorToSendValueBack();
         }
 
