@@ -20,27 +20,28 @@ namespace SLMCS_ERP
             form.Show();
         }
 
-        private void PanelContent_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void DispatchingList_Click(object sender, EventArgs e)
         {
             frmDispatchingList dispatchList = new frmDispatchingList();
             navigation(dispatchList, panelContent);
         }
 
-        private void GoodsReceviedList_Click(object sender, EventArgs e)
-        {
-            frmGoodsReceivedList goodsReceivedList = new frmGoodsReceivedList();
-            navigation(goodsReceivedList, panelContent);
-        }
-
-        private void DispatchHistory_Click(object sender, EventArgs e)
+        private void BtnDispatchedHistory_Click(object sender, EventArgs e)
         {
             frmDispatchedHistory dispatchedHistory = new frmDispatchedHistory();
             navigation(dispatchedHistory, panelContent);
+        }
+
+        private void BtnGoodsRecevie_Click(object sender, EventArgs e)
+        {
+            frmGoodsReceiveList goodsReceiveList = new frmGoodsReceiveList();
+            navigation(goodsReceiveList, panelContent);
+        }
+
+        private void BtnGoodsReceivedHistory_Click(object sender, EventArgs e)
+        {
+            frmGoodsReceivedHistory goodsReceivedHistory = new frmGoodsReceivedHistory();
+            navigation(goodsReceivedHistory, panelContent);
         }
     }
 }

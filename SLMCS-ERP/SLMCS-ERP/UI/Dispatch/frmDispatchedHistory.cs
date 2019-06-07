@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SLMCS_Class;
 
-namespace SLMCS_ERP.UI.Dispatch
+namespace SLMCS_ERP
 {
     public partial class frmDispatchedHistory : Form
     {
