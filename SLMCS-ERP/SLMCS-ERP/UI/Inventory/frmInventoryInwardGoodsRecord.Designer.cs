@@ -60,10 +60,10 @@
             // 
             this.dgvInwardGoodsRecord.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvInwardGoodsRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInwardGoodsRecord.Location = new System.Drawing.Point(27, 245);
+            this.dgvInwardGoodsRecord.Location = new System.Drawing.Point(27, 175);
             this.dgvInwardGoodsRecord.Name = "dgvInwardGoodsRecord";
             this.dgvInwardGoodsRecord.RowTemplate.Height = 24;
-            this.dgvInwardGoodsRecord.Size = new System.Drawing.Size(464, 293);
+            this.dgvInwardGoodsRecord.Size = new System.Drawing.Size(464, 363);
             this.dgvInwardGoodsRecord.TabIndex = 0;
             this.dgvInwardGoodsRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvInwardGoodsRecord_CellClick);
             // 
@@ -75,11 +75,10 @@
             this.groupBox1.Controls.Add(this.txtReorderOrderID);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.lblReorderOrderID);
-            //this.groupBox1.Controls.Add(this.lblOrderDate);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.groupBox1.Location = new System.Drawing.Point(27, 8);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(464, 231);
+            this.groupBox1.Size = new System.Drawing.Size(464, 161);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search Condition";
@@ -94,7 +93,7 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnClear.Location = new System.Drawing.Point(287, 184);
+            this.btnClear.Location = new System.Drawing.Point(287, 111);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(161, 28);
             this.btnClear.TabIndex = 7;
@@ -111,63 +110,6 @@
             this.label4.TabIndex = 22;
             this.label4.Text = "Staff ID :";
             // 
-            // label2
-            // 
-            //this.label2.AutoSize = true;
-            //this.label2.Font = new System.Drawing.Font("PMingLiU", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            //this.label2.Location = new System.Drawing.Point(282, 102);
-            //this.label2.Name = "label2";
-            //this.label2.Size = new System.Drawing.Size(18, 21);
-            //this.label2.TabIndex = 21;
-            //this.label2.Text = "-";
-            // 
-            // label3
-            // 
-            //this.label3.AutoSize = true;
-            //this.label3.Font = new System.Drawing.Font("PMingLiU", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            //this.label3.Location = new System.Drawing.Point(282, 137);
-            //this.label3.Name = "label3";
-            //this.label3.Size = new System.Drawing.Size(18, 21);
-            //this.label3.TabIndex = 20;
-            //this.label3.Text = "-";
-            // 
-            // dtpCompletedDateTo
-            // 
-            //this.dtpCompletedDateTo.Location = new System.Drawing.Point(306, 137);
-            //this.dtpCompletedDateTo.Name = "dtpCompletedDateTo";
-            //this.dtpCompletedDateTo.Size = new System.Drawing.Size(140, 23);
-            //this.dtpCompletedDateTo.TabIndex = 18;
-            // 
-            // dtpCompletedDateFrom
-            // 
-            //this.dtpCompletedDateFrom.Location = new System.Drawing.Point(136, 136);
-            //this.dtpCompletedDateFrom.Name = "dtpCompletedDateFrom";
-            //this.dtpCompletedDateFrom.Size = new System.Drawing.Size(140, 23);
-            //this.dtpCompletedDateFrom.TabIndex = 17;
-            // 
-            // label1
-            // 
-            //this.label1.AutoSize = true;
-            //this.label1.Location = new System.Drawing.Point(19, 142);
-            //this.label1.Name = "label1";
-            //this.label1.Size = new System.Drawing.Size(108, 16);
-            //this.label1.TabIndex = 16;
-            //this.label1.Text = "Completed Date :";
-            // 
-            // dtpOrderDateTo
-            // 
-            //this.dtpOrderDateTo.Location = new System.Drawing.Point(306, 101);
-            //this.dtpOrderDateTo.Name = "dtpOrderDateTo";
-            //this.dtpOrderDateTo.Size = new System.Drawing.Size(140, 23);
-            //this.dtpOrderDateTo.TabIndex = 15;
-            // 
-            // dtpOrderDateFrom
-            // 
-            //this.dtpOrderDateFrom.Location = new System.Drawing.Point(136, 101);
-            //this.dtpOrderDateFrom.Name = "dtpOrderDateFrom";
-            //this.dtpOrderDateFrom.Size = new System.Drawing.Size(140, 23);
-            //this.dtpOrderDateFrom.TabIndex = 8;
-            // 
             // txtReorderOrderID
             // 
             this.txtReorderOrderID.Location = new System.Drawing.Point(136, 32);
@@ -178,7 +120,7 @@
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnSearch.Location = new System.Drawing.Point(17, 184);
+            this.btnSearch.Location = new System.Drawing.Point(17, 111);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(260, 28);
             this.btnSearch.TabIndex = 3;
@@ -194,15 +136,6 @@
             this.lblReorderOrderID.Size = new System.Drawing.Size(111, 16);
             this.lblReorderOrderID.TabIndex = 0;
             this.lblReorderOrderID.Text = "Reorder Order ID :";
-            // 
-            // lblOrderDate
-            // 
-            //this.lblOrderDate.AutoSize = true;
-            //this.lblOrderDate.Location = new System.Drawing.Point(50, 107);
-            //this.lblOrderDate.Name = "lblOrderDate";
-            //this.lblOrderDate.Size = new System.Drawing.Size(77, 16);
-            //this.lblOrderDate.TabIndex = 1;
-            //this.lblOrderDate.Text = "Order Date :";
             // 
             // dgvReorderOrderLine
             // 
