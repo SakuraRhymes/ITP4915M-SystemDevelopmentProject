@@ -13,17 +13,26 @@ namespace SLMCS_ERP.UI.Sales
 {
     public partial class frmSalesOrderRecords : Form
     {
+        SalesOrder salesOrder;
+        DataTable dt;
         string selectedSalesOrderID;
+
         public frmSalesOrderRecords()
         {
             InitializeComponent();
             setupCombobox();
+            salesOrder = new SalesOrder();
+            SearchSalesOrder();
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            SalesOrder salesOrder = new SalesOrder();
-            DataTable dt;
+            SearchSalesOrder();
+        }
+
+        private void SearchSalesOrder()
+        {
+
             if (txtSearchCondition.Text == "")
             {
                 dt = salesOrder.searchSalesOrder("");
@@ -67,12 +76,13 @@ namespace SLMCS_ERP.UI.Sales
             dgvSearchResult.DataSource = dt;
 
             dgvSearchResult.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvSearchResult.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvSearchResult.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvSearchResult.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvSearchResult.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvSearchResult.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvSearchResult.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvSearchResult.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvSearchResult.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvSearchResult.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvSearchResult.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvSearchResult.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvSearchResult.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
         private void DgvSearchResult_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -81,7 +91,7 @@ namespace SLMCS_ERP.UI.Sales
             {
                 selectedSalesOrderID = dgvSearchResult.Rows[e.RowIndex].Cells["SalesOrderID"].Value.ToString();
             }
-            
+
         }
 
         private void DgvSearchResult_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -91,7 +101,15 @@ namespace SLMCS_ERP.UI.Sales
                 frmViewOrderRecord viewOrderRecord = new frmViewOrderRecord(selectedSalesOrderID);
                 viewOrderRecord.Show();
             }
-            
+
+        }
+
+        private void TxtSearchCondition_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SearchSalesOrder();
+            }
         }
     }
 }

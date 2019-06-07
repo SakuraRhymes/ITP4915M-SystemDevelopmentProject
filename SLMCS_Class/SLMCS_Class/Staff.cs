@@ -39,12 +39,15 @@ namespace SLMCS_Class
 
             staffTable = dbConnection.GetDataTable(query);
             DataRow[] rows = staffTable.Select();
-
-            this.staffID = (string)rows[0]["StaffID"];
-            password = (string)rows[0]["Password"];
-            passwordChangeDate = (DateTime)rows[0]["PasswordChangeDate"];
-            staffName = (string)rows[0]["StaffName"];
-            staffPhoneNo = (string)rows[0]["StaffPhoneNo"];
+            if (rows.Length <= 0)
+            {
+                throw new Exception("Staff ID invalid! Please Try again.");
+            }
+            StaffID = (string)rows[0]["StaffID"];
+            Password = (string)rows[0]["Password"];
+            PasswordChangeDate = (DateTime)rows[0]["PasswordChangeDate"];
+            StaffName = (string)rows[0]["StaffName"];
+            StaffPhoneNo = (string)rows[0]["StaffPhoneNo"];
             //StaffPositionID = (string)rows[0]["StaffPositionID"];
             departmentID = (string)rows[0]["DepartmentID"];
             staffStatus = (string)rows[0]["StaffStatus"];

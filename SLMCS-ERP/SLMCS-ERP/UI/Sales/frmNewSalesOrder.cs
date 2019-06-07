@@ -8,7 +8,7 @@ namespace SLMCS_ERP.UI.Sales
     public partial class frmNewSalesOrder : Form
     {
         private SalesOrder salesOrder;
-
+        public frmBrowseProduct browseProductPage;
         private string notAvailableMessage;
 
         public frmNewSalesOrder()
@@ -30,9 +30,10 @@ namespace SLMCS_ERP.UI.Sales
             lblStaffID.Text = salesOrder.StaffID;
 
             txtDealerID.Text = "";
-            txtOrderQunatity.Text = "";
-            txtSearchForProduct.Text = "";
+            lblTotalAmount.Text = "0";
             btnAddItem.Enabled = false;
+            btnPlaceOrder.Enabled = false;
+            btnReserveOrder.Enabled = false;
             dgvOrderItem.Enabled = false;
 
             dgvOrderItem.AllowUserToAddRows = false;
@@ -46,51 +47,13 @@ namespace SLMCS_ERP.UI.Sales
 
         private void BtnAddItem_Click(object sender, EventArgs e)
         {
-            if (txtSearchForProduct.Text != "" && txtOrderQunatity.Text != "" && Convert.ToInt32(txtOrderQunatity.Text) > 0)
-            {
-                if (Convert.ToInt32(txtOrderQunatity.Text) <= Convert.ToInt32(lblProductAvailability.Text))
-                {
-
-                    string productID = txtSearchForProduct.Text;
-                    int quantity = Convert.ToInt32(txtOrderQunatity.Text);
-                    Product product = new Product(productID);
-
-                    salesOrder.addProduct(product, quantity);
-
-                    updateDGV();
-
-                    txtSearchForProduct.Text = "";
-                    txtOrderQunatity.Text = "";
-                    lblTotalAmount.Text = salesOrder.getTotalPrice().ToString();
-
-                    btnPlaceOrder.Enabled = true;
-                    btnReserveOrder.Enabled = true;
-                }
-                else
-                {
-                    MessageBox.Show("The Product Do Not Have Enough Stock!");
-                }
-            } else
-            {
-                if (lblProductAvailability.Text == "Not available")
-                {
-                    MessageBox.Show("Please Input Product ID");
-                }
-                else if (txtOrderQunatity.Text != "")
-                {
-                    //if (Convert.ToInt32(txtOrderQunatity.Text) <= 0)
-                        MessageBox.Show("Quantity Should Be More Than 0");
-                }
-                else
-                {
-                    MessageBox.Show("Please Input Quantity");
-                }
-            }
+            browseProductPage = new frmBrowseProduct(this, salesOrder);
+            browseProductPage.Show();
         }
 
         private void BtnPlaceOrder_Click(object sender, EventArgs e)
         {
-            if(txtDealerID.Text == "")
+            if (txtDealerID.Text == "")
             {
                 MessageBox.Show("Please Enter Dealer ID!");
             }
@@ -107,12 +70,19 @@ namespace SLMCS_ERP.UI.Sales
 
         private void BtnReserveOrder_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Confirm Reserve Order?", "Confirm Message", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (txtDealerID.Text == "")
             {
-                salesOrder.placeOrder("Reserved");
-                startUp();
-                MessageBox.Show("Place Reserve Order Successfully");
-            } 
+                MessageBox.Show("Please Enter Dealer ID!");
+            }
+            else
+            {
+                if (MessageBox.Show("Confirm Reserve Order?", "Confirm Message", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    salesOrder.placeOrder("Reserved");
+                    startUp();
+                    MessageBox.Show("Place Reserve Order Successfully");
+                }
+            }
         }
 
         private void TxtDealerID_TextChanged(object sender, EventArgs e)
@@ -120,7 +90,7 @@ namespace SLMCS_ERP.UI.Sales
             if (txtDealerID.Text.Length == 8)
             {
                 String[] reslut = salesOrder.updataDealerInfo((txtDealerID.Text).ToUpper());
-                if(reslut != null)
+                if (reslut != null)
                 {
                     lblDealerName.Text = reslut[0];
                     lblDealerAddress.Text = reslut[1];
@@ -136,26 +106,8 @@ namespace SLMCS_ERP.UI.Sales
                 lblDealerName.Text = lblDealerAddress.Text = notAvailableMessage;
                 btnAddItem.Enabled = false;
                 btnPlaceOrder.Enabled = false;
-            }   
-        }
-
-        private void TxtSearchForProduct_TextChanged(object sender, EventArgs e)
-        {
-            if (txtSearchForProduct.Text.Length == 6)
-            {
-                String[] reslut = salesOrder.updataProductInfo(txtSearchForProduct.Text);
-                if (reslut != null)
-                {
-                    lblProductName.Text = reslut[0];
-                    lblProductAvailability.Text = reslut[1];
-                }
-            }
-            else
-            {
-                lblProductName.Text = lblProductAvailability.Text = notAvailableMessage;
             }
         }
-
 
         private void BtnCancelPlaceOrder_Click(object sender, EventArgs e)
         {
@@ -174,33 +126,14 @@ namespace SLMCS_ERP.UI.Sales
             dgvOrderItem.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
+        public void updateAddedOrderLine()
+        {
+            updateDGV();
 
-        private void TxtOrderQunatity_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            CheckInputNumberOnly(e);
-        }
+            lblTotalAmount.Text = salesOrder.getTotalPrice().ToString();
 
-        private void CheckInputNumberOnly(KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && !(e.KeyChar == (char)8))
-            {
-                e.Handled = true;
-            }
-        }
-        private void TxtSearchForProduct_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                BtnAddItem_Click(this, new EventArgs());
-            }
-        }
-
-        private void TxtOrderQunatity_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                BtnAddItem_Click(this, new EventArgs());
-            }
+            btnPlaceOrder.Enabled = true;
+            btnReserveOrder.Enabled = true;
         }
     }
 }

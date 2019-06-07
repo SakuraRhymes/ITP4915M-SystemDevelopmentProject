@@ -69,7 +69,7 @@ namespace SLMCS_ERP.UI.Management
         private bool CheckInputFieldIsValid()
         {
 
-            if (txtVendorName.Text != "" && lblVendorPhoneNo.Text != "" && txtVendorAddress.Text != "")
+            if (txtVendorName.Text != "" && txtVendorPhoneNo.Text != "" && txtVendorAddress.Text != "")
             {
                 return true;
             }
@@ -78,7 +78,7 @@ namespace SLMCS_ERP.UI.Management
                 MessageBox.Show("Please input vendor name");
                 return false;
             }
-            if (lblVendorPhoneNo.Text == "" || lblVendorPhoneNo.Text.Length != 11)
+            if (txtVendorPhoneNo.Text == "" || txtVendorPhoneNo.Text.Length != 11)
             {
                 MessageBox.Show("Please input valid vendor phone no");
                 return false;

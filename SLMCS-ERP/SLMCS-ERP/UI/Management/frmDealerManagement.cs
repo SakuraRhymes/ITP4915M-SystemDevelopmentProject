@@ -74,7 +74,7 @@ namespace SLMCS_ERP.UI.Management
 
                 lblDealerID.Text = dealer.DealerID;
                 lblDealerName.Text = dealer.DealerName;
-                lblDealerPhoneNo.Text = dealer.DealerName;
+                lblDealerPhoneNo.Text = dealer.DealerPhoneNo;
                 lblDealerShippingAddress.Text = dealer.DealerShippingAddress;
                 lblDealerInvoiceAddress.Text = dealer.DealerInvoiceAddress;
                 lblDealerStatus.Text = dealer.DealerStatus;

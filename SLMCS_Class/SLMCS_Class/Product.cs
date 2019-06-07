@@ -125,7 +125,18 @@ namespace SLMCS_Class
             {
                 query += " WHERE " + condition;
             }
+            //MessageBox.Show(query);
+            return dbConnection.GetDataTable(query);
+        }
 
+        public DataTable GetProductDetailForSalesOrderBrowseProduct(string condition)
+        {
+            string query = "SELECT Product.ProductID, ProductName, ProductType, VendorID, ProductUnit, ProductPrice, SaleableQuantity FROM Product, ProductSaleableQuantity WHERE Product.ProductID = ProductSaleableQuantity.ProductID";
+            if (condition != "")
+            {
+                query += " AND " + condition;
+            }
+            //MessageBox.Show(query);
             return dbConnection.GetDataTable(query);
         }
 

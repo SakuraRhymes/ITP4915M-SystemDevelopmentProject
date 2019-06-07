@@ -41,7 +41,6 @@ namespace SLMCS_ERP
                 lblDReceivedDateData.Text = reorderOrder.ReorderOrderDate;
                 lblDEditDateData.Text = reorderOrder.ReorderOrderEditDate;
                 lblDReceivedDateData.Text = reorderOrder.ReorderOrderReceivedDate;
-                lblDCompletedDateData.Text = reorderOrder.ReorderOrderCompletedDate;
                 dgvOrderDetail.DataSource = reorderOrder.GetReorderOrderLineTable(selectedReorderOrderID);
                 //dgvOrderDetail.Rows[e.RowIndex].Selected = true;
                 DGVReceivedOrderLineFormatSetting();
@@ -73,7 +72,6 @@ namespace SLMCS_ERP
             lblDReceivedDateData.Text = "---";
             lblDEditDateData.Text = "---";
             lblDReceivedDateData.Text = "---";
-            lblDCompletedDateData.Text = "---";
 
             btnConfirm.Enabled = false;
             BtnRefresh_Click(sender, e);

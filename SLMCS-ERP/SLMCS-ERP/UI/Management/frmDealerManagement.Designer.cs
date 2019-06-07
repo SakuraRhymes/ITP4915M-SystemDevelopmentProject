@@ -62,7 +62,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(47, 32);
+            this.label1.Location = new System.Drawing.Point(48, 39);
             this.label1.Margin = new System.Windows.Forms.Padding(3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 16);
@@ -72,7 +72,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 82);
+            this.label2.Location = new System.Drawing.Point(25, 89);
             this.label2.Margin = new System.Windows.Forms.Padding(3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 16);
@@ -82,8 +82,8 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label5.Location = new System.Drawing.Point(333, 32);
+            this.label5.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label5.Location = new System.Drawing.Point(334, 39);
             this.label5.Margin = new System.Windows.Forms.Padding(3);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 16);
@@ -100,22 +100,22 @@
             // 
             // txtDealerPhoneNo
             // 
-            this.txtDealerPhoneNo.Location = new System.Drawing.Point(439, 29);
+            this.txtDealerPhoneNo.Location = new System.Drawing.Point(440, 36);
             this.txtDealerPhoneNo.Name = "txtDealerPhoneNo";
             this.txtDealerPhoneNo.Size = new System.Drawing.Size(164, 23);
             this.txtDealerPhoneNo.TabIndex = 7;
             // 
             // txtDealerName
             // 
-            this.txtDealerName.Location = new System.Drawing.Point(119, 79);
+            this.txtDealerName.Location = new System.Drawing.Point(120, 86);
             this.txtDealerName.Name = "txtDealerName";
             this.txtDealerName.Size = new System.Drawing.Size(164, 23);
             this.txtDealerName.TabIndex = 8;
             // 
             // btnSearchDealer
             // 
-            this.btnSearchDealer.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnSearchDealer.Location = new System.Drawing.Point(336, 82);
+            this.btnSearchDealer.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnSearchDealer.Location = new System.Drawing.Point(337, 85);
             this.btnSearchDealer.Name = "btnSearchDealer";
             this.btnSearchDealer.Size = new System.Drawing.Size(267, 25);
             this.btnSearchDealer.TabIndex = 9;
@@ -132,7 +132,7 @@
             this.groupBox1.Controls.Add(this.txtDealerID);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.groupBox1.Location = new System.Drawing.Point(18, 23);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(646, 142);
@@ -155,7 +155,7 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.groupBox2.Location = new System.Drawing.Point(676, 23);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(337, 510);
@@ -174,7 +174,7 @@
             // 
             // btnEditDealer
             // 
-            this.btnEditDealer.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnEditDealer.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnEditDealer.Location = new System.Drawing.Point(98, 412);
             this.btnEditDealer.Name = "btnEditDealer";
             this.btnEditDealer.Size = new System.Drawing.Size(148, 30);
@@ -300,7 +300,7 @@
             // 
             // btnNewDealer
             // 
-            this.btnNewDealer.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnNewDealer.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnNewDealer.Location = new System.Drawing.Point(490, 318);
             this.btnNewDealer.Name = "btnNewDealer";
             this.btnNewDealer.Size = new System.Drawing.Size(148, 30);
@@ -313,7 +313,7 @@
             // 
             this.groupBox3.Controls.Add(this.btnNewDealer);
             this.groupBox3.Controls.Add(this.dgvDealerList);
-            this.groupBox3.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.groupBox3.Location = new System.Drawing.Point(18, 172);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(646, 361);

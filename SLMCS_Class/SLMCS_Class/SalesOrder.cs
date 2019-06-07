@@ -71,7 +71,7 @@ namespace SLMCS_Class
             }
             if (rows[0]["SalesOrderCompletedDate"].ToString() != "")
             {
-                salesDispatchDate = ((DateTime)rows[0]["SalesOrderCompletedDate"]).ToString("yy-MM-dd");
+                salesOrderCompletedDate = ((DateTime)rows[0]["SalesOrderCompletedDate"]).ToString("yy-MM-dd");
             }
             salesOrderStatus = (string)rows[0]["SalesOrderStatus"];
         }
@@ -98,40 +98,71 @@ namespace SLMCS_Class
         }
 
 
-        public DataTable Dispatching_getSalesOrderByOrderID(string OrderID)
-        {
-            string query = "SELECT SalesOrderID, StaffID, DealerID, SalesOrderDate, SalesOrderStatus FROM SalesOrder WHERE OrderID = \"" + OrderID + "\" AND SalesOrderStatus = \"Dispatching\"";
-            return dbConnection.GetDataTable(query);
-        }
+        //public DataTable Dispatching_getSalesOrderByOrderID(string OrderID)
+        //{
+        //    string query = "SELECT SalesOrderID, StaffID, DealerID, SalesOrderDate, SalesOrderStatus FROM SalesOrder WHERE OrderID = \"" + OrderID + "\" AND SalesOrderStatus = \"Dispatching\"";
+        //    return dbConnection.GetDataTable(query);
+        //}
 
-        public DataTable Dispatching_getSalesOrderByStaffID(string StaffID)
-        {
-            string query = "SELECT SalesOrderID, StaffID, DealerID, SalesOrderDate, SalesOrderStatus FROM SalesOrder WHERE StaffID = \"" + StaffID + "\" AND SalesOrderStatus = \"Dispatching\"";
-            return dbConnection.GetDataTable(query);
-        }
+        //public DataTable Dispatching_getSalesOrderByStaffID(string StaffID)
+        //{
+        //    string query = "SELECT SalesOrderID, StaffID, DealerID, SalesOrderDate, SalesOrderStatus FROM SalesOrder WHERE StaffID = \"" + StaffID + "\" AND SalesOrderStatus = \"Dispatching\"";
+        //    return dbConnection.GetDataTable(query);
+        //}
 
-        public DataTable Dispatching_getSalesOrderByDealerID(string DealerID)
-        {
-            string query = "SELECT SalesOrderID, StaffID, DealerID, SalesOrderDate, SalesOrderStatus FROM SalesOrder WHERE DealerID = \"" + DealerID + "\" AND SalesOrderStatus = \"Dispatching\"";
-            return dbConnection.GetDataTable(query);
-        }
+        //public DataTable Dispatching_getSalesOrderByDealerID(string DealerID)
+        //{
+        //    string query = "SELECT SalesOrderID, StaffID, DealerID, SalesOrderDate, SalesOrderStatus FROM SalesOrder WHERE DealerID = \"" + DealerID + "\" AND SalesOrderStatus = \"Dispatching\"";
+        //    return dbConnection.GetDataTable(query);
+        //}
 
         public DataTable getSalesTableByWhereQuery(string condition)
         {
             string query = "SELECT SalesOrderID, StaffID, DealerID, SalesOrderDate, SalesOrderStatus FROM SalesOrder WHERE " + condition;
             return dbConnection.GetDataTable(query);
         }
+
+        public DataTable GetDispatchedOrderHistoryTable(string condition)
+        {
+            string query = "SELECT SalesOrderID,StaffID,DealerID,SalesOrderDate,SalesDispatchDate FROM SalesOrder WHERE SalesOrderStatus <> 'Canceled' " +
+                "AND SalesOrderStatus <> 'Processing' AND SalesOrderStatus <> 'Reserved'";
+            if (condition != "")
+            {
+                query += " AND " + condition;
+            }
+            //MessageBox.Show(query);
+            salesOrderTable = dbConnection.GetDataTable(query);
+            return salesOrderTable;
+        }
+
         public DataTable getSalesOrderLineBySalesOrderID(string salesOrderID)
         {
-            dbConnection = new DBConnection();
-            string query = "SELECT SalesOrderID, ProductID, Quantity FROM SalesOrderLine WHERE SalesOrderID = \"" + salesOrderID + "\"";
+            string query = "SELECT SalesOrderLine.ProductID, Product.ProductName, Product.ProductType, Product.ProductUnit, " +
+                "SalesOrderLine.Quantity FROM SalesOrderLine, Product WHERE SalesOrderLine.ProductID = Product.ProductID AND SalesOrderID = '" +
+                 salesOrderID + "'";
             return dbConnection.GetDataTable(query);
         }
         public void updataSalesOrderStatusInDB(string salesOrderID, string status)
         {
             string query = "UPDATE SalesOrder SET SalesOrderStatus = \"" + status + "\" , SalesDispatchDate = \""+ DateTime.Now.ToString("yy-MM-dd") +"\" WHERE SalesOrder.SalesOrderID = \"" + salesOrderID + "\"";
-            System.Windows.Forms.MessageBox.Show(query);
+            //MessageBox.Show(query);
             dbConnection.Update(query);
+        }
+
+        public void updateSalesOrderEditDate()
+        {
+            string query = "UPDATE SalesOrder SET SalesOrderEditDate = \"" + DateTime.Now.ToString("yy-MM-dd") + "\" WHERE SalesOrderID = \"" + salesOrderID + "\"";
+            //MessageBox.Show(query);
+            dbConnection.Update(query);
+        }
+
+        public void updateSalesOrderCompletedDate()
+        {
+            string query = "UPDATE SalesOrder SET SalesOrderCompletedDate = \"" + DateTime.Now.ToString("yy-MM-dd") + "\" WHERE SalesOrderID = \"" + salesOrderID + "\"";
+            //MessageBox.Show(query);
+            dbConnection.Update(query);
+
+            updateSalesOrderEditDate();
         }
 
         public String[] updataDealerInfo(String dealerID)
@@ -173,6 +204,8 @@ namespace SLMCS_Class
 
             string query = "UPDATE SalesOrder SET SalesOrderStatus = '" + status + "' WHERE SalesOrderID = '" + SalesOrderID + "'";
             dbConnection.Update(query);
+
+            updateSalesOrderEditDate();
         }
 
         public double getTotalPrice()
@@ -226,7 +259,10 @@ namespace SLMCS_Class
 
         public DataTable searchOrderLine()
         {
-            string query = "SELECT SalesOrderLine.ProductID, Product.ProductName, Product.ProductType, Product.ProductUnit, SalesOrderLine.Quantity, SalesOrderLine.ProductPrice, SalesOrderLine.Quantity * SalesOrderLine.ProductPrice AS Subtotal FROM SalesOrderLine, Product WHERE SalesOrderLine.ProductID = Product.ProductID AND SalesOrderID = '" + SalesOrderID + "'";
+            string query = "SELECT SalesOrderLine.ProductID, Product.ProductName, Product.ProductType, Product.ProductUnit, " +
+                "SalesOrderLine.Quantity, SalesOrderLine.ProductPrice, SalesOrderLine.Quantity * SalesOrderLine.ProductPrice " +
+                "AS Subtotal FROM SalesOrderLine, Product WHERE SalesOrderLine.ProductID = Product.ProductID AND SalesOrderID = '" +
+                 SalesOrderID + "'";
             return dbConnection.GetDataTable(query);
         }
         public void cancelOrder()
@@ -245,6 +281,26 @@ namespace SLMCS_Class
 
                 Product product = new Product(productID);
                 product.updateReserveQuantity(-quantity);
+            }
+        }
+
+        public void dispatchOrder(string orderIDForDispatch)
+        {
+            string productID;
+            int quantity;
+            string query = "SELECT * FROM SalesOrderLine WHERE SalesOrderID = '" + orderIDForDispatch + "'";
+            DataTable dt = dbConnection.GetDataTable(query);
+            DataRow[] rows = dt.Select();
+
+            foreach (DataRow row in rows)
+            {
+                productID = row["ProductID"].ToString();
+                quantity = (int)row["Quantity"];
+                //MessageBox.Show(productID +" "+ quantity);
+
+                Product product = new Product(productID);
+                product.updateReserveQuantity(-quantity);
+                product.updateActualQuantity(-quantity);
             }
         }
     }

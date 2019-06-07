@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data, Version=8.0.16.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,11 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UI\Dispatch\frmDispatchedHistory.cs">
+    <Compile Include="UI\Dispatch\frmDispatchedRecord.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Dispatch\frmDispatchedHistory.Designer.cs">
-      <DependentUpon>frmDispatchedHistory.cs</DependentUpon>
+    <Compile Include="UI\Dispatch\frmDispatchedRecord.Designer.cs">
+      <DependentUpon>frmDispatchedRecord.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Dispatch\frmDispatchingList .cs">
       <SubType>Form</SubType>
@@ -65,11 +68,29 @@
     <Compile Include="UI\Dispatch\frmDispatchMain.Designer.cs">
       <DependentUpon>frmDispatchMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Dispatch\frmGoodsReceivedList.cs">
+    <Compile Include="UI\Dispatch\frmGenerateDIC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Dispatch\frmGoodsReceivedList.Designer.cs">
-      <DependentUpon>frmGoodsReceivedList.cs</DependentUpon>
+    <Compile Include="UI\Dispatch\frmGenerateDIC.Designer.cs">
+      <DependentUpon>frmGenerateDIC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dispatch\frmGenerateDID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dispatch\frmGenerateDID.Designer.cs">
+      <DependentUpon>frmGenerateDID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dispatch\frmGoodsReceivedRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dispatch\frmGoodsReceivedRecord.Designer.cs">
+      <DependentUpon>frmGoodsReceivedRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dispatch\frmGoodsReceiveList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dispatch\frmGoodsReceiveList.Designer.cs">
+      <DependentUpon>frmGoodsReceiveList.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\frmMain.cs">
       <SubType>Form</SubType>
@@ -239,6 +260,18 @@
     <Compile Include="UI\Management\frmVendorManagement.Designer.cs">
       <DependentUpon>frmVendorManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Sales\frmAddProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Sales\frmAddProduct.Designer.cs">
+      <DependentUpon>frmAddProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Sales\frmBrowseProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Sales\frmBrowseProduct.Designer.cs">
+      <DependentUpon>frmBrowseProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Sales\frmNewSalesOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,8 +301,8 @@
     <Compile Include="UI\Sales\frmViewOrderRecord.cs">
       <SubType>Form</SubType>
     </Compile>
-    <EmbeddedResource Include="UI\Dispatch\frmDispatchedHistory.resx">
-      <DependentUpon>frmDispatchedHistory.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Dispatch\frmDispatchedRecord.resx">
+      <DependentUpon>frmDispatchedRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Dispatch\frmDispatchingList .resx">
       <DependentUpon>frmDispatchingList .cs</DependentUpon>
@@ -277,8 +310,17 @@
     <EmbeddedResource Include="UI\Dispatch\frmDispatchMain.resx">
       <DependentUpon>frmDispatchMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Dispatch\frmGoodsReceivedList.resx">
-      <DependentUpon>frmGoodsReceivedList.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Dispatch\frmGenerateDIC.resx">
+      <DependentUpon>frmGenerateDIC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dispatch\frmGenerateDID.resx">
+      <DependentUpon>frmGenerateDID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dispatch\frmGoodsReceivedRecord.resx">
+      <DependentUpon>frmGoodsReceivedRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dispatch\frmGoodsReceiveList.resx">
+      <DependentUpon>frmGoodsReceiveList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -349,6 +391,12 @@
     <EmbeddedResource Include="UI\Management\frmProductManagement_VendorRecord.resx">
       <DependentUpon>frmProductManagement_VendorRecord.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Sales\frmAddProduct.resx">
+      <DependentUpon>frmAddProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Sales\frmBrowseProduct.resx">
+      <DependentUpon>frmBrowseProduct.cs</DependentUpon>
+	</EmbeddedResource>
     <EmbeddedResource Include="UI\Management\frmStaffManagement.resx">
       <DependentUpon>frmStaffManagement.cs</DependentUpon>
     </EmbeddedResource>
@@ -412,6 +460,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
     <None Include="Resources\bg.jpg" />
   </ItemGroup>
   <ItemGroup>

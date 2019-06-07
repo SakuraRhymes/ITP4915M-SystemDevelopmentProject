@@ -78,8 +78,13 @@ namespace SLMCS_ERP
 
         private void BtnLogout_Click(object sender, EventArgs e)
         {
-            loginPage.Show();
             this.Hide();
+            loginPage.Show();
+        }
+
+        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            loginPage.Show();
         }
     }
 }

@@ -45,7 +45,7 @@
             this.dgvSearchResult.Location = new System.Drawing.Point(12, 113);
             this.dgvSearchResult.Name = "dgvSearchResult";
             this.dgvSearchResult.RowTemplate.Height = 23;
-            this.dgvSearchResult.Size = new System.Drawing.Size(879, 322);
+            this.dgvSearchResult.Size = new System.Drawing.Size(946, 322);
             this.dgvSearchResult.TabIndex = 27;
             this.dgvSearchResult.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSearchResult_CellClick);
             this.dgvSearchResult.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSearchResult_CellDoubleClick);
@@ -58,7 +58,7 @@
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(879, 75);
+            this.groupBox1.Size = new System.Drawing.Size(946, 75);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             // 
@@ -88,17 +88,18 @@
             this.txtSearchCondition.Name = "txtSearchCondition";
             this.txtSearchCondition.Size = new System.Drawing.Size(170, 23);
             this.txtSearchCondition.TabIndex = 2;
+            this.txtSearchCondition.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtSearchCondition_KeyDown);
             // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.SystemColors.Control;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnSearch.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSearch.Location = new System.Drawing.Point(523, 26);
+            this.btnSearch.Location = new System.Drawing.Point(523, 25);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(162, 23);
+            this.btnSearch.Size = new System.Drawing.Size(172, 27);
             this.btnSearch.TabIndex = 0;
-            this.btnSearch.Text = "Search";
+            this.btnSearch.Text = "Search Sales Order";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
