@@ -33,7 +33,6 @@
             this.dgvOrderDetail = new System.Windows.Forms.DataGridView();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblDCompletedDateData = new System.Windows.Forms.Label();
             this.lblDStaffIDData = new System.Windows.Forms.Label();
             this.lblDEditDateData = new System.Windows.Forms.Label();
             this.lblDOrderDateData = new System.Windows.Forms.Label();
@@ -42,7 +41,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReceivedOrderRecord)).BeginInit();
@@ -95,7 +93,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lblDCompletedDateData);
             this.groupBox1.Controls.Add(this.lblDStaffIDData);
             this.groupBox1.Controls.Add(this.lblDEditDateData);
             this.groupBox1.Controls.Add(this.lblDOrderDateData);
@@ -104,7 +101,6 @@
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.dgvOrderDetail);
@@ -116,16 +112,6 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Received Order Detail";
-            // 
-            // lblDCompletedDateData
-            // 
-            this.lblDCompletedDateData.AutoSize = true;
-            this.lblDCompletedDateData.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblDCompletedDateData.Location = new System.Drawing.Point(393, 113);
-            this.lblDCompletedDateData.Name = "lblDCompletedDateData";
-            this.lblDCompletedDateData.Size = new System.Drawing.Size(91, 16);
-            this.lblDCompletedDateData.TabIndex = 46;
-            this.lblDCompletedDateData.Text = "complete date";
             // 
             // lblDStaffIDData
             // 
@@ -207,16 +193,6 @@
             this.label6.TabIndex = 38;
             this.label6.Text = "Staff ID :";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label7.Location = new System.Drawing.Point(279, 113);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(108, 16);
-            this.label7.TabIndex = 37;
-            this.label7.Text = "Completed Date :";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -265,7 +241,6 @@
         private System.Windows.Forms.DataGridView dgvOrderDetail;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lblDCompletedDateData;
         private System.Windows.Forms.Label lblDStaffIDData;
         private System.Windows.Forms.Label lblDEditDateData;
         private System.Windows.Forms.Label lblDOrderDateData;
@@ -274,7 +249,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
     }
