@@ -32,6 +32,9 @@ namespace SLMCS_ERP
             dtpOrderDateTo.Text = "";
             dtpOrderDateTo.Format = DateTimePickerFormat.Custom;
             dtpOrderDateTo.CustomFormat = " ";
+
+            txtOrderID.Text = "";
+            txtStaffID.Text = "";
         }
 
         private void BtnConfirm_Click(object sender, EventArgs e)

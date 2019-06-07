@@ -133,11 +133,10 @@ namespace SLMCS_ERP{
 
             selectedOrderID = "";
             selectedOrderLineProductID = "";
-        }
 
-        private void GroupBox2_Enter(object sender, EventArgs e)
-        {
-            changeDispatchingDvgContect(salesOrder.getSalesOrderTableBySalesOrderStatus("Processing"));
+            txtDealerID.Text = "";
+            txtOrderID.Text = "";
+            txtStaffID.Text = "";
         }
 
         private void BtnConfirm_Click(object sender, EventArgs e)
@@ -152,7 +151,7 @@ namespace SLMCS_ERP{
 
                     string successfulMessage = "Sales Order : " + selectedOrderID + " has been Dispatched!";
                     MessageBox.Show(successfulMessage);
-                    //refreshDvg();
+                    refreshDvg();
                 }
             }
             else
