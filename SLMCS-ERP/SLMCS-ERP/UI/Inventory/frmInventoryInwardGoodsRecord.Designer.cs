@@ -50,6 +50,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.lblOrderDate = new System.Windows.Forms.Label();
+            this.lblCompletedDate = new System.Windows.Forms.Label();
+            this.dtpOrderDateFrom = new System.Windows.Forms.DateTimePicker();
+            this.dtpCompletedDateFrom = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtpOrderDateTo = new System.Windows.Forms.DateTimePicker();
+            this.dtpCompletedDateTo = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInwardGoodsRecord)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReorderOrderLine)).BeginInit();
@@ -60,15 +68,23 @@
             // 
             this.dgvInwardGoodsRecord.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvInwardGoodsRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInwardGoodsRecord.Location = new System.Drawing.Point(27, 175);
+            this.dgvInwardGoodsRecord.Location = new System.Drawing.Point(27, 245);
             this.dgvInwardGoodsRecord.Name = "dgvInwardGoodsRecord";
             this.dgvInwardGoodsRecord.RowTemplate.Height = 24;
-            this.dgvInwardGoodsRecord.Size = new System.Drawing.Size(464, 363);
+            this.dgvInwardGoodsRecord.Size = new System.Drawing.Size(464, 293);
             this.dgvInwardGoodsRecord.TabIndex = 0;
             this.dgvInwardGoodsRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvInwardGoodsRecord_CellClick);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dtpCompletedDateTo);
+            this.groupBox1.Controls.Add(this.dtpOrderDateTo);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.dtpCompletedDateFrom);
+            this.groupBox1.Controls.Add(this.dtpOrderDateFrom);
+            this.groupBox1.Controls.Add(this.lblCompletedDate);
+            this.groupBox1.Controls.Add(this.lblOrderDate);
             this.groupBox1.Controls.Add(this.txtStaffID);
             this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Controls.Add(this.label4);
@@ -78,7 +94,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.groupBox1.Location = new System.Drawing.Point(27, 8);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(464, 161);
+            this.groupBox1.Size = new System.Drawing.Size(464, 231);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search Condition";
@@ -93,7 +109,7 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnClear.Location = new System.Drawing.Point(287, 111);
+            this.btnClear.Location = new System.Drawing.Point(287, 184);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(161, 28);
             this.btnClear.TabIndex = 7;
@@ -120,7 +136,7 @@
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnSearch.Location = new System.Drawing.Point(17, 111);
+            this.btnSearch.Location = new System.Drawing.Point(17, 184);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(260, 28);
             this.btnSearch.TabIndex = 3;
@@ -278,6 +294,77 @@
             this.label9.TabIndex = 24;
             this.label9.Text = "Received Date :";
             // 
+            // lblOrderDate
+            // 
+            this.lblOrderDate.AutoSize = true;
+            this.lblOrderDate.Location = new System.Drawing.Point(50, 105);
+            this.lblOrderDate.Name = "lblOrderDate";
+            this.lblOrderDate.Size = new System.Drawing.Size(77, 16);
+            this.lblOrderDate.TabIndex = 24;
+            this.lblOrderDate.Text = "Order Date :";
+            // 
+            // lblCompletedDate
+            // 
+            this.lblCompletedDate.AutoSize = true;
+            this.lblCompletedDate.Location = new System.Drawing.Point(19, 139);
+            this.lblCompletedDate.Name = "lblCompletedDate";
+            this.lblCompletedDate.Size = new System.Drawing.Size(108, 16);
+            this.lblCompletedDate.TabIndex = 25;
+            this.lblCompletedDate.Text = "Completed Date :";
+            // 
+            // dtpOrderDateFrom
+            // 
+            this.dtpOrderDateFrom.CustomFormat = " ";
+            this.dtpOrderDateFrom.Location = new System.Drawing.Point(136, 100);
+            this.dtpOrderDateFrom.Name = "dtpOrderDateFrom";
+            this.dtpOrderDateFrom.Size = new System.Drawing.Size(141, 23);
+            this.dtpOrderDateFrom.TabIndex = 26;
+            this.dtpOrderDateFrom.ValueChanged += new System.EventHandler(this.DtpOrderDateFrom_ValueChanged);
+            // 
+            // dtpCompletedDateFrom
+            // 
+            this.dtpCompletedDateFrom.Location = new System.Drawing.Point(136, 134);
+            this.dtpCompletedDateFrom.Name = "dtpCompletedDateFrom";
+            this.dtpCompletedDateFrom.Size = new System.Drawing.Size(140, 23);
+            this.dtpCompletedDateFrom.TabIndex = 27;
+            this.dtpCompletedDateFrom.ValueChanged += new System.EventHandler(this.DtpCompletedDateFrom_ValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Location = new System.Drawing.Point(284, 101);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(17, 21);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "-";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label2.Location = new System.Drawing.Point(284, 136);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(17, 21);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "-";
+            // 
+            // dtpOrderDateTo
+            // 
+            this.dtpOrderDateTo.Location = new System.Drawing.Point(307, 100);
+            this.dtpOrderDateTo.Name = "dtpOrderDateTo";
+            this.dtpOrderDateTo.Size = new System.Drawing.Size(141, 23);
+            this.dtpOrderDateTo.TabIndex = 30;
+            this.dtpOrderDateTo.ValueChanged += new System.EventHandler(this.DtpOrderDateTo_ValueChanged);
+            // 
+            // dtpCompletedDateTo
+            // 
+            this.dtpCompletedDateTo.Location = new System.Drawing.Point(307, 134);
+            this.dtpCompletedDateTo.Name = "dtpCompletedDateTo";
+            this.dtpCompletedDateTo.Size = new System.Drawing.Size(141, 23);
+            this.dtpCompletedDateTo.TabIndex = 31;
+            this.dtpCompletedDateTo.ValueChanged += new System.EventHandler(this.DtpCompletedDateTo_ValueChanged);
+            // 
             // frmInventoryInwardGoodsRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -325,5 +412,13 @@
         private System.Windows.Forms.Label lblDReorderOrderIDData;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DateTimePicker dtpCompletedDateTo;
+        private System.Windows.Forms.DateTimePicker dtpOrderDateTo;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dtpCompletedDateFrom;
+        private System.Windows.Forms.DateTimePicker dtpOrderDateFrom;
+        private System.Windows.Forms.Label lblCompletedDate;
+        private System.Windows.Forms.Label lblOrderDate;
     }
 }
