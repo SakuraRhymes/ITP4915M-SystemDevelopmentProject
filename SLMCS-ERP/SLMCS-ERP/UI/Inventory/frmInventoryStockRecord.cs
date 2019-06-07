@@ -40,9 +40,6 @@ namespace SLMCS_ERP
 
             btnReorderLevel.Enabled = false;
             btnDangerLevel.Enabled = false;
-
-            txtProductID.MaxLength = 6;
-            txtVendorID.MaxLength = 8;
         }
         private void BtnSearch_Click(object sender, EventArgs e)
         {

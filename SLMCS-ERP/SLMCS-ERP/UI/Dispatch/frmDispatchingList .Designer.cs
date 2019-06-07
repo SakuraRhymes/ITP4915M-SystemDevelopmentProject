@@ -37,6 +37,10 @@
             this.btnConfirm = new System.Windows.Forms.Button();
             this.lbOrderId = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtpOrderDateTo = new System.Windows.Forms.DateTimePicker();
+            this.lblOrderDate = new System.Windows.Forms.Label();
+            this.dtpOrderDateFrom = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.lbDealerID = new System.Windows.Forms.Label();
             this.lbStaffID = new System.Windows.Forms.Label();
@@ -44,7 +48,6 @@
             this.txtDealerID = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnGenerateForDIC = new System.Windows.Forms.Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesOrderList)).BeginInit();
@@ -60,9 +63,11 @@
             this.dgvOrderDetail.Location = new System.Drawing.Point(14, 22);
             this.dgvOrderDetail.Margin = new System.Windows.Forms.Padding(4);
             this.dgvOrderDetail.Name = "dgvOrderDetail";
+            this.dgvOrderDetail.ReadOnly = true;
             this.dgvOrderDetail.RowTemplate.Height = 24;
             this.dgvOrderDetail.Size = new System.Drawing.Size(847, 140);
             this.dgvOrderDetail.TabIndex = 0;
+            this.dgvOrderDetail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvOrderDetail_CellClick);
             // 
             // dgvSalesOrderList
             // 
@@ -74,13 +79,13 @@
             this.dgvSalesOrderList.RowTemplate.Height = 24;
             this.dgvSalesOrderList.Size = new System.Drawing.Size(847, 165);
             this.dgvSalesOrderList.TabIndex = 10;
-            this.dgvSalesOrderList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSalesOrderList_CellContentClick);
+            this.dgvSalesOrderList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSalesOrderList_CellClick);
             // 
             // txtOrderID
             // 
-            this.txtOrderID.Location = new System.Drawing.Point(73, 21);
+            this.txtOrderID.Location = new System.Drawing.Point(79, 26);
             this.txtOrderID.Name = "txtOrderID";
-            this.txtOrderID.Size = new System.Drawing.Size(198, 22);
+            this.txtOrderID.Size = new System.Drawing.Size(177, 22);
             this.txtOrderID.TabIndex = 2;
             // 
             // btnSearchOrder
@@ -102,6 +107,7 @@
             this.btnGenerateForDID.TabIndex = 8;
             this.btnGenerateForDID.Text = "Generate For DID";
             this.btnGenerateForDID.UseVisualStyleBackColor = true;
+            this.btnGenerateForDID.Click += new System.EventHandler(this.BtnGenerateForDID_Click);
             // 
             // btnRefresh
             // 
@@ -127,7 +133,7 @@
             // lbOrderId
             // 
             this.lbOrderId.AutoSize = true;
-            this.lbOrderId.Location = new System.Drawing.Point(12, 29);
+            this.lbOrderId.Location = new System.Drawing.Point(24, 29);
             this.lbOrderId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbOrderId.Name = "lbOrderId";
             this.lbOrderId.Size = new System.Drawing.Size(50, 12);
@@ -136,6 +142,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.dtpOrderDateTo);
+            this.groupBox1.Controls.Add(this.lblOrderDate);
+            this.groupBox1.Controls.Add(this.dtpOrderDateFrom);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.lbDealerID);
             this.groupBox1.Controls.Add(this.lbOrderId);
@@ -152,6 +162,41 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Searching";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Location = new System.Drawing.Point(262, 63);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(16, 19);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "-";
+            // 
+            // dtpOrderDateTo
+            // 
+            this.dtpOrderDateTo.Location = new System.Drawing.Point(284, 62);
+            this.dtpOrderDateTo.Name = "dtpOrderDateTo";
+            this.dtpOrderDateTo.Size = new System.Drawing.Size(176, 22);
+            this.dtpOrderDateTo.TabIndex = 20;
+            this.dtpOrderDateTo.ValueChanged += new System.EventHandler(this.DtpOrderDateTo_ValueChanged);
+            // 
+            // lblOrderDate
+            // 
+            this.lblOrderDate.AutoSize = true;
+            this.lblOrderDate.Location = new System.Drawing.Point(12, 68);
+            this.lblOrderDate.Name = "lblOrderDate";
+            this.lblOrderDate.Size = new System.Drawing.Size(62, 12);
+            this.lblOrderDate.TabIndex = 19;
+            this.lblOrderDate.Text = "Order Date :";
+            // 
+            // dtpOrderDateFrom
+            // 
+            this.dtpOrderDateFrom.Location = new System.Drawing.Point(80, 62);
+            this.dtpOrderDateFrom.Name = "dtpOrderDateFrom";
+            this.dtpOrderDateFrom.Size = new System.Drawing.Size(176, 22);
+            this.dtpOrderDateFrom.TabIndex = 17;
+            this.dtpOrderDateFrom.ValueChanged += new System.EventHandler(this.DtpOrderDateFrom_ValueChanged);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -163,7 +208,7 @@
             // lbDealerID
             // 
             this.lbDealerID.AutoSize = true;
-            this.lbDealerID.Location = new System.Drawing.Point(587, 29);
+            this.lbDealerID.Location = new System.Drawing.Point(605, 32);
             this.lbDealerID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDealerID.Name = "lbDealerID";
             this.lbDealerID.Size = new System.Drawing.Size(53, 12);
@@ -174,7 +219,7 @@
             // lbStaffID
             // 
             this.lbStaffID.AutoSize = true;
-            this.lbStaffID.Location = new System.Drawing.Point(296, 29);
+            this.lbStaffID.Location = new System.Drawing.Point(308, 32);
             this.lbStaffID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbStaffID.Name = "lbStaffID";
             this.lbStaffID.Size = new System.Drawing.Size(45, 12);
@@ -183,14 +228,14 @@
             // 
             // txtStaffID
             // 
-            this.txtStaffID.Location = new System.Drawing.Point(366, 21);
+            this.txtStaffID.Location = new System.Drawing.Point(358, 26);
             this.txtStaffID.Name = "txtStaffID";
             this.txtStaffID.Size = new System.Drawing.Size(198, 22);
             this.txtStaffID.TabIndex = 4;
             // 
             // txtDealerID
             // 
-            this.txtDealerID.Location = new System.Drawing.Point(663, 21);
+            this.txtDealerID.Location = new System.Drawing.Point(663, 26);
             this.txtDealerID.Name = "txtDealerID";
             this.txtDealerID.Size = new System.Drawing.Size(198, 22);
             this.txtDealerID.TabIndex = 7;
@@ -205,7 +250,6 @@
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dispatching Order";
-            this.groupBox2.Enter += new System.EventHandler(this.GroupBox2_Enter);
             // 
             // btnGenerateForDIC
             // 
@@ -215,6 +259,7 @@
             this.btnGenerateForDIC.TabIndex = 14;
             this.btnGenerateForDIC.Text = "Generate For DIC";
             this.btnGenerateForDIC.UseVisualStyleBackColor = true;
+            this.btnGenerateForDIC.Click += new System.EventHandler(this.BtnGenerateForDIC_Click);
             // 
             // groupBox4
             // 
@@ -226,13 +271,12 @@
             this.groupBox4.TabIndex = 20;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "OrderLine";
-            this.groupBox4.Enter += new System.EventHandler(this.GroupBox4_Enter);
             // 
             // frmDispatchingList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1186, 566);
+            this.ClientSize = new System.Drawing.Size(1095, 566);
             this.Controls.Add(this.dgvSalesOrderList);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -271,8 +315,11 @@
         private System.Windows.Forms.TextBox txtStaffID;
         private System.Windows.Forms.TextBox txtDealerID;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnGenerateForDIC;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dtpOrderDateTo;
+        private System.Windows.Forms.Label lblOrderDate;
+        private System.Windows.Forms.DateTimePicker dtpOrderDateFrom;
     }
 }

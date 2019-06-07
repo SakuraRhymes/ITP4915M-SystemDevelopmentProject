@@ -30,7 +30,8 @@
         {
             this.panelContent = new System.Windows.Forms.Panel();
             this.panelLeftNavigate = new System.Windows.Forms.Panel();
-            this.dispatchHistory = new System.Windows.Forms.Button();
+            this.btnGoodsReceivedRecord = new System.Windows.Forms.Button();
+            this.btnDispatchedRecord = new System.Windows.Forms.Button();
             this.btnGoodsRecevie = new System.Windows.Forms.Button();
             this.btnDispatchOrder = new System.Windows.Forms.Button();
             this.panelLeftNavigate.SuspendLayout();
@@ -39,69 +40,80 @@
             // panelContent
             // 
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(200, 0);
-            this.panelContent.Margin = new System.Windows.Forms.Padding(4);
+            this.panelContent.Location = new System.Drawing.Point(150, 0);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1381, 708);
+            this.panelContent.Size = new System.Drawing.Size(1036, 566);
             this.panelContent.TabIndex = 0;
-            this.panelContent.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelContent_Paint);
             // 
             // panelLeftNavigate
             // 
             this.panelLeftNavigate.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panelLeftNavigate.Controls.Add(this.dispatchHistory);
+            this.panelLeftNavigate.Controls.Add(this.btnGoodsReceivedRecord);
+            this.panelLeftNavigate.Controls.Add(this.btnDispatchedRecord);
             this.panelLeftNavigate.Controls.Add(this.btnGoodsRecevie);
             this.panelLeftNavigate.Controls.Add(this.btnDispatchOrder);
             this.panelLeftNavigate.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeftNavigate.Location = new System.Drawing.Point(0, 0);
-            this.panelLeftNavigate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelLeftNavigate.Margin = new System.Windows.Forms.Padding(2);
             this.panelLeftNavigate.Name = "panelLeftNavigate";
-            this.panelLeftNavigate.Size = new System.Drawing.Size(200, 708);
+            this.panelLeftNavigate.Size = new System.Drawing.Size(150, 566);
             this.panelLeftNavigate.TabIndex = 1;
             // 
-            // dispatchHistory
+            // btnGoodsReceivedRecord
             // 
-            this.dispatchHistory.Location = new System.Drawing.Point(36, 259);
-            this.dispatchHistory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dispatchHistory.Name = "dispatchHistory";
-            this.dispatchHistory.Size = new System.Drawing.Size(129, 54);
-            this.dispatchHistory.TabIndex = 2;
-            this.dispatchHistory.Text = "Dispatched History";
-            this.dispatchHistory.UseVisualStyleBackColor = true;
-            this.dispatchHistory.Click += new System.EventHandler(this.DispatchHistory_Click);
+            this.btnGoodsReceivedRecord.Location = new System.Drawing.Point(27, 251);
+            this.btnGoodsReceivedRecord.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGoodsReceivedRecord.Name = "btnGoodsReceivedRecord";
+            this.btnGoodsReceivedRecord.Size = new System.Drawing.Size(97, 43);
+            this.btnGoodsReceivedRecord.TabIndex = 3;
+            this.btnGoodsReceivedRecord.Text = "Goods Received Record";
+            this.btnGoodsReceivedRecord.UseVisualStyleBackColor = true;
+            this.btnGoodsReceivedRecord.Click += new System.EventHandler(this.BtnGoodsReceivedRecord_Click);
+            // 
+            // btnDispatchedRecord
+            // 
+            this.btnDispatchedRecord.Location = new System.Drawing.Point(27, 99);
+            this.btnDispatchedRecord.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDispatchedRecord.Name = "btnDispatchedRecord";
+            this.btnDispatchedRecord.Size = new System.Drawing.Size(97, 43);
+            this.btnDispatchedRecord.TabIndex = 2;
+            this.btnDispatchedRecord.Text = "Dispatched Order Record";
+            this.btnDispatchedRecord.UseVisualStyleBackColor = true;
+            this.btnDispatchedRecord.Click += new System.EventHandler(this.BtnDispatchedRecord_Click);
             // 
             // btnGoodsRecevie
             // 
-            this.btnGoodsRecevie.Location = new System.Drawing.Point(36, 149);
-            this.btnGoodsRecevie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGoodsRecevie.Location = new System.Drawing.Point(27, 180);
+            this.btnGoodsRecevie.Margin = new System.Windows.Forms.Padding(2);
             this.btnGoodsRecevie.Name = "btnGoodsRecevie";
-            this.btnGoodsRecevie.Size = new System.Drawing.Size(129, 54);
+            this.btnGoodsRecevie.Size = new System.Drawing.Size(97, 43);
             this.btnGoodsRecevie.TabIndex = 1;
             this.btnGoodsRecevie.Text = "Goods Receive";
             this.btnGoodsRecevie.UseVisualStyleBackColor = true;
-            this.btnGoodsRecevie.Click += new System.EventHandler(this.GoodsReceviedList_Click);
+            this.btnGoodsRecevie.Click += new System.EventHandler(this.BtnGoodsRecevie_Click);
             // 
             // btnDispatchOrder
             // 
-            this.btnDispatchOrder.Location = new System.Drawing.Point(36, 31);
-            this.btnDispatchOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDispatchOrder.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnDispatchOrder.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnDispatchOrder.Location = new System.Drawing.Point(27, 25);
+            this.btnDispatchOrder.Margin = new System.Windows.Forms.Padding(2);
             this.btnDispatchOrder.Name = "btnDispatchOrder";
-            this.btnDispatchOrder.Size = new System.Drawing.Size(129, 54);
+            this.btnDispatchOrder.Size = new System.Drawing.Size(97, 43);
             this.btnDispatchOrder.TabIndex = 0;
             this.btnDispatchOrder.Text = "Dispatch Order";
             this.btnDispatchOrder.UseVisualStyleBackColor = true;
-            this.btnDispatchOrder.Click += new System.EventHandler(this.DispatchingList_Click);
+            this.btnDispatchOrder.Click += new System.EventHandler(this.BtnDispatchOrder_Click);
             // 
             // frmDispatch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1581, 708);
+            this.ClientSize = new System.Drawing.Size(1186, 566);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panelLeftNavigate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDispatch";
             this.Text = "frmDispatchMain";
             this.panelLeftNavigate.ResumeLayout(false);
@@ -115,6 +127,7 @@
         private System.Windows.Forms.Panel panelLeftNavigate;
         private System.Windows.Forms.Button btnDispatchOrder;
         private System.Windows.Forms.Button btnGoodsRecevie;
-        private System.Windows.Forms.Button dispatchHistory;
+        private System.Windows.Forms.Button btnDispatchedRecord;
+        private System.Windows.Forms.Button btnGoodsReceivedRecord;
     }
 }
