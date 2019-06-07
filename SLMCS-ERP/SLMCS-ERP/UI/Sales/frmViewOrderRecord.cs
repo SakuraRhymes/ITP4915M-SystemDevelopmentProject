@@ -69,7 +69,7 @@ namespace SLMCS_ERP.UI.Sales
             {
                 btnCancelOrder.Enabled = true;
             }
-            if(salesOrder.SalesOrderStatus != "Completed" && salesOrder.SalesOrderStatus != "Canceled" && salesOrder.SalesOrderStatus != "Reserved")
+            if(salesOrder.SalesOrderStatus == "Dispatched")
             {
                 btnCompleteOrder.Enabled = true;
             }
