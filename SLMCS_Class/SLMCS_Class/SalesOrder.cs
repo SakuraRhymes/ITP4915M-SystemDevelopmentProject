@@ -129,7 +129,7 @@ namespace SLMCS_Class
         public void updataSalesOrderStatusInDB(string salesOrderID, string status)
         {
             string query = "UPDATE SalesOrder SET SalesOrderStatus = \"" + status + "\" , SalesDispatchDate = \""+ DateTime.Now.ToString("yy-MM-dd") +"\" WHERE SalesOrder.SalesOrderID = \"" + salesOrderID + "\"";
-            System.Windows.Forms.MessageBox.Show(query);
+            //MessageBox.Show(query);
             dbConnection.Update(query);
         }
 
