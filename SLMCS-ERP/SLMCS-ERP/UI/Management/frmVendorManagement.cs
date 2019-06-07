@@ -75,7 +75,7 @@ namespace SLMCS_ERP.UI.Management
 
                 lblVendorID.Text = vendor.VendorID;
                 lblVendorName.Text = vendor.VendorName;
-                lblVendorPhoneNo.Text = vendor.VendorName;
+                lblVendorPhoneNo.Text = vendor.VendorPhoneNo;
                 lblVendorAddress.Text = vendor.VendorAddress;
                 lblVendorStatus.Text = vendor.VendorStatus;
             }

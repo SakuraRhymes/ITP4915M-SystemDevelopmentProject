@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gpbProductDetail = new System.Windows.Forms.GroupBox();
+            this.btnEditProduct = new System.Windows.Forms.Button();
             this.lblProductStatus = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblDDangerLevelData = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvStockRecord = new System.Windows.Forms.DataGridView();
-            this.btnEditProduct = new System.Windows.Forms.Button();
             this.btnNewProduct = new System.Windows.Forms.Button();
             this.gpbCondition = new System.Windows.Forms.GroupBox();
             this.cboProductUnit = new System.Windows.Forms.ComboBox();
@@ -107,6 +107,17 @@
             this.gpbProductDetail.TabIndex = 15;
             this.gpbProductDetail.TabStop = false;
             this.gpbProductDetail.Text = "Product Detail";
+            // 
+            // btnEditProduct
+            // 
+            this.btnEditProduct.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnEditProduct.Location = new System.Drawing.Point(111, 446);
+            this.btnEditProduct.Name = "btnEditProduct";
+            this.btnEditProduct.Size = new System.Drawing.Size(148, 30);
+            this.btnEditProduct.TabIndex = 12;
+            this.btnEditProduct.Text = "Edit Product Info";
+            this.btnEditProduct.UseVisualStyleBackColor = true;
+            this.btnEditProduct.Click += new System.EventHandler(this.BtnEditProduct_Click);
             // 
             // lblProductStatus
             // 
@@ -311,20 +322,9 @@
             this.dgvStockRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvStockRecord_CellClick);
             this.dgvStockRecord.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvStockRecord_CellDoubleClick);
             // 
-            // btnEditProduct
-            // 
-            this.btnEditProduct.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnEditProduct.Location = new System.Drawing.Point(111, 446);
-            this.btnEditProduct.Name = "btnEditProduct";
-            this.btnEditProduct.Size = new System.Drawing.Size(148, 30);
-            this.btnEditProduct.TabIndex = 12;
-            this.btnEditProduct.Text = "Edit Product Info";
-            this.btnEditProduct.UseVisualStyleBackColor = true;
-            this.btnEditProduct.Click += new System.EventHandler(this.BtnEditProduct_Click);
-            // 
             // btnNewProduct
             // 
-            this.btnNewProduct.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnNewProduct.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnNewProduct.Location = new System.Drawing.Point(471, 251);
             this.btnNewProduct.Name = "btnNewProduct";
             this.btnNewProduct.Size = new System.Drawing.Size(148, 30);
@@ -486,10 +486,10 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnSearch.Location = new System.Drawing.Point(23, 177);
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnSearch.Location = new System.Drawing.Point(23, 175);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(590, 23);
+            this.btnSearch.Size = new System.Drawing.Size(590, 30);
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
