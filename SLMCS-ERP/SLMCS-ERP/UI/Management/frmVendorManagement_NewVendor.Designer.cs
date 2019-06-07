@@ -66,8 +66,8 @@
             // 
             // txtVendorPhoneNo
             // 
-            this.txtVendorPhoneNo.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtVendorPhoneNo.Location = new System.Drawing.Point(155, 170);
+            this.txtVendorPhoneNo.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtVendorPhoneNo.Location = new System.Drawing.Point(155, 119);
             this.txtVendorPhoneNo.MaxLength = 11;
             this.txtVendorPhoneNo.Name = "txtVendorPhoneNo";
             this.txtVendorPhoneNo.Size = new System.Drawing.Size(176, 23);
@@ -75,8 +75,8 @@
             // 
             // txtVendorAddress
             // 
-            this.txtVendorAddress.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtVendorAddress.Location = new System.Drawing.Point(155, 234);
+            this.txtVendorAddress.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtVendorAddress.Location = new System.Drawing.Point(153, 166);
             this.txtVendorAddress.MaxLength = 80;
             this.txtVendorAddress.Name = "txtVendorAddress";
             this.txtVendorAddress.Size = new System.Drawing.Size(192, 80);
@@ -85,8 +85,8 @@
             // 
             // txtVendorName
             // 
-            this.txtVendorName.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtVendorName.Location = new System.Drawing.Point(155, 103);
+            this.txtVendorName.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtVendorName.Location = new System.Drawing.Point(155, 71);
             this.txtVendorName.MaxLength = 50;
             this.txtVendorName.Name = "txtVendorName";
             this.txtVendorName.Size = new System.Drawing.Size(176, 23);
