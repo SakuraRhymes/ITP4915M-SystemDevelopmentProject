@@ -81,5 +81,10 @@ namespace SLMCS_ERP
             this.Hide();
             loginPage.Show();
         }
+
+        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            loginPage.Show();
+        }
     }
 }

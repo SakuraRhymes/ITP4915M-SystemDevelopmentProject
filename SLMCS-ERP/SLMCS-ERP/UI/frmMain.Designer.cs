@@ -220,6 +220,7 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SLMCS ERP System";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
             this.penalTopNavigation.ResumeLayout(false);
             this.penalTopNavigation.PerformLayout();
             this.ResumeLayout(false);
