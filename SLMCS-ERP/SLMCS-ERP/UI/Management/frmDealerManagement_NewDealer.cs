@@ -29,11 +29,12 @@ namespace SLMCS_ERP.UI.Management
             string DealerInvoiceAddress = txtDealerInvoiceAddress.Text;
             string DealerShippingAddress = txtDealerShippingAddress.Text;
 
+            string dealerStatus = (ckDealerAvailable.Checked ? "Available" : "Unvailable");
             try
             {
                 if (CheckInputFieldIsValid())
                 {
-                    dealer.CreateNewDealer(DealerName, DealerPhoneNo, DealerInvoiceAddress, DealerShippingAddress, "Available");
+                    dealer.CreateNewDealer(DealerName, DealerPhoneNo, DealerInvoiceAddress, DealerShippingAddress, dealerStatus);
                     BtnReset_Click(sender, e);
                     MessageBox.Show("Dealer has been added");
                     this.Close();
@@ -47,7 +48,7 @@ namespace SLMCS_ERP.UI.Management
         private bool CheckInputFieldIsValid()
         {
 
-            if (txtDealerName.Text != "" && txtDealerPhoneNo.Text != "" && txtDealerInvoiceAddress.Text != "" && txtDealerShippingAddress.Text != "")
+            if (txtDealerName.Text != "" && lblDealerPhoneNo.Text != "" && txtDealerInvoiceAddress.Text != "" && txtDealerShippingAddress.Text != "")
             {
                 return true;
             }
@@ -56,7 +57,7 @@ namespace SLMCS_ERP.UI.Management
                 MessageBox.Show("Please input dealer name");
                 return false;
             }
-            if (txtDealerPhoneNo.Text == "")
+            if (lblDealerPhoneNo.Text == "")
             {
                 MessageBox.Show("Please input dealer phone no");
                 return false;
@@ -77,7 +78,7 @@ namespace SLMCS_ERP.UI.Management
         private void BtnReset_Click(object sender, EventArgs e)
         {
             txtDealerName.Text = "";
-            txtDealerPhoneNo.Text = "";
+            lblDealerPhoneNo.Text = "";
             txtDealerInvoiceAddress.Text = "";
             txtDealerShippingAddress.Text = "";
         }

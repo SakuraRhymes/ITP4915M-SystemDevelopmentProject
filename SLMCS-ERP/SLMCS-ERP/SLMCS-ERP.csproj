@@ -155,6 +155,18 @@
     <Compile Include="UI\Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Management\frmVendorManagement_EditVendor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Management\frmVendorManagement_EditVendor.Designer.cs">
+      <DependentUpon>frmVendorManagement_EditVendor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Management\frmVendorManagement_NewVendor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Management\frmVendorManagement_NewVendor.Designer.cs">
+      <DependentUpon>frmVendorManagement_NewVendor.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Management\frmDealerManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +220,18 @@
     </Compile>
     <Compile Include="UI\Management\frmStaffManagement.Designer.cs">
       <DependentUpon>frmStaffManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Management\frmStaffManagement_EditStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Management\frmStaffManagement_EditStaff.Designer.cs">
+      <DependentUpon>frmStaffManagement_EditStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Management\frmStaffManagement_NewStaff .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Management\frmStaffManagement_NewStaff .Designer.cs">
+      <DependentUpon>frmStaffManagement_NewStaff .cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Management\frmVendorManagement.cs">
       <SubType>Form</SubType>
@@ -342,6 +366,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Sales\frmBrowseProduct.resx">
       <DependentUpon>frmBrowseProduct.cs</DependentUpon>
+	</EmbeddedResource>
+    <EmbeddedResource Include="UI\Management\frmStaffManagement.resx">
+      <DependentUpon>frmStaffManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Management\frmStaffManagement_EditStaff.resx">
+      <DependentUpon>frmStaffManagement_EditStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Management\frmStaffManagement_NewStaff .resx">
+      <DependentUpon>frmStaffManagement_NewStaff .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Management\frmVendorManagement.resx">
+      <DependentUpon>frmVendorManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Management\frmVendorManagement_EditVendor.resx">
+      <DependentUpon>frmVendorManagement_EditVendor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Management\frmVendorManagement_NewVendor.resx">
+      <DependentUpon>frmVendorManagement_NewVendor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Sales\frmNewSalesOrder.resx">
       <DependentUpon>frmNewSalesOrder.cs</DependentUpon>

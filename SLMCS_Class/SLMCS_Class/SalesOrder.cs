@@ -39,6 +39,7 @@ namespace SLMCS_Class
         {
             get => _salesOrderLine;
         }
+        public string SalesOrderStatus1 { get => salesOrderStatus; set => salesOrderStatus = value; }
 
         public SalesOrder()
         {

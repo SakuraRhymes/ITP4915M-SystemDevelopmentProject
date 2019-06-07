@@ -35,7 +35,8 @@ namespace SLMCS_ERP.UI.Management
 
         private void BtnStaffManagement_Click(object sender, EventArgs e)
         {
-
+            frmStaffManagement staffManagement = new frmStaffManagement();
+            navigation(staffManagement, panelContent);
         }
 
         private void BtnDealerManagement_Click(object sender, EventArgs e)
@@ -46,7 +47,8 @@ namespace SLMCS_ERP.UI.Management
 
         private void BtnVendorManagement_Click(object sender, EventArgs e)
         {
-
+            frmVendorManagement vendorManagement = new frmVendorManagement();
+            navigation(vendorManagement, panelContent);
         }
     }
 }

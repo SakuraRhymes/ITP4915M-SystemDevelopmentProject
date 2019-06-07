@@ -90,7 +90,7 @@ namespace SLMCS_ERP.UI.Management
             return false;
         }
 
-        private void FrmInventoryNewProduct_Load(object sender, EventArgs e)
+        private void frmProductManagement_NewProduct_Load(object sender, EventArgs e)
         {
             cboProductType.Text = "Sheet Metal";
             cboProductType.DropDownStyle = ComboBoxStyle.DropDownList;
