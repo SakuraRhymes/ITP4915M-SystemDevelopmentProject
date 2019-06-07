@@ -138,7 +138,6 @@ namespace SLMCS_Class
         public DataTable GetReceivedReorderOrderTable()
         {
             string query = "SELECT ReorderOrderID,StaffID,ReorderOrderDate,ReorderOrderReceivedDate FROM ReorderOrder WHERE ReorderOrderStatus = 'Received' ";
-           
             reorderOrderTable = dbConnection.GetDataTable(query);
             return reorderOrderTable;
         }
