@@ -19,35 +19,56 @@ namespace SLMCS_ERP
             InitializeComponent();
         }
 
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            txtStaffID.MaxLength = 9;
+        }
+
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             string staffID = txtStaffID.Text;
             string password = txtPassword.Text;
-
-            try
+            if (staffID != "" && password != "")
             {
-                Staff staff = new Staff(staffID);
-                if(staff.Verify(password)){
-                    frmMain main = new frmMain(this, staff);
+                try
+                {
+                    Staff staff = new Staff(staffID);
+                    if (staff.Verify(password))
+                    {
+                        frmMain main = new frmMain(this, staff);
 
-                    txtStaffID.Text = "";
-                    txtPassword.Text = "";
+                        txtStaffID.Text = "";
+                        txtPassword.Text = "";
 
-                    this.Hide();
-                    main.Show();
+                        this.Hide();
+                        main.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Password invaild! Please Try again.");
+                    }
+                }
+                catch (Exception exception)
+                {
+                    //MessageBox.Show("Staff ID invaild! Please Try again.");
+                    MessageBox.Show(exception.Message);
+                }
+            }
+            else
+            {
+                if (staffID == "" && password != "")
+                {
+                    MessageBox.Show("Staff ID is Empty! Please input your Staff ID.");
+                }
+                else if (staffID != "" && password == "")
+                {
+                    MessageBox.Show("Password is Empty! Please input your Password.");
                 }
                 else
                 {
-                    MessageBox.Show("Password invaild! Please Try again.");
+                    MessageBox.Show("Staff ID and Password are Empty! Please Try again.");
                 }
             }
-            catch (Exception exception)
-            {
-                //MessageBox.Show("Staff ID invaild! Please Try again.");
-                MessageBox.Show(exception.Message);
-            }
-
-
         }
 
         private void BtnForgetPassword_Click(object sender, EventArgs e)
