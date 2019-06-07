@@ -50,12 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UI\Dispatch\frmDispatchedHistory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Dispatch\frmDispatchedHistory.Designer.cs">
-      <DependentUpon>frmDispatchedHistory.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\Dispatch\frmDispatchedRecord.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -271,8 +265,8 @@
     <Compile Include="UI\Sales\frmViewOrderRecord.cs">
       <SubType>Form</SubType>
     </Compile>
-    <EmbeddedResource Include="UI\Dispatch\frmDispatchedHistory.resx">
-      <DependentUpon>frmDispatchedHistory.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Dispatch\frmDispatchedRecord.resx">
+      <DependentUpon>frmDispatchedRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Dispatch\frmDispatchingList .resx">
       <DependentUpon>frmDispatchingList .cs</DependentUpon>

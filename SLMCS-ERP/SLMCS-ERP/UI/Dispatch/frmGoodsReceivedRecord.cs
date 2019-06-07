@@ -55,6 +55,16 @@ namespace SLMCS_ERP.UI.Dispatch
 
             dgvGoodsReceivedList.DataSource = null;
             dgvReceivedOrderLine.DataSource = null;
+
+            lblDReorderOrderIDData.Text = "---";
+            lblDStaffIDData.Text = "---";
+            lblDOrderDateData.Text = "---";
+            lblDReceivedDateData.Text = "---";
+            lblDEditDateData.Text = "---";
+            lblDReceivedDateData.Text = "---";
+
+            txtOrderID.Text = "";
+            txtStaffID.Text = "";
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)
@@ -111,7 +121,7 @@ namespace SLMCS_ERP.UI.Dispatch
             {
                 queryString = queryString.Remove(queryString.Length - 5);
             }
-            MessageBox.Show(queryString);
+            //MessageBox.Show(queryString);
             return queryString;
         }
 
