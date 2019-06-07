@@ -97,29 +97,43 @@ namespace SLMCS_Class
         }
 
 
-        public DataTable Dispatching_getSalesOrderByOrderID(string OrderID)
-        {
-            string query = "SELECT SalesOrderID, StaffID, DealerID, SalesOrderDate, SalesOrderStatus FROM SalesOrder WHERE OrderID = \"" + OrderID + "\" AND SalesOrderStatus = \"Dispatching\"";
-            return dbConnection.GetDataTable(query);
-        }
+        //public DataTable Dispatching_getSalesOrderByOrderID(string OrderID)
+        //{
+        //    string query = "SELECT SalesOrderID, StaffID, DealerID, SalesOrderDate, SalesOrderStatus FROM SalesOrder WHERE OrderID = \"" + OrderID + "\" AND SalesOrderStatus = \"Dispatching\"";
+        //    return dbConnection.GetDataTable(query);
+        //}
 
-        public DataTable Dispatching_getSalesOrderByStaffID(string StaffID)
-        {
-            string query = "SELECT SalesOrderID, StaffID, DealerID, SalesOrderDate, SalesOrderStatus FROM SalesOrder WHERE StaffID = \"" + StaffID + "\" AND SalesOrderStatus = \"Dispatching\"";
-            return dbConnection.GetDataTable(query);
-        }
+        //public DataTable Dispatching_getSalesOrderByStaffID(string StaffID)
+        //{
+        //    string query = "SELECT SalesOrderID, StaffID, DealerID, SalesOrderDate, SalesOrderStatus FROM SalesOrder WHERE StaffID = \"" + StaffID + "\" AND SalesOrderStatus = \"Dispatching\"";
+        //    return dbConnection.GetDataTable(query);
+        //}
 
-        public DataTable Dispatching_getSalesOrderByDealerID(string DealerID)
-        {
-            string query = "SELECT SalesOrderID, StaffID, DealerID, SalesOrderDate, SalesOrderStatus FROM SalesOrder WHERE DealerID = \"" + DealerID + "\" AND SalesOrderStatus = \"Dispatching\"";
-            return dbConnection.GetDataTable(query);
-        }
+        //public DataTable Dispatching_getSalesOrderByDealerID(string DealerID)
+        //{
+        //    string query = "SELECT SalesOrderID, StaffID, DealerID, SalesOrderDate, SalesOrderStatus FROM SalesOrder WHERE DealerID = \"" + DealerID + "\" AND SalesOrderStatus = \"Dispatching\"";
+        //    return dbConnection.GetDataTable(query);
+        //}
 
         public DataTable getSalesTableByWhereQuery(string condition)
         {
             string query = "SELECT SalesOrderID, StaffID, DealerID, SalesOrderDate, SalesOrderStatus FROM SalesOrder WHERE " + condition;
             return dbConnection.GetDataTable(query);
         }
+
+        public DataTable GetDispatchedOrderHistoryTable(string condition)
+        {
+            string query = "SELECT SalesOrderID,StaffID,DealerID,SalesOrderDate,SalesDispatchDate FROM SalesOrder WHERE SalesOrderStatus <> 'Canceled' " +
+                "AND SalesOrderStatus <> 'Processing' AND SalesOrderStatus <> 'Reserved'";
+            if (condition != "")
+            {
+                query += " AND " + condition;
+            }
+            //MessageBox.Show(query);
+            salesOrderTable = dbConnection.GetDataTable(query);
+            return salesOrderTable;
+        }
+
         public DataTable getSalesOrderLineBySalesOrderID(string salesOrderID)
         {
             string query = "SELECT SalesOrderLine.ProductID, Product.ProductName, Product.ProductType, Product.ProductUnit, " +

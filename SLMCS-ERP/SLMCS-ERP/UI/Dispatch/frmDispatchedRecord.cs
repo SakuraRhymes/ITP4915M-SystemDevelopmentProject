@@ -32,6 +32,7 @@ namespace SLMCS_ERP.UI.Dispatch
 
             txtStaffID.MaxLength = 9;
             txtOrderID.MaxLength = 14;
+            txtDealerID.MaxLength = 8;
             salesOrder = new SalesOrder();
         }
 
@@ -71,7 +72,7 @@ namespace SLMCS_ERP.UI.Dispatch
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             string query = OrderMultiSearchString();
-            //dgvDispatchedList.DataSource = salesOrder.GetReceivedOrderHistoryTable(query);
+            dgvDispatchedList.DataSource = salesOrder.GetDispatchedOrderHistoryTable(query);
             DGVDispatchedRecordFormatSetting();
         }
 
@@ -89,11 +90,13 @@ namespace SLMCS_ERP.UI.Dispatch
 
                 lblDSalesOrderIDData.Text = salesOrder.SalesOrderID;
                 lblDStaffIDData.Text = salesOrder.StaffID;
+                lblDDealerIDData.Text = salesOrder.DealerID;
                 lblDOrderDateData.Text = salesOrder.SalesOrderDate;
                 lblDEditDateData.Text = salesOrder.SalesOrderEditDate;
                 lblDDispatchedDateData.Text = salesOrder.SalesDispatchDate;
 
-                //dgvDispatchedOrderLine.DataSource = reorderOrder.GetReorderOrderLineTable(selectOrderID);
+
+                dgvDispatchedOrderLine.DataSource = salesOrder.getSalesOrderLineBySalesOrderID(selectOrderID);
 
                 DGVDispatchOrderLineFormatSetting();
             }
@@ -110,6 +113,10 @@ namespace SLMCS_ERP.UI.Dispatch
             {
                 queryString += "StaffID LIKE '%" + txtStaffID.Text + "%'" + " AND ";
             }
+            if (txtDealerID.Text != "")
+            {
+                queryString += "DealerID LIKE '%" + txtDealerID.Text + "%'" + " AND ";
+            }
             if (dtpOrderDateFrom.Text != " " && dtpOrderDateTo.Text != " ")
             {
                 queryString += "SalesOrderDate BETWEEN '" + dtpOrderDateFrom.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpOrderDateTo.Value.ToString("yyyy-MM-dd") + "' AND ";
@@ -122,7 +129,7 @@ namespace SLMCS_ERP.UI.Dispatch
             {
                 queryString = queryString.Remove(queryString.Length - 5);
             }
-            MessageBox.Show(queryString);
+            //MessageBox.Show(queryString);
             return queryString;
         }
 
