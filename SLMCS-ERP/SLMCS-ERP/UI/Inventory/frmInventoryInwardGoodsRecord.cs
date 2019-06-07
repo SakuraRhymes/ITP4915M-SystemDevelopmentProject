@@ -20,8 +20,6 @@ namespace SLMCS_ERP
             dgvInwardGoodsRecord.DataSource = reorderOrder.GetInwardGoodsRecordTable(queryString);
             //MessageBox.Show(dtpOrderDateFrom.Value.ToString("dd/MM/yyyy"));
             DGVInwardGoodsRecordFormatSetting();
-
-            MessageBox.Show(dtpOrderDateFrom.Value.ToString("yyyy-MM-dd"));
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
@@ -40,16 +38,19 @@ namespace SLMCS_ERP
             {
                 queryString += "StaffID LIKE '%" + txtStaffID.Text + "%'" + " AND ";
             }
-            //if (dtpOrderDateFrom.Value.ToString("yyyy-MM-dd") != " " && dtpOrderDateTo.Value.ToString("yyyy-MM-dd") != " ")
-            //{
-            //    queryString += "ReorderOrderDate BETWEEN '" + dtpOrderDateFrom.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpOrderDateTo.Value.ToString("yyyy-MM-dd") + "' AND ";
-            //}
-            
+            if (dtpOrderDateFrom.Text != " " && dtpOrderDateTo.Text != " ")
+            {
+                queryString += "ReorderOrderDate BETWEEN '" + dtpOrderDateFrom.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpOrderDateTo.Value.ToString("yyyy-MM-dd") + "' AND ";
+            }
+            if (dtpCompletedDateFrom.Text != " " && dtpCompletedDateTo.Text != " ")
+            {
+                queryString += "ReorderOrderCompletedDate BETWEEN '" + dtpCompletedDateFrom.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpCompletedDateTo.Value.ToString("yyyy-MM-dd") + "' AND ";
+            }
             if (queryString != "")
             {
                 queryString = queryString.Remove(queryString.Length - 5);
             }
-            MessageBox.Show(queryString);
+            //MessageBox.Show(queryString);
             return queryString;
         }
 
