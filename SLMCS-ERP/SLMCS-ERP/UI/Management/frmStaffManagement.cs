@@ -47,9 +47,9 @@ namespace SLMCS_ERP.UI.Management
             {
                 queryString += "StaffPhoneNo LIKE '%" + txtStaffPhoneNo.Text + "%' " + " AND ";
             }
-            if (cbStaffDepartment.Text != "")
+            if (cbStaffDepartment.Text != " " && cbStaffDepartment.Text != "")
             {
-                queryString += "DepartmentID LIKE '%" + txtStaffPhoneNo.Text + "%' " + " AND ";
+                queryString += "DepartmentID LIKE '%" + cbStaffDepartment.Text + "%' " + " AND ";
             }
             if (queryString != "")
             {
@@ -80,7 +80,7 @@ namespace SLMCS_ERP.UI.Management
 
                 lblStaffID.Text = staff.StaffID;
                 lblStaffName.Text = staff.StaffName;
-                lblStaffPhoneNo.Text = staff.StaffName;
+                lblStaffPhoneNo.Text = staff.StaffPhoneNo;
                 lblStaffPassword.Text = staff.Password;
                 lblDepartmentID.Text = staff.DepartmentID;
                 lblStaffStatus.Text = staff.StaffStatus;
@@ -108,13 +108,7 @@ namespace SLMCS_ERP.UI.Management
 
         private void DgvStaffList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex != -1)
-            {
-                selectedStaffID = dgvStaffList.Rows[e.RowIndex].Cells["StaffID"].Value.ToString();
-                dgvStaffList.Rows[e.RowIndex].Selected = true;
-                staff = new Staff(selectedStaffID);
-                BtnEditStaff_Click(sender, e);
-            }
+            BtnEditStaff_Click(sender,e);
         }
 
         private void FrmStaffManagement_Load(object sender, EventArgs e)

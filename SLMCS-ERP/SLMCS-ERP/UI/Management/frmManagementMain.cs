@@ -47,7 +47,8 @@ namespace SLMCS_ERP.UI.Management
 
         private void BtnVendorManagement_Click(object sender, EventArgs e)
         {
-
+            frmVendorManagement vendorManagement = new frmVendorManagement();
+            navigation(vendorManagement, panelContent);
         }
     }
 }

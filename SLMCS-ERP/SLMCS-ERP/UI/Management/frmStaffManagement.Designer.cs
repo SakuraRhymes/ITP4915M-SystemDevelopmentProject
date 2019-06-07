@@ -95,7 +95,7 @@
             this.dgvStaffList.Size = new System.Drawing.Size(646, 261);
             this.dgvStaffList.TabIndex = 0;
             this.dgvStaffList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvStaffList_CellClick);
-            this.dgvStaffList.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvStaffList_CellDoubleClick);
+            this.dgvStaffList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvStaffList_CellDoubleClick);
             // 
             // groupBox3
             // 
@@ -348,12 +348,12 @@
             "HR",
             "FI",
             "PO",
-            "WH"});
+            "WH",
+            " "});
             this.cbStaffDepartment.Location = new System.Drawing.Point(441, 27);
             this.cbStaffDepartment.Name = "cbStaffDepartment";
             this.cbStaffDepartment.Size = new System.Drawing.Size(61, 20);
             this.cbStaffDepartment.TabIndex = 12;
-            this.cbStaffDepartment.Text = "SA";
             // 
             // label15
             // 

@@ -29,12 +29,11 @@ namespace SLMCS_ERP.UI.Management
             string staffPassword = txtStaffPassword.Text;
             string available = (ckAvailable.Checked? "Available": "Unvailable");
 
-
             try
             {
                 if (CheckInputFieldIsValid())
                 {
-                    staff.CreateStaffAccount( staffPassword, staffName, staffPhoneNo, departmentID, available);
+                    staff.CreateStaffAccount(staffID, staffPassword, staffName, staffPhoneNo, departmentID, available);
                     BtnCancel_Click(sender, e);
                     MessageBox.Show("The staff account has been created!");
                 }
@@ -47,7 +46,7 @@ namespace SLMCS_ERP.UI.Management
         private void BtnCancel_Click(object sender, EventArgs e)
         {
             txtStaffName.Text = "" ;
-            cbStaffDepartment.Text = "";
+            cbStaffDepartment.Text = "HR";
             txtStaffPhoneNo.Text = "";
         }
 
@@ -68,7 +67,7 @@ namespace SLMCS_ERP.UI.Management
                 MessageBox.Show("Please input staff phone No");
                 return false;
             }
-            return false;
+            return true;
         }
 
         private void frmStaffManagement_NewStaff_Load(object sender, EventArgs e)

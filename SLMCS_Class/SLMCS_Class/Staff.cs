@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using SLMCS_ERP;
 
@@ -108,12 +109,10 @@ namespace SLMCS_Class
         }
 
         //CreateStaffAccount incomplete
-        public void CreateStaffAccount(string password, string staffName, string staffPhoneNo, string departmentID, string staffStatus)
+        public void CreateStaffAccount(string staffID, string password, string staffName, string staffPhoneNo, string departmentID, string staffStatus)
         {
-                string staffID = GetNextStaffID();
-                string queryString = "INSERT INTO Dealer VALUES ('{0}','{1}','{2}','{3}','{4}',{5},{6},(7))";
+                string queryString = "INSERT INTO Staff VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')";
                 string query = string.Format(queryString, staffID, password, DateTime.Now.ToString("yyMMdd"), staffName, staffPhoneNo, departmentID, staffStatus);
-
                 try
                 {
                     dbConnection.Insert(query);
@@ -164,16 +163,16 @@ namespace SLMCS_Class
                     count = row["COUNT(StaffID)"].ToString();
                 }
                 count = (Int32.Parse(count) + 1).ToString();
-                string nextOrderID = "SO" + DateTime.Now.ToString("yy") + count.PadLeft(6, '0');
+                string nextOrderID = "S" + DateTime.Now.ToString("yy") + count.PadLeft(6, '0');
                 return nextOrderID;
         }
 
         public DataTable GetStaffTable(string condition)
         {
-            string query = "SELECT StaffID, StaffName, PasswordChangeDate, DepartmentID, StaffStatus FROM Staff WHERE ";
+            string query = "SELECT StaffID, StaffName, PasswordChangeDate, DepartmentID, StaffStatus FROM Staff ";
             if (condition != "")
             {
-                query += condition;
+                query += "WHERE"+ condition;
             }
             return dbConnection.GetDataTable(query);
         }
