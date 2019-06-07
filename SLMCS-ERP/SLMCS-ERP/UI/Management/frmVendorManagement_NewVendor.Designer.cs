@@ -73,6 +73,7 @@
             // 
             this.txtVendorPhoneNo.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtVendorPhoneNo.Location = new System.Drawing.Point(155, 170);
+            this.txtVendorPhoneNo.MaxLength = 11;
             this.txtVendorPhoneNo.Name = "txtVendorPhoneNo";
             this.txtVendorPhoneNo.Size = new System.Drawing.Size(168, 23);
             this.txtVendorPhoneNo.TabIndex = 27;
@@ -81,6 +82,7 @@
             // 
             this.txtVendorAddress.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtVendorAddress.Location = new System.Drawing.Point(155, 234);
+            this.txtVendorAddress.MaxLength = 80;
             this.txtVendorAddress.Name = "txtVendorAddress";
             this.txtVendorAddress.Size = new System.Drawing.Size(168, 70);
             this.txtVendorAddress.TabIndex = 33;
@@ -90,6 +92,7 @@
             // 
             this.txtVendorName.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtVendorName.Location = new System.Drawing.Point(155, 103);
+            this.txtVendorName.MaxLength = 50;
             this.txtVendorName.Name = "txtVendorName";
             this.txtVendorName.Size = new System.Drawing.Size(168, 23);
             this.txtVendorName.TabIndex = 29;

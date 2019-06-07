@@ -62,9 +62,9 @@ namespace SLMCS_ERP.UI.Management
                 MessageBox.Show("Please input staff name");
                 return false;
             }
-            if (txtStaffPhoneNo.Text == "")
+            if (txtStaffPhoneNo.Text == "" || txtStaffPhoneNo.Text.Length!=11)
             {
-                MessageBox.Show("Please input staff phone No");
+                MessageBox.Show("Please input valid staff phone No");
                 return false;
             }
             return true;

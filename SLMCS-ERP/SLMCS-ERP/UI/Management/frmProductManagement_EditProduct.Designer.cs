@@ -64,6 +64,7 @@
             // txtDangerLevel
             // 
             this.txtDangerLevel.Location = new System.Drawing.Point(127, 286);
+            this.txtDangerLevel.MaxLength = 10;
             this.txtDangerLevel.Name = "txtDangerLevel";
             this.txtDangerLevel.Size = new System.Drawing.Size(100, 22);
             this.txtDangerLevel.TabIndex = 40;
@@ -89,6 +90,7 @@
             // rtbProductDesc
             // 
             this.rtbProductDesc.Location = new System.Drawing.Point(127, 101);
+            this.rtbProductDesc.MaxLength = 100;
             this.rtbProductDesc.Name = "rtbProductDesc";
             this.rtbProductDesc.Size = new System.Drawing.Size(219, 65);
             this.rtbProductDesc.TabIndex = 37;
@@ -109,6 +111,7 @@
             // txtReorderLevel
             // 
             this.txtReorderLevel.Location = new System.Drawing.Point(127, 258);
+            this.txtReorderLevel.MaxLength = 10;
             this.txtReorderLevel.Name = "txtReorderLevel";
             this.txtReorderLevel.Size = new System.Drawing.Size(100, 22);
             this.txtReorderLevel.TabIndex = 35;
@@ -116,6 +119,7 @@
             // txtActualQty
             // 
             this.txtActualQty.Location = new System.Drawing.Point(127, 230);
+            this.txtActualQty.MaxLength = 10;
             this.txtActualQty.Name = "txtActualQty";
             this.txtActualQty.Size = new System.Drawing.Size(100, 22);
             this.txtActualQty.TabIndex = 34;
@@ -123,6 +127,7 @@
             // txtProductPrice
             // 
             this.txtProductPrice.Location = new System.Drawing.Point(127, 204);
+            this.txtProductPrice.MaxLength = 10;
             this.txtProductPrice.Name = "txtProductPrice";
             this.txtProductPrice.Size = new System.Drawing.Size(100, 22);
             this.txtProductPrice.TabIndex = 33;
@@ -130,6 +135,7 @@
             // txtProductName
             // 
             this.txtProductName.Location = new System.Drawing.Point(127, 73);
+            this.txtProductName.MaxLength = 50;
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(219, 22);
             this.txtProductName.TabIndex = 32;

@@ -63,6 +63,7 @@
             // 
             this.txtStaffName.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtStaffName.Location = new System.Drawing.Point(167, 87);
+            this.txtStaffName.MaxLength = 50;
             this.txtStaffName.Name = "txtStaffName";
             this.txtStaffName.Size = new System.Drawing.Size(168, 23);
             this.txtStaffName.TabIndex = 42;
@@ -71,6 +72,7 @@
             // 
             this.txtStaffPhoneNo.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtStaffPhoneNo.Location = new System.Drawing.Point(167, 142);
+            this.txtStaffPhoneNo.MaxLength = 11;
             this.txtStaffPhoneNo.Name = "txtStaffPhoneNo";
             this.txtStaffPhoneNo.Size = new System.Drawing.Size(168, 23);
             this.txtStaffPhoneNo.TabIndex = 40;
@@ -215,6 +217,7 @@
             // 
             this.txtStaffPassword.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtStaffPassword.Location = new System.Drawing.Point(167, 197);
+            this.txtStaffPassword.MaxLength = 7;
             this.txtStaffPassword.Name = "txtStaffPassword";
             this.txtStaffPassword.Size = new System.Drawing.Size(168, 23);
             this.txtStaffPassword.TabIndex = 61;

@@ -46,7 +46,7 @@
             // 
             // txtDealerID
             // 
-            this.txtDealerID.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtDealerID.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtDealerID.Location = new System.Drawing.Point(181, 27);
             this.txtDealerID.Name = "txtDealerID";
             this.txtDealerID.ReadOnly = true;
@@ -56,7 +56,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label1.Location = new System.Drawing.Point(108, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 16);
@@ -65,8 +65,9 @@
             // 
             // txtDealerInvoiceAddress
             // 
-            this.txtDealerInvoiceAddress.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtDealerInvoiceAddress.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtDealerInvoiceAddress.Location = new System.Drawing.Point(181, 166);
+            this.txtDealerInvoiceAddress.MaxLength = 80;
             this.txtDealerInvoiceAddress.Name = "txtDealerInvoiceAddress";
             this.txtDealerInvoiceAddress.Size = new System.Drawing.Size(175, 70);
             this.txtDealerInvoiceAddress.TabIndex = 45;
@@ -74,8 +75,9 @@
             // 
             // txtDealerShippingAddress
             // 
-            this.txtDealerShippingAddress.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtDealerShippingAddress.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtDealerShippingAddress.Location = new System.Drawing.Point(181, 257);
+            this.txtDealerShippingAddress.MaxLength = 80;
             this.txtDealerShippingAddress.Name = "txtDealerShippingAddress";
             this.txtDealerShippingAddress.Size = new System.Drawing.Size(175, 70);
             this.txtDealerShippingAddress.TabIndex = 44;
@@ -84,7 +86,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label3.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label3.Location = new System.Drawing.Point(19, 260);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(153, 16);
@@ -93,8 +95,9 @@
             // 
             // txtDealerName
             // 
-            this.txtDealerName.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtDealerName.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtDealerName.Location = new System.Drawing.Point(181, 68);
+            this.txtDealerName.MaxLength = 50;
             this.txtDealerName.Name = "txtDealerName";
             this.txtDealerName.Size = new System.Drawing.Size(175, 23);
             this.txtDealerName.TabIndex = 42;
@@ -102,7 +105,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label2.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label2.Location = new System.Drawing.Point(85, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 16);
@@ -111,8 +114,9 @@
             // 
             // txtDealerPhoneNo
             // 
-            this.txtDealerPhoneNo.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtDealerPhoneNo.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtDealerPhoneNo.Location = new System.Drawing.Point(181, 117);
+            this.txtDealerPhoneNo.MaxLength = 11;
             this.txtDealerPhoneNo.Name = "txtDealerPhoneNo";
             this.txtDealerPhoneNo.Size = new System.Drawing.Size(175, 23);
             this.txtDealerPhoneNo.TabIndex = 40;
@@ -120,7 +124,7 @@
             // lblDealerPhoneNo
             // 
             this.lblDealerPhoneNo.AutoSize = true;
-            this.lblDealerPhoneNo.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblDealerPhoneNo.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblDealerPhoneNo.Location = new System.Drawing.Point(61, 120);
             this.lblDealerPhoneNo.Name = "lblDealerPhoneNo";
             this.lblDealerPhoneNo.Size = new System.Drawing.Size(111, 16);
@@ -129,7 +133,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnReset.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnReset.Location = new System.Drawing.Point(125, 381);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(110, 30);
@@ -140,7 +144,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnSubmit.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnSubmit.Location = new System.Drawing.Point(246, 381);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(110, 30);
@@ -152,7 +156,7 @@
             // lblDealerInvoiceAddress
             // 
             this.lblDealerInvoiceAddress.AutoSize = true;
-            this.lblDealerInvoiceAddress.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblDealerInvoiceAddress.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblDealerInvoiceAddress.Location = new System.Drawing.Point(32, 166);
             this.lblDealerInvoiceAddress.Name = "lblDealerInvoiceAddress";
             this.lblDealerInvoiceAddress.Size = new System.Drawing.Size(142, 16);
@@ -162,7 +166,7 @@
             // ckbAvailable
             // 
             this.ckbAvailable.AutoSize = true;
-            this.ckbAvailable.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.ckbAvailable.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.ckbAvailable.Location = new System.Drawing.Point(181, 342);
             this.ckbAvailable.Name = "ckbAvailable";
             this.ckbAvailable.Size = new System.Drawing.Size(15, 14);
@@ -172,7 +176,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label4.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label4.Location = new System.Drawing.Point(106, 342);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 16);

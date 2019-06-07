@@ -36,18 +36,20 @@ namespace SLMCS_ERP.UI.Management
             string staffPhoneNo = txtStaffPhoneNo.Text;
             string staffPassword = txtStaffPassword.Text;
             string available = (ckAvailable.Checked ? "Available" : "Unvailable");
-
-            try
+            if (CheckInputFieldIsValid())
             {
-                staff.EditStaffAccountPasswordUnchanged(staffID, staffName, staffPhoneNo, departmentID, available);
-                MessageBox.Show("The staff account" + staffID + " has been edit!");
-                this.Close();
-                //need KILL?
+                try
+                {
+                    staff.EditStaffAccountPasswordUnchanged(staffID, staffName, staffPhoneNo, departmentID, available);
+                    MessageBox.Show("The staff account" + staffID + " has been edit!");
+                    this.Close();
+                    //need KILL?
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
         private void BtnCancel_Click(object sender, EventArgs e)
@@ -67,5 +69,25 @@ namespace SLMCS_ERP.UI.Management
             txtStaffID.Enabled = false;
             txtStaffPassword.Enabled = false;
         }
+        private bool CheckInputFieldIsValid()
+        {
+            if (cbStaffDepartment.Text == "")
+            {
+                MessageBox.Show("Please select staff department");
+                return false;
+            }
+            if (txtStaffName.Text == "")
+            {
+                MessageBox.Show("Please input staff name");
+                return false;
+            }
+            if (txtStaffPhoneNo.Text == "" || txtStaffPhoneNo.Text.Length != 11)
+            {
+                MessageBox.Show("Please input valid staff phone No");
+                return false;
+            }
+            return true;
+        }
     }
+
 }

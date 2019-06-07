@@ -36,17 +36,20 @@ namespace SLMCS_ERP.UI.Management
             string vendorPhoneNo = txtVendorPhoneNo.Text;
             string vendorStatus = (ckVendorAvailable.Checked ? "Available" : "Unvailable");
 
-            try
+            if (CheckInputFieldIsValid())
             {
-                vendor.UpdateVendorDetail(vendorID, vendorName, vendorAddress, vendorPhoneNo, vendorStatus);
-                MessageBox.Show("The vendor account" + vendorID + " has been edit!");
-                this.Close();
-                //need KILL?
+                try
+                {
+                    vendor.UpdateVendorDetail(vendorID, vendorName, vendorAddress, vendorPhoneNo, vendorStatus);
+                    MessageBox.Show("The vendor account" + vendorID + " has been edit!");
+                    this.Close();
+                    //need KILL?
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
         private void BtnCancel_Click(object sender, EventArgs e)
@@ -62,6 +65,30 @@ namespace SLMCS_ERP.UI.Management
             txtVendorID.Text = vendor.VendorID;
             BtnCancel_Click(sender, e);
             txtVendorID.Enabled = false;
+        }
+        private bool CheckInputFieldIsValid()
+        {
+
+            if (txtVendorName.Text != "" && lblVendorPhoneNo.Text != "" && txtVendorAddress.Text != "")
+            {
+                return true;
+            }
+            if (txtVendorName.Text == "")
+            {
+                MessageBox.Show("Please input vendor name");
+                return false;
+            }
+            if (lblVendorPhoneNo.Text == "" || lblVendorPhoneNo.Text.Length != 11)
+            {
+                MessageBox.Show("Please input valid vendor phone no");
+                return false;
+            }
+            if (txtVendorAddress.Text == "")
+            {
+                MessageBox.Show("Please input vendor address");
+                return false;
+            }
+            return false;
         }
     }
 }
