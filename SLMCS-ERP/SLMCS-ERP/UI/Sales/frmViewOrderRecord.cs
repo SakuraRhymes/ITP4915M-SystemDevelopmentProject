@@ -99,6 +99,7 @@ namespace SLMCS_ERP.UI.Sales
             salesOrder.updateStatus("Canceled");
             lblOrderStatus.Text = salesOrder.SalesOrderStatus;
             btnCancelOrder.Enabled = false;
+            btnConfirmPlaceOrder.Enabled = false;
             btnCompleteOrder.Enabled = false;
             salesOrder.cancelOrder();
             MessageBox.Show("Successfully Canceled Sales Order");
@@ -107,6 +108,7 @@ namespace SLMCS_ERP.UI.Sales
         private void BtnCompleteOrder_Click(object sender, EventArgs e)
         {
             salesOrder.updateStatus("Completed");
+            salesOrder.updateSalesOrderCompletedDate();
             lblOrderStatus.Text = salesOrder.SalesOrderStatus;
             btnCompleteOrder.Enabled = false;
             btnCancelOrder.Enabled = false;

@@ -133,6 +133,22 @@ namespace SLMCS_Class
             dbConnection.Update(query);
         }
 
+        public void updateSalesOrderEditDate()
+        {
+            string query = "UPDATE SalesOrder SET SalesOrderEditDate = \"" + DateTime.Now.ToString("yy-MM-dd") + "\" WHERE SalesOrderID = \"" + salesOrderID + "\"";
+            //MessageBox.Show(query);
+            dbConnection.Update(query);
+        }
+
+        public void updateSalesOrderCompletedDate()
+        {
+            string query = "UPDATE SalesOrder SET SalesOrderCompletedDate = \"" + DateTime.Now.ToString("yy-MM-dd") + "\" WHERE SalesOrderID = \"" + salesOrderID + "\"";
+            //MessageBox.Show(query);
+            dbConnection.Update(query);
+
+            updateSalesOrderEditDate();
+        }
+
         public String[] updataDealerInfo(String dealerID)
         {
             String[] result = null;
@@ -172,6 +188,8 @@ namespace SLMCS_Class
 
             string query = "UPDATE SalesOrder SET SalesOrderStatus = '" + status + "' WHERE SalesOrderID = '" + SalesOrderID + "'";
             dbConnection.Update(query);
+
+            updateSalesOrderEditDate();
         }
 
         public double getTotalPrice()
