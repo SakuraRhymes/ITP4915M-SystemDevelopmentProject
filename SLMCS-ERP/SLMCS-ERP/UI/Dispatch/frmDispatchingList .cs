@@ -16,14 +16,17 @@ namespace SLMCS_ERP{
     public partial class frmDispatchingList : Form
     {
         private string selectedOrderID;
+        private string selectedOrderLineProductID;
+
         private string generateForDID;
         private string orderIDForGenerate;
-        private string selectedOrderDetail;
         private SalesOrder salesOrder;
 
         public frmDispatchingList()
         {
             salesOrder = new SalesOrder();
+            selectedOrderID = "";
+            selectedOrderLineProductID = "";
             InitializeComponent();
             startUp();
         }
@@ -128,6 +131,8 @@ namespace SLMCS_ERP{
             dtpOrderDateTo.Format = DateTimePickerFormat.Custom;
             dtpOrderDateTo.CustomFormat = " ";
 
+            selectedOrderID = "";
+            selectedOrderLineProductID = "";
         }
 
         private void GroupBox2_Enter(object sender, EventArgs e)
@@ -152,28 +157,22 @@ namespace SLMCS_ERP{
             }
             else
             {
-                MessageBox.Show("Please Select An Order");
+                MessageBox.Show("Please Select an Order!");
             }
         }
 
         private void BtnGenerateForDID_Click(object sender, EventArgs e)
         {
-            if (selectedOrderID != "")
+            if (selectedOrderLineProductID != "")
             {
-                frmGenerateDID generateDID = new frmGenerateDID(selectedOrderID);
+                frmGenerateDID generateDID = new frmGenerateDID(selectedOrderID, selectedOrderLineProductID);
                 generateDID.Show();
             }
             else
             {
-                MessageBox.Show("Please Select An Order");
+                MessageBox.Show("Please Select a Product at Order Line!");
             }
         }
-
-        //private void OpenGenerateDIDForm(string selectedOrderID)
-        //{
-        //    frmGenerateDID generateDID = new frmGenerateDID(selectedOrderID);
-        //    generateDID.Show();
-        //}
 
         private void BtnGenerateForDIC_Click(object sender, EventArgs e)
         {
@@ -184,16 +183,9 @@ namespace SLMCS_ERP{
             }
             else
             {
-                MessageBox.Show("Please Select An Order");
+                MessageBox.Show("Please Select an Order");
             }
         }
-
-        //private void OpenGenerateDICForm(string selectedOrderID)
-        //{
-        //    frmGenerateDIC generateDIC = new frmGenerateDIC(selectedOrderID);
-        //    generateDIC.Show();
-        //}
-
         private void DgvSalesOrderList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
@@ -201,6 +193,7 @@ namespace SLMCS_ERP{
                 selectedOrderID = dgvSalesOrderList.Rows[e.RowIndex].Cells["SalesOrderID"].Value.ToString();
                 dgvOrderDetail.DataSource = null;
                 dgvOrderDetail.DataSource = salesOrder.getSalesOrderLineBySalesOrderID(selectedOrderID);
+                selectedOrderLineProductID = dgvOrderDetail.Rows[0].Cells["ProductID"].Value.ToString(); //default seleting a product at order line 1
             }
         }
 
@@ -212,6 +205,14 @@ namespace SLMCS_ERP{
         private void DtpOrderDateTo_ValueChanged(object sender, EventArgs e)
         {
             dtpOrderDateTo.CustomFormat = "yyyy-MM-dd";
+        }
+
+        private void DgvOrderDetail_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                selectedOrderLineProductID = dgvOrderDetail.Rows[e.RowIndex].Cells["ProductID"].Value.ToString();
+            }
         }
     }
 }

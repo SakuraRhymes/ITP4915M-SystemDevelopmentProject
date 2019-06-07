@@ -67,6 +67,7 @@
             this.dgvOrderDetail.RowTemplate.Height = 24;
             this.dgvOrderDetail.Size = new System.Drawing.Size(847, 140);
             this.dgvOrderDetail.TabIndex = 0;
+            this.dgvOrderDetail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvOrderDetail_CellClick);
             // 
             // dgvSalesOrderList
             // 

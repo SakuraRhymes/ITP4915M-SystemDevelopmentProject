@@ -14,9 +14,9 @@ namespace SLMCS_ERP.UI.Dispatch
     public partial class frmGenerateDID : Form
     {
         private SalesOrderLine salesOrderLine;
-        public frmGenerateDID(string orderID)
+        public frmGenerateDID(string orderID, string productID)
         {
-            salesOrderLine = new SalesOrderLine(orderID);
+            salesOrderLine = new SalesOrderLine(orderID, productID);
             InitializeComponent();
         }
 
@@ -24,20 +24,9 @@ namespace SLMCS_ERP.UI.Dispatch
         {
             lblSalesOrderIDData.Text = salesOrderLine.SalesOrderID;
             lblProductIDData.Text = salesOrderLine.ProductID;
-            lblQuantityData.Text = salesOrderLine.Quantity.ToString();
+            lblQuantityData.Text = salesOrderLine.Quantity.ToString() + " " + salesOrderLine.ProductUnit;
             lblDateData.Text = DateTime.Now.ToString("yy-MM-dd");
             lblProductNameData.Text = salesOrderLine.ProductName;
-            lblProductUnitData.Text = salesOrderLine.ProductUnit;
-        }
-
-        private void LblSalesOrderIDData_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LblProductIDData_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

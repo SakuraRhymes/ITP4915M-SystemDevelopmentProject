@@ -48,7 +48,7 @@ namespace SLMCS_ERP
             }
             else
             {
-                MessageBox.Show("Please Select An Order");
+                MessageBox.Show("Please Select an Order");
             }
         }
 

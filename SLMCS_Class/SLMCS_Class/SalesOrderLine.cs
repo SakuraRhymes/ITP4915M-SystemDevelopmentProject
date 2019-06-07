@@ -34,19 +34,35 @@ namespace SLMCS_Class
             this.productPrice = productPrice;
         }
 
-        public SalesOrderLine(string orderID)
+        //public SalesOrderLine(string orderID)
+        //{
+        //    dbConnection = new DBConnection();
+        //    string query = "SELECT SalesOrderID, SalesOrderLine.ProductID, Quantity, ProductName, ProductUnit FROM SalesOrderLine, Product WHERE SalesOrderID ='" + orderID + "'";
+        //    salesOrderLineTable = dbConnection.GetDataTable(query);
+        //    DataRow[] rows = salesOrderLineTable.Select();
+
+        //    salesOrderID = (string)rows[0]["SalesOrderID"];
+        //    productID = (string)rows[0]["ProductID"];
+        //    Quantity = (int)rows[0]["Quantity"];
+        //    ProductName = (string)rows[0]["ProductName"];
+        //    ProductUnit = (string)rows[0]["ProductUnit"];
+
+        //}
+
+        public SalesOrderLine(string orderID, string productID)
         {
             dbConnection = new DBConnection();
-            string query = "SELECT SalesOrderID, SalesOrderLine.ProductID, Quantity, ProductName, ProductUnit FROM SalesOrderLine, Product WHERE SalesOrderID ='" + orderID + "'";
+            string query = "SELECT SalesOrderLine.SalesOrderID, SalesOrderLine.ProductID, Product.ProductName, Product.ProductUnit, SalesOrderLine.Quantity FROM SalesOrderLine, Product WHERE SalesOrderLine.ProductID = Product.ProductID" +
+                " AND SalesOrderLine.SalesOrderID ='" + orderID + "' AND SalesOrderLine.ProductID = '" + productID + "'";
+            //MessageBox.Show(query);
             salesOrderLineTable = dbConnection.GetDataTable(query);
             DataRow[] rows = salesOrderLineTable.Select();
 
-            salesOrderID = (string)rows[0]["SalesOrderID"];
-            productID = (string)rows[0]["ProductID"];
+            SalesOrderID = (string)rows[0]["SalesOrderID"];
+            ProductID = (string)rows[0]["ProductID"];
             Quantity = (int)rows[0]["Quantity"];
             ProductName = (string)rows[0]["ProductName"];
             ProductUnit = (string)rows[0]["ProductUnit"];
-
         }
 
         public double getSubtotalPrice()

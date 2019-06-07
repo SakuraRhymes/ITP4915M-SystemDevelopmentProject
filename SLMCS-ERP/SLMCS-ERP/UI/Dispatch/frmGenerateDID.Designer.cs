@@ -41,16 +41,16 @@
             this.lblDateData = new System.Windows.Forms.Label();
             this.lblProductName = new System.Windows.Forms.Label();
             this.lblProductNameData = new System.Windows.Forms.Label();
-            this.lblProductUnitData = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblCompanyName
             // 
             this.lblCompanyName.AutoSize = true;
             this.lblCompanyName.Font = new System.Drawing.Font("PMingLiU", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblCompanyName.Location = new System.Drawing.Point(16, 9);
+            this.lblCompanyName.Location = new System.Drawing.Point(12, 7);
+            this.lblCompanyName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCompanyName.Name = "lblCompanyName";
-            this.lblCompanyName.Size = new System.Drawing.Size(453, 30);
+            this.lblCompanyName.Size = new System.Drawing.Size(366, 24);
             this.lblCompanyName.TabIndex = 0;
             this.lblCompanyName.Text = "Smart And Luxury Motor Company";
             // 
@@ -58,9 +58,10 @@
             // 
             this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("PMingLiU", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(135)));
-            this.lblHeader.Location = new System.Drawing.Point(95, 64);
+            this.lblHeader.Location = new System.Drawing.Point(71, 51);
+            this.lblHeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(301, 27);
+            this.lblHeader.Size = new System.Drawing.Size(236, 22);
             this.lblHeader.TabIndex = 1;
             this.lblHeader.Text = "Despatch Instruction Detail";
             // 
@@ -68,9 +69,10 @@
             // 
             this.lblSalesOrderID.AutoSize = true;
             this.lblSalesOrderID.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
-            this.lblSalesOrderID.Location = new System.Drawing.Point(21, 177);
+            this.lblSalesOrderID.Location = new System.Drawing.Point(16, 142);
+            this.lblSalesOrderID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSalesOrderID.Name = "lblSalesOrderID";
-            this.lblSalesOrderID.Size = new System.Drawing.Size(137, 28);
+            this.lblSalesOrderID.Size = new System.Drawing.Size(119, 21);
             this.lblSalesOrderID.TabIndex = 2;
             this.lblSalesOrderID.Text = "Sales Order ID:";
             // 
@@ -78,9 +80,10 @@
             // 
             this.lblProductId.AutoSize = true;
             this.lblProductId.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
-            this.lblProductId.Location = new System.Drawing.Point(51, 252);
+            this.lblProductId.Location = new System.Drawing.Point(45, 202);
+            this.lblProductId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProductId.Name = "lblProductId";
-            this.lblProductId.Size = new System.Drawing.Size(106, 28);
+            this.lblProductId.Size = new System.Drawing.Size(90, 21);
             this.lblProductId.TabIndex = 3;
             this.lblProductId.Text = "Product ID:";
             // 
@@ -88,9 +91,10 @@
             // 
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
-            this.lblQuantity.Location = new System.Drawing.Point(69, 393);
+            this.lblQuantity.Location = new System.Drawing.Point(63, 314);
+            this.lblQuantity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(88, 28);
+            this.lblQuantity.Size = new System.Drawing.Size(72, 21);
             this.lblQuantity.TabIndex = 4;
             this.lblQuantity.Text = "Quantity:";
             // 
@@ -98,9 +102,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("PMingLiU", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
-            this.label4.Location = new System.Drawing.Point(229, 479);
+            this.label4.Location = new System.Drawing.Point(172, 383);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(24, 32);
+            this.label4.Size = new System.Drawing.Size(23, 25);
             this.label4.TabIndex = 5;
             this.label4.Text = "1";
             // 
@@ -108,9 +113,10 @@
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
-            this.lblDate.Location = new System.Drawing.Point(312, 124);
+            this.lblDate.Location = new System.Drawing.Point(234, 99);
+            this.lblDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(56, 28);
+            this.lblDate.Size = new System.Drawing.Size(48, 21);
             this.lblDate.TabIndex = 6;
             this.lblDate.Text = "Date:";
             // 
@@ -118,31 +124,32 @@
             // 
             this.lblSalesOrderIDData.AutoSize = true;
             this.lblSalesOrderIDData.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
-            this.lblSalesOrderIDData.Location = new System.Drawing.Point(185, 177);
+            this.lblSalesOrderIDData.Location = new System.Drawing.Point(139, 142);
+            this.lblSalesOrderIDData.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSalesOrderIDData.Name = "lblSalesOrderIDData";
-            this.lblSalesOrderIDData.Size = new System.Drawing.Size(48, 28);
+            this.lblSalesOrderIDData.Size = new System.Drawing.Size(43, 21);
             this.lblSalesOrderIDData.TabIndex = 7;
             this.lblSalesOrderIDData.Text = "XXX";
-            this.lblSalesOrderIDData.Click += new System.EventHandler(this.LblSalesOrderIDData_Click);
             // 
             // lblProductIDData
             // 
             this.lblProductIDData.AutoSize = true;
             this.lblProductIDData.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
-            this.lblProductIDData.Location = new System.Drawing.Point(185, 252);
+            this.lblProductIDData.Location = new System.Drawing.Point(139, 202);
+            this.lblProductIDData.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProductIDData.Name = "lblProductIDData";
-            this.lblProductIDData.Size = new System.Drawing.Size(48, 28);
+            this.lblProductIDData.Size = new System.Drawing.Size(43, 21);
             this.lblProductIDData.TabIndex = 8;
             this.lblProductIDData.Text = "XXX";
-            this.lblProductIDData.Click += new System.EventHandler(this.LblProductIDData_Click);
             // 
             // lblQuantityData
             // 
             this.lblQuantityData.AutoSize = true;
             this.lblQuantityData.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
-            this.lblQuantityData.Location = new System.Drawing.Point(185, 393);
+            this.lblQuantityData.Location = new System.Drawing.Point(139, 314);
+            this.lblQuantityData.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblQuantityData.Name = "lblQuantityData";
-            this.lblQuantityData.Size = new System.Drawing.Size(48, 28);
+            this.lblQuantityData.Size = new System.Drawing.Size(43, 21);
             this.lblQuantityData.TabIndex = 9;
             this.lblQuantityData.Text = "XXX";
             // 
@@ -150,9 +157,10 @@
             // 
             this.lblDateData.AutoSize = true;
             this.lblDateData.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
-            this.lblDateData.Location = new System.Drawing.Point(374, 124);
+            this.lblDateData.Location = new System.Drawing.Point(280, 99);
+            this.lblDateData.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDateData.Name = "lblDateData";
-            this.lblDateData.Size = new System.Drawing.Size(48, 28);
+            this.lblDateData.Size = new System.Drawing.Size(43, 21);
             this.lblDateData.TabIndex = 10;
             this.lblDateData.Text = "XXX";
             // 
@@ -160,9 +168,10 @@
             // 
             this.lblProductName.AutoSize = true;
             this.lblProductName.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
-            this.lblProductName.Location = new System.Drawing.Point(18, 323);
+            this.lblProductName.Location = new System.Drawing.Point(19, 258);
+            this.lblProductName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Size = new System.Drawing.Size(139, 28);
+            this.lblProductName.Size = new System.Drawing.Size(116, 21);
             this.lblProductName.TabIndex = 11;
             this.lblProductName.Text = "Product Name:";
             // 
@@ -170,29 +179,19 @@
             // 
             this.lblProductNameData.AutoSize = true;
             this.lblProductNameData.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
-            this.lblProductNameData.Location = new System.Drawing.Point(185, 323);
+            this.lblProductNameData.Location = new System.Drawing.Point(139, 258);
+            this.lblProductNameData.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProductNameData.Name = "lblProductNameData";
-            this.lblProductNameData.Size = new System.Drawing.Size(48, 28);
+            this.lblProductNameData.Size = new System.Drawing.Size(43, 21);
             this.lblProductNameData.TabIndex = 12;
             this.lblProductNameData.Text = "XXX";
             // 
-            // lblProductUnitData
-            // 
-            this.lblProductUnitData.AutoSize = true;
-            this.lblProductUnitData.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
-            this.lblProductUnitData.Location = new System.Drawing.Point(259, 393);
-            this.lblProductUnitData.Name = "lblProductUnitData";
-            this.lblProductUnitData.Size = new System.Drawing.Size(48, 28);
-            this.lblProductUnitData.TabIndex = 13;
-            this.lblProductUnitData.Text = "XXX";
-            // 
             // frmGenerateDID
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(509, 520);
-            this.Controls.Add(this.lblProductUnitData);
+            this.ClientSize = new System.Drawing.Size(382, 416);
             this.Controls.Add(this.lblProductNameData);
             this.Controls.Add(this.lblProductName);
             this.Controls.Add(this.lblDateData);
@@ -207,6 +206,7 @@
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.lblCompanyName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmGenerateDID";
             this.Text = "frmGenerateDID";
             this.Load += new System.EventHandler(this.FrmGenerateDID_Load);
@@ -230,6 +230,5 @@
         private System.Windows.Forms.Label lblDateData;
         private System.Windows.Forms.Label lblProductName;
         private System.Windows.Forms.Label lblProductNameData;
-        private System.Windows.Forms.Label lblProductUnitData;
     }
 }
