@@ -37,6 +37,10 @@
             this.btnConfirm = new System.Windows.Forms.Button();
             this.lbOrderId = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtpOrderDateTo = new System.Windows.Forms.DateTimePicker();
+            this.lblOrderDate = new System.Windows.Forms.Label();
+            this.dtpOrderDateFrom = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.lbDealerID = new System.Windows.Forms.Label();
             this.lbStaffID = new System.Windows.Forms.Label();
@@ -44,12 +48,7 @@
             this.txtDealerID = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnGenerateForDIC = new System.Windows.Forms.Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dtpOrderDateFrom = new System.Windows.Forms.DateTimePicker();
-            this.lblOrderDate = new System.Windows.Forms.Label();
-            this.dtpOrderDateTo = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalesOrderList)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -162,6 +161,41 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Searching";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Location = new System.Drawing.Point(262, 63);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(16, 19);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "-";
+            // 
+            // dtpOrderDateTo
+            // 
+            this.dtpOrderDateTo.Location = new System.Drawing.Point(284, 62);
+            this.dtpOrderDateTo.Name = "dtpOrderDateTo";
+            this.dtpOrderDateTo.Size = new System.Drawing.Size(176, 22);
+            this.dtpOrderDateTo.TabIndex = 20;
+            this.dtpOrderDateTo.ValueChanged += new System.EventHandler(this.DtpOrderDateTo_ValueChanged);
+            // 
+            // lblOrderDate
+            // 
+            this.lblOrderDate.AutoSize = true;
+            this.lblOrderDate.Location = new System.Drawing.Point(12, 68);
+            this.lblOrderDate.Name = "lblOrderDate";
+            this.lblOrderDate.Size = new System.Drawing.Size(62, 12);
+            this.lblOrderDate.TabIndex = 19;
+            this.lblOrderDate.Text = "Order Date :";
+            // 
+            // dtpOrderDateFrom
+            // 
+            this.dtpOrderDateFrom.Location = new System.Drawing.Point(80, 62);
+            this.dtpOrderDateFrom.Name = "dtpOrderDateFrom";
+            this.dtpOrderDateFrom.Size = new System.Drawing.Size(176, 22);
+            this.dtpOrderDateFrom.TabIndex = 17;
+            this.dtpOrderDateFrom.ValueChanged += new System.EventHandler(this.DtpOrderDateFrom_ValueChanged);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -237,39 +271,6 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "OrderLine";
             // 
-            // dtpOrderDateFrom
-            // 
-            this.dtpOrderDateFrom.Location = new System.Drawing.Point(80, 62);
-            this.dtpOrderDateFrom.Name = "dtpOrderDateFrom";
-            this.dtpOrderDateFrom.Size = new System.Drawing.Size(176, 22);
-            this.dtpOrderDateFrom.TabIndex = 17;
-            // 
-            // lblOrderDate
-            // 
-            this.lblOrderDate.AutoSize = true;
-            this.lblOrderDate.Location = new System.Drawing.Point(12, 68);
-            this.lblOrderDate.Name = "lblOrderDate";
-            this.lblOrderDate.Size = new System.Drawing.Size(62, 12);
-            this.lblOrderDate.TabIndex = 19;
-            this.lblOrderDate.Text = "Order Date :";
-            // 
-            // dtpOrderDateTo
-            // 
-            this.dtpOrderDateTo.Location = new System.Drawing.Point(284, 62);
-            this.dtpOrderDateTo.Name = "dtpOrderDateTo";
-            this.dtpOrderDateTo.Size = new System.Drawing.Size(176, 22);
-            this.dtpOrderDateTo.TabIndex = 20;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(262, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(16, 19);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "-";
-            // 
             // frmDispatchingList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -313,7 +314,6 @@
         private System.Windows.Forms.TextBox txtStaffID;
         private System.Windows.Forms.TextBox txtDealerID;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnGenerateForDIC;
         private System.Windows.Forms.Label label1;
