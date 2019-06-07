@@ -76,12 +76,13 @@ namespace SLMCS_ERP.UI.Sales
             dgvSearchResult.DataSource = dt;
 
             dgvSearchResult.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvSearchResult.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvSearchResult.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvSearchResult.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvSearchResult.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvSearchResult.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvSearchResult.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvSearchResult.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvSearchResult.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvSearchResult.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvSearchResult.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvSearchResult.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvSearchResult.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
         private void DgvSearchResult_CellClick(object sender, DataGridViewCellEventArgs e)

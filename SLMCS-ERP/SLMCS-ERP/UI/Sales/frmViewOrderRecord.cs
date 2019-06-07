@@ -88,15 +88,18 @@ namespace SLMCS_ERP.UI.Sales
         private void BtnConfirmPlaceOrder_Click(object sender, EventArgs e)
         {
             salesOrder.updateStatus("Processing");
+            salesOrder.updateSalesOrderEditDate();
+            lblOrderEditDate.Text = DateTime.Now.ToString("yy-MM-dd");
             lblOrderStatus.Text = salesOrder.SalesOrderStatus; 
             btnConfirmPlaceOrder.Enabled = false;
-            btnCompleteOrder.Enabled = true;
             MessageBox.Show("Successfully Placed Sales Order");
         }
 
         private void BtnCancelOrder_Click(object sender, EventArgs e)
         {
             salesOrder.updateStatus("Canceled");
+            salesOrder.updateSalesOrderEditDate();
+            lblOrderEditDate.Text = DateTime.Now.ToString("yy-MM-dd");
             lblOrderStatus.Text = salesOrder.SalesOrderStatus;
             btnCancelOrder.Enabled = false;
             btnConfirmPlaceOrder.Enabled = false;
@@ -110,6 +113,8 @@ namespace SLMCS_ERP.UI.Sales
             salesOrder.updateStatus("Completed");
             salesOrder.updateSalesOrderCompletedDate();
             lblOrderStatus.Text = salesOrder.SalesOrderStatus;
+            lblOrderEditDate.Text = DateTime.Now.ToString("yy-MM-dd");
+            lblOrderCompletedDate.Text = DateTime.Now.ToString("yy-MM-dd");
             btnCompleteOrder.Enabled = false;
             btnCancelOrder.Enabled = false;
             MessageBox.Show("Successfully Completed Sales Order");

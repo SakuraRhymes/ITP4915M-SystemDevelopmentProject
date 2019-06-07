@@ -71,7 +71,7 @@ namespace SLMCS_Class
             }
             if (rows[0]["SalesOrderCompletedDate"].ToString() != "")
             {
-                salesDispatchDate = ((DateTime)rows[0]["SalesOrderCompletedDate"]).ToString("yy-MM-dd");
+                salesOrderCompletedDate = ((DateTime)rows[0]["SalesOrderCompletedDate"]).ToString("yy-MM-dd");
             }
             salesOrderStatus = (string)rows[0]["SalesOrderStatus"];
         }

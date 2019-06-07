@@ -144,13 +144,13 @@ namespace SLMCS_ERP{
         {
             if (dgvSalesOrderList.Rows.Count > 0 && selectedOrderID != "")
             {
-                if (MessageBox.Show("Confirm Order ID: " + selectedOrderID + " Order?", "Confirm Message", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show("Confirm Dispatch : " + selectedOrderID + " ?", "Confirm Message", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     salesOrder.updataSalesOrderStatusInDB(selectedOrderID, "Dispatched");
 
                     salesOrder.dispatchOrder(selectedOrderID);
 
-                    string successfulMessage = "Sales Order :" + selectedOrderID + " has been Dispatched!";
+                    string successfulMessage = "Sales Order : " + selectedOrderID + " has been Dispatched!";
                     MessageBox.Show(successfulMessage);
                     //refreshDvg();
                 }
