@@ -144,7 +144,7 @@ namespace SLMCS_Class
 
         public DataTable GetOrderedOrderTable(string condition)
         {
-            string query = "SELECT ReorderOrderID,StaffID,ReorderOrderDate FROM ReorderOrder WHERE ReorderOrderStatus = 'Processing' ";
+            string query = "SELECT ReorderOrderID,StaffID,ReorderOrderDate,ReorderOrderStatus FROM ReorderOrder WHERE ReorderOrderStatus = 'Processing' ";
             if (condition != "")
             {
                 query += " AND " + condition;
@@ -240,13 +240,13 @@ namespace SLMCS_Class
             return ReorderOrderID;
         }
 
-        public DataTable getReorderOrderTableByReorderOrderStatus(string ReorderOrderStatus)
-        {
-            string query = "SELECT ReorderOrderID, StaffID," +
-                "ReorderOrderDate,ReorderOrderEditDate, ReorderOrderStatus " +
-                "FROM ReorderOrder WHERE  ReorderOrderStatus = \"" + ReorderOrderStatus + "\"";
-            return dbConnection.GetDataTable(query);
-        }
+        //public DataTable getReorderOrderTableByReorderOrderStatus(string ReorderOrderStatus)
+        //{
+        //    string query = "SELECT ReorderOrderID, StaffID," +
+        //        "ReorderOrderDate,ReorderOrderEditDate, ReorderOrderStatus " +
+        //        "FROM ReorderOrder WHERE  ReorderOrderStatus = \"" + ReorderOrderStatus + "\"";
+        //    return dbConnection.GetDataTable(query);
+        //}
 
         //public DataTable GoodsReceived_getReorderOrderByOrderID(string OrderID)
         //{
@@ -264,13 +264,13 @@ namespace SLMCS_Class
         //    return dbConnection.GetDataTable(query);
         //}
 
-        public DataTable GoodsReceived_getReorderTableByWhereQuery(string condition)
-        {
-            string query = "SELECT ReorderOrderID, StaffID," +
-                "ReorderOrderDate,ReorderOrderEditDate,ReorderOrderStatus " +
-                "FROM ReorderOrder WHERE " + condition;
-            return dbConnection.GetDataTable(query);
-        }
+        //public DataTable GoodsReceived_getReorderTableByWhereQuery(string condition)
+        //{
+        //    string query = "SELECT ReorderOrderID, StaffID," +
+        //        "ReorderOrderDate,ReorderOrderEditDate,ReorderOrderStatus " +
+        //        "FROM ReorderOrder WHERE " + condition;
+        //    return dbConnection.GetDataTable(query);
+        //}
 
         public void GoodsReceived_updataReorderOrderByRedoreOrderStatus(string reorderOrderID, string RedoreOrderStatus)
         {

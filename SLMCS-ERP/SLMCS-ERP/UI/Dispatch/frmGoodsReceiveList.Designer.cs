@@ -64,13 +64,13 @@
             this.txtOrderID.Location = new System.Drawing.Point(63, 33);
             this.txtOrderID.Margin = new System.Windows.Forms.Padding(2);
             this.txtOrderID.Name = "txtOrderID";
-            this.txtOrderID.Size = new System.Drawing.Size(200, 22);
+            this.txtOrderID.Size = new System.Drawing.Size(141, 22);
             this.txtOrderID.TabIndex = 1;
             // 
             // staffId
             // 
             this.staffId.AutoSize = true;
-            this.staffId.Location = new System.Drawing.Point(299, 39);
+            this.staffId.Location = new System.Drawing.Point(267, 39);
             this.staffId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.staffId.Name = "staffId";
             this.staffId.Size = new System.Drawing.Size(45, 12);
@@ -79,10 +79,10 @@
             // 
             // txtStaffID
             // 
-            this.txtStaffID.Location = new System.Drawing.Point(348, 33);
+            this.txtStaffID.Location = new System.Drawing.Point(316, 33);
             this.txtStaffID.Margin = new System.Windows.Forms.Padding(2);
             this.txtStaffID.Name = "txtStaffID";
-            this.txtStaffID.Size = new System.Drawing.Size(200, 22);
+            this.txtStaffID.Size = new System.Drawing.Size(142, 22);
             this.txtStaffID.TabIndex = 3;
             // 
             // btnConfirm
@@ -111,7 +111,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(782, 74);
+            this.btnSearch.Location = new System.Drawing.Point(770, 73);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(91, 34);
@@ -144,7 +144,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(259, 75);
+            this.label2.Location = new System.Drawing.Point(705, 33);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(16, 19);
             this.label2.TabIndex = 26;
@@ -152,7 +152,7 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(675, 74);
+            this.btnRefresh.Location = new System.Drawing.Point(660, 73);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(2);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(91, 34);
@@ -163,16 +163,16 @@
             // 
             // dtpOrderDateTo
             // 
-            this.dtpOrderDateTo.Location = new System.Drawing.Point(281, 74);
+            this.dtpOrderDateTo.Location = new System.Drawing.Point(727, 32);
             this.dtpOrderDateTo.Name = "dtpOrderDateTo";
-            this.dtpOrderDateTo.Size = new System.Drawing.Size(176, 22);
+            this.dtpOrderDateTo.Size = new System.Drawing.Size(134, 22);
             this.dtpOrderDateTo.TabIndex = 25;
             this.dtpOrderDateTo.ValueChanged += new System.EventHandler(this.DtpOrderDateTo_ValueChanged);
             // 
             // lblOrderDate
             // 
             this.lblOrderDate.AutoSize = true;
-            this.lblOrderDate.Location = new System.Drawing.Point(9, 80);
+            this.lblOrderDate.Location = new System.Drawing.Point(498, 38);
             this.lblOrderDate.Name = "lblOrderDate";
             this.lblOrderDate.Size = new System.Drawing.Size(62, 12);
             this.lblOrderDate.TabIndex = 24;
@@ -188,9 +188,9 @@
             // 
             // dtpOrderDateFrom
             // 
-            this.dtpOrderDateFrom.Location = new System.Drawing.Point(77, 74);
+            this.dtpOrderDateFrom.Location = new System.Drawing.Point(566, 32);
             this.dtpOrderDateFrom.Name = "dtpOrderDateFrom";
-            this.dtpOrderDateFrom.Size = new System.Drawing.Size(176, 22);
+            this.dtpOrderDateFrom.Size = new System.Drawing.Size(133, 22);
             this.dtpOrderDateFrom.TabIndex = 23;
             this.dtpOrderDateFrom.ValueChanged += new System.EventHandler(this.DtpOrderDateFrom_ValueChanged);
             // 
