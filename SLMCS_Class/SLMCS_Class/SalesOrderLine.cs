@@ -29,6 +29,10 @@ namespace SLMCS_Class
         public SalesOrderLine(SalesOrder saleOrder, Product product, int quantity, double productPrice)
         {
             _salesOrder = saleOrder;
+            this.productName = product.ProductName;
+            this.productUnit = product.ProductUnit;
+            this.productID = product.ProductID;
+            this.salesOrderID = saleOrder.SalesOrderID;
             this.product = product;
             this.quantity = quantity;
             this.productPrice = productPrice;
