@@ -56,14 +56,14 @@ namespace SLMCS_ERP.UI.Management
                 MessageBox.Show("Please input vendor name");
                 return false;
             }
-            if (lblVendorPhoneNo.Text == "")
+            if (lblVendorPhoneNo.Text == ""|| lblVendorPhoneNo.Text.Length!=11)
             {
                 MessageBox.Show("Please input vendor phone no");
                 return false;
             }
             if (txtVendorAddress.Text == "")
             {
-                MessageBox.Show("Please input vendor address");
+                MessageBox.Show("Please input valid vendor address");
                 return false;
             }
             return false;

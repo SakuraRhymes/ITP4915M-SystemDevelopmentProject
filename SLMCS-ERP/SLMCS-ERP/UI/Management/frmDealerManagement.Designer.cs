@@ -92,7 +92,8 @@
             // 
             // txtDealerID
             // 
-            this.txtDealerID.Location = new System.Drawing.Point(119, 36);
+            this.txtDealerID.Location = new System.Drawing.Point(118, 29);
+            this.txtDealerID.MaxLength = 8;
             this.txtDealerID.Name = "txtDealerID";
             this.txtDealerID.Size = new System.Drawing.Size(164, 23);
             this.txtDealerID.TabIndex = 6;

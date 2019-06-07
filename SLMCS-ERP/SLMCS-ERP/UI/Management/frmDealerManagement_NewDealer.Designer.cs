@@ -80,6 +80,7 @@
             // 
             this.txtDealerPhoneNo.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtDealerPhoneNo.Location = new System.Drawing.Point(186, 122);
+            this.txtDealerPhoneNo.MaxLength = 11;
             this.txtDealerPhoneNo.Name = "txtDealerPhoneNo";
             this.txtDealerPhoneNo.Size = new System.Drawing.Size(168, 23);
             this.txtDealerPhoneNo.TabIndex = 27;
@@ -118,6 +119,7 @@
             // 
             this.txtDealerShippingAddress.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtDealerShippingAddress.Location = new System.Drawing.Point(186, 268);
+            this.txtDealerShippingAddress.MaxLength = 80;
             this.txtDealerShippingAddress.Name = "txtDealerShippingAddress";
             this.txtDealerShippingAddress.Size = new System.Drawing.Size(168, 70);
             this.txtDealerShippingAddress.TabIndex = 32;
@@ -127,6 +129,7 @@
             // 
             this.txtDealerInvoiceAddress.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtDealerInvoiceAddress.Location = new System.Drawing.Point(186, 171);
+            this.txtDealerInvoiceAddress.MaxLength = 80;
             this.txtDealerInvoiceAddress.Name = "txtDealerInvoiceAddress";
             this.txtDealerInvoiceAddress.Size = new System.Drawing.Size(168, 70);
             this.txtDealerInvoiceAddress.TabIndex = 33;
@@ -146,6 +149,7 @@
             // 
             this.txtDealerName.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.txtDealerName.Location = new System.Drawing.Point(186, 73);
+            this.txtDealerName.MaxLength = 50;
             this.txtDealerName.Name = "txtDealerName";
             this.txtDealerName.Size = new System.Drawing.Size(168, 23);
             this.txtDealerName.TabIndex = 29;

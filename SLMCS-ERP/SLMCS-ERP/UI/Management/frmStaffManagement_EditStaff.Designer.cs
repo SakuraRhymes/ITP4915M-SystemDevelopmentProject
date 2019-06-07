@@ -72,8 +72,9 @@
             // 
             // txtStaffPassword
             // 
-            this.txtStaffPassword.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtStaffPassword.Location = new System.Drawing.Point(144, 183);
+            this.txtStaffPassword.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtStaffPassword.Location = new System.Drawing.Point(167, 210);
+            this.txtStaffPassword.MaxLength = 30;
             this.txtStaffPassword.Name = "txtStaffPassword";
             this.txtStaffPassword.Size = new System.Drawing.Size(168, 23);
             this.txtStaffPassword.TabIndex = 83;
@@ -181,9 +182,58 @@
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label7.Location = new System.Drawing.Point(80, 36);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 17);
-            this.label7.TabIndex = 86;
+            this.label7.Size = new System.Drawing.Size(17, 12);
+            this.label7.TabIndex = 71;
             this.label7.Text = "Staff ID :";
+            // 
+            // txtStaffID
+            // 
+            this.txtStaffID.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtStaffID.Location = new System.Drawing.Point(167, 45);
+            this.txtStaffID.Name = "txtStaffID";
+            this.txtStaffID.ReadOnly = true;
+            this.txtStaffID.Size = new System.Drawing.Size(168, 23);
+            this.txtStaffID.TabIndex = 70;
+            // 
+            // txtStaffName
+            // 
+            this.txtStaffName.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtStaffName.Location = new System.Drawing.Point(167, 100);
+            this.txtStaffName.MaxLength = 50;
+            this.txtStaffName.Name = "txtStaffName";
+            this.txtStaffName.Size = new System.Drawing.Size(168, 23);
+            this.txtStaffName.TabIndex = 69;
+            // 
+            // txtStaffPhoneNo
+            // 
+            this.txtStaffPhoneNo.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtStaffPhoneNo.Location = new System.Drawing.Point(167, 155);
+            this.txtStaffPhoneNo.MaxLength = 11;
+            this.txtStaffPhoneNo.Name = "txtStaffPhoneNo";
+            this.txtStaffPhoneNo.Size = new System.Drawing.Size(168, 23);
+            this.txtStaffPhoneNo.TabIndex = 68;
+            // 
+            // btnReset
+            // 
+            this.btnReset.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnReset.Location = new System.Drawing.Point(119, 373);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(100, 30);
+            this.btnReset.TabIndex = 67;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.BtnCancel_Click);
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnSubmit.Location = new System.Drawing.Point(235, 373);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(100, 30);
+            this.btnSubmit.TabIndex = 66;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
             // 
             // frmStaffManagement_EditStaff
             // 

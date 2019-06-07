@@ -57,9 +57,9 @@ namespace SLMCS_ERP.UI.Management
                 MessageBox.Show("Please input dealer name");
                 return false;
             }
-            if (lblDealerPhoneNo.Text == "")
+            if (lblDealerPhoneNo.Text == ""|| lblDealerPhoneNo.Text.Length!=11)
             {
-                MessageBox.Show("Please input dealer phone no");
+                MessageBox.Show("Please input valid dealer phone no");
                 return false;
             }
             if (txtDealerInvoiceAddress.Text == "")

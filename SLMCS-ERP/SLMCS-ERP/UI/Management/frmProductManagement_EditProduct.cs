@@ -47,9 +47,18 @@ namespace SLMCS_ERP.UI.Management
 
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
-            product.UpdateProductDetail(lblProductIDData.Text, lblProductTypeData.Text, txtProductName.Text, rtbProductDesc.Text, cboProductUnit.Text, txtProductPrice.Text, txtActualQty.Text, txtReorderLevel.Text, txtDangerLevel.Text, (ckbProductStatus.Checked? "Available": "UnAvailable"));
-            string successfulMessage = "Product ID:" + lblProductIDData.Text + " has been updated";
-            MessageBox.Show(successfulMessage);
+            try
+            {
+                if (CheckInputFieldIsValid())
+                {
+                    product.UpdateProductDetail(lblProductIDData.Text, lblProductTypeData.Text, txtProductName.Text, rtbProductDesc.Text, cboProductUnit.Text, txtProductPrice.Text, txtActualQty.Text, txtReorderLevel.Text, txtDangerLevel.Text, (ckbProductStatus.Checked? "Available": "UnAvailable"));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            MessageBox.Show("Product ID:" + lblProductIDData.Text + " has been updated");
             this.Close();
         }
 
@@ -84,6 +93,31 @@ namespace SLMCS_ERP.UI.Management
             {
                 e.Handled = true;
             }
+        }
+        private bool CheckInputFieldIsValid()
+        {
+
+            if (txtProductName.Text != "" && txtProductPrice.Text != "")
+            {
+                //int productPrice = Convert.ToInt32(txtProductPrice.Text);
+                //if (productPrice >= 0)
+                //{
+                return true;
+                //}
+                //MessageBox.Show("Product Price should be more than or equal to 0");
+                //return false;
+            }
+            if (txtProductName.Text == "")
+            {
+                MessageBox.Show("Please input product name");
+                return false;
+            }
+            if (txtProductPrice.Text == "")
+            {
+                MessageBox.Show("Please input product price");
+                return false;
+            }
+            return false;
         }
     }
 }

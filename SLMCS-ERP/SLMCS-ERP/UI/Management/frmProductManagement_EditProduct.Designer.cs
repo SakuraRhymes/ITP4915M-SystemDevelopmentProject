@@ -65,7 +65,8 @@
             // txtDangerLevel
             // 
             this.txtDangerLevel.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtDangerLevel.Location = new System.Drawing.Point(148, 327);
+            this.txtDangerLevel.Location = new System.Drawing.Point(127, 286);
+            this.txtDangerLevel.MaxLength = 10;
             this.txtDangerLevel.Name = "txtDangerLevel";
             this.txtDangerLevel.Size = new System.Drawing.Size(155, 23);
             this.txtDangerLevel.TabIndex = 40;
@@ -93,7 +94,8 @@
             // rtbProductDesc
             // 
             this.rtbProductDesc.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rtbProductDesc.Location = new System.Drawing.Point(148, 106);
+            this.rtbProductDesc.Location = new System.Drawing.Point(127, 101);
+            this.rtbProductDesc.MaxLength = 100;
             this.rtbProductDesc.Name = "rtbProductDesc";
             this.rtbProductDesc.Size = new System.Drawing.Size(219, 83);
             this.rtbProductDesc.TabIndex = 37;
@@ -115,7 +117,8 @@
             // txtReorderLevel
             // 
             this.txtReorderLevel.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtReorderLevel.Location = new System.Drawing.Point(148, 294);
+            this.txtReorderLevel.Location = new System.Drawing.Point(127, 258);
+            this.txtReorderLevel.MaxLength = 10;
             this.txtReorderLevel.Name = "txtReorderLevel";
             this.txtReorderLevel.Size = new System.Drawing.Size(155, 23);
             this.txtReorderLevel.TabIndex = 35;
@@ -123,7 +126,8 @@
             // txtActualQty
             // 
             this.txtActualQty.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtActualQty.Location = new System.Drawing.Point(148, 261);
+            this.txtActualQty.Location = new System.Drawing.Point(127, 230);
+            this.txtActualQty.MaxLength = 10;
             this.txtActualQty.Name = "txtActualQty";
             this.txtActualQty.Size = new System.Drawing.Size(155, 23);
             this.txtActualQty.TabIndex = 34;
@@ -131,7 +135,8 @@
             // txtProductPrice
             // 
             this.txtProductPrice.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtProductPrice.Location = new System.Drawing.Point(148, 230);
+            this.txtProductPrice.Location = new System.Drawing.Point(127, 204);
+            this.txtProductPrice.MaxLength = 10;
             this.txtProductPrice.Name = "txtProductPrice";
             this.txtProductPrice.Size = new System.Drawing.Size(155, 23);
             this.txtProductPrice.TabIndex = 33;
@@ -139,7 +144,8 @@
             // txtProductName
             // 
             this.txtProductName.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtProductName.Location = new System.Drawing.Point(148, 74);
+            this.txtProductName.Location = new System.Drawing.Point(127, 73);
+            this.txtProductName.MaxLength = 50;
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(219, 23);
             this.txtProductName.TabIndex = 32;
