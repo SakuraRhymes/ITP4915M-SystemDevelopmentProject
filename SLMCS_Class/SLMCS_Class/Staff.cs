@@ -154,7 +154,7 @@ namespace SLMCS_Class
         //new Staff ID for creation
         public string GetNextStaffID()
         {
-                string query = "SELECT COUNT(StaffID) FROM Staff WHERE StaffID = 'S" + DateTime.Now.ToString("yy") + "%'";
+                string query = "SELECT COUNT(StaffID) FROM Staff WHERE StaffID LIKE 'S" + DateTime.Now.ToString("yy") + "%'";
                 staffTable = dbConnection.GetDataTable(query);
 
                 string count = "";
