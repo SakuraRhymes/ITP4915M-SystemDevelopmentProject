@@ -20,16 +20,16 @@ namespace SLMCS_ERP
             form.Show();
         }
 
-        private void DispatchingList_Click(object sender, EventArgs e)
+        private void BtnDispatchOrder_Click(object sender, EventArgs e)
         {
             frmDispatchingList dispatchList = new frmDispatchingList();
             navigation(dispatchList, panelContent);
         }
 
-        private void BtnDispatchedHistory_Click(object sender, EventArgs e)
+        private void BtnDispatchedRecord_Click(object sender, EventArgs e)
         {
-            frmDispatchedHistory dispatchedHistory = new frmDispatchedHistory();
-            navigation(dispatchedHistory, panelContent);
+            frmDispatchedRecord dispatchedRecord = new frmDispatchedRecord();
+            navigation(dispatchedRecord, panelContent);
         }
 
         private void BtnGoodsRecevie_Click(object sender, EventArgs e)
@@ -38,10 +38,12 @@ namespace SLMCS_ERP
             navigation(goodsReceiveList, panelContent);
         }
 
-        private void BtnGoodsReceivedHistory_Click(object sender, EventArgs e)
+        private void BtnGoodsReceivedRecord_Click(object sender, EventArgs e)
         {
-            frmGoodsReceivedHistory goodsReceivedHistory = new frmGoodsReceivedHistory();
-            navigation(goodsReceivedHistory, panelContent);
+            frmGoodsReceivedRecord goodsReceivedRecord = new frmGoodsReceivedRecord();
+            navigation(goodsReceivedRecord, panelContent);
         }
+
+        
     }
 }

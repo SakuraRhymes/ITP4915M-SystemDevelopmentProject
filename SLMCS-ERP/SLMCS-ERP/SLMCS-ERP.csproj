@@ -56,6 +56,12 @@
     <Compile Include="UI\Dispatch\frmDispatchedHistory.Designer.cs">
       <DependentUpon>frmDispatchedHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Dispatch\frmDispatchedRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dispatch\frmDispatchedRecord.Designer.cs">
+      <DependentUpon>frmDispatchedRecord.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Dispatch\frmDispatchingList .cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,11 +86,11 @@
     <Compile Include="UI\Dispatch\frmGenerateDID.Designer.cs">
       <DependentUpon>frmGenerateDID.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Dispatch\frmGoodsReceivedHistory.cs">
+    <Compile Include="UI\Dispatch\frmGoodsReceivedRecord.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Dispatch\frmGoodsReceivedHistory.Designer.cs">
-      <DependentUpon>frmGoodsReceivedHistory.cs</DependentUpon>
+    <Compile Include="UI\Dispatch\frmGoodsReceivedRecord.Designer.cs">
+      <DependentUpon>frmGoodsReceivedRecord.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Dispatch\frmGoodsReceiveList.cs">
       <SubType>Form</SubType>
@@ -280,8 +286,8 @@
     <EmbeddedResource Include="UI\Dispatch\frmGenerateDID.resx">
       <DependentUpon>frmGenerateDID.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Dispatch\frmGoodsReceivedHistory.resx">
-      <DependentUpon>frmGoodsReceivedHistory.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Dispatch\frmGoodsReceivedRecord.resx">
+      <DependentUpon>frmGoodsReceivedRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Dispatch\frmGoodsReceiveList.resx">
       <DependentUpon>frmGoodsReceiveList.cs</DependentUpon>

@@ -1,6 +1,6 @@
-﻿namespace SLMCS_ERP
+﻿namespace SLMCS_ERP.UI.Dispatch
 {
-    partial class frmGoodsReceivedHistory
+    partial class frmGoodsReceivedRecord
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dgvGoodsReceivedList = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtpOrderDateTo = new System.Windows.Forms.DateTimePicker();
+            this.lblOrderDate = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblDStaffIDData = new System.Windows.Forms.Label();
             this.lblDEditDateData = new System.Windows.Forms.Label();
             this.lblDOrderDateData = new System.Windows.Forms.Label();
@@ -39,24 +44,82 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dgvReceivedOrderLine = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpOrderDateFrom = new System.Windows.Forms.DateTimePicker();
             this.txtStaffID = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtOrderID = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.lblReorderOrderID = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvGoodsReceivedList = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dtpOrderDateTo = new System.Windows.Forms.DateTimePicker();
-            this.lblOrderDate = new System.Windows.Forms.Label();
-            this.dtpOrderDateFrom = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReceivedOrderLine)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtpReceivedDateTo = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtpReceivedDateFrom = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGoodsReceivedList)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReceivedOrderLine)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // dgvGoodsReceivedList
+            // 
+            this.dgvGoodsReceivedList.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvGoodsReceivedList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGoodsReceivedList.Location = new System.Drawing.Point(12, 249);
+            this.dgvGoodsReceivedList.Name = "dgvGoodsReceivedList";
+            this.dgvGoodsReceivedList.RowTemplate.Height = 24;
+            this.dgvGoodsReceivedList.Size = new System.Drawing.Size(464, 293);
+            this.dgvGoodsReceivedList.TabIndex = 13;
+            this.dgvGoodsReceivedList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGoodsReceivedList_CellClick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label2.Location = new System.Drawing.Point(275, 102);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(16, 19);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "-";
+            // 
+            // dtpOrderDateTo
+            // 
+            this.dtpOrderDateTo.Location = new System.Drawing.Point(297, 100);
+            this.dtpOrderDateTo.Name = "dtpOrderDateTo";
+            this.dtpOrderDateTo.Size = new System.Drawing.Size(134, 23);
+            this.dtpOrderDateTo.TabIndex = 29;
+            this.dtpOrderDateTo.ValueChanged += new System.EventHandler(this.DtpOrderDateTo_ValueChanged);
+            // 
+            // lblOrderDate
+            // 
+            this.lblOrderDate.AutoSize = true;
+            this.lblOrderDate.Location = new System.Drawing.Point(50, 105);
+            this.lblOrderDate.Name = "lblOrderDate";
+            this.lblOrderDate.Size = new System.Drawing.Size(77, 16);
+            this.lblOrderDate.TabIndex = 28;
+            this.lblOrderDate.Text = "Order Date :";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lblDStaffIDData);
+            this.groupBox2.Controls.Add(this.lblDEditDateData);
+            this.groupBox2.Controls.Add(this.lblDOrderDateData);
+            this.groupBox2.Controls.Add(this.lblDReceivedDateData);
+            this.groupBox2.Controls.Add(this.lblDReorderOrderIDData);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.dgvReceivedOrderLine);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.groupBox2.Location = new System.Drawing.Point(498, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(493, 530);
+            this.groupBox2.TabIndex = 15;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Received Order Detail";
             // 
             // lblDStaffIDData
             // 
@@ -158,6 +221,38 @@
             this.dgvReceivedOrderLine.Size = new System.Drawing.Size(478, 400);
             this.dgvReceivedOrderLine.TabIndex = 8;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.dtpReceivedDateTo);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.dtpReceivedDateFrom);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.dtpOrderDateTo);
+            this.groupBox1.Controls.Add(this.lblOrderDate);
+            this.groupBox1.Controls.Add(this.dtpOrderDateFrom);
+            this.groupBox1.Controls.Add(this.txtStaffID);
+            this.groupBox1.Controls.Add(this.btnClear);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.txtOrderID);
+            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Controls.Add(this.lblReorderOrderID);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(464, 231);
+            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Search Condition";
+            // 
+            // dtpOrderDateFrom
+            // 
+            this.dtpOrderDateFrom.Location = new System.Drawing.Point(136, 100);
+            this.dtpOrderDateFrom.Name = "dtpOrderDateFrom";
+            this.dtpOrderDateFrom.Size = new System.Drawing.Size(133, 23);
+            this.dtpOrderDateFrom.TabIndex = 27;
+            this.dtpOrderDateFrom.ValueChanged += new System.EventHandler(this.DtpOrderDateFrom_ValueChanged);
+            // 
             // txtStaffID
             // 
             this.txtStaffID.Location = new System.Drawing.Point(136, 66);
@@ -212,113 +307,70 @@
             this.lblReorderOrderID.TabIndex = 0;
             this.lblReorderOrderID.Text = "Order ID :";
             // 
-            // groupBox2
+            // label1
             // 
-            this.groupBox2.Controls.Add(this.lblDStaffIDData);
-            this.groupBox2.Controls.Add(this.lblDEditDateData);
-            this.groupBox2.Controls.Add(this.lblDOrderDateData);
-            this.groupBox2.Controls.Add(this.lblDReceivedDateData);
-            this.groupBox2.Controls.Add(this.lblDReorderOrderIDData);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.dgvReceivedOrderLine);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox2.Location = new System.Drawing.Point(496, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(493, 530);
-            this.groupBox2.TabIndex = 12;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Received Order Detail";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Location = new System.Drawing.Point(275, 131);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(16, 19);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "-";
             // 
-            // groupBox1
+            // dtpReceivedDateTo
             // 
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.dtpOrderDateTo);
-            this.groupBox1.Controls.Add(this.lblOrderDate);
-            this.groupBox1.Controls.Add(this.dtpOrderDateFrom);
-            this.groupBox1.Controls.Add(this.txtStaffID);
-            this.groupBox1.Controls.Add(this.btnClear);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtOrderID);
-            this.groupBox1.Controls.Add(this.btnSearch);
-            this.groupBox1.Controls.Add(this.lblReorderOrderID);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox1.Location = new System.Drawing.Point(10, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(464, 231);
-            this.groupBox1.TabIndex = 11;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Search Condition";
+            this.dtpReceivedDateTo.Location = new System.Drawing.Point(297, 129);
+            this.dtpReceivedDateTo.Name = "dtpReceivedDateTo";
+            this.dtpReceivedDateTo.Size = new System.Drawing.Size(134, 23);
+            this.dtpReceivedDateTo.TabIndex = 33;
+            this.dtpReceivedDateTo.ValueChanged += new System.EventHandler(this.DtpReceivedDateTo_ValueChanged);
             // 
-            // dgvGoodsReceivedList
+            // label3
             // 
-            this.dgvGoodsReceivedList.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvGoodsReceivedList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGoodsReceivedList.Location = new System.Drawing.Point(10, 249);
-            this.dgvGoodsReceivedList.Name = "dgvGoodsReceivedList";
-            this.dgvGoodsReceivedList.RowTemplate.Height = 24;
-            this.dgvGoodsReceivedList.Size = new System.Drawing.Size(464, 293);
-            this.dgvGoodsReceivedList.TabIndex = 10;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(34, 134);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(96, 16);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Received Date :";
             // 
-            // label2
+            // dtpReceivedDateFrom
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(275, 102);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(16, 19);
-            this.label2.TabIndex = 30;
-            this.label2.Text = "-";
+            this.dtpReceivedDateFrom.Location = new System.Drawing.Point(136, 129);
+            this.dtpReceivedDateFrom.Name = "dtpReceivedDateFrom";
+            this.dtpReceivedDateFrom.Size = new System.Drawing.Size(133, 23);
+            this.dtpReceivedDateFrom.TabIndex = 31;
+            this.dtpReceivedDateFrom.ValueChanged += new System.EventHandler(this.DtpReceivedDateFrom_ValueChanged);
             // 
-            // dtpOrderDateTo
-            // 
-            this.dtpOrderDateTo.Location = new System.Drawing.Point(297, 100);
-            this.dtpOrderDateTo.Name = "dtpOrderDateTo";
-            this.dtpOrderDateTo.Size = new System.Drawing.Size(134, 23);
-            this.dtpOrderDateTo.TabIndex = 29;
-            // 
-            // lblOrderDate
-            // 
-            this.lblOrderDate.AutoSize = true;
-            this.lblOrderDate.Location = new System.Drawing.Point(50, 105);
-            this.lblOrderDate.Name = "lblOrderDate";
-            this.lblOrderDate.Size = new System.Drawing.Size(77, 16);
-            this.lblOrderDate.TabIndex = 28;
-            this.lblOrderDate.Text = "Order Date :";
-            // 
-            // dtpOrderDateFrom
-            // 
-            this.dtpOrderDateFrom.Location = new System.Drawing.Point(136, 100);
-            this.dtpOrderDateFrom.Name = "dtpOrderDateFrom";
-            this.dtpOrderDateFrom.Size = new System.Drawing.Size(133, 23);
-            this.dtpOrderDateFrom.TabIndex = 27;
-            // 
-            // frmGoodsReceivedHistory
+            // frmGoodsReceivedRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(999, 554);
+            this.ClientSize = new System.Drawing.Size(1002, 554);
+            this.Controls.Add(this.dgvGoodsReceivedList);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dgvGoodsReceivedList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmGoodsReceivedHistory";
-            this.Text = "frmGoodsReceivedHistory";
-            this.Load += new System.EventHandler(this.FrmGoodsReceivedHistory_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReceivedOrderLine)).EndInit();
+            this.Name = "frmGoodsReceivedRecord";
+            this.Text = "frmGoodsReceivedRecord";
+            this.Load += new System.EventHandler(this.FrmGoodsReceivedRecord_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGoodsReceivedList)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReceivedOrderLine)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGoodsReceivedList)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dgvGoodsReceivedList;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dtpOrderDateTo;
+        private System.Windows.Forms.Label lblOrderDate;
+        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblDStaffIDData;
         private System.Windows.Forms.Label lblDEditDateData;
         private System.Windows.Forms.Label lblDOrderDateData;
@@ -330,18 +382,17 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dgvReceivedOrderLine;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DateTimePicker dtpOrderDateFrom;
         private System.Windows.Forms.TextBox txtStaffID;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtOrderID;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label lblReorderOrderID;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dgvGoodsReceivedList;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dtpOrderDateTo;
-        private System.Windows.Forms.Label lblOrderDate;
-        private System.Windows.Forms.DateTimePicker dtpOrderDateFrom;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dtpReceivedDateTo;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dtpReceivedDateFrom;
     }
 }

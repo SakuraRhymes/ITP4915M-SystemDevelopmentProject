@@ -142,6 +142,18 @@ namespace SLMCS_Class
             return reorderOrderTable;
         }
 
+        public DataTable GetReceivedOrderHistoryTable(string condition)
+        {
+            string query = "SELECT ReorderOrderID,StaffID,ReorderOrderDate,ReorderOrderReceivedDate FROM ReorderOrder WHERE ReorderOrderStatus <> 'Canceled' " +
+                "AND ReorderOrderStatus <> 'Processing'";
+            if (condition != "")
+            {
+                query += " AND " + condition;
+            }
+            reorderOrderTable = dbConnection.GetDataTable(query);
+            return reorderOrderTable;
+        }
+
         public DataTable GetOrderedOrderTable(string condition)
         {
             string query = "SELECT ReorderOrderID,StaffID,ReorderOrderDate,ReorderOrderStatus FROM ReorderOrder WHERE ReorderOrderStatus = 'Processing' ";
