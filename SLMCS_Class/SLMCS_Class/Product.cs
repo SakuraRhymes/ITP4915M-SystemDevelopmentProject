@@ -212,7 +212,6 @@ namespace SLMCS_Class
             string queryString = "UPDATE Product SET ProductType='{0}', ProductName='{1}', ProductDescription='{2}' ,ProductUnit='{3}', ProductPrice='{4}', ActualQuantity='{5}', ReorderLevel='{6}', DangerLevel='{7}', ProductStatus='{8}' WHERE ProductID='{9}'";
 
             string query = string.Format(queryString, productType, productName, productDesc, productUnit, productPrice, actualQuantity, reorderLevel, dangerLevel, productStatus, productID);
-            MessageBox.Show(query);
             dbConnection.Update(query);
         }
 

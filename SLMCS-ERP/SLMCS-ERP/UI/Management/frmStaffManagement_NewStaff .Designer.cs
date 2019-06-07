@@ -46,7 +46,7 @@
             // 
             // txtStaffID
             // 
-            this.txtStaffID.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtStaffID.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtStaffID.Location = new System.Drawing.Point(145, 34);
             this.txtStaffID.Name = "txtStaffID";
             this.txtStaffID.ReadOnly = true;
@@ -56,7 +56,7 @@
             // txtStaffName
             // 
             this.txtStaffName.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtStaffName.Location = new System.Drawing.Point(167, 87);
+            this.txtStaffName.Location = new System.Drawing.Point(145, 86);
             this.txtStaffName.MaxLength = 50;
             this.txtStaffName.Name = "txtStaffName";
             this.txtStaffName.Size = new System.Drawing.Size(168, 23);
@@ -65,7 +65,7 @@
             // txtStaffPhoneNo
             // 
             this.txtStaffPhoneNo.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtStaffPhoneNo.Location = new System.Drawing.Point(167, 142);
+            this.txtStaffPhoneNo.Location = new System.Drawing.Point(145, 137);
             this.txtStaffPhoneNo.MaxLength = 11;
             this.txtStaffPhoneNo.Name = "txtStaffPhoneNo";
             this.txtStaffPhoneNo.Size = new System.Drawing.Size(168, 23);
@@ -73,7 +73,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnReset.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnReset.Location = new System.Drawing.Point(71, 343);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(100, 30);
@@ -84,7 +84,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnSubmit.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnSubmit.Location = new System.Drawing.Point(192, 343);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(100, 30);
@@ -96,7 +96,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label12.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label12.Location = new System.Drawing.Point(72, 287);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(67, 17);
@@ -106,7 +106,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label11.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label11.Location = new System.Drawing.Point(36, 139);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(103, 17);
@@ -116,7 +116,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label10.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label10.Location = new System.Drawing.Point(55, 239);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(84, 17);
@@ -126,7 +126,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label9.Location = new System.Drawing.Point(59, 88);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(80, 17);
@@ -136,7 +136,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label7.Location = new System.Drawing.Point(81, 37);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(58, 17);
@@ -146,8 +146,8 @@
             // ckAvailable
             // 
             this.ckAvailable.AutoSize = true;
-            this.ckAvailable.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.ckAvailable.Location = new System.Drawing.Point(145, 289);
+            this.ckAvailable.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ckAvailable.Location = new System.Drawing.Point(145, 290);
             this.ckAvailable.Name = "ckAvailable";
             this.ckAvailable.Size = new System.Drawing.Size(15, 14);
             this.ckAvailable.TabIndex = 62;
@@ -155,7 +155,7 @@
             // 
             // cbStaffDepartment
             // 
-            this.cbStaffDepartment.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cbStaffDepartment.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cbStaffDepartment.FormattingEnabled = true;
             this.cbStaffDepartment.Items.AddRange(new object[] {
             "SA",
@@ -172,7 +172,7 @@
             // txtStaffPassword
             // 
             this.txtStaffPassword.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtStaffPassword.Location = new System.Drawing.Point(167, 197);
+            this.txtStaffPassword.Location = new System.Drawing.Point(145, 185);
             this.txtStaffPassword.MaxLength = 7;
             this.txtStaffPassword.Name = "txtStaffPassword";
             this.txtStaffPassword.Size = new System.Drawing.Size(168, 23);
@@ -181,7 +181,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label8.Location = new System.Drawing.Point(68, 187);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(71, 17);
