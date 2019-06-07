@@ -250,11 +250,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(49, 358);
+            this.label1.Location = new System.Drawing.Point(78, 358);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 16);
+            this.label1.Size = new System.Drawing.Size(66, 16);
             this.label1.TabIndex = 43;
-            this.label1.Text = "Product Status :";
+            this.label1.Text = "Available :";
             // 
             // ckbProductStatus
             // 
