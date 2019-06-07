@@ -44,30 +44,30 @@
             // lblCompanyName
             // 
             this.lblCompanyName.AutoSize = true;
-            this.lblCompanyName.Font = new System.Drawing.Font("PMingLiU", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblCompanyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblCompanyName.Location = new System.Drawing.Point(12, 7);
             this.lblCompanyName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCompanyName.Name = "lblCompanyName";
-            this.lblCompanyName.Size = new System.Drawing.Size(366, 24);
+            this.lblCompanyName.Size = new System.Drawing.Size(405, 29);
             this.lblCompanyName.TabIndex = 0;
             this.lblCompanyName.Text = "Smart And Luxury Motor Company";
             // 
             // lblHeader
             // 
             this.lblHeader.AutoSize = true;
-            this.lblHeader.Font = new System.Drawing.Font("PMingLiU", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(135)));
-            this.lblHeader.Location = new System.Drawing.Point(71, 51);
+            this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(135)));
+            this.lblHeader.Location = new System.Drawing.Point(99, 53);
             this.lblHeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(239, 22);
+            this.lblHeader.Size = new System.Drawing.Size(234, 24);
             this.lblHeader.TabIndex = 1;
             this.lblHeader.Text = "Despatch Instruction Cover";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
-            this.label3.Location = new System.Drawing.Point(16, 142);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
+            this.label3.Location = new System.Drawing.Point(82, 148);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(142, 21);
@@ -77,8 +77,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
-            this.label4.Location = new System.Drawing.Point(20, 202);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
+            this.label4.Location = new System.Drawing.Point(86, 208);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(136, 21);
@@ -88,8 +88,8 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
-            this.label5.Location = new System.Drawing.Point(74, 258);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
+            this.label5.Location = new System.Drawing.Point(140, 264);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 21);
@@ -99,8 +99,8 @@
             // lblPageNum
             // 
             this.lblPageNum.AutoSize = true;
-            this.lblPageNum.Font = new System.Drawing.Font("PMingLiU", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
-            this.lblPageNum.Location = new System.Drawing.Point(175, 336);
+            this.lblPageNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
+            this.lblPageNum.Location = new System.Drawing.Point(201, 335);
             this.lblPageNum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPageNum.Name = "lblPageNum";
             this.lblPageNum.Size = new System.Drawing.Size(23, 25);
@@ -110,8 +110,8 @@
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
-            this.lblDate.Location = new System.Drawing.Point(234, 99);
+            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
+            this.lblDate.Location = new System.Drawing.Point(167, 99);
             this.lblDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(48, 21);
@@ -121,8 +121,8 @@
             // lblSalesOrderIDData
             // 
             this.lblSalesOrderIDData.AutoSize = true;
-            this.lblSalesOrderIDData.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
-            this.lblSalesOrderIDData.Location = new System.Drawing.Point(159, 142);
+            this.lblSalesOrderIDData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
+            this.lblSalesOrderIDData.Location = new System.Drawing.Point(225, 148);
             this.lblSalesOrderIDData.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSalesOrderIDData.Name = "lblSalesOrderIDData";
             this.lblSalesOrderIDData.Size = new System.Drawing.Size(43, 21);
@@ -132,8 +132,8 @@
             // lblSalesOrderDateData
             // 
             this.lblSalesOrderDateData.AutoSize = true;
-            this.lblSalesOrderDateData.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
-            this.lblSalesOrderDateData.Location = new System.Drawing.Point(159, 202);
+            this.lblSalesOrderDateData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
+            this.lblSalesOrderDateData.Location = new System.Drawing.Point(225, 208);
             this.lblSalesOrderDateData.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSalesOrderDateData.Name = "lblSalesOrderDateData";
             this.lblSalesOrderDateData.Size = new System.Drawing.Size(43, 21);
@@ -144,8 +144,8 @@
             // 
             this.lblDealerIDData.AutoSize = true;
             this.lblDealerIDData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblDealerIDData.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
-            this.lblDealerIDData.Location = new System.Drawing.Point(159, 258);
+            this.lblDealerIDData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
+            this.lblDealerIDData.Location = new System.Drawing.Point(225, 264);
             this.lblDealerIDData.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDealerIDData.Name = "lblDealerIDData";
             this.lblDealerIDData.Size = new System.Drawing.Size(43, 21);
@@ -155,8 +155,8 @@
             // lblDateData
             // 
             this.lblDateData.AutoSize = true;
-            this.lblDateData.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
-            this.lblDateData.Location = new System.Drawing.Point(280, 99);
+            this.lblDateData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(130)));
+            this.lblDateData.Location = new System.Drawing.Point(213, 99);
             this.lblDateData.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDateData.Name = "lblDateData";
             this.lblDateData.Size = new System.Drawing.Size(43, 21);
@@ -168,7 +168,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(380, 369);
+            this.ClientSize = new System.Drawing.Size(435, 369);
             this.Controls.Add(this.lblDateData);
             this.Controls.Add(this.lblDealerIDData);
             this.Controls.Add(this.lblSalesOrderDateData);
@@ -182,9 +182,10 @@
             this.Controls.Add(this.lblCompanyName);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmGenerateDIC";
-            this.Text = "frmGenerateDIC";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Despatch Instruction Cover";
             this.Load += new System.EventHandler(this.FrmGenerateDIC_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

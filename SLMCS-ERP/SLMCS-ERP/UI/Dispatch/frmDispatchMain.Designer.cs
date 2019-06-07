@@ -39,6 +39,7 @@
             // 
             // panelContent
             // 
+            this.panelContent.BackColor = System.Drawing.Color.White;
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(150, 0);
             this.panelContent.Name = "panelContent";
@@ -48,6 +49,8 @@
             // panelLeftNavigate
             // 
             this.panelLeftNavigate.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panelLeftNavigate.BackgroundImage = global::SLMCS_ERP.Properties.Resources.bg_color;
+            this.panelLeftNavigate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelLeftNavigate.Controls.Add(this.btnGoodsReceivedRecord);
             this.panelLeftNavigate.Controls.Add(this.btnDispatchedRecord);
             this.panelLeftNavigate.Controls.Add(this.btnGoodsRecevie);
@@ -61,48 +64,56 @@
             // 
             // btnGoodsReceivedRecord
             // 
-            this.btnGoodsReceivedRecord.Location = new System.Drawing.Point(27, 251);
+            this.btnGoodsReceivedRecord.BackColor = System.Drawing.Color.White;
+            this.btnGoodsReceivedRecord.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnGoodsReceivedRecord.Location = new System.Drawing.Point(14, 247);
             this.btnGoodsReceivedRecord.Margin = new System.Windows.Forms.Padding(2);
             this.btnGoodsReceivedRecord.Name = "btnGoodsReceivedRecord";
-            this.btnGoodsReceivedRecord.Size = new System.Drawing.Size(97, 43);
+            this.btnGoodsReceivedRecord.Size = new System.Drawing.Size(120, 50);
             this.btnGoodsReceivedRecord.TabIndex = 3;
             this.btnGoodsReceivedRecord.Text = "Goods Received Record";
-            this.btnGoodsReceivedRecord.UseVisualStyleBackColor = true;
+            this.btnGoodsReceivedRecord.UseVisualStyleBackColor = false;
             this.btnGoodsReceivedRecord.Click += new System.EventHandler(this.BtnGoodsReceivedRecord_Click);
             // 
             // btnDispatchedRecord
             // 
-            this.btnDispatchedRecord.Location = new System.Drawing.Point(27, 99);
+            this.btnDispatchedRecord.BackColor = System.Drawing.Color.White;
+            this.btnDispatchedRecord.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnDispatchedRecord.Location = new System.Drawing.Point(14, 97);
             this.btnDispatchedRecord.Margin = new System.Windows.Forms.Padding(2);
             this.btnDispatchedRecord.Name = "btnDispatchedRecord";
-            this.btnDispatchedRecord.Size = new System.Drawing.Size(97, 43);
+            this.btnDispatchedRecord.Size = new System.Drawing.Size(120, 50);
             this.btnDispatchedRecord.TabIndex = 2;
             this.btnDispatchedRecord.Text = "Dispatched Order Record";
-            this.btnDispatchedRecord.UseVisualStyleBackColor = true;
+            this.btnDispatchedRecord.UseVisualStyleBackColor = false;
             this.btnDispatchedRecord.Click += new System.EventHandler(this.BtnDispatchedRecord_Click);
             // 
             // btnGoodsRecevie
             // 
-            this.btnGoodsRecevie.Location = new System.Drawing.Point(27, 180);
+            this.btnGoodsRecevie.BackColor = System.Drawing.Color.White;
+            this.btnGoodsRecevie.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnGoodsRecevie.Location = new System.Drawing.Point(14, 174);
             this.btnGoodsRecevie.Margin = new System.Windows.Forms.Padding(2);
             this.btnGoodsRecevie.Name = "btnGoodsRecevie";
-            this.btnGoodsRecevie.Size = new System.Drawing.Size(97, 43);
+            this.btnGoodsRecevie.Size = new System.Drawing.Size(120, 50);
             this.btnGoodsRecevie.TabIndex = 1;
             this.btnGoodsRecevie.Text = "Goods Receive";
-            this.btnGoodsRecevie.UseVisualStyleBackColor = true;
+            this.btnGoodsRecevie.UseVisualStyleBackColor = false;
             this.btnGoodsRecevie.Click += new System.EventHandler(this.BtnGoodsRecevie_Click);
             // 
             // btnDispatchOrder
             // 
+            this.btnDispatchOrder.BackColor = System.Drawing.Color.White;
             this.btnDispatchOrder.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnDispatchOrder.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnDispatchOrder.Location = new System.Drawing.Point(27, 25);
+            this.btnDispatchOrder.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnDispatchOrder.Location = new System.Drawing.Point(14, 21);
             this.btnDispatchOrder.Margin = new System.Windows.Forms.Padding(2);
             this.btnDispatchOrder.Name = "btnDispatchOrder";
-            this.btnDispatchOrder.Size = new System.Drawing.Size(97, 43);
+            this.btnDispatchOrder.Size = new System.Drawing.Size(120, 50);
             this.btnDispatchOrder.TabIndex = 0;
             this.btnDispatchOrder.Text = "Dispatch Order";
-            this.btnDispatchOrder.UseVisualStyleBackColor = true;
+            this.btnDispatchOrder.UseVisualStyleBackColor = false;
             this.btnDispatchOrder.Click += new System.EventHandler(this.BtnDispatchOrder_Click);
             // 
             // frmDispatch

@@ -47,6 +47,8 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtDealerID = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpOrderDateTo = new System.Windows.Forms.DateTimePicker();
@@ -55,11 +57,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.dgvDispatchedOrderLine = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dgvDispatchedList = new System.Windows.Forms.DataGridView();
-            this.txtDealerID = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.lblDDealerIDData = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.dgvDispatchedList = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDispatchedOrderLine)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -184,10 +184,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label1.Location = new System.Drawing.Point(275, 159);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(16, 19);
+            this.label1.Size = new System.Drawing.Size(17, 24);
             this.label1.TabIndex = 34;
             this.label1.Text = "-";
             // 
@@ -253,6 +253,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search Condition";
             // 
+            // txtDealerID
+            // 
+            this.txtDealerID.Location = new System.Drawing.Point(136, 93);
+            this.txtDealerID.Name = "txtDealerID";
+            this.txtDealerID.Size = new System.Drawing.Size(133, 23);
+            this.txtDealerID.TabIndex = 36;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(61, 96);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(66, 16);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "Dealer ID :";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -265,10 +281,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label2.Location = new System.Drawing.Point(275, 127);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(16, 19);
+            this.label2.Size = new System.Drawing.Size(17, 24);
             this.label2.TabIndex = 30;
             this.label2.Text = "-";
             // 
@@ -339,33 +355,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dispatched Order Detail";
             // 
-            // dgvDispatchedList
-            // 
-            this.dgvDispatchedList.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvDispatchedList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDispatchedList.Location = new System.Drawing.Point(12, 249);
-            this.dgvDispatchedList.Name = "dgvDispatchedList";
-            this.dgvDispatchedList.RowTemplate.Height = 24;
-            this.dgvDispatchedList.Size = new System.Drawing.Size(464, 293);
-            this.dgvDispatchedList.TabIndex = 16;
-            this.dgvDispatchedList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDispatchedList_CellClick);
-            // 
-            // txtDealerID
-            // 
-            this.txtDealerID.Location = new System.Drawing.Point(136, 93);
-            this.txtDealerID.Name = "txtDealerID";
-            this.txtDealerID.Size = new System.Drawing.Size(133, 23);
-            this.txtDealerID.TabIndex = 36;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(61, 96);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 16);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Dealer ID :";
-            // 
             // lblDDealerIDData
             // 
             this.lblDDealerIDData.AutoSize = true;
@@ -384,11 +373,23 @@
             this.label12.TabIndex = 34;
             this.label12.Text = "Dealer ID :";
             // 
+            // dgvDispatchedList
+            // 
+            this.dgvDispatchedList.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvDispatchedList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDispatchedList.Location = new System.Drawing.Point(12, 249);
+            this.dgvDispatchedList.Name = "dgvDispatchedList";
+            this.dgvDispatchedList.RowTemplate.Height = 24;
+            this.dgvDispatchedList.Size = new System.Drawing.Size(464, 293);
+            this.dgvDispatchedList.TabIndex = 16;
+            this.dgvDispatchedList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDispatchedList_CellClick);
+            // 
             // frmDispatchedRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1002, 555);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1036, 566);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgvDispatchedList);
