@@ -23,7 +23,7 @@ namespace SLMCS_ERP
 
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
-            dgvReceivedOrderRecord.DataSource = reorderOrder.GetReceivedReorderOrderTable();
+            dgvReceivedOrderRecord.DataSource = reorderOrder.GetReceivedReorderOrderTable("");
             DGVReceivedOrderRecordFormatSetting();
         }
 
