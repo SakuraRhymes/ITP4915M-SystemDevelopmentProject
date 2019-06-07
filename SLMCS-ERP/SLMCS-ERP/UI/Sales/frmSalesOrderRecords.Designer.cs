@@ -88,6 +88,7 @@
             this.txtSearchCondition.Name = "txtSearchCondition";
             this.txtSearchCondition.Size = new System.Drawing.Size(170, 23);
             this.txtSearchCondition.TabIndex = 2;
+            this.txtSearchCondition.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtSearchCondition_KeyDown);
             // 
             // btnSearch
             // 

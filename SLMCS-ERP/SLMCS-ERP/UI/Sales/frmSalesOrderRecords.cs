@@ -13,17 +13,26 @@ namespace SLMCS_ERP.UI.Sales
 {
     public partial class frmSalesOrderRecords : Form
     {
+        SalesOrder salesOrder;
+        DataTable dt;
         string selectedSalesOrderID;
+
         public frmSalesOrderRecords()
         {
             InitializeComponent();
             setupCombobox();
+            salesOrder = new SalesOrder();
+            SearchSalesOrder();
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            SalesOrder salesOrder = new SalesOrder();
-            DataTable dt;
+            SearchSalesOrder();
+        }
+
+        private void SearchSalesOrder()
+        {
+
             if (txtSearchCondition.Text == "")
             {
                 dt = salesOrder.searchSalesOrder("");
@@ -81,7 +90,7 @@ namespace SLMCS_ERP.UI.Sales
             {
                 selectedSalesOrderID = dgvSearchResult.Rows[e.RowIndex].Cells["SalesOrderID"].Value.ToString();
             }
-            
+
         }
 
         private void DgvSearchResult_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -91,7 +100,15 @@ namespace SLMCS_ERP.UI.Sales
                 frmViewOrderRecord viewOrderRecord = new frmViewOrderRecord(selectedSalesOrderID);
                 viewOrderRecord.Show();
             }
-            
+
+        }
+
+        private void TxtSearchCondition_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SearchSalesOrder();
+            }
         }
     }
 }
