@@ -40,17 +40,22 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.lblVendorInvoiceAddress = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label3.Location = new System.Drawing.Point(80, 327);
+            this.label3.Location = new System.Drawing.Point(25, 328);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 16);
+            this.label3.Size = new System.Drawing.Size(60, 16);
             this.label3.TabIndex = 49;
-            this.label3.Text = "Available  :";
+            this.label3.Text = "Available";
             // 
             // ckVendorAvailable
             // 
@@ -74,11 +79,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(82, 40);
+            this.label1.Location = new System.Drawing.Point(25, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 16);
+            this.label1.Size = new System.Drawing.Size(68, 16);
             this.label1.TabIndex = 46;
-            this.label1.Text = "Vendor ID :";
+            this.label1.Text = "Vendor ID ";
             // 
             // txtVendorAddress
             // 
@@ -101,11 +106,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(59, 106);
+            this.label2.Location = new System.Drawing.Point(25, 107);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 16);
+            this.label2.Size = new System.Drawing.Size(88, 16);
             this.label2.TabIndex = 43;
-            this.label2.Text = "Vendor Name :";
+            this.label2.Text = "Vendor Name";
             // 
             // txtVendorPhoneNo
             // 
@@ -119,11 +124,11 @@
             // 
             this.lblVendorPhoneNo.AutoSize = true;
             this.lblVendorPhoneNo.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblVendorPhoneNo.Location = new System.Drawing.Point(37, 172);
+            this.lblVendorPhoneNo.Location = new System.Drawing.Point(25, 173);
             this.lblVendorPhoneNo.Name = "lblVendorPhoneNo";
-            this.lblVendorPhoneNo.Size = new System.Drawing.Size(116, 16);
+            this.lblVendorPhoneNo.Size = new System.Drawing.Size(110, 16);
             this.lblVendorPhoneNo.TabIndex = 41;
-            this.lblVendorPhoneNo.Text = "Vendor Phone No :";
+            this.lblVendorPhoneNo.Text = "Vendor Phone No";
             // 
             // btnReset
             // 
@@ -151,17 +156,67 @@
             // 
             this.lblVendorInvoiceAddress.AutoSize = true;
             this.lblVendorInvoiceAddress.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblVendorInvoiceAddress.Location = new System.Drawing.Point(49, 238);
+            this.lblVendorInvoiceAddress.Location = new System.Drawing.Point(25, 235);
             this.lblVendorInvoiceAddress.Name = "lblVendorInvoiceAddress";
-            this.lblVendorInvoiceAddress.Size = new System.Drawing.Size(104, 16);
+            this.lblVendorInvoiceAddress.Size = new System.Drawing.Size(98, 16);
             this.lblVendorInvoiceAddress.TabIndex = 38;
-            this.lblVendorInvoiceAddress.Text = "Vendor Address :";
+            this.lblVendorInvoiceAddress.Text = "Vendor Address";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(136, 330);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(8, 12);
+            this.label13.TabIndex = 54;
+            this.label13.Text = ":";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(136, 109);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(8, 12);
+            this.label14.TabIndex = 53;
+            this.label14.Text = ":";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(136, 237);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(8, 12);
+            this.label19.TabIndex = 52;
+            this.label19.Text = ":";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(136, 43);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(8, 12);
+            this.label18.TabIndex = 51;
+            this.label18.Text = ":";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(136, 175);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(8, 12);
+            this.label17.TabIndex = 50;
+            this.label17.Text = ":";
             // 
             // frmVendorManagement_EditVendor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(404, 415);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ckVendorAvailable);
             this.Controls.Add(this.txtVendorID);
@@ -196,5 +251,10 @@
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Label lblVendorInvoiceAddress;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
     }
 }
