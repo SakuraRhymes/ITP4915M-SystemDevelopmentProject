@@ -120,7 +120,7 @@ namespace SLMCS_ERP.UI.Management
 
         private void RefreshSearchResult(object sender, EventArgs e)
         {
-            
+
             dgvStockRecord.DataSource = product.GetProdcutRecordTable("");
             DGVSearchFormatSetting();
         }
@@ -130,42 +130,42 @@ namespace SLMCS_ERP.UI.Management
             string queryString = "";
             if (txtProductID.Text != "")
             {
-                queryString += "ProductID LIKE '%" + txtProductID.Text + "%'" + "/"; // '/' used to split the string
+                queryString += "ProductID LIKE '%" + txtProductID.Text + "%'" + " AND ";
             }
             if (cboProductType.Text != "")
             {
-                queryString += "ProductType LIKE '%" + cboProductType.Text + "%' " + "/";
+                queryString += "ProductType LIKE '%" + cboProductType.Text + "%' " + " AND ";
             }
             if (cboProductUnit.Text != "")
             {
-                queryString += "ProductUnit LIKE '%" + cboProductUnit.Text + "%' " + "/";
+                queryString += "ProductUnit LIKE '%" + cboProductUnit.Text + "%' " + " AND ";
             }
             if (txtProductName.Text != "")
             {
-                queryString += "ProductName LIKE '%" + txtProductName.Text + "%' " + "/";
+                queryString += "ProductName LIKE '%" + txtProductName.Text + "%' " + " AND ";
             }
             if (txtVendorID.Text != "")
             {
-                queryString += "VendorID LIKE '%" + txtVendorID.Text + "%'" + "/"; // '/' used to split the string
+                queryString += "VendorID LIKE '%" + txtVendorID.Text + "%'" + " AND ";
             }
             if (cboStockQuantity.Text != "" && txtStockQuantity.Text != "")
             {
                 switch (cboStockQuantity.Text)
                 {
                     case ">":
-                        queryString += "ActualQuantity > " + txtStockQuantity.Text + "/";
+                        queryString += "ActualQuantity > " + txtStockQuantity.Text + " AND ";
                         break;
                     case ">=":
-                        queryString += "ActualQuantity >= " + txtStockQuantity.Text + "/";
+                        queryString += "ActualQuantity >= " + txtStockQuantity.Text + " AND ";
                         break;
                     case "<":
-                        queryString += "ActualQuantity < " + txtStockQuantity.Text + "/";
+                        queryString += "ActualQuantity < " + txtStockQuantity.Text + " AND ";
                         break;
                     case "<=":
-                        queryString += "ActualQuantity <= " + txtStockQuantity.Text + "/";
+                        queryString += "ActualQuantity <= " + txtStockQuantity.Text + " AND ";
                         break;
                     case "=":
-                        queryString += "ActualQuantity = " + txtStockQuantity.Text + "/";
+                        queryString += "ActualQuantity = " + txtStockQuantity.Text + " AND ";
                         break;
                 }
             }
@@ -174,28 +174,33 @@ namespace SLMCS_ERP.UI.Management
                 switch (cboProductPrice.Text)
                 {
                     case ">":
-                        queryString += "ProductPrice > " + txtProductPrice.Text + "/";
+                        queryString += "ProductPrice > " + txtProductPrice.Text + " AND ";
                         break;
                     case ">=":
-                        queryString += "ProductPrice >= " + txtProductPrice.Text + "/";
+                        queryString += "ProductPrice >= " + txtProductPrice.Text + " AND ";
                         break;
                     case "<":
-                        queryString += "ProductPrice < " + txtProductPrice.Text + "/";
+                        queryString += "ProductPrice < " + txtProductPrice.Text + " AND ";
                         break;
                     case "<=":
-                        queryString += "ProductPrice <= " + txtProductPrice.Text + "/";
+                        queryString += "ProductPrice <= " + txtProductPrice.Text + " AND ";
                         break;
                     case "=":
-                        queryString += "ProductPrice = " + txtProductPrice.Text + "/";
+                        queryString += "ProductPrice = " + txtProductPrice.Text + " AND ";
                         break;
                 }
             }
+            if (queryString != "")
+            {
+                queryString = queryString.Remove(queryString.Length - 5);
+            }
+
             return queryString;
         }
 
         private void DGVSearchFormatSetting()
         {
-            dgvStockRecord.Rows[0].Selected = true;
+            //dgvStockRecord.Rows[0].Selected = true;
 
             dgvStockRecord.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvStockRecord.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;

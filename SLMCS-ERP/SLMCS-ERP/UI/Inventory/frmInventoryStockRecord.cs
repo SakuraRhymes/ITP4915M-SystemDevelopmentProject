@@ -108,7 +108,7 @@ namespace SLMCS_ERP
                         queryString += "ActualQuantity > " + txtStockQuantity.Text + " AND ";
                         break;
                     case ">=":
-                        queryString += "ActualQuantity >= " + txtStockQuantity.Text + "AND ";
+                        queryString += "ActualQuantity >= " + txtStockQuantity.Text + " AND ";
                         break;
                     case "<":
                         queryString += "ActualQuantity < " + txtStockQuantity.Text + " AND ";

@@ -50,6 +50,7 @@
             this.dgvVendorRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVendorRecord.Size = new System.Drawing.Size(392, 334);
             this.dgvVendorRecord.TabIndex = 5;
+            this.dgvVendorRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvVendorRecord_CellClick);
             this.dgvVendorRecord.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvVendorRecord_CellDoubleClick);
             // 
             // btnSelect

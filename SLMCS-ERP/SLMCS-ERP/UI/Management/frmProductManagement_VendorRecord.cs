@@ -63,5 +63,10 @@ namespace SLMCS_ERP.UI.Management
             productManagement_NewProduct.SetTxtVendorID(selectedVendorID);
             Close();
         }
+
+        private void DgvVendorRecord_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selectedVendorID = dgvVendorRecord.Rows[e.RowIndex].Cells["VendorID"].Value.ToString();
+        }
     }
 }
