@@ -13,6 +13,7 @@ namespace SLMCS_ERP.UI.Login
 {
     public partial class frmForgetPassword : Form
     {
+        string result;
         public frmForgetPassword()
         {
             InitializeComponent();
@@ -30,11 +31,11 @@ namespace SLMCS_ERP.UI.Login
             if(staffID != "" && staffPhone != "")
             {
                 Staff staff = new Staff(staffID);
-                string result = staff.ForgetPassword(staffPhone);
+                result = staff.ForgetPassword(staffPhone);
                 if (result != null)
                 {
-                    MessageBox.Show("Your Password is " + result);
-                    Close();
+                    frmSMSConfirm smsConfirm = new frmSMSConfirm(this);
+                    smsConfirm.Show();               
                 }
                 else
                 {
@@ -62,6 +63,21 @@ namespace SLMCS_ERP.UI.Login
             {
                 BtnRetrievePassword_Click(this, new EventArgs());
             }
+        }
+
+        private void TxtStaffID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
+        public void ConfirmSMSSuccessful()
+        {
+            MessageBox.Show("Your Password is " + result);
+            Close();
         }
     }
 }

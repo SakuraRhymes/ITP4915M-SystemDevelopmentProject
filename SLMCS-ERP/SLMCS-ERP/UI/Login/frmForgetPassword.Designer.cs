@@ -73,6 +73,7 @@
             this.label1.Size = new System.Drawing.Size(58, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Staff ID :";
+            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // label2
             // 
@@ -92,6 +93,7 @@
             this.txtStaffID.Name = "txtStaffID";
             this.txtStaffID.Size = new System.Drawing.Size(153, 23);
             this.txtStaffID.TabIndex = 0;
+            this.txtStaffID.TextChanged += new System.EventHandler(this.TxtStaffID_TextChanged);
             this.txtStaffID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtStaffID_KeyDown);
             // 
             // txtPhoneNumber

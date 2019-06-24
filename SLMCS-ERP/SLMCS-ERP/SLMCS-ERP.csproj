@@ -176,6 +176,12 @@
     <Compile Include="UI\Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Login\frmSMSConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Login\frmSMSConfirm.Designer.cs">
+      <DependentUpon>frmSMSConfirm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Management\frmVendorManagement_EditVendor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -367,6 +373,9 @@
     <EmbeddedResource Include="UI\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Login\frmSMSConfirm.resx">
+      <DependentUpon>frmSMSConfirm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Management\frmDealerManagement.resx">
       <DependentUpon>frmDealerManagement.cs</DependentUpon>
     </EmbeddedResource>
@@ -396,7 +405,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Sales\frmBrowseProduct.resx">
       <DependentUpon>frmBrowseProduct.cs</DependentUpon>
-	</EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Management\frmStaffManagement.resx">
       <DependentUpon>frmStaffManagement.cs</DependentUpon>
     </EmbeddedResource>
