@@ -21,7 +21,7 @@ namespace SLMCS_ERP.UI.Login
 
         private void BtnConfirmCode_Click(object sender, EventArgs e)
         {
-            if(txtSMSCode.Text == "123")
+            if(txtSMSCode.Text == "123456")
             {
                 Close();
                 forgetPassword.ConfirmSMSSuccessful();
