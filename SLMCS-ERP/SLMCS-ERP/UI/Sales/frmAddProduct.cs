@@ -51,43 +51,64 @@ namespace SLMCS_ERP.UI.Sales
             }
         }
 
+        public bool checkProductDuplicate(string productID)
+        {
+            if (salesOrder._SalesOrderLine != null)
+            {
+                foreach (var orderLine in salesOrder._SalesOrderLine)
+                {
+                    if (orderLine.ProductID == productID)
+                        return false;
+                }
+            }
+            return true;
+        }
+
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            if (txtOrderAmount.Text != "")
+            if (checkProductDuplicate(lblProductID.Text))
             {
-                int orderAmount = Convert.ToInt32(txtOrderAmount.Text);
-                if (orderAmount <= 0)
+                if (txtOrderAmount.Text != "")
                 {
-                    MessageBox.Show("Order Quantity Should Be Greater Than 0!");
-                }
-                else
-                {
-
-                    if (Convert.ToInt32(lblAvailability.Text) < orderAmount)
+                    int orderAmount = Convert.ToInt32(txtOrderAmount.Text);
+                    if (orderAmount <= 0)
                     {
-                        MessageBox.Show("The Product Do Not Have Enough Stock!");
-
+                        MessageBox.Show("Order Quantity Should Be Greater Than 0!");
                     }
                     else
                     {
-                        string productID = lblProductID.Text;
-                        int quantity = orderAmount;
-                        Product product = new Product(productID);
 
-                        salesOrder.addProduct(product, quantity);
+                        if (Convert.ToInt32(lblAvailability.Text) < orderAmount)
+                        {
+                            MessageBox.Show("The Product Do Not Have Enough Stock!");
 
-                        newSalesOrderPage.updateAddedOrderLine();
+                        }
+                        else
+                        {
+                            string productID = lblProductID.Text;
+                            int quantity = orderAmount;
+                            Product product = new Product(productID);
 
-                        BtnCancel_Click(this, e);
-                        MessageBox.Show("Successfully Added Product To Sales Order!");
-                        newSalesOrderPage.browseProductPage.BringToFront();
+                            salesOrder.addProduct(product, quantity);
+
+                            newSalesOrderPage.updateAddedOrderLine();
+
+                            BtnCancel_Click(this, e);
+                            MessageBox.Show("Successfully Added Product To Sales Order!");
+                            newSalesOrderPage.browseProductPage.BringToFront();
+                        }
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Please Enter Order Quantity!");
                 }
             }
             else
             {
-                MessageBox.Show("Please Enter Order Quantity!");
+                MessageBox.Show("Product has been selected!");
             }
+
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
