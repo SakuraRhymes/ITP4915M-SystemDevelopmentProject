@@ -20,9 +20,19 @@ namespace SLMCS_ERP.UI.Sales
         public frmSalesOrderRecords()
         {
             InitializeComponent();
-            setupCombobox();
+            setup();
             salesOrder = new SalesOrder();
-            SearchSalesOrder();
+            dtpClear();
+        }
+
+        private void dtpClear()
+        {
+            dtpOrderDateFrom.Text = "";
+            dtpOrderDateFrom.Format = DateTimePickerFormat.Custom;
+            dtpOrderDateFrom.CustomFormat = " ";
+            dtpOrderDateTo.Text = "";
+            dtpOrderDateTo.Format = DateTimePickerFormat.Custom;
+            dtpOrderDateTo.CustomFormat = " ";
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)
@@ -32,42 +42,55 @@ namespace SLMCS_ERP.UI.Sales
 
         private void SearchSalesOrder()
         {
+            String queryString = ProductMultiSearchString();
 
-            if (txtSearchCondition.Text == "")
-            {
-                dt = salesOrder.searchSalesOrder("");
-            }
-            else
-            {
-                string condition = "WHERE " + cboSearchType.SelectedValue.ToString() + " LIKE '%" + txtSearchCondition.Text + "%'";
-                //MessageBox.Show(condition);
-                dt = salesOrder.searchSalesOrder(condition);
-            }
+            MessageBox.Show(queryString);
+            dt = salesOrder.searchSalesOrder(queryString);
+            
             updateDGV(dt);
         }
 
-        private void setupCombobox()
+        private string ProductMultiSearchString()
         {
-            cboSearchType.DisplayMember = "Text";
-            cboSearchType.ValueMember = "Value";
+            string queryString = "WHERE SalesOrder.SalesOrderID = SalesOrderLine.SalesOrderID AND ";
+            if (txtOrderID.Text != "")
+            {
+                queryString += "SalesOrder.SalesOrderID LIKE '%" + txtOrderID.Text + "%'" + " AND ";
+            }
+            if (txtDealerID.Text != "")
+            {
+                queryString += "DealerID LIKE '%" + txtDealerID.Text + "%' " + " AND ";
+            }
+            if (txtStaffID.Text != "")
+            {
+                queryString += "StaffID LIKE '%" + txtStaffID.Text + "%' " + " AND ";
+            }
+            if (txtProductID.Text != "")
+            {
+                queryString += "ProductID LIKE '%" + txtProductID.Text + "%' " + " AND ";
+            }
+            if (cmbOrderStatus.Text != "")
+            {
+                queryString += "SalesOrderStatus LIKE '%" + cmbOrderStatus.Text + "%'" + " AND ";
+            }
+            if (dtpOrderDateFrom.Text != " " && dtpOrderDateTo.Text != " ")
+            {
+                queryString += "SalesOrderDate BETWEEN '" + dtpOrderDateFrom.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpOrderDateTo.Value.ToString("yyyy-MM-dd") + "' AND ";
+            }
+            if (queryString != "")
+            {
+                queryString = queryString.Remove(queryString.Length - 5);
+            }
+            return queryString;
+        }
 
-            var items = new[] {
-                new { Text = "Order ID", Value = "SalesOrderID" },
-                new { Text = "Order Date", Value = "SalesOrderDate" },
-                new { Text = "Order Status", Value = "SalesOrderStatus" },
-                new { Text = "Staff ID", Value = "StaffID" },
-                new { Text = "Dealer ID", Value = "DealerID" }
-                //new { Text = "Product ID", Value = "ProductID" }
-            };
-
-            cboSearchType.DataSource = items;
-
+        private void setup()
+        {
             dgvSearchResult.AllowUserToAddRows = false;
             dgvSearchResult.RowHeadersVisible = false;
             dgvSearchResult.ReadOnly = true;
             dgvSearchResult.AllowUserToResizeRows = false;
             dgvSearchResult.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
         }
 
         private void updateDGV(DataTable dt)
@@ -110,6 +133,22 @@ namespace SLMCS_ERP.UI.Sales
             {
                 SearchSalesOrder();
             }
+        }
+
+        private void FrmSalesOrderRecords_Load(object sender, EventArgs e)
+        {
+            dtpClear();
+            SearchSalesOrder();
+        }
+
+        private void DtpOrderDateFrom_ValueChanged(object sender, EventArgs e)
+        {
+            dtpOrderDateFrom.CustomFormat = "yyyy-MM-dd";
+        }
+
+        private void DtpOrderDateTo_ValueChanged(object sender, EventArgs e)
+        {
+            dtpOrderDateTo.CustomFormat = "yyyy-MM-dd";
         }
     }
 }

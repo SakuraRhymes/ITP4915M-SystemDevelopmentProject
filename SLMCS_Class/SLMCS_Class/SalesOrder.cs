@@ -54,7 +54,7 @@ namespace SLMCS_Class
             _salesOrderLine = new List<SalesOrderLine>();
             dbConnection = new DBConnection();
 
-            string query = "WHERE SalesOrderID = '" + orderID + "'";
+            string query = "WHERE SalesOrder.SalesOrderID = '" + orderID + "'";
             DataTable dt = searchSalesOrder(query);
             //MessageBox.Show(query);
             DataRow[] rows = dt.Select();
@@ -248,7 +248,7 @@ namespace SLMCS_Class
 
         public DataTable searchSalesOrder(string condition)
         {
-            string query = "SELECT * FROM SalesOrder ";
+            string query = "SELECT SalesOrder.SalesOrderID as SalesOrderID, SalesOrder.StaffID, SalesOrder.DealerID, SalesOrder.SalesOrderDate, SalesOrder.SalesOrderEditDate, SalesOrder.SalesDispatchDate, SalesOrder.SalesOrderCompletedDate, SalesOrder.SalesOrderStatus FROM SalesOrder, SalesOrderLine ";
             if (condition != "")
             {
                 query += condition;
