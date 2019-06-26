@@ -25,6 +25,12 @@ namespace SLMCS_ERP
             navigation(frmSalesReport, panelContent);
         }
 
+        private void BtnProductReport_Click(object sender, EventArgs e)
+        {
+            frmProductReport frmProductReport = new frmProductReport();
+            navigation(frmProductReport, panelContent);
+        }
+
         private void navigation(Form form, Panel panel)
         {
             form.TopLevel = false;
@@ -33,10 +39,5 @@ namespace SLMCS_ERP
             form.Show();
         }
 
-        private void BtnProductReport_Click(object sender, EventArgs e)
-        {
-            frmProductReport frmProductReport = new frmProductReport();
-            navigation(frmProductReport, panelContent);
-        }
     }
 }

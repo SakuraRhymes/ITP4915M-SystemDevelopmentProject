@@ -41,7 +41,6 @@
             this.btnReport = new System.Windows.Forms.Button();
             this.btnSales = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.penalTopNavigation.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -136,7 +135,7 @@
             // 
             this.btnManagement.BackColor = System.Drawing.Color.White;
             this.btnManagement.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnManagement.Location = new System.Drawing.Point(592, 79);
+            this.btnManagement.Location = new System.Drawing.Point(453, 79);
             this.btnManagement.Margin = new System.Windows.Forms.Padding(2);
             this.btnManagement.Name = "btnManagement";
             this.btnManagement.Size = new System.Drawing.Size(140, 33);
@@ -149,7 +148,7 @@
             // 
             this.btnDispatch.BackColor = System.Drawing.Color.White;
             this.btnDispatch.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnDispatch.Location = new System.Drawing.Point(446, 79);
+            this.btnDispatch.Location = new System.Drawing.Point(307, 79);
             this.btnDispatch.Margin = new System.Windows.Forms.Padding(2);
             this.btnDispatch.Name = "btnDispatch";
             this.btnDispatch.Size = new System.Drawing.Size(140, 33);
@@ -162,7 +161,7 @@
             // 
             this.btnInventory.BackColor = System.Drawing.Color.White;
             this.btnInventory.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnInventory.Location = new System.Drawing.Point(301, 79);
+            this.btnInventory.Location = new System.Drawing.Point(162, 79);
             this.btnInventory.Margin = new System.Windows.Forms.Padding(2);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Size = new System.Drawing.Size(140, 33);
@@ -175,7 +174,7 @@
             // 
             this.btnReport.BackColor = System.Drawing.Color.White;
             this.btnReport.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnReport.Location = new System.Drawing.Point(11, 79);
+            this.btnReport.Location = new System.Drawing.Point(597, 79);
             this.btnReport.Margin = new System.Windows.Forms.Padding(2);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(140, 33);
@@ -188,7 +187,7 @@
             // 
             this.btnSales.BackColor = System.Drawing.Color.White;
             this.btnSales.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnSales.Location = new System.Drawing.Point(156, 79);
+            this.btnSales.Location = new System.Drawing.Point(17, 79);
             this.btnSales.Margin = new System.Windows.Forms.Padding(2);
             this.btnSales.Name = "btnSales";
             this.btnSales.Size = new System.Drawing.Size(140, 33);
@@ -237,7 +236,6 @@
         private System.Windows.Forms.Button btnDispatch;
         private System.Windows.Forms.Label labelSystemName;
         private System.Windows.Forms.Button btnLogout;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblStaffID;
         private System.Windows.Forms.Label label4;
