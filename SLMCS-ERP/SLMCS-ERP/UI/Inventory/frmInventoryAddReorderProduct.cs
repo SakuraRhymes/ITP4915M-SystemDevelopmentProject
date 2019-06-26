@@ -13,18 +13,22 @@ namespace SLMCS_ERP
 {
     public partial class frmInventoryAddReorderProduct : Form
     {
+        private ReorderOrder reorderOrder;
         private Product product;
+        private string productID;
         //private ReorderOrder reorderOrder;
         frmInventoryReorderProduct inventoryReorderProduct;
         public frmInventoryAddReorderProduct()
         {
             InitializeComponent();
             product = new Product();
+            reorderOrder = new ReorderOrder();
         }
 
         public frmInventoryAddReorderProduct(frmInventoryReorderProduct from ,string productID)
         {
             InitializeComponent();
+            this.productID = productID;
             product = new Product(productID);
             //reorderOrder = new ReorderOrder();
             inventoryReorderProduct = from;
@@ -56,6 +60,7 @@ namespace SLMCS_ERP
                 {
                     int quantity = Convert.ToInt32(txtReorderQuantity.Text);
                     inventoryReorderProduct.SetDGVreorderOrder(product, quantity);
+                    //reorderOrder.checkProductDuplicate(productID);
                     Close(); 
                 }
                 else

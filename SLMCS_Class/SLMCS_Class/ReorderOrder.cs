@@ -94,6 +94,19 @@ namespace SLMCS_Class
             return _reorderOrderLine;
         }
 
+        public bool checkProductDuplicate(string productID)
+        {
+            if (_reorderOrderLine != null)
+            {
+                foreach (var orderLine in _reorderOrderLine)
+                {
+                    MessageBox.Show(orderLine.ProductID);
+                }
+            }
+           
+            return false;
+        }
+
         public string GetNextReorderOrderID()
         {
             string query = "SELECT COUNT(ReorderOrderID) FROM ReorderOrder WHERE ReorderOrderDate = \"" + DateTime.Now.ToString("yyMMdd") + "\"";
@@ -107,20 +120,6 @@ namespace SLMCS_Class
             string nextReorderOrderID = "RO" + DateTime.Now.ToString("yyMMdd") + count.PadLeft(6, '0');
             return nextReorderOrderID;
         }
-
-        //public DataTable GetReorderOrderTable(string condition)
-        //{
-        //    string query = "SELECT ReorderOrderID,StaffID,ReorderOrderDate,ReorderOrderEditDate,ReorderOrderReceivedDate,ReorderOrderCompletedDate,ReorderOrderStatus FROM ReorderOrder ";
-        //    if (condition != "")
-        //    {
-                
-        //        query += condition;
-        //    }
-        //    reorderOrderTable = dbConnection.GetDataTable(query);
-        //    return reorderOrderTable;
-        //}
-
-        
 
         public DataTable GetInwardGoodsRecordTable(string condition)
         {
@@ -252,38 +251,6 @@ namespace SLMCS_Class
             return ReorderOrderID;
         }
 
-        //public DataTable getReorderOrderTableByReorderOrderStatus(string ReorderOrderStatus)
-        //{
-        //    string query = "SELECT ReorderOrderID, StaffID," +
-        //        "ReorderOrderDate,ReorderOrderEditDate, ReorderOrderStatus " +
-        //        "FROM ReorderOrder WHERE  ReorderOrderStatus = \"" + ReorderOrderStatus + "\"";
-        //    return dbConnection.GetDataTable(query);
-        //}
-
-        //public DataTable GoodsReceived_getReorderOrderByOrderID(string OrderID)
-        //{
-        //    string query = "SELECT ReorderOrderID, StaffID," +
-        //        "ReorderOrderDate,ReorderOrderEditDate, ReorderOrderCompletedDate, ReorderOrderStatus " +
-        //        "FROM ReorderOrder WHERE ReorderOrderID = \"" + OrderID + "\" AND ReorderOrderStatus = \"Processing\"";
-        //    return dbConnection.GetDataTable(query);
-        //}
-
-        //public DataTable GoodsReceived_getReorderOrderByStaffID(string StaffID)
-        //{
-        //    string query = "SELECT ReorderOrderID, StaffID," +
-        //        "ReorderOrderDate,ReorderOrderEditDate, ReorderOrderCompletedDate, ReorderOrderStatus " +
-        //        "FROM ReorderOrder WHERE StaffID = \"" + StaffID + "\" AND ReorderOrderStatus = \"Processing\"";
-        //    return dbConnection.GetDataTable(query);
-        //}
-
-        //public DataTable GoodsReceived_getReorderTableByWhereQuery(string condition)
-        //{
-        //    string query = "SELECT ReorderOrderID, StaffID," +
-        //        "ReorderOrderDate,ReorderOrderEditDate,ReorderOrderStatus " +
-        //        "FROM ReorderOrder WHERE " + condition;
-        //    return dbConnection.GetDataTable(query);
-        //}
-
         public void GoodsReceived_updataReorderOrderByRedoreOrderStatus(string reorderOrderID, string RedoreOrderStatus)
         {
             string query = "UPDATE ReorderOrder SET ReorderOrderStatus = \"" + RedoreOrderStatus + "\", ReorderOrderReceivedDate = \"" + DateTime.Now.ToString("yy-MM-dd") 
@@ -291,9 +258,55 @@ namespace SLMCS_Class
             dbConnection.Update(query);
         }
 
-        //public void GoodsReceived_updataReorderOrderByQuery(string condition)
-        //{
-        //    dbConnection.Update(condition);
-        //}
+
     }
 }
+
+//public DataTable GetReorderOrderTable(string condition)
+//{
+//    string query = "SELECT ReorderOrderID,StaffID,ReorderOrderDate,ReorderOrderEditDate,ReorderOrderReceivedDate,ReorderOrderCompletedDate,ReorderOrderStatus FROM ReorderOrder ";
+//    if (condition != "")
+//    {
+
+//        query += condition;
+//    }
+//    reorderOrderTable = dbConnection.GetDataTable(query);
+//    return reorderOrderTable;
+//}
+
+//public DataTable getReorderOrderTableByReorderOrderStatus(string ReorderOrderStatus)
+//{
+//    string query = "SELECT ReorderOrderID, StaffID," +
+//        "ReorderOrderDate,ReorderOrderEditDate, ReorderOrderStatus " +
+//        "FROM ReorderOrder WHERE  ReorderOrderStatus = \"" + ReorderOrderStatus + "\"";
+//    return dbConnection.GetDataTable(query);
+//}
+
+//public DataTable GoodsReceived_getReorderOrderByOrderID(string OrderID)
+//{
+//    string query = "SELECT ReorderOrderID, StaffID," +
+//        "ReorderOrderDate,ReorderOrderEditDate, ReorderOrderCompletedDate, ReorderOrderStatus " +
+//        "FROM ReorderOrder WHERE ReorderOrderID = \"" + OrderID + "\" AND ReorderOrderStatus = \"Processing\"";
+//    return dbConnection.GetDataTable(query);
+//}
+
+//public DataTable GoodsReceived_getReorderOrderByStaffID(string StaffID)
+//{
+//    string query = "SELECT ReorderOrderID, StaffID," +
+//        "ReorderOrderDate,ReorderOrderEditDate, ReorderOrderCompletedDate, ReorderOrderStatus " +
+//        "FROM ReorderOrder WHERE StaffID = \"" + StaffID + "\" AND ReorderOrderStatus = \"Processing\"";
+//    return dbConnection.GetDataTable(query);
+//}
+
+//public DataTable GoodsReceived_getReorderTableByWhereQuery(string condition)
+//{
+//    string query = "SELECT ReorderOrderID, StaffID," +
+//        "ReorderOrderDate,ReorderOrderEditDate,ReorderOrderStatus " +
+//        "FROM ReorderOrder WHERE " + condition;
+//    return dbConnection.GetDataTable(query);
+//}
+
+//public void GoodsReceived_updataReorderOrderByQuery(string condition)
+//{
+//    dbConnection.Update(condition);
+//}
