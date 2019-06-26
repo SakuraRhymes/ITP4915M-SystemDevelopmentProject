@@ -89,12 +89,17 @@ namespace SLMCS_ERP
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
+            search();
+        }
+
+        private void search()
+        {
             string condition = "";
             if (txtCondition.Text != "")
             {
                 condition = " WHERE " + cboCondition.Text + " LIKE '%" + txtCondition.Text + "%'";
                 //MessageBox.Show(condition);
-                
+
             }
             //MessageBox.Show("Please input and select condition");
             //MessageBox.Show(condition);
@@ -172,6 +177,14 @@ namespace SLMCS_ERP
             dgvSearchRecord.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvSearchRecord.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvSearchRecord.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+
+        private void TxtCondition_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                search();
+            }
         }
     }
 }

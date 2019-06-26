@@ -87,5 +87,13 @@ namespace SLMCS_ERP
                 e.Handled = true;
             }
         }
+
+        private void TxtReorderQuantity_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BtnAdd_Click(this, new EventArgs());
+            }
+        }
     }
 }
