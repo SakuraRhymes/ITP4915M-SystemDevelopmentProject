@@ -44,7 +44,7 @@ namespace SLMCS_ERP.UI.Sales
         {
             String queryString = ProductMultiSearchString();
 
-            MessageBox.Show(queryString);
+            //MessageBox.Show(queryString);
             dt = salesOrder.searchSalesOrder(queryString);
             
             updateDGV(dt);
