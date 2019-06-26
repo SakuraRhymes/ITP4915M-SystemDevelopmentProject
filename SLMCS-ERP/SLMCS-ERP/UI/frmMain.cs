@@ -33,37 +33,17 @@ namespace SLMCS_ERP
             panel.Controls.Add(form);
             form.Show();
         }
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            frmHome home = new frmHome();
-            navigation(home, panelContent);
-        }
+       
         private void btnSales_Click(object sender, EventArgs e)
         {
             frmSales sales = new frmSales();
             navigation(sales, panelContent);
         }
-        private void BtnProcurement_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void BtnInventory_Click(object sender, EventArgs e)
         {
             frmInventoryMain inventoryMain = new frmInventoryMain();
             navigation(inventoryMain, panelContent);
         }
-
-        private void BtnFinance_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtnReporting_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void BtnDispatch_Click(object sender, EventArgs e)
         {
             frmDispatch dispatch = new frmDispatch();
@@ -74,6 +54,12 @@ namespace SLMCS_ERP
         {
             frmManagementMain management = new frmManagementMain();
             navigation(management, panelContent);
+        }
+
+        private void BtnReport_Click(object sender, EventArgs e)
+        {
+            frmReportMain reportMain = new frmReportMain();
+            navigation(reportMain, panelContent);
         }
 
         private void BtnLogout_Click(object sender, EventArgs e)

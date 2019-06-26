@@ -266,6 +266,24 @@
     <Compile Include="UI\Management\frmVendorManagement.Designer.cs">
       <DependentUpon>frmVendorManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Report\frmProductReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Report\frmProductReport.Designer.cs">
+      <DependentUpon>frmProductReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Report\frmReportMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Report\frmReportMain.Designer.cs">
+      <DependentUpon>frmReportMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Report\frmSalesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Report\frmSalesReport.Designer.cs">
+      <DependentUpon>frmSalesReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Sales\frmAddProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -400,6 +418,12 @@
     <EmbeddedResource Include="UI\Management\frmProductManagement_VendorRecord.resx">
       <DependentUpon>frmProductManagement_VendorRecord.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Report\frmReportMain.resx">
+      <DependentUpon>frmReportMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Report\frmSalesReport.resx">
+      <DependentUpon>frmSalesReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Sales\frmAddProduct.resx">
       <DependentUpon>frmAddProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -475,5 +499,6 @@
   <ItemGroup>
     <None Include="Resources\bg-color.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
