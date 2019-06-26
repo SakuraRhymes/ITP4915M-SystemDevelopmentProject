@@ -24,9 +24,9 @@ namespace SLMCS_Class
             return dbConnection.GetDataTable(query);
         }
 
-        public DataTable GetTopTenDealerTableYear()
+        public DataTable GetTopSaleProductTable()
         {
-            string query = "SELECT year FROM TopTenDealer GROUP BY year LIMIT 10";
+            string query = "SELECT * FROM TopSaleProduct LIMIT 10";
             return dbConnection.GetDataTable(query);
         }
     }

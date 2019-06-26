@@ -15,7 +15,6 @@ namespace SLMCS_ERP
     {
         private Report report;
         private DataTable topTenTable;
-        private DataTable topTenTableYear;
         public frmProductReport()
         {
             InitializeComponent();
@@ -33,28 +32,22 @@ namespace SLMCS_ERP
             chart1.Legends[0].Alignment = System.Drawing.StringAlignment.Center;
 
             //get top 10
-            topTenTable = report.GetTopTenDealerTable();
+            topTenTable = report.GetTopSaleProductTable();
             DataRow[] rows = topTenTable.Select();
             for (int i = 0; i < rows.Length; i++)
             {
                 rank += (i + 1) + "\n\n";
-                productID += (string)rows[i]["dealerID"] + "\n\n";
-                productName += (string)rows[i]["dealerName"] + "\n\n";
-                totalSaleQty += "$ " + rows[i]["totalAmount"].ToString() + "\n\n";
-                chart1.Series["s1"].Points.AddXY((string)rows[i]["dealerName"], rows[i]["totalAmount"]);
+                productID += (string)rows[i]["ProductID"] + "\n\n";
+                productName += (string)rows[i]["ProductName"] + "\n\n";
+                totalSaleQty += rows[i]["TotalSaleQty"].ToString() + "\n\n";
+                chart1.Series["s1"].Points.AddXY((string)rows[i]["ProductName"], rows[i]["TotalSaleQty"]);
             }
             lblRank.Text = rank;
             lblProductID.Text = productID;
             lblProductName.Text = productName;
-            lblYear.Text = rows[0]["year"].ToString() + "\n\n";
             lblTotalSaleQty.Text = totalSaleQty;
 
-            //get year of top 10
-            topTenTableYear = report.GetTopTenDealerTableYear();
-            DataRow[] yearRows = topTenTable.Select();
-            {
 
-            }
         }
     }
 }

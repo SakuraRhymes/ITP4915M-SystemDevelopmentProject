@@ -38,23 +38,16 @@ namespace SLMCS_ERP
             for (int i=0; i<rows.Length; i++)
             {
                 rank += (i + 1) + "\n\n";
-                dealerID += (string)rows[i]["dealerID"] + "\n\n";
-                dealerName += (string)rows[i]["dealerName"] + "\n\n";
-                totalAmount += "$ " + rows[i]["totalAmount"].ToString() + "\n\n";
-                chart1.Series["s1"].Points.AddXY((string)rows[i]["dealerName"], rows[i]["totalAmount"]);
+                dealerID += (string)rows[i]["DealerID"] + "\n\n";
+                dealerName += (string)rows[i]["DealerName"] + "\n\n";
+                totalAmount += "$ " + rows[i]["TotalAmount"].ToString() + "\n\n";
+                chart1.Series["s1"].Points.AddXY((string)rows[i]["DealerName"], rows[i]["TotalAmount"]);
             }
             lblRank.Text = rank;
             lblDealerID.Text = dealerID;
             lblDealerName.Text = dealerName;
-            lblYear.Text = rows[0]["year"].ToString() + "\n\n";
             lblTotalAmount.Text = totalAmount;
 
-            //get year of top 10
-            topTenTableYear = report.GetTopTenDealerTableYear();
-            DataRow[] yearRows = topTenTable.Select();
-            {
-                
-            }
       
         }
     }
