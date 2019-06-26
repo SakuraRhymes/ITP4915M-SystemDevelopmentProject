@@ -192,9 +192,12 @@
             this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(600, 155);
             this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.Name = "s1";
             this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(407, 399);
             this.chart1.TabIndex = 15;

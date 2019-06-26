@@ -15,6 +15,7 @@ namespace SLMCS_ERP
     {
         private Report report;
         private DataTable topTenTable;
+        private DataTable topTenTableYear;
         public frmSalesReport()
         {
             InitializeComponent();
@@ -26,9 +27,12 @@ namespace SLMCS_ERP
             string rank = "";
             string dealerID = "";
             string dealerName = "";
-            string year = "";
             string totalAmount = "";
-            
+
+            chart1.Series["s1"]["PieLabelStyle"] = "Disabled";
+            chart1.Legends[0].Alignment = System.Drawing.StringAlignment.Center;
+
+            //get top 10
             topTenTable = report.GetTopTenDealerTable();
             DataRow[] rows = topTenTable.Select();
             for (int i=0; i<rows.Length; i++)
@@ -37,12 +41,21 @@ namespace SLMCS_ERP
                 dealerID += (string)rows[i]["dealerID"] + "\n\n";
                 dealerName += (string)rows[i]["dealerName"] + "\n\n";
                 totalAmount += "$ " + rows[i]["totalAmount"].ToString() + "\n\n";
+                chart1.Series["s1"].Points.AddXY((string)rows[i]["dealerName"], rows[i]["totalAmount"]);
             }
             lblRank.Text = rank;
             lblDealerID.Text = dealerID;
             lblDealerName.Text = dealerName;
             lblYear.Text = rows[0]["year"].ToString() + "\n\n";
             lblTotalAmount.Text = totalAmount;
+
+            //get year of top 10
+            topTenTableYear = report.GetTopTenDealerTableYear();
+            DataRow[] yearRows = topTenTable.Select();
+            {
+                
+            }
+      
         }
     }
 }
