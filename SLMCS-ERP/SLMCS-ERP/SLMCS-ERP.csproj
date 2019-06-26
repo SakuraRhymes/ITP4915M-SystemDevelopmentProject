@@ -419,6 +419,9 @@
     <EmbeddedResource Include="UI\Management\frmProductManagement_VendorRecord.resx">
       <DependentUpon>frmProductManagement_VendorRecord.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Report\frmProductReport.resx">
+      <DependentUpon>frmProductReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Report\frmReportMain.resx">
       <DependentUpon>frmReportMain.cs</DependentUpon>
     </EmbeddedResource>
