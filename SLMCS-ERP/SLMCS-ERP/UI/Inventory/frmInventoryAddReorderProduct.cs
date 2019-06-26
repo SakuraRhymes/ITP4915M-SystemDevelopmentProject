@@ -16,7 +16,7 @@ namespace SLMCS_ERP
         private ReorderOrder reorderOrder;
         private Product product;
         private string productID;
-        //private ReorderOrder reorderOrder;
+       
         frmInventoryReorderProduct inventoryReorderProduct;
         public frmInventoryAddReorderProduct()
         {
@@ -25,12 +25,12 @@ namespace SLMCS_ERP
             reorderOrder = new ReorderOrder();
         }
 
-        public frmInventoryAddReorderProduct(frmInventoryReorderProduct from ,string productID)
+        public frmInventoryAddReorderProduct(frmInventoryReorderProduct from ,string productID, ReorderOrder reorderOrder)
         {
             InitializeComponent();
             this.productID = productID;
             product = new Product(productID);
-            //reorderOrder = new ReorderOrder();
+            this.reorderOrder = reorderOrder;
             inventoryReorderProduct = from;
         }
 
@@ -59,8 +59,14 @@ namespace SLMCS_ERP
                 if (Convert.ToInt32(txtReorderQuantity.Text) > 0)
                 {
                     int quantity = Convert.ToInt32(txtReorderQuantity.Text);
-                    inventoryReorderProduct.SetDGVreorderOrder(product, quantity);
-                    //reorderOrder.checkProductDuplicate(productID);
+                    if (reorderOrder.checkProductDuplicate(productID))
+                    {
+                        reorderOrder.AddReorderProductLine(product, quantity);
+                        inventoryReorderProduct.SetDGVreorderOrder();
+                    } else
+                    {
+                        MessageBox.Show("Product has been selected");
+                    }
                     Close(); 
                 }
                 else

@@ -109,7 +109,7 @@ namespace SLMCS_ERP
 
         private void DgvSearchRecord_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            frmInventoryAddReorderProduct inventoryAddReorderProduct = new frmInventoryAddReorderProduct(this, selectedProductID);
+            frmInventoryAddReorderProduct inventoryAddReorderProduct = new frmInventoryAddReorderProduct(this, selectedProductID, reorderOrder);
             inventoryAddReorderProduct.Show();     
         }
 
@@ -126,15 +126,14 @@ namespace SLMCS_ERP
             }
             else
             {
-                frmInventoryAddReorderProduct inventoryAddReorderProduct = new frmInventoryAddReorderProduct(this, selectedProductID);
+                frmInventoryAddReorderProduct inventoryAddReorderProduct = new frmInventoryAddReorderProduct(this, selectedProductID, reorderOrder);
                 inventoryAddReorderProduct.Show();
             }
             
         }
 
-        public void SetDGVreorderOrder(Product product, int quantity)
+        public void SetDGVreorderOrder()
         {
-            reorderOrder.AddReorderProductLine(product, quantity);
             dgvReorderOrder.DataSource = null;
             dgvReorderOrder.DataSource = reorderOrder.GetReorderProductLine();
         }

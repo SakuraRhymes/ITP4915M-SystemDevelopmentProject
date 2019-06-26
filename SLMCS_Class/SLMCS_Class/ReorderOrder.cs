@@ -100,11 +100,11 @@ namespace SLMCS_Class
             {
                 foreach (var orderLine in _reorderOrderLine)
                 {
-                    MessageBox.Show(orderLine.ProductID);
+                    if (orderLine.ProductID == productID)
+                        return false;
                 }
             }
-           
-            return false;
+            return true;
         }
 
         public string GetNextReorderOrderID()
