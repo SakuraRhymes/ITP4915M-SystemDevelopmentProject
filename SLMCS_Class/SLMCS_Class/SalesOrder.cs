@@ -303,5 +303,20 @@ namespace SLMCS_Class
                 product.updateActualQuantity(-quantity);
             }
         }
+
+        public Boolean checkDispatchQty(String salesOrderID)
+        {
+            string query = "SELECT * FROM CheckDispatchQty WHERE SalesOrderID = '" + salesOrderID + "'";
+            DataTable dt = dbConnection.GetDataTable(query);
+
+            if(dt.Rows.Count == 1)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }

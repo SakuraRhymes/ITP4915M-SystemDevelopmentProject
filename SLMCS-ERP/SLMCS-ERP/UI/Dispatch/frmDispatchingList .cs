@@ -143,15 +143,22 @@ namespace SLMCS_ERP{
         {
             if (dgvSalesOrderList.Rows.Count > 0 && selectedOrderID != "")
             {
-                if (MessageBox.Show("Confirm Dispatch : " + selectedOrderID + " ?", "Confirm Message", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (salesOrder.checkDispatchQty(selectedOrderID))
                 {
-                    salesOrder.updataSalesOrderStatusInDB(selectedOrderID, "Dispatched");
+                    if (MessageBox.Show("Confirm Dispatch : " + selectedOrderID + " ?", "Confirm Message", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    {
+                        salesOrder.updataSalesOrderStatusInDB(selectedOrderID, "Dispatched");
 
-                    salesOrder.dispatchOrder(selectedOrderID);
+                        salesOrder.dispatchOrder(selectedOrderID);
 
-                    string successfulMessage = "Sales Order : " + selectedOrderID + " has been Dispatched!";
-                    MessageBox.Show(successfulMessage);
-                    refreshDvg();
+                        string successfulMessage = "Sales Order : " + selectedOrderID + " has been Dispatched!";
+                        MessageBox.Show(successfulMessage);
+                        refreshDvg();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("The product do not have enough stock!");
                 }
             }
             else
