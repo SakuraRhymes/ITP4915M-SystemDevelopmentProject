@@ -19,23 +19,17 @@ namespace SLMCS_Class
 
         public ReorderOrderLine(ReorderOrder reorderOrder, Product product, int quantity)
         {
-            ReorderOrder = reorderOrder;
-            Product = product;
+            this.reorderOrder = reorderOrder;
+            this.product = product;
             Quantity = quantity;
         }
 
         public void PlaceReorderOrderLine()
         {
             dbConnection = new DBConnection();
-            string query = "INSERT INTO ReorderOrderLine VALUES ('" + ReorderOrder.ReorderOrderID + "','" + Product.ProductID + "'," + Quantity + ")";
+            string query = "INSERT INTO ReorderOrderLine VALUES ('" + reorderOrder.ReorderOrderID + "','" + product.ProductID + "'," + Quantity + ")";
             //MessageBox.Show(query);
             dbConnection.Insert(query);
-        }
-
-        public ReorderOrder ReorderOrder
-        {
-            get => reorderOrder;
-            set => reorderOrder = value;
         }
 
         public string ProductID
@@ -43,10 +37,19 @@ namespace SLMCS_Class
             get => product.ProductID;
         } 
 
-        public Product Product
+        public string ProductName
         {
-            get => product;
-            set => product = value;
+            get => product.ProductName;
+        }
+
+        public string ProductType
+        {
+            get => product.ProductType;
+        }
+
+        public string ProductUnit
+        {
+            get => product.ProductUnit;
         }
 
         public int Quantity
@@ -54,5 +57,18 @@ namespace SLMCS_Class
             get => quantity;
             set => quantity = value;
         }
+
+
+        //public ReorderOrder ReorderOrder
+        //{
+        //    get => reorderOrder;
+        //    set => reorderOrder = value;
+        //}
+
+        //public Product Product
+        //{
+        //    get => product;
+        //    set => product = value;
+        //}
     }
 }

@@ -136,6 +136,7 @@ namespace SLMCS_ERP
         {
             dgvReorderOrder.DataSource = null;
             dgvReorderOrder.DataSource = reorderOrder.GetReorderProductLine();
+            DGVReorderOrderFormatSetting();
         }
 
         private void DgvSearchRecord_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -176,6 +177,15 @@ namespace SLMCS_ERP
             dgvSearchRecord.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvSearchRecord.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvSearchRecord.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+
+        private void DGVReorderOrderFormatSetting()
+        {
+            //dgvReorderOrder.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            //dgvReorderOrder.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            //dgvReorderOrder.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            //dgvReorderOrder.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvReorderOrder.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void TxtCondition_KeyDown(object sender, KeyEventArgs e)
