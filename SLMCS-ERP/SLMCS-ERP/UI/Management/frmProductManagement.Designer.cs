@@ -100,7 +100,7 @@
             this.gpbProductDetail.Controls.Add(this.lblDProductType);
             this.gpbProductDetail.Controls.Add(this.label3);
             this.gpbProductDetail.Controls.Add(this.label4);
-            this.gpbProductDetail.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.gpbProductDetail.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.gpbProductDetail.Location = new System.Drawing.Point(664, 19);
             this.gpbProductDetail.Name = "gpbProductDetail";
             this.gpbProductDetail.Size = new System.Drawing.Size(358, 515);
@@ -110,7 +110,7 @@
             // 
             // btnEditProduct
             // 
-            this.btnEditProduct.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnEditProduct.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnEditProduct.Location = new System.Drawing.Point(111, 446);
             this.btnEditProduct.Name = "btnEditProduct";
             this.btnEditProduct.Size = new System.Drawing.Size(148, 30);
@@ -324,7 +324,7 @@
             // 
             // btnNewProduct
             // 
-            this.btnNewProduct.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnNewProduct.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnNewProduct.Location = new System.Drawing.Point(471, 251);
             this.btnNewProduct.Name = "btnNewProduct";
             this.btnNewProduct.Size = new System.Drawing.Size(148, 30);
@@ -352,7 +352,7 @@
             this.gpbCondition.Controls.Add(this.lblStockQuantity);
             this.gpbCondition.Controls.Add(this.lblProductID);
             this.gpbCondition.Controls.Add(this.lblProductType);
-            this.gpbCondition.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.gpbCondition.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.gpbCondition.Location = new System.Drawing.Point(18, 19);
             this.gpbCondition.Name = "gpbCondition";
             this.gpbCondition.Size = new System.Drawing.Size(629, 215);
@@ -486,14 +486,14 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnSearch.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnSearch.Location = new System.Drawing.Point(23, 175);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(590, 30);
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.RefreshSearchResult);
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             this.btnSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BtnSearch_KeyDown);
             // 
             // lblStockQuantity
@@ -526,7 +526,7 @@
             // gboxStockRecord
             // 
             this.gboxStockRecord.Controls.Add(this.btnNewProduct);
-            this.gboxStockRecord.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.gboxStockRecord.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.gboxStockRecord.Location = new System.Drawing.Point(18, 243);
             this.gboxStockRecord.Name = "gboxStockRecord";
             this.gboxStockRecord.Size = new System.Drawing.Size(629, 291);

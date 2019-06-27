@@ -175,7 +175,7 @@ namespace SLMCS_Class
             string query = "SELECT StaffID, StaffName, PasswordChangeDate, DepartmentID, StaffStatus FROM Staff ";
             if (condition != "")
             {
-                query += "WHERE"+ condition;
+                query += "WHERE "+ condition;
             }
             return dbConnection.GetDataTable(query);
         }
