@@ -13,20 +13,24 @@ namespace SLMCS_ERP
 {
     public partial class frmInventoryAddReorderProduct : Form
     {
+        private ReorderOrder reorderOrder;
         private Product product;
-        //private ReorderOrder reorderOrder;
+        private string productID;
+       
         frmInventoryReorderProduct inventoryReorderProduct;
         public frmInventoryAddReorderProduct()
         {
             InitializeComponent();
             product = new Product();
+            reorderOrder = new ReorderOrder();
         }
 
-        public frmInventoryAddReorderProduct(frmInventoryReorderProduct from ,string productID)
+        public frmInventoryAddReorderProduct(frmInventoryReorderProduct from ,string productID, ReorderOrder reorderOrder)
         {
             InitializeComponent();
+            this.productID = productID;
             product = new Product(productID);
-            //reorderOrder = new ReorderOrder();
+            this.reorderOrder = reorderOrder;
             inventoryReorderProduct = from;
         }
 
@@ -55,7 +59,14 @@ namespace SLMCS_ERP
                 if (Convert.ToInt32(txtReorderQuantity.Text) > 0)
                 {
                     int quantity = Convert.ToInt32(txtReorderQuantity.Text);
-                    inventoryReorderProduct.SetDGVreorderOrder(product, quantity);
+                    if (reorderOrder.checkProductDuplicate(productID))
+                    {
+                        reorderOrder.AddReorderProductLine(product, quantity);
+                        inventoryReorderProduct.SetDGVreorderOrder();
+                    } else
+                    {
+                        MessageBox.Show("Product has been selected");
+                    }
                     Close(); 
                 }
                 else
@@ -85,6 +96,14 @@ namespace SLMCS_ERP
             if (!char.IsDigit(e.KeyChar) && !(e.KeyChar == (char)8))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void TxtReorderQuantity_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BtnAdd_Click(this, new EventArgs());
             }
         }
     }

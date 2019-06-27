@@ -50,6 +50,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReorderOrder.cs" />
     <Compile Include="ReorderOrderLine.cs" />
+    <Compile Include="Report.cs" />
     <Compile Include="SalesOrder.cs" />
     <Compile Include="SalesOrderLine.cs" />
     <Compile Include="Staff.cs" />
