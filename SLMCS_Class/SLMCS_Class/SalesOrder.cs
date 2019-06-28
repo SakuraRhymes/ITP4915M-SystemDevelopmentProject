@@ -253,6 +253,7 @@ namespace SLMCS_Class
             {
                 query += condition;
             }
+            query += " GROUP BY SalesOrder.SalesOrderID";
             //MessageBox.Show(query);
             return dbConnection.GetDataTable(query);
         }
